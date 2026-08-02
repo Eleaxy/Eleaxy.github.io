@@ -6,11 +6,22 @@
 
   const validIds = new Set(['automation-flow', 'autocel']);
   const shell = document.body.dataset.page === 'plugins';
+  const home = document.body.dataset.page === 'home';
   const root = document.querySelector('[data-main-content]');
   const state = window.__resourceArchivePluginsState || { records: [] };
   state.prefetchIdle ??= null;
   state.pendingFocusPlugin ??= null;
   window.__resourceArchivePluginsState = state;
+
+  const homePluginSnapshotKey = 'resourceArchivePluginHomeSnapshot';
+  const detailHomeOriginKey = 'resourceArchivePluginHomeOrigin';
+  const internalViewRouterStateKey = 'resourceArchiveInternalViewRouter';
+  const homePluginHandoffKey = 'resourceArchivePluginHomeHandoff';
+  const homePluginStateVersion = 1;
+  const homePluginHandoffMaxAge = 10_000;
+  let pendingHomePluginSnapshot = null;
+  let homePluginRestoreGeneration = 0;
+  const homePluginRestoreTimers = new Set();
 
   let recordsController = null;
   let disposed = false;
@@ -98,6 +109,238 @@
 
   function safeDetailPath(value) {
     return typeof value === 'string' && /^\/plugins\.html\?plugin=(automation-flow|autocel)$/.test(value) ? value : null;
+  }
+
+  function currentHistoryState() {
+    return history.state && typeof history.state === 'object' ? history.state : {};
+  }
+
+  function canonicalHomePluginUrl() {
+    return new URL(window.location.pathname === '/' ? '/' : '/index.html#plugins-section', window.location.origin);
+  }
+
+  function isCanonicalHomePluginUrl(value) {
+    try {
+      const url = new URL(value, window.location.origin);
+      return url.origin === window.location.origin && url.search === ''
+        && ((url.pathname === '/' && url.hash === '')
+          || (url.pathname === '/index.html' && url.hash === '#plugins-section'));
+    } catch {
+      return false;
+    }
+  }
+
+  function isPluginDetailUrl(value, id) {
+    try {
+      const url = new URL(value, window.location.origin);
+      return validIds.has(id)
+        && url.origin === window.location.origin
+        && url.pathname === '/plugins.html'
+        && url.search === `?plugin=${id}`;
+    } catch {
+      return false;
+    }
+  }
+
+  function isCanonicalPluginDetailUrl(value, id) {
+    return isPluginDetailUrl(value, id) && new URL(value, window.location.origin).hash === '';
+  }
+
+  function validHomePluginSnapshot(value) {
+    return value && typeof value === 'object'
+      && value.version === homePluginStateVersion
+      && validIds.has(value.pluginId)
+      && isCanonicalHomePluginUrl(value.homeUrl)
+      && Number.isFinite(value.scrollY)
+      && value.scrollY >= 0;
+  }
+
+  function ordinarySelfNavigation(event, link) {
+    return !event.defaultPrevented
+      && event.button === 0
+      && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey
+      && !link.hasAttribute('download')
+      && (!link.target || link.target.toLowerCase() === '_self');
+  }
+
+  function validDetailHomeOrigin(value, route) {
+    return value && typeof value === 'object'
+      && value.version === homePluginStateVersion
+      && value.pluginId === route.id
+      && isCanonicalHomePluginUrl(value.homeUrl)
+      && isCanonicalPluginDetailUrl(value.detailUrl, route.id);
+  }
+
+  function sameOriginHomeReferrer() {
+    try {
+      const referrer = new URL(document.referrer);
+      return referrer.origin === window.location.origin && referrer.search === ''
+        && (referrer.pathname === '/' || referrer.pathname === '/index.html');
+    } catch {
+      return false;
+    }
+  }
+
+  function randomHandoffNonce() {
+    if (typeof crypto?.randomUUID === 'function') return crypto.randomUUID();
+    return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  }
+
+  function writeHomePluginHandoff(value) {
+    try {
+      sessionStorage.setItem(homePluginHandoffKey, JSON.stringify(value));
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  function takeHomePluginHandoff() {
+    let encoded = null;
+    try {
+      encoded = sessionStorage.getItem(homePluginHandoffKey);
+      sessionStorage.removeItem(homePluginHandoffKey);
+    } catch {
+      return null;
+    }
+    if (typeof encoded !== 'string' || encoded.length > 2048) return null;
+    try {
+      return JSON.parse(encoded);
+    } catch {
+      return null;
+    }
+  }
+
+  function validHomePluginHandoff(value, route) {
+    const now = Date.now();
+    return value && typeof value === 'object'
+      && value.version === homePluginStateVersion
+      && value.pluginId === route.id
+      && isCanonicalHomePluginUrl(value.homeUrl)
+      && isCanonicalPluginDetailUrl(value.detailUrl, route.id)
+      && value.detailUrl === window.location.href
+      && Number.isFinite(value.createdAt)
+      && value.createdAt <= now && now - value.createdAt <= homePluginHandoffMaxAge
+      && typeof value.nonce === 'string' && value.nonce.length >= 8
+      && sameOriginHomeReferrer();
+  }
+
+  function startHomePluginNavigation(event, link, id) {
+    if (!home || !root?.contains(link) || !validIds.has(id) || !ordinarySelfNavigation(event, link)) return;
+    if (!isCanonicalPluginDetailUrl(link.href, id)) return;
+    const homeUrl = canonicalHomePluginUrl();
+    const detailUrl = new URL(link.href, window.location.href);
+    const priorState = currentHistoryState();
+    const snapshot = {
+      version: homePluginStateVersion,
+      pluginId: id,
+      homeUrl: homeUrl.href,
+      scrollY: window.scrollY,
+    };
+    try {
+      history.replaceState({
+        ...priorState,
+        [homePluginSnapshotKey]: snapshot,
+      }, '', homeUrl.href);
+    } catch {
+      return;
+    }
+    writeHomePluginHandoff({
+      version: homePluginStateVersion,
+      pluginId: id,
+      homeUrl: homeUrl.href,
+      detailUrl: detailUrl.href,
+      createdAt: Date.now(),
+      nonce: randomHandoffNonce(),
+    });
+  }
+
+  function detailHasMatchingHomeOrigin(route) {
+    const origin = history.state?.[detailHomeOriginKey];
+    return validDetailHomeOrigin(origin, route);
+  }
+
+  function initialPluginDetailRouterEntry() {
+    const entry = history.state?.[internalViewRouterStateKey];
+    if (!entry || typeof entry !== 'object'
+      || typeof entry.session !== 'string' || entry.session.length === 0
+      || entry.index !== 0 || entry.snapshot !== null) return false;
+    return !Object.hasOwn(entry, 'fragment')
+      || (typeof entry.fragment === 'string' && entry.fragment.startsWith('#'));
+  }
+
+  function persistIncomingHomePluginOrigin() {
+    const route = parseUrl(new URL(window.location.href));
+    const handoff = takeHomePluginHandoff();
+    if (!shell || route.kind !== 'detail' || route.nodeId || !isCanonicalPluginDetailUrl(window.location.href, route.id)
+      || !validHomePluginHandoff(handoff, route)) return;
+    try {
+      history.replaceState({
+        ...currentHistoryState(),
+        [detailHomeOriginKey]: {
+          version: homePluginStateVersion,
+          pluginId: route.id,
+          homeUrl: handoff.homeUrl,
+          detailUrl: handoff.detailUrl,
+        },
+      }, '', window.location.href);
+    } catch {}
+  }
+
+  function cancelHomePluginRestore() {
+    homePluginRestoreGeneration += 1;
+    pendingHomePluginSnapshot = null;
+    homePluginRestoreTimers.forEach(timer => window.clearTimeout(timer));
+    homePluginRestoreTimers.clear();
+  }
+
+  function homePluginRestoreIsCurrent(generation, snapshot) {
+    const current = history.state?.[homePluginSnapshotKey];
+    return !disposed && generation === homePluginRestoreGeneration && document.visibilityState === 'visible'
+      && validHomePluginSnapshot(current) && current.pluginId === snapshot.pluginId
+      && current.homeUrl === snapshot.homeUrl && window.location.href === snapshot.homeUrl;
+  }
+
+  function scheduleHomePluginRestore(callback, delay, generation, snapshot) {
+    const timer = window.setTimeout(() => {
+      homePluginRestoreTimers.delete(timer);
+      if (!homePluginRestoreIsCurrent(generation, snapshot)) return;
+      callback();
+    }, delay);
+    homePluginRestoreTimers.add(timer);
+  }
+
+  function applyPendingHomePluginRestore() {
+    const snapshot = pendingHomePluginSnapshot;
+    if (!home || !validHomePluginSnapshot(snapshot) || !state.records.length) return;
+    pendingHomePluginSnapshot = null;
+    const generation = homePluginRestoreGeneration;
+    const restore = (attempt = 0) => {
+      if (!homePluginRestoreIsCurrent(generation, snapshot)) return;
+      const maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      if (maxScrollY < snapshot.scrollY && attempt < 12) {
+        scheduleHomePluginRestore(() => restore(attempt + 1), 50, generation, snapshot);
+        return;
+      }
+      if (!homePluginRestoreIsCurrent(generation, snapshot)) return;
+      window.scrollTo({ left: 0, top: snapshot.scrollY, behavior: 'instant' });
+      if (!homePluginRestoreIsCurrent(generation, snapshot)) return;
+      root?.querySelector(`[data-plugin="${snapshot.pluginId}"] [data-plugin-detail-link]`)?.focus({ preventScroll: true });
+    };
+    scheduleHomePluginRestore(restore, 120, generation, snapshot);
+  }
+
+  function navigationIsBackForward() {
+    const navigation = performance.getEntriesByType?.('navigation')?.[0];
+    return navigation?.type === 'back_forward';
+  }
+
+  function queueHomePluginRestore() {
+    if (!home) return;
+    const snapshot = history.state?.[homePluginSnapshotKey];
+    if (!validHomePluginSnapshot(snapshot)) return;
+    pendingHomePluginSnapshot = snapshot;
+    applyPendingHomePluginRestore();
   }
 
   function pluginRow(record) {
@@ -228,6 +471,7 @@
       return;
     }
     container.replaceChildren(...state.records.map(pluginRow));
+    applyPendingHomePluginRestore();
   }
 
   function renderListError(error) {
@@ -730,6 +974,23 @@
     if (!link || !root?.contains(link)) return;
     const id = link.closest('[data-plugin]')?.dataset.plugin;
     state.pendingFocusPlugin = validIds.has(id) ? id : null;
+    startHomePluginNavigation(event, link, id);
+  }
+
+  function captureHomePluginBack(event) {
+    if (event.defaultPrevented || event.button !== 0
+      || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const back = event.target instanceof Element ? event.target.closest('[data-internal-view-history-back]') : null;
+    if (!back || !root?.contains(back) || back.hasAttribute('download')
+      || (back.target && back.target.toLowerCase() !== '_self')) return;
+    const route = parseUrl(new URL(window.location.href));
+    if (!shell || route.kind !== 'detail' || route.nodeId || !isPluginDetailUrl(window.location.href, route.id)) return;
+    const homeOrigin = isCanonicalPluginDetailUrl(window.location.href, route.id) && detailHasMatchingHomeOrigin(route);
+    if (!homeOrigin && !initialPluginDetailRouterEntry()) return;
+    event.preventDefault();
+    event.stopPropagation();
+    if (homeOrigin) history.back();
+    else window.location.replace('/plugins.html');
   }
 
   function onRootInput(event) {
@@ -765,6 +1026,7 @@
   function cleanup() {
     if (disposed) return;
     disposed = true;
+    cancelHomePluginRestore();
     languageNavigationEpoch += 1;
     contentTableRetryPromise = null;
     recordsController?.abort();
@@ -776,6 +1038,7 @@
     root?.removeEventListener('pointerover', warmPluginDetail);
     root?.removeEventListener('focusin', warmPluginDetail);
     root?.removeEventListener('click', capturePluginTrigger, true);
+    root?.removeEventListener('click', captureHomePluginBack, true);
     root?.removeEventListener('click', onRootClick);
     root?.removeEventListener('input', onRootInput);
     root?.removeEventListener('error', onRootImageError, true);
@@ -787,6 +1050,7 @@
   }
 
   function onPageHide(event) {
+    cancelHomePluginRestore();
     cancelScheduledPrefetch();
     disposeRenderer();
     if (!event.persisted) cleanup();
@@ -794,6 +1058,8 @@
 
   function onPageShow(event) {
     if (event.persisted && shell && router) router.syncFromLocation({ initial: true }).catch(() => undefined);
+    cancelHomePluginRestore();
+    if (event.persisted || navigationIsBackForward()) queueHomePluginRestore();
   }
 
   window.__resourceArchivePluginsCleanup = cleanup;
@@ -803,11 +1069,14 @@
   root?.addEventListener('pointerover', warmPluginDetail);
   root?.addEventListener('focusin', warmPluginDetail);
   root?.addEventListener('click', capturePluginTrigger, true);
+  root?.addEventListener('click', captureHomePluginBack, true);
   root?.addEventListener('click', onRootClick);
   root?.addEventListener('input', onRootInput);
   root?.addEventListener('error', onRootImageError, true);
   addEventListener('pagehide', onPageHide);
   addEventListener('pageshow', onPageShow);
+
+  persistIncomingHomePluginOrigin();
 
   if (shell && root && window.ResourceArchiveInternalViewRouter && window.ResourceArchivePluginDetail
     && window.ResourceArchivePluginDetailCache) {
