@@ -150,7 +150,8 @@ html[lang="en"] .plugins-register-header .lede { letter-spacing: -.02em; }
     gap: 12px 16px;
   }
 
-  .contributors-register .contributor-row {
+  .contributors-register .contributor-row,
+  #contributors.continuous-section .contributor-row {
     grid-template-columns: 32px minmax(0, 1fr);
     gap: 10px 16px;
     align-items: start;
@@ -158,11 +159,15 @@ html[lang="en"] .plugins-register-header .lede { letter-spacing: -.02em; }
 
   .contributors-register .contributor-row h3,
   .contributors-register .contributor-row p,
-  .contributors-register .contributor-row a {
+  .contributors-register .contributor-row a,
+  #contributors.continuous-section .contributor-row h3,
+  #contributors.continuous-section .contributor-row p,
+  #contributors.continuous-section .contributor-row a {
     grid-column: 2;
   }
 
-  .contributors-register .contributor-row .source-kind {
+  .contributors-register .contributor-row .source-kind,
+  #contributors.continuous-section .contributor-row .source-kind {
     grid-column: 2;
   }
 }

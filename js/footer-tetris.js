@@ -42,6 +42,8 @@
   let score = 0;
   let frame = 0;
   let entryFrame = 0;
+  let hudPointerPending = false;
+  let hudPointerFrame = 0;
   let lastStep = 0;
   let visible = false;
   let disposed = false;
@@ -101,6 +103,7 @@
     control.dataset.i18nAriaLabel = labelKey;
     control.setAttribute('aria-label', translate(labelKey, fallback));
     control.textContent = glyph;
+    control.addEventListener('pointerdown', markHudPointerPending);
     control.addEventListener('click', event => {
       event.stopPropagation();
       if (phase === 'play') action();
@@ -374,6 +377,21 @@
     entryFrame = 0;
   }
 
+  function clearHudPointerPending() {
+    hudPointerPending = false;
+    if (hudPointerFrame) cancelAnimationFrame(hudPointerFrame);
+    hudPointerFrame = 0;
+  }
+
+  function markHudPointerPending() {
+    hudPointerPending = true;
+    if (hudPointerFrame) cancelAnimationFrame(hudPointerFrame);
+    hudPointerFrame = requestAnimationFrame(() => {
+      hudPointerFrame = 0;
+      hudPointerPending = false;
+    });
+  }
+
   function scheduleEntry(callback, delay) {
     const timer = setTimeout(() => {
       entryTimers.delete(timer);
@@ -444,6 +462,7 @@
 
   function endGame({ focusToggle = true } = {}) {
     cancelEntry();
+    clearHudPointerPending();
     phase = 'idle';
     syncToggleLabel();
     flick = 0;
@@ -482,7 +501,8 @@
   function onCanvasBlur(event) {
     const movingToModeControl = event.relatedTarget === toggle
       || languageToggle?.contains(event.relatedTarget)
-      || hud?.contains(event.relatedTarget);
+      || hud?.contains(event.relatedTarget)
+      || hudPointerPending;
     if (phase === 'play' && !movingToModeControl) endGame({ focusToggle: false });
   }
 
