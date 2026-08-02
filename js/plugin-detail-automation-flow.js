@@ -725,6 +725,20 @@
       const category = target?.closest('[data-automation-flow-category-anchor]');
       if (category && root.contains(category)) {
         setActiveCategory(root, category.dataset.automationFlowCategoryAnchor);
+        if (!event.defaultPrevented && event.button === 0
+          && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey) {
+          const destination = new URL(category.href, window.location.href);
+          const current = new URL(window.location.href);
+          const section = document.getElementById(destination.hash.slice(1));
+          if (destination.origin === current.origin
+            && destination.pathname === current.pathname
+            && destination.search === current.search
+            && destination.hash && section && root.contains(section)) {
+            event.preventDefault();
+            history.replaceState(history.state, '', destination);
+            section.scrollIntoView();
+          }
+        }
         return;
       }
       const node = target?.closest('[data-automation-flow-node-trigger]');
