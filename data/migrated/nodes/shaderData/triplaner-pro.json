@@ -1,0 +1,80 @@
+{
+  "id": "triplaner-pro",
+  "name": "Triplaner Pro",
+  "name_zh": "",
+  "category_id": "mfs_coordinates",
+  "category": "Coordinates",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Power_Blend",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Power Blend.",
+      "default": 16.0,
+      "de": "Numeric value controlling Power Blend.",
+      "dz": "设置 Power / Blend 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketColor",
+      "description": "Color value for Roughness.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Color value for Roughness.",
+      "dz": "设置 Roughness 的颜色数据。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

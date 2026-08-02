@@ -1,0 +1,62 @@
+{
+  "id": "radial-segments",
+  "name": "Radial-Segments",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Rotation",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Rotation.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Rotation.",
+      "dz": "设置 旋转 的向量数据。"
+    },
+    {
+      "name": "Number",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Number.",
+      "default": 6,
+      "de": "Integer value controlling Number.",
+      "dz": "设置 Number 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

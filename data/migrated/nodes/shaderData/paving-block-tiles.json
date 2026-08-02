@@ -1,0 +1,86 @@
+{
+  "id": "paving-block-tiles",
+  "name": "Paving_Block_Tiles",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Scale.",
+      "default": [
+        3.0,
+        4.0,
+        3.0
+      ],
+      "de": "Vector value for Scale.",
+      "dz": "设置 缩放 的向量数据。"
+    },
+    {
+      "name": "Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Width.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Width.",
+      "dz": "设置 宽度 的数值。"
+    },
+    {
+      "name": "Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Falloff.",
+      "default": 3.0,
+      "de": "Numeric value controlling Falloff.",
+      "dz": "设置 衰减 的数值。"
+    },
+    {
+      "name": "Bevel",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bevel.",
+      "default": 1.0,
+      "de": "Numeric value controlling Bevel.",
+      "dz": "设置 Bevel 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    },
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

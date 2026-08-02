@@ -1,0 +1,86 @@
+{
+  "id": "rounded-box-sdf",
+  "name": "Rounded_Box_SDF",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Size",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Size.",
+      "default": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "de": "Vector value for Size.",
+      "dz": "设置 尺寸 的向量数据。"
+    },
+    {
+      "name": "Top Left",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Top Left.",
+      "default": 0.0,
+      "de": "Numeric value controlling Top Left.",
+      "dz": "设置 Top / Left 的数值。"
+    },
+    {
+      "name": "Top Right",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Top Right.",
+      "default": 0.0,
+      "de": "Numeric value controlling Top Right.",
+      "dz": "设置 Top / Right 的数值。"
+    },
+    {
+      "name": "Bottom Left",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bottom Left.",
+      "default": 0.0,
+      "de": "Numeric value controlling Bottom Left.",
+      "dz": "设置 Bottom / Left 的数值。"
+    },
+    {
+      "name": "Bottom Right",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bottom Right.",
+      "default": 0.0,
+      "de": "Numeric value controlling Bottom Right.",
+      "dz": "设置 Bottom / Right 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

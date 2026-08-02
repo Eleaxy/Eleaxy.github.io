@@ -1,0 +1,73 @@
+{
+  "id": "particle-solver",
+  "name": "Particle Solver",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Delta Time",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Delta Time.",
+      "default": 0.03333333507180214,
+      "de": "Numeric value controlling Delta Time.",
+      "dz": "设置 Delta / 时间 的数值。"
+    },
+    {
+      "name": "SubSteps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Sub Steps.",
+      "default": 1,
+      "de": "Integer value controlling Sub Steps.",
+      "dz": "设置 Sub / Steps 的数值。"
+    },
+    {
+      "name": "Sourcing",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Sourcing.",
+      "de": "Parameter for Sourcing.",
+      "dz": "指定 Sourcing 参数。"
+    },
+    {
+      "name": "External Force",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for External Force.",
+      "de": "Parameter for External Force.",
+      "dz": "指定 External / 力 参数。"
+    },
+    {
+      "name": "Custom Stage",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Custom Stage.",
+      "de": "Parameter for Custom Stage.",
+      "dz": "指定 Custom / Stage 参数。"
+    },
+    {
+      "name": "Collision",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Collision.",
+      "de": "Parameter for Collision.",
+      "dz": "指定 碰撞 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Particles.",
+      "de": "Geometry data used as Particles.",
+      "dz": "传入或输出用于该节点处理的 Particles。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "stage-07",
+  "title": "MoonBase",
+  "date": "2024-05-04",
+  "image": {
+    "source": "https://sablefish357.com/stages/05-04-2024/MoonBase.jpg",
+    "alt": "A photo from the moon base.",
+    "local": "/images/stages/07-7cd3d5cdd8.jpg"
+  },
+  "readme": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it.",
+    "Earth asset from @samk9632",
+    "Blender version 4.4.0"
+  ],
+  "blender_version": "Blender version 4.4.0",
+  "usage_terms": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it."
+  ],
+  "download_urls": [
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/MoonBase-05042024"
+    }
+  ],
+  "source_url": "https://sablefish357.com/stages/05-04-2024/05-04-2024.html",
+  "all_links": [
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "VIDEOS",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "STAGES",
+      "href": "https://sablefish357.com/stages.html"
+    },
+    {
+      "text": "BLOG",
+      "href": "https://sablefish357.com/blog.html"
+    },
+    {
+      "text": "HOME",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "CONTACT",
+      "href": "https://sablefish357.com/stages/05-04-2024/05-04-2024.html#bottom"
+    },
+    {
+      "text": "CHN",
+      "href": "https://sablefish357.com/stages/05-04-2024/05-04-2024-zh.html"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/MoonBase-05042024"
+    },
+    {
+      "text": "Youtube",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "Bilibili",
+      "href": "https://space.bilibili.com/49323671"
+    },
+    {
+      "text": "ArtStation",
+      "href": "https://www.artstation.com/sablefish"
+    },
+    {
+      "text": "[email protected]",
+      "href": "https://sablefish357.com/cdn-cgi/l/email-protection#314250535d545758425902040671565c50585d1f525e5c"
+    },
+    {
+      "text": "Top",
+      "href": "https://sablefish357.com/stages/05-04-2024/05-04-2024.html#top"
+    },
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/stages/05-04-2024/05-04-2024.html#top"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/stages/05-04-2024/05-04-2024.html#top"
+    }
+  ]
+}

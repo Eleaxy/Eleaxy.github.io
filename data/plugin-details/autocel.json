@@ -1,0 +1,3166 @@
+{
+  "id": "autocel",
+  "route": "/plugins.html?plugin=autocel",
+  "identity": {
+    "name": "AutoCel",
+    "provider": "荒芜星谷",
+    "source_kind": "provider_documentation",
+    "source_ref": "archive"
+  },
+  "summary": [
+    {
+      "text": {
+        "en": "A Blender toon-material node library with Basic and Pro workflows for lighting, materials, outlines, and extensions.",
+        "zh": "面向 Blender 的卡通材质节点库，包含基础版和 Pro 版的光照、材质、描边与扩展流程。"
+      },
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    }
+  ],
+  "facts": {
+    "editions": {
+      "label": {
+        "en": "Editions",
+        "zh": "版本"
+      },
+      "value": "Basic / Pro",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    "node_count": {
+      "label": {
+        "en": "Documented nodes",
+        "zh": "节点数量"
+      },
+      "value": "40",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    }
+  },
+  "sections": [
+    {
+      "id": "capabilities",
+      "title": {
+        "en": "Core capabilities",
+        "zh": "核心能力"
+      },
+      "items": [
+        {
+          "en": "实时光照：绑定 Sun Light 与 World Ambient 后读取灯光颜色、强度与方向。",
+          "zh": "实时光照：绑定 Sun Light 与 World Ambient 后读取灯光颜色、强度与方向。"
+        },
+        {
+          "en": "无损替换：从 BSDF 或 MMD 材质继承基础色、贴图、粗糙度与金属度等输入。",
+          "zh": "无损替换：从 BSDF 或 MMD 材质继承基础色、贴图、粗糙度与金属度等输入。"
+        },
+        {
+          "en": "节点生态：主着色器、光照模型、颜色效果器、法向工具、扩展链与合成节点。",
+          "zh": "节点生态：主着色器、光照模型、颜色效果器、法向工具、扩展链与合成节点。"
+        },
+        {
+          "en": "Pro 扩展：多光源 UI、扩展模块、Curvature 与 Material_Outline。",
+          "zh": "Pro 扩展：多光源 UI、扩展模块、Curvature 与 Material_Outline。"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "editions",
+      "title": {
+        "en": "Basic / Pro comparison",
+        "zh": "基础版／Pro 对比"
+      },
+      "items": [
+        {
+          "en": "基础版适合单日光与环境光的角色或场景卡通渲染，并保留主要着色器与基础效果器。",
+          "zh": "基础版适合单日光与环境光的角色或场景卡通渲染，并保留主要着色器与基础效果器。"
+        },
+        {
+          "en": "Pro 版声明多光源 UI、扩展模块、Curvature 与 Material_Outline 为独占能力。",
+          "zh": "Pro 版声明多光源 UI、扩展模块、Curvature 与 Material_Outline 为独占能力。"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "quick-start",
+      "title": {
+        "en": "Quick start",
+        "zh": "快速开始"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "title": {
+            "en": "绑定光照",
+            "zh": "绑定光照"
+          },
+          "body": {
+            "en": "点击一键创建光照环境。",
+            "zh": "点击一键创建光照环境。"
+          }
+        },
+        {
+          "step": 2,
+          "title": {
+            "en": "选择模型",
+            "zh": "选择模型"
+          },
+          "body": {
+            "en": "选中需要卡通化的模型或 MMD 角色。",
+            "zh": "选中需要卡通化的模型或 MMD 角色。"
+          }
+        },
+        {
+          "step": 3,
+          "title": {
+            "en": "替换材质",
+            "zh": "替换材质"
+          },
+          "body": {
+            "en": "通用材质或 MMD 材质一键替换。",
+            "zh": "通用材质或 MMD 材质一键替换。"
+          }
+        },
+        {
+          "step": 4,
+          "title": {
+            "en": "添加描边",
+            "zh": "添加描边"
+          },
+          "body": {
+            "en": "使用几何描边或 MMD 描边。",
+            "zh": "使用几何描边或 MMD 描边。"
+          }
+        },
+        {
+          "step": 5,
+          "title": {
+            "en": "应用色彩映射",
+            "zh": "应用色彩映射"
+          },
+          "body": {
+            "en": "启用适合卡通渲染的 Tonemapping。",
+            "zh": "启用适合卡通渲染的 Tonemapping。"
+          }
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "workflows",
+      "title": {
+        "en": "Documented workflows",
+        "zh": "已记录的工作流"
+      },
+      "items": [
+        {
+          "en": "MMD 一分钟流程：绑定灯光、替换 MMD 智能材质、创建 MMD 描边、应用卡通色彩映射；脸部可接入 SDF 或脸部法向优化。",
+          "zh": "MMD 一分钟流程：绑定灯光、替换 MMD 智能材质、创建 MMD 描边、应用卡通色彩映射；脸部可接入 SDF 或脸部法向优化。"
+        },
+        {
+          "en": "Pro 多光源流程：通过扩展光源 UI 和多光源照明扩展响应点光的位置、颜色、能量与半径衰减。",
+          "zh": "Pro 多光源流程：通过扩展光源 UI 和多光源照明扩展响应点光的位置、颜色、能量与半径衰减。"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "face-shadow",
+      "title": {
+        "en": "Face shadow material",
+        "zh": "脸部阴影材质"
+      },
+      "items": [
+        {
+          "en": "SDF 贴图方案：设为 Non-Color 后连接到主着色器阴影贴图或自定义阴影接口。",
+          "zh": "SDF 贴图方案：设为 Non-Color 后连接到主着色器阴影贴图或自定义阴影接口。"
+        },
+        {
+          "en": "脸部法向优化：无需额外贴图，柔化复杂脸部结构的碎裂阴影，并在多光源下更友好。",
+          "zh": "脸部法向优化：无需额外贴图，柔化复杂脸部结构的碎裂阴影，并在多光源下更友好。"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "compositor",
+      "title": {
+        "en": "Compositor entries",
+        "zh": "合成器条目"
+      },
+      "items": [
+        {
+          "en": "Rim_2D：屏幕空间偏移的 2D 边缘光。",
+          "zh": "Rim_2D：屏幕空间偏移的 2D 边缘光。"
+        },
+        {
+          "en": "辉光：按遮罩、范围、模式与强度扩散高亮。",
+          "zh": "辉光：按遮罩、范围、模式与强度扩散高亮。"
+        },
+        {
+          "en": "Tonemapping：面向卡通画面的色调映射，推荐配合 Standard 色彩管理。",
+          "zh": "Tonemapping：面向卡通画面的色调映射，推荐配合 Standard 色彩管理。"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    }
+  ],
+  "sources": {
+    "archive": {
+      "kind": "provider_documentation",
+      "filename": "intelligent-cartoon-shader.zip"
+    }
+  },
+  "assets": {
+    "logos": [
+      {
+        "id": "basic-logo",
+        "label": {
+          "en": "AutoCel Basic logo",
+          "zh": "AutoCel 基础版标志"
+        },
+        "source_entry": "Image/autocel_basics_logo.png",
+        "target": "logos/autocel-basics-logo.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "pro-logo",
+        "label": {
+          "en": "AutoCel Pro logo",
+          "zh": "AutoCel Pro 标志"
+        },
+        "source_entry": "Image/autocel_pro_logo.png",
+        "target": "logos/autocel-pro-logo.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      }
+    ],
+    "panels": [
+      {
+        "id": "basic-mmd-material",
+        "label": {
+          "en": "Basic MMD material panel",
+          "zh": "基础版 MMD 材质面板"
+        },
+        "source_entry": "Image/panel/basics_MMD材质.png",
+        "target": "panels/basics-mmd-material.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "basic-lighting-info",
+        "label": {
+          "en": "Basic lighting information panel",
+          "zh": "基础版光照信息面板"
+        },
+        "source_entry": "Image/panel/basics_光照信息.png",
+        "target": "panels/basics-lighting-info.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "basic-general-material",
+        "label": {
+          "en": "Basic general material panel",
+          "zh": "基础版通用材质面板"
+        },
+        "source_entry": "Image/panel/basics_通用材质.png",
+        "target": "panels/basics-general-material.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "pro-mmd-material",
+        "label": {
+          "en": "Pro MMD material panel",
+          "zh": "Pro MMD 材质面板"
+        },
+        "source_entry": "Image/panel/Pro_MMD材质.png",
+        "target": "panels/pro-mmd-material.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "pro-lighting-info",
+        "label": {
+          "en": "Pro lighting information panel",
+          "zh": "Pro 光照信息面板"
+        },
+        "source_entry": "Image/panel/Pro_光照信息.png",
+        "target": "panels/pro-lighting-info.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "pro-general-material",
+        "label": {
+          "en": "Pro general material panel",
+          "zh": "Pro 通用材质面板"
+        },
+        "source_entry": "Image/panel/Pro_通用材质.png",
+        "target": "panels/pro-general-material.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "toon-color-mapping",
+        "label": {
+          "en": "Toon color mapping panel",
+          "zh": "卡通色彩映射面板"
+        },
+        "source_entry": "Image/panel/卡通色彩映射.png",
+        "target": "panels/toon-color-mapping.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      }
+    ],
+    "renders": [
+      {
+        "id": "paimon",
+        "label": {
+          "en": "AutoCel render preview",
+          "zh": "AutoCel 渲染预览"
+        },
+        "source_entry": "Image/render/派蒙.png",
+        "target": "renders/paimon.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "firefly",
+        "label": {
+          "en": "Pro multi-light render preview",
+          "zh": "Pro 多光源渲染预览"
+        },
+        "source_entry": "Image/render/流萤.png",
+        "target": "renders/firefly.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "silver-wolf",
+        "label": {
+          "en": "MMD render preview",
+          "zh": "MMD 渲染预览"
+        },
+        "source_entry": "Image/render/银狼.png",
+        "target": "renders/silver-wolf.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      }
+    ],
+    "node_previews": [
+      {
+        "id": "autocel-npr-shader",
+        "label": {
+          "en": "AutoCel NPR Shader preview",
+          "zh": "AutoCel NPR 着色器预览"
+        },
+        "source_entry": "Image/node/AutoCeL_NPR_Shader.png",
+        "target": "nodes/autocel-npr-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "autocel-mmd-shader",
+        "label": {
+          "en": "AutoCel MMD Shader preview",
+          "zh": "AutoCel MMD 着色器预览"
+        },
+        "source_entry": "Image/node/AutoCeL_MMD_Shader.png",
+        "target": "nodes/autocel-mmd-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "autocel-basic-shader",
+        "label": {
+          "en": "AutoCel basic shader preview",
+          "zh": "AutoCel 基础着色器预览"
+        },
+        "source_entry": "Image/node/AutoCel基础着色器.png",
+        "target": "nodes/autocel-basic-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "autocel-skin-shader",
+        "label": {
+          "en": "AutoCel skin shader preview",
+          "zh": "AutoCel 皮肤着色器预览"
+        },
+        "source_entry": "Image/node/AutoCel皮肤着色器.png",
+        "target": "nodes/autocel-skin-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "autocel-genshin-style-shader",
+        "label": {
+          "en": "AutoCel Genshin-style shader preview",
+          "zh": "AutoCel 类原神着色器预览"
+        },
+        "source_entry": "Image/node/AutoCel类原神着色器.png",
+        "target": "nodes/autocel-genshin-style-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "autocel-general-shader",
+        "label": {
+          "en": "AutoCel general shader preview",
+          "zh": "AutoCel 通用着色器预览"
+        },
+        "source_entry": "Image/node/AutoCel通用着色器.png",
+        "target": "nodes/autocel-general-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "autocel-metal-shader",
+        "label": {
+          "en": "AutoCel metal shader preview",
+          "zh": "AutoCel 金属着色器预览"
+        },
+        "source_entry": "Image/node/AutoCel金属着色器.png",
+        "target": "nodes/autocel-metal-shader.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "ao-mix",
+        "label": {
+          "en": "AO mix preview",
+          "zh": "环境遮蔽混合预览"
+        },
+        "source_entry": "Image/node/AO混合.png",
+        "target": "nodes/ao-mix.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "curvature",
+        "label": {
+          "en": "Curvature preview",
+          "zh": "曲率预览"
+        },
+        "source_entry": "Image/node/Curvature.png",
+        "target": "nodes/curvature.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "material-outline",
+        "label": {
+          "en": "Material Outline preview",
+          "zh": "材质描边预览"
+        },
+        "source_entry": "Image/node/Material_Outline.png",
+        "target": "nodes/material-outline.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "geometric-rim-light",
+        "label": {
+          "en": "Geometric rim light preview",
+          "zh": "几何边缘光预览"
+        },
+        "source_entry": "Image/node/几何边缘光.png",
+        "target": "nodes/geometric-rim-light.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "screen-offset-rim-light",
+        "label": {
+          "en": "Screen-offset rim light preview",
+          "zh": "屏幕偏移边缘光预览"
+        },
+        "source_entry": "Image/node/屏幕偏移边缘光.png",
+        "target": "nodes/screen-offset-rim-light.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "rim-light",
+        "label": {
+          "en": "Rim light preview",
+          "zh": "边缘光预览"
+        },
+        "source_entry": "Image/node/轮廓光.png",
+        "target": "nodes/rim-light.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "fog-field",
+        "label": {
+          "en": "Fog field preview",
+          "zh": "雾场预览"
+        },
+        "source_entry": "Image/node/雾场.png",
+        "target": "nodes/fog-field.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "specular",
+        "label": {
+          "en": "Specular preview",
+          "zh": "高光预览"
+        },
+        "source_entry": "Image/node/高光.png",
+        "target": "nodes/specular.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "lighting-color-extension",
+        "label": {
+          "en": "Lighting color extension preview",
+          "zh": "光照调色扩展预览"
+        },
+        "source_entry": "Image/node/光照调色扩展.png",
+        "target": "nodes/lighting-color-extension.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "multi-lighting-extension",
+        "label": {
+          "en": "Multi-lighting extension preview",
+          "zh": "多光源照明扩展预览"
+        },
+        "source_entry": "Image/node/多光源照明扩展.png",
+        "target": "nodes/multi-lighting-extension.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "custom-light-extension",
+        "label": {
+          "en": "Custom light extension preview",
+          "zh": "自定义光源扩展预览"
+        },
+        "source_entry": "Image/node/自定义光源扩展.png",
+        "target": "nodes/custom-light-extension.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "color-transform-extension",
+        "label": {
+          "en": "Color transform extension preview",
+          "zh": "色彩变换扩展预览"
+        },
+        "source_entry": "Image/node/色彩变换扩展.png",
+        "target": "nodes/color-transform-extension.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "rim-light-extension",
+        "label": {
+          "en": "Rim light extension preview",
+          "zh": "边缘光扩展预览"
+        },
+        "source_entry": "Image/node/边缘光扩展.png",
+        "target": "nodes/rim-light-extension.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "rim-2d",
+        "label": {
+          "en": "Rim 2D preview",
+          "zh": "二维边缘光预览"
+        },
+        "source_entry": "Image/node/Rim_2D.png",
+        "target": "nodes/rim-2d.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "tonemapping",
+        "label": {
+          "en": "Tonemapping preview",
+          "zh": "色调映射预览"
+        },
+        "source_entry": "Image/node/Tonemapping.png",
+        "target": "nodes/tonemapping.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      },
+      {
+        "id": "bloom",
+        "label": {
+          "en": "Bloom preview",
+          "zh": "辉光预览"
+        },
+        "source_entry": "Image/node/辉光.png",
+        "target": "nodes/bloom.png",
+        "source_kind": "provider_documentation",
+        "source_ref": "archive"
+      }
+    ]
+  },
+  "category_labels": {
+    "intelligent-shaders": {
+      "en": "Intelligent Shaders",
+      "zh": "智能着色器"
+    },
+    "advanced-other": {
+      "en": "Advanced Other",
+      "zh": "高级其它"
+    },
+    "advanced-input": {
+      "en": "Advanced Input",
+      "zh": "高级输入"
+    },
+    "advanced-lighting-model": {
+      "en": "Advanced Lighting Models",
+      "zh": "高级光照模型"
+    },
+    "shader-effects": {
+      "en": "Shader Effects",
+      "zh": "着色效果器"
+    },
+    "extensions": {
+      "en": "Extensions",
+      "zh": "扩展模块"
+    },
+    "compositor-effects": {
+      "en": "Compositor Effects",
+      "zh": "合成器效果"
+    }
+  },
+  "nodes": [
+    {
+      "id": "autocel-npr-shader",
+      "name": {
+        "en": "AutoCel_NPR_Shader",
+        "zh": "AutoCel NPR 着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "完整的通用智能卡通着色器，外观和逻辑接近原理化 BSDF，输出 Shader、颜色和 Alpha。",
+        "zh": "完整的通用智能卡通着色器，外观和逻辑接近原理化 BSDF，输出 Shader、颜色和 Alpha。"
+      },
+      "usage": {
+        "en": "适合普通 PBR 模型一键替换。可控制光影阈值、过渡、金属光泽、高光、阴影分界和轮廓光。",
+        "zh": "适合普通 PBR 模型一键替换。可控制光影阈值、过渡、金属光泽、高光、阴影分界和轮廓光。"
+      },
+      "inputs": [
+        {
+          "en": "Base Color",
+          "zh": "基础颜色"
+        },
+        {
+          "en": "Metallic",
+          "zh": "金属度"
+        },
+        {
+          "en": "Roughness",
+          "zh": "粗糙度"
+        },
+        {
+          "en": "Alpha",
+          "zh": "透明度"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "光影过度",
+          "zh": "光影过度"
+        },
+        {
+          "en": "阴影贴图",
+          "zh": "阴影贴图"
+        },
+        {
+          "en": "金属光泽",
+          "zh": "金属光泽"
+        },
+        {
+          "en": "金属过度",
+          "zh": "金属过度"
+        },
+        {
+          "en": "阴影分界",
+          "zh": "阴影分界"
+        },
+        {
+          "en": "分界颜色",
+          "zh": "分界颜色"
+        },
+        {
+          "en": "分界宽度",
+          "zh": "分界宽度"
+        },
+        {
+          "en": "高光",
+          "zh": "高光"
+        },
+        {
+          "en": "高光强度",
+          "zh": "高光强度"
+        },
+        {
+          "en": "高光过渡",
+          "zh": "高光过渡"
+        },
+        {
+          "en": "轮廓光",
+          "zh": "轮廓光"
+        },
+        {
+          "en": "轮廓光强度",
+          "zh": "轮廓光强度"
+        },
+        {
+          "en": "轮廓光范围",
+          "zh": "轮廓光范围"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Shader",
+          "zh": "着色器"
+        },
+        {
+          "en": "颜色",
+          "zh": "颜色"
+        },
+        {
+          "en": "Alpha",
+          "zh": "透明度"
+        }
+      ],
+      "preview": "nodes/autocel-npr-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "autocel-mmd-shader",
+      "name": {
+        "en": "AutoCel_MMD_Shader",
+        "zh": "AutoCel MMD 着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "专为 MMD 材质替换设计的智能着色器，兼容 Toon Tex、Sphere Tex、透明度和双面渲染。",
+        "zh": "专为 MMD 材质替换设计的智能着色器，兼容 Toon Tex、Sphere Tex、透明度和双面渲染。"
+      },
+      "usage": {
+        "en": "用于 MMD 模型一键卡通化。可接入 SDF 贴图或自定义阴影来修正脸部光影。",
+        "zh": "用于 MMD 模型一键卡通化。可接入 SDF 贴图或自定义阴影来修正脸部光影。"
+      },
+      "inputs": [
+        {
+          "en": "Closure",
+          "zh": "闭包"
+        },
+        {
+          "en": "Toon Tex Fac",
+          "zh": "卡通纹理系数"
+        },
+        {
+          "en": "Sphere Tex Fac",
+          "zh": "球体纹理系数"
+        },
+        {
+          "en": "Sphere Mul/Add",
+          "zh": "球体乘法/加法"
+        },
+        {
+          "en": "Double Sided",
+          "zh": "双面"
+        },
+        {
+          "en": "Alpha",
+          "zh": "透明度"
+        },
+        {
+          "en": "自定义光照",
+          "zh": "自定义光照"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "光影过渡",
+          "zh": "光影过渡"
+        },
+        {
+          "en": "阴影贴图输入",
+          "zh": "阴影贴图输入"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Shader",
+          "zh": "着色器"
+        },
+        {
+          "en": "Color",
+          "zh": "颜色"
+        },
+        {
+          "en": "Alpha",
+          "zh": "透明度"
+        }
+      ],
+      "preview": "nodes/autocel-mmd-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "autocel-basic-shader",
+      "name": {
+        "en": "AutoCel基础着色器",
+        "zh": "AutoCel基础着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "轻量级基础卡通着色器，保留基础色、法向、光照扩展和阴影控制。",
+        "zh": "轻量级基础卡通着色器，保留基础色、法向、光照扩展和阴影控制。"
+      },
+      "usage": {
+        "en": "适合不需要金属、高光、轮廓光等复杂模块的简洁材质。",
+        "zh": "适合不需要金属、高光、轮廓光等复杂模块的简洁材质。"
+      },
+      "inputs": [
+        {
+          "en": "Base Color",
+          "zh": "基础颜色"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "自定义光照",
+          "zh": "自定义光照"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "光影过度",
+          "zh": "光影过度"
+        },
+        {
+          "en": "阴影贴图",
+          "zh": "阴影贴图"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "颜色",
+          "zh": "颜色"
+        },
+        {
+          "en": "光照信息输出",
+          "zh": "光照信息输出"
+        }
+      ],
+      "preview": "nodes/autocel-basic-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "autocel-general-shader",
+      "name": {
+        "en": "AutoCel通用着色器",
+        "zh": "AutoCel通用着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "节点资产版通用卡通着色器，输出颜色和光照信息，适合在节点树内继续组合效果器。",
+        "zh": "节点资产版通用卡通着色器，输出颜色和光照信息，适合在节点树内继续组合效果器。"
+      },
+      "usage": {
+        "en": "用于自定义材质网络，常作为颜色效果器链路的主材质核心。",
+        "zh": "用于自定义材质网络，常作为颜色效果器链路的主材质核心。"
+      },
+      "inputs": [
+        {
+          "en": "Base Color",
+          "zh": "基础颜色"
+        },
+        {
+          "en": "Metallic",
+          "zh": "金属度"
+        },
+        {
+          "en": "Roughness",
+          "zh": "粗糙度"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "自定义光照",
+          "zh": "自定义光照"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "光影过度",
+          "zh": "光影过度"
+        },
+        {
+          "en": "阴影贴图",
+          "zh": "阴影贴图"
+        },
+        {
+          "en": "金属光泽",
+          "zh": "金属光泽"
+        },
+        {
+          "en": "金属过度",
+          "zh": "金属过度"
+        },
+        {
+          "en": "阴影分界",
+          "zh": "阴影分界"
+        },
+        {
+          "en": "分界颜色",
+          "zh": "分界颜色"
+        },
+        {
+          "en": "分界宽度",
+          "zh": "分界宽度"
+        },
+        {
+          "en": "高光",
+          "zh": "高光"
+        },
+        {
+          "en": "高光强度",
+          "zh": "高光强度"
+        },
+        {
+          "en": "高光过渡",
+          "zh": "高光过渡"
+        },
+        {
+          "en": "轮廓光",
+          "zh": "轮廓光"
+        },
+        {
+          "en": "轮廓光强度",
+          "zh": "轮廓光强度"
+        },
+        {
+          "en": "轮廓光范围",
+          "zh": "轮廓光范围"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "颜色",
+          "zh": "颜色"
+        },
+        {
+          "en": "光照信息输出",
+          "zh": "光照信息输出"
+        }
+      ],
+      "preview": "nodes/autocel-general-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "autocel-skin-shader",
+      "name": {
+        "en": "AutoCel皮肤着色器",
+        "zh": "AutoCel皮肤着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "为皮肤材质准备的卡通着色器，包含透光与 SSS 风格控制。",
+        "zh": "为皮肤材质准备的卡通着色器，包含透光与 SSS 风格控制。"
+      },
+      "usage": {
+        "en": "用于角色皮肤、脸部和需要柔和透光的区域。可调表面颜色、透光颜色、SSS 强度和范围。",
+        "zh": "用于角色皮肤、脸部和需要柔和透光的区域。可调表面颜色、透光颜色、SSS 强度和范围。"
+      },
+      "inputs": [
+        {
+          "en": "Menu",
+          "zh": "菜单"
+        },
+        {
+          "en": "Base Color",
+          "zh": "基础颜色"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "光影过渡",
+          "zh": "光影过渡"
+        },
+        {
+          "en": "阴影贴图",
+          "zh": "阴影贴图"
+        },
+        {
+          "en": "自定义阴影",
+          "zh": "自定义阴影"
+        },
+        {
+          "en": "表面颜色",
+          "zh": "表面颜色"
+        },
+        {
+          "en": "透光颜色",
+          "zh": "透光颜色"
+        },
+        {
+          "en": "透光强度",
+          "zh": "透光强度"
+        },
+        {
+          "en": "SSS强度",
+          "zh": "SSS强度"
+        },
+        {
+          "en": "SSS范围",
+          "zh": "SSS范围"
+        },
+        {
+          "en": "轮廓光",
+          "zh": "轮廓光"
+        },
+        {
+          "en": "轮廓光颜色",
+          "zh": "轮廓光颜色"
+        },
+        {
+          "en": "轮廓光强度",
+          "zh": "轮廓光强度"
+        },
+        {
+          "en": "轮廓光范围",
+          "zh": "轮廓光范围"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "颜色",
+          "zh": "颜色"
+        },
+        {
+          "en": "光照信息输出",
+          "zh": "光照信息输出"
+        }
+      ],
+      "preview": "nodes/autocel-skin-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "autocel-genshin-style-shader",
+      "name": {
+        "en": "AutoCel类原神着色器",
+        "zh": "AutoCel类原神着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "面向日系游戏角色风格的变种着色器，强调阴影分界和透光表现。",
+        "zh": "面向日系游戏角色风格的变种着色器，强调阴影分界和透光表现。"
+      },
+      "usage": {
+        "en": "适合类原神角色皮肤、服装和高饱和阴影边缘效果。",
+        "zh": "适合类原神角色皮肤、服装和高饱和阴影边缘效果。"
+      },
+      "inputs": [
+        {
+          "en": "Base Color",
+          "zh": "基础颜色"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影过渡",
+          "zh": "光影过渡"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "阴影贴图",
+          "zh": "阴影贴图"
+        },
+        {
+          "en": "自定义阴影",
+          "zh": "自定义阴影"
+        },
+        {
+          "en": "阴影分界",
+          "zh": "阴影分界"
+        },
+        {
+          "en": "分界颜色",
+          "zh": "分界颜色"
+        },
+        {
+          "en": "分界强度",
+          "zh": "分界强度"
+        },
+        {
+          "en": "分界范围",
+          "zh": "分界范围"
+        },
+        {
+          "en": "SSS",
+          "zh": "次表面散射"
+        },
+        {
+          "en": "表面颜色",
+          "zh": "表面颜色"
+        },
+        {
+          "en": "透光颜色",
+          "zh": "透光颜色"
+        },
+        {
+          "en": "SSS强度",
+          "zh": "SSS强度"
+        },
+        {
+          "en": "SSS范围",
+          "zh": "SSS范围"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "颜色",
+          "zh": "颜色"
+        },
+        {
+          "en": "光照信息输出",
+          "zh": "光照信息输出"
+        }
+      ],
+      "preview": "nodes/autocel-genshin-style-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "autocel-metal-shader",
+      "name": {
+        "en": "AutoCel金属着色器",
+        "zh": "AutoCel金属着色器"
+      },
+      "category_id": "intelligent-shaders",
+      "category": "智能着色器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "针对风格化金属反射设计的主着色器，提供金属模式、光泽缩放和偏移。",
+        "zh": "针对风格化金属反射设计的主着色器，提供金属模式、光泽缩放和偏移。"
+      },
+      "usage": {
+        "en": "适合武器、饰品、机甲与硬表面。过渡小可做电镀反光，过渡大可做磨砂金属。",
+        "zh": "适合武器、饰品、机甲与硬表面。过渡小可做电镀反光，过渡大可做磨砂金属。"
+      },
+      "inputs": [
+        {
+          "en": "Base Color",
+          "zh": "基础颜色"
+        },
+        {
+          "en": "Roughness",
+          "zh": "粗糙度"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "自定义光照",
+          "zh": "自定义光照"
+        },
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "阴影贴图",
+          "zh": "阴影贴图"
+        },
+        {
+          "en": "光影过度",
+          "zh": "光影过度"
+        },
+        {
+          "en": "金属模式",
+          "zh": "金属模式"
+        },
+        {
+          "en": "金属光泽",
+          "zh": "金属光泽"
+        },
+        {
+          "en": "金属过度",
+          "zh": "金属过度"
+        },
+        {
+          "en": "光泽缩放",
+          "zh": "光泽缩放"
+        },
+        {
+          "en": "光泽缩偏移",
+          "zh": "光泽缩偏移"
+        },
+        {
+          "en": "高光",
+          "zh": "高光"
+        },
+        {
+          "en": "高光强度",
+          "zh": "高光强度"
+        },
+        {
+          "en": "高光过渡",
+          "zh": "高光过渡"
+        },
+        {
+          "en": "轮廓光",
+          "zh": "轮廓光"
+        },
+        {
+          "en": "轮廓光强度",
+          "zh": "轮廓光强度"
+        },
+        {
+          "en": "轮廓光范围",
+          "zh": "轮廓光范围"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "颜色",
+          "zh": "颜色"
+        },
+        {
+          "en": "光照信息输出",
+          "zh": "光照信息输出"
+        }
+      ],
+      "preview": "nodes/autocel-metal-shader.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "point-lighting",
+      "name": {
+        "en": "点光照明",
+        "zh": "点光照明"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "Pro",
+        "zh": "Pro 版"
+      },
+      "summary": {
+        "en": "计算点光颜色、亮度、位置、半径、阴影和方向因子的照明输出。",
+        "zh": "计算点光颜色、亮度、位置、半径、阴影和方向因子的照明输出。"
+      },
+      "usage": {
+        "en": "用于多光源扩展内部或手动构建点光响应。",
+        "zh": "用于多光源扩展内部或手动构建点光响应。"
+      },
+      "inputs": [
+        {
+          "en": "Color",
+          "zh": "颜色"
+        },
+        {
+          "en": "亮度",
+          "zh": "亮度"
+        },
+        {
+          "en": "位置",
+          "zh": "位置"
+        },
+        {
+          "en": "半径",
+          "zh": "半径"
+        },
+        {
+          "en": "阴影",
+          "zh": "阴影"
+        },
+        {
+          "en": "矢量",
+          "zh": "矢量"
+        },
+        {
+          "en": "Factor",
+          "zh": "系数"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照输出",
+          "zh": "光照输出"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "lighting-info",
+      "name": {
+        "en": "光照信息",
+        "zh": "光照信息"
+      },
+      "category_id": "advanced-input",
+      "category": "高级输入",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "读取绑定日光与环境光数据，输出主光颜色、强度、环境光颜色和强度。",
+        "zh": "读取绑定日光与环境光数据，输出主光颜色、强度、环境光颜色和强度。"
+      },
+      "usage": {
+        "en": "与自定义光源扩展、着色 Basis 或自建光照网络配合。",
+        "zh": "与自定义光源扩展、着色 Basis 或自建光照网络配合。"
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "en": "主光颜色",
+          "zh": "主光颜色"
+        },
+        {
+          "en": "主光强度",
+          "zh": "主光强度"
+        },
+        {
+          "en": "环境光颜色",
+          "zh": "环境光颜色"
+        },
+        {
+          "en": "环境光强度",
+          "zh": "环境光强度"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "lambert-lighting",
+      "name": {
+        "en": "兰伯特光照模型",
+        "zh": "兰伯特光照模型"
+      },
+      "category_id": "advanced-lighting-model",
+      "category": "高级光照模型",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "经典漫反射光照模型，基于法向输出光照 Value。",
+        "zh": "经典漫反射光照模型，基于法向输出光照 Value。"
+      },
+      "usage": {
+        "en": "用于基础卡通明暗、二分前的连续光照输入。",
+        "zh": "用于基础卡通明暗、二分前的连续光照输入。"
+      },
+      "inputs": [
+        {
+          "en": "法向",
+          "zh": "法向"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Value",
+          "zh": "数值"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "blinn-phong-lighting",
+      "name": {
+        "en": "布林冯光照模型",
+        "zh": "布林冯光照模型"
+      },
+      "category_id": "advanced-lighting-model",
+      "category": "高级光照模型",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "经典经验镜面反射模型，用于生成高光分布。",
+        "zh": "经典经验镜面反射模型，用于生成高光分布。"
+      },
+      "usage": {
+        "en": "适合塑料、玻璃、金属等亮面反光的基础高光计算。",
+        "zh": "适合塑料、玻璃、金属等亮面反光的基础高光计算。"
+      },
+      "inputs": [
+        {
+          "en": "法向",
+          "zh": "法向"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Value",
+          "zh": "数值"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "toon-lighting",
+      "name": {
+        "en": "卡通光照模型",
+        "zh": "卡通光照模型"
+      },
+      "category_id": "advanced-lighting-model",
+      "category": "高级光照模型",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "将法向、阴影和贴图输入转换为卡通光照信息。",
+        "zh": "将法向、阴影和贴图输入转换为卡通光照信息。"
+      },
+      "usage": {
+        "en": "可控制光影过渡、位置、级数，以及阴影贴图输入。",
+        "zh": "可控制光影过渡、位置、级数，以及阴影贴图输入。"
+      },
+      "inputs": [
+        {
+          "en": "法向",
+          "zh": "法向"
+        },
+        {
+          "en": "接收阴影",
+          "zh": "接收阴影"
+        },
+        {
+          "en": "Menu",
+          "zh": "菜单"
+        },
+        {
+          "en": "光影过渡",
+          "zh": "光影过渡"
+        },
+        {
+          "en": "光影位置",
+          "zh": "光影位置"
+        },
+        {
+          "en": "光影级数",
+          "zh": "光影级数"
+        },
+        {
+          "en": "正片叠底\\最小值",
+          "zh": "正片叠底\\最小值"
+        },
+        {
+          "en": "阴影贴图输入",
+          "zh": "阴影贴图输入"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照信息",
+          "zh": "光照信息"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "curvature",
+      "name": {
+        "en": "Curvature",
+        "zh": "曲率"
+      },
+      "category_id": "advanced-input",
+      "category": "高级输入",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "基于射线采样输出曲率、凸起、凹谷和场景边缘信息。",
+        "zh": "基于射线采样输出曲率、凸起、凹谷和场景边缘信息。"
+      },
+      "usage": {
+        "en": "适合边缘磨损、建筑亮边、新海诚风格场景边缘、面片轮廓与硬表面细节。",
+        "zh": "适合边缘磨损、建筑亮边、新海诚风格场景边缘、面片轮廓与硬表面细节。"
+      },
+      "inputs": [
+        {
+          "en": "Offset",
+          "zh": "偏移"
+        },
+        {
+          "en": "采样方向",
+          "zh": "采样方向"
+        },
+        {
+          "en": "缩放",
+          "zh": "缩放"
+        },
+        {
+          "en": "Thickness",
+          "zh": "厚度"
+        },
+        {
+          "en": "最大距离",
+          "zh": "最大距离"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Curvature",
+          "zh": "曲率"
+        },
+        {
+          "en": "Spikes",
+          "zh": "尖峰"
+        },
+        {
+          "en": "Valley",
+          "zh": "谷值"
+        },
+        {
+          "en": "Scene Rim",
+          "zh": "场景边缘光"
+        }
+      ],
+      "preview": "nodes/curvature.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "material-outline",
+      "name": {
+        "en": "Material_Outline",
+        "zh": "材质描边"
+      },
+      "category_id": "advanced-input",
+      "category": "高级输入",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "在材质内部生成描边遮罩，可计算内部结构线。",
+        "zh": "在材质内部生成描边遮罩，可计算内部结构线。"
+      },
+      "usage": {
+        "en": "适合硬表面、建筑、机械结构和需要材质级内部描边的场景物体。",
+        "zh": "适合硬表面、建筑、机械结构和需要材质级内部描边的场景物体。"
+      },
+      "inputs": [
+        {
+          "en": "深度",
+          "zh": "深度"
+        },
+        {
+          "en": "Offset",
+          "zh": "偏移"
+        },
+        {
+          "en": "仅局部",
+          "zh": "仅局部"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "描边",
+          "zh": "描边"
+        }
+      ],
+      "preview": "nodes/material-outline.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "kk-specular",
+      "name": {
+        "en": "KK高光模型",
+        "zh": "KK高光模型"
+      },
+      "category_id": "advanced-lighting-model",
+      "category": "高级光照模型",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "面向动漫头发等条状高光的特殊高光模型。",
+        "zh": "面向动漫头发等条状高光的特殊高光模型。"
+      },
+      "usage": {
+        "en": "通过高光位置和范围制作类似日系游戏头发天使环的高光。",
+        "zh": "通过高光位置和范围制作类似日系游戏头发天使环的高光。"
+      },
+      "inputs": [
+        {
+          "en": "高光位置",
+          "zh": "高光位置"
+        },
+        {
+          "en": "高光范围",
+          "zh": "高光范围"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Value",
+          "zh": "数值"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "bangs-shadow",
+      "name": {
+        "en": "刘海阴影",
+        "zh": "刘海阴影"
+      },
+      "category_id": "advanced-input",
+      "category": "高级输入",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "用于生成刘海或头发投射在脸部的风格化阴影。",
+        "zh": "用于生成刘海或头发投射在脸部的风格化阴影。"
+      },
+      "usage": {
+        "en": "通过偏移控制阴影位置，可作为脸部光影修饰输入。",
+        "zh": "通过偏移控制阴影位置，可作为脸部光影修饰输入。"
+      },
+      "inputs": [
+        {
+          "en": "偏移",
+          "zh": "偏移"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Result",
+          "zh": "结果"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "shadow-capture",
+      "name": {
+        "en": "阴影获取",
+        "zh": "阴影获取"
+      },
+      "category_id": "advanced-input",
+      "category": "高级输入",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "获取场景投影影响并输出阴影 Value。",
+        "zh": "获取场景投影影响并输出阴影 Value。"
+      },
+      "usage": {
+        "en": "用于自定义阴影混合、阴影贴图或特殊二分控制。",
+        "zh": "用于自定义阴影混合、阴影贴图或特殊二分控制。"
+      },
+      "inputs": [
+        {
+          "en": "阴影偏移",
+          "zh": "阴影偏移"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Value",
+          "zh": "数值"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "ao-mix",
+      "name": {
+        "en": "AO混合",
+        "zh": "AO混合"
+      },
+      "category_id": "shader-effects",
+      "category": "着色效果器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "将 AO 颜色按强度和范围混合到输入颜色。",
+        "zh": "将 AO 颜色按强度和范围混合到输入颜色。"
+      },
+      "usage": {
+        "en": "用于增加卡通材质的接触阴影、褶皱和凹陷层次。",
+        "zh": "用于增加卡通材质的接触阴影、褶皱和凹陷层次。"
+      },
+      "inputs": [
+        {
+          "en": "输入",
+          "zh": "输入"
+        },
+        {
+          "en": "AO颜色",
+          "zh": "AO颜色"
+        },
+        {
+          "en": "AO强度",
+          "zh": "AO强度"
+        },
+        {
+          "en": "AO范围",
+          "zh": "AO范围"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "输出",
+          "zh": "输出"
+        }
+      ],
+      "preview": "nodes/ao-mix.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "geometric-rim-light",
+      "name": {
+        "en": "几何边缘光",
+        "zh": "几何边缘光"
+      },
+      "category_id": "shader-effects",
+      "category": "着色效果器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "基于几何法向计算边缘光，类似在角色侧后方增加补光。",
+        "zh": "基于几何法向计算边缘光，类似在角色侧后方增加补光。"
+      },
+      "usage": {
+        "en": "适合稳定、结构感明确的边缘高亮，可调整颜色、强度、范围、过渡和方向。",
+        "zh": "适合稳定、结构感明确的边缘高亮，可调整颜色、强度、范围、过渡和方向。"
+      },
+      "inputs": [
+        {
+          "en": "输入",
+          "zh": "输入"
+        },
+        {
+          "en": "边缘光颜色",
+          "zh": "边缘光颜色"
+        },
+        {
+          "en": "Menu",
+          "zh": "菜单"
+        },
+        {
+          "en": "边缘光偏移",
+          "zh": "边缘光偏移"
+        },
+        {
+          "en": "边缘光方位",
+          "zh": "边缘光方位"
+        },
+        {
+          "en": "边缘光强度",
+          "zh": "边缘光强度"
+        },
+        {
+          "en": "边缘光范围",
+          "zh": "边缘光范围"
+        },
+        {
+          "en": "边缘光过渡",
+          "zh": "边缘光过渡"
+        },
+        {
+          "en": "法向",
+          "zh": "法向"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "输出",
+          "zh": "输出"
+        }
+      ],
+      "preview": "nodes/geometric-rim-light.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "screen-offset-rim-light",
+      "name": {
+        "en": "屏幕偏移边缘光",
+        "zh": "屏幕偏移边缘光"
+      },
+      "category_id": "shader-effects",
+      "category": "着色效果器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "通过屏幕或深度偏移生成边缘光，不强依赖模型布线。",
+        "zh": "通过屏幕或深度偏移生成边缘光，不强依赖模型布线。"
+      },
+      "usage": {
+        "en": "适合头发、树叶、纸片等薄片结构的贴纸感边缘光。",
+        "zh": "适合头发、树叶、纸片等薄片结构的贴纸感边缘光。"
+      },
+      "inputs": [
+        {
+          "en": "底色",
+          "zh": "底色"
+        },
+        {
+          "en": "边缘光颜色",
+          "zh": "边缘光颜色"
+        },
+        {
+          "en": "Menu",
+          "zh": "菜单"
+        },
+        {
+          "en": "角度偏移",
+          "zh": "角度偏移"
+        },
+        {
+          "en": "边缘光方位",
+          "zh": "边缘光方位"
+        },
+        {
+          "en": "边缘光强度",
+          "zh": "边缘光强度"
+        },
+        {
+          "en": "偏移",
+          "zh": "偏移"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "输出",
+          "zh": "输出"
+        }
+      ],
+      "preview": "nodes/screen-offset-rim-light.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "rim-light",
+      "name": {
+        "en": "轮廓光",
+        "zh": "轮廓光"
+      },
+      "category_id": "shader-effects",
+      "category": "着色效果器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "菲涅尔式轮廓光效果器，为视角边缘叠加高亮。",
+        "zh": "菲涅尔式轮廓光效果器，为视角边缘叠加高亮。"
+      },
+      "usage": {
+        "en": "常用于光滑物体、皮肤边缘、金属和塑料材质的层次增强。",
+        "zh": "常用于光滑物体、皮肤边缘、金属和塑料材质的层次增强。"
+      },
+      "inputs": [
+        {
+          "en": "输入",
+          "zh": "输入"
+        },
+        {
+          "en": "轮廓光颜色",
+          "zh": "轮廓光颜色"
+        },
+        {
+          "en": "轮廓光强度",
+          "zh": "轮廓光强度"
+        },
+        {
+          "en": "轮廓光范围",
+          "zh": "轮廓光范围"
+        },
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Color",
+          "zh": "颜色"
+        }
+      ],
+      "preview": "nodes/rim-light.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "specular",
+      "name": {
+        "en": "高光",
+        "zh": "高光"
+      },
+      "category_id": "shader-effects",
+      "category": "着色效果器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "颜色链路中的高光效果器，支持高光模式、粗糙度、大小、强度和过渡。",
+        "zh": "颜色链路中的高光效果器，支持高光模式、粗糙度、大小、强度和过渡。"
+      },
+      "usage": {
+        "en": "用于在主颜色上叠加玻璃、塑料、金属或头发高光。",
+        "zh": "用于在主颜色上叠加玻璃、塑料、金属或头发高光。"
+      },
+      "inputs": [
+        {
+          "en": "输入",
+          "zh": "输入"
+        },
+        {
+          "en": "高光颜色",
+          "zh": "高光颜色"
+        },
+        {
+          "en": "高光模式",
+          "zh": "高光模式"
+        },
+        {
+          "en": "粗糙度",
+          "zh": "粗糙度"
+        },
+        {
+          "en": "高光大小",
+          "zh": "高光大小"
+        },
+        {
+          "en": "高光强度",
+          "zh": "高光强度"
+        },
+        {
+          "en": "高光过渡",
+          "zh": "高光过渡"
+        },
+        {
+          "en": "法向",
+          "zh": "法向"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Color",
+          "zh": "颜色"
+        }
+      ],
+      "preview": "nodes/specular.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "fog-field",
+      "name": {
+        "en": "雾场",
+        "zh": "雾场"
+      },
+      "category_id": "shader-effects",
+      "category": "着色效果器",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "根据距离和高度衰减混合雾场颜色。",
+        "zh": "根据距离和高度衰减混合雾场颜色。"
+      },
+      "usage": {
+        "en": "用于物体级风格化雾效、远景淡化、场景空气感和高度雾。",
+        "zh": "用于物体级风格化雾效、远景淡化、场景空气感和高度雾。"
+      },
+      "inputs": [
+        {
+          "en": "输入",
+          "zh": "输入"
+        },
+        {
+          "en": "雾场颜色",
+          "zh": "雾场颜色"
+        },
+        {
+          "en": "起始距离",
+          "zh": "起始距离"
+        },
+        {
+          "en": "最大距离",
+          "zh": "最大距离"
+        },
+        {
+          "en": "雾场强度",
+          "zh": "雾场强度"
+        },
+        {
+          "en": "高度衰减",
+          "zh": "高度衰减"
+        },
+        {
+          "en": "起始高度",
+          "zh": "起始高度"
+        },
+        {
+          "en": "结束高度",
+          "zh": "结束高度"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Result",
+          "zh": "结果"
+        }
+      ],
+      "preview": "nodes/fog-field.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "normal-normalize",
+      "name": {
+        "en": "自动法向规格化",
+        "zh": "自动法向规格化"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "对输入向量或法向进行规格化，输出稳定 Vector。",
+        "zh": "对输入向量或法向进行规格化，输出稳定 Vector。"
+      },
+      "usage": {
+        "en": "用于自定义法向链路，避免输入长度异常影响光照。",
+        "zh": "用于自定义法向链路，避免输入长度异常影响光照。"
+      },
+      "inputs": [
+        {
+          "en": "Input",
+          "zh": "输入"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Vector",
+          "zh": "向量"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "face-normal-optimize",
+      "name": {
+        "en": "脸部法向优化",
+        "zh": "脸部法向优化"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "混合并优化脸部法向，减少脸部复杂结构造成的碎裂阴影。",
+        "zh": "混合并优化脸部法向，减少脸部复杂结构造成的碎裂阴影。"
+      },
+      "usage": {
+        "en": "无需 SDF 贴图即可快速获得更平滑的日漫脸部阴影，多光源下更友好。",
+        "zh": "无需 SDF 贴图即可快速获得更平滑的日漫脸部阴影，多光源下更友好。"
+      },
+      "inputs": [
+        {
+          "en": "Normal",
+          "zh": "法线"
+        },
+        {
+          "en": "混合系数",
+          "zh": "混合系数"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "matcap",
+      "name": {
+        "en": "matcap",
+        "zh": "材质捕捉"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "将法向转换为 MatCap 风格采样所需的 Normal。",
+        "zh": "将法向转换为 MatCap 风格采样所需的 Normal。"
+      },
+      "usage": {
+        "en": "用于材质球贴图、Sphere Tex 或风格化反射效果。",
+        "zh": "用于材质球贴图、Sphere Tex 或风格化反射效果。"
+      },
+      "inputs": [
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "matcap-reflection",
+      "name": {
+        "en": "matcap_reflection",
+        "zh": "材质捕捉反射"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "用于反射方向的 MatCap 法向处理。",
+        "zh": "用于反射方向的 MatCap 法向处理。"
+      },
+      "usage": {
+        "en": "适合构建带视角反射的材质球或金属装饰效果。",
+        "zh": "适合构建带视角反射的材质球或金属装饰效果。"
+      },
+      "inputs": [
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Normal",
+          "zh": "法线"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "lighting-color-extension",
+      "name": {
+        "en": "光照调色扩展",
+        "zh": "光照调色扩展"
+      },
+      "category_id": "extensions",
+      "category": "扩展模块",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "在光照扩展链中分别偏移亮部和阴影颜色。",
+        "zh": "在光照扩展链中分别偏移亮部和阴影颜色。"
+      },
+      "usage": {
+        "en": "用于让皮肤阴影偏红、衣物阴影偏蓝等分区调色，避免死板单色二分。",
+        "zh": "用于让皮肤阴影偏红、衣物阴影偏蓝等分区调色，避免死板单色二分。"
+      },
+      "inputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "亮部颜色偏移",
+          "zh": "亮部颜色偏移"
+        },
+        {
+          "en": "阴影颜色偏移",
+          "zh": "阴影颜色偏移"
+        },
+        {
+          "en": "光照系数",
+          "zh": "光照系数"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        }
+      ],
+      "preview": "nodes/lighting-color-extension.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "multi-lighting-extension",
+      "name": {
+        "en": "多光源照明扩展",
+        "zh": "多光源照明扩展"
+      },
+      "category_id": "extensions",
+      "category": "扩展模块",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "将面板中绑定的 1-4 个扩展点光源叠加到智能材质。",
+        "zh": "将面板中绑定的 1-4 个扩展点光源叠加到智能材质。"
+      },
+      "usage": {
+        "en": "配合 Pro 多光源 UI 使用。法向混合为默认时有方向感，为 0 时主要按距离衰减，适合柔和氛围光。",
+        "zh": "配合 Pro 多光源 UI 使用。法向混合为默认时有方向感，为 0 时主要按距离衰减，适合柔和氛围光。"
+      },
+      "inputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "法向混合",
+          "zh": "法向混合"
+        },
+        {
+          "en": "阴影",
+          "zh": "阴影"
+        },
+        {
+          "en": "灯光1",
+          "zh": "灯光1"
+        },
+        {
+          "en": "灯光2",
+          "zh": "灯光2"
+        },
+        {
+          "en": "灯光3",
+          "zh": "灯光3"
+        },
+        {
+          "en": "灯光4",
+          "zh": "灯光4"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        }
+      ],
+      "preview": "nodes/multi-lighting-extension.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "custom-light-extension",
+      "name": {
+        "en": "自定义光源扩展",
+        "zh": "自定义光源扩展"
+      },
+      "category_id": "extensions",
+      "category": "扩展模块",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "接入 Light Info 或灯光接口，手动指定日光或点光作为扩展光源。",
+        "zh": "接入 Light Info 或灯光接口，手动指定日光或点光作为扩展光源。"
+      },
+      "usage": {
+        "en": "用于昼夜切换、舞台灯、点光主光，支持覆盖或相加式辅光模式，并可独立调强度、阈值和过渡。",
+        "zh": "用于昼夜切换、舞台灯、点光主光，支持覆盖或相加式辅光模式，并可独立调强度、阈值和过渡。"
+      },
+      "inputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "光照接口",
+          "zh": "光照接口"
+        },
+        {
+          "en": "辅光模式",
+          "zh": "辅光模式"
+        },
+        {
+          "en": "强度系数",
+          "zh": "强度系数"
+        },
+        {
+          "en": "接受阴影",
+          "zh": "接受阴影"
+        },
+        {
+          "en": "光影阈值",
+          "zh": "光影阈值"
+        },
+        {
+          "en": "光影过度",
+          "zh": "光影过度"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        }
+      ],
+      "preview": "nodes/custom-light-extension.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "color-transform-extension",
+      "name": {
+        "en": "色彩变换扩展",
+        "zh": "色彩变换扩展"
+      },
+      "category_id": "extensions",
+      "category": "扩展模块",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "在扩展链中对亮部和暗部分别进行 Hue、Saturation、明度调整。",
+        "zh": "在扩展链中对亮部和暗部分别进行 Hue、Saturation、明度调整。"
+      },
+      "usage": {
+        "en": "用于局部风格化调色、昼夜色调切换和阴影色彩设计。",
+        "zh": "用于局部风格化调色、昼夜色调切换和阴影色彩设计。"
+      },
+      "inputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "Hue",
+          "zh": "色相"
+        },
+        {
+          "en": "Saturation",
+          "zh": "饱和度"
+        },
+        {
+          "en": "明度",
+          "zh": "明度"
+        },
+        {
+          "en": "Hue",
+          "zh": "色相"
+        },
+        {
+          "en": "Saturation",
+          "zh": "饱和度"
+        },
+        {
+          "en": "明度",
+          "zh": "明度"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        }
+      ],
+      "preview": "nodes/color-transform-extension.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "rim-light-extension",
+      "name": {
+        "en": "边缘光扩展",
+        "zh": "边缘光扩展"
+      },
+      "category_id": "extensions",
+      "category": "扩展模块",
+      "edition": {
+        "en": "Pro 独占",
+        "zh": "Pro 独占"
+      },
+      "summary": {
+        "en": "将边缘光作为可串联扩展模块，支持几何与屏幕空间模式。",
+        "zh": "将边缘光作为可串联扩展模块，支持几何与屏幕空间模式。"
+      },
+      "usage": {
+        "en": "可一键添加到材质。自动跟随日光开启后，边缘光方向随日光旋转，并可通过偏移控制侧后方角度。",
+        "zh": "可一键添加到材质。自动跟随日光开启后，边缘光方向随日光旋转，并可通过偏移控制侧后方角度。"
+      },
+      "inputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        },
+        {
+          "en": "边缘光模式",
+          "zh": "边缘光模式"
+        },
+        {
+          "en": "边缘光颜色",
+          "zh": "边缘光颜色"
+        },
+        {
+          "en": "边缘光强度",
+          "zh": "边缘光强度"
+        },
+        {
+          "en": "边缘光范围",
+          "zh": "边缘光范围"
+        },
+        {
+          "en": "边缘光过渡",
+          "zh": "边缘光过渡"
+        },
+        {
+          "en": "偏移",
+          "zh": "偏移"
+        },
+        {
+          "en": "Menu",
+          "zh": "菜单"
+        },
+        {
+          "en": "边缘光偏移",
+          "zh": "边缘光偏移"
+        },
+        {
+          "en": "边缘光方位",
+          "zh": "边缘光方位"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "光照扩展",
+          "zh": "光照扩展"
+        }
+      ],
+      "preview": "nodes/rim-light-extension.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "face-sdf",
+      "name": {
+        "en": "脸部SDF",
+        "zh": "脸部SDF"
+      },
+      "category_id": "advanced-input",
+      "category": "高级输入",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "将脸部 SDF 贴图转换为可驱动光影的 Value。",
+        "zh": "将脸部 SDF 贴图转换为可驱动光影的 Value。"
+      },
+      "usage": {
+        "en": "贴图应设置为 Non-Color，再连接到 MMD 或主着色器的自定义阴影/阴影贴图输入。",
+        "zh": "贴图应设置为 Non-Color，再连接到 MMD 或主着色器的自定义阴影/阴影贴图输入。"
+      },
+      "inputs": [
+        {
+          "en": "贴图输入",
+          "zh": "贴图输入"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Value",
+          "zh": "数值"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "mmd-alpha",
+      "name": {
+        "en": "MMD alpha节点",
+        "zh": "MMD alpha节点"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "整合 MMD 基础透明、Toon Alpha、Sphere Alpha、双面和 alpha 输入。",
+        "zh": "整合 MMD 基础透明、Toon Alpha、Sphere Alpha、双面和 alpha 输入。"
+      },
+      "usage": {
+        "en": "用于 MMD 智能材质替换后的透明度还原。",
+        "zh": "用于 MMD 智能材质替换后的透明度还原。"
+      },
+      "inputs": [
+        {
+          "en": "Base Alpha",
+          "zh": "基础透明度"
+        },
+        {
+          "en": "Toon Alpha",
+          "zh": "卡通透明度"
+        },
+        {
+          "en": "Sphere Alpha",
+          "zh": "球体透明度"
+        },
+        {
+          "en": "Double Sided",
+          "zh": "双面"
+        },
+        {
+          "en": "alpha",
+          "zh": "透明度"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Value",
+          "zh": "数值"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "rim-2d",
+      "name": {
+        "en": "Rim_2D",
+        "zh": "二维边缘光"
+      },
+      "category_id": "compositor-effects",
+      "category": "合成器效果",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "合成器 2D 边缘光滤镜，通过屏幕偏移生成 Rim 输出。",
+        "zh": "合成器 2D 边缘光滤镜，通过屏幕偏移生成 Rim 输出。"
+      },
+      "usage": {
+        "en": "适合不规则薄片结构和后期统一边缘高光。",
+        "zh": "适合不规则薄片结构和后期统一边缘高光。"
+      },
+      "inputs": [
+        {
+          "en": "Image",
+          "zh": "图像"
+        },
+        {
+          "en": "Mask",
+          "zh": "遮罩"
+        },
+        {
+          "en": "Factor",
+          "zh": "系数"
+        },
+        {
+          "en": "Rim Color",
+          "zh": "边缘光颜色"
+        },
+        {
+          "en": "Blend Type",
+          "zh": "混合类型"
+        },
+        {
+          "en": "Light Intensity",
+          "zh": "灯光强度"
+        },
+        {
+          "en": "Blur Amount",
+          "zh": "模糊量"
+        },
+        {
+          "en": "Transform Mode",
+          "zh": "变换模式"
+        },
+        {
+          "en": "X",
+          "zh": "X 轴"
+        },
+        {
+          "en": "Y",
+          "zh": "Y 轴"
+        },
+        {
+          "en": "Direction",
+          "zh": "方向"
+        },
+        {
+          "en": "Scale",
+          "zh": "缩放"
+        },
+        {
+          "en": "Reduce Lightwrap",
+          "zh": "减弱光照包裹"
+        },
+        {
+          "en": "Extend Bounds",
+          "zh": "扩展边界"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Image",
+          "zh": "图像"
+        },
+        {
+          "en": "Rim",
+          "zh": "边缘光"
+        }
+      ],
+      "preview": "nodes/rim-2d.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "bloom",
+      "name": {
+        "en": "辉光",
+        "zh": "辉光"
+      },
+      "category_id": "compositor-effects",
+      "category": "合成器效果",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "卡通辉光合成节点，按遮罩、范围、模式和强度扩散高亮。",
+        "zh": "卡通辉光合成节点，按遮罩、范围、模式和强度扩散高亮。"
+      },
+      "usage": {
+        "en": "用于能量、眼睛、发光边缘、特效与高亮区域的后期增强。",
+        "zh": "用于能量、眼睛、发光边缘、特效与高亮区域的后期增强。"
+      },
+      "inputs": [
+        {
+          "en": "图像",
+          "zh": "图像"
+        },
+        {
+          "en": "遮罩",
+          "zh": "遮罩"
+        },
+        {
+          "en": "Factor",
+          "zh": "系数"
+        },
+        {
+          "en": "范围",
+          "zh": "范围"
+        },
+        {
+          "en": "辉光模式",
+          "zh": "辉光模式"
+        },
+        {
+          "en": "混合方式",
+          "zh": "混合方式"
+        },
+        {
+          "en": "扩展衰减",
+          "zh": "扩展衰减"
+        },
+        {
+          "en": "强度",
+          "zh": "强度"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "图像",
+          "zh": "图像"
+        }
+      ],
+      "preview": "nodes/bloom.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "tonemapping",
+      "name": {
+        "en": "Tonemapping",
+        "zh": "色调映射"
+      },
+      "category_id": "compositor-effects",
+      "category": "合成器效果",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "合成器色调映射节点，适配卡通画面的色彩与对比。",
+        "zh": "合成器色调映射节点，适配卡通画面的色彩与对比。"
+      },
+      "usage": {
+        "en": "点击“应用卡通色彩映射”会自动挂载。推荐配合 Standard 色彩管理使用。",
+        "zh": "点击“应用卡通色彩映射”会自动挂载。推荐配合 Standard 色彩管理使用。"
+      },
+      "inputs": [
+        {
+          "en": "Image",
+          "zh": "图像"
+        },
+        {
+          "en": "映射模式",
+          "zh": "映射模式"
+        },
+        {
+          "en": "颜色溢出保护",
+          "zh": "颜色溢出保护"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Image",
+          "zh": "图像"
+        }
+      ],
+      "preview": "nodes/tonemapping.png",
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "outline-simple",
+      "name": {
+        "en": "Outline_Simple",
+        "zh": "简易描边"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "几何节点描边修改器，由“添加几何描边”按钮添加到选中物体。",
+        "zh": "几何节点描边修改器，由“添加几何描边”按钮添加到选中物体。"
+      },
+      "usage": {
+        "en": "用于角色和物体外轮廓描边，可通过移除按钮删除同名修改器。",
+        "zh": "用于角色和物体外轮廓描边，可通过移除按钮删除同名修改器。"
+      },
+      "inputs": [
+        {
+          "en": "几何节点修改器参数",
+          "zh": "几何节点修改器参数"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "描边几何",
+          "zh": "描边几何"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "ambient-sync",
+      "name": {
+        "en": "Ambient Sync",
+        "zh": "环境同步"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "世界环境同步节点，将 World Background 的颜色与强度同步给视图层属性。",
+        "zh": "世界环境同步节点，将 World Background 的颜色与强度同步给视图层属性。"
+      },
+      "usage": {
+        "en": "由“一键创建光照环境”自动加载和连接，通常无需手动操作。",
+        "zh": "由“一键创建光照环境”自动加载和连接，通常无需手动操作。"
+      },
+      "inputs": [
+        {
+          "en": "Input / Color",
+          "zh": "输入／颜色"
+        },
+        {
+          "en": "Strength",
+          "zh": "强度"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "Background",
+          "zh": "背景"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "id": "head-positioning",
+      "name": {
+        "en": "Head_Positioning",
+        "zh": "头部定位"
+      },
+      "category_id": "advanced-other",
+      "category": "高级其它",
+      "edition": {
+        "en": "基础版 / Pro",
+        "zh": "基础版 / Pro"
+      },
+      "summary": {
+        "en": "脸部定位辅助对象，用于 SDF 阴影或脸部法向优化确定头部方向。",
+        "zh": "脸部定位辅助对象，用于 SDF 阴影或脸部法向优化确定头部方向。"
+      },
+      "usage": {
+        "en": "通过“添加脸部定位”创建，通常先选头部骨骼再执行。",
+        "zh": "通过“添加脸部定位”创建，通常先选头部骨骼再执行。"
+      },
+      "inputs": [
+        {
+          "en": "头部骨骼或定位参考",
+          "zh": "头部骨骼或定位参考"
+        }
+      ],
+      "outputs": [
+        {
+          "en": "脸部方向参考",
+          "zh": "脸部方向参考"
+        }
+      ],
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    }
+  ],
+  "external_destinations": [
+    {
+      "label": {
+        "en": "AutoCel Basic download",
+        "zh": "AutoCel 基础版下载"
+      },
+      "url": "https://pan.quark.cn/s/627b57012ce5?pwd=7HqV",
+      "purpose": {
+        "en": "Download page for the Basic edition.",
+        "zh": "基础版下载页面。"
+      },
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    },
+    {
+      "label": {
+        "en": "AutoCel Pro information",
+        "zh": "AutoCel Pro 版说明"
+      },
+      "url": "https://www.bilibili.com/opus/1218486349384908800",
+      "purpose": {
+        "en": "Information page for the Pro edition.",
+        "zh": "Pro 版介绍页面。"
+      },
+      "source_kind": "provider_documentation",
+      "source_ref": "archive"
+    }
+  ],
+  "presentation": {
+    "order": [
+      "hero",
+      "quick-start",
+      "mmd-workflow",
+      "multi-light-workflow",
+      "panel-switcher",
+      "node-catalog"
+    ],
+    "hero": {
+      "title": "AutoCel 智能卡通着色器",
+      "headline": {
+        "en": "Toon-material nodes for Blender",
+        "zh": "Blender 卡通材质节点"
+      },
+      "lede": {
+        "en": "Basic and Pro workflows cover material replacement, MMD rendering, outlines, lighting controls, and extension nodes.",
+        "zh": "基础版和 Pro 版包含材质替换、MMD 渲染、描边、光照控制与扩展节点。"
+      }
+    },
+    "quick_start": {
+      "title": {
+        "en": "MMD quick start",
+        "zh": "MMD 一键流程"
+      },
+      "lede": {
+        "en": "Bind light, choose a model, replace the material, add an outline, and apply toon color mapping.",
+        "zh": "先绑定光照，再替换 MMD 材质、添加描边并应用卡通色彩映射。"
+      },
+      "steps": [
+        {
+          "en": "Bind light",
+          "zh": "绑定光照"
+        },
+        {
+          "en": "Choose model",
+          "zh": "选择模型"
+        },
+        {
+          "en": "Replace material",
+          "zh": "替换材质"
+        },
+        {
+          "en": "Add outline",
+          "zh": "添加描边"
+        },
+        {
+          "en": "Apply color mapping",
+          "zh": "应用色彩映射"
+        }
+      ]
+    },
+    "mmd_workflow": {
+      "title": {
+        "en": "Start directly after importing a model",
+        "zh": "导入模型后直接开始"
+      },
+      "body": {
+        "en": "After importing an MMD model, bind the light, replace its material with the MMD smart material, then add an MMD outline and toon color mapping. Add face SDF or normal optimization when needed.",
+        "zh": "导入 MMD 模型后，绑定灯光，将材质替换为 MMD 智能材质，再添加 MMD 描边和卡通色彩映射即可。需要时可继续接入脸部 SDF 或法向优化。"
+      }
+    },
+    "multi_light_workflow": {
+      "title": {
+        "en": "Pro multi-light workflow",
+        "zh": "Pro 多光源流程"
+      },
+      "body": {
+        "en": "Pro reads the position, color, intensity, and radius of several point lights, then passes that lighting information to the smart material.",
+        "zh": "Pro 版可以读取多个点光源的位置、颜色、强度和半径，再把这些灯光信息交给智能材质。适合需要明确明暗方向或柔和氛围光的角色和场景。"
+      }
+    },
+    "panel_switcher": {
+      "modes": [
+        "general",
+        "mmd",
+        "lighting"
+      ],
+      "titles": {
+        "general": {
+          "en": "General material",
+          "zh": "通用材质"
+        },
+        "mmd": {
+          "en": "MMD material",
+          "zh": "MMD 材质"
+        },
+        "lighting": {
+          "en": "Lighting information",
+          "zh": "光照信息"
+        }
+      },
+      "edition_labels": {
+        "basic": {
+          "en": "Basic",
+          "zh": "基础版"
+        },
+        "pro": {
+          "en": "Pro",
+          "zh": "Pro 版"
+        }
+      }
+    }
+  }
+}

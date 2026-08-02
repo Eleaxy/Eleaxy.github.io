@@ -1,0 +1,105 @@
+{
+  "id": "cross-hatch",
+  "name": "Cross Hatch",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Light",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Light.",
+      "default": [
+        1.0,
+        -1.0,
+        2.0
+      ],
+      "de": "Vector value for Light.",
+      "dz": "设置 Light 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 120.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Smooth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Smooth.",
+      "dz": "设置 Smooth 的数值。"
+    },
+    {
+      "name": "Low",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Low.",
+      "default": 9.999999747378752e-05,
+      "de": "Numeric value controlling Low.",
+      "dz": "设置 Low 的数值。"
+    },
+    {
+      "name": "Middle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Middle.",
+      "default": 0.5,
+      "de": "Numeric value controlling Middle.",
+      "dz": "设置 Middle 的数值。"
+    },
+    {
+      "name": "High",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling High.",
+      "default": 0.75,
+      "de": "Numeric value controlling High.",
+      "dz": "设置 High 的数值。"
+    },
+    {
+      "name": "Contrast",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Contrast.",
+      "default": 0.949999988079071,
+      "de": "Numeric value controlling Contrast.",
+      "dz": "设置 Contrast 的数值。"
+    },
+    {
+      "name": "Shadow",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Shadow.",
+      "default": -2.0,
+      "de": "Numeric value controlling Shadow.",
+      "dz": "设置 Shadow 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    },
+    {
+      "name": "Shadow",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shadow.",
+      "de": "Parameter for Shadow.",
+      "dz": "指定 Shadow 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

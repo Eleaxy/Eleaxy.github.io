@@ -1,0 +1,87 @@
+{
+  "id": "cluster-points",
+  "name": "Cluster Points",
+  "name_zh": "点群簇",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "基于K-Means算法实现的点群簇分组",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 12.21.52.13.png",
+  "param_descriptions": {
+    "i": {
+      "2": "控制有多少个分组"
+    }
+  },
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 Points。"
+    },
+    {
+      "name": "",
+      "type": "NodeSocketString",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": "position"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": 12
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": 10
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": 0
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 Points。"
+    },
+    {
+      "name": "Center",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Center.",
+      "de": "Geometry data used as Center.",
+      "dz": "传入或输出用于该节点处理的 中心。"
+    },
+    {
+      "name": "Cluster",
+      "type": "NodeSocketInt",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": 0
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

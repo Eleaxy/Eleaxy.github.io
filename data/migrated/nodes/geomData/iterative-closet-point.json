@@ -1,0 +1,59 @@
+{
+  "id": "iterative-closet-point",
+  "name": "Iterative Closet Point",
+  "name_zh": "ICP点云匹配",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 3,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Target",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to sample a value on",
+      "de": "Geometry to sample a value on",
+      "dz": "传入或输出用于该节点处理的 Target。"
+    },
+    {
+      "name": "Group ID",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Group ID.",
+      "default": 0,
+      "de": "Integer value controlling Group ID.",
+      "dz": "设置 Group / ID 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

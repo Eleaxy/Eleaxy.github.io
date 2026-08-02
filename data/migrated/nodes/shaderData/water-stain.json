@@ -1,0 +1,94 @@
+{
+  "id": "water-stain",
+  "name": "Water_Stain",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 2D 3D option.",
+      "default": false,
+      "de": "Toggles or selects the 2D 3D option.",
+      "dz": "控制是否启用或选择 2D / 3D。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 3.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail.",
+      "default": 8.0,
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.800000011920929,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    },
+    {
+      "name": "Distortion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distortion.",
+      "default": 0.0,
+      "de": "Numeric value controlling Distortion.",
+      "dz": "设置 Distortion 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Hue",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Hue.",
+      "default": 0.0,
+      "de": "Numeric value controlling Hue.",
+      "dz": "设置 Hue 的数值。"
+    },
+    {
+      "name": "Saturation",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Saturation.",
+      "default": 0.0,
+      "de": "Numeric value controlling Saturation.",
+      "dz": "设置 Saturation 的数值。"
+    },
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    },
+    {
+      "name": "Noise",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Noise.",
+      "default": 0.0,
+      "de": "Numeric value controlling Noise.",
+      "dz": "设置 噪波 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

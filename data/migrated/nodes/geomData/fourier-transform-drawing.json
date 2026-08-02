@@ -1,0 +1,81 @@
+{
+  "id": "fourier-transform-drawing",
+  "name": "Fourier Transform Drawing",
+  "name_zh": "傅里叶变换绘图",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "该节点使用老的DFT算法，计算效率较低。可以用Fourier Transform和Visualize Epicycles的组合来替代该节点",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 21.26.48.43.png",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Mode",
+      "type": "NodeSocketMenu",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": "Single"
+    },
+    {
+      "name": "X Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling X Offset.",
+      "de": "Numeric value controlling X Offset.",
+      "dz": "设置 X Offset 的数值。",
+      "default": -1.0
+    },
+    {
+      "name": "Y Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Y Offset.",
+      "de": "Numeric value controlling Y Offset.",
+      "dz": "设置 Y Offset 的数值。",
+      "default": 1.0
+    }
+  ],
+  "outputs": [
+    {
+      "name": "DFT",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as DFT.",
+      "de": "Geometry data used as DFT.",
+      "dz": "传入或输出用于该节点处理的 DFT。"
+    },
+    {
+      "name": "Circles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Circles.",
+      "de": "Geometry data used as Circles.",
+      "dz": "传入或输出用于该节点处理的 Circles。"
+    },
+    {
+      "name": "Lines",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Lines.",
+      "de": "Geometry data used as Lines.",
+      "dz": "传入或输出用于该节点处理的 Lines。"
+    },
+    {
+      "name": "Guide Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Guide Curves.",
+      "de": "Geometry data used as Guide Curves.",
+      "dz": "传入或输出用于该节点处理的 Guide Curves。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

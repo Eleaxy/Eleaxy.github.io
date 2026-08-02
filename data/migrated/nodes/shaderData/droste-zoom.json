@@ -1,0 +1,94 @@
+{
+  "id": "droste-zoom",
+  "name": "Droste_Zoom",
+  "name_zh": "",
+  "category_id": "shader_image",
+  "category": "Image",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_image",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Zoom",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Zoom.",
+      "default": 0.0,
+      "de": "Numeric value controlling Zoom.",
+      "dz": "设置 Zoom 的数值。"
+    },
+    {
+      "name": "Sprial_Zoom",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Sprial Zoom.",
+      "default": 0.0,
+      "de": "Numeric value controlling Sprial Zoom.",
+      "dz": "设置 Sprial / Zoom 的数值。"
+    },
+    {
+      "name": "Rotate",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Rotate.",
+      "default": 0.0,
+      "de": "Numeric value controlling Rotate.",
+      "dz": "设置 Rotate 的数值。"
+    },
+    {
+      "name": "r1",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling r1.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling r1.",
+      "dz": "设置 r1 的数值。"
+    },
+    {
+      "name": "r2",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling r2.",
+      "default": 1.0,
+      "de": "Numeric value controlling r2.",
+      "dz": "设置 r2 的数值。"
+    },
+    {
+      "name": "Tex_Tile",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Tex Tile.",
+      "default": 1,
+      "de": "Integer value controlling Tex Tile.",
+      "dz": "设置 Tex / Tile 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

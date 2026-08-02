@@ -1,0 +1,82 @@
+{
+  "id": "sdf-viewer",
+  "name": "SDF_Viewer",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    },
+    {
+      "name": "Outside",
+      "type": "NodeSocketColor",
+      "description": "Color value for Outside.",
+      "default": [
+        0.7966910004615784,
+        0.43767601251602173,
+        0.20741799473762512,
+        1.0
+      ],
+      "de": "Color value for Outside.",
+      "dz": "设置 外部 的颜色数据。"
+    },
+    {
+      "name": "Inside",
+      "type": "NodeSocketColor",
+      "description": "Color value for Inside.",
+      "default": [
+        0.13235600292682648,
+        0.49796798825263977,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Inside.",
+      "dz": "设置 内部 的颜色数据。"
+    },
+    {
+      "name": "Border",
+      "type": "NodeSocketColor",
+      "description": "Color value for Border.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Border.",
+      "dz": "设置 Border 的颜色数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "spherical-to-cartesian",
+  "name": "Spherical to Cartesian",
+  "name_zh": "",
+  "category_id": "mfs_coordinates",
+  "category": "Coordinates",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [
+    {
+      "name": "Spherical",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Spherical.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Spherical.",
+      "dz": "设置 Spherical 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Cartesian",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Cartesian.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Cartesian.",
+      "dz": "设置 Cartesian 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

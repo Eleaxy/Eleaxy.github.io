@@ -1,0 +1,107 @@
+{
+  "id": "circular-packing",
+  "name": "Circular Packing",
+  "name_zh": "环形填充",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "对输入的网格或实例进行环形填充，在每一个立方体内填充一个实例，实例之间不会穿插",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 12.01.02.63.png",
+  "param_descriptions": {
+    "i": {
+      "4": "设置环形最外围的半径",
+      "5": "设置环形最外围的高度"
+    },
+    "o": {
+      "1": "输出用于环形打包的立方体形状"
+    }
+  },
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    },
+    {
+      "name": "Pick Instance",
+      "type": "NodeSocketBool",
+      "description": "Boolean toggle for Pick Instance.",
+      "de": "Boolean toggle for Pick Instance.",
+      "dz": "控制 Pick Instance 的开关。",
+      "default": false
+    },
+    {
+      "name": "Instance Index",
+      "type": "NodeSocketInt",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": 0
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": 8
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。",
+      "default": 0.5
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 Height 的数值。",
+      "default": 0.5
+    },
+    {
+      "name": "Inner Postion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Inner Postion.",
+      "de": "Numeric value controlling Inner Postion.",
+      "dz": "设置 Inner Postion 的数值。",
+      "default": 0.0
+    },
+    {
+      "name": "Inner Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Inner Height.",
+      "de": "Numeric value controlling Inner Height.",
+      "dz": "设置 Inner Height 的数值。",
+      "default": 0.0
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Debug",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Debug.",
+      "de": "Geometry data used as Debug.",
+      "dz": "传入或输出用于该节点处理的 Debug。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

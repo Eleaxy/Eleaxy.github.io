@@ -1,0 +1,101 @@
+{
+  "id": "circle-packing",
+  "name": "Circle Packing",
+  "name_zh": "圆形填充",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于实现圆形打包效果",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 11.43.19.77.png",
+  "param_descriptions": {
+    "i": {
+      "1": "控制输出的点数",
+      "2": "采样点输入，将作为Circle Packing的预选点位置",
+      "4": "边界曲线，确保圆形不越过该边界线",
+      "5": "半径的最小值",
+      "6": "半径的最大值"
+    },
+    "o": {
+      "0": "最终输出的Circle Packing结果",
+      "1": "尚未被剔除的采样点"
+    }
+  },
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "2D",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 500,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Point Cloud",
+      "type": "NodeSocketGeometry",
+      "description": "全部点云",
+      "de": "Geometry data used as Point Cloud.",
+      "dz": "全部点云"
+    },
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "自定义起始点，避免出现一个球就占满所有空间的情况",
+      "de": "Geometry data used as Points.",
+      "dz": "自定义起始点，避免出现一个球就占满所有空间的情况"
+    },
+    {
+      "name": "Boundary",
+      "type": "NodeSocketGeometry",
+      "description": "边界物体",
+      "de": "Geometry data used as Boundary.",
+      "dz": "边界物体"
+    },
+    {
+      "name": "Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Min.",
+      "default": 0.0010000000474974513,
+      "de": "Numeric value controlling Min.",
+      "dz": "设置 最小值 的数值。"
+    },
+    {
+      "name": "Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max.",
+      "default": 0.5,
+      "de": "Numeric value controlling Max.",
+      "dz": "设置 最大值 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Circles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Circles.",
+      "de": "Geometry data used as Circles.",
+      "dz": "传入或输出用于该节点处理的 Circles。"
+    },
+    {
+      "name": "Point Cloud",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Point Cloud.",
+      "de": "Geometry data used as Point Cloud.",
+      "dz": "传入或输出用于该节点处理的 点 / Cloud。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

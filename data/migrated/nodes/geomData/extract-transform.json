@@ -1,0 +1,44 @@
+{
+  "id": "extract-transform",
+  "name": "Extract Transform",
+  "name_zh": "提取变换",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于计算同一点云经过位置变换后，从当前位置到目标位置的刚性变换矩阵",
+  "notes": "同一群组ID下的点得到的刚性变换矩阵是相同的；点的编号要对应正确",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 20.47.35.87.png",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Target",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to sample a value on",
+      "de": "Geometry to sample a value on",
+      "dz": "传入或输出用于该节点处理的 Target。"
+    },
+    {
+      "name": "Group ID",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Group ID.",
+      "default": 0,
+      "de": "Integer value controlling Group ID.",
+      "dz": "设置 Group / ID 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Transform.",
+      "de": "Parameter for Transform.",
+      "dz": "指定 Transform 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

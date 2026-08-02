@@ -1,0 +1,97 @@
+{
+  "id": "wood",
+  "name": "Wood",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "A",
+      "type": "NodeSocketColor",
+      "description": "Color value for A.",
+      "default": [
+        1.0,
+        0.523247241973877,
+        0.19447103142738342,
+        1.0
+      ],
+      "de": "Color value for A.",
+      "dz": "设置 A 的颜色数据。"
+    },
+    {
+      "name": "B",
+      "type": "NodeSocketColor",
+      "description": "Color value for B.",
+      "default": [
+        0.12283965200185776,
+        0.06797131896018982,
+        0.036522459238767624,
+        1.0
+      ],
+      "de": "Color value for B.",
+      "dz": "设置 B 的颜色数据。"
+    },
+    {
+      "name": "Tint",
+      "type": "NodeSocketColor",
+      "description": "Color value for Tint.",
+      "default": [
+        1.0,
+        0.6982429027557373,
+        0.4755135774612427,
+        1.0
+      ],
+      "de": "Color value for Tint.",
+      "dz": "设置 Tint 的颜色数据。"
+    },
+    {
+      "name": "Specular",
+      "type": "NodeSocketColor",
+      "description": "Color value for Specular.",
+      "default": [
+        1.0,
+        0.9374572038650513,
+        0.6139943599700928,
+        1.0
+      ],
+      "de": "Color value for Specular.",
+      "dz": "设置 Specular 的颜色数据。"
+    },
+    {
+      "name": "Bump",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bump.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Bump.",
+      "dz": "设置 Bump 的数值。"
+    },
+    {
+      "name": "Island",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Island.",
+      "default": 1.0,
+      "de": "Numeric value controlling Island.",
+      "dz": "设置 Island 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

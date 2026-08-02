@@ -1,0 +1,61 @@
+{
+  "id": "mesh-sdf",
+  "name": "Mesh SDF",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Target Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Target Geometry.",
+      "de": "Geometry data used as Target Geometry.",
+      "dz": "传入或输出用于该节点处理的 Target / 几何数据。"
+    },
+    {
+      "name": "Mode",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Mode.",
+      "default": "Fast",
+      "de": "Mode selector for Mode.",
+      "dz": "选择 模式 的模式。"
+    },
+    {
+      "name": "Dimension",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Dimension.",
+      "default": "3D",
+      "de": "Mode selector for Dimension.",
+      "dz": "选择 Dimension 的模式。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Inside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Inside option.",
+      "default": false,
+      "de": "Toggles or selects the Inside option.",
+      "dz": "控制是否启用或选择 内部。"
+    },
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

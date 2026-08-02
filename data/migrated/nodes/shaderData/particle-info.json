@@ -1,0 +1,81 @@
+{
+  "id": "particle-info",
+  "name": "Particle Info",
+  "name_zh": "",
+  "category_id": "particle_info",
+  "category": "Info",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_info",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Normalized Age",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Normalized Age.",
+      "default": 0.0,
+      "de": "Numeric value controlling Normalized Age.",
+      "dz": "设置 Normalized / Age 的数值。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Random.",
+      "default": 0.0,
+      "de": "Numeric value controlling Random.",
+      "dz": "设置 随机量 的数值。"
+    },
+    {
+      "name": "Velocity",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Velocity.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Velocity.",
+      "dz": "设置 速度 的向量数据。"
+    },
+    {
+      "name": "Hit Particle",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Hit Particle option.",
+      "default": false,
+      "de": "Toggles or selects the Hit Particle option.",
+      "dz": "控制是否启用或选择 Hit / Particle。"
+    },
+    {
+      "name": "Hit Surface",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Hit Surface option.",
+      "default": false,
+      "de": "Toggles or selects the Hit Surface option.",
+      "dz": "控制是否启用或选择 Hit / 表面。"
+    },
+    {
+      "name": "Hit Num",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Hit Num.",
+      "default": 0,
+      "de": "Integer value controlling Hit Num.",
+      "dz": "设置 Hit / Num 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

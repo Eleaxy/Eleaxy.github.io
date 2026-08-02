@@ -1,0 +1,57 @@
+[
+  {
+    "id": "automation-flow",
+    "name": "Automation Flow",
+    "provider": "卿上翎 / Ling-QS",
+    "detail_path": "/plugins.html?plugin=automation-flow",
+    "summary": {
+      "en": "A Blender automation add-on with reusable node-based workflows and eight node categories.",
+      "zh": "用于 Blender 自动化流程的节点插件，包含可复用工作流和八类节点。"
+    },
+    "release_tag": "v1.2.0",
+    "manifest_version": "1.0.0",
+    "compatibility": {
+      "en": "Blender 5.1.0+",
+      "zh": "Blender 5.1.0+"
+    },
+    "license": {
+      "en": "GPL-3.0-or-later (manifest declaration)",
+      "zh": "GPL-3.0-or-later（清单声明）"
+    },
+    "external_destinations": [
+      {
+        "label": {
+          "en": "Automation Flow releases",
+          "zh": "Automation Flow 发布页"
+        },
+        "url": "https://github.com/Ling-QS/blender_automation_flow/releases"
+      }
+    ]
+  },
+  {
+    "id": "autocel",
+    "name": "AutoCel",
+    "provider": "荒芜星谷",
+    "detail_path": "/plugins.html?plugin=autocel",
+    "summary": {
+      "en": "A Blender toon-material node library with Basic and Pro workflows for lighting, materials, outlines, and extensions.",
+      "zh": "面向 Blender 的卡通材质节点库，包含基础版和 Pro 版的光照、材质、描边与扩展流程。"
+    },
+    "external_destinations": [
+      {
+        "label": {
+          "en": "AutoCel Basic download",
+          "zh": "AutoCel 基础版下载"
+        },
+        "url": "https://pan.quark.cn/s/627b57012ce5?pwd=7HqV"
+      },
+      {
+        "label": {
+          "en": "AutoCel Pro information",
+          "zh": "AutoCel Pro 版说明"
+        },
+        "url": "https://www.bilibili.com/opus/1218486349384908800"
+      }
+    ]
+  }
+]

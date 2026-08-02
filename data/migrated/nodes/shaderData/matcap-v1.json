@@ -1,0 +1,46 @@
+{
+  "id": "matcap-v1",
+  "name": "Matcap v1",
+  "name_zh": "",
+  "category_id": "mfs_coordinates",
+  "category": "Coordinates",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [
+    {
+      "name": "NormalWS",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal WS.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal WS.",
+      "dz": "设置 法线 / WS 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Matcap UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Matcap UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Matcap UV.",
+      "dz": "设置 Matcap / UV 坐标 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

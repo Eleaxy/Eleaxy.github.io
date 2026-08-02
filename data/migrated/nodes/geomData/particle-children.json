@@ -1,0 +1,92 @@
+{
+  "id": "particle-children",
+  "name": "Particle Children",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Enable",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Enable option.",
+      "default": true,
+      "de": "Toggles or selects the Enable option.",
+      "dz": "控制是否启用或选择 启用开关。"
+    },
+    {
+      "name": "Presets",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Presets.",
+      "default": "Presets",
+      "de": "Mode selector for Presets.",
+      "dz": "选择 Presets 的模式。"
+    },
+    {
+      "name": "Particles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Particles.",
+      "de": "Geometry data used as Particles.",
+      "dz": "传入或输出用于该节点处理的 Particles。"
+    },
+    {
+      "name": "Event Handler",
+      "type": "NodeSocketMenu",
+      "description": "Birth_Condition",
+      "default": "Hit Surface",
+      "de": "Birth_Condition",
+      "dz": "选择 Event / Handler 的模式。"
+    },
+    {
+      "name": "Speed Condition",
+      "type": "NodeSocketMenu",
+      "description": "子级粒子生成的速度阈值",
+      "default": "None",
+      "de": "Mode selector for Speed Condition.",
+      "dz": "子级粒子生成的速度阈值"
+    },
+    {
+      "name": "Speed Threshold",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed Threshold.",
+      "default": 1.0,
+      "de": "Numeric value controlling Speed Threshold.",
+      "dz": "设置 速度 / 阈值 的数值。"
+    },
+    {
+      "name": "Selection",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Selection option.",
+      "default": false,
+      "de": "Toggles or selects the Selection option.",
+      "dz": "控制是否启用或选择 选择范围。"
+    },
+    {
+      "name": "Amount",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Amount.",
+      "default": 32,
+      "de": "Integer value controlling Amount.",
+      "dz": "设置 Amount 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Particles.",
+      "de": "Parameter for Particles.",
+      "dz": "指定 Particles 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

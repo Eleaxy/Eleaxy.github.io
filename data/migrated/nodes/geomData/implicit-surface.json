@@ -1,0 +1,101 @@
+{
+  "id": "implicit-surface",
+  "name": "Implicit Surface",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Grid Type",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Grid Type.",
+      "default": "Octree",
+      "de": "Mode selector for Grid Type.",
+      "dz": "选择 Grid / 类型 的模式。"
+    },
+    {
+      "name": "Domain Size",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Domain Size.",
+      "default": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "de": "Vector value for Domain Size.",
+      "dz": "设置 Domain / 尺寸 的向量数据。"
+    },
+    {
+      "name": "Offset",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Offset.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Offset.",
+      "dz": "设置 偏移 的向量数据。"
+    },
+    {
+      "name": "Octree Level",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Octree Level.",
+      "default": 6,
+      "de": "Integer value controlling Octree Level.",
+      "dz": "设置 Octree / Level 的数值。"
+    },
+    {
+      "name": "X",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling X.",
+      "default": 32,
+      "de": "Integer value controlling X.",
+      "dz": "设置 X 的数值。"
+    },
+    {
+      "name": "Y",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Y.",
+      "default": 32,
+      "de": "Integer value controlling Y.",
+      "dz": "设置 Y 的数值。"
+    },
+    {
+      "name": "Z",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Z.",
+      "default": 32,
+      "de": "Integer value controlling Z.",
+      "dz": "设置 Z 的数值。"
+    },
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

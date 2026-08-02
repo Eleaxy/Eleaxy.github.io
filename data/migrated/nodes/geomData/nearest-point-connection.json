@@ -1,0 +1,44 @@
+{
+  "id": "nearest-point-connection",
+  "name": "Nearest Point Connection",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Point Cloud",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Point Cloud.",
+      "de": "Geometry data used as Point Cloud.",
+      "dz": "传入或输出用于该节点处理的 点 / Cloud。"
+    },
+    {
+      "name": "Start",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Start.",
+      "default": 0,
+      "de": "Integer value controlling Start.",
+      "dz": "设置 Start 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curves.",
+      "de": "Geometry data used as Curves.",
+      "dz": "传入或输出用于该节点处理的 Curves。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

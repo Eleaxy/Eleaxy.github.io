@@ -1,0 +1,50 @@
+{
+  "id": "cool-s-sdf",
+  "name": "Cool_S_SDF",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.5,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

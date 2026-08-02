@@ -1,0 +1,61 @@
+{
+  "id": "image-to-ascii",
+  "name": "Image to ASCII",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "",
+      "type": "NodeSocketImage",
+      "description": "Parameter for this socket.",
+      "default": null,
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    },
+    {
+      "name": "",
+      "type": "NodeSocketString",
+      "description": "Text value used for this socket.",
+      "default": "Ñ@#W$9876543210?!abc;:+=-,._          ",
+      "de": "Text value used for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    },
+    {
+      "name": "Vertices X",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Vertices X.",
+      "default": 256,
+      "de": "Integer value controlling Vertices X.",
+      "dz": "设置 Vertices / X 的数值。"
+    },
+    {
+      "name": "Vertices Y",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Vertices Y.",
+      "default": 160,
+      "de": "Integer value controlling Vertices Y.",
+      "dz": "设置 Vertices / Y 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

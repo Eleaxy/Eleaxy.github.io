@@ -1,0 +1,100 @@
+{
+  "id": "laplacian",
+  "name": "Laplacian",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Laplacian Matrix",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Laplacian Matrix.",
+      "default": "Cotan Laplacian",
+      "de": "Mode selector for Laplacian Matrix.",
+      "dz": "选择 Laplacian / 矩阵 的模式。"
+    },
+    {
+      "name": "Diffusion",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Diffusion option.",
+      "default": false,
+      "de": "Toggles or selects the Diffusion option.",
+      "dz": "控制是否启用或选择 Diffusion。"
+    },
+    {
+      "name": "Diffusion Coeffient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Diffusion Coeffient.",
+      "default": 1.0,
+      "de": "Numeric value controlling Diffusion Coeffient.",
+      "dz": "设置 Diffusion / Coeffient 的数值。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to evaluate the given fields and store the resulting attributes on. All geometry types except volumes are supported",
+      "de": "Geometry to evaluate the given fields and store the resulting attributes on. All geometry types except volumes are supported",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Initial x",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Initial x.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Initial x.",
+      "dz": "设置 Initial / x 的向量数据。"
+    },
+    {
+      "name": "b",
+      "type": "NodeSocketVector",
+      "description": "Vector value for b.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for b.",
+      "dz": "设置 b 的向量数据。"
+    },
+    {
+      "name": "Pinned Group",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Pinned Group option.",
+      "default": false,
+      "de": "Toggles or selects the Pinned Group option.",
+      "dz": "控制是否启用或选择 Pinned / Group。"
+    },
+    {
+      "name": "Reduction",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Reduction option.",
+      "default": true,
+      "de": "Toggles or selects the Reduction option.",
+      "dz": "控制是否启用或选择 Reduction。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Linear System",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Linear System.",
+      "de": "Parameter for Linear System.",
+      "dz": "指定 Linear / System 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,108 @@
+{
+  "id": "debug-float",
+  "name": "Debug Float",
+  "name_zh": "",
+  "category_id": "comp_utilities",
+  "category": "Utilities",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_utilities",
+  "inputs": [
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Count.",
+      "default": [
+        20.0,
+        30.0,
+        0.05000000074505806
+      ],
+      "de": "Vector value for Count.",
+      "dz": "设置 数量 的向量数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1.0,
+        0.00020500000391621143,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "小数点前精度位数",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling 小数点前精度位数.",
+      "default": 1.0,
+      "de": "Numeric value controlling 小数点前精度位数.",
+      "dz": "设置 小数点前精度位数 的数值。"
+    },
+    {
+      "name": "小数点后精度位数",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling 小数点后精度位数.",
+      "default": 5.0,
+      "de": "Numeric value controlling 小数点后精度位数.",
+      "dz": "设置 小数点后精度位数 的数值。"
+    },
+    {
+      "name": "Threshold",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Threshold.",
+      "default": 0.11999999731779099,
+      "de": "Numeric value controlling Threshold.",
+      "dz": "设置 阈值 的数值。"
+    },
+    {
+      "name": "Grid",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Grid.",
+      "default": 0.44999998807907104,
+      "de": "Numeric value controlling Grid.",
+      "dz": "设置 Grid 的数值。"
+    },
+    {
+      "name": "Transparency",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Transparency.",
+      "default": 0.19999992847442627,
+      "de": "Numeric value controlling Transparency.",
+      "dz": "设置 Transparency 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Image",
+      "type": "NodeSocketColor",
+      "description": "Color value for Image.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Image.",
+      "dz": "设置 图像 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

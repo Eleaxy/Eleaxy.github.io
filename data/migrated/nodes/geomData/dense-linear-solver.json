@@ -1,0 +1,71 @@
+{
+  "id": "dense-linear-solver",
+  "name": "Dense Linear Solver",
+  "name_zh": "稠密线性求解器",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于求解大型线性系统Ax=b",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {
+    "i": {
+      "0": "CG的迭代次数",
+      "1": "完整稠密矩阵A",
+      "2": "每个点的数值b组成的List"
+    },
+    "o": {
+      "0": "每个点求解得到的x数值"
+    }
+  },
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 20,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "A",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling A.",
+      "default": 0.0,
+      "de": "Numeric value controlling A.",
+      "dz": "设置 A 的数值。"
+    },
+    {
+      "name": "b",
+      "type": "NodeSocketVector",
+      "description": "Vector value for b.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for b.",
+      "dz": "设置 b 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "x",
+      "type": "NodeSocketVector",
+      "description": "Vector value for x.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for x.",
+      "dz": "设置 x 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

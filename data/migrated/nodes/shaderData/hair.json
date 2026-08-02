@@ -1,0 +1,71 @@
+{
+  "id": "hair",
+  "name": "Hair",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "进入节点组调节",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 进入节点组调节 option.",
+      "default": false,
+      "de": "Toggles or selects the 进入节点组调节 option.",
+      "dz": "控制是否启用或选择 进入节点组调节。"
+    },
+    {
+      "name": "A",
+      "type": "NodeSocketColor",
+      "description": "Color value for A.",
+      "default": [
+        1.0,
+        0.20914700627326965,
+        0.32690900564193726,
+        1.0
+      ],
+      "de": "Color value for A.",
+      "dz": "设置 A 的颜色数据。"
+    },
+    {
+      "name": "B",
+      "type": "NodeSocketColor",
+      "description": "Color value for B.",
+      "default": [
+        1.0,
+        0.48973000049591064,
+        0.6199619770050049,
+        1.0
+      ],
+      "de": "Color value for B.",
+      "dz": "设置 B 的颜色数据。"
+    },
+    {
+      "name": "Island",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Island.",
+      "default": 0.0,
+      "de": "Numeric value controlling Island.",
+      "dz": "设置 Island 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

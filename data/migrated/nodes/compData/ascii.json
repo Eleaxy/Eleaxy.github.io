@@ -1,0 +1,68 @@
+{
+  "id": "ascii",
+  "name": "ASCII",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Depth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Depth.",
+      "default": 1.0,
+      "de": "Numeric value controlling Depth.",
+      "dz": "设置 深度 的数值。"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Count.",
+      "default": [
+        160.0,
+        90.0,
+        0.0
+      ],
+      "de": "Vector value for Count.",
+      "dz": "设置 数量 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

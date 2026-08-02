@@ -1,0 +1,110 @@
+{
+  "id": "custom-voronoi-texture",
+  "name": "Custom Voronoi Texture",
+  "name_zh": "点Voronoi纹理",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "可以计算加权距离，如果想要半径大的占的空间更大，就用1/半径作为点半径输入",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 21.59.00.40.png",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Feature Output",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Feature Output.",
+      "default": "F1",
+      "de": "Mode selector for Feature Output.",
+      "dz": "选择 Feature / 输出 的模式。"
+    },
+    {
+      "name": "Distance Metric",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Distance Metric.",
+      "default": "Euclidean",
+      "de": "Mode selector for Distance Metric.",
+      "dz": "选择 Distance / Metric 的模式。"
+    },
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Smooth F1",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth F1.",
+      "default": 0.0,
+      "de": "Numeric value controlling Smooth F1.",
+      "dz": "设置 Smooth / F1 的数值。"
+    },
+    {
+      "name": "Smooth F2",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth F2.",
+      "default": 0.0,
+      "de": "Numeric value controlling Smooth F2.",
+      "dz": "设置 Smooth / F2 的数值。"
+    },
+    {
+      "name": "Exponent",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Exponent.",
+      "default": 0.5,
+      "de": "Numeric value controlling Exponent.",
+      "dz": "设置 Exponent 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Distance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distance.",
+      "default": 0.0,
+      "de": "Numeric value controlling Distance.",
+      "dz": "设置 Distance 的数值。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Position.",
+      "dz": "设置 位置 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

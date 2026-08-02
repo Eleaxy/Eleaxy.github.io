@@ -1,0 +1,60 @@
+{
+  "id": "particle-collision",
+  "name": "Particle Collision",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Enable",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Enable option.",
+      "default": true,
+      "de": "Toggles or selects the Enable option.",
+      "dz": "控制是否启用或选择 启用开关。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 1,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Repulsion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Repulsion.",
+      "default": 1.0,
+      "de": "Numeric value controlling Repulsion.",
+      "dz": "设置 Repulsion 的数值。"
+    },
+    {
+      "name": "Custom Stage",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Custom Stage.",
+      "de": "Parameter for Custom Stage.",
+      "dz": "指定 Custom / Stage 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Particle Collision",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Particle Collision.",
+      "de": "Parameter for Particle Collision.",
+      "dz": "指定 Particle / 碰撞 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

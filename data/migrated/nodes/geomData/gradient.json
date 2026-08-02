@@ -1,0 +1,42 @@
+{
+  "id": "gradient",
+  "name": "Gradient",
+  "name_zh": "梯度",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于在网格表面计算浮点场的梯度",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Scalar",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scalar.",
+      "default": 0.0,
+      "de": "Numeric value controlling Scalar.",
+      "dz": "设置 Scalar 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Gradient.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Gradient.",
+      "dz": "设置 Gradient 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

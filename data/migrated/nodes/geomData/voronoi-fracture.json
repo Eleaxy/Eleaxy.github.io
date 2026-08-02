@@ -1,0 +1,95 @@
+{
+  "id": "voronoi-fracture",
+  "name": "Voronoi Fracture",
+  "name_zh": "Voronoi破碎",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "dimension",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for dimension.",
+      "default": "2D",
+      "de": "Mode selector for dimension.",
+      "dz": "选择 dimension 的模式。"
+    },
+    {
+      "name": "simulate",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for simulate.",
+      "default": "Realtime",
+      "de": "Mode selector for simulate.",
+      "dz": "选择 simulate 的模式。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "Gap",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gap.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gap.",
+      "dz": "设置 Gap 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Cells",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Cells.",
+      "de": "Geometry data used as Cells.",
+      "dz": "传入或输出用于该节点处理的 Cells。"
+    },
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "ID",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling ID.",
+      "default": 0,
+      "de": "Integer value controlling ID.",
+      "dz": "设置 ID 的数值。"
+    },
+    {
+      "name": "Outside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Outside option.",
+      "default": false,
+      "de": "Toggles or selects the Outside option.",
+      "dz": "控制是否启用或选择 外部。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

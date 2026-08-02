@@ -1,0 +1,64 @@
+{
+  "id": "bitangent-noise",
+  "name": "Bitangent Noise",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Noise1 Input",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Noise1 Input.",
+      "de": "Parameter for Noise1 Input.",
+      "dz": "指定 Noise1 / 输入 参数。"
+    },
+    {
+      "name": "Noise2 Input",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Noise2 Input.",
+      "de": "Parameter for Noise2 Input.",
+      "dz": "指定 Noise2 / 输入 参数。"
+    },
+    {
+      "name": "Epsilon",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Epsilon.",
+      "default": 0.0010000000474974513,
+      "de": "Numeric value controlling Epsilon.",
+      "dz": "设置 Epsilon 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Direction",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Direction.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Direction.",
+      "dz": "设置 Direction 的向量数据。"
+    },
+    {
+      "name": "Magnitude",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Magnitude.",
+      "default": 0.0,
+      "de": "Numeric value controlling Magnitude.",
+      "dz": "设置 Magnitude 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

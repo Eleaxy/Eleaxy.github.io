@@ -1,0 +1,132 @@
+{
+  "id": "visualize-rig",
+  "name": "Visualize Rig",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skeleton.",
+      "de": "Geometry data used as Skeleton.",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    },
+    {
+      "name": "Vis",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Vis.",
+      "default": "Axes",
+      "de": "Mode selector for Vis.",
+      "dz": "选择 Vis 的模式。"
+    },
+    {
+      "name": "World/Local",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for World Local.",
+      "default": "World",
+      "de": "Mode selector for World Local.",
+      "dz": "选择 World / Local 的模式。"
+    },
+    {
+      "name": "Show Name",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Show Name option.",
+      "default": false,
+      "de": "Toggles or selects the Show Name option.",
+      "dz": "控制是否启用或选择 Show / 名称。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 8.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Normal Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Normal Offset.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Normal Offset.",
+      "dz": "设置 法线 / 偏移 的数值。"
+    },
+    {
+      "name": "Solidify",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Solidify option.",
+      "default": true,
+      "de": "Toggles or selects the Solidify option.",
+      "dz": "控制是否启用或选择 Solidify。"
+    },
+    {
+      "name": "Scale by Vector Length",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Scale by Vector Length option.",
+      "default": false,
+      "de": "Toggles or selects the Scale by Vector Length option.",
+      "dz": "控制是否启用或选择 缩放 / by / 向量 / Length。"
+    },
+    {
+      "name": "Body Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Body Radius.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Body Radius.",
+      "dz": "设置 Body / 半径 的数值。"
+    },
+    {
+      "name": "Body Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Body Height.",
+      "default": 1.0,
+      "de": "Numeric value controlling Body Height.",
+      "dz": "设置 Body / 高度 的数值。"
+    },
+    {
+      "name": "Tip Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Tip Radius.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Tip Radius.",
+      "dz": "设置 Tip / 半径 的数值。"
+    },
+    {
+      "name": "Tip Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Tip Height.",
+      "default": 0.5,
+      "de": "Numeric value controlling Tip Height.",
+      "dz": "设置 Tip / 高度 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

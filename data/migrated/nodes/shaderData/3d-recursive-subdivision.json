@@ -1,0 +1,82 @@
+{
+  "id": "3d-recursive-subdivision",
+  "name": "(3D)Recursive_Subdivision",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "Iteration",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iteration.",
+      "default": 6,
+      "de": "Integer value controlling Iteration.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Edge_Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Edge Width.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Edge Width.",
+      "dz": "设置 Edge / 宽度 的数值。"
+    },
+    {
+      "name": "Smooth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth.",
+      "default": 0.0,
+      "de": "Numeric value controlling Smooth.",
+      "dz": "设置 Smooth 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Cell_ID",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Cell ID.",
+      "default": 0.0,
+      "de": "Numeric value controlling Cell ID.",
+      "dz": "设置 Cell / ID 的数值。"
+    },
+    {
+      "name": "Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Edge.",
+      "default": 0.0,
+      "de": "Numeric value controlling Edge.",
+      "dz": "设置 Edge 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

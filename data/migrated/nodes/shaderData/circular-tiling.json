@@ -1,0 +1,115 @@
+{
+  "id": "circular-tiling",
+  "name": "Circular_Tiling",
+  "name_zh": "",
+  "category_id": "shader_tiling_tools",
+  "category": "Tools",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_tools",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Radial",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Radial.",
+      "default": 6,
+      "de": "Integer value controlling Radial.",
+      "dz": "设置 Radial 的数值。"
+    },
+    {
+      "name": "Rings",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Rings.",
+      "default": 0,
+      "de": "Integer value controlling Rings.",
+      "dz": "设置 Rings 的数值。"
+    },
+    {
+      "name": "Power_Count",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Power Count option.",
+      "default": true,
+      "de": "Toggles or selects the Power Count option.",
+      "dz": "控制是否启用或选择 Power / 数量。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "Start_Pos",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Start Pos.",
+      "default": 0.0,
+      "de": "Numeric value controlling Start Pos.",
+      "dz": "设置 Start / Pos 的数值。"
+    },
+    {
+      "name": "By_Index",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling By Index.",
+      "default": 0.0,
+      "de": "Numeric value controlling By Index.",
+      "dz": "设置 By / 索引 的数值。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Random.",
+      "default": 0.0,
+      "de": "Numeric value controlling Random.",
+      "dz": "设置 随机量 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Random.",
+      "dz": "设置 随机量 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

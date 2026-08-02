@@ -1,0 +1,68 @@
+{
+  "id": "3x3-diag",
+  "name": "3x3 Diag",
+  "name_zh": "3x3对角",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "提取3x3矩阵的对角向量或根据对角向量创建3x3矩阵",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "Consturct",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    },
+    {
+      "name": "Diag",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Diag.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Diag.",
+      "dz": "设置 Diag 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Diag",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Diag.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Diag.",
+      "dz": "设置 Diag 的向量数据。"
+    },
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

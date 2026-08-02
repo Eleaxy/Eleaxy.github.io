@@ -1,0 +1,73 @@
+{
+  "id": "minimum-bounding-sphere",
+  "name": "Minimum Bounding Sphere",
+  "name_zh": "",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Method",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Method.",
+      "default": "Ritter’s",
+      "de": "Mode selector for Method.",
+      "dz": "选择 Method 的模式。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for 2D 3D.",
+      "default": "2D",
+      "de": "Mode selector for 2D 3D.",
+      "dz": "选择 2D / 3D 的模式。"
+    },
+    {
+      "name": "Substeps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Substeps.",
+      "default": 1,
+      "de": "Integer value controlling Substeps.",
+      "dz": "设置 子步数 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

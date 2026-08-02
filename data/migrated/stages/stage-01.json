@@ -1,0 +1,102 @@
+{
+  "id": "stage-01",
+  "title": "VacantHouse",
+  "date": "2021-01-09",
+  "image": {
+    "source": "https://sablefish357.com/stages/01-09-2021/vacanthouse v1.jpg",
+    "alt": "An empty wooden hall",
+    "local": "/images/stages/stage-01-2ec41ee5d7.jpg"
+  },
+  "readme": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it.",
+    "The stage includes an opening; please replace it with your own logo.",
+    "Blender version 4.2LTS"
+  ],
+  "blender_version": "Blender version 4.2LTS",
+  "usage_terms": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it."
+  ],
+  "download_urls": [
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/vacanthouse-01092021"
+    }
+  ],
+  "source_url": "https://sablefish357.com/stages/01-09-2021/01-09-2021.html",
+  "all_links": [
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "VIDEOS",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "STAGES",
+      "href": "https://sablefish357.com/stages.html"
+    },
+    {
+      "text": "BLOG",
+      "href": "https://sablefish357.com/blog.html"
+    },
+    {
+      "text": "HOME",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "CONTACT",
+      "href": "https://sablefish357.com/stages/01-09-2021/01-09-2021.html#bottom"
+    },
+    {
+      "text": "CHN",
+      "href": "https://sablefish357.com/stages/01-09-2021/01-09-2021-zh.html"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/vacanthouse-01092021"
+    },
+    {
+      "text": "Youtube",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "Bilibili",
+      "href": "https://space.bilibili.com/49323671"
+    },
+    {
+      "text": "ArtStation",
+      "href": "https://www.artstation.com/sablefish"
+    },
+    {
+      "text": "[email protected]",
+      "href": "https://sablefish357.com/cdn-cgi/l/email-protection#1e6d7f7c727b78776d762d2b295e79737f7772307d7173"
+    },
+    {
+      "text": "Top",
+      "href": "https://sablefish357.com/stages/01-09-2021/01-09-2021.html#top"
+    },
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/stages/01-09-2021/01-09-2021.html#top"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/stages/01-09-2021/01-09-2021.html#top"
+    }
+  ]
+}

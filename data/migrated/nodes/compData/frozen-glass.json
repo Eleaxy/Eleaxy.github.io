@@ -1,0 +1,105 @@
+{
+  "id": "frozen-glass",
+  "name": "Frozen Glass",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.5935934782028198,
+        0.8562713861465454,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Mask Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask Falloff.",
+      "default": 5.0,
+      "de": "Numeric value controlling Mask Falloff.",
+      "dz": "设置 遮罩 / 衰减 的数值。"
+    },
+    {
+      "name": "Distortion Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distortion Falloff.",
+      "default": 2.500000476837158,
+      "de": "Numeric value controlling Distortion Falloff.",
+      "dz": "设置 Distortion / 衰减 的数值。"
+    },
+    {
+      "name": "Distortion Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distortion Strength.",
+      "default": 350.0,
+      "de": "Numeric value controlling Distortion Strength.",
+      "dz": "设置 Distortion / 强度 的数值。"
+    },
+    {
+      "name": "Snow",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Snow.",
+      "default": 16.0,
+      "de": "Numeric value controlling Snow.",
+      "dz": "设置 Snow 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Scale.",
+      "default": [
+        5.0,
+        3.0,
+        2.0
+      ],
+      "de": "Vector value for Scale.",
+      "dz": "设置 缩放 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

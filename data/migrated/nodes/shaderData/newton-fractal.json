@@ -1,0 +1,63 @@
+{
+  "id": "newton-fractal",
+  "name": "Newton_Fractal",
+  "name_zh": "",
+  "category_id": "shader_fractal",
+  "category": "Fractal",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_fractal",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Iteration",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iteration.",
+      "default": 79,
+      "de": "Integer value controlling Iteration.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Variant",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Variant.",
+      "default": 1,
+      "de": "Integer value controlling Variant.",
+      "dz": "设置 Variant 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

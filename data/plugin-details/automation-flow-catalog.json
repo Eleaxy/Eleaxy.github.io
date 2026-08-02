@@ -1,0 +1,3572 @@
+{
+  "schema_version": "2.0",
+  "plugin": {
+    "name": "Automation Flow",
+    "provider": "Automation Flow Blender extension",
+    "source_release_tag": "v1.2.0",
+    "package_manifest_version": "1.0.0",
+    "package_init_bl_info_version": "0.1.0",
+    "version_metadata_consistent": false
+  },
+  "total_nodes": 114,
+  "groups": [
+    {
+      "order": 1,
+      "key": "flow",
+      "official_english": "Flow",
+      "official_chinese": "流程",
+      "count": 23
+    },
+    {
+      "order": 2,
+      "key": "property",
+      "official_english": "Property",
+      "official_chinese": "属性",
+      "count": 21
+    },
+    {
+      "order": 3,
+      "key": "task",
+      "official_english": "Task",
+      "official_chinese": "任务",
+      "count": 11
+    },
+    {
+      "order": 4,
+      "key": "scene_object",
+      "official_english": "Scene / Object",
+      "official_chinese": "场景 / 物体",
+      "count": 11
+    },
+    {
+      "order": 5,
+      "key": "inputs",
+      "official_english": "Inputs",
+      "official_chinese": "输入",
+      "count": 8
+    },
+    {
+      "order": 6,
+      "key": "math_utilities_vector",
+      "official_english": "Math / Utilities / Vector",
+      "official_chinese": "数学 / 工具 / 矢量",
+      "count": 18
+    },
+    {
+      "order": 7,
+      "key": "rotation",
+      "official_english": "Rotation",
+      "official_chinese": "旋转",
+      "count": 11
+    },
+    {
+      "order": 8,
+      "key": "matrix",
+      "official_english": "Matrix",
+      "official_chinese": "矩阵",
+      "count": 11
+    }
+  ],
+  "nodes": [
+    {
+      "order": 1,
+      "bl_idname": "AFNodeDelayWait",
+      "runtime_id": "AFNodeDelayWait",
+      "official_english": "Delay Wait",
+      "runtime_english": "Delay Wait",
+      "official_chinese": "延时等待",
+      "runtime_chinese": "延时等待",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeDelayWait-crop.png",
+      "image_width": 736,
+      "image_height": 619,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In"
+      ],
+      "outputs": [
+        "Flow Out"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 2,
+      "bl_idname": "AFNodeEnd",
+      "runtime_id": "AFNodeEnd",
+      "official_english": "End",
+      "runtime_english": "End",
+      "official_chinese": "结束",
+      "runtime_chinese": "结束",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeEnd-crop.png",
+      "image_width": 714,
+      "image_height": 272,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In"
+      ],
+      "outputs": [],
+      "label_match": true
+    },
+    {
+      "order": 3,
+      "bl_idname": "AFNodeFlowTrigger",
+      "runtime_id": "AFNodeFlowTrigger",
+      "official_english": "Flow Trigger",
+      "runtime_english": "Flow Trigger",
+      "official_chinese": "流触发",
+      "runtime_chinese": "流触发",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeFlowTrigger-crop.png",
+      "image_width": 725,
+      "image_height": 388,
+      "body_width_px": 646,
+      "inputs": [
+        "Trigger"
+      ],
+      "outputs": [
+        "Triggered"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 4,
+      "bl_idname": "AFNodeFlowToggle",
+      "runtime_id": "AFNodeFlowToggle",
+      "official_english": "FlowToggle",
+      "runtime_english": "FlowToggle",
+      "official_chinese": "流切换",
+      "runtime_chinese": "流切换",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeFlowToggle-crop.png",
+      "image_width": 725,
+      "image_height": 503,
+      "body_width_px": 646,
+      "inputs": [
+        "Trigger"
+      ],
+      "outputs": [
+        "State"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 5,
+      "bl_idname": "AFNodeReloadAfterTask",
+      "runtime_id": "AFNodeReloadAfterTask",
+      "official_english": "Reload After Task",
+      "runtime_english": "Reload After Task",
+      "official_chinese": "任务后重载",
+      "runtime_chinese": "任务后重载",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeReloadAfterTask-crop.png",
+      "image_width": 736,
+      "image_height": 499,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Task Handle"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Status",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 6,
+      "bl_idname": "AFNodeRunBackgroundTaskPlan",
+      "runtime_id": "AFNodeRunBackgroundTaskPlan",
+      "official_english": "Run Background Task",
+      "runtime_english": "Run Background Task",
+      "official_chinese": "后台执行任务",
+      "runtime_chinese": "后台执行任务",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRunBackgroundTaskPlan-crop.png",
+      "image_width": 736,
+      "image_height": 600,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Task Plan"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Task Handle",
+        "Status",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 7,
+      "bl_idname": "AFNodeRunTaskPlan",
+      "runtime_id": "AFNodeRunTaskPlan",
+      "official_english": "Run Task",
+      "runtime_english": "Run Task",
+      "official_chinese": "执行任务",
+      "runtime_chinese": "执行任务",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRunTaskPlan-crop.png",
+      "image_width": 736,
+      "image_height": 716,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Task Plan 1",
+        " "
+      ],
+      "outputs": [
+        "Flow Out",
+        "Status",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 8,
+      "bl_idname": "AFNodeStart",
+      "runtime_id": "AFNodeStart",
+      "official_english": "Start",
+      "runtime_english": "Start",
+      "official_chinese": "起始",
+      "runtime_chinese": "起始",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeStart-crop.png",
+      "image_width": 710,
+      "image_height": 411,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Flow Out"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 9,
+      "bl_idname": "AFNodeTaskStatusOverride",
+      "runtime_id": "AFNodeTaskStatusOverride",
+      "official_english": "Task Status Override",
+      "runtime_english": "Task Status Override",
+      "official_chinese": "任务状态覆写",
+      "runtime_chinese": "任务状态覆写",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTaskStatusOverride-crop.png",
+      "image_width": 714,
+      "image_height": 374,
+      "body_width_px": 646,
+      "inputs": [
+        "Trigger",
+        "Status"
+      ],
+      "outputs": [],
+      "label_match": true
+    },
+    {
+      "order": 10,
+      "bl_idname": "AFNodeWaitForTask",
+      "runtime_id": "AFNodeWaitForTask",
+      "official_english": "Wait For Task",
+      "runtime_english": "Wait For Task",
+      "official_chinese": "等待任务",
+      "runtime_chinese": "等待任务",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Process"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeWaitForTask-crop.png",
+      "image_width": 736,
+      "image_height": 499,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Task Handle"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Status",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 11,
+      "bl_idname": "AFNodeBranchEnd",
+      "runtime_id": "AFNodeBranchEnd",
+      "official_english": "Branch End",
+      "runtime_english": "Branch End",
+      "official_chinese": "分流结束",
+      "runtime_chinese": "分流结束",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Structures"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBranchEnd-crop.png",
+      "image_width": 714,
+      "image_height": 272,
+      "body_width_px": 646,
+      "inputs": [
+        "Branch Flow"
+      ],
+      "outputs": [],
+      "label_match": true
+    },
+    {
+      "order": 12,
+      "bl_idname": "AFNodeBranchStart",
+      "runtime_id": "AFNodeBranchStart",
+      "official_english": "Branch Start",
+      "runtime_english": "Branch Start",
+      "official_chinese": "分流开始",
+      "runtime_chinese": "分流开始",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Structures"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBranchStart-crop.png",
+      "image_width": 736,
+      "image_height": 706,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Trigger"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Branch Flow"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 13,
+      "bl_idname": "AFNodeRepeatEnd",
+      "runtime_id": "AFNodeRepeatEnd",
+      "official_english": "Repeat End",
+      "runtime_english": "Repeat End",
+      "official_chinese": "重复结束",
+      "runtime_chinese": "重复结束",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Structures"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRepeatEnd-crop.png",
+      "image_width": 736,
+      "image_height": 388,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In"
+      ],
+      "outputs": [
+        "Flow Out"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 14,
+      "bl_idname": "AFNodeRepeatStart",
+      "runtime_id": "AFNodeRepeatStart",
+      "official_english": "Repeat Start",
+      "runtime_english": "Repeat Start",
+      "official_chinese": "重复开始",
+      "runtime_chinese": "重复开始",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Structures"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRepeatStart-crop.png",
+      "image_width": 736,
+      "image_height": 591,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Count"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Index"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 15,
+      "bl_idname": "AFNodeSubflowJoin",
+      "runtime_id": "AFNodeSubflowJoin",
+      "official_english": "Subflow Join",
+      "runtime_english": "Subflow Join",
+      "official_chinese": "子流并入",
+      "runtime_chinese": "子流并入",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Structures"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSubflowJoin-crop.png",
+      "image_width": 736,
+      "image_height": 591,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Trigger",
+        "Subflow"
+      ],
+      "outputs": [
+        "Flow Out"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 16,
+      "bl_idname": "AFNodeSubflowStart",
+      "runtime_id": "AFNodeSubflowStart",
+      "official_english": "Subflow Start",
+      "runtime_english": "Subflow Start",
+      "official_chinese": "子流开始",
+      "runtime_chinese": "子流开始",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Structures"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSubflowStart-crop.png",
+      "image_width": 710,
+      "image_height": 411,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Subflow"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 17,
+      "bl_idname": "AFNodeBooleanEdge",
+      "runtime_id": "AFNodeBooleanEdge",
+      "official_english": "Boolean Edge",
+      "runtime_english": "Boolean Edge",
+      "official_chinese": "布尔边沿",
+      "runtime_chinese": "布尔边沿",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBooleanEdge-crop.png",
+      "image_width": 712,
+      "image_height": 486,
+      "body_width_px": 646,
+      "inputs": [
+        "Value"
+      ],
+      "outputs": [
+        "On True",
+        "On False"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 18,
+      "bl_idname": "AFNodeBooleanLatch",
+      "runtime_id": "AFNodeBooleanLatch",
+      "official_english": "Boolean Latch",
+      "runtime_english": "Boolean Latch",
+      "official_chinese": "布尔锁存",
+      "runtime_chinese": "布尔锁存",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBooleanLatch-crop.png",
+      "image_width": 712,
+      "image_height": 486,
+      "body_width_px": 646,
+      "inputs": [
+        "Set",
+        "Reset"
+      ],
+      "outputs": [
+        "State"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 19,
+      "bl_idname": "AFNodeBooleanToggle",
+      "runtime_id": "AFNodeBooleanToggle",
+      "official_english": "Boolean Toggle",
+      "runtime_english": "Boolean Toggle",
+      "official_chinese": "布尔切换",
+      "runtime_chinese": "布尔切换",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBooleanToggle-crop.png",
+      "image_width": 712,
+      "image_height": 500,
+      "body_width_px": 646,
+      "inputs": [
+        "Value"
+      ],
+      "outputs": [
+        "State"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 20,
+      "bl_idname": "AFNodeFlowTriggerState",
+      "runtime_id": "AFNodeFlowTriggerState",
+      "official_english": "Flow Trigger State",
+      "runtime_english": "Flow Trigger State",
+      "official_chinese": "流触发状态",
+      "runtime_chinese": "流触发状态",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeFlowTriggerState-crop.png",
+      "image_width": 699,
+      "image_height": 584,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Manual",
+        "Scene Updating",
+        "On Scene Update Start",
+        "On Scene Update End",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 21,
+      "bl_idname": "AFNodeObjectInteractionState",
+      "runtime_id": "AFNodeObjectInteractionState",
+      "official_english": "Object Interaction State",
+      "runtime_english": "Object Interaction State",
+      "official_chinese": "物体交互状态",
+      "runtime_chinese": "物体交互状态",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeObjectInteractionState-crop.png",
+      "image_width": 717,
+      "image_height": 408,
+      "body_width_px": 646,
+      "inputs": [
+        "Mode"
+      ],
+      "outputs": [
+        "Active"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 22,
+      "bl_idname": "AFNodePlaybackState",
+      "runtime_id": "AFNodePlaybackState",
+      "official_english": "Playback State",
+      "runtime_english": "Playback State",
+      "official_chinese": "播放状态",
+      "runtime_chinese": "播放状态",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePlaybackState-crop.png",
+      "image_width": 699,
+      "image_height": 482,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Playing",
+        "On Play",
+        "On Pause",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 23,
+      "bl_idname": "AFNodeViewportShadingState",
+      "runtime_id": "AFNodeViewportShadingState",
+      "official_english": "Viewport Shading State",
+      "runtime_english": "Viewport Shading State",
+      "official_chinese": "视口着色状态",
+      "runtime_chinese": "视口着色状态",
+      "group": "flow",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Flow",
+          "Trigger"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeViewportShadingState-crop.png",
+      "image_width": 717,
+      "image_height": 408,
+      "body_width_px": 646,
+      "inputs": [
+        "Shading"
+      ],
+      "outputs": [
+        "Active"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 24,
+      "bl_idname": "AFNodeExtractPropertyAssignments",
+      "runtime_id": "AFNodeExtractPropertyAssignments",
+      "official_english": "Extract Prop Assigns",
+      "runtime_english": "Extract Property Assignments",
+      "official_chinese": "提取属性赋值",
+      "runtime_chinese": "提取属性赋值",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeExtractPropertyAssignments-crop.png",
+      "image_width": 722,
+      "image_height": 394,
+      "body_width_px": 646,
+      "inputs": [
+        "Property Package"
+      ],
+      "outputs": [
+        "Property Assignment",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 25,
+      "bl_idname": "AFNodeMergePropertyAssignments",
+      "runtime_id": "AFNodeMergePropertyAssignments",
+      "official_english": "Merge Prop Assigns",
+      "runtime_english": "Merge Property Assignments",
+      "official_chinese": "合并属性赋值",
+      "runtime_chinese": "合并属性赋值",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMergePropertyAssignments-crop.png",
+      "image_width": 722,
+      "image_height": 612,
+      "body_width_px": 646,
+      "inputs": [
+        "Base Property Assignment",
+        "Add Property Assignment"
+      ],
+      "outputs": [
+        "Property Assignment",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 26,
+      "bl_idname": "AFNodeModifierPropertyData",
+      "runtime_id": "AFNodeModifierPropertyData",
+      "official_english": "Modifier Data",
+      "runtime_english": "Modifier Property Data",
+      "official_chinese": "修改器属性数据",
+      "runtime_chinese": "修改器属性数据",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeModifierPropertyData-crop.png",
+      "image_width": 733,
+      "image_height": 650,
+      "body_width_px": 668,
+      "inputs": [
+        "Name",
+        "Context",
+        "Property Assignment",
+        "Show Viewport",
+        "Show Render",
+        "Show In Edit Mode"
+      ],
+      "outputs": [
+        "Property Assignment",
+        "Name",
+        "Show Viewport",
+        "Show Render",
+        "Show In Edit Mode",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 27,
+      "bl_idname": "AFNodeObjectDisplayPropertyData",
+      "runtime_id": "AFNodeObjectDisplayPropertyData",
+      "official_english": "Object Display Property Data",
+      "runtime_english": "Object Display Property Data",
+      "official_chinese": "物体显示属性数据",
+      "runtime_chinese": "物体显示属性数据",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeObjectDisplayPropertyData-crop.png",
+      "image_width": 733,
+      "image_height": 796,
+      "body_width_px": 668,
+      "inputs": [
+        "Property Assignment",
+        "Hide Viewport",
+        "Hide Render",
+        "Show In Front",
+        "Show Name",
+        "Show Axis",
+        "Display Type"
+      ],
+      "outputs": [
+        "Property Assignment",
+        "Hide Viewport",
+        "Hide Render",
+        "Show In Front",
+        "Show Name",
+        "Show Axis",
+        "Display Type",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 28,
+      "bl_idname": "AFNodePropertyContext",
+      "runtime_id": "AFNodePropertyContext",
+      "official_english": "Prop Context",
+      "runtime_english": "Property Context",
+      "official_chinese": "属性上下文",
+      "runtime_chinese": "属性上下文",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePropertyContext-crop.png",
+      "image_width": 704,
+      "image_height": 788,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Object",
+        "Object Index",
+        "Object Count",
+        "Component Index",
+        "Component Count",
+        "Is Modifier",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 29,
+      "bl_idname": "AFNodePublishGeometryAttribute",
+      "runtime_id": "AFNodePublishGeometryAttribute",
+      "official_english": "Publish Geometry Attribute",
+      "runtime_english": "Publish Geometry Attribute",
+      "official_chinese": "发布几何属性",
+      "runtime_chinese": "发布几何属性",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePublishGeometryAttribute-crop.png",
+      "image_width": 736,
+      "image_height": 1164,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Object List",
+        "Value"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Carrier Object",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 30,
+      "bl_idname": "AFNodeReadGeometryAttribute",
+      "runtime_id": "AFNodeReadGeometryAttribute",
+      "official_english": "Read Geometry Attribute",
+      "runtime_english": "Read Geometry Attribute",
+      "official_chinese": "读取几何属性",
+      "runtime_chinese": "读取几何属性",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeReadGeometryAttribute-crop.png",
+      "image_width": 717,
+      "image_height": 842,
+      "body_width_px": 646,
+      "inputs": [
+        "Object List",
+        "Element Index"
+      ],
+      "outputs": [
+        "Value",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 31,
+      "bl_idname": "AFNodeReduceContextValue",
+      "runtime_id": "AFNodeReduceContextValue",
+      "official_english": "Reduce Context Value",
+      "runtime_english": "Reduce Context Value",
+      "official_chinese": "归约上下文值",
+      "runtime_chinese": "归约上下文值",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeReduceContextValue-crop.png",
+      "image_width": 717,
+      "image_height": 828,
+      "body_width_px": 646,
+      "inputs": [
+        "Value"
+      ],
+      "outputs": [
+        "Value",
+        "Object",
+        "Object Index",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 32,
+      "bl_idname": "AFNodeSampleContextData",
+      "runtime_id": "AFNodeSampleContextData",
+      "official_english": "Sample Context Data",
+      "runtime_english": "Sample Context Data",
+      "official_chinese": "采样上下文数据",
+      "runtime_chinese": "采样上下文数据",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSampleContextData-crop.png",
+      "image_width": 704,
+      "image_height": 473,
+      "body_width_px": 646,
+      "inputs": [
+        "Object List",
+        "Object Index",
+        "Preview"
+      ],
+      "outputs": [
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 33,
+      "bl_idname": "AFNodeSetGeometryAttribute",
+      "runtime_id": "AFNodeSetGeometryAttribute",
+      "official_english": "Set Geometry Attribute",
+      "runtime_english": "Set Geometry Attribute",
+      "official_chinese": "设置几何属性",
+      "runtime_chinese": "设置几何属性",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSetGeometryAttribute-crop.png",
+      "image_width": 736,
+      "image_height": 946,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Object List",
+        "Value"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 34,
+      "bl_idname": "AFNodeObjectTransformPropertyData",
+      "runtime_id": "AFNodeObjectTransformPropertyData",
+      "official_english": "Transform Data",
+      "runtime_english": "Object Transform Property Data",
+      "official_chinese": "物体变换属性数据",
+      "runtime_chinese": "物体变换属性数据",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Context & Data"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeObjectTransformPropertyData-crop.png",
+      "image_width": 733,
+      "image_height": 854,
+      "body_width_px": 668,
+      "inputs": [
+        "Property Assignment",
+        "Location",
+        "Rotation",
+        "Scale",
+        "Rotation Mode"
+      ],
+      "outputs": [
+        "Property Assignment",
+        "Location",
+        "Rotation",
+        "Scale",
+        "Rotation Mode",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 35,
+      "bl_idname": "AFNodeApplyObjectProperties",
+      "runtime_id": "AFNodeApplyObjectProperties",
+      "official_english": "Apply Object Properties",
+      "runtime_english": "Apply Object Properties",
+      "official_chinese": "应用物体属性",
+      "runtime_chinese": "应用物体属性",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeApplyObjectProperties-crop.png",
+      "image_width": 814,
+      "image_height": 725,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Object List",
+        "Property Package",
+        "Property Assignment 1",
+        " "
+      ],
+      "outputs": [
+        "Flow Out",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 36,
+      "bl_idname": "AFNodeApplyPropertyPackage",
+      "runtime_id": "AFNodeApplyPropertyPackage",
+      "official_english": "Apply Prop Pack",
+      "runtime_english": "Apply Property Package",
+      "official_chinese": "应用属性包",
+      "runtime_chinese": "应用属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeApplyPropertyPackage-crop.png",
+      "image_width": 814,
+      "image_height": 614,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Property Package"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 37,
+      "bl_idname": "AFNodeCreatePropertyPackage",
+      "runtime_id": "AFNodeCreatePropertyPackage",
+      "official_english": "Create Prop Pack",
+      "runtime_english": "Create Property Package",
+      "official_chinese": "创建属性包",
+      "runtime_chinese": "创建属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCreatePropertyPackage-crop.png",
+      "image_width": 722,
+      "image_height": 623,
+      "body_width_px": 646,
+      "inputs": [
+        "Object List",
+        "Property Assignment 1",
+        " "
+      ],
+      "outputs": [
+        "Property Package",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 38,
+      "bl_idname": "AFNodeFilterPropertyPackage",
+      "runtime_id": "AFNodeFilterPropertyPackage",
+      "official_english": "Filter Prop Pack",
+      "runtime_english": "Filter Property Package",
+      "official_chinese": "筛选属性包",
+      "runtime_chinese": "筛选属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeFilterPropertyPackage-crop.png",
+      "image_width": 722,
+      "image_height": 716,
+      "body_width_px": 646,
+      "inputs": [
+        "Property Package",
+        "Object List",
+        "Property Definition"
+      ],
+      "outputs": [
+        "Property Package",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 39,
+      "bl_idname": "AFNodeMergePropertyPackages",
+      "runtime_id": "AFNodeMergePropertyPackages",
+      "official_english": "Merge Prop Packs",
+      "runtime_english": "Merge Property Packages",
+      "official_chinese": "合并属性包",
+      "runtime_chinese": "合并属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMergePropertyPackages-crop.png",
+      "image_width": 722,
+      "image_height": 614,
+      "body_width_px": 646,
+      "inputs": [
+        "Base Property Package",
+        "Add Property Package"
+      ],
+      "outputs": [
+        "Property Package",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 40,
+      "bl_idname": "AFNodeParsePropertyPackage",
+      "runtime_id": "AFNodeParsePropertyPackage",
+      "official_english": "Parse Prop Pack",
+      "runtime_english": "Parse Property Package",
+      "official_chinese": "解析属性包",
+      "runtime_chinese": "解析属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeParsePropertyPackage-crop.png",
+      "image_width": 722,
+      "image_height": 614,
+      "body_width_px": 646,
+      "inputs": [
+        "Property Package"
+      ],
+      "outputs": [
+        "Object List",
+        "Property Definition",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 41,
+      "bl_idname": "AFNodeReadPropertyPackage",
+      "runtime_id": "AFNodeReadPropertyPackage",
+      "official_english": "Read Prop Pack",
+      "runtime_english": "Read Property Package",
+      "official_chinese": "读取属性包",
+      "runtime_chinese": "读取属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeReadPropertyPackage-crop.png",
+      "image_width": 704,
+      "image_height": 420,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Property Package",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 42,
+      "bl_idname": "AFNodeRecordPropertyPackage",
+      "runtime_id": "AFNodeRecordPropertyPackage",
+      "official_english": "Record Prop Pack",
+      "runtime_english": "Record Property Package",
+      "official_chinese": "记录属性包",
+      "runtime_chinese": "记录属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRecordPropertyPackage-crop.png",
+      "image_width": 814,
+      "image_height": 716,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Property Package"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Task Ref",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 43,
+      "bl_idname": "AFNodeRefreshPropertyPackage",
+      "runtime_id": "AFNodeRefreshPropertyPackage",
+      "official_english": "Refresh Prop Pack",
+      "runtime_english": "Refresh Property Package",
+      "official_chinese": "刷新属性包",
+      "runtime_chinese": "刷新属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRefreshPropertyPackage-crop.png",
+      "image_width": 722,
+      "image_height": 831,
+      "body_width_px": 646,
+      "inputs": [
+        "Property Package",
+        "Object List",
+        "Property Definition"
+      ],
+      "outputs": [
+        "Property Package",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 44,
+      "bl_idname": "AFNodeStorePropertyPackage",
+      "runtime_id": "AFNodeStorePropertyPackage",
+      "official_english": "Store Prop Pack",
+      "runtime_english": "Store Property Package",
+      "official_chinese": "存储属性包",
+      "runtime_chinese": "存储属性包",
+      "group": "property",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Property",
+          "Prop Pack Ops"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeStorePropertyPackage-crop.png",
+      "image_width": 814,
+      "image_height": 831,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Property Package"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Property Package",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 45,
+      "bl_idname": "AFNodeRenderTask",
+      "runtime_id": "AFNodeRenderTask",
+      "official_english": "Render Target",
+      "runtime_english": "Render Target",
+      "official_chinese": "渲染 目标",
+      "runtime_chinese": "渲染目标",
+      "group": "task",
+      "menu_paths": [],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRenderTask-crop.png",
+      "image_width": 729,
+      "image_height": 909,
+      "body_width_px": 668,
+      "inputs": [
+        "Frame",
+        "Frame Start",
+        "Frame End"
+      ],
+      "outputs": [
+        "Task Ref",
+        "Render Objects",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 46,
+      "bl_idname": "AFNodeEvaluateTaskDependencies",
+      "runtime_id": "AFNodeEvaluateTaskDependencies",
+      "official_english": "Evaluate Object Dependencies",
+      "runtime_english": "Evaluate Object Dependencies",
+      "official_chinese": "评估物体依赖",
+      "runtime_chinese": "评估物体依赖",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Building"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeEvaluateTaskDependencies-crop.png",
+      "image_width": 722,
+      "image_height": 743,
+      "body_width_px": 646,
+      "inputs": [
+        "Object List"
+      ],
+      "outputs": [
+        "Object List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 47,
+      "bl_idname": "AFNodeResolveTaskRef",
+      "runtime_id": "AFNodeResolveTaskRef",
+      "official_english": "Resolve Task Ref",
+      "runtime_english": "Resolve Task Ref",
+      "official_chinese": "解析任务引用",
+      "runtime_chinese": "解析任务引用",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Building"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeResolveTaskRef-crop.png",
+      "image_width": 722,
+      "image_height": 702,
+      "body_width_px": 646,
+      "inputs": [
+        "Task Ref"
+      ],
+      "outputs": [
+        "Task Objects",
+        "Frame Start",
+        "Frame End",
+        "Status",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 48,
+      "bl_idname": "AFNodeTaskOutput",
+      "runtime_id": "AFNodeTaskOutput",
+      "official_english": "Task Output",
+      "runtime_english": "Task Output",
+      "official_chinese": "任务输出",
+      "runtime_chinese": "任务输出",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Building"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTaskOutput-crop.png",
+      "image_width": 730,
+      "image_height": 499,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Status"
+      ],
+      "outputs": [
+        "Task Plan",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 49,
+      "bl_idname": "AFNodeTaskStart",
+      "runtime_id": "AFNodeTaskStart",
+      "official_english": "Task Start",
+      "runtime_english": "Task Start",
+      "official_chinese": "任务开始",
+      "runtime_chinese": "任务开始",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Building"
+        ]
+      ],
+      "paired_context": true,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTaskStart-crop.png",
+      "image_width": 710,
+      "image_height": 272,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Flow Out"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 50,
+      "bl_idname": "AFNodeTaskStep",
+      "runtime_id": "AFNodeTaskStep",
+      "official_english": "Task Step",
+      "runtime_english": "Task Step",
+      "official_chinese": "任务步骤",
+      "runtime_chinese": "任务步骤",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Building"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTaskStep-crop.png",
+      "image_width": 736,
+      "image_height": 499,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In",
+        "Task Ref"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Status",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 51,
+      "bl_idname": "AFNodeBakeTask",
+      "runtime_id": "AFNodeBakeTask",
+      "official_english": "GN Bake Target",
+      "runtime_english": "GN Bake Target",
+      "official_chinese": "GN 烘焙 目标",
+      "runtime_chinese": "GN 烘焙目标",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Targets"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBakeTask-crop.png",
+      "image_width": 729,
+      "image_height": 1081,
+      "body_width_px": 668,
+      "inputs": [
+        "Frame Start",
+        "Frame End"
+      ],
+      "outputs": [
+        "Task Ref",
+        "Bake Objects",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 52,
+      "bl_idname": "AFNodePhysicsBakeSettings",
+      "runtime_id": "AFNodePhysicsBakeSettings",
+      "official_english": "Physics Bake Settings",
+      "runtime_english": "Physics Bake Settings",
+      "official_chinese": "物理烘焙 设置",
+      "runtime_chinese": "物理烘焙设置",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Targets"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePhysicsBakeSettings-crop.png",
+      "image_width": 729,
+      "image_height": 715,
+      "body_width_px": 668,
+      "inputs": [
+        "Frame Start",
+        "Frame End"
+      ],
+      "outputs": [
+        "Physics Bake Settings",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 53,
+      "bl_idname": "AFNodePhysicsBakeTask",
+      "runtime_id": "AFNodePhysicsBakeTask",
+      "official_english": "Physics Bake Target",
+      "runtime_english": "Physics Bake Target",
+      "official_chinese": "物理烘焙 目标",
+      "runtime_chinese": "物理烘焙目标",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Targets"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePhysicsBakeTask-crop.png",
+      "image_width": 733,
+      "image_height": 740,
+      "body_width_px": 668,
+      "inputs": [
+        "Frame Start",
+        "Frame End",
+        "Settings 1",
+        " "
+      ],
+      "outputs": [
+        "Task Ref",
+        "Bake Objects",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 54,
+      "bl_idname": "AFNodePropertyPackageBakeTarget",
+      "runtime_id": "AFNodePropertyPackageBakeTarget",
+      "official_english": "Property Package Bake Target",
+      "runtime_english": "Property Package Bake Target",
+      "official_chinese": "属性包烘焙目标",
+      "runtime_chinese": "属性包烘焙目标",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Targets"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePropertyPackageBakeTarget-crop.png",
+      "image_width": 733,
+      "image_height": 651,
+      "body_width_px": 668,
+      "inputs": [
+        "Task Ref",
+        "Frame Start",
+        "Frame End"
+      ],
+      "outputs": [
+        "Task Ref",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 55,
+      "bl_idname": "AFNodeRenderTarget",
+      "runtime_id": "AFNodeRenderTarget",
+      "official_english": "Render Target",
+      "runtime_english": "Render Target",
+      "official_chinese": "渲染 目标",
+      "runtime_chinese": "渲染目标",
+      "group": "task",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Task",
+          "Task Targets"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRenderTarget-crop.png",
+      "image_width": 729,
+      "image_height": 909,
+      "body_width_px": 668,
+      "inputs": [
+        "Frame",
+        "Frame Start",
+        "Frame End"
+      ],
+      "outputs": [
+        "Task Ref",
+        "Render Objects",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 56,
+      "bl_idname": "AFNodeAddToCollection",
+      "runtime_id": "AFNodeAddToCollection",
+      "official_english": "Add To Collection",
+      "runtime_english": "Add To Collection",
+      "official_chinese": "放入集合",
+      "runtime_chinese": "添加到集合",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeAddToCollection-crop.png",
+      "image_width": 744,
+      "image_height": 896,
+      "body_width_px": 668,
+      "inputs": [
+        "Flow In",
+        "Object List",
+        "Collection List",
+        "Count"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Object List",
+        "Report"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 57,
+      "bl_idname": "AFNodeCollectionExpand",
+      "runtime_id": "AFNodeCollectionExpand",
+      "official_english": "Collection Expand",
+      "runtime_english": "Collection Expand",
+      "official_chinese": "展开集合",
+      "runtime_chinese": "展开集合",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCollectionExpand-crop.png",
+      "image_width": 722,
+      "image_height": 972,
+      "body_width_px": 646,
+      "inputs": [
+        "Collection List"
+      ],
+      "outputs": [
+        "Object List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 58,
+      "bl_idname": "AFNodeCollectionList",
+      "runtime_id": "AFNodeCollectionList",
+      "official_english": "Collection List",
+      "runtime_english": "Collection List",
+      "official_chinese": "集合列表",
+      "runtime_chinese": "集合列表",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCollectionList-crop.png",
+      "image_width": 722,
+      "image_height": 612,
+      "body_width_px": 646,
+      "inputs": [
+        "Add Collections",
+        "Remove Collections"
+      ],
+      "outputs": [
+        "Collection List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 59,
+      "bl_idname": "AFNodeCreateCollection",
+      "runtime_id": "AFNodeCreateCollection",
+      "official_english": "Create Collection",
+      "runtime_english": "Create Collection",
+      "official_chinese": "创建集合",
+      "runtime_chinese": "创建集合",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCreateCollection-crop.png",
+      "image_width": 744,
+      "image_height": 739,
+      "body_width_px": 668,
+      "inputs": [
+        "Flow In",
+        "Parent Collections"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Collection List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 60,
+      "bl_idname": "AFNodeCreateObject",
+      "runtime_id": "AFNodeCreateObject",
+      "official_english": "Create Object",
+      "runtime_english": "Create Object",
+      "official_chinese": "创建物体",
+      "runtime_chinese": "创建物体",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCreateObject-crop.png",
+      "image_width": 744,
+      "image_height": 739,
+      "body_width_px": 668,
+      "inputs": [
+        "Flow In",
+        "Collection List"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Object List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 61,
+      "bl_idname": "AFNodeDeleteObject",
+      "runtime_id": "AFNodeDeleteObject",
+      "official_english": "Delete Object",
+      "runtime_english": "Delete Object",
+      "official_chinese": "删除物体",
+      "runtime_chinese": "删除对象",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeDeleteObject-crop.png",
+      "image_width": 744,
+      "image_height": 570,
+      "body_width_px": 668,
+      "inputs": [
+        "Flow In",
+        "Object List"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Report"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 62,
+      "bl_idname": "AFNodeDuplicateObject",
+      "runtime_id": "AFNodeDuplicateObject",
+      "official_english": "Duplicate Object",
+      "runtime_english": "Duplicate Object",
+      "official_chinese": "克隆物体",
+      "runtime_chinese": "复制对象",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeDuplicateObject-crop.png",
+      "image_width": 744,
+      "image_height": 986,
+      "body_width_px": 668,
+      "inputs": [
+        "Flow In",
+        "Object List",
+        "Collection List",
+        "Count"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Object List",
+        "Report"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 63,
+      "bl_idname": "AFNodeObjectInfo",
+      "runtime_id": "AFNodeObjectInfo",
+      "official_english": "Object Info",
+      "runtime_english": "Object Info",
+      "official_chinese": "物体信息",
+      "runtime_chinese": "物体信息",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeObjectInfo-crop.png",
+      "image_width": 704,
+      "image_height": 722,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Object List",
+        "Location",
+        "Rotation",
+        "Scale",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 64,
+      "bl_idname": "AFNodeObjectList",
+      "runtime_id": "AFNodeObjectList",
+      "official_english": "Object List",
+      "runtime_english": "Object List",
+      "official_chinese": "物体列表",
+      "runtime_chinese": "物体列表",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeObjectList-crop.png",
+      "image_width": 722,
+      "image_height": 714,
+      "body_width_px": 646,
+      "inputs": [
+        "Base Objects",
+        "Add Objects",
+        "Remove Objects"
+      ],
+      "outputs": [
+        "Object List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 65,
+      "bl_idname": "AFNodeSceneObjectList",
+      "runtime_id": "AFNodeSceneObjectList",
+      "official_english": "Scene Object List",
+      "runtime_english": "Scene Object List",
+      "official_chinese": "场景物体列表",
+      "runtime_chinese": "场景物体列表",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Collection & Object"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSceneObjectList-crop.png",
+      "image_width": 704,
+      "image_height": 880,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Object List",
+        "Report"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 66,
+      "bl_idname": "AFNodeSetActiveCamera",
+      "runtime_id": "AFNodeSetActiveCamera",
+      "official_english": "Set Active Camera",
+      "runtime_english": "Set Active Camera",
+      "official_chinese": "设置活动相机",
+      "runtime_chinese": "设置活动摄像机",
+      "group": "scene_object",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Scene",
+          "Scene Actions"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSetActiveCamera-crop.png",
+      "image_width": 736,
+      "image_height": 628,
+      "body_width_px": 646,
+      "inputs": [
+        "Flow In"
+      ],
+      "outputs": [
+        "Flow Out",
+        "Report"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 67,
+      "bl_idname": "AFNodeBooleanInput",
+      "runtime_id": "AFNodeBooleanInput",
+      "official_english": "Boolean",
+      "runtime_english": "Boolean",
+      "official_chinese": "布尔",
+      "runtime_chinese": "布尔",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBooleanInput-crop.png",
+      "image_width": 699,
+      "image_height": 408,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 68,
+      "bl_idname": "AFNodeFloatInput",
+      "runtime_id": "AFNodeFloatInput",
+      "official_english": "Float",
+      "runtime_english": "Float",
+      "official_chinese": "浮点",
+      "runtime_chinese": "浮点",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeFloatInput-crop.png",
+      "image_width": 699,
+      "image_height": 408,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 69,
+      "bl_idname": "AFNodeIntegerInput",
+      "runtime_id": "AFNodeIntegerInput",
+      "official_english": "Integer",
+      "runtime_english": "Integer",
+      "official_chinese": "整数",
+      "runtime_chinese": "整数",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeIntegerInput-crop.png",
+      "image_width": 699,
+      "image_height": 408,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 70,
+      "bl_idname": "AFNodeInputRotation",
+      "runtime_id": "AFNodeInputRotation",
+      "official_english": "Rotation",
+      "runtime_english": "Rotation",
+      "official_chinese": "旋转",
+      "runtime_chinese": "旋转",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeInputRotation-crop.png",
+      "image_width": 699,
+      "image_height": 594,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 71,
+      "bl_idname": "AFNodeSceneTime",
+      "runtime_id": "AFNodeSceneTime",
+      "official_english": "Scene Time",
+      "runtime_english": "Scene Time",
+      "official_chinese": "场景时间",
+      "runtime_chinese": "场景时间",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSceneTime-crop.png",
+      "image_width": 699,
+      "image_height": 372,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Seconds",
+        "Frame"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 72,
+      "bl_idname": "AFNodeStatusInput",
+      "runtime_id": "AFNodeStatusInput",
+      "official_english": "Status Input",
+      "runtime_english": "Status Input",
+      "official_chinese": "状态输入",
+      "runtime_chinese": "状态输入",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeStatusInput-crop.png",
+      "image_width": 699,
+      "image_height": 408,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Status"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 73,
+      "bl_idname": "AFNodeStringInput",
+      "runtime_id": "AFNodeStringInput",
+      "official_english": "String",
+      "runtime_english": "String",
+      "official_chinese": "字符串",
+      "runtime_chinese": "字符串",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeStringInput-crop.png",
+      "image_width": 704,
+      "image_height": 316,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "String"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 74,
+      "bl_idname": "AFNodeVectorInput",
+      "runtime_id": "AFNodeVectorInput",
+      "official_english": "Vector",
+      "runtime_english": "Vector",
+      "official_chinese": "矢量",
+      "runtime_chinese": "矢量",
+      "group": "inputs",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Inputs"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeVectorInput-crop.png",
+      "image_width": 699,
+      "image_height": 594,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [
+        "Vector"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 75,
+      "bl_idname": "AFNodeBooleanMath",
+      "runtime_id": "AFNodeBooleanMath",
+      "official_english": "Boolean Math",
+      "runtime_english": "Boolean Math",
+      "official_chinese": "布尔运算",
+      "runtime_chinese": "布尔运算",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeBooleanMath-crop.png",
+      "image_width": 712,
+      "image_height": 605,
+      "body_width_px": 646,
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Boolean"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 76,
+      "bl_idname": "AFNodeClamp",
+      "runtime_id": "AFNodeClamp",
+      "official_english": "Clamp",
+      "runtime_english": "Clamp",
+      "official_chinese": "钳制",
+      "runtime_chinese": "钳制",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeClamp-crop.png",
+      "image_width": 712,
+      "image_height": 591,
+      "body_width_px": 646,
+      "inputs": [
+        "Value",
+        "Min",
+        "Max"
+      ],
+      "outputs": [
+        "Result"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 77,
+      "bl_idname": "AFNodeCompare",
+      "runtime_id": "AFNodeCompare",
+      "official_english": "Compare",
+      "runtime_english": "Compare",
+      "official_chinese": "比较",
+      "runtime_chinese": "比较",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCompare-crop.png",
+      "image_width": 712,
+      "image_height": 822,
+      "body_width_px": 646,
+      "inputs": [
+        "A",
+        "B",
+        "Epsilon"
+      ],
+      "outputs": [
+        "Result"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 78,
+      "bl_idname": "AFNodeIntegerMath",
+      "runtime_id": "AFNodeIntegerMath",
+      "official_english": "Integer Math",
+      "runtime_english": "Integer Math",
+      "official_chinese": "整数运算",
+      "runtime_chinese": "整数运算",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeIntegerMath-crop.png",
+      "image_width": 712,
+      "image_height": 605,
+      "body_width_px": 646,
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 79,
+      "bl_idname": "AFNodeMapRange",
+      "runtime_id": "AFNodeMapRange",
+      "official_english": "Map Range",
+      "runtime_english": "Map Range",
+      "official_chinese": "映射范围",
+      "runtime_chinese": "映射范围",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMapRange-crop.png",
+      "image_width": 712,
+      "image_height": 1025,
+      "body_width_px": 646,
+      "inputs": [
+        "Value",
+        "From Min",
+        "From Max",
+        "To Min",
+        "To Max"
+      ],
+      "outputs": [
+        "Result"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 80,
+      "bl_idname": "AFNodeMath",
+      "runtime_id": "AFNodeMath",
+      "official_english": "Math",
+      "runtime_english": "Math",
+      "official_chinese": "运算",
+      "runtime_chinese": "运算",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMath-crop.png",
+      "image_width": 712,
+      "image_height": 720,
+      "body_width_px": 646,
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 81,
+      "bl_idname": "AFNodeSmoothstep",
+      "runtime_id": "AFNodeSmoothstep",
+      "official_english": "Smoothstep",
+      "runtime_english": "Smoothstep",
+      "official_chinese": "平滑插值",
+      "runtime_chinese": "平滑阶梯函数",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Math"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSmoothstep-crop.png",
+      "image_width": 712,
+      "image_height": 591,
+      "body_width_px": 646,
+      "inputs": [
+        "Value",
+        "Edge0",
+        "Edge1"
+      ],
+      "outputs": [
+        "Result"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 82,
+      "bl_idname": "AFNodeConvertValue",
+      "runtime_id": "AFNodeConvertValue",
+      "official_english": "Convert",
+      "runtime_english": "Convert",
+      "official_chinese": "转换",
+      "runtime_chinese": "转换",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeConvertValue-crop.png",
+      "image_width": 712,
+      "image_height": 503,
+      "body_width_px": 646,
+      "inputs": [
+        "Value"
+      ],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 83,
+      "bl_idname": "AFNodeGroup",
+      "runtime_id": "AFNodeGroup",
+      "official_english": "Group",
+      "runtime_english": "Group",
+      "official_chinese": "群组",
+      "runtime_chinese": "群组",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeGroup-crop.png",
+      "image_width": 686,
+      "image_height": 292,
+      "body_width_px": 646,
+      "inputs": [],
+      "outputs": [],
+      "label_match": true
+    },
+    {
+      "order": 84,
+      "bl_idname": "AFNodeIndexSwitch",
+      "runtime_id": "AFNodeIndexSwitch",
+      "official_english": "Index Switch",
+      "runtime_english": "Index Switch",
+      "official_chinese": "编号切换",
+      "runtime_chinese": "编号切换",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeIndexSwitch-crop.png",
+      "image_width": 722,
+      "image_height": 706,
+      "body_width_px": 646,
+      "inputs": [
+        "Index",
+        "0",
+        " "
+      ],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 85,
+      "bl_idname": "AFNodeMix",
+      "runtime_id": "AFNodeMix",
+      "official_english": "Mix",
+      "runtime_english": "Mix",
+      "official_chinese": "混合",
+      "runtime_chinese": "混合",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMix-crop.png",
+      "image_width": 712,
+      "image_height": 822,
+      "body_width_px": 646,
+      "inputs": [
+        "Factor",
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Result"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 86,
+      "bl_idname": "AFNodePreviewData",
+      "runtime_id": "AFNodePreviewData",
+      "official_english": "Preview Data",
+      "runtime_english": "Preview Data",
+      "official_chinese": "预览数据",
+      "runtime_chinese": "预览数据",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodePreviewData-crop.png",
+      "image_width": 723,
+      "image_height": 301,
+      "body_width_px": 680,
+      "inputs": [
+        "Preview"
+      ],
+      "outputs": [],
+      "label_match": true
+    },
+    {
+      "order": 87,
+      "bl_idname": "AFNodeRandomValue",
+      "runtime_id": "AFNodeRandomValue",
+      "official_english": "Random Value",
+      "runtime_english": "Random Value",
+      "official_chinese": "随机值",
+      "runtime_chinese": "随机值",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRandomValue-crop.png",
+      "image_width": 712,
+      "image_height": 706,
+      "body_width_px": 646,
+      "inputs": [
+        "Seed",
+        "Min",
+        "Max"
+      ],
+      "outputs": [
+        "Value"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 88,
+      "bl_idname": "AFNodeSwitch",
+      "runtime_id": "AFNodeSwitch",
+      "official_english": "Switch",
+      "runtime_english": "Switch",
+      "official_chinese": "切换",
+      "runtime_chinese": "切换",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Utilities"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSwitch-crop.png",
+      "image_width": 712,
+      "image_height": 706,
+      "body_width_px": 646,
+      "inputs": [
+        "Switch",
+        "False",
+        "True"
+      ],
+      "outputs": [
+        "Output"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 89,
+      "bl_idname": "AFNodeCombineVector",
+      "runtime_id": "AFNodeCombineVector",
+      "official_english": "Combine Vector",
+      "runtime_english": "Combine Vector",
+      "official_chinese": "组合矢量",
+      "runtime_chinese": "合并矢量",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Vector"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCombineVector-crop.png",
+      "image_width": 712,
+      "image_height": 591,
+      "body_width_px": 646,
+      "inputs": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "outputs": [
+        "Vector"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 90,
+      "bl_idname": "AFNodeSeparateVector",
+      "runtime_id": "AFNodeSeparateVector",
+      "official_english": "Separate Vector",
+      "runtime_english": "Separate Vector",
+      "official_chinese": "分离矢量",
+      "runtime_chinese": "分离矢量",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Vector"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSeparateVector-crop.png",
+      "image_width": 712,
+      "image_height": 877,
+      "body_width_px": 646,
+      "inputs": [
+        "Vector"
+      ],
+      "outputs": [
+        "X",
+        "Y",
+        "Z"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 91,
+      "bl_idname": "AFNodeVectorMath",
+      "runtime_id": "AFNodeVectorMath",
+      "official_english": "Vector Math",
+      "runtime_english": "Vector Math",
+      "official_chinese": "矢量运算",
+      "runtime_chinese": "矢量运算",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Vector"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeVectorMath-crop.png",
+      "image_width": 712,
+      "image_height": 1178,
+      "body_width_px": 646,
+      "inputs": [
+        "A",
+        "B"
+      ],
+      "outputs": [
+        "Vector"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 92,
+      "bl_idname": "AFNodeVectorRotate",
+      "runtime_id": "AFNodeVectorRotate",
+      "official_english": "Vector Rotate",
+      "runtime_english": "Vector Rotate",
+      "official_chinese": "矢量旋转",
+      "runtime_chinese": "矢量旋转",
+      "group": "math_utilities_vector",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Vector"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeVectorRotate-crop.png",
+      "image_width": 712,
+      "image_height": 1164,
+      "body_width_px": 646,
+      "inputs": [
+        "Vector",
+        "Axis",
+        "Angle"
+      ],
+      "outputs": [
+        "Vector"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 93,
+      "bl_idname": "AFNodeAlignRotationToVector",
+      "runtime_id": "AFNodeAlignRotationToVector",
+      "official_english": "Align Rotation to Vector",
+      "runtime_english": "Align Rotation to Vector",
+      "official_chinese": "对齐旋转至矢量",
+      "runtime_chinese": "对齐旋转至矢量",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeAlignRotationToVector-crop.png",
+      "image_width": 712,
+      "image_height": 1392,
+      "body_width_px": 646,
+      "inputs": [
+        "Rotation",
+        "Factor",
+        "Vector"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 94,
+      "bl_idname": "AFNodeAxesToRotation",
+      "runtime_id": "AFNodeAxesToRotation",
+      "official_english": "Axes to Rotation",
+      "runtime_english": "Axes to Rotation",
+      "official_chinese": "轴向 转为 旋转",
+      "runtime_chinese": "轴向 转换为 旋转",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeAxesToRotation-crop.png",
+      "image_width": 712,
+      "image_height": 1290,
+      "body_width_px": 646,
+      "inputs": [
+        "Primary Axis",
+        "Secondary Axis"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 95,
+      "bl_idname": "AFNodeAxisAngleToRotation",
+      "runtime_id": "AFNodeAxisAngleToRotation",
+      "official_english": "Axis Angle to Rotation",
+      "runtime_english": "Axis Angle to Rotation",
+      "official_chinese": "轴角度 转为 旋转",
+      "runtime_chinese": "轴角度 转换为 旋转",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeAxisAngleToRotation-crop.png",
+      "image_width": 712,
+      "image_height": 774,
+      "body_width_px": 646,
+      "inputs": [
+        "Axis",
+        "Angle"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 96,
+      "bl_idname": "AFNodeEulerToRotation",
+      "runtime_id": "AFNodeEulerToRotation",
+      "official_english": "Euler to Rotation",
+      "runtime_english": "Euler to Rotation",
+      "official_chinese": "欧拉 转为 旋转",
+      "runtime_chinese": "欧拉 转换为 旋转",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeEulerToRotation-crop.png",
+      "image_width": 712,
+      "image_height": 672,
+      "body_width_px": 646,
+      "inputs": [
+        "Euler"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 97,
+      "bl_idname": "AFNodeInvertRotation",
+      "runtime_id": "AFNodeInvertRotation",
+      "official_english": "Invert Rotation",
+      "runtime_english": "Invert Rotation",
+      "official_chinese": "反向旋转",
+      "runtime_chinese": "反向旋转",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeInvertRotation-crop.png",
+      "image_width": 712,
+      "image_height": 672,
+      "body_width_px": 646,
+      "inputs": [
+        "Rotation"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 98,
+      "bl_idname": "AFNodeQuaternionToRotation",
+      "runtime_id": "AFNodeQuaternionToRotation",
+      "official_english": "Quaternion to Rotation",
+      "runtime_english": "Quaternion to Rotation",
+      "official_chinese": "四元数 转为 旋转",
+      "runtime_chinese": "四元数 转换为 旋转",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeQuaternionToRotation-crop.png",
+      "image_width": 712,
+      "image_height": 690,
+      "body_width_px": 646,
+      "inputs": [
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 99,
+      "bl_idname": "AFNodeRotateRotation",
+      "runtime_id": "AFNodeRotateRotation",
+      "official_english": "Rotate Rotation",
+      "runtime_english": "Rotate Rotation",
+      "official_chinese": "累加旋转",
+      "runtime_chinese": "累加旋转",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRotateRotation-crop.png",
+      "image_width": 712,
+      "image_height": 1176,
+      "body_width_px": 646,
+      "inputs": [
+        "Rotation",
+        "Rotate By"
+      ],
+      "outputs": [
+        "Rotation"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 100,
+      "bl_idname": "AFNodeRotateVector",
+      "runtime_id": "AFNodeRotateVector",
+      "official_english": "Rotate Vector",
+      "runtime_english": "Rotate Vector",
+      "official_chinese": "旋转矢量",
+      "runtime_chinese": "旋转矢量",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRotateVector-crop.png",
+      "image_width": 712,
+      "image_height": 1062,
+      "body_width_px": 646,
+      "inputs": [
+        "Vector",
+        "Rotation"
+      ],
+      "outputs": [
+        "Vector"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 101,
+      "bl_idname": "AFNodeRotationToAxisAngle",
+      "runtime_id": "AFNodeRotationToAxisAngle",
+      "official_english": "Rotation to Axis Angle",
+      "runtime_english": "Rotation to Axis Angle",
+      "official_chinese": "旋转 转为 轴角度",
+      "runtime_chinese": "旋转 转换为 轴角度",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRotationToAxisAngle-crop.png",
+      "image_width": 712,
+      "image_height": 774,
+      "body_width_px": 646,
+      "inputs": [
+        "Rotation"
+      ],
+      "outputs": [
+        "Axis",
+        "Angle"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 102,
+      "bl_idname": "AFNodeRotationToEuler",
+      "runtime_id": "AFNodeRotationToEuler",
+      "official_english": "Rotation to Euler",
+      "runtime_english": "Rotation to Euler",
+      "official_chinese": "旋转 转为 欧拉",
+      "runtime_chinese": "旋转 转换为 欧拉",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRotationToEuler-crop.png",
+      "image_width": 712,
+      "image_height": 672,
+      "body_width_px": 646,
+      "inputs": [
+        "Rotation"
+      ],
+      "outputs": [
+        "Euler"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 103,
+      "bl_idname": "AFNodeRotationToQuaternion",
+      "runtime_id": "AFNodeRotationToQuaternion",
+      "official_english": "Rotation to Quaternion",
+      "runtime_english": "Rotation to Quaternion",
+      "official_chinese": "旋转 转为 四元数",
+      "runtime_chinese": "旋转 转换为 四元数",
+      "group": "rotation",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Rotation"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeRotationToQuaternion-crop.png",
+      "image_width": 712,
+      "image_height": 976,
+      "body_width_px": 646,
+      "inputs": [
+        "Rotation"
+      ],
+      "outputs": [
+        "W",
+        "X",
+        "Y",
+        "Z"
+      ],
+      "label_match": false
+    },
+    {
+      "order": 104,
+      "bl_idname": "AFNodeCombineMatrix",
+      "runtime_id": "AFNodeCombineMatrix",
+      "official_english": "Combine Matrix",
+      "runtime_english": "Combine Matrix",
+      "official_chinese": "合并矩阵",
+      "runtime_chinese": "合并矩阵",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCombineMatrix-crop.png",
+      "image_width": 673,
+      "image_height": 1378,
+      "body_width_px": 618,
+      "inputs": [
+        "Column 1 Row 1",
+        "Column 1 Row 2",
+        "Column 1 Row 3",
+        "Column 1 Row 4",
+        "Column 2 Row 1",
+        "Column 2 Row 2",
+        "Column 2 Row 3",
+        "Column 2 Row 4",
+        "Column 3 Row 1",
+        "Column 3 Row 2",
+        "Column 3 Row 3",
+        "Column 3 Row 4",
+        "Column 4 Row 1",
+        "Column 4 Row 2",
+        "Column 4 Row 3",
+        "Column 4 Row 4"
+      ],
+      "outputs": [
+        "Matrix"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 105,
+      "bl_idname": "AFNodeCombineTransform",
+      "runtime_id": "AFNodeCombineTransform",
+      "official_english": "Combine Transform",
+      "runtime_english": "Combine Transform",
+      "official_chinese": "合并变换",
+      "runtime_chinese": "合并变换",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeCombineTransform-crop.png",
+      "image_width": 698,
+      "image_height": 1420,
+      "body_width_px": 634,
+      "inputs": [
+        "Translation",
+        "Rotation",
+        "Scale"
+      ],
+      "outputs": [
+        "Matrix"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 106,
+      "bl_idname": "AFNodeInvertMatrix",
+      "runtime_id": "AFNodeInvertMatrix",
+      "official_english": "Invert Matrix",
+      "runtime_english": "Invert Matrix",
+      "official_chinese": "逆矩阵",
+      "runtime_chinese": "逆矩阵",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeInvertMatrix-crop.png",
+      "image_width": 712,
+      "image_height": 486,
+      "body_width_px": 646,
+      "inputs": [
+        "Matrix"
+      ],
+      "outputs": [
+        "Matrix",
+        "Invertible"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 107,
+      "bl_idname": "AFNodeMatrixDeterminant",
+      "runtime_id": "AFNodeMatrixDeterminant",
+      "official_english": "Matrix Determinant",
+      "runtime_english": "Matrix Determinant",
+      "official_chinese": "矩阵行列式",
+      "runtime_chinese": "矩阵行列式",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMatrixDeterminant-crop.png",
+      "image_width": 712,
+      "image_height": 386,
+      "body_width_px": 646,
+      "inputs": [
+        "Matrix"
+      ],
+      "outputs": [
+        "Determinant"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 108,
+      "bl_idname": "AFNodeMatrixMultiply",
+      "runtime_id": "AFNodeMatrixMultiply",
+      "official_english": "Multiply Matrices",
+      "runtime_english": "Multiply Matrices",
+      "official_chinese": "矩阵相乘",
+      "runtime_chinese": "矩阵相乘",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeMatrixMultiply-crop.png",
+      "image_width": 712,
+      "image_height": 486,
+      "body_width_px": 646,
+      "inputs": [
+        "Matrix A",
+        "Matrix B"
+      ],
+      "outputs": [
+        "Matrix"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 109,
+      "bl_idname": "AFNodeProjectPoint",
+      "runtime_id": "AFNodeProjectPoint",
+      "official_english": "Project Point",
+      "runtime_english": "Project Point",
+      "official_chinese": "投影点",
+      "runtime_chinese": "投影点",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeProjectPoint-crop.png",
+      "image_width": 712,
+      "image_height": 774,
+      "body_width_px": 646,
+      "inputs": [
+        "Point",
+        "Matrix"
+      ],
+      "outputs": [
+        "Point"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 110,
+      "bl_idname": "AFNodeSeparateMatrix",
+      "runtime_id": "AFNodeSeparateMatrix",
+      "official_english": "Separate Matrix",
+      "runtime_english": "Separate Matrix",
+      "official_chinese": "分离矩阵",
+      "runtime_chinese": "分离矩阵",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSeparateMatrix-crop.png",
+      "image_width": 673,
+      "image_height": 1378,
+      "body_width_px": 618,
+      "inputs": [
+        "Matrix"
+      ],
+      "outputs": [
+        "Column 1 Row 1",
+        "Column 1 Row 2",
+        "Column 1 Row 3",
+        "Column 1 Row 4",
+        "Column 2 Row 1",
+        "Column 2 Row 2",
+        "Column 2 Row 3",
+        "Column 2 Row 4",
+        "Column 3 Row 1",
+        "Column 3 Row 2",
+        "Column 3 Row 3",
+        "Column 3 Row 4",
+        "Column 4 Row 1",
+        "Column 4 Row 2",
+        "Column 4 Row 3",
+        "Column 4 Row 4"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 111,
+      "bl_idname": "AFNodeSeparateTransform",
+      "runtime_id": "AFNodeSeparateTransform",
+      "official_english": "Separate Transform",
+      "runtime_english": "Separate Transform",
+      "official_chinese": "分离变换",
+      "runtime_chinese": "分离变换",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeSeparateTransform-crop.png",
+      "image_width": 712,
+      "image_height": 588,
+      "body_width_px": 646,
+      "inputs": [
+        "Matrix"
+      ],
+      "outputs": [
+        "Translation",
+        "Rotation",
+        "Scale"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 112,
+      "bl_idname": "AFNodeTransformDirection",
+      "runtime_id": "AFNodeTransformDirection",
+      "official_english": "Transform Direction",
+      "runtime_english": "Transform Direction",
+      "official_chinese": "变换方向",
+      "runtime_chinese": "变换方向",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTransformDirection-crop.png",
+      "image_width": 712,
+      "image_height": 774,
+      "body_width_px": 646,
+      "inputs": [
+        "Direction",
+        "Matrix"
+      ],
+      "outputs": [
+        "Direction"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 113,
+      "bl_idname": "AFNodeTransformPoint",
+      "runtime_id": "AFNodeTransformPoint",
+      "official_english": "Transform Point",
+      "runtime_english": "Transform Point",
+      "official_chinese": "变换点",
+      "runtime_chinese": "变换点",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTransformPoint-crop.png",
+      "image_width": 712,
+      "image_height": 774,
+      "body_width_px": 646,
+      "inputs": [
+        "Point",
+        "Matrix"
+      ],
+      "outputs": [
+        "Point"
+      ],
+      "label_match": true
+    },
+    {
+      "order": 114,
+      "bl_idname": "AFNodeTransposeMatrix",
+      "runtime_id": "AFNodeTransposeMatrix",
+      "official_english": "Transpose Matrix",
+      "runtime_english": "Transpose Matrix",
+      "official_chinese": "转置矩阵",
+      "runtime_chinese": "转置矩阵",
+      "group": "matrix",
+      "menu_paths": [
+        [
+          "Automation Flow",
+          "Math",
+          "Matrix"
+        ]
+      ],
+      "paired_context": false,
+      "image": "/assets/plugins/automation-flow/nodes/AFNodeTransposeMatrix-crop.png",
+      "image_width": 712,
+      "image_height": 386,
+      "body_width_px": 646,
+      "inputs": [
+        "Matrix"
+      ],
+      "outputs": [
+        "Matrix"
+      ],
+      "label_match": true
+    }
+  ]
+}

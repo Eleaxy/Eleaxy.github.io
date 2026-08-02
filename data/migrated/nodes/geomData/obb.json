@@ -1,0 +1,59 @@
+{
+  "id": "obb",
+  "name": "OBB",
+  "name_zh": "",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 2D 3D option.",
+      "default": false,
+      "de": "Toggles or selects the 2D 3D option.",
+      "dz": "控制是否启用或选择 2D / 3D。"
+    },
+    {
+      "name": "Group ID",
+      "type": "NodeSocketInt",
+      "description": "An index used to group values together for multiple separate accumulations",
+      "default": -999,
+      "de": "An index used to group values together for multiple separate accumulations",
+      "dz": "设置 Group / ID 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "OBB",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as OBB.",
+      "de": "Geometry data used as OBB.",
+      "dz": "传入或输出用于该节点处理的 OBB。"
+    },
+    {
+      "name": "Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Transform.",
+      "de": "Parameter for Transform.",
+      "dz": "指定 Transform 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

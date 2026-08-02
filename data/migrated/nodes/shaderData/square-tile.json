@@ -1,0 +1,111 @@
+{
+  "id": "square-tile",
+  "name": "Square_Tile",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 5.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Iteration",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iteration.",
+      "default": 4,
+      "de": "Integer value controlling Iteration.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Mortar",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mortar.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Mortar.",
+      "dz": "设置 Mortar 的数值。"
+    },
+    {
+      "name": "Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Falloff.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Falloff.",
+      "dz": "设置 衰减 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Pattern",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Pattern.",
+      "default": 0.0,
+      "de": "Numeric value controlling Pattern.",
+      "dz": "设置 Pattern 的数值。"
+    },
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "default": 0.0,
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 高度 的数值。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Random.",
+      "dz": "设置 随机量 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

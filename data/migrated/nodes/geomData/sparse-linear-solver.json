@@ -1,0 +1,81 @@
+{
+  "id": "sparse-linear-solver",
+  "name": "Sparse Linear Solver",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Iterate Method",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Iterate Method.",
+      "default": "Conjugate Gradient",
+      "de": "Mode selector for Iterate Method.",
+      "dz": "选择 Iterate / Method 的模式。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 20,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "SOR",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SOR.",
+      "default": 1.940000057220459,
+      "de": "Numeric value controlling SOR.",
+      "dz": "设置 SOR 的数值。"
+    },
+    {
+      "name": "Linear System",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Linear System.",
+      "de": "Parameter for Linear System.",
+      "dz": "指定 Linear / System 参数。"
+    },
+    {
+      "name": "Simulate",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Simulate option.",
+      "default": false,
+      "de": "Toggles or selects the Simulate option.",
+      "dz": "控制是否启用或选择 Simulate。"
+    },
+    {
+      "name": "Tolerance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Tolerance.",
+      "default": 0.0010000000474974513,
+      "de": "Numeric value controlling Tolerance.",
+      "dz": "设置 Tolerance 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "x",
+      "type": "NodeSocketVector",
+      "description": "Vector value for x.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for x.",
+      "dz": "设置 x 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

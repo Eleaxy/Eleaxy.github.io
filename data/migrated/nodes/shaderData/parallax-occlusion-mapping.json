@@ -1,0 +1,100 @@
+{
+  "id": "parallax-occlusion-mapping",
+  "name": "Parallax Occlusion Mapping",
+  "name_zh": "",
+  "category_id": "mfs_parallax",
+  "category": "Parallax",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_parallax",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Min_Steps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Min Steps.",
+      "default": 8,
+      "de": "Integer value controlling Min Steps.",
+      "dz": "设置 最小值 / Steps 的数值。"
+    },
+    {
+      "name": "Max_Steps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Max Steps.",
+      "default": 32,
+      "de": "Integer value controlling Max Steps.",
+      "dz": "设置 最大值 / Steps 的数值。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    },
+    {
+      "name": "Max_Distance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max Distance.",
+      "default": 12.0,
+      "de": "Numeric value controlling Max Distance.",
+      "dz": "设置 最大值 / Distance 的数值。"
+    },
+    {
+      "name": "Render_Mask",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Render Mask option.",
+      "default": true,
+      "de": "Toggles or selects the Render Mask option.",
+      "dz": "控制是否启用或选择 Render / 遮罩。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Height.",
+      "de": "Parameter for Height.",
+      "dz": "指定 高度 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "HeightMap",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height Map.",
+      "default": 0.0,
+      "de": "Numeric value controlling Height Map.",
+      "dz": "设置 高度 / Map 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

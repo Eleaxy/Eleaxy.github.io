@@ -1,0 +1,42 @@
+{
+  "id": "switch-multi-uvs",
+  "name": "Switch_Multi_UVs",
+  "name_zh": "",
+  "category_id": "shader_utility",
+  "category": "Utility",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_utility",
+  "inputs": [
+    {
+      "name": "Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Index.",
+      "default": 0,
+      "de": "Integer value controlling Index.",
+      "dz": "设置 索引 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

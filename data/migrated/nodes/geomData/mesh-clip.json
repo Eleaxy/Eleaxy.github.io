@@ -1,0 +1,51 @@
+{
+  "id": "mesh-clip",
+  "name": "Mesh Clip",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Plane",
+      "type": "NodeSocketObject",
+      "description": "Parameter for Plane.",
+      "default": "<bpy_struct, Object(\"Plane.033\") at 0x0000016C0C92B220>",
+      "de": "Parameter for Plane.",
+      "dz": "指定 Plane 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Intersecting Edges",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Intersecting Edges.",
+      "de": "Geometry data used as Intersecting Edges.",
+      "dz": "传入或输出用于该节点处理的 Intersecting / Edges。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "string-art",
+  "name": "String Art",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": "Perspective"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Custom",
+      "type": "NodeSocketBool",
+      "description": "Boolean toggle for Custom.",
+      "de": "Boolean toggle for Custom.",
+      "dz": "控制 Custom 的开关。",
+      "default": false
+    },
+    {
+      "name": "Smooth",
+      "type": "NodeSocketBool",
+      "description": "Boolean toggle for Smooth.",
+      "de": "Boolean toggle for Smooth.",
+      "dz": "控制 Smooth 的开关。",
+      "default": true
+    },
+    {
+      "name": "Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Angle.",
+      "de": "Numeric value controlling Angle.",
+      "dz": "设置 角度 的数值。",
+      "default": 1.0471975803375244
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

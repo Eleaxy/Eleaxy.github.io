@@ -1,0 +1,60 @@
+{
+  "id": "dqs-compensation",
+  "name": "DQS Compensation",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Deformed Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to get the bundle of",
+      "de": "Geometry to get the bundle of",
+      "dz": "传入或输出用于该节点处理的 Deformed / 蒙皮。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 0.5,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    },
+    {
+      "name": "Blur Iterations",
+      "type": "NodeSocketInt",
+      "description": "How many times to blur the values for all elements",
+      "default": 0,
+      "de": "How many times to blur the values for all elements",
+      "dz": "设置 模糊 / 迭代次数 的数值。"
+    },
+    {
+      "name": "Blur Weight",
+      "type": "NodeSocketFloat",
+      "description": "Relative mix weight of neighboring elements",
+      "default": 1.0,
+      "de": "Relative mix weight of neighboring elements",
+      "dz": "设置 模糊 / 权重 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Deformed Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Deformed Skin.",
+      "de": "Geometry data used as Deformed Skin.",
+      "dz": "传入或输出用于该节点处理的 Deformed / 蒙皮。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

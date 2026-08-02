@@ -1,0 +1,72 @@
+{
+  "id": "shifting-color",
+  "name": "Shifting Color",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Speed",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed.",
+      "default": 0.49999991059303284,
+      "de": "Numeric value controlling Speed.",
+      "dz": "设置 速度 的数值。"
+    },
+    {
+      "name": "Fac",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Fac.",
+      "default": 1.0,
+      "de": "Numeric value controlling Fac.",
+      "dz": "设置 Fac 的数值。"
+    },
+    {
+      "name": "Exponent",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Exponent.",
+      "default": 3.0,
+      "de": "Numeric value controlling Exponent.",
+      "dz": "设置 Exponent 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

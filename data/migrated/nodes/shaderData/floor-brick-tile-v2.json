@@ -1,0 +1,95 @@
+{
+  "id": "floor-brick-tile-v2",
+  "name": "Floor_Brick_Tile_V2",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 5.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Brick_Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Brick Edge.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Brick Edge.",
+      "dz": "设置 Brick / Edge 的数值。"
+    },
+    {
+      "name": "Circle_Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Circle Edge.",
+      "default": 0.5,
+      "de": "Numeric value controlling Circle Edge.",
+      "dz": "设置 Circle / Edge 的数值。"
+    },
+    {
+      "name": "Cross_Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Cross Edge.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Cross Edge.",
+      "dz": "设置 Cross / Edge 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Random.",
+      "dz": "设置 随机量 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

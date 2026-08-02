@@ -1,0 +1,67 @@
+{
+  "id": "mesh-ambient-occlusion",
+  "name": "Mesh Ambient Occlusion",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "External",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as External.",
+      "de": "Geometry data used as External.",
+      "dz": "传入或输出用于该节点处理的 External。"
+    },
+    {
+      "name": "Samples",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Samples.",
+      "default": 20,
+      "de": "Integer value controlling Samples.",
+      "dz": "设置 Samples 的数值。"
+    },
+    {
+      "name": "Blur Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Blur Iterations.",
+      "default": 2,
+      "de": "Integer value controlling Blur Iterations.",
+      "dz": "设置 模糊 / 迭代次数 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "AO",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling AO.",
+      "default": 0.0,
+      "de": "Numeric value controlling AO.",
+      "dz": "设置 AO 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

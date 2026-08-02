@@ -1,0 +1,105 @@
+{
+  "id": "curve-info",
+  "name": "Curve Info",
+  "name_zh": "",
+  "category_id": "particle_info",
+  "category": "Info",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_info",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "U",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling U.",
+      "default": 0.0,
+      "de": "Numeric value controlling U.",
+      "dz": "设置 U 的数值。"
+    },
+    {
+      "name": "V",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling V.",
+      "default": 0.0,
+      "de": "Numeric value controlling V.",
+      "dz": "设置 V 的数值。"
+    },
+    {
+      "name": "U Length",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling U Length.",
+      "default": 0.0,
+      "de": "Numeric value controlling U Length.",
+      "dz": "设置 U / Length 的数值。"
+    },
+    {
+      "name": "V Length",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling V Length.",
+      "default": 0.0,
+      "de": "Numeric value controlling V Length.",
+      "dz": "设置 V / Length 的数值。"
+    },
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "UVTile",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UVTile.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UVTile.",
+      "dz": "设置 UVTile 的向量数据。"
+    },
+    {
+      "name": "UTile",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UTile.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UTile.",
+      "dz": "设置 UTile 的向量数据。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Random.",
+      "default": 0.0,
+      "de": "Numeric value controlling Random.",
+      "dz": "设置 随机量 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

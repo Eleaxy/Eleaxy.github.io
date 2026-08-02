@@ -1,0 +1,165 @@
+{
+  "id": "module-info-piece",
+  "name": "Module Info Piece",
+  "name_zh": "",
+  "category_id": "pcg",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "pcg",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Symbol",
+      "type": "NodeSocketString",
+      "description": "Text value used for Symbol.",
+      "default": "A",
+      "de": "Text value used for Symbol.",
+      "dz": "指定 Symbol 参数。"
+    },
+    {
+      "name": "Spline Mesh",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Spline Mesh option.",
+      "default": false,
+      "de": "Toggles or selects the Spline Mesh option.",
+      "dz": "控制是否启用或选择 Spline / 网格。"
+    },
+    {
+      "name": "Size Measure",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Size Measure.",
+      "default": "Bound",
+      "de": "Mode selector for Size Measure.",
+      "dz": "选择 尺寸 / Measure 的模式。"
+    },
+    {
+      "name": "Size",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Size.",
+      "default": 1.0,
+      "de": "Numeric value controlling Size.",
+      "dz": "设置 尺寸 的数值。"
+    },
+    {
+      "name": "Use Radius",
+      "type": "NodeSocketBool",
+      "description": "For curves, point clouds, and Grease Pencil, take the radius attribute into account when computing the bounds.",
+      "default": false,
+      "de": "For curves, point clouds, and Grease Pencil, take the radius attribute into account when computing the bounds.",
+      "dz": "控制是否启用或选择 Use / 半径。"
+    },
+    {
+      "name": "Scalable",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Scalable.",
+      "default": "Only Scale X Axis",
+      "de": "Mode selector for Scalable.",
+      "dz": "选择 Scalable 的模式。"
+    },
+    {
+      "name": "Forward Padding",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Forward Padding.",
+      "default": 0.0,
+      "de": "Numeric value controlling Forward Padding.",
+      "dz": "设置 Forward / Padding 的数值。"
+    },
+    {
+      "name": "Backward Padding",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Backward Padding.",
+      "default": 0.0,
+      "de": "Numeric value controlling Backward Padding.",
+      "dz": "设置 Backward / Padding 的数值。"
+    },
+    {
+      "name": "Forward Axis",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Forward Axis.",
+      "default": "X",
+      "de": "Mode selector for Forward Axis.",
+      "dz": "选择 Forward / 轴向 的模式。"
+    },
+    {
+      "name": "Curve Up Mode",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Curve Up Mode.",
+      "default": "Custom Up",
+      "de": "Mode selector for Curve Up Mode.",
+      "dz": "选择 曲线 / Up / 模式 的模式。"
+    },
+    {
+      "name": "Up Axis",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Up Axis.",
+      "default": "Z",
+      "de": "Mode selector for Up Axis.",
+      "dz": "选择 Up / 轴向 的模式。"
+    },
+    {
+      "name": "Curve Up",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Curve Up.",
+      "default": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Vector value for Curve Up.",
+      "dz": "设置 曲线 / Up 的向量数据。"
+    },
+    {
+      "name": "Center Object",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Center Object option.",
+      "default": true,
+      "de": "Toggles or selects the Center Object option.",
+      "dz": "控制是否启用或选择 中心 / 物体。"
+    },
+    {
+      "name": "Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Transform.",
+      "de": "Parameter for Transform.",
+      "dz": "指定 Transform 参数。"
+    },
+    {
+      "name": "Min Random Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Min Random Transform.",
+      "de": "Parameter for Min Random Transform.",
+      "dz": "指定 最小值 / 随机量 / Transform 参数。"
+    },
+    {
+      "name": "Max Random Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Max Random Transform.",
+      "de": "Parameter for Max Random Transform.",
+      "dz": "指定 最大值 / 随机量 / Transform 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Module Info",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Module Info.",
+      "de": "Parameter for Module Info.",
+      "dz": "指定 Module / Info 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Advanced/Spline_Grammar_v3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Spline_Grammar_v3.blend?raw=1"
+}

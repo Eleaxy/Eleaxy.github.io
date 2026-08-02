@@ -1,0 +1,70 @@
+{
+  "id": "2d-straight-skeleton",
+  "name": "2D Straight Skeleton",
+  "name_zh": "二维直骨架",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "2D Straight Skeleton 节点用于从二维网格或平面多边形计算其直骨架（Straight Skeleton），并输出对应的曲线结构。直骨架由边界沿法向匀速向内偏移时形成，与中轴线不同，它完全由线段组成并保留原始边界的拓扑特征。该节点适用于屋顶生成、轮廓内缩、道路网络及程序化建筑建模等应用。",
+  "notes": "输入几何应为封闭且位于同一平面上的网格或多边形，开放边界或非流形拓扑可能导致计算失败。Precision 会影响骨架计算精度和稳定性，较高的值通常会增加计算时间。Smooth Iterations 可对输出曲线进行平滑处理，而 Collinear Threshold 用于合并近乎共线的顶点，减少冗余折线。",
+  "example": "将建筑平面轮廓连接到 Mesh 输入，设置适当的 Precision 后计算直骨架，再利用输出 Curve 作为屋脊线生成程序化屋顶或进行轮廓内缩建模。",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.16 - 17.10.22.20.png",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "输入用于计算二维直骨架的网格几何。通常应为封闭的平面区域，其边界将用于生成骨架曲线。",
+      "dz": "输入用于计算二维直骨架的网格几何。通常应为封闭的平面区域，其边界将用于生成骨架曲线。"
+    },
+    {
+      "name": "Precision",
+      "type": "NodeSocketFloat",
+      "default": 0.005,
+      "min": 0.0001,
+      "max": 3.4028234663852886e+38,
+      "description": "控制直骨架计算的精度。提高该值通常可以获得更稳定、更准确的结果，但会增加计算开销。",
+      "dz": "控制直骨架计算的精度。提高该值通常可以获得更稳定、更准确的结果，但会增加计算开销。"
+    },
+    {
+      "name": "Smooth Iterations",
+      "type": "NodeSocketInt",
+      "default": 12,
+      "min": 0,
+      "max": 2147483647,
+      "description": "指定输出骨架曲线的平滑迭代次数，用于减少细小折线，使结果更加平滑。",
+      "dz": "指定输出骨架曲线的平滑迭代次数，用于减少细小折线，使结果更加平滑。"
+    },
+    {
+      "name": "Collinear Threshold",
+      "type": "NodeSocketFloat",
+      "default": 0.01745329,
+      "min": 0.0,
+      "max": 3.14159274,
+      "description": "设置共线判断阈值，用于合并近似共线的节点并简化输出曲线结构。",
+      "dz": "设置共线判断阈值，用于合并近似共线的节点并简化输出曲线结构。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "输出计算得到的二维直骨架曲线，可用于程序化屋顶生成、轮廓偏移、路径分析或其他曲线处理流程。",
+      "dz": "输出计算得到的二维直骨架曲线，可用于程序化屋顶生成、轮廓偏移、路径分析或其他曲线处理流程。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1",
+  "created_version": "v1.0.1",
+  "last_modified_version": "v1.0.1",
+  "field_provenance": {
+    "identity": "local v1.0.1 direct-import ledger",
+    "category": "docs/index.html EMBEDDED_STATE.nodeCats",
+    "metadata": "docs/index.html EMBEDDED_STATE.nodeData",
+    "socket_schema": "docs/index.html EMBEDDED_STATE.extraData.manualNodes",
+    "source_blend": "docs/index.html EMBEDDED_STATE.extraData.manualNodes"
+  }
+}

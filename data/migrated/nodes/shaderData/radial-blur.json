@@ -1,0 +1,80 @@
+{
+  "id": "radial-blur",
+  "name": "Radial Blur",
+  "name_zh": "",
+  "category_id": "shader_image",
+  "category": "Image",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_image",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.5,
+        0.5
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "Step Size",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Step Size.",
+      "default": 0.009999999776482582,
+      "de": "Numeric value controlling Step Size.",
+      "dz": "设置 Step / 尺寸 的数值。"
+    },
+    {
+      "name": "Samples",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Samples.",
+      "default": 32,
+      "de": "Integer value controlling Samples.",
+      "dz": "设置 Samples 的数值。"
+    },
+    {
+      "name": "Image",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Image.",
+      "de": "Parameter for Image.",
+      "dz": "指定 图像 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

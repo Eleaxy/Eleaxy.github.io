@@ -1,0 +1,37 @@
+{
+  "id": "3x3-matrix-trace",
+  "name": " 3x3 Matrix Trace",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Trace",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Trace.",
+      "default": 0.0,
+      "de": "Numeric value controlling Trace.",
+      "dz": "设置 Trace 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Extra_Matrix_Math.blend?raw=1"
+}

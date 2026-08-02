@@ -1,0 +1,115 @@
+{
+  "id": "radial-noise",
+  "name": "Radial-Noise",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Scale.",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Scale.",
+      "dz": "设置 缩放 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 13.399999618530273,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail.",
+      "default": 0.0,
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.5,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    },
+    {
+      "name": "Distortion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distortion.",
+      "default": 0.0,
+      "de": "Numeric value controlling Distortion.",
+      "dz": "设置 Distortion 的数值。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 2D 3D option.",
+      "default": false,
+      "de": "Toggles or selects the 2D 3D option.",
+      "dz": "控制是否启用或选择 2D / 3D。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Fac",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Fac.",
+      "default": 0.0,
+      "de": "Numeric value controlling Fac.",
+      "dz": "设置 Fac 的数值。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

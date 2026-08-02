@@ -1,0 +1,103 @@
+{
+  "id": "stage-12",
+  "title": "Street-ver.-Night",
+  "date": "2023-12-30",
+  "image": {
+    "source": "https://sablefish357.com/stages/12-30-2023/streetnight v1.jpg",
+    "alt": "A picture of a street at night",
+    "local": "/images/stages/stage-12-27936cc2e8.jpg"
+  },
+  "readme": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it.",
+    "The stage includes an opening; please replace it with your own logo.",
+    "Particle systems for falling leaves need to be cached first.",
+    "Blender version 4.3.2"
+  ],
+  "blender_version": "Blender version 4.3.2",
+  "usage_terms": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it."
+  ],
+  "download_urls": [
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/Street-ver.-Night-12302023"
+    }
+  ],
+  "source_url": "https://sablefish357.com/stages/12-30-2023/12-30-2023.html",
+  "all_links": [
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "VIDEOS",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "STAGES",
+      "href": "https://sablefish357.com/stages.html"
+    },
+    {
+      "text": "BLOG",
+      "href": "https://sablefish357.com/blog.html"
+    },
+    {
+      "text": "HOME",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "CONTACT",
+      "href": "https://sablefish357.com/stages/12-30-2023/12-30-2023.html#bottom"
+    },
+    {
+      "text": "CHN",
+      "href": "https://sablefish357.com/stages/12-30-2023/12-30-2023-zh.html"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/Street-ver.-Night-12302023"
+    },
+    {
+      "text": "Youtube",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "Bilibili",
+      "href": "https://space.bilibili.com/49323671"
+    },
+    {
+      "text": "ArtStation",
+      "href": "https://www.artstation.com/sablefish"
+    },
+    {
+      "text": "[email protected]",
+      "href": "https://sablefish357.com/cdn-cgi/l/email-protection#0a796b68666f6c637962393f3d4a6d676b636624696567"
+    },
+    {
+      "text": "Top",
+      "href": "https://sablefish357.com/stages/12-30-2023/12-30-2023.html#top"
+    },
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/stages/12-30-2023/12-30-2023.html#top"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/stages/12-30-2023/12-30-2023.html#top"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "spline-grammar",
+  "name": "Spline Grammar",
+  "name_zh": "样条线语法",
+  "category_id": "pcg",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "pcg",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Curve to compute the length of",
+      "de": "Curve to compute the length of",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Grammar",
+      "type": "NodeSocketString",
+      "description": "Text value used for Grammar.",
+      "default": "",
+      "de": "Text value used for Grammar.",
+      "dz": "指定 语法字符串 参数。"
+    },
+    {
+      "name": "Module Infos",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Module Infos.",
+      "de": "Parameter for Module Infos.",
+      "dz": "指定 模块信息 参数。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    },
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Advanced/Spline_Grammar_v3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Spline_Grammar_v3.blend?raw=1"
+}

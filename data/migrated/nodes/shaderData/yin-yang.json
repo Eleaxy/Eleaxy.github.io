@@ -1,0 +1,86 @@
+{
+  "id": "yin-yang",
+  "name": "Yin&Yang",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Location",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Location.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Location.",
+      "dz": "设置 Location 的向量数据。"
+    },
+    {
+      "name": "Outline",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Outline.",
+      "default": 0.029999999329447746,
+      "de": "Numeric value controlling Outline.",
+      "dz": "设置 Outline 的数值。"
+    },
+    {
+      "name": "Whole_Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Whole Scale.",
+      "default": 0.699999988079071,
+      "de": "Numeric value controlling Whole Scale.",
+      "dz": "设置 Whole / 缩放 的数值。"
+    },
+    {
+      "name": "Small_Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Small Scale.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Small Scale.",
+      "dz": "设置 Small / 缩放 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    },
+    {
+      "name": "Outer_Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Outer Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Outer Mask.",
+      "dz": "设置 Outer / 遮罩 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

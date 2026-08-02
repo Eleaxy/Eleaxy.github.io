@@ -1,0 +1,182 @@
+{
+  "id": "debug",
+  "name": "Debug",
+  "name_zh": "调试显示",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于在视图显示浮点数，向量方向，矩阵xyz轴向，4x4矩阵数值",
+  "notes": "浮点数和4x4矩阵数值由着色器制作，实体模式下无法看见",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 22.52.07.80.png",
+  "param_descriptions": {
+    "i": {
+      "7": "用向量长度缩放可视化箭头",
+      "8": "当预览面拐属性时，沿角平分线向内偏移的距离",
+      "9": "设置箭头身体的半径",
+      "10": "设置箭头身体的高度",
+      "11": "设置箭头顶部的半径",
+      "12": "设置箭头顶部的高度",
+      "13": "设置箭头整体的大小",
+      "14": "显示数值时的小数点前精度",
+      "15": "显示数值时小数点后精度",
+      "16": "用于显示数值的栅格大小"
+    }
+  },
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Data Type",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Data Type.",
+      "default": "Vector",
+      "de": "Mode selector for Data Type.",
+      "dz": "选择 Data / 类型 的模式。"
+    },
+    {
+      "name": "Domain",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Domain.",
+      "default": "Points",
+      "de": "Mode selector for Domain.",
+      "dz": "选择 Domain 的模式。"
+    },
+    {
+      "name": "Float",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Float.",
+      "default": 0.0,
+      "de": "Numeric value controlling Float.",
+      "dz": "设置 Float 的数值。"
+    },
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Axes",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Axes.",
+      "de": "Parameter for Axes.",
+      "dz": "指定 Axes 参数。"
+    },
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    },
+    {
+      "name": "Scale by Vector Length",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Scale by Vector Length option.",
+      "default": false,
+      "de": "Toggles or selects the Scale by Vector Length option.",
+      "dz": "控制是否启用或选择 缩放 / by / 向量 / Length。"
+    },
+    {
+      "name": "Corner Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Corner Offset.",
+      "default": 0.0,
+      "de": "Numeric value controlling Corner Offset.",
+      "dz": "设置 Corner / 偏移 的数值。"
+    },
+    {
+      "name": "Body Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Body Radius.",
+      "default": 0.029999999329447746,
+      "de": "Numeric value controlling Body Radius.",
+      "dz": "设置 Body / 半径 的数值。"
+    },
+    {
+      "name": "Body Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Body Height.",
+      "default": 0.800000011920929,
+      "de": "Numeric value controlling Body Height.",
+      "dz": "设置 Body / 高度 的数值。"
+    },
+    {
+      "name": "Tip Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Tip Radius.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Tip Radius.",
+      "dz": "设置 Tip / 半径 的数值。"
+    },
+    {
+      "name": "Tip Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Tip Height.",
+      "default": 0.20000000298023224,
+      "de": "Numeric value controlling Tip Height.",
+      "dz": "设置 Tip / 高度 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 1.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Integer Digits",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Integer Digits.",
+      "default": 4,
+      "de": "Integer value controlling Integer Digits.",
+      "dz": "设置 Integer / Digits 的数值。"
+    },
+    {
+      "name": "Fractional Digits",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Fractional Digits.",
+      "default": 2,
+      "de": "Integer value controlling Fractional Digits.",
+      "dz": "设置 Fractional / Digits 的数值。"
+    },
+    {
+      "name": "Size",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Size.",
+      "default": [
+        0.20000000298023224,
+        0.05000000074505806
+      ],
+      "de": "Vector value for Size.",
+      "dz": "设置 尺寸 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

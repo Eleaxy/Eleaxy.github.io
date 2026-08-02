@@ -1,0 +1,90 @@
+{
+  "id": "is-casted-to-plane",
+  "name": "is Casted to Plane",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "右下角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 右下角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 右下角.",
+      "dz": "设置 右下角 的向量数据。"
+    },
+    {
+      "name": "左下角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 左下角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 左下角.",
+      "dz": "设置 左下角 的向量数据。"
+    },
+    {
+      "name": "右上角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 右上角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 右上角.",
+      "dz": "设置 右上角 的向量数据。"
+    },
+    {
+      "name": "左上角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 左上角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 左上角.",
+      "dz": "设置 左上角 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Is Hit",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Is Hit.",
+      "default": 0.0,
+      "de": "Numeric value controlling Is Hit.",
+      "dz": "设置 Is / Hit 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

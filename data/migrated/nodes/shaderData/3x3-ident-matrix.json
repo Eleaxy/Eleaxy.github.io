@@ -1,0 +1,28 @@
+{
+  "id": "3x3-ident-matrix",
+  "name": " 3x3 Ident Matrix",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "I",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for I.",
+      "de": "Parameter for I.",
+      "dz": "指定 I 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Extra_Matrix_Math.blend?raw=1"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "phyllotaxis-disk",
+  "name": "Phyllotaxis Disk",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Count.",
+      "default": 500,
+      "de": "Integer value controlling Count.",
+      "dz": "设置 数量 的数值。"
+    },
+    {
+      "name": "Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Angle.",
+      "default": 2.399970054626465,
+      "de": "Numeric value controlling Angle.",
+      "dz": "设置 角度 的数值。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Even",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Even option.",
+      "default": false,
+      "de": "Toggles or selects the Even option.",
+      "dz": "控制是否启用或选择 Even。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "Rotation",
+      "type": "NodeSocketRotation",
+      "description": "Parameter for Rotation.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Parameter for Rotation.",
+      "dz": "指定 旋转 参数。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

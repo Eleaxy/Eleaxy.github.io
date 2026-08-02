@@ -1,0 +1,93 @@
+{
+  "id": "l-system",
+  "name": "L System",
+  "name_zh": "L系统-树",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 10,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "default": 3.200000047683716,
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 高度 的数值。"
+    },
+    {
+      "name": "Branch Rotation",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Branch Rotation.",
+      "default": 0.0,
+      "de": "Numeric value controlling Branch Rotation.",
+      "dz": "设置 Branch / 旋转 的数值。"
+    },
+    {
+      "name": "Split Rotation",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Split Rotation.",
+      "default": 0.46000003814697266,
+      "de": "Numeric value controlling Split Rotation.",
+      "dz": "设置 Split / 旋转 的数值。"
+    },
+    {
+      "name": "Rotation Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Rotation Falloff.",
+      "default": 0.8899999856948853,
+      "de": "Numeric value controlling Rotation Falloff.",
+      "dz": "设置 旋转 / 衰减 的数值。"
+    },
+    {
+      "name": "Scale Power",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale Power.",
+      "default": 1.3700000047683716,
+      "de": "Numeric value controlling Scale Power.",
+      "dz": "设置 缩放 / Power 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 189,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Tree",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Tree.",
+      "de": "Geometry data used as Tree.",
+      "dz": "传入或输出用于该节点处理的 Tree。"
+    },
+    {
+      "name": "Factor",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Factor.",
+      "default": 0.0,
+      "de": "Numeric value controlling Factor.",
+      "dz": "设置 系数 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "fourier-transform",
+  "name": "Fourier Transform",
+  "name_zh": "傅里叶变换",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "对List进行一维的傅里叶变换",
+  "notes": "只适用于2的n次方长度的List，非该长度的需要用混合基计算比较麻烦",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "FFT",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "List",
+      "type": "NodeSocketVector",
+      "description": "Vector value for List.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for List.",
+      "dz": "设置 List 的向量数据。"
+    },
+    {
+      "name": "Invert",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Invert option.",
+      "default": false,
+      "de": "Toggles or selects the Invert option.",
+      "dz": "控制是否启用或选择 Invert。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "(I)FT",
+      "type": "NodeSocketVector",
+      "description": "Vector value for (I)FT.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for (I)FT.",
+      "dz": "设置 (I)FT 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,36 @@
+{
+  "id": "3x3-pseudo-inverse",
+  "name": " 3x3 Pseudo-Inverse",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Pseudo-Inverse",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Pseudo Inverse.",
+      "de": "Parameter for Pseudo Inverse.",
+      "dz": "指定 Pseudo / Inverse 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Extra_Matrix_Math.blend?raw=1"
+}

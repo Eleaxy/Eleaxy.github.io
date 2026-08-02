@@ -1,0 +1,82 @@
+{
+  "id": "3d-simplex-noise",
+  "name": "3D Simplex Noise",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 1.5,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Detail.",
+      "default": 2,
+      "de": "Integer value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.5,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    },
+    {
+      "name": "Lacunarity",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lacunarity.",
+      "default": 2.0,
+      "de": "Numeric value controlling Lacunarity.",
+      "dz": "设置 Lacunarity 的数值。"
+    },
+    {
+      "name": "Distort",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distort.",
+      "default": 0.5,
+      "de": "Numeric value controlling Distort.",
+      "dz": "设置 Distort 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Fac",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Fac.",
+      "default": 0.0,
+      "de": "Numeric value controlling Fac.",
+      "dz": "设置 Fac 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

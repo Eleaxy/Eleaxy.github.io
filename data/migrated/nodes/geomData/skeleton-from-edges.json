@@ -1,0 +1,52 @@
+{
+  "id": "skeleton-from-edges",
+  "name": "Skeleton from Edges",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Orientation",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Orientation.",
+      "default": "Orient to Child",
+      "de": "Mode selector for Orientation.",
+      "dz": "选择 Orientation 的模式。"
+    },
+    {
+      "name": "Edges",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to store a new attribute with the given name on",
+      "de": "Geometry to store a new attribute with the given name on",
+      "dz": "传入或输出用于该节点处理的 Edges。"
+    },
+    {
+      "name": "Root Joint",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Root Joint option.",
+      "default": false,
+      "de": "Toggles or selects the Root Joint option.",
+      "dz": "控制是否启用或选择 Root / 关节。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Rest Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skeleton.",
+      "de": "Geometry data used as Rest Skeleton.",
+      "dz": "传入或输出用于该节点处理的 Rest / 骨架。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

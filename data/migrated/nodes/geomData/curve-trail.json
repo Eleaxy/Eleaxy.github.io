@@ -1,0 +1,138 @@
+{
+  "id": "curve-trail",
+  "name": "Curve Trail",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Particles.",
+      "de": "Geometry data used as Particles.",
+      "dz": "传入或输出用于该节点处理的 Particles。"
+    },
+    {
+      "name": "Lifetime",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime.",
+      "default": 1.0,
+      "de": "Numeric value controlling Lifetime.",
+      "dz": "设置 Lifetime 的数值。"
+    },
+    {
+      "name": "Lifetime Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime Random.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Lifetime Random.",
+      "dz": "设置 Lifetime / 随机量 的数值。"
+    },
+    {
+      "name": "Life Fading Duration",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Life Fading Duration.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Life Fading Duration.",
+      "dz": "设置 Life / Fading / Duration 的数值。"
+    },
+    {
+      "name": "Speed Fading Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed Fading Min.",
+      "default": 0.0,
+      "de": "Numeric value controlling Speed Fading Min.",
+      "dz": "设置 速度 / Fading / 最小值 的数值。"
+    },
+    {
+      "name": "Speed Fading Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed Fading Max.",
+      "default": 1.0,
+      "de": "Numeric value controlling Speed Fading Max.",
+      "dz": "设置 速度 / Fading / 最大值 的数值。"
+    },
+    {
+      "name": "Shape Mode",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Shape Mode.",
+      "default": "Plane",
+      "de": "Mode selector for Shape Mode.",
+      "dz": "选择 Shape / 模式 的模式。"
+    },
+    {
+      "name": "Custom",
+      "type": "NodeSocketGeometry",
+      "description": "Becomes the output value if it is chosen by the menu input",
+      "de": "Becomes the output value if it is chosen by the menu input",
+      "dz": "传入或输出用于该节点处理的 Custom。"
+    },
+    {
+      "name": "V-Resolution",
+      "type": "NodeSocketInt",
+      "description": "曲线轮廓v方向的分辨率，有些情况下贴图会扭曲需要对v方向添加分辨率",
+      "default": 2,
+      "de": "Integer value controlling V Resolution.",
+      "dz": "曲线轮廓v方向的分辨率，有些情况下贴图会扭曲需要对v方向添加分辨率"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Scale of the profile at each point",
+      "default": 0.4999999701976776,
+      "de": "Scale of the profile at each point",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Facing Camera",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Facing Camera option.",
+      "default": true,
+      "de": "Toggles or selects the Facing Camera option.",
+      "dz": "控制是否启用或选择 Facing / Camera。"
+    },
+    {
+      "name": "Curve Tessellation",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Curve Tessellation option.",
+      "default": true,
+      "de": "Toggles or selects the Curve Tessellation option.",
+      "dz": "控制是否启用或选择 曲线 / Tessellation。"
+    },
+    {
+      "name": "Material",
+      "type": "NodeSocketMaterial",
+      "description": "Parameter for Material.",
+      "default": "<bpy_struct, Material(\"Curve_Trail\") at 0x0000016C045095A0>",
+      "de": "Parameter for Material.",
+      "dz": "指定 材质 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Ribbon",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Ribbon.",
+      "de": "Geometry data used as Ribbon.",
+      "dz": "传入或输出用于该节点处理的 Ribbon。"
+    },
+    {
+      "name": "Ribbon Info",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Ribbon Info.",
+      "de": "Parameter for Ribbon Info.",
+      "dz": "指定 Ribbon / Info 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

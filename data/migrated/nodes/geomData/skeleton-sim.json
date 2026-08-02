@@ -1,0 +1,111 @@
+{
+  "id": "skeleton-sim",
+  "name": "Skeleton Sim",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Delta Time",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Delta Time.",
+      "default": 0.03333333507180214,
+      "de": "Numeric value controlling Delta Time.",
+      "dz": "设置 Delta / 时间 的数值。"
+    },
+    {
+      "name": "Substeps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Substeps.",
+      "default": 1,
+      "de": "Integer value controlling Substeps.",
+      "dz": "设置 子步数 的数值。"
+    },
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skeleton.",
+      "de": "Geometry data used as Skeleton.",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    },
+    {
+      "name": "Force",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Force.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Force.",
+      "dz": "设置 力 的向量数据。"
+    },
+    {
+      "name": "Velocity Damping",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Velocity Damping.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Velocity Damping.",
+      "dz": "设置 速度 / Damping 的数值。"
+    },
+    {
+      "name": "Locked",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Locked option.",
+      "default": false,
+      "de": "Toggles or selects the Locked option.",
+      "dz": "控制是否启用或选择 Locked。"
+    },
+    {
+      "name": "Min Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Min Angle.",
+      "default": 0.0,
+      "de": "Numeric value controlling Min Angle.",
+      "dz": "设置 最小值 / 角度 的数值。"
+    },
+    {
+      "name": "Max Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max Angle.",
+      "default": 1.0471975803375244,
+      "de": "Numeric value controlling Max Angle.",
+      "dz": "设置 最大值 / 角度 的数值。"
+    },
+    {
+      "name": "Pinned",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Pinned option.",
+      "default": false,
+      "de": "Toggles or selects the Pinned option.",
+      "dz": "控制是否启用或选择 Pinned。"
+    },
+    {
+      "name": "Pinned Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Pinned Transform.",
+      "de": "Parameter for Pinned Transform.",
+      "dz": "指定 Pinned / Transform 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skeleton.",
+      "de": "Geometry data used as Skeleton.",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

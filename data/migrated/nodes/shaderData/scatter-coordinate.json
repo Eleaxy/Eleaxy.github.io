@@ -1,0 +1,111 @@
+{
+  "id": "scatter-coordinate",
+  "name": "Scatter Coordinate",
+  "name_zh": "",
+  "category_id": "mfs_coordinates",
+  "category": "Coordinates",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 2.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 2D 3D option.",
+      "default": false,
+      "de": "Toggles or selects the 2D 3D option.",
+      "dz": "控制是否启用或选择 2D / 3D。"
+    },
+    {
+      "name": "Rotate",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Rotate option.",
+      "default": false,
+      "de": "Toggles or selects the Rotate option.",
+      "dz": "控制是否启用或选择 Rotate。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Coordinate",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordinate.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordinate.",
+      "dz": "设置 Coordinate 的向量数据。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Random.",
+      "dz": "设置 随机量 的颜色数据。"
+    },
+    {
+      "name": "Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Position.",
+      "dz": "设置 位置 的向量数据。"
+    },
+    {
+      "name": "N_Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling N Radius.",
+      "default": 0.0,
+      "de": "Numeric value controlling N Radius.",
+      "dz": "设置 N / 半径 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

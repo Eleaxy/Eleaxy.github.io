@@ -1,0 +1,69 @@
+{
+  "id": "n-joint",
+  "name": "N Joint",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Type",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Type.",
+      "default": "Type A",
+      "de": "Mode selector for Type.",
+      "dz": "选择 类型 的模式。"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Count.",
+      "default": 4,
+      "de": "Integer value controlling Count.",
+      "dz": "设置 数量 的数值。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.5,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Depth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Depth.",
+      "default": 1.0,
+      "de": "Numeric value controlling Depth.",
+      "dz": "设置 深度 的数值。"
+    },
+    {
+      "name": "Subdivision",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Subdivision.",
+      "default": 4,
+      "de": "Integer value controlling Subdivision.",
+      "dz": "设置 Subdivision 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

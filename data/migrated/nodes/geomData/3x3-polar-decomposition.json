@@ -1,0 +1,48 @@
+{
+  "id": "3x3-polar-decomposition",
+  "name": "3x3 Polar Decomposition",
+  "name_zh": "3x3极分解",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于计算3x3矩阵的 Polar Decomposition",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {
+    "o": {
+      "0": "分离出的纯旋转矩阵",
+      "1": "剩余的缩放与拉伸矩阵"
+    }
+  },
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Rot",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Rot.",
+      "de": "Parameter for Rot.",
+      "dz": "指定 Rot 参数。"
+    },
+    {
+      "name": "Stretch",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Stretch.",
+      "de": "Parameter for Stretch.",
+      "dz": "指定 Stretch 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

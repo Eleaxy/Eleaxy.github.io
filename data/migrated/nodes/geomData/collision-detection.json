@@ -1,0 +1,79 @@
+{
+  "id": "collision-detection",
+  "name": "Collision Detection",
+  "name_zh": "碰撞检测",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "基于AABB，SAT，GJK，EPA，MPR或者Raycast，SDF来检测凸壳之间是否发生碰撞并计算穿插信息",
+  "notes": "只有EPA与MPR支持获取穿插信息，其余方法只适用于检测是否发生碰撞",
+  "example": "可以同时计算多个Source凸壳与一个Target凸壳的碰撞",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 13.26.52.63.png",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Detection Method",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Detection Method.",
+      "default": "AABB",
+      "de": "Mode selector for Detection Method.",
+      "dz": "选择 Detection / Method 的模式。"
+    },
+    {
+      "name": "Source",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Source.",
+      "de": "Geometry data used as Source.",
+      "dz": "传入或输出用于该节点处理的 Source。"
+    },
+    {
+      "name": "Target",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Target.",
+      "de": "Geometry data used as Target.",
+      "dz": "传入或输出用于该节点处理的 Target。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 2D 3D option.",
+      "default": true,
+      "de": "Toggles or selects the 2D 3D option.",
+      "dz": "控制是否启用或选择 2D / 3D。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Collide",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Collide option.",
+      "default": false,
+      "de": "Toggles or selects the Collide option.",
+      "dz": "控制是否启用或选择 Collide。"
+    },
+    {
+      "name": "Penetration",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Penetration.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Penetration.",
+      "dz": "设置 Penetration 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

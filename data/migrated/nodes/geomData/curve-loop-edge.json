@@ -1,0 +1,62 @@
+{
+  "id": "curve-loop-edge",
+  "name": "Curve Loop Edge",
+  "name_zh": "曲线循环边",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于获取曲线转网格后的两类循环边",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 21.47.01.89.png",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Profile Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Profile Curve.",
+      "de": "Geometry data used as Profile Curve.",
+      "dz": "传入或输出用于该节点处理的 Profile / 曲线。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Selection",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Selection.",
+      "de": "Geometry data used as Selection.",
+      "dz": "传入或输出用于该节点处理的 选择范围。"
+    },
+    {
+      "name": "Inverted",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Inverted.",
+      "de": "Geometry data used as Inverted.",
+      "dz": "传入或输出用于该节点处理的 Inverted。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,81 @@
+{
+  "id": "bone-deform",
+  "name": "Bone Deform",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Rest Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skin.",
+      "de": "Geometry data used as Rest Skin.",
+      "dz": "传入或输出用于该节点处理的 Rest / 蒙皮。"
+    },
+    {
+      "name": "Selection",
+      "type": "NodeSocketBool",
+      "description": "Which part to be deformed",
+      "default": true,
+      "de": "Which part to be deformed",
+      "dz": "控制是否启用或选择 选择范围。"
+    },
+    {
+      "name": "Deformed Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Points to modify the positions of",
+      "de": "Points to modify the positions of",
+      "dz": "传入或输出用于该节点处理的 Deformed / 骨架。"
+    },
+    {
+      "name": "Skinning Method",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Skinning Method.",
+      "default": "LBS",
+      "de": "Mode selector for Skinning Method.",
+      "dz": "选择 Skinning / Method 的模式。"
+    },
+    {
+      "name": "Deformation Blend",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Deformation Blend.",
+      "de": "Parameter for Deformation Blend.",
+      "dz": "指定 Deformation / Blend 参数。"
+    },
+    {
+      "name": "Delta Mush Blend",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Delta Mush Blend.",
+      "de": "Parameter for Delta Mush Blend.",
+      "dz": "指定 Delta / Mush / Blend 参数。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 1.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Deformed Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Deformed Skin.",
+      "de": "Geometry data used as Deformed Skin.",
+      "dz": "传入或输出用于该节点处理的 Deformed / 蒙皮。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

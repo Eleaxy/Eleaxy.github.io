@@ -1,0 +1,76 @@
+{
+  "id": "blend-normal-euler",
+  "name": "Blend Normal(Euler)",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Base_Normal",
+      "type": "NodeSocketColor",
+      "description": "Color value for Base Normal.",
+      "default": [
+        0.5,
+        0.5,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Base Normal.",
+      "dz": "设置 Base / 法线 的颜色数据。"
+    },
+    {
+      "name": "Addtional_Normal",
+      "type": "NodeSocketColor",
+      "description": "Color value for Addtional Normal.",
+      "default": [
+        0.5,
+        0.5,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Addtional Normal.",
+      "dz": "设置 Addtional / 法线 的颜色数据。"
+    },
+    {
+      "name": "Blend",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Blend.",
+      "default": 1.0,
+      "de": "Numeric value controlling Blend.",
+      "dz": "设置 Blend 的数值。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 1.0,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

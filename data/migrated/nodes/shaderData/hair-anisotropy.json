@@ -1,0 +1,58 @@
+{
+  "id": "hair-anisotropy",
+  "name": "Hair Anisotropy",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Light",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Light.",
+      "default": [
+        1.0,
+        -1.0,
+        2.0
+      ],
+      "de": "Vector value for Light.",
+      "dz": "设置 Light 的向量数据。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 0.0,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Kajiya Kay",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Kajiya Kay.",
+      "default": 0.0,
+      "de": "Numeric value controlling Kajiya Kay.",
+      "dz": "设置 Kajiya / Kay 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

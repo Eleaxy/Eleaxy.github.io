@@ -1,0 +1,48 @@
+{
+  "id": "derive-normal-z",
+  "name": "Derive Normal Z",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Normal Map",
+      "type": "NodeSocketColor",
+      "description": "Color value for Normal Map.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Normal Map.",
+      "dz": "设置 法线 / Map 的颜色数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Normal Map",
+      "type": "NodeSocketColor",
+      "description": "Color value for Normal Map.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Normal Map.",
+      "dz": "设置 法线 / Map 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

@@ -1,0 +1,123 @@
+{
+  "id": "checker-pro",
+  "name": "Checker_Pro+",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 5.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Bg_A",
+      "type": "NodeSocketColor",
+      "description": "Color value for Bg A.",
+      "default": [
+        0.1092207059264183,
+        0.43480074405670166,
+        0.7874406576156616,
+        1.0
+      ],
+      "de": "Color value for Bg A.",
+      "dz": "设置 Bg / A 的颜色数据。"
+    },
+    {
+      "name": "Bg_B",
+      "type": "NodeSocketColor",
+      "description": "Color value for Bg B.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Bg B.",
+      "dz": "设置 Bg / B 的颜色数据。"
+    },
+    {
+      "name": "Dec_A",
+      "type": "NodeSocketColor",
+      "description": "Color value for Dec A.",
+      "default": [
+        0.0,
+        0.21736887097358704,
+        0.7261093854904175,
+        1.0
+      ],
+      "de": "Color value for Dec A.",
+      "dz": "设置 Dec / A 的颜色数据。"
+    },
+    {
+      "name": "Dec_B",
+      "type": "NodeSocketColor",
+      "description": "Color value for Dec B.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Dec B.",
+      "dz": "设置 Dec / B 的颜色数据。"
+    },
+    {
+      "name": "Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Width.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Width.",
+      "dz": "设置 宽度 的数值。"
+    },
+    {
+      "name": "Size",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Size.",
+      "default": 0.15000000596046448,
+      "de": "Numeric value controlling Size.",
+      "dz": "设置 尺寸 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

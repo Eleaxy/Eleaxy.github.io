@@ -1,0 +1,58 @@
+{
+  "id": "project-to-tangent-plane",
+  "name": "Project to Tangent Plane",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Plane Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Plane Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Plane Normal.",
+      "dz": "设置 Plane / 法线 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,152 @@
+{
+  "topCats": {
+    "type": "list",
+    "count": 9,
+    "element_types": {
+      "dict": 9
+    },
+    "sample": [
+      {
+        "id": "geom",
+        "name": "Geometry Nodes"
+      },
+      {
+        "id": "shader",
+        "name": "Shader"
+      },
+      {
+        "id": "comp",
+        "name": "Compositor"
+      }
+    ]
+  },
+  "customCats": {
+    "type": "list",
+    "count": 25,
+    "element_types": {
+      "dict": 25
+    },
+    "sample": [
+      {
+        "id": "generation",
+        "name": "Generation",
+        "parent": "geom"
+      },
+      {
+        "id": "mesh",
+        "name": "Mesh",
+        "parent": "geom"
+      },
+      {
+        "id": "curve",
+        "name": "Curve",
+        "parent": "geom"
+      }
+    ]
+  },
+  "nodeCats": {
+    "type": "dict",
+    "count": 565,
+    "value_types": {
+      "str": 565
+    },
+    "sample_keys": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10-Tetrahetra"
+    ],
+    "sample_items": {
+      "1": "shader",
+      "2": "shader",
+      "3": "shader"
+    }
+  },
+  "nodeData": {
+    "type": "dict",
+    "count": 89,
+    "value_types": {
+      "dict": 89
+    },
+    "sample_keys": [
+      "2D Curve Point Angle",
+      "3D Recursive Subdivision",
+      "Bevel 2D Curve",
+      "Coons Patch",
+      "Curve Intersections",
+      "Custom Voronoi Texture",
+      "Detriangulate",
+      "Dihedral",
+      "Dragon Fractal",
+      "Edge Ring ID"
+    ],
+    "sample_items": {
+      "2D Curve Point Angle": {
+        "zh": "2D曲线点信息",
+        "d": "用于得到2D曲线点的角平分线和角度",
+        "notes": "",
+        "example": "",
+        "exampleImg": "Desktop/Screenshot 2026-07-09 230252.png",
+        "paramDescs": {
+          "o": {
+            "0": "正确长度的角平分线向量",
+            "1": "归一化的角平分线向量",
+            "2": "点的角度"
+          }
+        }
+      },
+      "3D Recursive Subdivision": {
+        "zh": "三维递归细分立方体",
+        "d": "将一个四边面沿中间随机切割成两个四边面",
+        "notes": "",
+        "example": "",
+        "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.16.48.65.png",
+        "paramDescs": {
+          "i": {
+            "1": "切割次数",
+            "3": "控制时间动画的数值",
+            "4": "切割时在两条对立边的切割位置是否相同，为1是规则形状，为0则产生斜切",
+            "5": "切割位置的边系数的最小值，远离边的左端点",
+            "6": "切割位置的边系数的最大值，远离边的右端点"
+          }
+        }
+      },
+      "Bevel 2D Curve": {
+        "zh": "2D曲线倒角实体化",
+        "d": "将2D封闭曲线实体化并倒角，支持孔洞",
+        "notes": "倒角距离并无钳制距离功能，当倒角过大时，点可能会穿插导致出错",
+        "example": "",
+        "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 10.10.01.93.png",
+        "paramDescs": {
+          "i": {
+            "1": "控制将曲线向外偏移的距离",
+            "2": "控制实体化挤出的高度",
+            "3": "控制pivot的位置顶部/中心/底部",
+            "4": "控制倒角分辨率",
+            "5": "控制倒角半径",
+            "6": "控制倒角轮廓形状，外圆弧/内圆弧",
+            "7": "启用顶部倒角",
+            "8": "启用底部倒角"
+          }
+        }
+      }
+    }
+  },
+  "extraData": {
+    "type": "dict",
+    "count": 0,
+    "value_types": {},
+    "sample_keys": [],
+    "sample_items": {}
+  },
+  "lang": {
+    "type": "str",
+    "count": 2
+  }
+}

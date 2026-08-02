@@ -1,0 +1,97 @@
+{
+  "id": "fire-outline",
+  "name": "Fire Outline",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Depth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Depth.",
+      "default": 0.0,
+      "de": "Numeric value controlling Depth.",
+      "dz": "设置 深度 的数值。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "AOV",
+      "type": "NodeSocketColor",
+      "description": "Color value for AOV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for AOV.",
+      "dz": "设置 AOV 的颜色数据。"
+    },
+    {
+      "name": "Up",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Up.",
+      "default": 150.0,
+      "de": "Numeric value controlling Up.",
+      "dz": "设置 Up 的数值。"
+    },
+    {
+      "name": "Down",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Down.",
+      "default": -50.0,
+      "de": "Numeric value controlling Down.",
+      "dz": "设置 Down 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Image",
+      "type": "NodeSocketColor",
+      "description": "Color value for Image.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Image.",
+      "dz": "设置 图像 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

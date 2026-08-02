@@ -1,0 +1,99 @@
+{
+  "id": "cotangent-laplacian",
+  "name": "Cotangent Laplacian",
+  "name_zh": "余切拉普拉斯",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于对网格属性进行余切拉普拉斯平滑。",
+  "notes": "对于不规则的三角形网格来说，余切拉普拉斯的平滑结果会更加平滑",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 16.29.37.16.png",
+  "param_descriptions": {
+    "i": {
+      "2": "将被平滑的场输入",
+      "3": "将被平滑的场输入"
+    }
+  },
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Domain",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Domain.",
+      "default": "Float",
+      "de": "Mode selector for Domain.",
+      "dz": "选择 Domain 的模式。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    },
+    {
+      "name": "Value",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Value.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Value.",
+      "dz": "设置 数值 的向量数据。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 1,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Weight",
+      "type": "NodeSocketFloat",
+      "description": "Relative mix weight of neighboring elements",
+      "default": 1.0,
+      "de": "Relative mix weight of neighboring elements",
+      "dz": "设置 权重 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Output Geometry.",
+      "de": "Output Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Output Value.",
+      "de": "Output Value.",
+      "dz": "设置 Value 的数值。"
+    },
+    {
+      "name": "Value",
+      "type": "NodeSocketVector",
+      "description": "Output Value.",
+      "de": "Output Value.",
+      "dz": "设置 Value 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

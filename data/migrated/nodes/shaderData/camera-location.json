@@ -1,0 +1,45 @@
+{
+  "id": "camera-location",
+  "name": "Camera Location",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "World Space",
+      "type": "NodeSocketVector",
+      "description": "Location of the camera in the World Shader mode of a material",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Location of the camera in the World Shader mode of a material",
+      "dz": "设置 World / Space 的向量数据。"
+    },
+    {
+      "name": "Local Space",
+      "type": "NodeSocketVector",
+      "description": "Location of the camera in the Object Shader mode of a material",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Location of the camera in the Object Shader mode of a material",
+      "dz": "设置 Local / Space 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

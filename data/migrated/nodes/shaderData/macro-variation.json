@@ -1,0 +1,88 @@
+{
+  "id": "macro-variation",
+  "name": "Macro_Variation",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "BaseColor",
+      "type": "NodeSocketColor",
+      "description": "Color value for Base Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Base Color.",
+      "dz": "设置 Base / 颜色 的颜色数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.5,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.004999999888241291,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Contrast",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Contrast.",
+      "default": 0.20000000298023224,
+      "de": "Numeric value controlling Contrast.",
+      "dz": "设置 Contrast 的数值。"
+    },
+    {
+      "name": "Brightness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Brightness.",
+      "default": 0.5,
+      "de": "Numeric value controlling Brightness.",
+      "dz": "设置 Brightness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "BaseColor",
+      "type": "NodeSocketColor",
+      "description": "Color value for Base Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Base Color.",
+      "dz": "设置 Base / 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

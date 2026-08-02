@@ -1,0 +1,53 @@
+{
+  "id": "3x3-outerproduct",
+  "name": " 3x3 Outerproduct",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "U",
+      "type": "NodeSocketVector",
+      "description": "Vector value for U.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for U.",
+      "dz": "设置 U 的向量数据。"
+    },
+    {
+      "name": "Vt",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vt.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vt.",
+      "dz": "设置 Vt 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Outerproduct",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Outerproduct.",
+      "de": "Parameter for Outerproduct.",
+      "dz": "指定 Outerproduct 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Extra_Matrix_Math.blend?raw=1"
+}

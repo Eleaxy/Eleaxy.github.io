@@ -1,0 +1,55 @@
+{
+  "id": "interior-mapping",
+  "name": "Interior Mapping",
+  "name_zh": "",
+  "category_id": "mfs_parallax",
+  "category": "Parallax",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_parallax",
+  "inputs": [
+    {
+      "name": "UV/Object",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the UV Object option.",
+      "default": false,
+      "de": "Toggles or selects the UV Object option.",
+      "dz": "控制是否启用或选择 UV 坐标 / 物体。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Demo",
+      "type": "NodeSocketColor",
+      "description": "Color value for Demo.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Demo.",
+      "dz": "设置 Demo 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

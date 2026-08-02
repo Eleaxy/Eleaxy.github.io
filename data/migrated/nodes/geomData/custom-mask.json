@@ -1,0 +1,45 @@
+{
+  "id": "custom-mask",
+  "name": "Custom Mask",
+  "name_zh": "",
+  "category_id": "particle_mask",
+  "category": "Mask",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_mask",
+  "inputs": [
+    {
+      "name": "Target Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Target Geometry.",
+      "de": "Geometry data used as Target Geometry.",
+      "dz": "传入或输出用于该节点处理的 Target / 几何数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Outside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Outside option.",
+      "default": false,
+      "de": "Toggles or selects the Outside option.",
+      "dz": "控制是否启用或选择 外部。"
+    },
+    {
+      "name": "Inside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Inside option.",
+      "default": false,
+      "de": "Toggles or selects the Inside option.",
+      "dz": "控制是否启用或选择 内部。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "blueish",
+    "name": "blueish",
+    "url": "https://space.bilibili.com/3546391456516604"
+  },
+  {
+    "id": "sablefish",
+    "name": "sablefish",
+    "url": "https://space.bilibili.com/49323671"
+  },
+  {
+    "id": "ling-qs",
+    "name": "卿上翎",
+    "handle": "Ling-QS",
+    "url": "https://space.bilibili.com/241753316",
+    "relationship": "plugin_provenance",
+    "plugin_ids": [
+      "automation-flow"
+    ]
+  },
+  {
+    "id": "wasteland-star-valley",
+    "name": "荒芜星谷",
+    "url": "https://space.bilibili.com/484767704",
+    "relationship": "plugin_provenance",
+    "plugin_ids": [
+      "autocel"
+    ]
+  }
+]

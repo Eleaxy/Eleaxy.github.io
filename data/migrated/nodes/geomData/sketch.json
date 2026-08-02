@@ -1,0 +1,128 @@
+{
+  "id": "sketch",
+  "name": "Sketch",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "Light Pos",
+      "type": "NodeSocketVector",
+      "description": "点光源位置",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Light Pos.",
+      "dz": "点光源位置"
+    },
+    {
+      "name": "Subdivision",
+      "type": "NodeSocketInt",
+      "description": "细分层级，让采样更加平滑",
+      "default": 2,
+      "de": "Integer value controlling Subdivision.",
+      "dz": "细分层级，让采样更加平滑"
+    },
+    {
+      "name": "Density",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Density.",
+      "default": 50000.0,
+      "de": "Numeric value controlling Density.",
+      "dz": "设置 Density 的数值。"
+    },
+    {
+      "name": "Stroke Size",
+      "type": "NodeSocketFloat",
+      "description": "笔画大小，可以用随机值",
+      "default": 0.06499999761581421,
+      "de": "Numeric value controlling Stroke Size.",
+      "dz": "笔画大小，可以用随机值"
+    },
+    {
+      "name": "Stroke Radius",
+      "type": "NodeSocketFloat",
+      "description": "笔画半径大小，可用随机值",
+      "default": 0.0010000000474974513,
+      "de": "Numeric value controlling Stroke Radius.",
+      "dz": "笔画半径大小，可用随机值"
+    },
+    {
+      "name": "Random Dir",
+      "type": "NodeSocketFloat",
+      "description": "笔画随机旋转",
+      "default": 0.15000000596046448,
+      "de": "Numeric value controlling Random Dir.",
+      "dz": "笔画随机旋转"
+    },
+    {
+      "name": "Fluffy",
+      "type": "NodeSocketFloat",
+      "description": "毛茸茸",
+      "default": 0.0,
+      "de": "Numeric value controlling Fluffy.",
+      "dz": "毛茸茸"
+    },
+    {
+      "name": "Noise",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Noise.",
+      "default": 0.5,
+      "de": "Numeric value controlling Noise.",
+      "dz": "设置 噪波 的数值。"
+    },
+    {
+      "name": "Highlight",
+      "type": "NodeSocketFloat",
+      "description": "高光的笔画数量变少",
+      "default": 0.949999988079071,
+      "de": "Numeric value controlling Highlight.",
+      "dz": "高光的笔画数量变少"
+    },
+    {
+      "name": "Fresnel",
+      "type": "NodeSocketFloat",
+      "description": "边缘笔画变小系数",
+      "default": 1.0,
+      "de": "Numeric value controlling Fresnel.",
+      "dz": "边缘笔画变小系数"
+    },
+    {
+      "name": "Stroke Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Stroke Resolution.",
+      "default": 5,
+      "de": "Integer value controlling Stroke Resolution.",
+      "dz": "设置 Stroke / 分辨率 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Stroke",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Stroke.",
+      "de": "Geometry data used as Stroke.",
+      "dz": "传入或输出用于该节点处理的 Stroke。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

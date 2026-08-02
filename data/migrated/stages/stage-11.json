@@ -1,0 +1,103 @@
+{
+  "id": "stage-11",
+  "title": "It'sMyGO!!!!!-ParkingLots",
+  "date": "2024-11-30",
+  "image": {
+    "source": "https://sablefish357.com/stages/11-30-2024/mygo!!! v1.jpg",
+    "alt": "A photo from a parking lot concert.",
+    "local": "/images/stages/stage-11-ea04c6b0b4.jpg"
+  },
+  "readme": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it.",
+    "Uncheck the mygo character collection to hide the character.",
+    "Assets in the stage can be used individually.",
+    "Blender version 4.4.0"
+  ],
+  "blender_version": "Blender version 4.4.0",
+  "usage_terms": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it."
+  ],
+  "download_urls": [
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/MyGO-ParkingLots-11302024"
+    }
+  ],
+  "source_url": "https://sablefish357.com/stages/11-30-2024/11-30-2024.html",
+  "all_links": [
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "VIDEOS",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "STAGES",
+      "href": "https://sablefish357.com/stages.html"
+    },
+    {
+      "text": "BLOG",
+      "href": "https://sablefish357.com/blog.html"
+    },
+    {
+      "text": "HOME",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "CONTACT",
+      "href": "https://sablefish357.com/stages/11-30-2024/11-30-2024.html#bottom"
+    },
+    {
+      "text": "CHN",
+      "href": "https://sablefish357.com/stages/11-30-2024/11-30-2024-zh.html"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/MyGO-ParkingLots-11302024"
+    },
+    {
+      "text": "Youtube",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "Bilibili",
+      "href": "https://space.bilibili.com/49323671"
+    },
+    {
+      "text": "ArtStation",
+      "href": "https://www.artstation.com/sablefish"
+    },
+    {
+      "text": "[email protected]",
+      "href": "https://sablefish357.com/cdn-cgi/l/email-protection#eb988a89878e8d829883d8dedcab8c868a8287c5888486"
+    },
+    {
+      "text": "Top",
+      "href": "https://sablefish357.com/stages/11-30-2024/11-30-2024.html#top"
+    },
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/stages/11-30-2024/11-30-2024.html#top"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/stages/11-30-2024/11-30-2024.html#top"
+    }
+  ]
+}

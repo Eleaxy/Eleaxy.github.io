@@ -1,0 +1,66 @@
+{
+  "id": "detect-error",
+  "name": "Detect Error",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Deformed Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Deformed Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Deformed Position.",
+      "dz": "设置 Deformed / 位置 的向量数据。"
+    },
+    {
+      "name": "Threshold",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Threshold.",
+      "default": 0.4999999701976776,
+      "de": "Numeric value controlling Threshold.",
+      "dz": "设置 阈值 的数值。"
+    },
+    {
+      "name": "Blur Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Blur Iterations.",
+      "default": 5,
+      "de": "Integer value controlling Blur Iterations.",
+      "dz": "设置 模糊 / 迭代次数 的数值。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

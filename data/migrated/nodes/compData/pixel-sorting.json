@@ -1,0 +1,76 @@
+{
+  "id": "pixel-sorting",
+  "name": "Pixel Sorting",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Image",
+      "type": "NodeSocketColor",
+      "description": "Color value for Image.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Image.",
+      "dz": "设置 图像 的颜色数据。"
+    },
+    {
+      "name": "Resolution",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Resolution.",
+      "default": [
+        2560.0,
+        1600.0,
+        0.0
+      ],
+      "de": "Vector value for Resolution.",
+      "dz": "设置 分辨率 的向量数据。"
+    },
+    {
+      "name": "X/Y",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling X Y.",
+      "default": 1.0,
+      "de": "Numeric value controlling X Y.",
+      "dz": "设置 X / Y 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Image",
+      "type": "NodeSocketColor",
+      "description": "Color value for Image.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Image.",
+      "dz": "设置 图像 的颜色数据。"
+    },
+    {
+      "name": "Debug",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Debug.",
+      "default": 0.0,
+      "de": "Numeric value controlling Debug.",
+      "dz": "设置 Debug 的数值。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

@@ -1,0 +1,90 @@
+{
+  "id": "image-rotation",
+  "name": "Image_Rotation",
+  "name_zh": "",
+  "category_id": "shader_image",
+  "category": "Image",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_image",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "X",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling X.",
+      "default": 0.0,
+      "de": "Numeric value controlling X.",
+      "dz": "设置 X 的数值。"
+    },
+    {
+      "name": "Y",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Y.",
+      "default": 0.0,
+      "de": "Numeric value controlling Y.",
+      "dz": "设置 Y 的数值。"
+    },
+    {
+      "name": "Z",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Z.",
+      "default": 0.0,
+      "de": "Numeric value controlling Z.",
+      "dz": "设置 Z 的数值。"
+    },
+    {
+      "name": "Factor",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Factor.",
+      "default": 0.5,
+      "de": "Numeric value controlling Factor.",
+      "dz": "设置 系数 的数值。"
+    },
+    {
+      "name": "Image_Ratio",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Image Ratio.",
+      "default": [
+        1.4999998807907104,
+        1.0,
+        0.0
+      ],
+      "de": "Vector value for Image Ratio.",
+      "dz": "设置 图像 / Ratio 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

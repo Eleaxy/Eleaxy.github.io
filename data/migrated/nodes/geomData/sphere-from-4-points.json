@@ -1,0 +1,90 @@
+{
+  "id": "sphere-from-4-points",
+  "name": "Sphere From 4 Points",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "p1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p1.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for p1.",
+      "dz": "设置 p1 的向量数据。"
+    },
+    {
+      "name": "p2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p2.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for p2.",
+      "dz": "设置 p2 的向量数据。"
+    },
+    {
+      "name": "p3",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p3.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for p3.",
+      "dz": "设置 p3 的向量数据。"
+    },
+    {
+      "name": "p4",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p4.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for p4.",
+      "dz": "设置 p4 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

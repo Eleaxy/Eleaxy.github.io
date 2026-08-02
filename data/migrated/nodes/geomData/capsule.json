@@ -1,0 +1,69 @@
+{
+  "id": "capsule",
+  "name": "Capsule",
+  "name_zh": "胶囊体",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 11.40.36.100.png",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Segments",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Segments.",
+      "default": 64,
+      "de": "Integer value controlling Segments.",
+      "dz": "设置 Segments 的数值。"
+    },
+    {
+      "name": "Rings",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Rings.",
+      "default": 24,
+      "de": "Integer value controlling Rings.",
+      "dz": "设置 Rings 的数值。"
+    },
+    {
+      "name": "Side Segments",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Side Segments.",
+      "default": 1,
+      "de": "Integer value controlling Side Segments.",
+      "dz": "设置 Side / Segments 的数值。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "default": 2.0,
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 高度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,68 @@
+{
+  "id": "face-extrusion",
+  "name": "Face Extrusion",
+  "name_zh": "面挤出",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "能够处理正确挤出距离的面挤出",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 21.01.39.86.png",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 高度 的数值。"
+    },
+    {
+      "name": "Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Offset.",
+      "default": 0.5,
+      "de": "Numeric value controlling Offset.",
+      "dz": "设置 偏移 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Top",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Top option.",
+      "default": false,
+      "de": "Toggles or selects the Top option.",
+      "dz": "控制是否启用或选择 Top。"
+    },
+    {
+      "name": "Side",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Side option.",
+      "default": false,
+      "de": "Toggles or selects the Side option.",
+      "dz": "控制是否启用或选择 Side。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

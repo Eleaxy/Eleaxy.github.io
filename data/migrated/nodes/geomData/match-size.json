@@ -1,0 +1,88 @@
+{
+  "id": "match-size",
+  "name": "Match Size",
+  "name_zh": "",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Type",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Type.",
+      "default": "Fit",
+      "de": "Mode selector for Type.",
+      "dz": "选择 类型 的模式。"
+    },
+    {
+      "name": "Size",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Size.",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Size.",
+      "dz": "设置 尺寸 的向量数据。"
+    },
+    {
+      "name": "Center",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Center option.",
+      "default": false,
+      "de": "Toggles or selects the Center option.",
+      "dz": "控制是否启用或选择 中心。"
+    },
+    {
+      "name": "X",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for X.",
+      "default": "0",
+      "de": "Mode selector for X.",
+      "dz": "选择 X 的模式。"
+    },
+    {
+      "name": "Y",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Y.",
+      "default": "0",
+      "de": "Mode selector for Y.",
+      "dz": "选择 Y 的模式。"
+    },
+    {
+      "name": "Z",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Z.",
+      "default": "0",
+      "de": "Mode selector for Z.",
+      "dz": "选择 Z 的模式。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

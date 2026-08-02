@@ -1,0 +1,74 @@
+{
+  "id": "stair-sdf",
+  "name": "Stair_SDF",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Width.",
+      "default": 0.699999988079071,
+      "de": "Numeric value controlling Width.",
+      "dz": "设置 宽度 的数值。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "default": 0.4000000059604645,
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 高度 的数值。"
+    },
+    {
+      "name": "Steps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Steps.",
+      "default": 3,
+      "de": "Integer value controlling Steps.",
+      "dz": "设置 Steps 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.4000000059604645,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Distance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distance.",
+      "default": 0.0,
+      "de": "Numeric value controlling Distance.",
+      "dz": "设置 Distance 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

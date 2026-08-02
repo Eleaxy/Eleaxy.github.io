@@ -1,0 +1,45 @@
+{
+  "id": "screen-uv",
+  "name": "Screen UV",
+  "name_zh": "",
+  "category_id": "comp",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "Stretch",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Stretch.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Stretch.",
+      "dz": "设置 Stretch 的向量数据。"
+    },
+    {
+      "name": "Crop",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Crop.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Crop.",
+      "dz": "设置 Crop 的向量数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

@@ -1,0 +1,95 @@
+{
+  "id": "initialize-particles",
+  "name": "Initialize Particles",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketBundle",
+      "description": "Bundles to join together on the top level for each bundle. When there are duplicates, only the first occurrence is used",
+      "de": "Bundles to join together on the top level for each bundle. When there are duplicates, only the first occurrence is used",
+      "dz": "指定 Particles 参数。"
+    },
+    {
+      "name": "Initial Velocity",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Initial Velocity.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Initial Velocity.",
+      "dz": "设置 Initial / 速度 的向量数据。"
+    },
+    {
+      "name": "Lifetime",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime.",
+      "default": 10.0,
+      "de": "Numeric value controlling Lifetime.",
+      "dz": "设置 Lifetime 的数值。"
+    },
+    {
+      "name": "Lifetime Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime Random.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Lifetime Random.",
+      "dz": "设置 Lifetime / 随机量 的数值。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Radius Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius Random.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Radius Random.",
+      "dz": "设置 半径 / 随机量 的数值。"
+    },
+    {
+      "name": "Uniform Mass",
+      "type": "NodeSocketBool",
+      "description": "Set particle mass to 1, so that the radius won't affect force strength. Avoid force explosion",
+      "default": true,
+      "de": "Set particle mass to 1, so that the radius won't affect force strength. Avoid force explosion",
+      "dz": "控制是否启用或选择 Uniform / 质量。"
+    },
+    {
+      "name": "Custom Stage",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Custom Stage.",
+      "de": "Parameter for Custom Stage.",
+      "dz": "指定 Custom / Stage 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Sourcing",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Sourcing.",
+      "de": "Parameter for Sourcing.",
+      "dz": "指定 Sourcing 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

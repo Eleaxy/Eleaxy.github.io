@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resource Archive</title>
+  <link rel="stylesheet" href="/css/archive.css">
+  <link rel="stylesheet" href="/css/motion.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="/css/tutorials.css">
+  <link rel="stylesheet" href="/css/cube-particle-wake.css">
+  <link rel="stylesheet" href="/css/stages.css">
+  <link rel="stylesheet" href="/css/nodes.css">
+  <link rel="stylesheet" href="/css/node-wordmark.css">
+  <link rel="stylesheet" href="/css/plugins-contributors.css">
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main-content" data-i18n="skip-to-content">Skip to content</a>
+  <canvas class="global-pixel-field" data-testid="global-pixel-field" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="/index.html">Resource Archive</a>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#home" aria-current="page">Home</a><a href="#nodes">Nodes</a><a href="#stages">Stages</a><a href="#tutorials">Tutorials</a><a href="#plugins-section">Plugins</a><a href="#contributors">Contributors</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="page-shell home-shell" data-main-content>
+    <section id="home" class="home-hero" aria-labelledby="home-title">
+      <div class="hero-identity">
+        <div class="hero-content-frame">
+          <h1 id="home-title" data-i18n="home-title">Nodes process data. Scenes organise objects.</h1>
+          <div class="hero-descriptor">
+            <p data-i18n="home-descriptor">Plugins turn repeated operations into tools.</p>
+            <p class="hero-facts" data-i18n="home-facts">569 node records · 12 stage files · 2 plugins</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-pixel-window" data-hero-field aria-hidden="true"></div>
+      <div class="hero-content-frame hero-resolution">
+        <div>
+          <h2 data-i18n="home-statement">Objects, collections, materials, and node trees.</h2>
+          <div class="hero-actions">
+            <a class="button-primary" href="#nodes" data-pixel-flicker><span class="pixel-button-effect" aria-hidden="true"></span><span class="pixel-button-label" data-i18n="home-nodes">Explore archive</span></a>
+            <a class="button-secondary" href="#stages" data-pixel-flicker><span class="pixel-button-effect" aria-hidden="true"></span><span class="pixel-button-label" data-i18n="home-stages">Browse stages</span></a>
+          </div>
+        </div>
+        <aside class="archive-status" aria-label="Archive status" data-i18n-aria-label="home-archive-status">
+          <p class="source-kind" data-i18n="home-archive-status">Archive status</p>
+          <div><span data-i18n="home-node-records">Node records</span><strong>569</strong></div>
+          <div><span data-i18n="home-stage-records">Stage records</span><strong>12</strong></div>
+          <div><span data-i18n="home-upstream-sources">Plugins</span><strong>2</strong></div>
+        </aside>
+      </div>
+    </section>
+    <section id="tutorials" class="archive-statement tutorials-statement" aria-labelledby="tutorials-title">
+      <div class="tutorials-heading">
+        <p class="source-kind" data-i18n="tutorials-eyebrow">Learning archive</p>
+        <h2 id="statement-title" data-tutorial-directory-title><span id="tutorials-title" data-i18n="tutorials-title">Tutorials</span></h2>
+      </div>
+      <div class="statement-copy tutorials-list" data-tutorials-app aria-live="polite">
+        <p class="tutorial-loading" role="status" data-i18n="tutorials-loading">Loading tutorial records…</p>
+      </div>
+    </section>
+    <div class="cube-particle-wake" aria-hidden="true">
+      <canvas class="cube-particle-wake-canvas"></canvas>
+    </div>
+    <section id="stages" class="home-section stage-preview-section" aria-labelledby="stages-title">
+      <div class="stage-preview-heading">
+        <h2 id="stages-title" data-i18n="stages-home-title">Scene files, kept with their context.</h2>
+        <p data-i18n="stages-home-copy">Each record retains its image, Blender version, ReadMe, usage terms and original download source.</p>
+      </div>
+      <div id="stage-preview-app" aria-live="polite">
+        <div class="loading stage-rail-skeleton" role="status" aria-label="Loading Stage previews" data-i18n-aria-label="stages-loading-previews-label" data-i18n="stages-loading-previews">Loading Stage previews…</div>
+      </div>
+    </section>
+    <section id="nodes" class="home-section nodes-section" aria-labelledby="nodes-title">
+      <div id="node-directory-app" aria-live="polite">
+        <div class="loading node-directory-skeleton" role="status" aria-label="Loading node systems" data-i18n-aria-label="nodes-loading-systems-label" data-i18n="nodes-loading-systems">Loading node systems…</div>
+      </div>
+    </section>
+    <section id="plugins-section" class="home-section plugin-register" aria-labelledby="plugins-title">
+      <header class="plugins-register-header" data-plugin-register-header>
+        <p class="eyebrow" data-plugin-register-eyebrow>Extension register</p>
+        <h2 id="plugins-title" data-plugin-register-title>Plugins</h2>
+        <p class="lede" data-plugin-register-lede>Plugin documentation, versions, features, and downloads.</p>
+      </header>
+      <div id="plugins" class="plugin-list" aria-live="polite">
+        <p class="loading" role="status" data-plugin-loading>Loading plugin records…</p>
+      </div>
+    </section>
+    <section id="contributors" class="continuous-section" aria-labelledby="contributors-title">
+      <header class="contributors-register-header" data-contributors-register-header>
+        <p class="eyebrow" data-i18n="contributors-eyebrow">Archive sources</p>
+        <h1 id="contributors-title" data-i18n="contributors-title">Contributors</h1>
+        <p class="lede" data-i18n="contributors-lede">Sources and providers behind the collection.</p>
+      </header>
+      <div class="archive-section" aria-labelledby="sources-title">
+        <h2 id="sources-title" data-pixel-arrow-target data-i18n="contributors-sources">Archive sources</h2>
+        <div id="contributors-list" class="contributor-list" aria-live="polite">
+          <div class="loading skeleton-layout skeleton-contributors" role="status" aria-label="Loading sources" data-i18n-aria-label="contributors-loading-records-label">
+            <p class="skeleton-label" data-i18n="contributors-loading-records">Loading sources…</p>
+            <div class="skeleton-card" aria-hidden="true"></div><div class="skeleton-card" aria-hidden="true"></div><div class="skeleton-card" aria-hidden="true"></div><div class="skeleton-card" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-marquee-safe" aria-hidden="true"></div>
+    <div class="footer-copy">
+      <div class="footer-contact">
+        <button id="footer-contact-toggle" class="footer-contact-toggle" type="button" aria-haspopup="dialog" aria-controls="footer-contact-dialog" data-pixel-flicker><span class="pixel-button-label" data-i18n="footer-contact-trigger">Get in touch</span></button>
+        <p id="footer-contact-copy" class="source-kind" data-i18n="footer-contact-copy">如果你正在制作 Blender 节点、场景或插件，&#10;也愿意把它们分享给其他使用者，&#10;欢迎联系加入。</p>
+      </div>
+    </div>
+    <dialog id="footer-contact-dialog" class="footer-contact-dialog" aria-labelledby="footer-contact-dialog-title">
+      <div class="footer-contact-dialog-content">
+        <p id="footer-contact-dialog-title" class="footer-contact-dialog-title" data-i18n="footer-contact-dialog-title">联系方式</p>
+        <p class="footer-contact-number"><span data-i18n="footer-contact-qq">QQ</span><strong>3637354868</strong></p>
+        <div class="footer-contact-dialog-actions">
+          <button type="button" data-footer-contact-copy data-i18n="footer-contact-copy-number">复制号码</button>
+          <button type="button" data-footer-contact-close data-i18n="footer-contact-close">关闭</button>
+        </div>
+      </div>
+    </dialog>
+    <div class="footer-tetris-shell">
+      <button class="tetris-toggle" type="button" aria-controls="footer-tetris" aria-pressed="false" data-pixel-flicker><span class="pixel-button-label" data-i18n="footer-tetris-play">play</span></button>
+      <canvas id="footer-tetris" class="footer-tetris" tabindex="-1" aria-label="Interactive pixel skyline" data-i18n-aria-label="footer-tetris-label"></canvas>
+    </div>
+  </footer>
+  <script src="/js/i18n.js" defer></script>
+  <script src="/js/site-shell.js" defer></script>
+  <script src="/js/tutorials.js" defer></script>
+  <script src="/js/global-pixel-field.js" defer></script>
+  <script src="/js/cube-particle-wake.js" defer></script>
+  <script src="/js/component-motion.js" defer></script>
+  <script src="/js/stage-data.js" defer></script>
+  <script src="/js/stage-rail.js" defer></script>
+  <script src="/js/stage-media-motion.js" defer></script>
+  <script src="/js/stage-preview.js" defer></script>
+  <script src="/js/node-taxonomy.js" defer></script>
+  <script src="/js/node-wordmark.js" defer></script>
+  <script src="/js/node-directory.js" defer></script>
+  <script src="/js/external-url.js" defer></script>
+  <script src="/js/plugins.js" defer></script>
+  <script src="/js/contributors.js" defer></script>
+  <script src="/js/footer-contact.js" defer></script>
+  <script src="/js/footer-tetris.js" defer></script>
+</body>
+</html>

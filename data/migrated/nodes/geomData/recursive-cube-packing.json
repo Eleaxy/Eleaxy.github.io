@@ -1,0 +1,107 @@
+{
+  "id": "recursive-cube-packing",
+  "name": "Recursive Cube Packing",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 7,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "W",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling W.",
+      "default": 0.0,
+      "de": "Numeric value controlling W.",
+      "dz": "设置 W 的数值。"
+    },
+    {
+      "name": "Uniform",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Uniform.",
+      "default": 0.0,
+      "de": "Numeric value controlling Uniform.",
+      "dz": "设置 Uniform 的数值。"
+    },
+    {
+      "name": "To Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling To Min.",
+      "default": 0.0,
+      "de": "Numeric value controlling To Min.",
+      "dz": "设置 To / 最小值 的数值。"
+    },
+    {
+      "name": "To Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling To Max.",
+      "default": 1.0,
+      "de": "Numeric value controlling To Max.",
+      "dz": "设置 To / 最大值 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    },
+    {
+      "name": "Pick Instance",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Pick Instance option.",
+      "default": false,
+      "de": "Toggles or selects the Pick Instance option.",
+      "dz": "控制是否启用或选择 Pick / Instance。"
+    },
+    {
+      "name": "Instance Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Instance Index.",
+      "default": 0,
+      "de": "Integer value controlling Instance Index.",
+      "dz": "设置 Instance / 索引 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Debug",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Debug.",
+      "de": "Geometry data used as Debug.",
+      "dz": "传入或输出用于该节点处理的 Debug。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

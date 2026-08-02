@@ -1,0 +1,68 @@
+{
+  "id": "hair-mesh-to-curve",
+  "name": "Hair Mesh to Curve",
+  "name_zh": "网格转毛发",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于将头发面片或柱形毛发网格转化成毛发曲线",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 21.43.11.99.png",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Type",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Type.",
+      "default": "Plane",
+      "de": "Mode selector for Type.",
+      "dz": "选择 类型 的模式。"
+    },
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Mesh to subdivide",
+      "de": "Mesh to subdivide",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "Quad/Tri/Subdivide",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Quad Tri Subdivide.",
+      "default": "Quad",
+      "de": "Mode selector for Quad Tri Subdivide.",
+      "dz": "选择 Quad / Tri / Subdivide 的模式。"
+    },
+    {
+      "name": "X/Y",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for X Y.",
+      "default": "X",
+      "de": "Mode selector for X Y.",
+      "dz": "选择 X / Y 的模式。"
+    },
+    {
+      "name": "",
+      "type": "NodeSocketString",
+      "description": "Text value used for this socket.",
+      "default": "UVMap",
+      "de": "Text value used for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curves.",
+      "de": "Geometry data used as Curves.",
+      "dz": "传入或输出用于该节点处理的 Curves。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

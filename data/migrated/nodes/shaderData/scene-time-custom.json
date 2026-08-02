@@ -1,0 +1,45 @@
+{
+  "id": "scene-time-custom",
+  "name": "Scene_Time(Custom)",
+  "name_zh": "",
+  "category_id": "shader_utility",
+  "category": "Utility",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_utility",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "Seconds",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Seconds.",
+      "default": 0.0,
+      "de": "Numeric value controlling Seconds.",
+      "dz": "设置 Seconds 的数值。"
+    },
+    {
+      "name": "Frame",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Frame.",
+      "default": 0.0,
+      "de": "Numeric value controlling Frame.",
+      "dz": "设置 帧 的数值。"
+    },
+    {
+      "name": "Timeline",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Timeline.",
+      "default": 0.0,
+      "de": "Numeric value controlling Timeline.",
+      "dz": "设置 Timeline 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

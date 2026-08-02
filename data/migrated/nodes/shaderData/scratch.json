@@ -1,0 +1,138 @@
+{
+  "id": "scratch",
+  "name": "Scratch",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 5.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Contrast",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Contrast.",
+      "default": 0.5,
+      "de": "Numeric value controlling Contrast.",
+      "dz": "设置 Contrast 的数值。"
+    },
+    {
+      "name": "Frequncy",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Frequncy.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Frequncy.",
+      "dz": "设置 Frequncy 的数值。"
+    },
+    {
+      "name": "Distortion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distortion.",
+      "default": 2.0,
+      "de": "Numeric value controlling Distortion.",
+      "dz": "设置 Distortion 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail.",
+      "default": 5.0,
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Detail Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail Scale.",
+      "default": 1.9099998474121094,
+      "de": "Numeric value controlling Detail Scale.",
+      "dz": "设置 Detail / 缩放 的数值。"
+    },
+    {
+      "name": "Detail Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail Roughness.",
+      "default": 0.4030612111091614,
+      "de": "Numeric value controlling Detail Roughness.",
+      "dz": "设置 Detail / Roughness 的数值。"
+    },
+    {
+      "name": "Phase Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Phase Offset.",
+      "default": 0.0,
+      "de": "Numeric value controlling Phase Offset.",
+      "dz": "设置 Phase / 偏移 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail.",
+      "default": 4.0,
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.4049723744392395,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling mask.",
+      "dz": "设置 遮罩 的数值。"
+    },
+    {
+      "name": "invert",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling invert.",
+      "default": 0.0,
+      "de": "Numeric value controlling invert.",
+      "dz": "设置 invert 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

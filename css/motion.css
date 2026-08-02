@@ -1,0 +1,148 @@
+@view-transition { navigation: auto; }
+
+.site-header { view-transition-name: site-header; }
+.global-pixel-field { view-transition-name: global-pixel-field; }
+[data-transition-catalog-title] { view-transition-name: node-system-title; }
+[data-transition-catalog-count] { view-transition-name: node-system-count; }
+[data-transition-catalog-wordmark] { view-transition-name: node-system-wordmark; }
+
+::view-transition-old(root) {
+  animation: 420ms cubic-bezier(.4, 0, .2, 1) both page-breathe-out;
+}
+
+::view-transition-new(root) {
+  animation: 520ms cubic-bezier(.16, 1, .3, 1) 70ms both page-breathe-in;
+}
+
+html[data-internal-transition]::view-transition-old(root),
+html[data-internal-transition]::view-transition-new(root) {
+  animation-duration: 0s;
+  animation-delay: 0s;
+}
+
+html[data-internal-transition]::view-transition-group(node-system-title),
+html[data-internal-transition]::view-transition-group(node-system-count),
+html[data-internal-transition]::view-transition-group(node-system-wordmark) {
+  animation-duration: 320ms;
+  animation-delay: 0s;
+}
+
+::view-transition-old(internal-view-root) {
+  animation: 220ms cubic-bezier(.4, 0, .2, 1) both internal-view-out;
+}
+
+::view-transition-new(internal-view-root) {
+  animation: 300ms cubic-bezier(.2, .8, .2, 1) both internal-view-in;
+}
+
+[data-internal-view-enter] {
+  animation: 180ms cubic-bezier(.2, .8, .2, 1) both internal-view-enter;
+}
+
+::view-transition-group(site-header) { animation-duration: 0s; }
+::view-transition-group(global-pixel-field) {
+  animation-duration: 180ms;
+  animation-timing-function: linear;
+}
+
+::view-transition-group(node-system-title),
+::view-transition-group(node-system-count),
+::view-transition-group(node-system-wordmark) {
+  animation-duration: 560ms;
+  animation-timing-function: cubic-bezier(.16, 1, .3, 1);
+}
+
+::view-transition-group(node-detail-title),
+::view-transition-group(node-record-media),
+::view-transition-group(stage-media),
+::view-transition-group(plugin-title-automation-flow),
+::view-transition-group(plugin-title-autocel),
+::view-transition-group(plugin-art-autocel) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(.16, 1, .3, 1);
+}
+
+@keyframes page-breathe-out {
+  to { opacity: 0; transform: translateY(-6px) scale(.985); }
+}
+
+@keyframes page-breathe-in {
+  from { opacity: 0; transform: translateY(10px) scale(1.012); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes internal-view-out {
+  to { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes internal-view-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes internal-view-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.global-pixel-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+[data-main-content], .site-footer { position: relative; z-index: 1; }
+.hero-pixel-window { background: transparent; }
+
+.footer-marquee-safe {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 216px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 200;
+  top: 8px;
+  left: 8px;
+  padding: 12px 16px;
+  border: 2px solid var(--text);
+  background: var(--surface);
+  color: var(--text);
+  transform: translateY(-160%);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.button-primary, .button-secondary, .back-link { position: relative; overflow: hidden; }
+[data-pixel-flicker] { position: relative; overflow: hidden; }
+.pixel-button-effect { position: absolute; z-index: 1; inset: 0; pointer-events: none; }
+.pixel-button-effect i {
+  position: absolute;
+  top: calc(var(--row) * 9px);
+  left: calc(var(--column) * 9px);
+  width: 9px;
+  height: 9px;
+  opacity: 0;
+}
+.pixel-button-label { position: relative; z-index: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  [data-internal-view-enter] { animation-duration: 0s !important; }
+
+  .pixel-button-effect i { opacity: 0 !important; }
+}

@@ -1,0 +1,123 @@
+{
+  "id": "barycentric-coodinate",
+  "name": "Barycentric Coodinate",
+  "name_zh": "重心坐标",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于计算点在三角形中的重心坐标",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {
+    "i": {
+      "0": "三角形 / 三棱锥",
+      "1": "点1",
+      "2": "点2",
+      "3": "点3",
+      "4": "点4",
+      "5": "输入位置P"
+    },
+    "o": {
+      "0": "点在三角形中的重心坐标",
+      "1": "点在三棱锥的第4个权重"
+    }
+  },
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "Triangle",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "A",
+      "type": "NodeSocketVector",
+      "description": "Vector value for A.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for A.",
+      "dz": "设置 A 的向量数据。"
+    },
+    {
+      "name": "B",
+      "type": "NodeSocketVector",
+      "description": "Vector value for B.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for B.",
+      "dz": "设置 B 的向量数据。"
+    },
+    {
+      "name": "C",
+      "type": "NodeSocketVector",
+      "description": "Vector value for C.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for C.",
+      "dz": "设置 C 的向量数据。"
+    },
+    {
+      "name": "D",
+      "type": "NodeSocketVector",
+      "description": "Vector value for D.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for D.",
+      "dz": "设置 D 的向量数据。"
+    },
+    {
+      "name": "P",
+      "type": "NodeSocketVector",
+      "description": "Vector value for P.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for P.",
+      "dz": "设置 P 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "uvw",
+      "type": "NodeSocketVector",
+      "description": "Vector value for uvw.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for uvw.",
+      "dz": "设置 uvw 的向量数据。"
+    },
+    {
+      "name": "t",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling t.",
+      "default": 0.0,
+      "de": "Numeric value controlling t.",
+      "dz": "设置 t 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "curve-constrained-sphere-packing",
+  "name": "Curve Constrained Sphere Packing",
+  "name_zh": "曲线约束球填充",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "根据曲线半径计算球打包",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 18.38.42.87.png",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Count.",
+      "default": 24,
+      "de": "Integer value controlling Count.",
+      "dz": "设置 数量 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

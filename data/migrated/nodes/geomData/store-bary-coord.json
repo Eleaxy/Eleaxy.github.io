@@ -1,0 +1,55 @@
+{
+  "id": "store-bary-coord",
+  "name": "Store Bary-Coord",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Triangle",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Triangle.",
+      "de": "Geometry data used as Triangle.",
+      "dz": "传入或输出用于该节点处理的 Triangle。"
+    },
+    {
+      "name": "Sample Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Sample Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Sample Position.",
+      "dz": "设置 采样位置 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

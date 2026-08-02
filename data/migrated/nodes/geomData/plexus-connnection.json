@@ -1,0 +1,52 @@
+{
+  "id": "plexus-connnection",
+  "name": "Plexus Connnection",
+  "name_zh": "连接r近点",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "Trim Curve",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Trim Curve.",
+      "default": 1.0,
+      "de": "Numeric value controlling Trim Curve.",
+      "dz": "设置 Trim / 曲线 的数值。"
+    },
+    {
+      "name": "Max Distance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max Distance.",
+      "default": 0.5,
+      "de": "Numeric value controlling Max Distance.",
+      "dz": "设置 最大值 / Distance 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curves.",
+      "de": "Geometry data used as Curves.",
+      "dz": "传入或输出用于该节点处理的 Curves。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

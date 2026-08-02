@@ -1,0 +1,48 @@
+{
+  "id": "catenary",
+  "name": "Catenary",
+  "name_zh": "悬链线",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于制作悬链线，自然情况下电缆下垂的曲线形状",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 11.43.19.77.png",
+  "param_descriptions": {
+    "i": {
+      "1": "用于控制电缆的总长度"
+    }
+  },
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Length",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Length.",
+      "default": 6.0,
+      "de": "Numeric value controlling Length.",
+      "dz": "设置 Length 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

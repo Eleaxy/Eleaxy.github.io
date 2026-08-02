@@ -1,0 +1,76 @@
+{
+  "id": "qem-mesh-simplification",
+  "name": "QEM Mesh Simplification",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 300,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Hard Edge",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Hard Edge option.",
+      "default": false,
+      "de": "Toggles or selects the Hard Edge option.",
+      "dz": "控制是否启用或选择 Hard / Edge。"
+    },
+    {
+      "name": "Simplify Target",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Simplify Target.",
+      "default": "Percentage",
+      "de": "Mode selector for Simplify Target.",
+      "dz": "选择 Simplify / Target 的模式。"
+    },
+    {
+      "name": "Percentage",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Percentage.",
+      "default": 0.19999998807907104,
+      "de": "Numeric value controlling Percentage.",
+      "dz": "设置 Percentage 的数值。"
+    },
+    {
+      "name": "Face Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Face Count.",
+      "default": 1000,
+      "de": "Integer value controlling Face Count.",
+      "dz": "设置 Face / 数量 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

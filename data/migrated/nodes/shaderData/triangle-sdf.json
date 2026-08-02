@@ -1,0 +1,78 @@
+{
+  "id": "triangle-sdf",
+  "name": "Triangle_SDF",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "p0",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p0.",
+      "default": [
+        0.0,
+        0.30000001192092896,
+        0.0
+      ],
+      "de": "Vector value for p0.",
+      "dz": "设置 p0 的向量数据。"
+    },
+    {
+      "name": "p1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p1.",
+      "default": [
+        -0.30000001192092896,
+        -0.30000001192092896,
+        0.0
+      ],
+      "de": "Vector value for p1.",
+      "dz": "设置 p1 的向量数据。"
+    },
+    {
+      "name": "p2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for p2.",
+      "default": [
+        0.30000001192092896,
+        -0.30000001192092896,
+        0.0
+      ],
+      "de": "Vector value for p2.",
+      "dz": "设置 p2 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

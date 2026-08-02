@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "source": {
+    "repository": "https://github.com/blueish0930/Assets.git",
+    "commit": "327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07",
+    "path_prefix": "docs/"
+  },
+  "images": {
+    "geomData/10-tetrahetra": {
+      "source_path": "Desktop/Screenshot 2026-07-09 230545.png",
+      "local": "/images/nodes/c332b4d5dbaa64d006657a2397826526d7351f86c526bc30a2656a60ff1bf644.png",
+      "sha256": "c332b4d5dbaa64d006657a2397826526d7351f86c526bc30a2656a60ff1bf644",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Screenshot%202026-07-09%20230545.png"
+    },
+    "geomData/2d-curve-point-angle": {
+      "source_path": "Desktop/Screenshot 2026-07-09 230252.png",
+      "local": "/images/nodes/817b9dda3787081f688506a922133e15947ff44c1af2f4d32fb1587c06b72448.png",
+      "sha256": "817b9dda3787081f688506a922133e15947ff44c1af2f4d32fb1587c06b72448",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Screenshot%202026-07-09%20230252.png"
+    },
+    "geomData/2d-medial-axis": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.16 - 17.05.43.19.png",
+      "local": "/images/nodes/98a44f51ffb7e7e2becb9c5555723060b843813972d09ff069bf7c06ad5ce41b.png",
+      "sha256": "98a44f51ffb7e7e2becb9c5555723060b843813972d09ff069bf7c06ad5ce41b",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.16%20-%2017.05.43.19.png"
+    },
+    "geomData/2d-remesh": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.09 - 23.11.45.20.png",
+      "local": "/images/nodes/c0f6438cf97e8cabd4731aabfdc85bf62aab968543d419e13c61ddcc9d5c97d5.png",
+      "sha256": "c0f6438cf97e8cabd4731aabfdc85bf62aab968543d419e13c61ddcc9d5c97d5",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.09%20-%2023.11.45.20.png"
+    },
+    "geomData/2d-straight-skeleton": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.16 - 17.10.22.20.png",
+      "local": "/images/nodes/deed4720171a894f278a58db82789fce2cb0fe369878f745ad4741c6f58bfdd8.png",
+      "sha256": "deed4720171a894f278a58db82789fce2cb0fe369878f745ad4741c6f58bfdd8",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.16%20-%2017.10.22.20.png"
+    },
+    "geomData/3d-recursive-subdivision": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.09 - 23.16.48.65.png",
+      "local": "/images/nodes/9679638d9a81b14c90ca9e779ee3fbd3dd9e5019e07a823a9556f6879ccec8d2.png",
+      "sha256": "9679638d9a81b14c90ca9e779ee3fbd3dd9e5019e07a823a9556f6879ccec8d2",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.09%20-%2023.16.48.65.png"
+    },
+    "geomData/5-tetrahetra": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.09 - 23.18.00.89.png",
+      "local": "/images/nodes/ed856ef111a474cd7a03fe00b235643c5d1b8d08b16cf20f8e13fc96b7cf5c03.png",
+      "sha256": "ed856ef111a474cd7a03fe00b235643c5d1b8d08b16cf20f8e13fc96b7cf5c03",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.09%20-%2023.18.00.89.png"
+    },
+    "geomData/attribute-delete": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.09 - 23.21.14.59.png",
+      "local": "/images/nodes/2473e53b2ee7f31e4392b2c0c9e65cbbd3ea20277d7b17e54dd36e253acf01fc.png",
+      "sha256": "2473e53b2ee7f31e4392b2c0c9e65cbbd3ea20277d7b17e54dd36e253acf01fc",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.09%20-%2023.21.14.59.png"
+    },
+    "geomData/auto-uv-seam": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.09 - 23.24.19.14.png",
+      "local": "/images/nodes/32ebf5e551f78a5352be2c1654781cff879d271093d2a50f7fdd84bc62d9d986.png",
+      "sha256": "32ebf5e551f78a5352be2c1654781cff879d271093d2a50f7fdd84bc62d9d986",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.09%20-%2023.24.19.14.png"
+    },
+    "geomData/backface-culling": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.09 - 23.26.52.16.png",
+      "local": "/images/nodes/0821307a91388774d8729499a73bcf2453427f1577ec5cbc57d12830dedd51fa.png",
+      "sha256": "0821307a91388774d8729499a73bcf2453427f1577ec5cbc57d12830dedd51fa",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.09%20-%2023.26.52.16.png"
+    },
+    "geomData/bend": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.10 - 22.50.07.67.png",
+      "local": "/images/nodes/0475cdcee7921f6fe85651c73c327561b25c7bfc9c1768fe3aeffb3a21770398.png",
+      "sha256": "0475cdcee7921f6fe85651c73c327561b25c7bfc9c1768fe3aeffb3a21770398",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.10%20-%2022.50.07.67.png"
+    },
+    "geomData/bevel-2d-curve": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 10.10.01.93.png",
+      "local": "/images/nodes/4966f147452c6aa1547767ba063fa84d6d64ba3aea3a5fe086e4adc540805fcf.png",
+      "sha256": "4966f147452c6aa1547767ba063fa84d6d64ba3aea3a5fe086e4adc540805fcf",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2010.10.01.93.png"
+    },
+    "geomData/boolean-curve": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 10.21.49.97.png",
+      "local": "/images/nodes/db004856258ba5586b0b0c615094a4edaf160c2e9ec282ba97ffce4343dc69e1.png",
+      "sha256": "db004856258ba5586b0b0c615094a4edaf160c2e9ec282ba97ffce4343dc69e1",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2010.21.49.97.png"
+    },
+    "geomData/camera-culling": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 10.26.35.72.png",
+      "local": "/images/nodes/109cc6c37ee1a49b753c355cfd1b8606afcc8cdb222e966084fa3c2dce8845b8.png",
+      "sha256": "109cc6c37ee1a49b753c355cfd1b8606afcc8cdb222e966084fa3c2dce8845b8",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2010.26.35.72.png"
+    },
+    "geomData/capsule": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 11.40.36.100.png",
+      "local": "/images/nodes/fd9878c887f32d47cd286901f198aa5432b6063b869da964929325193712d05b.png",
+      "sha256": "fd9878c887f32d47cd286901f198aa5432b6063b869da964929325193712d05b",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2011.40.36.100.png"
+    },
+    "geomData/cardioid": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 11.40.36.100.png",
+      "local": "/images/nodes/fd9878c887f32d47cd286901f198aa5432b6063b869da964929325193712d05b.png",
+      "sha256": "fd9878c887f32d47cd286901f198aa5432b6063b869da964929325193712d05b",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2011.40.36.100.png"
+    },
+    "geomData/catenary": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 11.43.19.77.png",
+      "local": "/images/nodes/4abaaf2128eeb2fb569ae70f1e77bd4b62766df898762940a4a93adf95daad28.png",
+      "sha256": "4abaaf2128eeb2fb569ae70f1e77bd4b62766df898762940a4a93adf95daad28",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2011.43.19.77.png"
+    },
+    "geomData/circle-packing": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 11.43.19.77.png",
+      "local": "/images/nodes/4abaaf2128eeb2fb569ae70f1e77bd4b62766df898762940a4a93adf95daad28.png",
+      "sha256": "4abaaf2128eeb2fb569ae70f1e77bd4b62766df898762940a4a93adf95daad28",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2011.43.19.77.png"
+    },
+    "geomData/circular-packing": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 12.01.02.63.png",
+      "local": "/images/nodes/e7aa29474c878e021524b854afb221e8fb38c5adc4fc5b193737ea3f83106f71.png",
+      "sha256": "e7aa29474c878e021524b854afb221e8fb38c5adc4fc5b193737ea3f83106f71",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2012.01.02.63.png"
+    },
+    "geomData/circular-parameterization": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 12.08.18.52.png",
+      "local": "/images/nodes/99b05bcb855be1b0ee6d237ba68ee6e20dc7db110245d8dac052557567985b1e.png",
+      "sha256": "99b05bcb855be1b0ee6d237ba68ee6e20dc7db110245d8dac052557567985b1e",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2012.08.18.52.png"
+    },
+    "geomData/cluster-points": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 12.21.52.13.png",
+      "local": "/images/nodes/d1153c4c9c7d9b7e6ba1a59d0b39722eddf4cc8ba90c21a63f3ba9a6e81d4900.png",
+      "sha256": "d1153c4c9c7d9b7e6ba1a59d0b39722eddf4cc8ba90c21a63f3ba9a6e81d4900",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2012.21.52.13.png"
+    },
+    "geomData/collision-detection": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 13.26.52.63.png",
+      "local": "/images/nodes/91481a77a1d3c664f7494af92c85eb8ec3b5450fdb3815352c7938e215c742da.png",
+      "sha256": "91481a77a1d3c664f7494af92c85eb8ec3b5450fdb3815352c7938e215c742da",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2013.26.52.63.png"
+    },
+    "geomData/consistent-curve-orientation": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 13.34.08.42.png",
+      "local": "/images/nodes/87966c9e565f6748286d09170a7b88c1d04ff4bc9ccf34f71d63a6eaffdba3e8.png",
+      "sha256": "87966c9e565f6748286d09170a7b88c1d04ff4bc9ccf34f71d63a6eaffdba3e8",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2013.34.08.42.png"
+    },
+    "geomData/coons-patch": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 13.36.44.82.png",
+      "local": "/images/nodes/72f843d08fc00809597c83d8362600f40b66899d4140ab99e28ff432cd99116e.png",
+      "sha256": "72f843d08fc00809597c83d8362600f40b66899d4140ab99e28ff432cd99116e",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2013.36.44.82.png"
+    },
+    "geomData/coordinate-system": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 13.39.25.48.png",
+      "local": "/images/nodes/4182ea33c41029fd3f9b579275d7d8b4b1455285b5d31929ef36ea7c02d3743a.png",
+      "sha256": "4182ea33c41029fd3f9b579275d7d8b4b1455285b5d31929ef36ea7c02d3743a",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2013.39.25.48.png"
+    },
+    "geomData/cotangent-laplacian": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 16.29.37.16.png",
+      "local": "/images/nodes/749ac0484c5fd942163c6a1c27248b35a4664f33cd5eae3802339687ddec6796.png",
+      "sha256": "749ac0484c5fd942163c6a1c27248b35a4664f33cd5eae3802339687ddec6796",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2016.29.37.16.png"
+    },
+    "geomData/cube-deform": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 18.05.54.21.png",
+      "local": "/images/nodes/d283194daece5e5109e1b67c074e9aacc578341f1c86fa4d4ac7d3ab562a0d3f.png",
+      "sha256": "d283194daece5e5109e1b67c074e9aacc578341f1c86fa4d4ac7d3ab562a0d3f",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2018.05.54.21.png"
+    },
+    "geomData/curve-constrained-sphere-packing": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 18.38.42.87.png",
+      "local": "/images/nodes/67893a2d01c717aab31603793e7bb803cc0e65d8785c6b3a98cc9841f6107a4a.png",
+      "sha256": "67893a2d01c717aab31603793e7bb803cc0e65d8785c6b3a98cc9841f6107a4a",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2018.38.42.87.png"
+    },
+    "geomData/curve-instance-packing": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 21.39.38.74.png",
+      "local": "/images/nodes/8b8662163ae651e51d688710719535ee22aba773cfa21dd5f50139677e06f442.png",
+      "sha256": "8b8662163ae651e51d688710719535ee22aba773cfa21dd5f50139677e06f442",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2021.39.38.74.png"
+    },
+    "geomData/curve-intersections": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 21.45.19.20.png",
+      "local": "/images/nodes/b5284132f11f4c9276cb38c07b7005a19e072ce103c4e2b4f314116a00be1e6f.png",
+      "sha256": "b5284132f11f4c9276cb38c07b7005a19e072ce103c4e2b4f314116a00be1e6f",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2021.45.19.20.png"
+    },
+    "geomData/curve-loop-edge": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 21.47.01.89.png",
+      "local": "/images/nodes/722d37bae8c334d936cfbbacbede3f8f4261f3be5493e90353f1e2ea6a111f8a.png",
+      "sha256": "722d37bae8c334d936cfbbacbede3f8f4261f3be5493e90353f1e2ea6a111f8a",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2021.47.01.89.png"
+    },
+    "geomData/curve-rolling": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 21.49.19.21.png",
+      "local": "/images/nodes/e47ac3e09965ca0170c587db9b4cfc40b55e475a0172ab8c2a98878a3a72b0fe.png",
+      "sha256": "e47ac3e09965ca0170c587db9b4cfc40b55e475a0172ab8c2a98878a3a72b0fe",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2021.49.19.21.png"
+    },
+    "geomData/custom-voronoi-texture": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 21.59.00.40.png",
+      "local": "/images/nodes/695a6771103f1ca5ab936fc174b0d85376b1641dded2bb7aa4f73a8aae74c942.png",
+      "sha256": "695a6771103f1ca5ab936fc174b0d85376b1641dded2bb7aa4f73a8aae74c942",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2021.59.00.40.png"
+    },
+    "geomData/dash-line": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 22.02.04.21.png",
+      "local": "/images/nodes/153d51f64b1f3e201871631cce374da5386e1b65614ce85398efbf81c56b6f1e.png",
+      "sha256": "153d51f64b1f3e201871631cce374da5386e1b65614ce85398efbf81c56b6f1e",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2022.02.04.21.png"
+    },
+    "geomData/debug": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 22.52.07.80.png",
+      "local": "/images/nodes/1046eddeea3a2dddbb57971323af3e93476800b7a2dc36f848180104a06e5d48.png",
+      "sha256": "1046eddeea3a2dddbb57971323af3e93476800b7a2dc36f848180104a06e5d48",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2022.52.07.80.png"
+    },
+    "geomData/delete-by-age": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 23.37.07.41.png",
+      "local": "/images/nodes/62ff4eabce8ac65a18c7d6163ddfdabb49d099d956c63d6fad25a5c61f24c88d.png",
+      "sha256": "62ff4eabce8ac65a18c7d6163ddfdabb49d099d956c63d6fad25a5c61f24c88d",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2023.37.07.41.png"
+    },
+    "geomData/detriangulate": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 23.45.54.84.png",
+      "local": "/images/nodes/5bd1dc3dcbbbe52c8032fd7f61aa5a776c3d6205565f556f435ffe67fe201cf7.png",
+      "sha256": "5bd1dc3dcbbbe52c8032fd7f61aa5a776c3d6205565f556f435ffe67fe201cf7",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2023.45.54.84.png"
+    },
+    "geomData/discrete-panelization": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 23.49.07.63.png",
+      "local": "/images/nodes/4a74804678e1bdd3a922cc5e75e40da45ee530706ca2d8462c26aaa3f08d2534.png",
+      "sha256": "4a74804678e1bdd3a922cc5e75e40da45ee530706ca2d8462c26aaa3f08d2534",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2023.49.07.63.png"
+    },
+    "geomData/dragon-fractal": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 23.54.10.18.png",
+      "local": "/images/nodes/e8777c55800cd444b7409384963f192732fdc5ec3a0b6b41941e6580df689dee.png",
+      "sha256": "e8777c55800cd444b7409384963f192732fdc5ec3a0b6b41941e6580df689dee",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2023.54.10.18.png"
+    },
+    "geomData/edge-bundling": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.11 - 23.57.39.23.png",
+      "local": "/images/nodes/e673238eebe2125d9d7852a6aed297fb382d9c7225febb42dfa3c8e8d99ccb6a.png",
+      "sha256": "e673238eebe2125d9d7852a6aed297fb382d9c7225febb42dfa3c8e8d99ccb6a",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.11%20-%2023.57.39.23.png"
+    },
+    "geomData/edge-collapse": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 00.00.19.78.png",
+      "local": "/images/nodes/8d99aeeac58b6aeb940632b68e021f8e5ed1395a62bbdf570efcda2c0e784434.png",
+      "sha256": "8d99aeeac58b6aeb940632b68e021f8e5ed1395a62bbdf570efcda2c0e784434",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2000.00.19.78.png"
+    },
+    "geomData/edge-loop-id": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 19.03.10.38.png",
+      "local": "/images/nodes/9762742465e1bf141c4da7ace6017cc3b78f3d747c95aeabd6a6234759fb0fa0.png",
+      "sha256": "9762742465e1bf141c4da7ace6017cc3b78f3d747c95aeabd6a6234759fb0fa0",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2019.03.10.38.png"
+    },
+    "geomData/edge-ring-id": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 19.05.05.16.png",
+      "local": "/images/nodes/7ac42c9b45c825e6ed183ac72a1ab095d45ead49e28f3294e92903c7b4fcbdd4.png",
+      "sha256": "7ac42c9b45c825e6ed183ac72a1ab095d45ead49e28f3294e92903c7b4fcbdd4",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2019.05.05.16.png"
+    },
+    "geomData/edges-to-road": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.58.04.58.png",
+      "local": "/images/nodes/858bc1b6333480ae1ff53be92931ffa7eb2fe405851fecb30b0816bd7dfad6f1.png",
+      "sha256": "858bc1b6333480ae1ff53be92931ffa7eb2fe405851fecb30b0816bd7dfad6f1",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.58.04.58.png"
+    },
+    "geomData/elastic-sphere": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 19.14.48.32.png",
+      "local": "/images/nodes/c160e653949a70ff2de66d68a359438c4d4cb50a57e1b443898a4b9f7a9ce8a2.png",
+      "sha256": "c160e653949a70ff2de66d68a359438c4d4cb50a57e1b443898a4b9f7a9ce8a2",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2019.14.48.32.png"
+    },
+    "geomData/even-curve-segments": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 19.17.25.85.png",
+      "local": "/images/nodes/2192c4feb8f8d66b2e97e3d35fec380205eb8f80018a46574a075d3831a4f968.png",
+      "sha256": "2192c4feb8f8d66b2e97e3d35fec380205eb8f80018a46574a075d3831a4f968",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2019.17.25.85.png"
+    },
+    "geomData/extract-isoline": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 20.42.50.88.png",
+      "local": "/images/nodes/1b705a1d0ccc00506aefff005b37a3479d30700dcdd31a681c746749f15e4f61.png",
+      "sha256": "1b705a1d0ccc00506aefff005b37a3479d30700dcdd31a681c746749f15e4f61",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2020.42.50.88.png"
+    },
+    "geomData/extract-transform": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 20.47.35.87.png",
+      "local": "/images/nodes/83e2736b0dbdd83c7efb6a03ddebce45370fa669be8a9fcf7229b175cf757b9d.png",
+      "sha256": "83e2736b0dbdd83c7efb6a03ddebce45370fa669be8a9fcf7229b175cf757b9d",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2020.47.35.87.png"
+    },
+    "geomData/face-extrusion": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.01.39.86.png",
+      "local": "/images/nodes/79d1fc07de9a5ea8efbc7983a067fd8e9155848f7d6d68d66ebebcc0e60156e2.png",
+      "sha256": "79d1fc07de9a5ea8efbc7983a067fd8e9155848f7d6d68d66ebebcc0e60156e2",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.01.39.86.png"
+    },
+    "geomData/face-stripes-group": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.13.48.99.png",
+      "local": "/images/nodes/dde4a08af5150f267d2e006cd7fa021e6621dd78a759551fa602aa8706cad83d.png",
+      "sha256": "dde4a08af5150f267d2e006cd7fa021e6621dd78a759551fa602aa8706cad83d",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.13.48.99.png"
+    },
+    "geomData/fill-3d-curve": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.22.14.67.png",
+      "local": "/images/nodes/554d726960cf614cdeb5ac75f02e6e38e8be3277618551e074c9cea9715557b7.png",
+      "sha256": "554d726960cf614cdeb5ac75f02e6e38e8be3277618551e074c9cea9715557b7",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.22.14.67.png"
+    },
+    "geomData/find-all-cells": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.16 - 16.59.14.29.png",
+      "local": "/images/nodes/9d896d474ed5d9b30c2a446b2ef109213f5418135137439d95402c833cb6f2c5.png",
+      "sha256": "9d896d474ed5d9b30c2a446b2ef109213f5418135137439d95402c833cb6f2c5",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.16%20-%2016.59.14.29.png"
+    },
+    "geomData/fourier-transform-drawing": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.26.48.43.png",
+      "local": "/images/nodes/6c84c8b1ffe296615669a4022a9055a3dbdc7cdcfc6ff15269384f3638a89faa.png",
+      "sha256": "6c84c8b1ffe296615669a4022a9055a3dbdc7cdcfc6ff15269384f3638a89faa",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.26.48.43.png"
+    },
+    "geomData/graph-color": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.31.12.33.png",
+      "local": "/images/nodes/7e1231bc2c567a35967393b1bd7d70acd2a3a6b55a1961e3b0c374219b77c81f.png",
+      "sha256": "7e1231bc2c567a35967393b1bd7d70acd2a3a6b55a1961e3b0c374219b77c81f",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.31.12.33.png"
+    },
+    "geomData/graph-mis": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.33.36.06.png",
+      "local": "/images/nodes/d4617a0284b0677563f767359508f51a517d698f67b96e0a88e6aacfae24657e.png",
+      "sha256": "d4617a0284b0677563f767359508f51a517d698f67b96e0a88e6aacfae24657e",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.33.36.06.png"
+    },
+    "geomData/hair-mesh-to-curve": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.43.11.99.png",
+      "local": "/images/nodes/86a58511b0282efbc551ebe388dbbf1811c3b7740d3eca7433e66947e282f909.png",
+      "sha256": "86a58511b0282efbc551ebe388dbbf1811c3b7740d3eca7433e66947e282f909",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.43.11.99.png"
+    },
+    "geomData/heart": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.43.59.37.png",
+      "local": "/images/nodes/b1b003cf6273f1bd8e9fc7b34f11433c4b8dea53c7650002fcb9e2b103abe1a2.png",
+      "sha256": "b1b003cf6273f1bd8e9fc7b34f11433c4b8dea53c7650002fcb9e2b103abe1a2",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.43.59.37.png"
+    },
+    "geomData/heat-geodesic": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.54.07.56.png",
+      "local": "/images/nodes/35962d430aee049631dc5a0c03c39e7a841b132d0aaad0e9b7671f73da89f0eb.png",
+      "sha256": "35962d430aee049631dc5a0c03c39e7a841b132d0aaad0e9b7671f73da89f0eb",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.54.07.56.png"
+    },
+    "geomData/helicoidal-surface": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.12 - 21.55.43.00.png",
+      "local": "/images/nodes/6f8901ca24a085cb8da4b66a3f7362b4e07b753984e019ea559dd611ca128457.png",
+      "sha256": "6f8901ca24a085cb8da4b66a3f7362b4e07b753984e019ea559dd611ca128457",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.12%20-%2021.55.43.00.png"
+    },
+    "geomData/split-points": {
+      "source_path": "Desktop/Desktop Screenshot 2026.07.15 - 17.44.24.46.png",
+      "local": "/images/nodes/253357d2a6c55a5f4ddde64e813faadc7f1154bbe5aa03dbd937ea95a0669b91.png",
+      "sha256": "253357d2a6c55a5f4ddde64e813faadc7f1154bbe5aa03dbd937ea95a0669b91",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/docs/Desktop/Desktop%20Screenshot%202026.07.15%20-%2017.44.24.46.png"
+    }
+  }
+}

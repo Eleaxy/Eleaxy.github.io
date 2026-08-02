@@ -1,0 +1,471 @@
+{
+  "id": "switch-multi-images",
+  "name": "Switch_Multi_Images",
+  "name_zh": "",
+  "category_id": "shader_utility",
+  "category": "Utility",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_utility",
+  "inputs": [
+    {
+      "name": "Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Index.",
+      "default": 0,
+      "de": "Integer value controlling Index.",
+      "dz": "设置 索引 的数值。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1000.0,
+        1000.0,
+        1000.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Image_Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Image Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Image Color.",
+      "dz": "设置 图像 / 颜色 的颜色数据。"
+    },
+    {
+      "name": "Image_Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Image Alpha.",
+      "default": 0.0,
+      "de": "Numeric value controlling Image Alpha.",
+      "dz": "设置 图像 / Alpha 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

@@ -1,0 +1,208 @@
+{
+  "id": "self-pruning",
+  "name": "Self Pruning",
+  "name_zh": "实例自碰撞剔除",
+  "category_id": "pcg",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "pcg",
+  "inputs": [
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    },
+    {
+      "name": "Self Pruning",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Self Pruning option.",
+      "default": false,
+      "de": "Toggles or selects the Self Pruning option.",
+      "dz": "控制是否启用或选择 Self / Pruning。"
+    },
+    {
+      "name": "Keep Rule",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Keep Rule.",
+      "default": "Large",
+      "de": "Mode selector for Keep Rule.",
+      "dz": "选择 Keep / Rule 的模式。"
+    },
+    {
+      "name": "Instance Property",
+      "type": "NodeSocketClosure",
+      "description": "for AABB",
+      "de": "for AABB",
+      "dz": "指定 Instance / Property 参数。"
+    },
+    {
+      "name": "Instance Property",
+      "type": "NodeSocketClosure",
+      "description": "for OBB",
+      "de": "for OBB",
+      "dz": "指定 Instance / Property 参数。"
+    },
+    {
+      "name": "Instance Property",
+      "type": "NodeSocketClosure",
+      "description": "For convex",
+      "de": "For convex",
+      "dz": "指定 Instance / Property 参数。"
+    },
+    {
+      "name": "Proxy Shape",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Proxy Shape.",
+      "default": "AABB",
+      "de": "Mode selector for Proxy Shape.",
+      "dz": "选择 Proxy / Shape 的模式。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 2D 3D option.",
+      "default": true,
+      "de": "Toggles or selects the 2D 3D option.",
+      "dz": "控制是否启用或选择 2D / 3D。"
+    },
+    {
+      "name": "Fast",
+      "type": "NodeSocketBool",
+      "description": "For OBB and Convex, it's the same alogorithm",
+      "default": false,
+      "de": "For OBB and Convex, it's the same alogorithm",
+      "dz": "控制是否启用或选择 Fast。"
+    },
+    {
+      "name": "Camera Culling",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Camera Culling option.",
+      "default": false,
+      "de": "Toggles or selects the Camera Culling option.",
+      "dz": "控制是否启用或选择 Camera / Culling。"
+    },
+    {
+      "name": "ScreenUV Range",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Screen UV Range.",
+      "default": 1.0,
+      "de": "Numeric value controlling Screen UV Range.",
+      "dz": "设置 Screen / UV 坐标 / Range 的数值。"
+    },
+    {
+      "name": "Z Start",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Z Start.",
+      "default": 0.0,
+      "de": "Numeric value controlling Z Start.",
+      "dz": "设置 Z / Start 的数值。"
+    },
+    {
+      "name": "Start Fading",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Start Fading.",
+      "default": 0.0,
+      "de": "Numeric value controlling Start Fading.",
+      "dz": "设置 Start / Fading 的数值。"
+    },
+    {
+      "name": "Z End",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Z End.",
+      "default": 100.0,
+      "de": "Numeric value controlling Z End.",
+      "dz": "设置 Z / End 的数值。"
+    },
+    {
+      "name": "End Fading",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling End Fading.",
+      "default": 50.0,
+      "de": "Numeric value controlling End Fading.",
+      "dz": "设置 End / Fading 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "Prune Proxy",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Prune Proxy option.",
+      "default": true,
+      "de": "Toggles or selects the Prune Proxy option.",
+      "dz": "控制是否启用或选择 Prune / Proxy。"
+    },
+    {
+      "name": "Min World Padding",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Min World Padding.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Min World Padding.",
+      "dz": "设置 最小值 / World / Padding 的向量数据。"
+    },
+    {
+      "name": "Min Bound Padding",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Min Bound Padding.",
+      "default": 0.0,
+      "de": "Numeric value controlling Min Bound Padding.",
+      "dz": "设置 最小值 / Bound / Padding 的数值。"
+    },
+    {
+      "name": "Max World Padding",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Max World Padding.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Max World Padding.",
+      "dz": "设置 最大值 / World / Padding 的向量数据。"
+    },
+    {
+      "name": "Max Bound Padding",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max Bound Padding.",
+      "default": 0.0,
+      "de": "Numeric value controlling Max Bound Padding.",
+      "dz": "设置 最大值 / Bound / Padding 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    },
+    {
+      "name": "Debug",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Debug.",
+      "de": "Geometry data used as Debug.",
+      "dz": "传入或输出用于该节点处理的 Debug。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Advanced/Self_Pruning.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Self_Pruning.blend?raw=1"
+}

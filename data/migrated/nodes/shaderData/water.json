@@ -1,0 +1,53 @@
+{
+  "id": "water",
+  "name": "Water",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Edge.",
+      "default": 0.4000000059604645,
+      "de": "Numeric value controlling Edge.",
+      "dz": "设置 Edge 的数值。"
+    },
+    {
+      "name": "Specular",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Specular.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Specular.",
+      "dz": "设置 Specular 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

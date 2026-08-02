@@ -1,0 +1,555 @@
+{
+  "id": "automation-flow",
+  "route": "/plugins.html?plugin=automation-flow",
+  "identity": {
+    "name": "Automation Flow",
+    "provider": "卿上翎 / Ling-QS",
+    "source_kind": "repository_verified",
+    "source_ref": "repository"
+  },
+  "summary": [
+    {
+      "text": {
+        "en": "A Blender automation add-on for building reusable node-based workflows across objects, properties, tasks, transforms, and scene operations.",
+        "zh": "用于 Blender 自动化的节点插件，可把物体、属性、任务、变换与场景操作组合成可复用流程。"
+      },
+      "source_kind": "repository_verified",
+      "source_ref": "readme"
+    }
+  ],
+  "facts": {
+    "release_tag": {
+      "label": {
+        "en": "Release tag",
+        "zh": "发布标签"
+      },
+      "value": "v1.2.0",
+      "source_kind": "repository_verified",
+      "source_ref": "release"
+    },
+    "manifest_version": {
+      "label": {
+        "en": "Manifest version",
+        "zh": "清单版本"
+      },
+      "value": "1.0.0",
+      "source_kind": "repository_verified",
+      "source_ref": "manifest"
+    },
+    "blender_min": {
+      "label": {
+        "en": "Minimum Blender version",
+        "zh": "最低 Blender 版本"
+      },
+      "value": "5.1.0",
+      "source_kind": "repository_verified",
+      "source_ref": "manifest"
+    },
+    "license": {
+      "label": {
+        "en": "License",
+        "zh": "许可证"
+      },
+      "value": "GPL-3.0-or-later",
+      "source_kind": "repository_verified",
+      "source_ref": "manifest"
+    },
+    "maintainer": {
+      "label": {
+        "en": "Manifest maintainer",
+        "zh": "清单维护者"
+      },
+      "value": {
+        "en": "LingQS, Codex",
+        "zh": "LingQS、Codex"
+      },
+      "source_kind": "repository_verified",
+      "source_ref": "manifest"
+    },
+    "source_commit": {
+      "label": {
+        "en": "Source commit",
+        "zh": "来源提交"
+      },
+      "value": "628885c1cb7b294395367a5e04757c2f7c00fa83",
+      "source_kind": "repository_verified",
+      "source_ref": "repository"
+    }
+  },
+  "sections": [
+    {
+      "id": "capabilities",
+      "title": {
+        "en": "Repository-described capabilities",
+        "zh": "仓库说明的能力"
+      },
+      "items": [
+        {
+          "en": "Property capture and application",
+          "zh": "属性捕捉与应用"
+        },
+        {
+          "en": "Object and collection lists",
+          "zh": "物体与集合列表"
+        },
+        {
+          "en": "Geometry-node and physical bake tasks",
+          "zh": "几何节点与实体烘焙任务"
+        },
+        {
+          "en": "Linear execution",
+          "zh": "线性执行"
+        },
+        {
+          "en": "Pre-check, dry-run, and logs",
+          "zh": "预检查、试运行与日志"
+        }
+      ],
+      "source_kind": "repository_verified",
+      "source_ref": "readme"
+    },
+    {
+      "id": "node-groups",
+      "title": {
+        "en": "README node groups",
+        "zh": "README 节点分组"
+      },
+      "groups": [
+        {
+          "id": "flow",
+          "name": {
+            "en": "Flow",
+            "zh": "流程"
+          },
+          "count": 6
+        },
+        {
+          "id": "object-collection",
+          "name": {
+            "en": "Object/Collection",
+            "zh": "物体／集合"
+          },
+          "count": 4
+        },
+        {
+          "id": "bake-dependency",
+          "name": {
+            "en": "Bake/Dependency",
+            "zh": "烘焙／依赖"
+          },
+          "count": 4
+        },
+        {
+          "id": "property-package",
+          "name": {
+            "en": "Property Package",
+            "zh": "属性包"
+          },
+          "count": 8
+        },
+        {
+          "id": "utility",
+          "name": {
+            "en": "Utility",
+            "zh": "工具"
+          }
+        }
+      ],
+      "source_kind": "repository_verified",
+      "source_ref": "readme"
+    },
+    {
+      "id": "property-package-flow",
+      "title": {
+        "en": "Property Package data flow",
+        "zh": "属性包数据流"
+      },
+      "items": [
+        {
+          "en": "Capture package properties",
+          "zh": "捕捉属性包属性"
+        },
+        {
+          "en": "Apply package properties",
+          "zh": "应用属性包属性"
+        },
+        {
+          "en": "Continue through the linear flow with pre-check, dry-run, and log support",
+          "zh": "沿线性流程继续执行，并支持预检查、试运行和日志"
+        }
+      ],
+      "source_kind": "repository_verified",
+      "source_ref": "readme"
+    },
+    {
+      "id": "quick-validation",
+      "title": {
+        "en": "Quick Validation Flow",
+        "zh": "快速验证流程"
+      },
+      "steps": [
+        {
+          "step": 1,
+          "label": {
+            "en": "Create an `Automation Flow` tree in the Node Editor.",
+            "zh": "在节点编辑器中新建 `Automation Flow` 树。"
+          }
+        },
+        {
+          "step": 2,
+          "label": {
+            "en": "Add and connect: `Start`; `Modifier Property Data` for capture; `Modifier Property Data` for target; `Create Property Package`; `Store Property Package`; `Create Property Package`; `Apply Object Properties`; `End`.",
+            "zh": "添加并连接：`Start`；用于捕捉的 `Modifier Property Data`；用于目标的 `Modifier Property Data`；`Create Property Package`；`Store Property Package`；`Create Property Package`；`Apply Object Properties`；`End`。"
+          }
+        },
+        {
+          "step": 3,
+          "label": {
+            "en": "Set the capture property data fields to `Current`, then connect its `Property Assignment` output plus `Object List` into the first `Create Property Package`.",
+            "zh": "将捕捉属性数据字段设为 `Current`，再把其 `Property Assignment` 输出与 `Object List` 接到第一个 `Create Property Package`。"
+          }
+        },
+        {
+          "step": 4,
+          "label": {
+            "en": "Set the target property data fields to `Value`, then connect its `Property Assignment` output plus `Object List` into the second `Create Property Package`.",
+            "zh": "将目标属性数据字段设为 `Value`，再把其 `Property Assignment` 输出与 `Object List` 接到第二个 `Create Property Package`。"
+          }
+        },
+        {
+          "step": 5,
+          "label": {
+            "en": "Connect the captured package into `Store Property Package`, then connect the target package into `Apply Object Properties`. Connect the target property data `Property Definition` output into `Apply Object Properties`.",
+            "zh": "将捕捉到的包接入 `Store Property Package`，再将目标包接入 `Apply Object Properties`；把目标属性数据的 `Property Definition` 输出接入 `Apply Object Properties`。"
+          }
+        },
+        {
+          "step": 6,
+          "label": {
+            "en": "Run the flow from the sidebar panel.",
+            "zh": "从侧栏面板运行流程。"
+          }
+        }
+      ],
+      "source_kind": "repository_verified",
+      "source_ref": "readme"
+    },
+    {
+      "id": "captured-node-closeups",
+      "title": {
+        "en": "Captured node closeups",
+        "zh": "节点近景"
+      },
+      "body": {
+        "en": "Eight GUI capture categories show two representative nodes each. They are a visual index, separate from the five README documentation groups, and do not claim to be the complete node catalog.",
+        "zh": "八个界面截图分类各展示两个代表节点。它们是独立于五个 README 文档分组的视觉索引，并不声称覆盖完整节点目录。"
+      },
+      "source_kind": "isolated_gui_capture",
+      "source_ref": "gui_capture"
+    }
+  ],
+  "sources": {
+    "repository": {
+      "kind": "repository_verified",
+      "url": "https://github.com/Ling-QS/blender_automation_flow",
+      "commit": "628885c1cb7b294395367a5e04757c2f7c00fa83"
+    },
+    "release": {
+      "kind": "repository_verified",
+      "url": "https://github.com/Ling-QS/blender_automation_flow/releases/tag/v1.2.0",
+      "tag": "v1.2.0",
+      "commit": "628885c1cb7b294395367a5e04757c2f7c00fa83"
+    },
+    "manifest": {
+      "kind": "repository_verified",
+      "path": "blender_manifest.toml",
+      "commit": "628885c1cb7b294395367a5e04757c2f7c00fa83"
+    },
+    "readme": {
+      "kind": "repository_verified",
+      "path": "README.md",
+      "commit": "628885c1cb7b294395367a5e04757c2f7c00fa83"
+    },
+    "gui_capture": {
+      "kind": "isolated_gui_capture",
+      "release_tag": "v1.2.0",
+      "release_asset": "automation_flow_main.zip",
+      "release_asset_sha256": "8a80f8b4827d5a15d666b1b533e904d6b78cfd5329944e3a80635b4ba350065e",
+      "package_manifest_version": "1.0.0",
+      "package_bl_info_version": "0.1.0",
+      "version_metadata_consistent": false,
+      "blender_version": "5.2.0 LTS Beta",
+      "offline": true,
+      "node_dimensions_unmodified": true,
+      "overlay_policy": "Temporarily unregistered only in the isolated capture session; plugin source was not modified."
+    }
+  },
+  "assets": {
+    "diagrams": [],
+    "closeups": [
+      {
+        "id": "01-flow",
+        "label": {
+          "en": "Flow",
+          "zh": "流程"
+        },
+        "target": "closeups/01-flow-closeup.png",
+        "sha256": "3ccb308a91f1bee7936ab3d22c8fe1998447bc6bdd3fce335c8c9cbfd27c0577",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeStart",
+            "name": {
+              "en": "Start",
+              "zh": "开始"
+            }
+          },
+          {
+            "bl_idname": "AFNodeBranchStart",
+            "name": {
+              "en": "Branch Start",
+              "zh": "分流开始"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "02-property",
+        "label": {
+          "en": "Property",
+          "zh": "属性"
+        },
+        "target": "closeups/02-property-closeup.png",
+        "sha256": "92e018d0a31884504f0a4259951eeef4ec41458280af121e1bd783ebc6c70850",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeReadGeometryAttribute",
+            "name": {
+              "en": "Read Geometry Attribute",
+              "zh": "读取几何属性"
+            }
+          },
+          {
+            "bl_idname": "AFNodeSetGeometryAttribute",
+            "name": {
+              "en": "Set Geometry Attribute",
+              "zh": "设置几何属性"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "03-task",
+        "label": {
+          "en": "Task",
+          "zh": "任务"
+        },
+        "target": "closeups/03-task-closeup.png",
+        "sha256": "0241ef4611e8d061af77212fb2dab793f00a1da3ab1deac13a776479ce9a74a8",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeTaskStart",
+            "name": {
+              "en": "Task Start",
+              "zh": "任务开始"
+            }
+          },
+          {
+            "bl_idname": "AFNodeRenderTarget",
+            "name": {
+              "en": "Render Target",
+              "zh": "渲染目标"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "04-scene-object",
+        "label": {
+          "en": "Scene / Object",
+          "zh": "场景 / 物体"
+        },
+        "target": "closeups/04-scene-object-closeup.png",
+        "sha256": "21f950758c426e998fa67fd15b59db59e05c47fccf87a238ecd860174e86543b",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeObjectInfo",
+            "name": {
+              "en": "Object Info",
+              "zh": "物体信息"
+            }
+          },
+          {
+            "bl_idname": "AFNodeCreateObject",
+            "name": {
+              "en": "Create Object",
+              "zh": "创建物体"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "05-inputs",
+        "label": {
+          "en": "Inputs",
+          "zh": "输入"
+        },
+        "target": "closeups/05-inputs-closeup.png",
+        "sha256": "3923eda8c5a6ecc99a7b9f64212d7bb0d380850f81b9dc25b73541d6e5fc4511",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeFloatInput",
+            "name": {
+              "en": "Float",
+              "zh": "浮点"
+            }
+          },
+          {
+            "bl_idname": "AFNodeVectorInput",
+            "name": {
+              "en": "Vector",
+              "zh": "矢量"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "06-math-utilities-vector",
+        "label": {
+          "en": "Math / Utilities / Vector",
+          "zh": "数学 / 工具 / 矢量"
+        },
+        "target": "closeups/06-math-utilities-vector-closeup.png",
+        "sha256": "5ef06f79e298b69ae101dbc9ed90782a4ae88e56a9c2697e59b439f938d7e7cb",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeMath",
+            "name": {
+              "en": "Math",
+              "zh": "数学"
+            }
+          },
+          {
+            "bl_idname": "AFNodeVectorMath",
+            "name": {
+              "en": "Vector Math",
+              "zh": "矢量运算"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "07-rotation",
+        "label": {
+          "en": "Rotation",
+          "zh": "旋转"
+        },
+        "target": "closeups/07-rotation-closeup.png",
+        "sha256": "8cd941f04260de007f43fb1ebb927f54383f1191b899462eeec2f16dd763713f",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeEulerToRotation",
+            "name": {
+              "en": "Euler to Rotation",
+              "zh": "欧拉角转旋转"
+            }
+          },
+          {
+            "bl_idname": "AFNodeRotationToEuler",
+            "name": {
+              "en": "Rotation to Euler",
+              "zh": "旋转转欧拉角"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      },
+      {
+        "id": "08-matrix",
+        "label": {
+          "en": "Matrix",
+          "zh": "矩阵"
+        },
+        "target": "closeups/08-matrix-closeup.png",
+        "sha256": "9a530836922202ba9d13b417d7aa2b50b14f7ae8ee54cdf09c4a2d6a4e1fd9ac",
+        "dimensions": [
+          1024,
+          692
+        ],
+        "nodes": [
+          {
+            "bl_idname": "AFNodeCombineTransform",
+            "name": {
+              "en": "Combine Transform",
+              "zh": "组合变换"
+            }
+          },
+          {
+            "bl_idname": "AFNodeTransformPoint",
+            "name": {
+              "en": "Transform Point",
+              "zh": "变换点"
+            }
+          }
+        ],
+        "source_kind": "isolated_gui_capture",
+        "source_ref": "gui_capture"
+      }
+    ]
+  },
+  "external_destinations": [
+    {
+      "label": {
+        "en": "Automation Flow releases",
+        "zh": "Automation Flow 发布页"
+      },
+      "url": "https://github.com/Ling-QS/blender_automation_flow/releases",
+      "purpose": {
+        "en": "View release source",
+        "zh": "查看发布来源"
+      },
+      "source_kind": "repository_verified",
+      "source_ref": "repository"
+    }
+  ]
+}

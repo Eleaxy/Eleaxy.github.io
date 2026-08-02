@@ -1,0 +1,132 @@
+{
+  "id": "remesh",
+  "name": "Remesh",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "Hard Edge",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Hard Edge option.",
+      "default": false,
+      "de": "Toggles or selects the Hard Edge option.",
+      "dz": "控制是否启用或选择 Hard / Edge。"
+    },
+    {
+      "name": "Sharp Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Sharp Edge.",
+      "default": 0.5235987901687622,
+      "de": "Numeric value controlling Sharp Edge.",
+      "dz": "设置 Sharp / Edge 的数值。"
+    },
+    {
+      "name": "Target Size",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Target Size.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Target Size.",
+      "dz": "设置 Target / 尺寸 的数值。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 20,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Smooth",
+      "type": "NodeSocketFloat",
+      "description": "Relative mix weight of neighboring elements",
+      "default": 0.10000000149011612,
+      "de": "Relative mix weight of neighboring elements",
+      "dz": "设置 Smooth 的数值。"
+    },
+    {
+      "name": "Split Long Edge",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Split Long Edge option.",
+      "default": true,
+      "de": "Toggles or selects the Split Long Edge option.",
+      "dz": "控制是否启用或选择 Split / Long / Edge。"
+    },
+    {
+      "name": "Collapse Short Edge",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Collapse Short Edge option.",
+      "default": true,
+      "de": "Toggles or selects the Collapse Short Edge option.",
+      "dz": "控制是否启用或选择 Collapse / Short / Edge。"
+    },
+    {
+      "name": "Flip Edge",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Flip Edge option.",
+      "default": false,
+      "de": "Toggles or selects the Flip Edge option.",
+      "dz": "控制是否启用或选择 Flip / Edge。"
+    },
+    {
+      "name": "Curvature Adaptive",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Curvature Adaptive option.",
+      "default": false,
+      "de": "Toggles or selects the Curvature Adaptive option.",
+      "dz": "控制是否启用或选择 Curvature / Adaptive。"
+    },
+    {
+      "name": "Relative Resolution",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Relative Resolution.",
+      "default": 1.0,
+      "de": "Numeric value controlling Relative Resolution.",
+      "dz": "设置 Relative / 分辨率 的数值。"
+    },
+    {
+      "name": "Blur Iterations",
+      "type": "NodeSocketInt",
+      "description": "How many times to blur the values for all elements",
+      "default": 1,
+      "de": "How many times to blur the values for all elements",
+      "dz": "设置 模糊 / 迭代次数 的数值。"
+    },
+    {
+      "name": "Blur Weight",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Blur Weight.",
+      "default": 1.0,
+      "de": "Numeric value controlling Blur Weight.",
+      "dz": "设置 模糊 / 权重 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,110 @@
+{
+  "id": "virtual-sphere",
+  "name": "Virtual Sphere",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "Rotation",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Rotation.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Rotation.",
+      "dz": "设置 旋转 的向量数据。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.5,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Is Hit",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Is Hit option.",
+      "default": false,
+      "de": "Toggles or selects the Is Hit option.",
+      "dz": "控制是否启用或选择 Is / Hit。"
+    },
+    {
+      "name": "局部坐标",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 局部坐标.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 局部坐标.",
+      "dz": "设置 局部坐标 的向量数据。"
+    },
+    {
+      "name": "球体UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 球体UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 球体UV.",
+      "dz": "设置 球体UV 的向量数据。"
+    },
+    {
+      "name": "进入位置",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 进入位置.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 进入位置.",
+      "dz": "设置 进入位置 的向量数据。"
+    },
+    {
+      "name": "射出位置",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 射出位置.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 射出位置.",
+      "dz": "设置 射出位置 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

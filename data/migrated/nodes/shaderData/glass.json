@@ -1,0 +1,74 @@
+{
+  "id": "glass",
+  "name": "Glass",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "添加实体化修改器",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 添加实体化修改器 option.",
+      "default": false,
+      "de": "Toggles or selects the 添加实体化修改器 option.",
+      "dz": "控制是否启用或选择 添加实体化修改器。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        1.0,
+        0.9296669960021973,
+        0.8500000238418579,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Specular",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Specular.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Specular.",
+      "dz": "设置 Specular 的数值。"
+    },
+    {
+      "name": "Environment",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Environment.",
+      "default": 0.5,
+      "de": "Numeric value controlling Environment.",
+      "dz": "设置 Environment 的数值。"
+    },
+    {
+      "name": "Noise",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Noise.",
+      "default": 0.690000057220459,
+      "de": "Numeric value controlling Noise.",
+      "dz": "设置 噪波 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

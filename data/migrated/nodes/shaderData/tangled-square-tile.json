@@ -1,0 +1,100 @@
+{
+  "id": "tangled-square-tile",
+  "name": "Tangled_Square_Tile",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 3.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Iteration",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iteration.",
+      "default": 6,
+      "de": "Integer value controlling Iteration.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Thickness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Thickness.",
+      "default": 0.5,
+      "de": "Numeric value controlling Thickness.",
+      "dz": "设置 Thickness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    },
+    {
+      "name": "Checker_Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Checker Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Checker Mask.",
+      "dz": "设置 Checker / 遮罩 的数值。"
+    },
+    {
+      "name": "Main_Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Main Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Main Random.",
+      "dz": "设置 Main / 随机量 的颜色数据。"
+    },
+    {
+      "name": "Sub_Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Sub Random.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Sub Random.",
+      "dz": "设置 Sub / 随机量 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

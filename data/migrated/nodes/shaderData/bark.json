@@ -1,0 +1,55 @@
+{
+  "id": "bark",
+  "name": "Bark",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Light",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Light.",
+      "default": [
+        1.0,
+        -1.0,
+        2.0
+      ],
+      "de": "Vector value for Light.",
+      "dz": "设置 Light 的向量数据。"
+    },
+    {
+      "name": "Bump",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bump.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Bump.",
+      "dz": "设置 Bump 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

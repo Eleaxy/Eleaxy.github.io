@@ -1,0 +1,68 @@
+{
+  "id": "heat-geodesic",
+  "name": "Heat Geodesic",
+  "name_zh": "热测地线",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 21.54.07.56.png",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Mesh to triangulate",
+      "de": "Mesh to triangulate",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "Diffusion Coeffient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Diffusion Coeffient.",
+      "default": 1.0,
+      "de": "Numeric value controlling Diffusion Coeffient.",
+      "dz": "设置 Diffusion / Coeffient 的数值。"
+    },
+    {
+      "name": "Diffusion Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Diffusion Iterations.",
+      "default": 200,
+      "de": "Integer value controlling Diffusion Iterations.",
+      "dz": "设置 Diffusion / 迭代次数 的数值。"
+    },
+    {
+      "name": "Poisson Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Poisson Iterations.",
+      "default": 500,
+      "de": "Integer value controlling Poisson Iterations.",
+      "dz": "设置 Poisson / 迭代次数 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "dist",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling dist.",
+      "default": 0.0,
+      "de": "Numeric value controlling dist.",
+      "dz": "设置 dist 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,812 @@
+[
+  {
+    "slug": "finger-ik",
+    "type": "long-image",
+    "title": "手指 IK 控制教程",
+    "asset": {
+      "src": "assets/tutorials/finger-ik.jpg",
+      "alt": "手指 IK 控制教程",
+      "width": 2100,
+      "height": 26626,
+      "sha256": "7e907537790b50c584866e40bc950710dd0bd7ae5162cb8899ea1fd54c511e00"
+    }
+  },
+  {
+    "slug": "curve-uv",
+    "type": "long-image",
+    "title": "曲线 UV",
+    "asset": {
+      "src": "assets/tutorials/curve-uv.jpg",
+      "alt": "曲线 UV",
+      "width": 3000,
+      "height": 33034,
+      "sha256": "385bde350ea6d7ddffcde032cb03f73bb15d1a3294809ce3405e097c6fb29e6f"
+    }
+  },
+  {
+    "slug": "procedural-tail",
+    "type": "long-image",
+    "title": "程序化大尾巴",
+    "asset": {
+      "src": "assets/tutorials/procedural-tail.jpg",
+      "alt": "程序化大尾巴",
+      "width": 2100,
+      "height": 38037,
+      "sha256": "3748b9ad19085c4e8f2b53d2086e38e37a6a1eeb974312bbfc785dd4008bac8b"
+    }
+  },
+  {
+    "slug": "procedural-sphere",
+    "type": "long-image",
+    "title": "程序化球面建模",
+    "asset": {
+      "src": "assets/tutorials/procedural-sphere.jpg",
+      "alt": "程序化球面建模",
+      "width": 5200,
+      "height": 8411,
+      "sha256": "285d5060f2bfb54d5b8367ad1a509d36b0e7ff5f44714f348b6320c75f452618"
+    }
+  },
+  {
+    "slug": "knee-joint",
+    "type": "long-image",
+    "title": "膝关节绑定",
+    "asset": {
+      "src": "assets/tutorials/knee-joint.jpg",
+      "alt": "膝关节绑定",
+      "width": 3000,
+      "height": 42125,
+      "sha256": "42f0d78b37952b7f9f03ec255298e043be32ce5581465e039b35541951410285"
+    }
+  },
+  {
+    "slug": "foot-rig",
+    "type": "long-image",
+    "title": "足部绑定",
+    "asset": {
+      "src": "assets/tutorials/foot-rig.jpg",
+      "alt": "足部绑定",
+      "width": 3600,
+      "height": 32532,
+      "sha256": "d417602664606b590c8ecbe6fefee8a2c175f12c537becd00a5a781d6f061909"
+    }
+  },
+  {
+    "slug": "hdri-dome",
+    "type": "structured",
+    "title": "HDRI 世界环境穹顶化",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "默认的 HDRI 世界环境是一个无限大的球体。物体看起来像悬浮在空中，光线从四面八方均匀照射，缺少真实场景中「有地面、有距离感」的感觉。本教程教你如何把无限环境「压」成一个有限半径的穹顶，让光照更自然。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/hdri-dome",
+      "files": [
+        {
+          "src": "assets/tutorials/hdri-dome/2817815bb530ccd46ca6596aeaed04b1.png",
+          "sha256": "67276325725b70140174fe26c38986ab33a444580ca34b733454bb56371ee897",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/3f961fe99be323962ffb839180168fe4.jpg",
+          "sha256": "fe1da047bc911aa0917f6ffe95f29ace81e3a6846a7002be5038703008e7cb4f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/a535df2518b445be73f1d7af89ba3374.png",
+          "sha256": "1de4267211769761cbe391a5af305f5637ea9f8dc3bbd814a1ac0c5006a38ea6",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/2bacae8948811624e7fa3f0852be394f.png",
+          "sha256": "620f4916dd049534f180aa67501b345167dcb0080c1c6b335a6e569eb1c2f4b3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/ce31f065f83290adda87077db343eeaf.png",
+          "sha256": "35b2fbaf2c52f9bf7deb8e700676cc8d2d25c7670507e495fe8e8dd8a56bc471",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/5c5a8921f4141372fe1704c34845ff39.png",
+          "sha256": "acc92abc7c7e9c836020368b6e676e2cab8928c023d0ee65b20e56125cebc75e",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "为什么需要穹顶化？",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "HDRI 的本质是一张全景图被映射到一个球体上。当你把它直接作为 World 背景使用时："
+          },
+          {
+            "type": "list",
+            "items": [
+              "环境是无限远的，没有距离概念",
+              "物体看起来像漂浮在空中",
+              "光线从所有方向均匀射来，缺少「地面接触」和「穹顶远近」的真实感"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/2817815bb530ccd46ca6596aeaed04b1.png",
+            "alt": "默认HDRI球体效果",
+            "caption": "默认使用 HDRI 时，场景像悬浮在无限球体内部",
+            "width": 3153,
+            "height": 1430
+          },
+          {
+            "type": "note",
+            "text": "穹顶化的目标：让环境光照表现得像一个有限半径的半球/穹顶，而不是无限远的球体，从而获得更自然的光影与空间感。"
+          }
+        ]
+      },
+      {
+        "title": "最终效果示意",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "通过节点组修改 Environment Texture 的采样向量，可以把无限环境转换为有限穹顶效果。也可以直接使用物理穹顶网格。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/3f961fe99be323962ffb839180168fe4.jpg",
+            "alt": "物理穹顶示例",
+            "caption": "物理穹顶网格示例：场景被包裹在有限半径的球体内部",
+            "width": 4008,
+            "height": 2240
+          },
+          {
+            "type": "paragraph",
+            "text": "节点组开关对照（同一场景下开启 / 关闭「hdri穹顶化」节点的效果差异）："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/a535df2518b445be73f1d7af89ba3374.png",
+            "alt": "关闭节点效果",
+            "caption": "关闭节点（默认无限环境）时的光照效果",
+            "width": 1966,
+            "height": 1478
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/2bacae8948811624e7fa3f0852be394f.png",
+            "alt": "开启节点效果",
+            "caption": "开启「hdri穹顶化」节点后的场景光照效果（光线更有距离感与方向性）",
+            "width": 1778,
+            "height": 1166
+          }
+        ]
+      },
+      {
+        "title": "使用「hdri穹顶化」节点组",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "核心思路是：不再直接把 Generated / Object 坐标送给 Environment Texture，而是先经过一个自定义节点组，对采样向量进行数学变换，模拟有限半径穹顶的投影。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "打开 World 着色器（世界环境）。",
+              "添加 Environment Texture（环境纹理）节点，加载你的 HDRI。",
+              "添加「hdri穹顶化」节点组（或自己按照下方节点树搭建）。",
+              "把节点组的「矢量」输出连接到 Environment Texture 的「矢量」输入。",
+              "Environment Texture 的颜色再连接到 Background 节点。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/ce31f065f83290adda87077db343eeaf.png",
+            "alt": "节点组连接方式",
+            "caption": "节点组输出矢量 → Environment Texture 的矢量输入",
+            "width": 3350,
+            "height": 1628
+          },
+          {
+            "type": "list",
+            "items": [
+              "影响距离 穹顶半径（单位与场景一致，示例 20）",
+              "旋转 水平旋转角度，调整 HDRI 朝向",
+              "高度 垂直偏移，控制地面/地平线位置"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "节点组内部原理（可自行搭建）",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "节点组通过对 Incoming / Generated 向量做一系列数学运算，实现「有限半径 + 高度偏移」的穹顶投影。主要逻辑包括："
+          },
+          {
+            "type": "list",
+            "items": [
+              "根据「高度」参数对 Z 分量进行偏移",
+              "使用「影响距离」控制投影范围",
+              "通过 Greater Than、Mix、Vector Math 等节点混合原始方向与穹顶方向",
+              "最后用 Vector Rotate 支持整体旋转"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/5c5a8921f4141372fe1704c34845ff39.png",
+            "alt": "节点组内部结构",
+            "caption": "「hdri穹顶化」节点组完整内部连接（可直接对照搭建）",
+            "width": 3224,
+            "height": 1558
+          },
+          {
+            "type": "warning",
+            "text": "提示：如果你不想从零搭建，可以直接把这个节点组保存为资产（Asset），以后直接拖入使用。"
+          }
+        ]
+      },
+      {
+        "title": "参数调节与实际效果",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "调节「影响距离」和「高度」可以明显改变环境光照的远近感与地平线位置。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/a535df2518b445be73f1d7af89ba3374.png",
+            "alt": "参数调节示例",
+            "caption": "左侧为场景预览，右侧为节点组参数面板（影响距离 20，高度 0）",
+            "width": 1966,
+            "height": 1478
+          },
+          {
+            "type": "note",
+            "text": "建议：先把「影响距离」设置成场景尺寸的 1.5～3 倍，再微调「高度」让地平线与地面对齐，最后用「旋转」调整 HDRI 的主光方向。"
+          }
+        ]
+      },
+      {
+        "title": "进阶建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "物理穹顶法：直接创建一个大球体/半球体，把 HDRI 作为 Emission 材质贴上去，关闭 World 背景。适合需要「看得见环境」的镜头。",
+              "混合使用：World 用穹顶化节点负责整体照明，再额外放一个物理穹顶作为可见背景，效果更完整。",
+              "与灯光配合：穹顶化后 HDRI 的贡献会更集中，可以适当降低 Strength，再补充主光和补光，控制更精确。",
+              "如果场景有地面，记得把地面材质的 Roughness / Specular 调好，才能体现出穹顶带来的环境反射变化。"
+            ]
+          },
+          {
+            "type": "warning",
+            "text": "重要：关于 Eevee 物理穹顶（使用 Emission 材质的球体）在 Eevee 中无法真实照亮场景中的其他物体。Eevee 的自发光材质不会进行真实的光照传递。如果需要物理穹顶产生照明效果，请使用 Cycles。节点组方式的穹顶化在两种引擎下都可以使用，但最终光影建议在 Cycles 下确认。"
+          }
+        ]
+      },
+      {
+        "title": "注意事项",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "节点组主要修改的是采样向量，不会改变 HDRI 本身的亮度分布，只是改变「从哪个方向采样」。",
+              "「影响距离」过小会导致环境压缩、变形；过大则接近默认无限环境。",
+              "高度参数为负值时，相当于把穹顶往下压，地平线会上移。",
+              "建议在 Cycles 下预览最终效果。物理穹顶（Emission）在 Eevee 中无法真实照亮其他物体，因为 Eevee 不支持自发光材质的光照传递。",
+              "节点组方式的穹顶化在 Eevee / Cycles 均可使用，但复杂光影建议最终用 Cycles 确认。",
+              "把节点组做成资产后，记得勾选「虚拟」或正确设置接口默认值，方便以后复用。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "color-transition",
+    "type": "structured",
+    "title": "修复模型合并后颜色过渡不平滑的技巧",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "在 MMD 模型换头 时，经常会遇到 A/B 壳模型头部与身体肤色不一致的情况。直接合并后接缝处会出现生硬的色差分界线。本教程通过「顶点组 + 混合着色器 + 几何节点模糊属性」实现柔和自然的颜色过渡。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/color-transition",
+      "files": [
+        {
+          "src": "assets/tutorials/color-transition/325915872dbe26b5583532fef46fa46a.png",
+          "sha256": "8bd2e30d2a9f1036a36f9a6b62e834eccb571d48b4904617bd93b1d3c7f8b0f3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/c47a5e370abd78978acf42259ff2564e.png",
+          "sha256": "40919957f5b8125f9f4922f38cb983e02b5018401853b875e983bf7bf92fc7bd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/9445925e722cee7314681963d8d2f5d4.png",
+          "sha256": "5f1c43b9ae64157580c7e22ea2351878ec40b587d891cf7f216914b25cbdf19c",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/6f7b8636cbd5ee6e36b91fbbbbe1f8bf.png",
+          "sha256": "69663c2f95dc12c9876cd8d6328401f1d3bda71f8cf7a5546c5be9e42f67bde0",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/033a91fb84ba9a925e869388492da9e2.png",
+          "sha256": "fc2c754b2c1fcdc11959c3aff14a5937554ddb21c5da038e43ca34d6ea9f10a9",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/9c1a5bd9a9db49ac9118b4265d1b9028.png",
+          "sha256": "454017a2664788cddbdcc09db2d72d989d463d7166ab025c04e735c10e0c04e5",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/171820ee5de60bd26741d7d27a873e43.png",
+          "sha256": "95d9e88b123beb322e5c06b1cbda5496d3bbb155179139d7e969a26c626ebfae",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/image.png",
+          "sha256": "c82362a49252ebf08d463b244026341e5f3db44598b619cff2261b1313c1b76f",
+          "rendered": false
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题示意：硬边色差",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "合并两个不同颜色的模型后，接缝处会出现明显的硬边色差，视觉上非常突兀。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/325915872dbe26b5583532fef46fa46a.png",
+            "alt": "硬边色差示例",
+            "caption": "红色与绿色直接对接，中间没有过渡",
+            "width": 1718,
+            "height": 1688
+          }
+        ]
+      },
+      {
+        "title": "合并模型并创建顶点组",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "选中两个需要合并的物体（示例中使用 Suzanne 猴子头的左右半边，分别赋予红色和绿色材质），按 Ctrl + J 合并为一个物体。",
+              "进入编辑模式（Tab），选择其中一侧的所有顶点（例如右侧全部顶点）。",
+              "在右侧「物体数据属性」面板中找到顶点组，点击「+」新建一个顶点组，命名为 Group（名称可自定义，后续保持一致即可）。",
+              "点击「指定」按钮，将选中的顶点加入该组（权重默认为 1.0）。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/c47a5e370abd78978acf42259ff2564e.png",
+            "alt": "创建顶点组",
+            "caption": "选中一侧顶点并指定到新建的顶点组",
+            "width": 2512,
+            "height": 2088
+          },
+          {
+            "type": "note",
+            "text": "提示：如果是真实 MMD 换头，建议在接缝附近选一圈顶点作为过渡区域的控制组，而不是整半边。"
+          }
+        ]
+      },
+      {
+        "title": "整理材质槽并设置混合着色器",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "合并后材质列表通常会出现两个材质槽。删除其中一个多余的材质槽，只保留一个。",
+              "打开着色器编辑器，删除默认节点。",
+              "添加两个「原理化 BSDF」节点，分别设置为基础色（示例中红色与绿色，实际使用中对应头部与身体的皮肤材质）。",
+              "添加「混合着色器」节点，将两个 BSDF 的输出分别连接到混合着色器的两个着色器输入。",
+              "将混合着色器的输出连接到「材质输出」。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/9445925e722cee7314681963d8d2f5d4.png",
+            "alt": "两个材质槽",
+            "caption": "合并后会有两个材质槽，删除多余的一个",
+            "width": 4800,
+            "height": 2392
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/6f7b8636cbd5ee6e36b91fbbbbe1f8bf.png",
+            "alt": "混合着色器设置",
+            "caption": "用混合着色器把两个原理化 BSDF 合并到一个材质球中",
+            "width": 4538,
+            "height": 1664
+          }
+        ]
+      },
+      {
+        "title": "用属性节点读取顶点组控制混合系数",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "在着色器编辑器中添加「属性」节点（Attribute）。",
+              "将属性节点的名称设置为刚才创建的顶点组名称 Group，类型选择「几何数据」。",
+              "把属性节点的「系数」输出连接到混合着色器的「系数」输入。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/033a91fb84ba9a925e869388492da9e2.png",
+            "alt": "属性节点连接顶点组",
+            "caption": "属性节点读取顶点组 Group，并连接到混合系数",
+            "width": 1812,
+            "height": 644
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/9c1a5bd9a9db49ac9118b4265d1b9028.png",
+            "alt": "使用向下取整",
+            "caption": "可选：中间插入「向下取整」数学节点，强制权重为 0 或 1，得到干净的硬边分割",
+            "width": 3660,
+            "height": 1936
+          },
+          {
+            "type": "warning",
+            "text": "此时过渡仍然是硬边的。因为原始顶点组权重只有 0 和 1，没有中间值。接下来用几何节点对权重进行模糊，即可实现平滑过渡。"
+          }
+        ]
+      },
+      {
+        "title": "使用几何节点模糊属性，实现柔和过渡",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这是实现平滑过渡的关键步骤。通过几何节点对顶点组权重进行模糊处理，让接缝附近的权重产生渐变。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "给物体添加「几何节点」修改器，并新建几何节点树。",
+              "按以下结构连接节点（参考下方截图）："
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "按距离合并（Merge by Distance）：距离约 0.001 m，合并「全部」。确保接缝处顶点已正确合并。",
+              "存储已命名属性（Store Named Attribute）：域 = 点，名称 = Group，类型 = 浮点。把原始顶点组权重写入属性。",
+              "模糊属性（Blur Attribute）：域 = 点，迭代次数建议 5（可调），权重 = 1.0。对权重进行平滑扩散。",
+              "把模糊后的结果再次存储回 Group 属性（或直接输出）。",
+              "可选：添加「表面细分」提高细节精度。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/171820ee5de60bd26741d7d27a873e43.png",
+            "alt": "几何节点 + 最终效果",
+            "caption": "几何节点设置与最终柔和过渡效果。左侧视口中已出现红→绿的平滑渐变",
+            "width": 4210,
+            "height": 2480
+          },
+          {
+            "type": "note",
+            "text": "模糊迭代次数越大，过渡区域越宽、越柔和。根据模型分辨率和接缝位置灵活调整（通常 3～8 次即可）。"
+          }
+        ]
+      },
+      {
+        "title": "💡 适用场景：MMD 换头肤色接缝处理",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在 MMD 模型的换头操作中，A/B 壳模型的头部与身体往往来自不同源，肤色会有细微甚至明显的差异。直接合并后接缝处会出现色差硬线。"
+          },
+          {
+            "type": "paragraph",
+            "text": "使用本方法后："
+          },
+          {
+            "type": "list",
+            "items": [
+              "把头部皮肤材质和身体皮肤材质分别放入混合着色器两端",
+              "在接缝附近创建顶点组（或用权重绘制精细控制过渡区域）",
+              "通过几何节点模糊属性，让颜色自然过渡，几乎看不出接缝"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "效果远比直接用颜色渐变纹理或后期修图更干净可控。"
+          }
+        ]
+      },
+      {
+        "title": "注意事项与小技巧",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "合并前尽量让两个模型在接缝处的拓扑对齐，减少合并后的破面。",
+              "如果接缝不是垂直的中线，可以用权重绘制（Weight Paint）精细绘制过渡区域，效果会更好。",
+              "几何节点修改器建议放在修改器栈的靠前位置，避免被其他修改器干扰。",
+              "本方法兼容 Eevee 与 Cycles，实时预览友好。",
+              "推荐 Blender 3.5 及以上版本（模糊属性节点更完善）。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "color-mapping",
+    "type": "structured",
+    "title": "色彩映射的选择与调整",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Blender 的色彩管理决定了最终画面的「味道」。默认的 Rec.709 + AgX 并不是唯一选择。本教程讲解工作空间与视图变换的区别，以及如何用合成器把不同映射的优点混合在一起，得到更理想的颜色与光感。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/color-mapping",
+      "files": [
+        {
+          "src": "assets/tutorials/color-mapping/5d0db46079950b1b35849f1567981a67.png",
+          "sha256": "76308284dd9088a01e15213ffaf499d4eae4c748c6b5047b5de0c1b538186ada",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/06a101d111609d0d918c8e1ab7825539.png",
+          "sha256": "bb02dc8c628d6230eb903fe4332f522b2159f8905d00520246f2aa9da34990be",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/39c4e5f349997a86cc012f8dbfffc864.png",
+          "sha256": "ed5bb13951304a7af0aa11be3791ace4fa84f064d3da7c79a53cf02f4a626eea",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/9796b7e7b1471b8f0da787cf63af39cb.png",
+          "sha256": "8cc14e456f7fe379cae2b630b90944ae2abf85977a5650a28de683fd736e0b7d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/095a7fbf50d019d157909f8ca6a2653a.jpg",
+          "sha256": "07071f3f2f0456bb72a74ddefd7acd29c4a79dec39ade58ca8da918e7208f149",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/0bdd05fe18910cf81949f9c1f5b538ea.png",
+          "sha256": "5d312092f4295cabd888633ace4142ff7e4e01321766801ec9bdd5c0cd347fff",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/c1a20e4c83946bfb95abddd4b8b46054.png",
+          "sha256": "1029ac0b6bff0e5d7a2d3e2d826fbe52519dc7079f6918456fd6000bf395c7e1",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/fae96db7cfb2d31cb28a696303bf0902.png",
+          "sha256": "fde9b7e74be4f00bc6ad0b1df2f985117961f9212b6f2d3cd5bf1d753a81261f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/a981378b8e5b4fe47741a0c3ca8bb6d1.png",
+          "sha256": "4c283488f7ffdc9325dcea27db49d7d7ca241ff2781bfcc98228ae5231a0147b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/fbb4cf6675debe50ca807c428c3d3c94.jpg",
+          "sha256": "991c347f6f15a6519c62617766be056611bc5dc8ed026072075b5bd309b666bc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/image.png",
+          "sha256": "19d1d5cb9a2bc19d2e6c8ed3fa36cc3da888de04b3f7c46f5b2628bcdb46245f",
+          "rendered": false
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "工作空间（Working Space）—— 更大的色彩池",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在较高版本的 Blender 中，色彩管理面板新增了「工作空间」选项。通俗讲，工作空间就是你能使用的色彩池大小。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "默认是 线性 Rec.709，这是一个比较早期、较小的色彩空间。",
+              "建议改为 线性 Rec.2020 或 ACEScg，可以获得更大的色彩池。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "更大的工作空间配合相同的色彩映射时，通常能带来更平滑的色彩过渡和更好的颜色表现。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/5d0db46079950b1b35849f1567981a67.png",
+            "alt": "工作空间位置",
+            "caption": "色彩管理面板中的「工作空间」位置（红色框）",
+            "width": 880,
+            "height": 844
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/06a101d111609d0d918c8e1ab7825539.png",
+            "alt": "工作空间选项",
+            "caption": "可选：线性 Rec.709（默认）、线性 Rec.2020、ACEScg",
+            "width": 642,
+            "height": 268
+          },
+          {
+            "type": "note",
+            "text": "提示：工作空间改变的是「内部计算」的色彩范围，不会直接改变你最终显示器上看到的映射方式。真正决定画面观感的是下面的「视图」变换。"
+          }
+        ]
+      },
+      {
+        "title": "视图变换（View Transform）—— 画面的「味道」",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "「视图」选项决定了如何把场景颜色映射到你的显示器上。不同的选择会带来完全不同的视觉风格。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/39c4e5f349997a86cc012f8dbfffc864.png",
+            "alt": "视图变换下拉菜单",
+            "caption": "常见视图变换：Standard、AgX、ACES 1.3 / 2.0、Filmic、Khronos PBR Neutral 等",
+            "width": 940,
+            "height": 672
+          },
+          {
+            "type": "paragraph",
+            "text": "目前比较常用的是 AgX 和 ACES 2.0："
+          },
+          {
+            "type": "list",
+            "items": [
+              "AgX：光感较好，但画面容易略微发灰。",
+              "ACES 2.0：色彩不错，但容易发暗，光感不足。",
+              "Standard：颜色准确度最高，但光线信息保留不足，整体偏平。"
+            ]
+          },
+          {
+            "type": "warning",
+            "text": "很多人会在 AgX 和 ACES 之间纠结，觉得哪个都有不足。其实可以用合成器把它们的优点「拼」在一起。"
+          }
+        ]
+      },
+      {
+        "title": "用合成器混合不同映射的优点",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "思路很简单：把同一张渲染图分别用不同的视图变换处理，然后提取各自需要的部分（亮度、饱和度、色相），最后混合。"
+          },
+          {
+            "type": "paragraph",
+            "text": "示例做法（以钢琴模型为例）："
+          },
+          {
+            "type": "list",
+            "items": [
+              "把「视图」暂时设为 Raw（这样合成器能拿到未经过最终映射的线性数据）。",
+              "在合成器中用多个「转换为显示」节点，分别套用 AgX、ACES 2.0、Standard 等变换。",
+              "用「分离 HSV」把它们拆成色相 / 饱和度 / 明度。",
+              "按需混合：例如用 AgX 的明度、ACES 的饱和度、Standard 的色相，再合并回去。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/9796b7e7b1471b8f0da787cf63af39cb.png",
+            "alt": "设为 Raw",
+            "caption": "把视图设为 Raw，方便在合成器中自定义映射",
+            "width": 894,
+            "height": 936
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/095a7fbf50d019d157909f8ca6a2653a.jpg",
+            "alt": "合成器节点示例",
+            "caption": "合成器示例：多个「转换为显示」节点 + 分离 HSV + 混合",
+            "width": 4096,
+            "height": 2550
+          },
+          {
+            "type": "note",
+            "text": "实际操作时，可以根据自己的喜好调整混合权重。上面只是一个思路参考，不必完全照搬。"
+          }
+        ]
+      },
+      {
+        "title": "效果对比",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "以下是同一场景在不同设置下的大致观感（以黑色钢琴为例）："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/0bdd05fe18910cf81949f9c1f5b538ea.png",
+            "alt": "合成器混合结果",
+            "caption": "① 合成器混合结果 —— 综合了各映射的优点",
+            "width": 1487,
+            "height": 1491
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/c1a20e4c83946bfb95abddd4b8b46054.png",
+            "alt": "Standard",
+            "caption": "② Standard —— 颜色准确，但光线信息保留不足，整体偏平",
+            "width": 1547,
+            "height": 1489
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/fae96db7cfb2d31cb28a696303bf0902.png",
+            "alt": "ACES",
+            "caption": "③ ACES —— 色彩不错，但明显发暗，光感不足",
+            "width": 1486,
+            "height": 1455
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/a981378b8e5b4fe47741a0c3ca8bb6d1.png",
+            "alt": "AgX",
+            "caption": "④ AgX —— 光感较好，但画面略微发灰",
+            "width": 1461,
+            "height": 1408
+          }
+        ]
+      },
+      {
+        "title": "额外技巧：假彩色（False Color）",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "把视图设为「假彩色」可以快速检查曝光是否合理（过曝区域会显示特定颜色）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/fbb4cf6675debe50ca807c428c3d3c94.jpg",
+            "alt": "假彩色视图",
+            "caption": "假彩色视图 —— 用于检查曝光与亮度分布",
+            "width": 4096,
+            "height": 2634
+          }
+        ]
+      },
+      {
+        "title": "总结与建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "优先把工作空间改成 Rec.2020 或 ACEScg，获得更大色彩范围。",
+              "日常预览可以用 AgX 或 ACES 2.0，最终输出前再根据需要调整。",
+              "如果对单一映射不满意，用合成器把不同映射的优点组合起来，是目前最灵活的做法。",
+              "合成时记得把视图设为 Raw，否则会二次映射导致颜色错误。",
+              "假彩色是检查曝光的好工具，渲染前可以先看一眼。"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "id": "csine",
+  "name": "cSine",
+  "name_zh": "",
+  "category_id": "mfs_cmath",
+  "category": "Complex Math",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_cmath",
+  "inputs": [
+    {
+      "name": "Z",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Z.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Z.",
+      "dz": "设置 Z 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Z",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Z.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Z.",
+      "dz": "设置 Z 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

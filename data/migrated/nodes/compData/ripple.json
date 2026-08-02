@@ -1,0 +1,92 @@
+{
+  "id": "ripple",
+  "name": "Ripple",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.5,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Period",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Period.",
+      "default": 36.0,
+      "de": "Numeric value controlling Period.",
+      "dz": "设置 Period 的数值。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 0.0,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    },
+    {
+      "name": "Speed",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed.",
+      "default": 0.2999999225139618,
+      "de": "Numeric value controlling Speed.",
+      "dz": "设置 速度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

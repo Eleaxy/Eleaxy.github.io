@@ -1,0 +1,88 @@
+{
+  "id": "attribute-delete",
+  "name": "Attribute Delete",
+  "name_zh": "删除属性",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于删除几何属性，可以使用*通配符，用filter选项来过滤特定数据类型和域",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.09 - 23.21.14.59.png",
+  "param_descriptions": {
+    "i": {
+      "2": "默认删除选中的属性，启用后将仅保留选中的属性"
+    }
+  },
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Attribute Name",
+      "type": "NodeSocketString",
+      "description": "Text value used for Attribute Name.",
+      "default": "",
+      "de": "Text value used for Attribute Name.",
+      "dz": "指定 Attribute / 名称 参数。"
+    },
+    {
+      "name": "Invert",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Invert option.",
+      "default": false,
+      "de": "Toggles or selects the Invert option.",
+      "dz": "控制是否启用或选择 Invert。"
+    },
+    {
+      "name": "Filter Data Type",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Filter Data Type option.",
+      "default": false,
+      "de": "Toggles or selects the Filter Data Type option.",
+      "dz": "控制是否启用或选择 Filter / Data / 类型。"
+    },
+    {
+      "name": "Data Type",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Data Type.",
+      "default": "Float",
+      "de": "Mode selector for Data Type.",
+      "dz": "选择 Data / 类型 的模式。"
+    },
+    {
+      "name": "Filter Domain",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Filter Domain option.",
+      "default": false,
+      "de": "Toggles or selects the Filter Domain option.",
+      "dz": "控制是否启用或选择 Filter / Domain。"
+    },
+    {
+      "name": "Domain",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Domain.",
+      "default": "Point",
+      "de": "Mode selector for Domain.",
+      "dz": "选择 Domain 的模式。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

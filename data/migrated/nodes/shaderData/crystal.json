@@ -1,0 +1,105 @@
+{
+  "id": "crystal",
+  "name": "Crystal",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.028046999126672745,
+        0.07300099730491638,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Edge",
+      "type": "NodeSocketColor",
+      "description": "Color value for Edge.",
+      "default": [
+        0.03127700090408325,
+        0.24287299811840057,
+        0.5210930109024048,
+        1.0
+      ],
+      "de": "Color value for Edge.",
+      "dz": "设置 Edge 的颜色数据。"
+    },
+    {
+      "name": "Star",
+      "type": "NodeSocketColor",
+      "description": "Color value for Star.",
+      "default": [
+        0.09268499910831451,
+        0.6029049754142761,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Star.",
+      "dz": "设置 Star 的颜色数据。"
+    },
+    {
+      "name": "Ambient Occlusion",
+      "type": "NodeSocketColor",
+      "description": "Color value for Ambient Occlusion.",
+      "default": [
+        0.023516999557614326,
+        0.2291650027036667,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Ambient Occlusion.",
+      "dz": "设置 Ambient / Occlusion 的颜色数据。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.3325969874858856,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    },
+    {
+      "name": "Ambient Occlusion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Ambient Occlusion.",
+      "default": 2.5999999046325684,
+      "de": "Numeric value controlling Ambient Occlusion.",
+      "dz": "设置 Ambient / Occlusion 的数值。"
+    },
+    {
+      "name": "Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Edge.",
+      "default": 5.0,
+      "de": "Numeric value controlling Edge.",
+      "dz": "设置 Edge 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "BSDF",
+      "type": "NodeSocketShader",
+      "description": "Parameter for BSDF.",
+      "de": "Parameter for BSDF.",
+      "dz": "指定 BSDF 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

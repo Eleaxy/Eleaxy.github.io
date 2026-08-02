@@ -1,0 +1,75 @@
+{
+  "id": "sweep",
+  "name": "Sweep",
+  "name_zh": "",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Profile Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Profile Curve.",
+      "de": "Geometry data used as Profile Curve.",
+      "dz": "传入或输出用于该节点处理的 Profile / 曲线。"
+    },
+    {
+      "name": "Caps",
+      "type": "NodeSocketMenu",
+      "description": "封盖样式",
+      "default": "Sphere",
+      "de": "Mode selector for Caps.",
+      "dz": "封盖样式"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.49999991059303284,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "",
+      "type": "NodeSocketMaterial",
+      "description": "Parameter for this socket.",
+      "default": "<bpy_struct, Material(\"Curve\") at 0x0000016C0F476720>",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    },
+    {
+      "name": "Merge End Caps",
+      "type": "NodeSocketBool",
+      "description": "端口与曲线网格合并点，启用会比较卡",
+      "default": false,
+      "de": "Toggles or selects the Merge End Caps option.",
+      "dz": "端口与曲线网格合并点，启用会比较卡"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

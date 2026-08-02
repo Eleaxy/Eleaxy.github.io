@@ -1,0 +1,82 @@
+{
+  "id": "ring",
+  "name": "Ring",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "R",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling R.",
+      "default": 0.5,
+      "de": "Numeric value controlling R.",
+      "dz": "设置 R 的数值。"
+    },
+    {
+      "name": "r",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling r.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling r.",
+      "dz": "设置 r 的数值。"
+    },
+    {
+      "name": "Power",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Power.",
+      "default": 3.0,
+      "de": "Numeric value controlling Power.",
+      "dz": "设置 Power 的数值。"
+    },
+    {
+      "name": "X_Fade",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the X Fade option.",
+      "default": true,
+      "de": "Toggles or selects the X Fade option.",
+      "dz": "控制是否启用或选择 X / Fade。"
+    },
+    {
+      "name": "Invert",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Invert option.",
+      "default": false,
+      "de": "Toggles or selects the Invert option.",
+      "dz": "控制是否启用或选择 Invert。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

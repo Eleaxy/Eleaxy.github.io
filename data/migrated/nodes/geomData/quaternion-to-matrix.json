@@ -1,0 +1,41 @@
+{
+  "id": "quaternion-to-matrix",
+  "name": "Quaternion to Matrix",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Rotation",
+      "type": "NodeSocketRotation",
+      "description": "Parameter for Rotation.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Parameter for Rotation.",
+      "dz": "指定 旋转 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

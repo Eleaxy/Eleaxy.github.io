@@ -1,0 +1,87 @@
+{
+  "id": "raymarching",
+  "name": "Raymarching",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "World/Object",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the World Object option.",
+      "default": true,
+      "de": "Toggles or selects the World Object option.",
+      "dz": "控制是否启用或选择 World / 物体。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.14250676333904266,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Saturation",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Saturation.",
+      "default": 1.0,
+      "de": "Numeric value controlling Saturation.",
+      "dz": "设置 Saturation 的数值。"
+    },
+    {
+      "name": "Specular",
+      "type": "NodeSocketColor",
+      "description": "Color value for Specular.",
+      "default": [
+        0.7174369096755981,
+        0.567841649055481,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Specular.",
+      "dz": "设置 Specular 的颜色数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 1.5000001192092896,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.7154695987701416,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

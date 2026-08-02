@@ -1,0 +1,67 @@
+{
+  "id": "path-deform",
+  "name": "Path Deform",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Path",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Path.",
+      "de": "Geometry data used as Path.",
+      "dz": "传入或输出用于该节点处理的 Path。"
+    },
+    {
+      "name": "Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Offset.",
+      "default": 0.0,
+      "de": "Numeric value controlling Offset.",
+      "dz": "设置 偏移 的数值。"
+    },
+    {
+      "name": "Fit",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Fit option.",
+      "default": false,
+      "de": "Toggles or selects the Fit option.",
+      "dz": "控制是否启用或选择 Fit。"
+    },
+    {
+      "name": "Curve Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Curve Index.",
+      "default": 0,
+      "de": "Integer value controlling Curve Index.",
+      "dz": "设置 曲线 / 索引 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

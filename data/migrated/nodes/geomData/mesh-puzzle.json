@@ -1,0 +1,104 @@
+{
+  "id": "mesh-puzzle",
+  "name": "Mesh Puzzle",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Isolate",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Isolate.",
+      "default": 0.003000000026077032,
+      "de": "Numeric value controlling Isolate.",
+      "dz": "设置 Isolate 的数值。"
+    },
+    {
+      "name": "Thickness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Thickness.",
+      "default": 0.009999999776482582,
+      "de": "Numeric value controlling Thickness.",
+      "dz": "设置 Thickness 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": -321,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "UVMap",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UVMap.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UVMap.",
+      "dz": "设置 UV 映射 的向量数据。"
+    },
+    {
+      "name": "Top",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Top option.",
+      "default": false,
+      "de": "Toggles or selects the Top option.",
+      "dz": "控制是否启用或选择 Top。"
+    },
+    {
+      "name": "Bottom",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Bottom option.",
+      "default": false,
+      "de": "Toggles or selects the Bottom option.",
+      "dz": "控制是否启用或选择 Bottom。"
+    },
+    {
+      "name": "Side",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Side option.",
+      "default": false,
+      "de": "Toggles or selects the Side option.",
+      "dz": "控制是否启用或选择 Side。"
+    },
+    {
+      "name": "Island Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Island Index.",
+      "default": 0,
+      "de": "Integer value controlling Island Index.",
+      "dz": "设置 Island / 索引 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

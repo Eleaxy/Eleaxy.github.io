@@ -1,0 +1,100 @@
+{
+  "id": "principal-curvature",
+  "name": "Principal Curvature",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Dir1",
+      "type": "NodeSocketVector",
+      "description": "曲率变化最大方向",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Dir1.",
+      "dz": "曲率变化最大方向"
+    },
+    {
+      "name": "Dir2",
+      "type": "NodeSocketVector",
+      "description": "曲率变化最小方向",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Dir2.",
+      "dz": "曲率变化最小方向"
+    },
+    {
+      "name": "Gaussain",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gaussain.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gaussain.",
+      "dz": "设置 Gaussain 的数值。"
+    },
+    {
+      "name": "Mean",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mean.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mean.",
+      "dz": "设置 Mean 的数值。"
+    },
+    {
+      "name": "Curvedness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Curvedness.",
+      "default": 0.0,
+      "de": "Numeric value controlling Curvedness.",
+      "dz": "设置 Curvedness 的数值。"
+    },
+    {
+      "name": "k1",
+      "type": "NodeSocketFloat",
+      "description": "曲率变化最大方向上的曲率变化",
+      "default": 0.0,
+      "de": "Numeric value controlling k1.",
+      "dz": "曲率变化最大方向上的曲率变化"
+    },
+    {
+      "name": "k2",
+      "type": "NodeSocketFloat",
+      "description": "曲率变化最小方向上的曲率变化",
+      "default": 0.0,
+      "de": "Numeric value controlling k2.",
+      "dz": "曲率变化最小方向上的曲率变化"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

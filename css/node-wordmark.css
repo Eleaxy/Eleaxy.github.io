@@ -1,0 +1,45 @@
+.node-wordmark-canvas {
+  display: block;
+  max-width: 100%;
+  margin-top: 48px;
+  image-rendering: pixelated;
+  transform: none;
+}
+
+.node-wordmark-text {
+  min-height: 1em;
+  margin: 16px 0 0;
+  color: var(--accent);
+  font: 650 clamp(1.25rem, 2.6vw, 2rem)/1.05 "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Geist, system-ui, sans-serif;
+  letter-spacing: -.035em;
+}
+
+.catalog-wordmark-canvas {
+  grid-column: 1 / -1;
+  width: min(480px, 100%);
+  height: 80px;
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.catalog-wordmark-text { grid-column: 1 / -1; margin: 0; }
+
+@media (min-width: 761px) {
+  .node-wordmark-canvas + .node-wordmark-text,
+  .catalog-wordmark-canvas + .catalog-wordmark-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    min-height: 0;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .node-wordmark-canvas { display: none; }
+}

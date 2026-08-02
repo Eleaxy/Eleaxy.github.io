@@ -1,0 +1,104 @@
+{
+  "id": "particle-trail",
+  "name": "Particle Trail",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Particles.",
+      "de": "Geometry data used as Particles.",
+      "dz": "传入或输出用于该节点处理的 Particles。"
+    },
+    {
+      "name": "Interpolate Scatter",
+      "type": "NodeSocketBool",
+      "description": "高速粒子断层时启用",
+      "default": false,
+      "de": "Toggles or selects the Interpolate Scatter option.",
+      "dz": "高速粒子断层时启用"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Count.",
+      "default": 32,
+      "de": "Integer value controlling Count.",
+      "dz": "设置 数量 的数值。"
+    },
+    {
+      "name": "Lifetime",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime.",
+      "default": 1.0,
+      "de": "Numeric value controlling Lifetime.",
+      "dz": "设置 Lifetime 的数值。"
+    },
+    {
+      "name": "Lifetime Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime Random.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Lifetime Random.",
+      "dz": "设置 Lifetime / 随机量 的数值。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Radius Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius Random.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Radius Random.",
+      "dz": "设置 半径 / 随机量 的数值。"
+    },
+    {
+      "name": "External Force",
+      "type": "NodeSocketVector",
+      "description": "自定义力场输入进来",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for External Force.",
+      "dz": "自定义力场输入进来"
+    },
+    {
+      "name": "Dispersion",
+      "type": "NodeSocketFloat",
+      "description": "各粒子之间分散的强度",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Dispersion.",
+      "dz": "各粒子之间分散的强度"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Trail",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Trail.",
+      "de": "Geometry data used as Trail.",
+      "dz": "传入或输出用于该节点处理的 Trail。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

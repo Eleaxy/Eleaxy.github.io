@@ -1,0 +1,74 @@
+{
+  "id": "rose-curve",
+  "name": "Rose_Curve",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Turns",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Turns.",
+      "default": 12.0,
+      "de": "Numeric value controlling Turns.",
+      "dz": "设置 Turns 的数值。"
+    },
+    {
+      "name": "Sprial",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Sprial.",
+      "default": 12.0,
+      "de": "Numeric value controlling Sprial.",
+      "dz": "设置 Sprial 的数值。"
+    },
+    {
+      "name": "Power",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Power.",
+      "default": 1.0,
+      "de": "Numeric value controlling Power.",
+      "dz": "设置 Power 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Checker",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Checker.",
+      "default": 0.0,
+      "de": "Numeric value controlling Checker.",
+      "dz": "设置 Checker 的数值。"
+    },
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

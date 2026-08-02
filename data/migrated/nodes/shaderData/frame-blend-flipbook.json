@@ -1,0 +1,124 @@
+{
+  "id": "frame-blend-flipbook",
+  "name": "Frame Blend Flipbook",
+  "name_zh": "",
+  "category_id": "effect_flipbook",
+  "category": "Flipbook",
+  "top_category_id": "effect",
+  "top_category": "Effect",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "effect_flipbook",
+  "inputs": [
+    {
+      "name": "UVMap",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UVMap.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UVMap.",
+      "dz": "设置 UV 映射 的向量数据。"
+    },
+    {
+      "name": "Row",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Row.",
+      "default": 8,
+      "de": "Integer value controlling Row.",
+      "dz": "设置 行数 的数值。"
+    },
+    {
+      "name": "Column",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Column.",
+      "default": 8,
+      "de": "Integer value controlling Column.",
+      "dz": "设置 列数 的数值。"
+    },
+    {
+      "name": "Lifetime",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lifetime.",
+      "default": 0.0,
+      "de": "Numeric value controlling Lifetime.",
+      "dz": "设置 Lifetime 的数值。"
+    },
+    {
+      "name": "左下/左上",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the 左下 左上 option.",
+      "default": true,
+      "de": "Toggles or selects the 左下 左上 option.",
+      "dz": "控制是否启用或选择 左下 / 左上。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Blend",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Blend.",
+      "default": 0.0,
+      "de": "Numeric value controlling Blend.",
+      "dz": "设置 Blend 的数值。"
+    },
+    {
+      "name": "Current",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Current.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Current.",
+      "dz": "设置 Current 的向量数据。"
+    },
+    {
+      "name": "Next",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Next.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Next.",
+      "dz": "设置 Next 的向量数据。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Debug",
+      "type": "NodeSocketColor",
+      "description": "Color value for Debug.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Debug.",
+      "dz": "设置 Debug 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/VFX/Flipbook/Flipbook.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/VFX/Flipbook/Flipbook.blend?raw=1"
+}

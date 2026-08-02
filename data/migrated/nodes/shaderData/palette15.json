@@ -1,0 +1,43 @@
+{
+  "id": "palette15",
+  "name": "Palette15",
+  "name_zh": "",
+  "category_id": "shader_utility",
+  "category": "Utility",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_utility",
+  "inputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 1.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

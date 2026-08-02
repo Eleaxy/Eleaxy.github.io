@@ -1,0 +1,58 @@
+{
+  "id": "outline-edge",
+  "name": "Outline Edge",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Depth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Depth.",
+      "default": 0.0,
+      "de": "Numeric value controlling Depth.",
+      "dz": "设置 深度 的数值。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "Threshold",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Threshold.",
+      "default": 0.25,
+      "de": "Numeric value controlling Threshold.",
+      "dz": "设置 阈值 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Edge",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Edge.",
+      "default": 0.0,
+      "de": "Numeric value controlling Edge.",
+      "dz": "设置 Edge 的数值。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

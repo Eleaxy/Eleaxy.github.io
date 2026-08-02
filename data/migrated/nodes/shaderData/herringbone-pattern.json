@@ -1,0 +1,139 @@
+{
+  "id": "herringbone-pattern",
+  "name": "Herringbone_Pattern",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 12.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Ratio",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Ratio.",
+      "default": 3,
+      "de": "Integer value controlling Ratio.",
+      "dz": "设置 Ratio 的数值。"
+    },
+    {
+      "name": "Bevel",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bevel.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Bevel.",
+      "dz": "设置 Bevel 的数值。"
+    },
+    {
+      "name": "Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Min.",
+      "default": 0.0,
+      "de": "Numeric value controlling Min.",
+      "dz": "设置 最小值 的数值。"
+    },
+    {
+      "name": "Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Max.",
+      "dz": "设置 最大值 的数值。"
+    },
+    {
+      "name": "Range_Falloff",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Range Falloff option.",
+      "default": false,
+      "de": "Toggles or selects the Range Falloff option.",
+      "dz": "控制是否启用或选择 Range / 衰减。"
+    },
+    {
+      "name": "Sine",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Sine.",
+      "default": 1,
+      "de": "Integer value controlling Sine.",
+      "dz": "设置 Sine 的数值。"
+    },
+    {
+      "name": "Amplitude",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Amplitude.",
+      "default": 0.019999999552965164,
+      "de": "Numeric value controlling Amplitude.",
+      "dz": "设置 Amplitude 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    },
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Random.",
+      "dz": "设置 随机量 的颜色数据。"
+    },
+    {
+      "name": "Half",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Half.",
+      "default": 0.0,
+      "de": "Numeric value controlling Half.",
+      "dz": "设置 Half 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

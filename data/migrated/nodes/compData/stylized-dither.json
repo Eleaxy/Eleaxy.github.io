@@ -1,0 +1,80 @@
+{
+  "id": "stylized-dither",
+  "name": "Stylized Dither",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Hue",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Hue.",
+      "default": 0.5,
+      "de": "Numeric value controlling Hue.",
+      "dz": "设置 Hue 的数值。"
+    },
+    {
+      "name": "Lines",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lines.",
+      "default": 128.0,
+      "de": "Numeric value controlling Lines.",
+      "dz": "设置 Lines 的数值。"
+    },
+    {
+      "name": "Brightness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Brightness.",
+      "default": 4.0,
+      "de": "Numeric value controlling Brightness.",
+      "dz": "设置 Brightness 的数值。"
+    },
+    {
+      "name": "Noise",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Noise.",
+      "default": 0.75,
+      "de": "Numeric value controlling Noise.",
+      "dz": "设置 噪波 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

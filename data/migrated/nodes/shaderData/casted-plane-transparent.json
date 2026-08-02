@@ -1,0 +1,103 @@
+{
+  "id": "casted-plane-transparent",
+  "name": "Casted Plane Transparent",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "右下角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 右下角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 右下角.",
+      "dz": "设置 右下角 的向量数据。"
+    },
+    {
+      "name": "左下角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 左下角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 左下角.",
+      "dz": "设置 左下角 的向量数据。"
+    },
+    {
+      "name": "右上角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 右上角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 右上角.",
+      "dz": "设置 右上角 的向量数据。"
+    },
+    {
+      "name": "左上角",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 左上角.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 左上角.",
+      "dz": "设置 左上角 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "遮住部分显示",
+      "type": "NodeSocketShader",
+      "description": "Parameter for 遮住部分显示.",
+      "de": "Parameter for 遮住部分显示.",
+      "dz": "指定 遮住部分显示 参数。"
+    },
+    {
+      "name": "遮住部分透明",
+      "type": "NodeSocketShader",
+      "description": "Parameter for 遮住部分透明.",
+      "de": "Parameter for 遮住部分透明.",
+      "dz": "指定 遮住部分透明 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

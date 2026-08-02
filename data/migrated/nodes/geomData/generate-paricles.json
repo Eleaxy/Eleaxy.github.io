@@ -1,0 +1,119 @@
+{
+  "id": "generate-paricles",
+  "name": "Generate Paricles",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Enable",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Enable option.",
+      "default": true,
+      "de": "Toggles or selects the Enable option.",
+      "dz": "控制是否启用或选择 启用开关。"
+    },
+    {
+      "name": "Scatter Domain",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Scatter Domain.",
+      "default": "Surface",
+      "de": "Mode selector for Scatter Domain.",
+      "dz": "选择 Scatter / Domain 的模式。"
+    },
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Becomes the output value if it is chosen by the menu input",
+      "de": "Becomes the output value if it is chosen by the menu input",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "Surface",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Surface.",
+      "de": "Geometry data used as Surface.",
+      "dz": "传入或输出用于该节点处理的 表面。"
+    },
+    {
+      "name": "Voxel Size",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Voxel Size.",
+      "default": 0.10000002384185791,
+      "de": "Numeric value controlling Voxel Size.",
+      "dz": "设置 Voxel / 尺寸 的数值。"
+    },
+    {
+      "name": "Surface D/C",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Surface D C.",
+      "default": "Density",
+      "de": "Mode selector for Surface D C.",
+      "dz": "选择 表面 / D / C 的模式。"
+    },
+    {
+      "name": "Random/Grid",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Random Grid.",
+      "default": "Grid",
+      "de": "Mode selector for Random Grid.",
+      "dz": "选择 随机量 / Grid 的模式。"
+    },
+    {
+      "name": "Volume D/C",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Volume D C.",
+      "default": "Density",
+      "de": "Mode selector for Volume D C.",
+      "dz": "选择 Volume / D / C 的模式。"
+    },
+    {
+      "name": "Density",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Density.",
+      "default": 10.0,
+      "de": "Numeric value controlling Density.",
+      "dz": "设置 Density 的数值。"
+    },
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Count.",
+      "default": 3000,
+      "de": "Integer value controlling Count.",
+      "dz": "设置 数量 的数值。"
+    },
+    {
+      "name": "Spacing",
+      "type": "NodeSocketVector",
+      "description": "Spacing between grid points",
+      "default": [
+        0.10000000149011612,
+        0.10000000149011612,
+        0.10000000149011612
+      ],
+      "de": "Spacing between grid points",
+      "dz": "设置 Spacing 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Particles.",
+      "de": "Parameter for Particles.",
+      "dz": "指定 Particles 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

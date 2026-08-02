@@ -1,0 +1,95 @@
+{
+  "id": "voronoi",
+  "name": "Voronoi",
+  "name_zh": "",
+  "category_id": "comp",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp",
+  "inputs": [
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 0.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Smooth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth.",
+      "default": 0.0,
+      "de": "Numeric value controlling Smooth.",
+      "dz": "设置 Smooth 的数值。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Random.",
+      "default": 0.0,
+      "de": "Numeric value controlling Random.",
+      "dz": "设置 随机量 的数值。"
+    },
+    {
+      "name": "Type",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Type.",
+      "default": 0.0,
+      "de": "Numeric value controlling Type.",
+      "dz": "设置 类型 的数值。"
+    },
+    {
+      "name": "Exponent",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Exponent.",
+      "default": 0.5,
+      "de": "Numeric value controlling Exponent.",
+      "dz": "设置 Exponent 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Distance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distance.",
+      "default": 0.0,
+      "de": "Numeric value controlling Distance.",
+      "dz": "设置 Distance 的数值。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Position.",
+      "dz": "设置 位置 的向量数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

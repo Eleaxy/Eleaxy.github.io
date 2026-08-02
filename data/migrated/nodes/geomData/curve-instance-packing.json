@@ -1,0 +1,100 @@
+{
+  "id": "curve-instance-packing",
+  "name": "Curve Instance Packing",
+  "name_zh": "曲线实例填充",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "沿曲线分布实例，实例之间按边界框分布避免穿插",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 21.39.38.74.png",
+  "param_descriptions": {
+    "i": {
+      "5": "默认边界框的中心将对齐曲线，启用后将边界框的顶部对齐曲线",
+      "6": "检查用于实例Packing的边界框分布"
+    }
+  },
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Count",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Count.",
+      "default": 12,
+      "de": "Integer value controlling Count.",
+      "dz": "设置 数量 的数值。"
+    },
+    {
+      "name": "Guide Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Guide Curves.",
+      "de": "Geometry data used as Guide Curves.",
+      "dz": "传入或输出用于该节点处理的 Guide / Curves。"
+    },
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Scale.",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Scale.",
+      "dz": "设置 缩放 的向量数据。"
+    },
+    {
+      "name": "Mode",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Mode.",
+      "default": "",
+      "de": "Mode selector for Mode.",
+      "dz": "选择 模式 的模式。"
+    },
+    {
+      "name": "Offset",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Offset option.",
+      "default": false,
+      "de": "Toggles or selects the Offset option.",
+      "dz": "控制是否启用或选择 偏移。"
+    },
+    {
+      "name": "Debug",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Debug option.",
+      "default": false,
+      "de": "Toggles or selects the Debug option.",
+      "dz": "控制是否启用或选择 Debug。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 18,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

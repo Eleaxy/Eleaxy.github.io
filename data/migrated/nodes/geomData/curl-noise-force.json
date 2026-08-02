@@ -1,0 +1,72 @@
+{
+  "id": "curl-noise-force",
+  "name": "Curl Noise Force",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "3D",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "2D Noise Input",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for 2D Noise Input.",
+      "de": "Parameter for 2D Noise Input.",
+      "dz": "指定 2D / 噪波 / 输入 参数。"
+    },
+    {
+      "name": "3D Noise Input",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for 3D Noise Input.",
+      "de": "Parameter for 3D Noise Input.",
+      "dz": "指定 3D / 噪波 / 输入 参数。"
+    },
+    {
+      "name": "Epsilon",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Epsilon.",
+      "default": 0.0010000000474974513,
+      "de": "Numeric value controlling Epsilon.",
+      "dz": "设置 Epsilon 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Direction",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Direction.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Direction.",
+      "dz": "设置 Direction 的向量数据。"
+    },
+    {
+      "name": "Magnitude",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Magnitude.",
+      "default": 0.0,
+      "de": "Numeric value controlling Magnitude.",
+      "dz": "设置 Magnitude 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "smile",
+  "name": "Smile",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "Location",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Location.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Location.",
+      "dz": "设置 Location 的向量数据。"
+    },
+    {
+      "name": "Silent/Happy/Angry",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Silent Happy Angry.",
+      "default": 0,
+      "de": "Integer value controlling Silent Happy Angry.",
+      "dz": "设置 Silent / Happy / Angry 的数值。"
+    },
+    {
+      "name": "Face_Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Face Scale.",
+      "default": 0.75,
+      "de": "Numeric value controlling Face Scale.",
+      "dz": "设置 Face / 缩放 的数值。"
+    },
+    {
+      "name": "Face_Thickness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Face Thickness.",
+      "default": 0.029999999329447746,
+      "de": "Numeric value controlling Face Thickness.",
+      "dz": "设置 Face / Thickness 的数值。"
+    },
+    {
+      "name": "Eye",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Eye.",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Eye.",
+      "dz": "设置 Eye 的向量数据。"
+    },
+    {
+      "name": "Mouth_Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mouth Scale.",
+      "default": 0.44999998807907104,
+      "de": "Numeric value controlling Mouth Scale.",
+      "dz": "设置 Mouth / 缩放 的数值。"
+    },
+    {
+      "name": "Mouth_Thickness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mouth Thickness.",
+      "default": 0.029999999329447746,
+      "de": "Numeric value controlling Mouth Thickness.",
+      "dz": "设置 Mouth / Thickness 的数值。"
+    },
+    {
+      "name": "Mouth_Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mouth Angle.",
+      "default": 60.0,
+      "de": "Numeric value controlling Mouth Angle.",
+      "dz": "设置 Mouth / 角度 的数值。"
+    },
+    {
+      "name": "Mouth_Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mouth Width.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Mouth Width.",
+      "dz": "设置 Mouth / 宽度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Smile",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smile.",
+      "default": 0.0,
+      "de": "Numeric value controlling Smile.",
+      "dz": "设置 Smile 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

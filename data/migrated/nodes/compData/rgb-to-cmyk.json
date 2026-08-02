@@ -1,0 +1,80 @@
+{
+  "id": "rgb-to-cmyk",
+  "name": "RGB To CMYK",
+  "name_zh": "",
+  "category_id": "comp_utilities",
+  "category": "Utilities",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_utilities",
+  "inputs": [
+    {
+      "name": "RGB",
+      "type": "NodeSocketColor",
+      "description": "Color value for RGB.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for RGB.",
+      "dz": "设置 RGB 的颜色数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "CMYK",
+      "type": "NodeSocketColor",
+      "description": "Color value for CMYK.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for CMYK.",
+      "dz": "设置 CMYK 的颜色数据。"
+    },
+    {
+      "name": "C",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling C.",
+      "default": 0.0,
+      "de": "Numeric value controlling C.",
+      "dz": "设置 C 的数值。"
+    },
+    {
+      "name": "M",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling M.",
+      "default": 0.0,
+      "de": "Numeric value controlling M.",
+      "dz": "设置 M 的数值。"
+    },
+    {
+      "name": "Y",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Y.",
+      "default": 0.0,
+      "de": "Numeric value controlling Y.",
+      "dz": "设置 Y 的数值。"
+    },
+    {
+      "name": "K",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling K.",
+      "default": 0.0,
+      "de": "Numeric value controlling K.",
+      "dz": "设置 K 的数值。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

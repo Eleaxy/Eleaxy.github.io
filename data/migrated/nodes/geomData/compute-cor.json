@@ -1,0 +1,36 @@
+{
+  "id": "compute-cor",
+  "name": "Compute CoR",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Rest Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Mesh to triangulate",
+      "de": "Mesh to triangulate",
+      "dz": "传入或输出用于该节点处理的 Rest / 蒙皮。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Rest Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skin.",
+      "de": "Geometry data used as Rest Skin.",
+      "dz": "传入或输出用于该节点处理的 Rest / 蒙皮。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

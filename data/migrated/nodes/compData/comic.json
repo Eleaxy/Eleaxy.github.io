@@ -1,0 +1,82 @@
+{
+  "id": "comic",
+  "name": "Comic",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Threshold",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Threshold.",
+      "default": 0.25,
+      "de": "Numeric value controlling Threshold.",
+      "dz": "设置 阈值 的数值。"
+    },
+    {
+      "name": "Dark",
+      "type": "NodeSocketColor",
+      "description": "Color value for Dark.",
+      "default": [
+        0.0030737672932446003,
+        0.0037054927088320255,
+        0.018017230555415154,
+        1.0
+      ],
+      "de": "Color value for Dark.",
+      "dz": "设置 Dark 的颜色数据。"
+    },
+    {
+      "name": "Bright",
+      "type": "NodeSocketColor",
+      "description": "Color value for Bright.",
+      "default": [
+        0.9395226240158081,
+        1.0,
+        0.6873294711112976,
+        1.0
+      ],
+      "de": "Color value for Bright.",
+      "dz": "设置 Bright 的颜色数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

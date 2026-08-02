@@ -1,0 +1,75 @@
+{
+  "id": "delta-mush",
+  "name": "Delta Mush",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "Apply",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "Deformed Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Deformed Skin.",
+      "de": "Geometry data used as Deformed Skin.",
+      "dz": "传入或输出用于该节点处理的 Deformed / 蒙皮。"
+    },
+    {
+      "name": "Rest Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skin.",
+      "de": "Geometry data used as Rest Skin.",
+      "dz": "传入或输出用于该节点处理的 Rest / 蒙皮。"
+    },
+    {
+      "name": "Smooth Iterations",
+      "type": "NodeSocketInt",
+      "description": "How many times to blur the values for all elements",
+      "default": 20,
+      "de": "How many times to blur the values for all elements",
+      "dz": "设置 Smooth / 迭代次数 的数值。"
+    },
+    {
+      "name": "Weight",
+      "type": "NodeSocketFloat",
+      "description": "Relative mix weight of neighboring elements",
+      "default": 1.0,
+      "de": "Relative mix weight of neighboring elements",
+      "dz": "设置 权重 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 1.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Deformed Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Deformed Skin.",
+      "de": "Geometry data used as Deformed Skin.",
+      "dz": "传入或输出用于该节点处理的 Deformed / 蒙皮。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

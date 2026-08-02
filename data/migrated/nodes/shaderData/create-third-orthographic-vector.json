@@ -1,0 +1,82 @@
+{
+  "id": "create-third-orthographic-vector",
+  "name": "Create Third Orthographic Vector",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Vec1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vec1.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vec1.",
+      "dz": "设置 Vec1 的向量数据。"
+    },
+    {
+      "name": "Vec2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vec2.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vec2.",
+      "dz": "设置 Vec2 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Vec1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vec1.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vec1.",
+      "dz": "设置 Vec1 的向量数据。"
+    },
+    {
+      "name": "Fixed Vec2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Fixed Vec2.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Fixed Vec2.",
+      "dz": "设置 Fixed / Vec2 的向量数据。"
+    },
+    {
+      "name": "Vec3",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vec3.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vec3.",
+      "dz": "设置 Vec3 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

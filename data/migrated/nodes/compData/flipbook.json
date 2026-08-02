@@ -1,0 +1,70 @@
+{
+  "id": "flipbook",
+  "name": "Flipbook",
+  "name_zh": "",
+  "category_id": "comp_utilities",
+  "category": "Utilities",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_utilities",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Row",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Row.",
+      "default": 6.0,
+      "de": "Numeric value controlling Row.",
+      "dz": "设置 行数 的数值。"
+    },
+    {
+      "name": "Column",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Column.",
+      "default": 6.0,
+      "de": "Numeric value controlling Column.",
+      "dz": "设置 列数 的数值。"
+    },
+    {
+      "name": "Index",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Index.",
+      "default": 0.0,
+      "de": "Numeric value controlling Index.",
+      "dz": "设置 索引 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

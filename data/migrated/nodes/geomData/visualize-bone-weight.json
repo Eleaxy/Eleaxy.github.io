@@ -1,0 +1,52 @@
+{
+  "id": "visualize-bone-weight",
+  "name": "Visualize Bone Weight",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skin.",
+      "de": "Geometry data used as Skin.",
+      "dz": "传入或输出用于该节点处理的 蒙皮。"
+    },
+    {
+      "name": "Joint Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Joint Index.",
+      "default": 1,
+      "de": "Integer value controlling Joint Index.",
+      "dz": "设置 关节 / 索引 的数值。"
+    },
+    {
+      "name": "Lit",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Lit option.",
+      "default": true,
+      "de": "Toggles or selects the Lit option.",
+      "dz": "控制是否启用或选择 Lit。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skin.",
+      "de": "Geometry data used as Skin.",
+      "dz": "传入或输出用于该节点处理的 蒙皮。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

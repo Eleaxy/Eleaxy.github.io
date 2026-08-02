@@ -1,0 +1,37 @@
+{
+  "id": "3x3-frobenius-norm",
+  "name": "3x3 Frobenius Norm",
+  "name_zh": "3x3 F-范数",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于计算3x3矩阵的Frobenius Norm",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Frobenius Norm",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Frobenius Norm.",
+      "default": 0.0,
+      "de": "Numeric value controlling Frobenius Norm.",
+      "dz": "设置 Frobenius / Norm 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

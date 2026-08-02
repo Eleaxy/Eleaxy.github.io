@@ -1,0 +1,66 @@
+{
+  "id": "regular-star-sdf",
+  "name": "Regular_Star_SDF",
+  "name_zh": "",
+  "category_id": "shader_shape",
+  "category": "Shape",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_shape",
+  "inputs": [
+    {
+      "name": "Coordiante",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Coordiante.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Coordiante.",
+      "dz": "设置 Coordiante 的向量数据。"
+    },
+    {
+      "name": "N",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling N.",
+      "default": 8,
+      "de": "Integer value controlling N.",
+      "dz": "设置 N 的数值。"
+    },
+    {
+      "name": "r",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling r.",
+      "default": 0.3333333432674408,
+      "de": "Numeric value controlling r.",
+      "dz": "设置 r 的数值。"
+    },
+    {
+      "name": "r_factor(2,n)",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling r factor(2,n).",
+      "default": 3.0,
+      "de": "Numeric value controlling r factor(2,n).",
+      "dz": "设置 r / factor(2,n) 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "SDF",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling SDF.",
+      "default": 0.0,
+      "de": "Numeric value controlling SDF.",
+      "dz": "设置 SDF 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

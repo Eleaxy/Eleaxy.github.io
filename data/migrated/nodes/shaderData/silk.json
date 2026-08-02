@@ -1,0 +1,74 @@
+{
+  "id": "silk",
+  "name": "Silk",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Base Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Base Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Base Color.",
+      "dz": "设置 Base / 颜色 的颜色数据。"
+    },
+    {
+      "name": "Fresnel",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Fresnel.",
+      "default": 6.0,
+      "de": "Numeric value controlling Fresnel.",
+      "dz": "设置 Fresnel 的数值。"
+    },
+    {
+      "name": "Specular",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Specular.",
+      "default": 1.0,
+      "de": "Numeric value controlling Specular.",
+      "dz": "设置 Specular 的数值。"
+    },
+    {
+      "name": "Additional",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Additional.",
+      "default": 0.0,
+      "de": "Numeric value controlling Additional.",
+      "dz": "设置 Additional 的数值。"
+    },
+    {
+      "name": "Alpha",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Alpha.",
+      "default": 0.3999999165534973,
+      "de": "Numeric value controlling Alpha.",
+      "dz": "设置 Alpha 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

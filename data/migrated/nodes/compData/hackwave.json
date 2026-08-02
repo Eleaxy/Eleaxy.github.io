@@ -1,0 +1,142 @@
+{
+  "id": "hackwave",
+  "name": "HackWave",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Position.",
+      "dz": "设置 位置 的向量数据。"
+    },
+    {
+      "name": "Center",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Center.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Center.",
+      "dz": "设置 中心 的向量数据。"
+    },
+    {
+      "name": "Outside Brightness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Outside Brightness.",
+      "default": 0.0,
+      "de": "Numeric value controlling Outside Brightness.",
+      "dz": "设置 外部 / Brightness 的数值。"
+    },
+    {
+      "name": "Inside Brightness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Inside Brightness.",
+      "default": 0.09999999403953552,
+      "de": "Numeric value controlling Inside Brightness.",
+      "dz": "设置 内部 / Brightness 的数值。"
+    },
+    {
+      "name": "Grid",
+      "type": "NodeSocketColor",
+      "description": "Color value for Grid.",
+      "default": [
+        0.0,
+        0.7656140327453613,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Grid.",
+      "dz": "设置 Grid 的颜色数据。"
+    },
+    {
+      "name": "Dot",
+      "type": "NodeSocketColor",
+      "description": "Color value for Dot.",
+      "default": [
+        1.0,
+        0.4982931613922119,
+        0.04231338948011398,
+        1.0
+      ],
+      "de": "Color value for Dot.",
+      "dz": "设置 Dot 的颜色数据。"
+    },
+    {
+      "name": "Speed",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Speed.",
+      "dz": "设置 速度 的数值。"
+    },
+    {
+      "name": "Range",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Range.",
+      "default": 100.0,
+      "de": "Numeric value controlling Range.",
+      "dz": "设置 Range 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

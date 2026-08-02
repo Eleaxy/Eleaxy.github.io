@@ -1,0 +1,92 @@
+{
+  "id": "taper",
+  "name": "Taper",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "",
+      "type": "NodeSocketObject",
+      "description": "Parameter for this socket.",
+      "default": null,
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    },
+    {
+      "name": "Factor",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Factor.",
+      "default": 1.0,
+      "de": "Numeric value controlling Factor.",
+      "dz": "设置 系数 的数值。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 1.0,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    },
+    {
+      "name": "Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Min.",
+      "default": 0.0,
+      "de": "Numeric value controlling Min.",
+      "dz": "设置 最小值 的数值。"
+    },
+    {
+      "name": "Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max.",
+      "default": 1.0,
+      "de": "Numeric value controlling Max.",
+      "dz": "设置 最大值 的数值。"
+    },
+    {
+      "name": "X",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the X option.",
+      "default": false,
+      "de": "Toggles or selects the X option.",
+      "dz": "控制是否启用或选择 X。"
+    },
+    {
+      "name": "Y",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Y option.",
+      "default": false,
+      "de": "Toggles or selects the Y option.",
+      "dz": "控制是否启用或选择 Y。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

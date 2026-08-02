@@ -1,0 +1,80 @@
+{
+  "id": "box-blur",
+  "name": "Box Blur",
+  "name_zh": "",
+  "category_id": "shader_image",
+  "category": "Image",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_image",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Step Size",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Step Size.",
+      "default": [
+        0.009999999776482582,
+        0.009999999776482582
+      ],
+      "de": "Vector value for Step Size.",
+      "dz": "设置 Step / 尺寸 的向量数据。"
+    },
+    {
+      "name": "X Samples",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling X Samples.",
+      "default": 5,
+      "de": "Integer value controlling X Samples.",
+      "dz": "设置 X / Samples 的数值。"
+    },
+    {
+      "name": "Y Samples",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Y Samples.",
+      "default": 5,
+      "de": "Integer value controlling Y Samples.",
+      "dz": "设置 Y / Samples 的数值。"
+    },
+    {
+      "name": "Image",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Image.",
+      "de": "Parameter for Image.",
+      "dz": "指定 图像 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

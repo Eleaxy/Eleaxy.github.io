@@ -1,0 +1,102 @@
+{
+  "id": "virtual-plane",
+  "name": "Virtual Plane",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "X方向",
+      "type": "NodeSocketVector",
+      "description": "Vector value for X方向.",
+      "default": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for X方向.",
+      "dz": "设置 X方向 的向量数据。"
+    },
+    {
+      "name": "平面中心",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 平面中心.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 平面中心.",
+      "dz": "设置 平面中心 的向量数据。"
+    },
+    {
+      "name": "Size",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Size.",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Size.",
+      "dz": "设置 尺寸 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Is Hit",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Is Hit option.",
+      "default": false,
+      "de": "Toggles or selects the Is Hit option.",
+      "dz": "控制是否启用或选择 Is / Hit。"
+    },
+    {
+      "name": "平面坐标",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 平面坐标.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 平面坐标.",
+      "dz": "设置 平面坐标 的向量数据。"
+    },
+    {
+      "name": "世界位置",
+      "type": "NodeSocketVector",
+      "description": "Vector value for 世界位置.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for 世界位置.",
+      "dz": "设置 世界位置 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

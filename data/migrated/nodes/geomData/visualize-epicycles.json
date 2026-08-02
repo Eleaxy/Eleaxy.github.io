@@ -1,0 +1,63 @@
+{
+  "id": "visualize-epicycles",
+  "name": "Visualize Epicycles",
+  "name_zh": "可视化傅里叶变换作图",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "FT",
+      "type": "NodeSocketVector",
+      "description": "Vector value for FT.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for FT.",
+      "dz": "设置 FT 的向量数据。"
+    },
+    {
+      "name": "Substeps",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Substeps.",
+      "default": 1,
+      "de": "Integer value controlling Substeps.",
+      "dz": "设置 子步数 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Trail",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Trail.",
+      "de": "Geometry data used as Trail.",
+      "dz": "传入或输出用于该节点处理的 Trail。"
+    },
+    {
+      "name": "Lines",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Lines.",
+      "de": "Geometry data used as Lines.",
+      "dz": "传入或输出用于该节点处理的 Lines。"
+    },
+    {
+      "name": "Epicycles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Epicycles.",
+      "de": "Geometry data used as Epicycles.",
+      "dz": "传入或输出用于该节点处理的 Epicycles。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

@@ -1,0 +1,86 @@
+{
+  "id": "ao-edge",
+  "name": "AO-Edge",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Inside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Inside option.",
+      "default": false,
+      "de": "Toggles or selects the Inside option.",
+      "dz": "控制是否启用或选择 内部。"
+    },
+    {
+      "name": "All",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the All option.",
+      "default": false,
+      "de": "Toggles or selects the All option.",
+      "dz": "控制是否启用或选择 All。"
+    },
+    {
+      "name": "Distance",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distance.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Distance.",
+      "dz": "设置 Distance 的数值。"
+    },
+    {
+      "name": "Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Width.",
+      "default": 0.4000000059604645,
+      "de": "Numeric value controlling Width.",
+      "dz": "设置 宽度 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "AO-Noise",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling AO Noise.",
+      "default": 0.20000000298023224,
+      "de": "Numeric value controlling AO Noise.",
+      "dz": "设置 AO / 噪波 的数值。"
+    },
+    {
+      "name": "2th_Noise_Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling 2th Noise Mask.",
+      "default": 1.0,
+      "de": "Numeric value controlling 2th Noise Mask.",
+      "dz": "设置 2th / 噪波 / 遮罩 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "AO-Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling AO Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling AO Mask.",
+      "dz": "设置 AO / 遮罩 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

@@ -1,0 +1,62 @@
+{
+  "id": "limit-force",
+  "name": "Limit Force",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Min.",
+      "default": 0.0,
+      "de": "Numeric value controlling Min.",
+      "dz": "设置 最小值 的数值。"
+    },
+    {
+      "name": "Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Max.",
+      "default": 5.0,
+      "de": "Numeric value controlling Max.",
+      "dz": "设置 最大值 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

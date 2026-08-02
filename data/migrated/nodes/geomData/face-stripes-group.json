@@ -1,0 +1,66 @@
+{
+  "id": "face-stripes-group",
+  "name": "Face Stripes Group",
+  "name_zh": "面带组",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "根据引导方向对网格面进行分组",
+  "notes": "对于栅格拓扑这类编号，可以用Sort Order作为引导方向；大部分情况下，可以启用Custom自定义引导方向",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 21.13.48.99.png",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Sort Order",
+      "type": "NodeSocketInt",
+      "description": "使用该编号的边方向作为引导方向。",
+      "default": 0,
+      "de": "Integer value controlling Sort Order.",
+      "dz": "使用该编号的边方向作为引导方向。"
+    },
+    {
+      "name": "Custom",
+      "type": "NodeSocketBool",
+      "description": "使用自定义引导方向。",
+      "default": false,
+      "de": "Toggles or selects the Custom option.",
+      "dz": "使用自定义引导方向。"
+    },
+    {
+      "name": "Guide",
+      "type": "NodeSocketVector",
+      "description": "自定义引导方向。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Guide.",
+      "dz": "自定义引导方向。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Boundary Edges",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Boundary Edges option.",
+      "default": false,
+      "de": "Toggles or selects the Boundary Edges option.",
+      "dz": "控制是否启用或选择 Boundary / Edges。"
+    },
+    {
+      "name": "Face Group ID",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Face Group ID.",
+      "default": 0,
+      "de": "Integer value controlling Face Group ID.",
+      "dz": "设置 Face / Group / ID 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

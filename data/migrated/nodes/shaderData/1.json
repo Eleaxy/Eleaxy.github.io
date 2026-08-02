@@ -1,0 +1,62 @@
+{
+  "id": "1",
+  "name": "1",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "Freq",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Freq.",
+      "default": 50.0,
+      "de": "Numeric value controlling Freq.",
+      "dz": "设置 Freq 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Detail.",
+      "default": 2.0,
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Power",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Power.",
+      "default": 1.100000023841858,
+      "de": "Numeric value controlling Power.",
+      "dz": "设置 Power 的数值。"
+    },
+    {
+      "name": "Thickness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Thickness.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Thickness.",
+      "dz": "设置 Thickness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

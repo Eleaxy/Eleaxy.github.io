@@ -1,0 +1,102 @@
+{
+  "id": "stage-05",
+  "title": "SunriseHarbor",
+  "date": "2026-03-29",
+  "image": {
+    "source": "https://sablefish357.com/stages/03-29-2026/SunriseHarbor.jpg",
+    "alt": "A photo of sunrise harbor.",
+    "local": "/images/stages/05-9863376ed8.jpg"
+  },
+  "readme": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it.",
+    "Assets in the stage can be used individually.",
+    "Blender version 5.1.1"
+  ],
+  "blender_version": "Blender version 5.1.1",
+  "usage_terms": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "It is only suitable for a fixed camera.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (SableFiSh).",
+    "Remember to unpack the Blender file after receiving it."
+  ],
+  "download_urls": [
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/SunriseHarbor-03292026"
+    }
+  ],
+  "source_url": "https://sablefish357.com/stages/03-29-2026/03-29-2026.html",
+  "all_links": [
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "VIDEOS",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "STAGES",
+      "href": "https://sablefish357.com/stages.html"
+    },
+    {
+      "text": "BLOG",
+      "href": "https://sablefish357.com/blog.html"
+    },
+    {
+      "text": "HOME",
+      "href": "https://sablefish357.com/"
+    },
+    {
+      "text": "CONTACT",
+      "href": "https://sablefish357.com/stages/03-29-2026/03-29-2026.html#bottom"
+    },
+    {
+      "text": "CHN",
+      "href": "https://sablefish357.com/stages/03-29-2026/03-29-2026-zh.html"
+    },
+    {
+      "text": "GitHub",
+      "href": "https://github.com/sablefish357/SunriseHarbor-03292026"
+    },
+    {
+      "text": "Youtube",
+      "href": "https://www.youtube.com/@SableFiSh"
+    },
+    {
+      "text": "Bilibili",
+      "href": "https://space.bilibili.com/49323671"
+    },
+    {
+      "text": "ArtStation",
+      "href": "https://www.artstation.com/sablefish"
+    },
+    {
+      "text": "[email protected]",
+      "href": "https://sablefish357.com/cdn-cgi/l/email-protection#ec9f8d8e80898a859f84dfd9dbac8b818d8580c28f8381"
+    },
+    {
+      "text": "Top",
+      "href": "https://sablefish357.com/stages/03-29-2026/03-29-2026.html#top"
+    },
+    {
+      "text": "SableFiSh",
+      "href": "https://sablefish357.com/stages/03-29-2026/03-29-2026.html#top"
+    },
+    {
+      "text": "STUDIO",
+      "href": "https://sablefish357.com/stages/03-29-2026/03-29-2026.html#top"
+    }
+  ]
+}

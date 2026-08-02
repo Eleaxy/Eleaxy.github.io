@@ -1,0 +1,83 @@
+{
+  "id": "half-tone",
+  "name": "Half Tone",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Light",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Light.",
+      "default": [
+        1.0,
+        -1.0,
+        2.0
+      ],
+      "de": "Vector value for Light.",
+      "dz": "设置 Light 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 30.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Contrast",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Contrast.",
+      "default": 2.0,
+      "de": "Numeric value controlling Contrast.",
+      "dz": "设置 Contrast 的数值。"
+    },
+    {
+      "name": "Dispersion",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Dispersion.",
+      "default": [
+        0.25,
+        0.25,
+        0.0
+      ],
+      "de": "Vector value for Dispersion.",
+      "dz": "设置 Dispersion 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    },
+    {
+      "name": "Mask",
+      "type": "NodeSocketColor",
+      "description": "Color value for Mask.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Mask.",
+      "dz": "设置 遮罩 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

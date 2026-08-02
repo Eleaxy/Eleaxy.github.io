@@ -1,0 +1,70 @@
+{
+  "id": "quadratic-equation",
+  "name": "Quadratic Equation",
+  "name_zh": "",
+  "category_id": "mfs_functions",
+  "category": "Functions",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_functions",
+  "inputs": [
+    {
+      "name": "A",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling A.",
+      "default": 1.0,
+      "de": "Numeric value controlling A.",
+      "dz": "设置 A 的数值。"
+    },
+    {
+      "name": "B",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling B.",
+      "default": 1.0,
+      "de": "Numeric value controlling B.",
+      "dz": "设置 B 的数值。"
+    },
+    {
+      "name": "C",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling C.",
+      "default": 1.0,
+      "de": "Numeric value controlling C.",
+      "dz": "设置 C 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "有交点",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling 有交点.",
+      "default": 0.0,
+      "de": "Numeric value controlling 有交点.",
+      "dz": "设置 有交点 的数值。"
+    },
+    {
+      "name": "t1",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling t1.",
+      "default": 0.0,
+      "de": "Numeric value controlling t1.",
+      "dz": "设置 t1 的数值。"
+    },
+    {
+      "name": "t2",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling t2.",
+      "default": 0.0,
+      "de": "Numeric value controlling t2.",
+      "dz": "设置 t2 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

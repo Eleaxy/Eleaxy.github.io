@@ -1,0 +1,48 @@
+{
+  "id": "3x3-diagonalize-symmetric",
+  "name": " 3x3 Diagonalize Symmetric",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Evecs",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Evecs.",
+      "de": "Parameter for Evecs.",
+      "dz": "指定 Evecs 参数。"
+    },
+    {
+      "name": "Evals",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Evals.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Evals.",
+      "dz": "设置 Evals 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Extra_Matrix_Math.blend?raw=1"
+}

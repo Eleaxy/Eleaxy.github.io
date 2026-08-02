@@ -1,0 +1,97 @@
+{
+  "id": "vectors-to-matrix",
+  "name": "Vectors to Matrix",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Col1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Col1.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Col1.",
+      "dz": "设置 Col1 的向量数据。"
+    },
+    {
+      "name": "Col2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Col2.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Col2.",
+      "dz": "设置 Col2 的向量数据。"
+    },
+    {
+      "name": "Col3",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Col3.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Col3.",
+      "dz": "设置 Col3 的向量数据。"
+    },
+    {
+      "name": "Col4",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Col4.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Col4.",
+      "dz": "设置 Col4 的向量数据。"
+    },
+    {
+      "name": "Row4",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Row4.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Row4.",
+      "dz": "设置 Row4 的向量数据。"
+    },
+    {
+      "name": "Column 4 Row 4",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Column 4 Row 4.",
+      "default": 1.0,
+      "de": "Numeric value controlling Column 4 Row 4.",
+      "dz": "设置 列数 / 4 / 行数 / 4 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

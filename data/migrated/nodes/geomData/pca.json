@@ -1,0 +1,37 @@
+{
+  "id": "pca",
+  "name": "PCA",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketBool",
+      "description": "Boolean toggle for 2D/3D.",
+      "de": "Boolean toggle for 2D/3D.",
+      "dz": "控制 2D/3D 的开关。",
+      "default": false
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Transform",
+      "type": "NodeSocketMatrix",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

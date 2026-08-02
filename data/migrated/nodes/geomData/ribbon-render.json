@@ -1,0 +1,96 @@
+{
+  "id": "ribbon-render",
+  "name": "Ribbon Render",
+  "name_zh": "",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution.",
+      "default": 4,
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Camera",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Camera.",
+      "default": 0.0,
+      "de": "Numeric value controlling Camera.",
+      "dz": "设置 Camera 的数值。"
+    },
+    {
+      "name": "Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Width.",
+      "default": 1.0,
+      "de": "Numeric value controlling Width.",
+      "dz": "设置 宽度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "UVMap",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UVMap.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UVMap.",
+      "dz": "设置 UV 映射 的向量数据。"
+    },
+    {
+      "name": "UTile",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UTile.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UTile.",
+      "dz": "设置 UTile 的向量数据。"
+    },
+    {
+      "name": "UVTile",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UVTile.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UVTile.",
+      "dz": "设置 UVTile 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

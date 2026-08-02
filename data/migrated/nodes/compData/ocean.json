@@ -1,0 +1,56 @@
+{
+  "id": "ocean",
+  "name": "Ocean",
+  "name_zh": "",
+  "category_id": "comp_palette",
+  "category": "Palette",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_palette",
+  "inputs": [
+    {
+      "name": "Thermal",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Thermal.",
+      "default": 0.5,
+      "de": "Numeric value controlling Thermal.",
+      "dz": "设置 Thermal 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Linear",
+      "type": "NodeSocketColor",
+      "description": "Color value for Linear.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Linear.",
+      "dz": "设置 Linear 的颜色数据。"
+    },
+    {
+      "name": "Constant",
+      "type": "NodeSocketColor",
+      "description": "Color value for Constant.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Constant.",
+      "dz": "设置 Constant 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

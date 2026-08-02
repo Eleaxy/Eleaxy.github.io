@@ -1,0 +1,98 @@
+{
+  "id": "vortex-force",
+  "name": "Vortex Force",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Origin",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Origin.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Origin.",
+      "dz": "设置 原点 的向量数据。"
+    },
+    {
+      "name": "Axis",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Axis.",
+      "default": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Vector value for Axis.",
+      "dz": "设置 轴向 的向量数据。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 1.0,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    },
+    {
+      "name": "2D/3D",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for 2D 3D.",
+      "default": "2D",
+      "de": "Mode selector for 2D 3D.",
+      "dz": "选择 2D / 3D 的模式。"
+    },
+    {
+      "name": "In/Out",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for In Out.",
+      "default": "Outflow",
+      "de": "Mode selector for In Out.",
+      "dz": "选择 In / Out 的模式。"
+    },
+    {
+      "name": "Push",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Push.",
+      "default": 1.0,
+      "de": "Numeric value controlling Push.",
+      "dz": "设置 Push 的数值。"
+    },
+    {
+      "name": "Falloff",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Falloff.",
+      "default": "1/d²",
+      "de": "Mode selector for Falloff.",
+      "dz": "选择 衰减 的模式。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

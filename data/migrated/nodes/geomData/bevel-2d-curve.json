@@ -1,0 +1,111 @@
+{
+  "id": "bevel-2d-curve",
+  "name": "Bevel 2D Curve",
+  "name_zh": "2D曲线倒角实体化",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "将2D封闭曲线实体化并倒角，支持孔洞",
+  "notes": "倒角距离并无钳制距离功能，当倒角过大时，点可能会穿插导致出错",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 10.10.01.93.png",
+  "param_descriptions": {
+    "i": {
+      "1": "控制将曲线向外偏移的距离",
+      "2": "控制实体化挤出的高度",
+      "3": "控制pivot的位置顶部/中心/底部",
+      "4": "控制倒角分辨率",
+      "5": "控制倒角半径",
+      "6": "控制倒角轮廓形状，外圆弧/内圆弧",
+      "7": "启用顶部倒角",
+      "8": "启用底部倒角"
+    }
+  },
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curves.",
+      "de": "Geometry data used as Curves.",
+      "dz": "传入或输出用于该节点处理的 Curves。"
+    },
+    {
+      "name": "Expand",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Expand.",
+      "default": 0.0,
+      "de": "Numeric value controlling Expand.",
+      "dz": "设置 Expand 的数值。"
+    },
+    {
+      "name": "Height",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Height.",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling Height.",
+      "dz": "设置 高度 的数值。"
+    },
+    {
+      "name": "Offset",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Offset.",
+      "default": 0.0,
+      "de": "Numeric value controlling Offset.",
+      "dz": "设置 偏移 的数值。"
+    },
+    {
+      "name": "Segments",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Segments.",
+      "default": 6,
+      "de": "Integer value controlling Segments.",
+      "dz": "设置 Segments 的数值。"
+    },
+    {
+      "name": "Bevel Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bevel Radius.",
+      "default": 0.014999999664723873,
+      "de": "Numeric value controlling Bevel Radius.",
+      "dz": "设置 Bevel / 半径 的数值。"
+    },
+    {
+      "name": "Shape",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Shape.",
+      "default": 1.0,
+      "de": "Numeric value controlling Shape.",
+      "dz": "设置 Shape 的数值。"
+    },
+    {
+      "name": "Top",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Top option.",
+      "default": true,
+      "de": "Toggles or selects the Top option.",
+      "dz": "控制是否启用或选择 Top。"
+    },
+    {
+      "name": "Bottom",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Bottom option.",
+      "default": true,
+      "de": "Toggles or selects the Bottom option.",
+      "dz": "控制是否启用或选择 Bottom。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

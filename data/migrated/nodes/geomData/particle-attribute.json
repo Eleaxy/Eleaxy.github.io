@@ -1,0 +1,137 @@
+{
+  "id": "particle-attribute",
+  "name": "Particle Attribute",
+  "name_zh": "",
+  "category_id": "particle_info",
+  "category": "Info",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_info",
+  "inputs": [],
+  "outputs": [
+    {
+      "name": "Is Dead",
+      "type": "NodeSocketBool",
+      "description": "粒子被标记死亡，将在下一个子帧时被删除",
+      "default": false,
+      "de": "Toggles or selects the Is Dead option.",
+      "dz": "粒子被标记死亡，将在下一个子帧时被删除"
+    },
+    {
+      "name": "Hit Particle",
+      "type": "NodeSocketBool",
+      "description": "当前帧，粒子与粒子发生碰撞",
+      "default": false,
+      "de": "Toggles or selects the Hit Particle option.",
+      "dz": "当前帧，粒子与粒子发生碰撞"
+    },
+    {
+      "name": "Hit Surface",
+      "type": "NodeSocketBool",
+      "description": "当前帧与碰撞物体表面碰撞",
+      "default": false,
+      "de": "Toggles or selects the Hit Surface option.",
+      "dz": "当前帧与碰撞物体表面碰撞"
+    },
+    {
+      "name": "Hit Num",
+      "type": "NodeSocketInt",
+      "description": "粒子与碰撞物体表面碰撞次数",
+      "default": 0,
+      "de": "Integer value controlling Hit Num.",
+      "dz": "粒子与碰撞物体表面碰撞次数"
+    },
+    {
+      "name": "Age",
+      "type": "NodeSocketFloat",
+      "description": "当前生命",
+      "default": 0.0,
+      "de": "Numeric value controlling Age.",
+      "dz": "当前生命"
+    },
+    {
+      "name": "Normalized Age",
+      "type": "NodeSocketFloat",
+      "description": "0-1的生命周期",
+      "default": 0.0,
+      "de": "Numeric value controlling Normalized Age.",
+      "dz": "0-1的生命周期"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "粒子的半径",
+      "default": 0.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "粒子的半径"
+    },
+    {
+      "name": "Velocity",
+      "type": "NodeSocketVector",
+      "description": "粒子速度m/s",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Velocity.",
+      "dz": "粒子速度m/s"
+    },
+    {
+      "name": "Slide Velocity",
+      "type": "NodeSocketVector",
+      "description": "粒子沿物体表面滑动速度m/s",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Slide Velocity.",
+      "dz": "粒子沿物体表面滑动速度m/s"
+    },
+    {
+      "name": "Hit Normal",
+      "type": "NodeSocketVector",
+      "description": "粒子与物体碰撞处的物体表面法向，没有碰撞则为0",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Hit Normal.",
+      "dz": "粒子与物体碰撞处的物体表面法向，没有碰撞则为0"
+    },
+    {
+      "name": "Hit Position",
+      "type": "NodeSocketVector",
+      "description": "碰撞发生位置，没有碰撞则为0",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Hit Position.",
+      "dz": "碰撞发生位置，没有碰撞则为0"
+    },
+    {
+      "name": "Orient",
+      "type": "NodeSocketRotation",
+      "description": "粒子的旋转",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Parameter for Orient.",
+      "dz": "粒子的旋转"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

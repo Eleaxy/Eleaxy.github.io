@@ -1,0 +1,75 @@
+{
+  "id": "compress-bone-weights",
+  "name": "Compress Bone Weights",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Keep Mothod",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Keep Mothod.",
+      "default": "Manual",
+      "de": "Mode selector for Keep Mothod.",
+      "dz": "选择 Keep / Mothod 的模式。"
+    },
+    {
+      "name": "Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to get the bundle of",
+      "de": "Geometry to get the bundle of",
+      "dz": "传入或输出用于该节点处理的 蒙皮。"
+    },
+    {
+      "name": "Keep Amount",
+      "type": "NodeSocketInt",
+      "description": "Only keep n weight attributes for faster deformation feedfack",
+      "default": 3,
+      "de": "Only keep n weight attributes for faster deformation feedfack",
+      "dz": "设置 Keep / Amount 的数值。"
+    },
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "It doesn't do anything! Just a lazy way to make sure \"rig_info\" bundle always exist",
+      "de": "It doesn't do anything! Just a lazy way to make sure \"rig_info\" bundle always exist",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    },
+    {
+      "name": "Weight Threshold",
+      "type": "NodeSocketFloat",
+      "description": "weight below this threshold won't be captured",
+      "default": 0.0,
+      "de": "weight below this threshold won't be captured",
+      "dz": "设置 权重 / 阈值 的数值。"
+    },
+    {
+      "name": "Clean Weights",
+      "type": "NodeSocketBool",
+      "description": "Clean all uncompressed weight attributes",
+      "default": true,
+      "de": "Clean all uncompressed weight attributes",
+      "dz": "控制是否启用或选择 Clean / 权重。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skin.",
+      "de": "Geometry data used as Skin.",
+      "dz": "传入或输出用于该节点处理的 蒙皮。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

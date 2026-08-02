@@ -1,0 +1,139 @@
+{
+  "id": "skin",
+  "name": "Skin",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Light",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Light.",
+      "default": [
+        1.0,
+        -1.0,
+        2.0
+      ],
+      "de": "Vector value for Light.",
+      "dz": "设置 Light 的向量数据。"
+    },
+    {
+      "name": "Highlight",
+      "type": "NodeSocketColor",
+      "description": "Color value for Highlight.",
+      "default": [
+        1.0,
+        0.6027849912643433,
+        0.6285650134086609,
+        1.0
+      ],
+      "de": "Color value for Highlight.",
+      "dz": "设置 Highlight 的颜色数据。"
+    },
+    {
+      "name": "Skin",
+      "type": "NodeSocketColor",
+      "description": "Color value for Skin.",
+      "default": [
+        0.7076960206031799,
+        0.37039101123809814,
+        0.3557240068912506,
+        1.0
+      ],
+      "de": "Color value for Skin.",
+      "dz": "设置 蒙皮 的颜色数据。"
+    },
+    {
+      "name": "Position",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Position.",
+      "default": 0.75,
+      "de": "Numeric value controlling Position.",
+      "dz": "设置 位置 的数值。"
+    },
+    {
+      "name": "Smooth",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth.",
+      "default": 0.11999999731779099,
+      "de": "Numeric value controlling Smooth.",
+      "dz": "设置 Smooth 的数值。"
+    },
+    {
+      "name": "Subsurface",
+      "type": "NodeSocketColor",
+      "description": "Color value for Subsurface.",
+      "default": [
+        0.10808800160884857,
+        0.0,
+        0.0019290000200271606,
+        1.0
+      ],
+      "de": "Color value for Subsurface.",
+      "dz": "设置 Subsurface 的颜色数据。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 0.15000000596046448,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Weight",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Weight.",
+      "default": 5.0,
+      "de": "Numeric value controlling Weight.",
+      "dz": "设置 权重 的数值。"
+    },
+    {
+      "name": "Edge",
+      "type": "NodeSocketColor",
+      "description": "Color value for Edge.",
+      "default": [
+        0.21239200234413147,
+        0.10523399710655212,
+        0.1566849946975708,
+        1.0
+      ],
+      "de": "Color value for Edge.",
+      "dz": "设置 Edge 的颜色数据。"
+    },
+    {
+      "name": "Specular",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Specular.",
+      "default": 0.29999998211860657,
+      "de": "Numeric value controlling Specular.",
+      "dz": "设置 Specular 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

@@ -1,0 +1,67 @@
+{
+  "id": "curve-intersections",
+  "name": "Curve Intersections",
+  "name_zh": "曲线交点",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于获取曲线交点并返回交点信息",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 21.45.19.20.png",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Collision",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Collision.",
+      "de": "Geometry data used as Collision.",
+      "dz": "传入或输出用于该节点处理的 碰撞。"
+    },
+    {
+      "name": "Self Intersect",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Self Intersect option.",
+      "default": false,
+      "de": "Toggles or selects the Self Intersect option.",
+      "dz": "控制是否启用或选择 Self / Intersect。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "curve_index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling curve index.",
+      "default": 0,
+      "de": "Integer value controlling curve index.",
+      "dz": "设置 曲线 / 索引 的数值。"
+    },
+    {
+      "name": "curve_fac",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling curve fac.",
+      "default": 0.0,
+      "de": "Numeric value controlling curve fac.",
+      "dz": "设置 曲线 / fac 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

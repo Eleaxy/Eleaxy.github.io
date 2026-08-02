@@ -1,0 +1,86 @@
+{
+  "id": "loft-curve",
+  "name": "Loft Curve",
+  "name_zh": "",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curves.",
+      "de": "Geometry data used as Curves.",
+      "dz": "传入或输出用于该节点处理的 Curves。"
+    },
+    {
+      "name": "Resolution X",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution X.",
+      "default": 50,
+      "de": "Integer value controlling Resolution X.",
+      "dz": "设置 分辨率 / X 的数值。"
+    },
+    {
+      "name": "Resolution Y",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution Y.",
+      "default": 50,
+      "de": "Integer value controlling Resolution Y.",
+      "dz": "设置 分辨率 / Y 的数值。"
+    },
+    {
+      "name": "Cycle",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Cycle option.",
+      "default": false,
+      "de": "Toggles or selects the Cycle option.",
+      "dz": "控制是否启用或选择 Cycle。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Selection",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Selection.",
+      "de": "Geometry data used as Selection.",
+      "dz": "传入或输出用于该节点处理的 选择范围。"
+    },
+    {
+      "name": "Inverted",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Inverted.",
+      "de": "Geometry data used as Inverted.",
+      "dz": "传入或输出用于该节点处理的 Inverted。"
+    },
+    {
+      "name": "UVMap",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UVMap.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UVMap.",
+      "dz": "设置 UV 映射 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

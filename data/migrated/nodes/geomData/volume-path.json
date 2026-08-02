@@ -1,0 +1,92 @@
+{
+  "id": "volume-path",
+  "name": "Volume Path",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Resolution X",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution X.",
+      "default": 32,
+      "de": "Integer value controlling Resolution X.",
+      "dz": "设置 分辨率 / X 的数值。"
+    },
+    {
+      "name": "Resolution Y",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution Y.",
+      "default": 32,
+      "de": "Integer value controlling Resolution Y.",
+      "dz": "设置 分辨率 / Y 的数值。"
+    },
+    {
+      "name": "Resolution Z",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution Z.",
+      "default": 32,
+      "de": "Integer value controlling Resolution Z.",
+      "dz": "设置 分辨率 / Z 的数值。"
+    },
+    {
+      "name": "Tip",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Tip.",
+      "default": 1.0,
+      "de": "Numeric value controlling Tip.",
+      "dz": "设置 Tip 的数值。"
+    },
+    {
+      "name": "Root",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Root.",
+      "default": 0.0005000000237487257,
+      "de": "Numeric value controlling Root.",
+      "dz": "设置 Root 的数值。"
+    },
+    {
+      "name": "Blur Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Blur Iterations.",
+      "default": 24,
+      "de": "Integer value controlling Blur Iterations.",
+      "dz": "设置 模糊 / 迭代次数 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 247,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

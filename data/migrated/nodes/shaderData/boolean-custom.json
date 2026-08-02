@@ -1,0 +1,38 @@
+{
+  "id": "boolean-custom",
+  "name": "Boolean(Custom)",
+  "name_zh": "",
+  "category_id": "shader_utility",
+  "category": "Utility",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_utility",
+  "inputs": [
+    {
+      "name": "Boolean",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Boolean option.",
+      "default": false,
+      "de": "Toggles or selects the Boolean option.",
+      "dz": "控制是否启用或选择 Boolean。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Boolean",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Boolean option.",
+      "default": false,
+      "de": "Toggles or selects the Boolean option.",
+      "dz": "控制是否启用或选择 Boolean。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

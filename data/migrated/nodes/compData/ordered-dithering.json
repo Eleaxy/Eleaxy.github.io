@@ -1,0 +1,51 @@
+{
+  "id": "ordered-dithering",
+  "name": "Ordered Dithering",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Image",
+      "type": "NodeSocketColor",
+      "description": "Color value for Image.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Image.",
+      "dz": "设置 图像 的颜色数据。"
+    },
+    {
+      "name": "Pixelate",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Pixelate.",
+      "default": 2,
+      "de": "Integer value controlling Pixelate.",
+      "dz": "设置 Pixelate 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Value",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Value.",
+      "default": 0.0,
+      "de": "Numeric value controlling Value.",
+      "dz": "设置 数值 的数值。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

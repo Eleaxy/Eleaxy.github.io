@@ -1,0 +1,75 @@
+{
+  "id": "curve-rolling",
+  "name": "Curve Rolling",
+  "name_zh": "曲线卷曲",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于将曲线卷曲成螺旋状，数学准确的螺旋",
+  "notes": "先将原始曲线修剪后，再重新生成一条螺旋曲线拼接回去",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 21.49.19.21.png",
+  "param_descriptions": {
+    "i": {
+      "1": "用于控制曲线卷曲动画的数值",
+      "2": "用于控制螺旋线的分辨率",
+      "3": "用于控制螺旋线的起始半径的数值",
+      "4": "两圈螺旋线之间的距离，后续转网格时可将半径设置为该值的一半"
+    }
+  },
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    },
+    {
+      "name": "Roll",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roll.",
+      "default": 0.0,
+      "de": "Numeric value controlling Roll.",
+      "dz": "设置 Roll 的数值。"
+    },
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution.",
+      "default": 128,
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Start Radius",
+      "type": "NodeSocketFloat",
+      "description": "起始半径",
+      "default": 0.0,
+      "de": "Numeric value controlling Start Radius.",
+      "dz": "起始半径"
+    },
+    {
+      "name": "d",
+      "type": "NodeSocketFloat",
+      "description": "螺旋线半径增长",
+      "default": 0.10000000149011612,
+      "de": "Numeric value controlling d.",
+      "dz": "螺旋线半径增长"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

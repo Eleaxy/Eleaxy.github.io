@@ -1,0 +1,63 @@
+{
+  "id": "tileable-water-caustic",
+  "name": "Tileable_Water_Caustic",
+  "name_zh": "",
+  "category_id": "shader_texture",
+  "category": "Texture",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Iteration",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iteration.",
+      "default": 6,
+      "de": "Integer value controlling Iteration.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Location",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Location.",
+      "default": [
+        251.69000244140625,
+        250.6999969482422,
+        0.0
+      ],
+      "de": "Vector value for Location.",
+      "dz": "设置 Location 的向量数据。"
+    },
+    {
+      "name": "Speed",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Speed.",
+      "default": 0.5,
+      "de": "Numeric value controlling Speed.",
+      "dz": "设置 速度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

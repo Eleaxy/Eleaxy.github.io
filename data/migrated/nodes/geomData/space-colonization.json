@@ -1,0 +1,76 @@
+{
+  "id": "space-colonization",
+  "name": "Space Colonization",
+  "name_zh": "",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Points",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Points.",
+      "de": "Geometry data used as Points.",
+      "dz": "传入或输出用于该节点处理的 点。"
+    },
+    {
+      "name": "End Vertex",
+      "type": "NodeSocketBool",
+      "description": "起始生长点",
+      "default": false,
+      "de": "Toggles or selects the End Vertex option.",
+      "dz": "起始生长点"
+    },
+    {
+      "name": "Sample Radius",
+      "type": "NodeSocketFloat",
+      "description": "采样该点周围半径内的点",
+      "default": 0.11999999731779099,
+      "de": "Numeric value controlling Sample Radius.",
+      "dz": "采样该点周围半径内的点"
+    },
+    {
+      "name": "Step Size",
+      "type": "NodeSocketFloat",
+      "description": "每次移动步长",
+      "default": 0.009999999776482582,
+      "de": "Numeric value controlling Step Size.",
+      "dz": "每次移动步长"
+    },
+    {
+      "name": "Kill Radius",
+      "type": "NodeSocketFloat",
+      "description": "源点云距离该点小于该值将被删除",
+      "default": 0.009999999776482582,
+      "de": "Numeric value controlling Kill Radius.",
+      "dz": "源点云距离该点小于该值将被删除"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Edges",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Edges.",
+      "de": "Geometry data used as Edges.",
+      "dz": "传入或输出用于该节点处理的 Edges。"
+    },
+    {
+      "name": "fac",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling fac.",
+      "default": 0.0,
+      "de": "Numeric value controlling fac.",
+      "dz": "设置 fac 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

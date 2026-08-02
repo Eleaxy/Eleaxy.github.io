@@ -1,0 +1,68 @@
+{
+  "id": "elastic-sphere",
+  "name": "Elastic Sphere",
+  "name_zh": "弹性球形变",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "对网格计算类似球体受挤压的形变效果",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 19.14.48.32.png",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Plane P",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Plane P.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Plane P.",
+      "dz": "设置 Plane / P 的向量数据。"
+    },
+    {
+      "name": "Plane N",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Plane N.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Plane N.",
+      "dz": "设置 Plane / N 的向量数据。"
+    },
+    {
+      "name": "Elasticity",
+      "type": "NodeSocketFloat",
+      "description": "弹力球的弹性程度",
+      "default": 0.49999991059303284,
+      "de": "Numeric value controlling Elasticity.",
+      "dz": "弹力球的弹性程度"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

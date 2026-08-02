@@ -1,0 +1,106 @@
+{
+  "id": "led-screen",
+  "name": "LED_Screen",
+  "name_zh": "",
+  "category_id": "shader_image",
+  "category": "Image",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_image",
+  "inputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    },
+    {
+      "name": "Pixels",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Pixels.",
+      "default": 256,
+      "de": "Integer value controlling Pixels.",
+      "dz": "设置 Pixels 的数值。"
+    },
+    {
+      "name": "Mortar_Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Mortar Color.",
+      "default": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Color value for Mortar Color.",
+      "dz": "设置 Mortar / 颜色 的颜色数据。"
+    },
+    {
+      "name": "Mortar_Width",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mortar Width.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Mortar Width.",
+      "dz": "设置 Mortar / 宽度 的数值。"
+    },
+    {
+      "name": "Layer",
+      "type": "NodeSocketColor",
+      "description": "Color value for Layer.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Layer.",
+      "dz": "设置 Layer 的颜色数据。"
+    },
+    {
+      "name": "Layer_Factor",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Layer Factor.",
+      "default": 0.0,
+      "de": "Numeric value controlling Layer Factor.",
+      "dz": "设置 Layer / 系数 的数值。"
+    },
+    {
+      "name": "E/G",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling E G.",
+      "default": 0.5,
+      "de": "Numeric value controlling E G.",
+      "dz": "设置 E / G 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

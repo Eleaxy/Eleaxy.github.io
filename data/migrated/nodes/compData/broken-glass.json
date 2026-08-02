@@ -1,0 +1,96 @@
+{
+  "id": "broken-glass",
+  "name": "Broken Glass",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Displace",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Displace.",
+      "default": 60.0,
+      "de": "Numeric value controlling Displace.",
+      "dz": "设置 Displace 的数值。"
+    },
+    {
+      "name": "Highlight",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Highlight.",
+      "default": 0.6999999284744263,
+      "de": "Numeric value controlling Highlight.",
+      "dz": "设置 Highlight 的数值。"
+    },
+    {
+      "name": "Distortion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Distortion.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Distortion.",
+      "dz": "设置 Distortion 的数值。"
+    },
+    {
+      "name": "Dispersion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Dispersion.",
+      "default": 0.05000000074505806,
+      "de": "Numeric value controlling Dispersion.",
+      "dz": "设置 Dispersion 的数值。"
+    },
+    {
+      "name": "Global Dispersion",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Global Dispersion.",
+      "default": 0.5,
+      "de": "Numeric value controlling Global Dispersion.",
+      "dz": "设置 Global / Dispersion 的数值。"
+    },
+    {
+      "name": "Sharpen",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Sharpen.",
+      "default": 0.5,
+      "de": "Numeric value controlling Sharpen.",
+      "dz": "设置 Sharpen 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

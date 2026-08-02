@@ -1,0 +1,67 @@
+{
+  "id": "dither-dot",
+  "name": "Dither Dot",
+  "name_zh": "",
+  "category_id": "comp_effect",
+  "category": "Effect",
+  "top_category_id": "comp",
+  "top_category": "Compositor",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "comp_effect",
+  "inputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketColor",
+      "description": "Color value for Scene.",
+      "default": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Color value for Scene.",
+      "dz": "设置 Scene 的颜色数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 256.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Dither",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Dither.",
+      "default": 2.0,
+      "de": "Numeric value controlling Dither.",
+      "dz": "设置 Dither 的数值。"
+    },
+    {
+      "name": "Threshold",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Threshold.",
+      "default": 0.0010000000474974513,
+      "de": "Numeric value controlling Threshold.",
+      "dz": "设置 阈值 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Scene",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scene.",
+      "default": 0.0,
+      "de": "Numeric value controlling Scene.",
+      "dz": "设置 Scene 的数值。"
+    }
+  ],
+  "catalog_source": "compData",
+  "source_blend": "blender/assets/Compositor/Compositor.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Compositor/Compositor.blend?raw=1"
+}

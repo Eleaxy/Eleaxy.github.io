@@ -1,0 +1,99 @@
+{
+  "id": "surface-collision",
+  "name": "Surface Collision",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Enable",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Enable option.",
+      "default": true,
+      "de": "Toggles or selects the Enable option.",
+      "dz": "控制是否启用或选择 启用开关。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 1,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Collision",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Collision.",
+      "default": "Raycast",
+      "de": "Mode selector for Collision.",
+      "dz": "选择 碰撞 的模式。"
+    },
+    {
+      "name": "Record Event",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Record Event.",
+      "default": "Hit & Death",
+      "de": "Mode selector for Record Event.",
+      "dz": "选择 Record / Event 的模式。"
+    },
+    {
+      "name": "Collider",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry whose instances are (partially) realized",
+      "de": "Geometry whose instances are (partially) realized",
+      "dz": "传入或输出用于该节点处理的 碰撞体。"
+    },
+    {
+      "name": "Friction",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Friction.",
+      "default": 0.5,
+      "de": "Numeric value controlling Friction.",
+      "dz": "设置 摩擦力 的数值。"
+    },
+    {
+      "name": "Restitution",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Restitution.",
+      "default": 0.3499999940395355,
+      "de": "Numeric value controlling Restitution.",
+      "dz": "设置 反弹系数 的数值。"
+    },
+    {
+      "name": "Custom Stage",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Custom Stage.",
+      "de": "Parameter for Custom Stage.",
+      "dz": "指定 Custom / Stage 参数。"
+    },
+    {
+      "name": "Kill Particle When Hit",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Kill Particle When Hit option.",
+      "default": false,
+      "de": "Toggles or selects the Kill Particle When Hit option.",
+      "dz": "控制是否启用或选择 Kill / Particle / When / Hit。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Surface Collision",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Surface Collision.",
+      "de": "Parameter for Surface Collision.",
+      "dz": "指定 表面 / 碰撞 参数。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

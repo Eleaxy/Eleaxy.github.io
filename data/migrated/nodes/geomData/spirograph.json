@@ -1,0 +1,53 @@
+{
+  "id": "spirograph",
+  "name": "Spirograph",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution.",
+      "default": 1024,
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Turns",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Turns.",
+      "default": 5,
+      "de": "Integer value controlling Turns.",
+      "dz": "设置 Turns 的数值。"
+    },
+    {
+      "name": "Inner Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Inner Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Inner Radius.",
+      "dz": "设置 Inner / 半径 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curve",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curve.",
+      "de": "Geometry data used as Curve.",
+      "dz": "传入或输出用于该节点处理的 曲线。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

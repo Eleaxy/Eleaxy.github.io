@@ -1,0 +1,70 @@
+{
+  "id": "find-all-cells",
+  "name": "Find All Cells",
+  "name_zh": "寻找封闭单元",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "Find All Cells 节点用于从输入的边网络中检测并枚举所有满足条件的封闭单元（Cell），将每个封闭区域转换为一条封闭曲线",
+  "notes": "峰峰居士友情赞助~\n\n输入边应尽可能形成无歧义的闭合拓扑，否则可能无法生成完整单元或产生重复结果。需要指定每个点的Normal，否则部分单元可能因方向判断而被忽略。N-gons 用于限制允许生成的多边形边数，只会生成多边形边数小于N-gons的Cell。该节点通常用于平面边网络，不适用于复杂三维自交结构。",
+  "example": "将二维 Voronoi 边线连接到 Edges 输入，设置 Normal 为 (0,0,1)，即可自动重建所有 Voronoi 面。支持3D，但需要合理设置点Normal，并保证输入边的闭合拓扑合理",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.16 - 16.59.14.29.png",
+  "param_descriptions": {
+    "i": {
+      "0": "输入用于构建单元的边几何数据。节点会分析这些边之间的连接关系，并寻找能够组成封闭区域的所有边界。",
+      "1": "指定搜索所依据的参考法线方向，用于确定平面方向及面朝向，帮助正确识别封闭区域。",
+      "2": "指定允许生成的多边形边数或相关限制条件，用于过滤符合要求的封闭单元。"
+    },
+    "o": {
+      "0": "输出检测得到的所有封闭单元几何，每个 Cell 表示输入边网络中的一个有效封闭区域，可继续用于网格生成或后续几何节点处理。"
+    }
+  },
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Edges",
+      "type": "NodeSocketGeometry",
+      "description": "输入用于构建单元的边几何数据。节点会分析这些边之间的连接关系，并寻找能够组成封闭区域的所有边界。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "default": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38,
+      "description": "指定搜索所依据的参考法线方向，用于确定平面方向及面朝向，帮助正确识别封闭区域。"
+    },
+    {
+      "name": "N-gons",
+      "type": "NodeSocketInt",
+      "default": 4,
+      "min": 3,
+      "max": 2147483647,
+      "description": "指定允许生成的多边形边数或相关限制条件，用于过滤符合要求的封闭单元。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "输出检测得到的所有封闭单元几何，每个 Cell 表示输入边网络中的一个有效封闭区域，可继续用于网格生成或后续几何节点处理。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1",
+  "created_version": "v1.0.1",
+  "last_modified_version": "v1.0.1",
+  "field_provenance": {
+    "identity": "local v1.0.1 direct-import ledger",
+    "category": "docs/index.html EMBEDDED_STATE.nodeCats",
+    "metadata": "docs/index.html EMBEDDED_STATE.nodeData",
+    "socket_schema": "docs/index.html EMBEDDED_STATE.extraData.manualNodes",
+    "source_blend": "docs/index.html EMBEDDED_STATE.extraData.manualNodes"
+  }
+}

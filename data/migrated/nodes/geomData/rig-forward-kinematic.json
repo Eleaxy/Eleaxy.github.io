@@ -1,0 +1,65 @@
+{
+  "id": "rig-forward-kinematic",
+  "name": "Rig Forward Kinematic",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Points to modify the positions of",
+      "de": "Points to modify the positions of",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    },
+    {
+      "name": "Pre(Local Frame)",
+      "type": "NodeSocketMatrix",
+      "description": "Transfsorm in skeleton local frame",
+      "de": "Transfsorm in skeleton local frame",
+      "dz": "指定 Pre(Local / Frame) 参数。"
+    },
+    {
+      "name": "Post(World Frame)",
+      "type": "NodeSocketMatrix",
+      "description": "Transfsorm in skeleton world frame",
+      "de": "Transfsorm in skeleton world frame",
+      "dz": "指定 Post(World / Frame) 参数。"
+    },
+    {
+      "name": "Final(Abs World)",
+      "type": "NodeSocketMatrix",
+      "description": "Transform in absolute world coordinate",
+      "de": "Transform in absolute world coordinate",
+      "dz": "指定 Final(Abs / World) 参数。"
+    },
+    {
+      "name": "Scale Compensating",
+      "type": "NodeSocketBool",
+      "description": "control a bone to compensate his parent bone' scale or not",
+      "default": true,
+      "de": "control a bone to compensate his parent bone' scale or not",
+      "dz": "控制是否启用或选择 缩放 / Compensating。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skeleton.",
+      "de": "Geometry data used as Skeleton.",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

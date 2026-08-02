@@ -1,0 +1,98 @@
+{
+  "id": "cartesian-to-spherical",
+  "name": "Cartesian to Spherical",
+  "name_zh": "",
+  "category_id": "mfs_coordinates",
+  "category": "Coordinates",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [
+    {
+      "name": "Cartesian",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Cartesian.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Cartesian.",
+      "dz": "设置 Cartesian 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Radial",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Radial.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Radial.",
+      "dz": "设置 Radial 的向量数据。"
+    },
+    {
+      "name": "Spherical",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Spherical.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Spherical.",
+      "dz": "设置 Spherical 的向量数据。"
+    },
+    {
+      "name": "r",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling r.",
+      "default": 0.0,
+      "de": "Numeric value controlling r.",
+      "dz": "设置 r 的数值。"
+    },
+    {
+      "name": "theta(-pi,pi)",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling theta( pi,pi).",
+      "default": 0.0,
+      "de": "Numeric value controlling theta( pi,pi).",
+      "dz": "设置 theta( / pi,pi) 的数值。"
+    },
+    {
+      "name": "phi(0-pi)",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling phi(0 pi).",
+      "default": 0.0,
+      "de": "Numeric value controlling phi(0 pi).",
+      "dz": "设置 phi(0 / pi) 的数值。"
+    },
+    {
+      "name": "theta(0-1)",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling theta(0 1).",
+      "default": 0.0,
+      "de": "Numeric value controlling theta(0 1).",
+      "dz": "设置 theta(0 / 1) 的数值。"
+    },
+    {
+      "name": "phi(0-1)",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling phi(0 1).",
+      "default": 0.0,
+      "de": "Numeric value controlling phi(0 1).",
+      "dz": "设置 phi(0 / 1) 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

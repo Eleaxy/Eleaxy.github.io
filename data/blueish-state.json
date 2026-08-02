@@ -1,0 +1,1659 @@
+{
+  "topCats": [
+    {
+      "id": "geom",
+      "name": "Geometry Nodes"
+    },
+    {
+      "id": "shader",
+      "name": "Shader"
+    },
+    {
+      "id": "comp",
+      "name": "Compositor"
+    },
+    {
+      "id": "rigging",
+      "name": "Rigging System"
+    },
+    {
+      "id": "particle",
+      "name": "Particle System"
+    },
+    {
+      "id": "pcg",
+      "name": "PCG"
+    },
+    {
+      "id": "stylized_2d",
+      "name": "Stylized NPR"
+    },
+    {
+      "id": "effect",
+      "name": "Effect"
+    },
+    {
+      "id": "mfs",
+      "name": "Material Functions"
+    }
+  ],
+  "customCats": [
+    {
+      "id": "generation",
+      "name": "Generation",
+      "parent": "geom"
+    },
+    {
+      "id": "mesh",
+      "name": "Mesh",
+      "parent": "geom"
+    },
+    {
+      "id": "curve",
+      "name": "Curve",
+      "parent": "geom"
+    },
+    {
+      "id": "math",
+      "name": "Math",
+      "parent": "geom"
+    },
+    {
+      "id": "cat_1783389786751",
+      "name": "Utility",
+      "parent": "geom"
+    },
+    {
+      "id": "comp_effect",
+      "name": "Effect",
+      "parent": "comp"
+    },
+    {
+      "id": "comp_palette",
+      "name": "Palette",
+      "parent": "comp"
+    },
+    {
+      "id": "comp_utilities",
+      "name": "Utilities",
+      "parent": "comp"
+    },
+    {
+      "id": "effect_flipbook",
+      "name": "Flipbook",
+      "parent": "effect"
+    },
+    {
+      "id": "mfs_cmath",
+      "name": "Complex Math",
+      "parent": "mfs"
+    },
+    {
+      "id": "mfs_coordinates",
+      "name": "Coordinates",
+      "parent": "mfs"
+    },
+    {
+      "id": "mfs_functions",
+      "name": "Functions",
+      "parent": "mfs"
+    },
+    {
+      "id": "mfs_parallax",
+      "name": "Parallax",
+      "parent": "mfs"
+    },
+    {
+      "id": "particle_force",
+      "name": "Force",
+      "parent": "particle"
+    },
+    {
+      "id": "particle_info",
+      "name": "Info",
+      "parent": "particle"
+    },
+    {
+      "id": "particle_mask",
+      "name": "Mask",
+      "parent": "particle"
+    },
+    {
+      "id": "particle_system_core",
+      "name": "Particle System",
+      "parent": "particle"
+    },
+    {
+      "id": "shader_fractal",
+      "name": "Fractal",
+      "parent": "shader"
+    },
+    {
+      "id": "shader_image",
+      "name": "Image",
+      "parent": "shader"
+    },
+    {
+      "id": "shader_shape",
+      "name": "Shape",
+      "parent": "shader"
+    },
+    {
+      "id": "shader_texture",
+      "name": "Texture",
+      "parent": "shader"
+    },
+    {
+      "id": "shader_utility",
+      "name": "Utility",
+      "parent": "shader"
+    },
+    {
+      "id": "shader_tiling",
+      "name": "Tiling",
+      "parent": "shader"
+    },
+    {
+      "id": "shader_tiling_tools",
+      "name": "Tools",
+      "parent": "shader_tiling"
+    },
+    {
+      "id": "shader_tiling_textures",
+      "name": "Tiling Textures",
+      "parent": "shader_tiling"
+    }
+  ],
+  "nodeCats": {
+    "1": "shader",
+    "2": "shader",
+    "3": "shader",
+    "4": "shader",
+    "5": "shader",
+    "6": "shader",
+    "7": "shader",
+    "8": "shader",
+    "9": "shader",
+    "10-Tetrahetra": "generation",
+    "2D Curve Point Angle": "curve",
+    "2D Remesh": "mesh",
+    "3 Planes Intersection Point": "math",
+    "3D Incircle": "math",
+    "3D Recursive Subdivision": "generation",
+    "3x3 1-Norm": "math",
+    "3x3 Adjugate Matrix": "math",
+    "3x3 Diag": "math",
+    "3x3 Diagonalize Symmetric": "math",
+    "3x3 Frobenius Norm": "math",
+    "3x3 Infinity-Norm": "math",
+    "3x3 Matrix Trace": "math",
+    "3x3 Max-Norm": "math",
+    "3x3 Polar Decomposition": "math",
+    "3x3 Pseudo-Inverse": "math",
+    "3x3 Spectral-Norm": "math",
+    "5-Tetrahetra": "generation",
+    "Attribute Delete": "cat_1783389786751",
+    "Auto UV Seam": "mesh",
+    "Backface Culling": "mesh",
+    "Barycentric Coodinate": "math",
+    "Bend": "mesh",
+    "Bevel 2D Curve": "curve",
+    "Bitangent Noise": "particle_force",
+    "Bone Capture": "rigging",
+    "Bone Deform": "rigging",
+    "Boolean Curve": "curve",
+    "Camera Culling": "cat_1783389786751",
+    "Capsule": "generation",
+    "Cardioid": "generation",
+    "Catenary": "curve",
+    "Circle Packing": "generation",
+    "Circular Packing": "generation",
+    "Circular Parameterization": "mesh",
+    "CircumSphere": "math",
+    "Closest Point Pair": "math",
+    "Cluster Points": "cat_1783389786751",
+    "Collision Detection": "mesh",
+    "Combine Module Infos": "pcg",
+    "Compress Bone Weights": "rigging",
+    "Compute CoR": "rigging",
+    "Cone Direction": "particle_force",
+    "Consistent Curve Orientation": "curve",
+    "Coons Patch": "curve",
+    "Coordinate System": "generation",
+    "Cotangent Laplacian": "math",
+    "Cross to Matrix": "math",
+    "Cube Deform": "mesh",
+    "Cube Mask": "particle_mask",
+    "Curl Noise Force": "particle_force",
+    "Curvature": "mesh",
+    "Curve Constrained Sphere Packing": "curve",
+    "Curve Force": "particle_force",
+    "Curve Instance Packing": "curve",
+    "Curve Intersections": "curve",
+    "Curve Loop Edge": "curve",
+    "Curve Rolling": "curve",
+    "Curve Trail": "particle_system_core",
+    "Custom Mask": "particle_mask",
+    "Custom Voronoi Texture": "generation",
+    "Dash Line": "curve",
+    "Debug": "cat_1783389786751",
+    "Delete By Age": "cat_1783389786751",
+    "Delta Mush": "rigging",
+    "Dense Linear Solver": "math",
+    "Detect Error": "rigging",
+    "Detriangulate": "mesh",
+    "Dihedral": "math",
+    "Discrete Panelization": "mesh",
+    "Divergence": "math",
+    "DQS Compensation": "rigging",
+    "Drag": "particle_force",
+    "Dragon Fractal": "generation",
+    "Edge Bundling": "curve",
+    "Edge Collapse": "mesh",
+    "Edge Flip": "mesh",
+    "Edge Loop ID": "mesh",
+    "Edge Ring ID": "mesh",
+    "Edge Split": "mesh",
+    "Edges of Face": "mesh",
+    "Elastic Sphere": "mesh",
+    "Even Curve Segments": "curve",
+    "Extract Isoline": "mesh",
+    "Extract Transform": "math",
+    "Face Extrusion": "mesh",
+    "Face Stripes Group": "mesh",
+    "Faces of Edge": "mesh",
+    "Faces of Vertex": "mesh",
+    "Fill 3D Curve": "curve",
+    "Fourier Transform": "math",
+    "Fourier Transform Drawing": "cat_1783389786751",
+    "Generate Paricles": "particle_system_core",
+    "Gradient": "math",
+    "Graph Color": "mesh",
+    "Graph MIS": "mesh",
+    "Gravity Force": "particle_force",
+    "Hair Mesh to Curve": "curve",
+    "Heart": "generation",
+    "Heat Geodesic": "mesh",
+    "Helicoidal Surface": "generation",
+    "Hexagon": "shader_tiling_textures",
+    "Homogeneous Disk": "generation",
+    "Homogeneous Sphere": "generation",
+    "Image to ASCII": "generation",
+    "Implicit Surface": "mesh",
+    "Initialize Particles": "particle_system_core",
+    "Insert Face": "mesh",
+    "InSphere": "math",
+    "Intersection Analysis": "mesh",
+    "Intersection Stitch": "mesh",
+    "Inverse Kinematics": "curve",
+    "Iterative Closet Point": "math",
+    "Joint Mask": "rigging",
+    "Koch Line": "generation",
+    "Koch Snowflake": "generation",
+    "L System": "generation",
+    "Laplacian": "mesh",
+    "Limit Force": "particle_force",
+    "Line Art": "mesh",
+    "Line Attaction Force": "particle_force",
+    "Line Drawing": "generation",
+    "Loft Curve": "curve",
+    "Loop Subdivision": "mesh",
+    "Marching Cube": "mesh",
+    "Marching Square": "mesh",
+    "Match Size": "cat_1783389786751",
+    "Matrices Multiply": "math",
+    "Matrix Add": "math",
+    "Matrix Scale": "math",
+    "Matrix to Vectors": "math",
+    "Maze Generation": "generation",
+    "Measure Centroid": "mesh",
+    "Measure Volume": "mesh",
+    "Mesh Ambient Occlusion": "mesh",
+    "Mesh Clip": "mesh",
+    "Mesh Folding": "mesh",
+    "Mesh Puzzle": "mesh",
+    "Mesh SDF": "mesh",
+    "Mesh Thickness": "mesh",
+    "Mesh Velocity": "particle_force",
+    "Minimum Bounding Sphere": "cat_1783389786751",
+    "Minimum Spanning Tree": "mesh",
+    "Mobius Transform": "math",
+    "Module Info Piece": "pcg",
+    "N Joint": "generation",
+    "Nearest Point Connection": "generation",
+    "Normal Distribution": "math",
+    "OBB": "cat_1783389786751",
+    "Object Force": "particle_force",
+    "Orbit Force": "particle_force",
+    "Order in Field": "cat_1783389786751",
+    "Ordered Dithering": "comp_effect",
+    "Oriented Bounding Box": "cat_1783389786751",
+    "Outerproduct": "math",
+    "Outline": "mesh",
+    "Parallel Transport": "cat_1783389786751",
+    "Particle Attribute": "particle_info",
+    "Particle Children": "particle_system_core",
+    "Particle Collision": "particle_system_core",
+    "Particle Solver": "particle_system_core",
+    "Particle Trail": "particle_system_core",
+    "Path Deform": "mesh",
+    "PCA": "math",
+    "Phyllotaxis Disk": "generation",
+    "Phyllotaxis Profile Surface": "curve",
+    "Phyllotaxis Sphere": "generation",
+    "Plexus Connnection": "generation",
+    "Point Attraction Force": "particle_force",
+    "Poly Cut": "mesh",
+    "Principal Curvature": "mesh",
+    "Project to Tangent Plane": "math",
+    "QEM Mesh Simplification": "mesh",
+    "Quaternion to Matrix": "math",
+    "Random Points": "generation",
+    "RBF Interpolate": "math",
+    "Reaction Diffusion": "mesh",
+    "Recalculate Normals": "mesh",
+    "Split Points@@blender/assets/GN/geometry_nodes_category_layout.blend": "cat_1783389786751",
+    "Split Points": "cat_1783389786751",
+    "Find All Cells@@blender/assets/GN/geometry_nodes_category_layout.blend": "cat_1783389786751",
+    "Find All Cells": "cat_1783389786751",
+    "2D Medial Axis@@blender/assets/GN/geometry_nodes_category_layout.blend": "mesh",
+    "2D Medial Axis": "mesh",
+    "2D Straight Skeleton@@blender/assets/GN/geometry_nodes_category_layout.blend": "cat_1783389786751",
+    "2D Straight Skeleton": "cat_1783389786751",
+    "Recompute Transform": "rigging",
+    "Recursive Cube Packing": "generation",
+    "Recursive Subdivision": "generation",
+    "Remesh": "mesh",
+    "Render Particles": "particle_system_core",
+    "Ribbon Render": "curve",
+    "Rig Forward Kinematic": "rigging",
+    "Sample Bary-Coord": "math",
+    "Scatter": "generation",
+    "Self Pruning": "pcg",
+    "Sharpen Mesh": "mesh",
+    "Shrink Wrap Packaging": "mesh",
+    "Signed Distance Noise": "particle_force",
+    "Skeleton from Armature": "rigging",
+    "Skeleton from Edges": "rigging",
+    "Skeleton Sim": "rigging",
+    "Sketch": "generation",
+    "Skin Modifier": "mesh",
+    "Slerp": "math",
+    "Smooth Tesellation": "mesh",
+    "Solidify": "mesh",
+    "Space Colonization": "cat_1783389786751",
+    "Sparse Linear Solver": "math",
+    "Sphere From 4 Points": "math",
+    "Sphere Intersections": "math",
+    "Sphere Mask": "particle_mask",
+    "Spherical Parameterization": "mesh",
+    "Spherical Sprial": "generation",
+    "Spirograph": "generation",
+    "Spline Grammar": "pcg",
+    "Spring Force": "particle_force",
+    "Store Bary-Coord": "math",
+    "Stretch": "mesh",
+    "String Art": "generation",
+    "Surface Collision": "particle_system_core",
+    "Surface Deform": "mesh",
+    "Sweep": "curve",
+    "Taper": "mesh",
+    "Tessellation": "mesh",
+    "Toon Node": "cat_1783389786751",
+    "Triangle": "shader_tiling_textures",
+    "Twist": "mesh",
+    "Twist Curve": "curve",
+    "UV Tangent": "mesh",
+    "Vectors to Matrix": "math",
+    "Vertices of Face": "mesh",
+    "Visualize Bone Weight": "rigging",
+    "Visualize Epicycles": "cat_1783389786751",
+    "Visualize Rig": "rigging",
+    "Visualize UVMap": "cat_1783389786751",
+    "Volume Path": "mesh",
+    "Voronoi Fracture": "mesh",
+    "Voronoi Relaxation": "cat_1783389786751",
+    "Vortex Force": "particle_force",
+    "Weave Curve": "curve",
+    "Wire Deform": "mesh",
+    "Wireframe": "mesh",
+    "World Tangent": "mesh",
+    " 3x3 1-Norm": "shader",
+    " 3x3 Adjugate Matrix": "shader",
+    " 3x3 Axis Rotation Matrix": "shader",
+    " 3x3 Determinnant": "shader",
+    " 3x3 Diag to Matrix": "shader",
+    " 3x3 Diagonalize Symmetric": "shader",
+    " 3x3 Frobenius Norm": "shader",
+    " 3x3 Ident Matrix": "shader",
+    " 3x3 Infinity-Norm": "shader",
+    " 3x3 Invert Matrix": "shader",
+    " 3x3 Matrices Multiply": "shader",
+    " 3x3 Matrix Add": "shader",
+    " 3x3 Matrix Scale": "shader",
+    " 3x3 Matrix to Diag": "shader",
+    " 3x3 Matrix to Vectors": "shader",
+    " 3x3 Matrix Trace": "shader",
+    " 3x3 Max-Norm": "shader",
+    " 3x3 Multiply Matrices": "shader",
+    " 3x3 Outerproduct": "shader",
+    " 3x3 Polar Decomposition": "shader",
+    " 3x3 Pseudo-Inverse": "shader",
+    " 3x3 Singular Value Decomposition": "shader",
+    " 3x3 Spectral-Norm": "shader",
+    " 3x3 Transpose Matrix": "shader",
+    " 3x3 Vectors to Matrix": "shader",
+    " 4x4 Combine Transform": "shader",
+    " 4x4 Determinant": "shader",
+    " 4x4 Invert Matrix": "shader",
+    " 4x4 Transform": "shader",
+    " 4x4 Transpose Matrix": "shader",
+    "(2D)Recursive_Subdivision": "shader_tiling_textures",
+    "(3D)Recursive_Subdivision": "shader_tiling_textures",
+    "3D Simplex Noise": "shader_texture",
+    "3x3 Combine Linear Transform": "shader",
+    "3x3 Convolution": "shader_image",
+    "3x3 Linear Transform": "shader",
+    "3x3 to 4x4 Matrix": "shader",
+    "4D Simplex Noise": "shader_texture",
+    "4x4 Multiply Matrices": "shader",
+    "AO-Edge": "shader_texture",
+    "Arc_SDF": "shader_shape",
+    "Bark": "stylized_2d",
+    "Barnsley_Tree": "shader_fractal",
+    "Bezier(Low)_SDF": "shader_shape",
+    "Bezier_SDF": "shader_shape",
+    "Billboard": "mfs_functions",
+    "Blend Normal(Angle)": "mfs_functions",
+    "Blend Normal(Euler)": "mfs_functions",
+    "Blend Normal(RNM)": "mfs_functions",
+    "Blend Normal(UDN)": "mfs_functions",
+    "Blend Normal(White-Out)": "mfs_functions",
+    "Blobby_Cross_SDF": "shader_shape",
+    "Boolean(Custom)": "shader_utility",
+    "Box Blur": "shader_image",
+    "Box_SDF": "shader_shape",
+    "Bump to Normal": "mfs_functions",
+    "Butterfly_fractal": "shader_fractal",
+    "Camera Facing Vector": "mfs_functions",
+    "Camera Location": "mfs_functions",
+    "Candy_Tile": "shader_tiling_textures",
+    "Cartesian to Spherical": "mfs_coordinates",
+    "Casted Plane Transparent": "mfs_functions",
+    "Caustics": "shader_texture",
+    "cCosh": "mfs_cmath",
+    "cCosine": "mfs_cmath",
+    "cDivide": "mfs_cmath",
+    "Cel Shader": "stylized_2d",
+    "cExponent": "mfs_cmath",
+    "Checker_Pro+": "shader_tiling_textures",
+    "Circle": "shader_shape",
+    "Circle_And_Square_Tile": "shader_tiling_textures",
+    "Circle_Wave_SDF": "shader_shape",
+    "Circular Blur": "shader_image",
+    "Circular_Tiling": "shader_tiling_tools",
+    "cLn(x)": "mfs_cmath",
+    "cLog(x)": "mfs_cmath",
+    "cMultiply": "mfs_cmath",
+    "Color_Variation": "shader_texture",
+    "Cool_S_SDF": "shader_shape",
+    "Coordinate Detect": "mfs_coordinates",
+    "cPower": "mfs_cmath",
+    "Create Third Orthographic Vector": "mfs_functions",
+    "Cross Hatch": "stylized_2d",
+    "Cross_SDF": "shader_shape",
+    "Crystal": "stylized_2d",
+    "cSine": "mfs_cmath",
+    "cSinh": "mfs_cmath",
+    "cSquare Root": "mfs_cmath",
+    "cTangent": "mfs_cmath",
+    "Cube_Pattern_Tile": "shader_tiling_textures",
+    "Cubic_Julia": "shader_fractal",
+    "Curve Info": "particle_info",
+    "Curved_Polygon": "shader_shape",
+    "Cut_Disk_SDF": "shader_shape",
+    "Derive Normal Z": "mfs_functions",
+    "Diamond_Corner_Tile": "shader_tiling_textures",
+    "Diamond_Tile": "shader_tiling_textures",
+    "Droste_Zoom": "shader_image",
+    "Egg_SDF": "shader_shape",
+    "Ellipse_SDF": "shader_shape",
+    "Equilateral_Triangle_SDF": "shader_shape",
+    "Fiber_Tile": "shader_tiling_textures",
+    "FlagStone_Tile": "shader_tiling_textures",
+    "Flipbook": "comp_utilities",
+    "Floor_Brick_Tile": "shader_tiling_textures",
+    "Floor_Brick_Tile_V2": "shader_tiling_textures",
+    "Fonts_SDF": "shader_shape",
+    "Frame Blend Flipbook": "effect_flipbook",
+    "Gaussain Blur": "shader_image",
+    "Glass": "stylized_2d",
+    "Hair": "stylized_2d",
+    "Hair Anisotropy": "stylized_2d",
+    "Half Tone": "stylized_2d",
+    "Heart_SDF": "shader_shape",
+    "Heart_Shape": "shader",
+    "Heart_Wave": "shader",
+    "Herringbone_Pattern": "shader_tiling_textures",
+    "Hexagon_Tile": "shader_tiling_tools",
+    "Hexagram_SDF": "shader_shape",
+    "HorseShoe_SDF": "shader_shape",
+    "iabs_Fractal": "shader_fractal",
+    "iabs_Fractal_V2": "shader_fractal",
+    "Image_Rotation": "shader_image",
+    "Index_Switch": "shader_utility",
+    "Integer(Custom)": "shader_utility",
+    "Interior Mapping": "mfs_parallax",
+    "Inverse Transform Matrix": "mfs_functions",
+    "is Casted to Plane": "mfs_functions",
+    "Isosceles_Trapezoid_SDF": "shader_shape",
+    "Isosceles_Triangle_SDF": "shader_shape",
+    "Julia_Set": "shader_fractal",
+    "Julia_Sine": "shader_fractal",
+    "Lambda_Fractal": "shader_fractal",
+    "LED_Screen": "shader_image",
+    "Lemon_Piece": "shader_shape",
+    "Line Style": "stylized_2d",
+    "Macro_Variation": "shader_texture",
+    "Mandelbort_V2": "shader_fractal",
+    "Mandelbrot": "shader_fractal",
+    "Marek_Dragon": "shader_fractal",
+    "Matcap v1": "mfs_coordinates",
+    "Matcap v2": "mfs_coordinates",
+    "Metal": "stylized_2d",
+    "Metal_Floor_Tile1": "shader_tiling_textures",
+    "Metal_Floor_Tile2": "shader_tiling_textures",
+    "Moon_SDF": "shader_shape",
+    "Motion Vector Flipbook": "effect_flipbook",
+    "N_Polygon_SDF": "shader_shape",
+    "Newton_Fractal": "shader_fractal",
+    "Object Transform": "mfs_functions",
+    "Ornament_Tile": "shader_tiling_textures",
+    "Ornament_Tile2": "shader_tiling_textures",
+    "Ornament_Tile3": "shader_tiling_textures",
+    "Ornament_Tile4": "shader_tiling_textures",
+    "Ornament_Tile5": "shader_tiling_textures",
+    "Ornament_Tile6": "shader_tiling_textures",
+    "Ornament_Tile7": "shader_tiling_textures",
+    "Painting": "stylized_2d",
+    "Paisley_Tile": "shader_tiling_textures",
+    "Palette1": "shader_utility",
+    "Palette10": "shader_utility",
+    "Palette11": "shader_utility",
+    "Palette12": "shader_utility",
+    "Palette13": "shader_utility",
+    "Palette14": "shader_utility",
+    "Palette15": "shader_utility",
+    "Palette16": "shader_utility",
+    "Palette17": "shader_utility",
+    "Palette18": "shader_utility",
+    "Palette19": "shader_utility",
+    "Palette2": "shader_utility",
+    "Palette3": "shader_utility",
+    "Palette4": "shader_utility",
+    "Palette5": "shader_utility",
+    "Palette6": "shader_utility",
+    "Palette7": "shader_utility",
+    "Palette8": "shader_utility",
+    "Palette9": "shader_utility",
+    "Parabola_SDF": "shader_shape",
+    "Parabola_Segment_SDF": "shader_shape",
+    "Parallax Mapping": "mfs_parallax",
+    "Parallax Occlusion Mapping": "mfs_parallax",
+    "Parallelogram_SDF": "shader_shape",
+    "Particle Info": "particle_info",
+    "Pattern_Tile1": "shader_tiling_textures",
+    "Paving_Block_Tiles": "shader_tiling_textures",
+    "Phoenix_Julia": "shader_fractal",
+    "Pie_SDF": "shader_shape",
+    "Polygon_SDF": "shader_shape",
+    "Quadratic Equation": "mfs_functions",
+    "Quadratic_Circle_SDF": "shader_shape",
+    "Radial Blur": "shader_image",
+    "Radial-Noise": "shader_texture",
+    "Radial-Segments": "shader_texture",
+    "Radial-Voronoi": "shader_texture",
+    "Random_Tile_Pattern": "shader_tiling_textures",
+    "Raymarching": "stylized_2d",
+    "Regular_Hexagon_SDF": "shader_shape",
+    "Regular_Octogon_SDF": "shader_shape",
+    "Regular_Pentagon_SDF": "shader_shape",
+    "Regular_Star_SDF": "shader_shape",
+    "Relief Parallax Mapping": "mfs_parallax",
+    "Render_Mask": "shader_utility",
+    "Rhombus": "shader_shape",
+    "Rhombus_SDF": "shader_shape",
+    "Ring": "shader_shape",
+    "Ring_SDF": "shader_shape",
+    "Ring_Tiling": "shader_tiling_textures",
+    "Roof_Tile": "shader_tiling_textures",
+    "Rose_Curve": "shader",
+    "Rounded_Box_SDF": "shader_shape",
+    "Rounded_Cross_SDF": "shader_shape",
+    "Rounded_X_SDF": "shader_shape",
+    "Scale_Tile": "shader_tiling_textures",
+    "Scale_Tile_V2": "shader_tiling_textures",
+    "Scatter Coordinate": "mfs_coordinates",
+    "Scatter_Image": "shader_image",
+    "Scene_Time(Custom)": "shader_utility",
+    "Scratch": "shader_texture",
+    "SDF_Viewer": "shader_shape",
+    "Seamless_Image": "shader_image",
+    "Segment_SDF": "shader_shape",
+    "Shading Models": "stylized_2d",
+    "Silk": "stylized_2d",
+    "Simple_Tile": "shader_tiling_tools",
+    "Sinh_Fractal": "shader_fractal",
+    "Six_Hex_Tile": "shader_tiling_textures",
+    "Skin": "stylized_2d",
+    "Smile": "shader_shape",
+    "Spherical to Cartesian": "mfs_coordinates",
+    "Spiral_Septagon_Fractal": "shader_fractal",
+    "Square": "shader_shape",
+    "Square_Tile": "shader_tiling_textures",
+    "Square_Triangle_Tile": "shader_tiling_textures",
+    "Stair_SDF": "shader_shape",
+    "Star_SDF": "shader_shape",
+    "Steep Parallax Mapping": "mfs_parallax",
+    "Swirl Coordinate": "mfs_coordinates",
+    "Switch_Multi_Images": "shader_utility",
+    "Switch_Multi_UVs": "shader_utility",
+    "Tangent to World": "mfs_functions",
+    "Tangled_Square_Tile": "shader_tiling_textures",
+    "Tile1": "shader_tiling_textures",
+    "Tile2": "shader_tiling_textures",
+    "Tile_Generator(3x3)": "shader_tiling_tools",
+    "Tile_Generator(5x5)": "shader_tiling_tools",
+    "Tileable_Water_Caustic": "shader_texture",
+    "Time_Falloff": "shader_utility",
+    "Toon Ocean": "comp_palette",
+    "Toon Shader": "stylized_2d",
+    "Triangle_SDF": "shader_shape",
+    "Triplaner": "mfs_coordinates",
+    "Triplaner Pro": "mfs_coordinates",
+    "Truchet_Tile": "shader_tiling_textures",
+    "Tunnel_SDF": "shader_shape",
+    "Uneven_Capsule_SDF": "shader_shape",
+    "Vesica_SDF": "shader_shape",
+    "Virtual Cube": "mfs_functions",
+    "Virtual Cylinder": "mfs_functions",
+    "Virtual Plane": "mfs_functions",
+    "Virtual Sphere": "mfs_functions",
+    "Voronoi Star": "stylized_2d",
+    "Water": "stylized_2d",
+    "Water_Stain": "shader_texture",
+    "Weave": "shader_tiling_textures",
+    "Wicker": "shader_tiling_textures",
+    "Wood": "stylized_2d",
+    "World to Tangent": "mfs_functions",
+    "Yin&Yang": "shader_shape",
+    "ASCII": "comp_effect",
+    "Autumn": "comp_palette",
+    "Blues": "comp_palette",
+    "Broken Glass": "comp_effect",
+    "Cividis": "comp_palette",
+    "Comic": "comp_effect",
+    "Cool": "comp_palette",
+    "Coolwarm": "comp_palette",
+    "Cross Hatching": "comp_effect",
+    "CRT": "comp_effect",
+    "Debug Float": "comp_utilities",
+    "Dither Dot": "comp_effect",
+    "Fire Outline": "comp_effect",
+    "Frozen Glass": "comp_effect",
+    "Glitch": "comp_effect",
+    "GnBu": "comp_palette",
+    "HackWave": "comp_effect",
+    "Hot": "comp_palette",
+    "Inferno": "comp_palette",
+    "Jet": "comp_palette",
+    "Magma": "comp_palette",
+    "Noise": "comp_effect",
+    "Ocean": "comp_palette",
+    "Outline Edge": "comp_effect",
+    "Pixel Sorting": "comp_effect",
+    "PiYG": "comp_palette",
+    "Plasma": "comp_palette",
+    "Puddle": "comp_effect",
+    "Purple Sunset": "comp_palette",
+    "Rainbow": "comp_palette",
+    "Rainy Window": "comp_effect",
+    "RdYlBu": "comp_palette",
+    "RGB To CMYK": "comp_utilities",
+    "Ripple": "comp_effect",
+    "Scene Transition": "comp_effect",
+    "Screen UV": "comp",
+    "Shifting Color": "comp_effect",
+    "Spectral": "comp_palette",
+    "Stylized Dither": "comp_effect",
+    "Sunset": "comp_palette",
+    "Texture Sample": "comp_utilities",
+    "Twilight": "comp_palette",
+    "Twilight_shifted": "comp_palette",
+    "Underwater": "comp_effect",
+    "Vignette": "comp_utilities",
+    "Viridis": "comp_palette",
+    "Voronoi": "comp",
+    "Warning Glitch": "comp_effect",
+    "White Noise": "comp",
+    "YlGnBu": "comp_palette",
+    "Edges to Road": "mesh"
+  },
+  "nodeData": {
+    "2D Curve Point Angle": {
+      "zh": "2D曲线点信息",
+      "d": "用于得到2D曲线点的角平分线和角度",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Screenshot 2026-07-09 230252.png",
+      "paramDescs": {
+        "o": {
+          "0": "正确长度的角平分线向量",
+          "1": "归一化的角平分线向量",
+          "2": "点的角度"
+        }
+      }
+    },
+    "3D Recursive Subdivision": {
+      "zh": "三维递归细分立方体",
+      "d": "将一个四边面沿中间随机切割成两个四边面",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.16.48.65.png",
+      "paramDescs": {
+        "i": {
+          "1": "切割次数",
+          "3": "控制时间动画的数值",
+          "4": "切割时在两条对立边的切割位置是否相同，为1是规则形状，为0则产生斜切",
+          "5": "切割位置的边系数的最小值，远离边的左端点",
+          "6": "切割位置的边系数的最大值，远离边的右端点"
+        }
+      }
+    },
+    "Bevel 2D Curve": {
+      "zh": "2D曲线倒角实体化",
+      "d": "将2D封闭曲线实体化并倒角，支持孔洞",
+      "notes": "倒角距离并无钳制距离功能，当倒角过大时，点可能会穿插导致出错",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 10.10.01.93.png",
+      "paramDescs": {
+        "i": {
+          "1": "控制将曲线向外偏移的距离",
+          "2": "控制实体化挤出的高度",
+          "3": "控制pivot的位置顶部/中心/底部",
+          "4": "控制倒角分辨率",
+          "5": "控制倒角半径",
+          "6": "控制倒角轮廓形状，外圆弧/内圆弧",
+          "7": "启用顶部倒角",
+          "8": "启用底部倒角"
+        }
+      }
+    },
+    "Coons Patch": {
+      "zh": "库恩斯曲面",
+      "d": "库恩斯面片，将3D空间中的封闭曲线按照栅格拓扑填充，产生平滑连续的曲面（类似网格编辑模式下的Grid Fill）",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 13.36.44.82.png",
+      "paramDescs": {
+        "i": {
+          "1": "控制拓扑线的偏移"
+        }
+      }
+    },
+    "Curve Intersections": {
+      "zh": "曲线交点",
+      "d": "用于获取曲线交点并返回交点信息",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 21.45.19.20.png"
+    },
+    "Custom Voronoi Texture": {
+      "zh": "点Voronoi纹理",
+      "d": "",
+      "notes": "可以计算加权距离，如果想要半径大的占的空间更大，就用1/半径作为点半径输入",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 21.59.00.40.png"
+    },
+    "Detriangulate": {
+      "zh": "反三角化",
+      "d": "对三角化后的网格进行反三角化操作",
+      "notes": "输出几何体仍然会有少量三角形，可以用细分网格来将这些三角形转化为四边形",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 23.45.54.84.png"
+    },
+    "Dihedral": {
+      "zh": "最小旋转",
+      "d": "用于计算从A方向旋转到B方向的最小旋转",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "Dragon Fractal": {
+      "zh": "龙分形",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 23.54.10.18.png"
+    },
+    "Edge Ring ID": {
+      "zh": "并排边ID",
+      "d": "用于计算并排边ID，每组并排边都会得到不同的ID",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 19.05.05.16.png"
+    },
+    "Edge Loop ID": {
+      "zh": "循环边ID",
+      "d": "用于计算网格循环边ID，每组循环边都会得到不同的ID",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 19.03.10.38.png"
+    },
+    "Edge Split": {
+      "zh": "边分裂",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Elastic Sphere": {
+      "zh": "弹性球形变",
+      "d": "对网格计算类似球体受挤压的形变效果",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 19.14.48.32.png"
+    },
+    "Iterative Closet Point": {
+      "zh": "ICP点云匹配",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "L System": {
+      "zh": "L系统-树",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Line Art": {
+      "zh": "线条画",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Marching Square": {
+      "zh": "行进四边形",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Plexus Connnection": {
+      "zh": "连接r近点",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Recalculate Normals": {
+      "zh": "重算法线",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Split Points": {
+      "zh": "拆分点",
+      "d": "Split Points 节点用于将选中的点从原有拓扑中分离，使其不再与相邻几何共享同一顶点。该操作会在选中的位置创建独立的点，从而断开连接关系，但保留几何的整体形状。常用于生成裂缝、硬边、分离网格片段或为后续变形、UV、法线处理做准备。",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.15 - 17.44.24.46.png",
+      "paramDescs": {
+        "i": {
+          "0": "输入需要进行点分离操作的几何数据，包括网格及其属性。",
+          "1": "指定需要分离的点。为 True 的点会与相邻拓扑断开并复制为独立顶点，False 的点保持原状。"
+        },
+        "o": {
+          "0": "输出完成点分离后的几何数据，包含更新后的拓扑结构及保留的几何属性。"
+        }
+      },
+      "enName": "Split Points",
+      "createdVersion": "v1.0.1",
+      "lastModifiedVersion": "v1.0.1"
+    },
+    "Find All Cells": {
+      "zh": "寻找封闭单元",
+      "d": "Find All Cells 节点用于从输入的边网络中检测并枚举所有满足条件的封闭单元（Cell），将每个封闭区域转换为一条封闭曲线",
+      "notes": "峰峰居士友情赞助~\n\n输入边应尽可能形成无歧义的闭合拓扑，否则可能无法生成完整单元或产生重复结果。需要指定每个点的Normal，否则部分单元可能因方向判断而被忽略。N-gons 用于限制允许生成的多边形边数，只会生成多边形边数小于N-gons的Cell。该节点通常用于平面边网络，不适用于复杂三维自交结构。",
+      "example": "将二维 Voronoi 边线连接到 Edges 输入，设置 Normal 为 (0,0,1)，即可自动重建所有 Voronoi 面。支持3D，但需要合理设置点Normal，并保证输入边的闭合拓扑合理",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.16 - 16.59.14.29.png",
+      "createdVersion": "v1.0.1",
+      "lastModifiedVersion": "v1.0.1",
+      "enName": "Find All Cells",
+      "paramDescs": {
+        "i": {
+          "0": "输入用于构建单元的边几何数据。节点会分析这些边之间的连接关系，并寻找能够组成封闭区域的所有边界。",
+          "1": "指定搜索所依据的参考法线方向，用于确定平面方向及面朝向，帮助正确识别封闭区域。",
+          "2": "指定允许生成的多边形边数或相关限制条件，用于过滤符合要求的封闭单元。"
+        },
+        "o": {
+          "0": "输出检测得到的所有封闭单元几何，每个 Cell 表示输入边网络中的一个有效封闭区域，可继续用于网格生成或后续几何节点处理。"
+        }
+      }
+    },
+    "2D Medial Axis": {
+      "zh": "二维中轴线",
+      "d": "2D Medial Axis 节点用于从二维网格区域计算其几何中轴线（Medial Axis），生成表示对象骨架的曲线。生成的中轴线能够反映形状的整体拓扑结构",
+      "notes": "输入网格应为二维平面网格。提高 Precision 可以获得更精确的中轴线，但会增加计算时间。Smooth Iterations 可减少锯齿和噪声，而 Collinear Threshold 会影响近乎共线点的合并与简化效果。",
+      "example": "将一个二维文字或平面轮廓网格连接到 Mesh 输入，适当提高 Precision 并进行数次平滑，即可生成可用于道路网络、植物枝干或程序化骨架动画的中心曲线。",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.16 - 17.05.43.19.png",
+      "createdVersion": "v1.0.1",
+      "lastModifiedVersion": "v1.0.1",
+      "enName": "2D Medial Axis"
+    },
+    "2D Straight Skeleton": {
+      "zh": "二维直骨架",
+      "d": "2D Straight Skeleton 节点用于从二维网格或平面多边形计算其直骨架（Straight Skeleton），并输出对应的曲线结构。直骨架由边界沿法向匀速向内偏移时形成，与中轴线不同，它完全由线段组成并保留原始边界的拓扑特征。该节点适用于屋顶生成、轮廓内缩、道路网络及程序化建筑建模等应用。",
+      "notes": "输入几何应为封闭且位于同一平面上的网格或多边形，开放边界或非流形拓扑可能导致计算失败。Precision 会影响骨架计算精度和稳定性，较高的值通常会增加计算时间。Smooth Iterations 可对输出曲线进行平滑处理，而 Collinear Threshold 用于合并近乎共线的顶点，减少冗余折线。",
+      "example": "将建筑平面轮廓连接到 Mesh 输入，设置适当的 Precision 后计算直骨架，再利用输出 Curve 作为屋脊线生成程序化屋顶或进行轮廓内缩建模。",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.16 - 17.10.22.20.png",
+      "createdVersion": "v1.0.1",
+      "lastModifiedVersion": "v1.0.1",
+      "enName": "2D Straight Skeleton"
+    },
+    "Self Pruning": {
+      "zh": "实例自碰撞剔除",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Spline Grammar": {
+      "zh": "样条线语法",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Visualize Epicycles": {
+      "zh": "可视化傅里叶变换作图",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "Voronoi Fracture": {
+      "zh": "Voronoi破碎",
+      "d": "",
+      "notes": "",
+      "example": ""
+    },
+    "10-Tetrahetra": {
+      "zh": "十复合正四面体",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Screenshot 2026-07-09 230545.png"
+    },
+    "2D Remesh": {
+      "zh": "2D重网格",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.11.45.20.png",
+      "paramDescs": {
+        "i": {
+          "2": "平滑点分布的迭代次数"
+        }
+      }
+    },
+    "5-Tetrahetra": {
+      "zh": "五复合正四面体",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.18.00.89.png"
+    },
+    "Attribute Delete": {
+      "zh": "删除属性",
+      "d": "用于删除几何属性，可以使用*通配符，用filter选项来过滤特定数据类型和域",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.21.14.59.png",
+      "paramDescs": {
+        "i": {
+          "2": "默认删除选中的属性，启用后将仅保留选中的属性"
+        }
+      }
+    },
+    "Auto UV Seam": {
+      "zh": "自动UV接缝",
+      "d": "WIP-自动生成UV接缝",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.24.19.14.png",
+      "paramDescs": {
+        "i": {
+          "1": "强制包含的UV接缝边",
+          "2": "每个孤岛将产生多少条循环边作为UV接缝"
+        },
+        "o": {
+          "1": "被选中的UV接缝边"
+        }
+      }
+    },
+    "Backface Culling": {
+      "zh": "背面剔除",
+      "d": "删除摄像机背面的网格面",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.09 - 23.26.52.16.png",
+      "paramDescs": {
+        "i": {
+          "0": "选择正交还是透视模式",
+          "2": "向外拓展选中的面"
+        },
+        "o": {
+          "0": "朝向摄像机的面",
+          "1": "背对摄像机的面"
+        }
+      }
+    },
+    "3 Planes Intersection Point": {
+      "zh": "三面求交",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "i": {
+          "0": "平面1的法向",
+          "1": "平面2的法向",
+          "2": "平面3的法向",
+          "3": "平面1上的一个点位置",
+          "4": "平面2上的一个点位置",
+          "5": "平面3上的一个点位置"
+        },
+        "o": {
+          "0": "三平面交点位置"
+        }
+      }
+    },
+    "3D Incircle": {
+      "zh": "三维内切圆",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "i": {
+          "0": "位置1",
+          "1": "位置2",
+          "2": "位置3"
+        },
+        "o": {
+          "0": "内切圆中心",
+          "1": "内切圆半径",
+          "2": "内切圆的法向方向"
+        }
+      }
+    },
+    "3x3 1-Norm": {
+      "zh": "3x3 1-范数",
+      "d": "3x3矩阵的1-norm",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Adjugate Matrix": {
+      "zh": "3x3伴随矩阵",
+      "d": "3x3矩阵的伴随矩阵",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Diag": {
+      "zh": "3x3对角",
+      "d": "提取3x3矩阵的对角向量或根据对角向量创建3x3矩阵",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Diagonalize Symmetric": {
+      "zh": "3x3对称对角化",
+      "d": "用于计算3x3对称矩阵的特征向量和特征值",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "o": {
+          "0": "矩阵的特征向量，每一列对应一个特征向量，按特征值大小排序",
+          "1": "矩阵的特征值，xyz分别对应一个特征值，按大小排序"
+        }
+      }
+    },
+    "3x3 Frobenius Norm": {
+      "zh": "3x3 F-范数",
+      "d": "用于计算3x3矩阵的Frobenius Norm",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Infinity-Norm": {
+      "zh": "3x3无穷范数",
+      "d": "用于计算3x3矩阵的 Infinity-Norm",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Matrix Trace": {
+      "zh": "3x3矩阵迹",
+      "d": "用于计算3x3矩阵的trace",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Max-Norm": {
+      "zh": "3x3最大范数",
+      "d": "用于计算3x3矩阵的max-norm",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Polar Decomposition": {
+      "zh": "3x3极分解",
+      "d": "用于计算3x3矩阵的 Polar Decomposition",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "o": {
+          "0": "分离出的纯旋转矩阵",
+          "1": "剩余的缩放与拉伸矩阵"
+        }
+      }
+    },
+    "3x3 Pseudo-Inverse": {
+      "zh": "3x3伪逆",
+      "d": "用于计算3x3矩阵的 Pseudo-Inverse",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "3x3 Spectral-Norm": {
+      "zh": "3x3谱范数",
+      "d": "用于计算3x3矩阵的 Spectral-Norm",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "Barycentric Coodinate": {
+      "zh": "重心坐标",
+      "d": "用于计算点在三角形中的重心坐标",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "i": {
+          "0": "三角形 / 三棱锥",
+          "1": "点1",
+          "2": "点2",
+          "3": "点3",
+          "4": "点4",
+          "5": "输入位置P"
+        },
+        "o": {
+          "0": "点在三角形中的重心坐标",
+          "1": "点在三棱锥的第4个权重"
+        }
+      }
+    },
+    "Bend": {
+      "zh": "弯曲",
+      "d": "实现网格弯曲效果，视图中的黄色圆环Gizmo用于控制弯曲角度，位移Gizmo用于调整弯曲中心",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.10 - 22.50.07.67.png",
+      "paramDescs": {
+        "i": {
+          "5": "沿弯曲轴向的局部Z轴0-1系数的最小值，小于此值的弯曲角度将被钳制为相同值",
+          "6": "沿弯曲轴向的局部Z轴0-1系数的最大值，大于此值的弯曲角度将被钳制为相同值"
+        }
+      }
+    },
+    "Boolean Curve": {
+      "zh": "布尔曲线",
+      "d": "用于对曲线进行布尔",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 10.21.49.97.png",
+      "paramDescs": {
+        "i": {
+          "2": "用于布尔的几何数据",
+          "3": "对曲线重采样以得到更准确的结果"
+        }
+      }
+    },
+    "Camera Culling": {
+      "zh": "相机剔除",
+      "d": "根据活动摄像机来剔除视图外的点",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 10.26.35.72.png",
+      "paramDescs": {
+        "o": {
+          "0": "在视图中的点",
+          "1": "归一化设备坐标",
+          "2": "可视化视锥体几何"
+        }
+      }
+    },
+    "Capsule": {
+      "zh": "胶囊体",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 11.40.36.100.png"
+    },
+    "Cardioid": {
+      "zh": "心脏线",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 11.40.36.100.png"
+    },
+    "Catenary": {
+      "zh": "悬链线",
+      "d": "用于制作悬链线，自然情况下电缆下垂的曲线形状",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 11.43.19.77.png",
+      "paramDescs": {
+        "i": {
+          "1": "用于控制电缆的总长度"
+        }
+      }
+    },
+    "Circle Packing": {
+      "zh": "圆形填充",
+      "d": "用于实现圆形打包效果",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 11.43.19.77.png",
+      "paramDescs": {
+        "i": {
+          "1": "控制输出的点数",
+          "2": "采样点输入，将作为Circle Packing的预选点位置",
+          "4": "边界曲线，确保圆形不越过该边界线",
+          "5": "半径的最小值",
+          "6": "半径的最大值"
+        },
+        "o": {
+          "0": "最终输出的Circle Packing结果",
+          "1": "尚未被剔除的采样点"
+        }
+      }
+    },
+    "Circular Packing": {
+      "zh": "环形填充",
+      "d": "对输入的网格或实例进行环形填充，在每一个立方体内填充一个实例，实例之间不会穿插",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 12.01.02.63.png",
+      "paramDescs": {
+        "i": {
+          "4": "设置环形最外围的半径",
+          "5": "设置环形最外围的高度"
+        },
+        "o": {
+          "1": "输出用于环形打包的立方体形状"
+        }
+      }
+    },
+    "Circular Parameterization": {
+      "zh": "圆形参数化",
+      "d": "对面片形状网格进行圆形参数化操作",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 12.08.18.52.png"
+    },
+    "CircumSphere": {
+      "zh": "外接球",
+      "d": "用于计算四个不共面的点的外接球",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "Closest Point Pair": {
+      "zh": "最近点对",
+      "d": "用于计算边与 边/平面/球体 的最近点对的位置，并返回是否相交",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "i": {
+          "1": "边1的左端点",
+          "2": "边1的右端点",
+          "3": "边2的左端点",
+          "4": "边2的右端点",
+          "5": "平面上一点Q位置",
+          "6": "平面法向",
+          "7": "球体中心",
+          "8": "球体半径"
+        },
+        "o": {
+          "0": "是否相交",
+          "1": "返回相交位置，若未相交，则返回边1上距离另一对象最近的点位置",
+          "2": "返回相交位置，若未相交，则返回零另一元素上距离边1最近的点位置"
+        }
+      }
+    },
+    "Cluster Points": {
+      "zh": "点群簇",
+      "d": "基于K-Means算法实现的点群簇分组",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 12.21.52.13.png",
+      "paramDescs": {
+        "i": {
+          "2": "控制有多少个分组"
+        }
+      }
+    },
+    "Collision Detection": {
+      "zh": "碰撞检测",
+      "d": "基于AABB，SAT，GJK，EPA，MPR或者Raycast，SDF来检测凸壳之间是否发生碰撞并计算穿插信息",
+      "notes": "只有EPA与MPR支持获取穿插信息，其余方法只适用于检测是否发生碰撞",
+      "example": "可以同时计算多个Source凸壳与一个Target凸壳的碰撞",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 13.26.52.63.png"
+    },
+    "Consistent Curve Orientation": {
+      "zh": "统一曲线方向",
+      "d": "用于统一曲线朝向",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 13.34.08.42.png"
+    },
+    "Coordinate System": {
+      "zh": "坐标系",
+      "d": "创建一个坐标系平面用于可视化渲染",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 13.39.25.48.png"
+    },
+    "Cotangent Laplacian": {
+      "zh": "余切拉普拉斯",
+      "d": "用于对网格属性进行余切拉普拉斯平滑。",
+      "notes": "对于不规则的三角形网格来说，余切拉普拉斯的平滑结果会更加平滑",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 16.29.37.16.png",
+      "paramDescs": {
+        "i": {
+          "2": "将被平滑的场输入",
+          "3": "将被平滑的场输入"
+        }
+      }
+    },
+    "Cross to Matrix": {
+      "zh": "叉积转矩阵",
+      "d": "将叉乘运算转化成矩阵形式",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "i": {
+          "0": "AxB中的A向量"
+        }
+      }
+    },
+    "Cube Deform": {
+      "zh": "立方体变形",
+      "d": "根据立方体来对网格进行形变操作，类似晶格修改器",
+      "notes": "物体模式下创建的立方体物体和几何节点的立方体节点的点编号不一致，需要用不同的模式",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 18.05.54.21.png"
+    },
+    "Curve Constrained Sphere Packing": {
+      "zh": "曲线约束球填充",
+      "d": "根据曲线半径计算球打包",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 18.38.42.87.png"
+    },
+    "Curve Instance Packing": {
+      "zh": "曲线实例填充",
+      "d": "沿曲线分布实例，实例之间按边界框分布避免穿插",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 21.39.38.74.png",
+      "paramDescs": {
+        "i": {
+          "5": "默认边界框的中心将对齐曲线，启用后将边界框的顶部对齐曲线",
+          "6": "检查用于实例Packing的边界框分布"
+        }
+      }
+    },
+    "Curve Loop Edge": {
+      "zh": "曲线循环边",
+      "d": "用于获取曲线转网格后的两类循环边",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 21.47.01.89.png"
+    },
+    "Curve Rolling": {
+      "zh": "曲线卷曲",
+      "d": "用于将曲线卷曲成螺旋状，数学准确的螺旋",
+      "notes": "先将原始曲线修剪后，再重新生成一条螺旋曲线拼接回去",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 21.49.19.21.png",
+      "paramDescs": {
+        "i": {
+          "1": "用于控制曲线卷曲动画的数值",
+          "2": "用于控制螺旋线的分辨率",
+          "3": "用于控制螺旋线的起始半径的数值",
+          "4": "两圈螺旋线之间的距离，后续转网格时可将半径设置为该值的一半"
+        }
+      }
+    },
+    "Dash Line": {
+      "zh": "虚线",
+      "d": "将曲线转化成虚线形式",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 22.02.04.21.png",
+      "paramDescs": {
+        "i": {
+          "1": "控制每段虚线的分辨率",
+          "2": "设置每根曲线转化为虚线的数量",
+          "3": "虚线头部的修剪值",
+          "4": "虚线末尾的修剪值"
+        },
+        "o": {
+          "1": "对应每段虚线的复制编号",
+          "2": "对应原始曲线编号"
+        }
+      }
+    },
+    "Debug": {
+      "zh": "调试显示",
+      "d": "用于在视图显示浮点数，向量方向，矩阵xyz轴向，4x4矩阵数值",
+      "notes": "浮点数和4x4矩阵数值由着色器制作，实体模式下无法看见",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 22.52.07.80.png",
+      "paramDescs": {
+        "i": {
+          "7": "用向量长度缩放可视化箭头",
+          "8": "当预览面拐属性时，沿角平分线向内偏移的距离",
+          "9": "设置箭头身体的半径",
+          "10": "设置箭头身体的高度",
+          "11": "设置箭头顶部的半径",
+          "12": "设置箭头顶部的高度",
+          "13": "设置箭头整体的大小",
+          "14": "显示数值时的小数点前精度",
+          "15": "显示数值时小数点后精度",
+          "16": "用于显示数值的栅格大小"
+        }
+      }
+    },
+    "Delete By Age": {
+      "zh": "按生命周期删除",
+      "d": "用于粒子模拟，按生命周期删除粒子的预设节点组",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 23.37.07.41.png"
+    },
+    "Dense Linear Solver": {
+      "zh": "稠密线性求解器",
+      "d": "用于求解大型线性系统Ax=b",
+      "notes": "",
+      "example": "",
+      "exampleImg": "",
+      "paramDescs": {
+        "i": {
+          "0": "CG的迭代次数",
+          "1": "完整稠密矩阵A",
+          "2": "每个点的数值b组成的List"
+        },
+        "o": {
+          "0": "每个点求解得到的x数值"
+        }
+      }
+    },
+    "Discrete Panelization": {
+      "zh": "离散面板化",
+      "d": "将网格优化成平面面板分块",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 23.49.07.63.png"
+    },
+    "Edge Bundling": {
+      "zh": "边聚集",
+      "d": "",
+      "notes": "调整搜索半径以确保点能搜索到周围的曲线",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.11 - 23.57.39.23.png"
+    },
+    "Edge Collapse": {
+      "zh": "边坍缩",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 00.00.19.78.png"
+    },
+    "Edges of Face": {
+      "zh": "面的边",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "Even Curve Segments": {
+      "zh": "均分曲线",
+      "d": "用于将曲线分辨率低的部分细分，而不会丢失锐利的拐角细节",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 19.17.25.85.png"
+    },
+    "Extract Isoline": {
+      "zh": "提取等值线",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 20.42.50.88.png"
+    },
+    "Extract Transform": {
+      "zh": "提取变换",
+      "d": "用于计算同一点云经过位置变换后，从当前位置到目标位置的刚性变换矩阵",
+      "notes": "同一群组ID下的点得到的刚性变换矩阵是相同的；点的编号要对应正确",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 20.47.35.87.png"
+    },
+    "Face Extrusion": {
+      "zh": "面挤出",
+      "d": "能够处理正确挤出距离的面挤出",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.01.39.86.png"
+    },
+    "Face Stripes Group": {
+      "zh": "面带组",
+      "d": "根据引导方向对网格面进行分组",
+      "notes": "对于栅格拓扑这类编号，可以用Sort Order作为引导方向；大部分情况下，可以启用Custom自定义引导方向",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.13.48.99.png"
+    },
+    "Fill 3D Curve": {
+      "zh": "填充3D曲线",
+      "d": "填充曲线节点会投影到XY平面后填充，该节点用于填充3D空间中的封闭曲线",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.22.14.67.png"
+    },
+    "Fourier Transform": {
+      "zh": "傅里叶变换",
+      "d": "对List进行一维的傅里叶变换",
+      "notes": "只适用于2的n次方长度的List，非该长度的需要用混合基计算比较麻烦",
+      "example": "",
+      "exampleImg": ""
+    },
+    "Fourier Transform Drawing": {
+      "zh": "傅里叶变换绘图",
+      "d": "",
+      "notes": "该节点使用老的DFT算法，计算效率较低。可以用Fourier Transform和Visualize Epicycles的组合来替代该节点",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.26.48.43.png"
+    },
+    "Gradient": {
+      "zh": "梯度",
+      "d": "用于在网格表面计算浮点场的梯度",
+      "notes": "",
+      "example": "",
+      "exampleImg": ""
+    },
+    "Graph Color": {
+      "zh": "图着色",
+      "d": "每个点的颜色与其直接相邻的点的颜色都不同",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.31.12.33.png"
+    },
+    "Graph MIS": {
+      "zh": "图最大独立集",
+      "d": "如果一个点被选中，那么它的邻居点就不会出现在该独立集中",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.33.36.06.png"
+    },
+    "Hair Mesh to Curve": {
+      "zh": "网格转毛发",
+      "d": "用于将头发面片或柱形毛发网格转化成毛发曲线",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.43.11.99.png"
+    },
+    "Heart": {
+      "zh": "心形",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.43.59.37.png"
+    },
+    "Heat Geodesic": {
+      "zh": "热测地线",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.54.07.56.png"
+    },
+    "Helicoidal Surface": {
+      "zh": "螺旋曲面",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.55.43.00.png"
+    },
+    "Edges to Road": {
+      "zh": "边转道路",
+      "d": "",
+      "notes": "",
+      "example": "",
+      "exampleImg": "Desktop/Desktop Screenshot 2026.07.12 - 21.58.04.58.png"
+    }
+  },
+  "extraData": {},
+  "lang": "zh"
+}

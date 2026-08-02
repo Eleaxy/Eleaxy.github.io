@@ -1,0 +1,170 @@
+{
+  "id": "closest-point-pair",
+  "name": "Closest Point Pair",
+  "name_zh": "最近点对",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于计算边与 边/平面/球体 的最近点对的位置，并返回是否相交",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {
+    "i": {
+      "1": "边1的左端点",
+      "2": "边1的右端点",
+      "3": "边2的左端点",
+      "4": "边2的右端点",
+      "5": "平面上一点Q位置",
+      "6": "平面法向",
+      "7": "球体中心",
+      "8": "球体半径"
+    },
+    "o": {
+      "0": "是否相交",
+      "1": "返回相交位置，若未相交，则返回边1上距离另一对象最近的点位置",
+      "2": "返回相交位置，若未相交，则返回零另一元素上距离边1最近的点位置"
+    }
+  },
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Parameter for this socket.",
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。",
+      "default": "Edge & Edge"
+    },
+    {
+      "name": "Edge1 P1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Edge1 P1.",
+      "de": "Vector value for Edge1 P1.",
+      "dz": "设置 Edge1 P1 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Edge1 P2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Edge1 P2.",
+      "de": "Vector value for Edge1 P2.",
+      "dz": "设置 Edge1 P2 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Edge2 Q1",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Edge2 Q1.",
+      "de": "Vector value for Edge2 Q1.",
+      "dz": "设置 Edge2 Q1 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Edge2 Q2",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Edge2 Q2.",
+      "de": "Vector value for Edge2 Q2.",
+      "dz": "设置 Edge2 Q2 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Plane Q",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Plane Q.",
+      "de": "Vector value for Plane Q.",
+      "dz": "设置 Plane Q 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Plane N",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Plane N.",
+      "de": "Vector value for Plane N.",
+      "dz": "设置 Plane N 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Sphere C",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Sphere C.",
+      "de": "Vector value for Sphere C.",
+      "dz": "设置 Sphere C 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Sphere r",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Sphere r.",
+      "de": "Numeric value controlling Sphere r.",
+      "dz": "设置 Sphere r 的数值。",
+      "default": 0.0
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Is Hit",
+      "type": "NodeSocketBool",
+      "description": "Boolean toggle for Is Hit.",
+      "de": "Boolean toggle for Is Hit.",
+      "dz": "控制 Is Hit 的开关。",
+      "default": false
+    },
+    {
+      "name": "P",
+      "type": "NodeSocketVector",
+      "description": "Vector value for P.",
+      "de": "Vector value for P.",
+      "dz": "设置 P 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "name": "Q",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Q.",
+      "de": "Vector value for Q.",
+      "dz": "设置 Q 的向量数据。",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

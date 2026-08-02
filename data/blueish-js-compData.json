@@ -1,0 +1,3296 @@
+[
+  {
+    "n": "ASCII",
+    "d": "Creates a ASCII effect as a reusable compositor node group.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Depth",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Depth.",
+        "default": 1.0,
+        "de": "Numeric value controlling Depth.",
+        "dz": "设置 深度 的数值。"
+      },
+      {
+        "name": "Count",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Count.",
+        "default": [
+          160.0,
+          90.0,
+          0.0
+        ],
+        "de": "Vector value for Count.",
+        "dz": "设置 数量 的向量数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Creates a ASCII effect as a reusable compositor node group.",
+    "dz": "用于生成 ASCII 效果的可复用合成节点组。"
+  },
+  {
+    "n": "Autumn",
+    "d": "A reusable compositor node group for creating or processing Autumn effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Autumn effects procedurally.",
+    "dz": "用于程序化创建或处理Autumn效果的可复用合成节点组。"
+  },
+  {
+    "n": "Blues",
+    "d": "A reusable compositor node group for creating or processing Blues effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Blues effects procedurally.",
+    "dz": "用于程序化创建或处理Blues效果的可复用合成节点组。"
+  },
+  {
+    "n": "Broken Glass",
+    "d": "A reusable compositor node group for creating or processing Broken Glass effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Displace",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Displace.",
+        "default": 60.0,
+        "de": "Numeric value controlling Displace.",
+        "dz": "设置 Displace 的数值。"
+      },
+      {
+        "name": "Highlight",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Highlight.",
+        "default": 0.6999999284744263,
+        "de": "Numeric value controlling Highlight.",
+        "dz": "设置 Highlight 的数值。"
+      },
+      {
+        "name": "Distortion",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distortion.",
+        "default": 0.05000000074505806,
+        "de": "Numeric value controlling Distortion.",
+        "dz": "设置 Distortion 的数值。"
+      },
+      {
+        "name": "Dispersion",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Dispersion.",
+        "default": 0.05000000074505806,
+        "de": "Numeric value controlling Dispersion.",
+        "dz": "设置 Dispersion 的数值。"
+      },
+      {
+        "name": "Global Dispersion",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Global Dispersion.",
+        "default": 0.5,
+        "de": "Numeric value controlling Global Dispersion.",
+        "dz": "设置 Global / Dispersion 的数值。"
+      },
+      {
+        "name": "Sharpen",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Sharpen.",
+        "default": 0.5,
+        "de": "Numeric value controlling Sharpen.",
+        "dz": "设置 Sharpen 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Broken Glass effects procedurally.",
+    "dz": "用于程序化创建或处理玻璃效果的可复用合成节点组。"
+  },
+  {
+    "n": "Cividis",
+    "d": "A reusable compositor node group for creating or processing Cividis effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Cividis effects procedurally.",
+    "dz": "用于程序化创建或处理Cividis效果的可复用合成节点组。"
+  },
+  {
+    "n": "Comic",
+    "d": "A reusable compositor node group for creating or processing Comic effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Threshold",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Threshold.",
+        "default": 0.25,
+        "de": "Numeric value controlling Threshold.",
+        "dz": "设置 阈值 的数值。"
+      },
+      {
+        "name": "Dark",
+        "type": "NodeSocketColor",
+        "description": "Color value for Dark.",
+        "default": [
+          0.0030737672932446003,
+          0.0037054927088320255,
+          0.018017230555415154,
+          1.0
+        ],
+        "de": "Color value for Dark.",
+        "dz": "设置 Dark 的颜色数据。"
+      },
+      {
+        "name": "Bright",
+        "type": "NodeSocketColor",
+        "description": "Color value for Bright.",
+        "default": [
+          0.9395226240158081,
+          1.0,
+          0.6873294711112976,
+          1.0
+        ],
+        "de": "Color value for Bright.",
+        "dz": "设置 Bright 的颜色数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Comic effects procedurally.",
+    "dz": "用于程序化创建或处理Comic效果的可复用合成节点组。"
+  },
+  {
+    "n": "Cool",
+    "d": "A reusable compositor node group for creating or processing Cool effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Cool effects procedurally.",
+    "dz": "用于程序化创建或处理Cool效果的可复用合成节点组。"
+  },
+  {
+    "n": "Coolwarm",
+    "d": "A reusable compositor node group for creating or processing Coolwarm effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Coolwarm effects procedurally.",
+    "dz": "用于程序化创建或处理Coolwarm效果的可复用合成节点组。"
+  },
+  {
+    "n": "Cross Hatching",
+    "d": "A reusable compositor node group for creating or processing Cross Hatching effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Depth",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Depth.",
+        "default": 0.0,
+        "de": "Numeric value controlling Depth.",
+        "dz": "设置 深度 的数值。"
+      },
+      {
+        "name": "Normal",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Normal.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Normal.",
+        "dz": "设置 法线 的向量数据。"
+      },
+      {
+        "name": "Outline Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Outline Color.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Outline Color.",
+        "dz": "设置 Outline / 颜色 的颜色数据。"
+      },
+      {
+        "name": "Main Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Main Color.",
+        "default": [
+          1.0,
+          0.9425663352012634,
+          0.7820718884468079,
+          1.0
+        ],
+        "de": "Color value for Main Color.",
+        "dz": "设置 Main / 颜色 的颜色数据。"
+      },
+      {
+        "name": "Line Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Line Color.",
+        "default": [
+          0.011857000179588795,
+          0.006031000055372715,
+          0.0012049999786540866,
+          1.0
+        ],
+        "de": "Color value for Line Color.",
+        "dz": "设置 Line / 颜色 的颜色数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Cross Hatching effects procedurally.",
+    "dz": "用于程序化创建或处理Cross Hatching效果的可复用合成节点组。"
+  },
+  {
+    "n": "CRT",
+    "d": "Creates a CRT effect as a reusable compositor node group.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Distortion",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distortion.",
+        "default": 0.019999999552965164,
+        "de": "Numeric value controlling Distortion.",
+        "dz": "设置 Distortion 的数值。"
+      },
+      {
+        "name": "Period",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Period.",
+        "default": 1000.0,
+        "de": "Numeric value controlling Period.",
+        "dz": "设置 Period 的数值。"
+      },
+      {
+        "name": "Noise",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Noise.",
+        "default": 0.949999988079071,
+        "de": "Numeric value controlling Noise.",
+        "dz": "设置 噪波 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Creates a CRT effect as a reusable compositor node group.",
+    "dz": "用于生成 CRT 效果的可复用合成节点组。"
+  },
+  {
+    "n": "Debug Float",
+    "d": "A reusable compositor node group for creating or processing Debug Float effects procedurally.",
+    "i": [
+      {
+        "name": "Value",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Value.",
+        "default": 0.0,
+        "de": "Numeric value controlling Value.",
+        "dz": "设置 数值 的数值。"
+      },
+      {
+        "name": "Count",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Count.",
+        "default": [
+          20.0,
+          30.0,
+          0.05000000074505806
+        ],
+        "de": "Vector value for Count.",
+        "dz": "设置 数量 的向量数据。"
+      },
+      {
+        "name": "Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Color.",
+        "default": [
+          1.0,
+          0.00020500000391621143,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Color.",
+        "dz": "设置 颜色 的颜色数据。"
+      },
+      {
+        "name": "小数点前精度位数",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling 小数点前精度位数.",
+        "default": 1.0,
+        "de": "Numeric value controlling 小数点前精度位数.",
+        "dz": "设置 小数点前精度位数 的数值。"
+      },
+      {
+        "name": "小数点后精度位数",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling 小数点后精度位数.",
+        "default": 5.0,
+        "de": "Numeric value controlling 小数点后精度位数.",
+        "dz": "设置 小数点后精度位数 的数值。"
+      },
+      {
+        "name": "Threshold",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Threshold.",
+        "default": 0.11999999731779099,
+        "de": "Numeric value controlling Threshold.",
+        "dz": "设置 阈值 的数值。"
+      },
+      {
+        "name": "Grid",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Grid.",
+        "default": 0.44999998807907104,
+        "de": "Numeric value controlling Grid.",
+        "dz": "设置 Grid 的数值。"
+      },
+      {
+        "name": "Transparency",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Transparency.",
+        "default": 0.19999992847442627,
+        "de": "Numeric value controlling Transparency.",
+        "dz": "设置 Transparency 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Debug Float effects procedurally.",
+    "dz": "用于程序化创建或处理Debug Float效果的可复用合成节点组。"
+  },
+  {
+    "n": "Dither Dot",
+    "d": "A reusable compositor node group for creating or processing Dither Dot effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Scale",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Scale.",
+        "default": 256.0,
+        "de": "Numeric value controlling Scale.",
+        "dz": "设置 缩放 的数值。"
+      },
+      {
+        "name": "Dither",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Dither.",
+        "default": 2.0,
+        "de": "Numeric value controlling Dither.",
+        "dz": "设置 Dither 的数值。"
+      },
+      {
+        "name": "Threshold",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Threshold.",
+        "default": 0.0010000000474974513,
+        "de": "Numeric value controlling Threshold.",
+        "dz": "设置 阈值 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Scene.",
+        "default": 0.0,
+        "de": "Numeric value controlling Scene.",
+        "dz": "设置 Scene 的数值。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Dither Dot effects procedurally.",
+    "dz": "用于程序化创建或处理抖动效果的可复用合成节点组。"
+  },
+  {
+    "n": "Fire Outline",
+    "d": "A reusable compositor node group for creating or processing Fire Outline effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Depth",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Depth.",
+        "default": 0.0,
+        "de": "Numeric value controlling Depth.",
+        "dz": "设置 深度 的数值。"
+      },
+      {
+        "name": "Normal",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Normal.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Normal.",
+        "dz": "设置 法线 的向量数据。"
+      },
+      {
+        "name": "AOV",
+        "type": "NodeSocketColor",
+        "description": "Color value for AOV.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for AOV.",
+        "dz": "设置 AOV 的颜色数据。"
+      },
+      {
+        "name": "Up",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Up.",
+        "default": 150.0,
+        "de": "Numeric value controlling Up.",
+        "dz": "设置 Up 的数值。"
+      },
+      {
+        "name": "Down",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Down.",
+        "default": -50.0,
+        "de": "Numeric value controlling Down.",
+        "dz": "设置 Down 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Fire Outline effects procedurally.",
+    "dz": "用于程序化创建或处理轮廓、火焰、线效果的可复用合成节点组。"
+  },
+  {
+    "n": "Flipbook",
+    "d": "A reusable compositor node group for creating or processing Flipbook effects procedurally.",
+    "i": [
+      {
+        "name": "UV",
+        "type": "NodeSocketVector",
+        "description": "Vector value for UV.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for UV.",
+        "dz": "设置 UV 坐标 的向量数据。"
+      },
+      {
+        "name": "Row",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Row.",
+        "default": 6.0,
+        "de": "Numeric value controlling Row.",
+        "dz": "设置 行数 的数值。"
+      },
+      {
+        "name": "Column",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Column.",
+        "default": 6.0,
+        "de": "Numeric value controlling Column.",
+        "dz": "设置 列数 的数值。"
+      },
+      {
+        "name": "Index",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Index.",
+        "default": 0.0,
+        "de": "Numeric value controlling Index.",
+        "dz": "设置 索引 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "UV",
+        "type": "NodeSocketVector",
+        "description": "Vector value for UV.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for UV.",
+        "dz": "设置 UV 坐标 的向量数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Flipbook effects procedurally.",
+    "dz": "用于程序化创建或处理序列帧效果的可复用合成节点组。"
+  },
+  {
+    "n": "Frozen Glass",
+    "d": "A reusable compositor node group for creating or processing Frozen Glass effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Color.",
+        "default": [
+          0.5935934782028198,
+          0.8562713861465454,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Color.",
+        "dz": "设置 颜色 的颜色数据。"
+      },
+      {
+        "name": "Mask Falloff",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Mask Falloff.",
+        "default": 5.0,
+        "de": "Numeric value controlling Mask Falloff.",
+        "dz": "设置 遮罩 / 衰减 的数值。"
+      },
+      {
+        "name": "Distortion Falloff",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distortion Falloff.",
+        "default": 2.500000476837158,
+        "de": "Numeric value controlling Distortion Falloff.",
+        "dz": "设置 Distortion / 衰减 的数值。"
+      },
+      {
+        "name": "Distortion Strength",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distortion Strength.",
+        "default": 350.0,
+        "de": "Numeric value controlling Distortion Strength.",
+        "dz": "设置 Distortion / 强度 的数值。"
+      },
+      {
+        "name": "Snow",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Snow.",
+        "default": 16.0,
+        "de": "Numeric value controlling Snow.",
+        "dz": "设置 Snow 的数值。"
+      },
+      {
+        "name": "Scale",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Scale.",
+        "default": [
+          5.0,
+          3.0,
+          2.0
+        ],
+        "de": "Vector value for Scale.",
+        "dz": "设置 缩放 的向量数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Frozen Glass effects procedurally.",
+    "dz": "用于程序化创建或处理玻璃效果的可复用合成节点组。"
+  },
+  {
+    "n": "Glitch",
+    "d": "Creates a Glitch effect as a reusable compositor node group.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Channels Displacement",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Channels Displacement.",
+        "default": 50.0,
+        "de": "Numeric value controlling Channels Displacement.",
+        "dz": "设置 Channels / Displacement 的数值。"
+      },
+      {
+        "name": "Blocks Strength",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Blocks Strength.",
+        "default": 0.37964072823524475,
+        "de": "Numeric value controlling Blocks Strength.",
+        "dz": "设置 Blocks / 强度 的数值。"
+      },
+      {
+        "name": "Lines Strength",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Lines Strength.",
+        "default": 0.4400000274181366,
+        "de": "Numeric value controlling Lines Strength.",
+        "dz": "设置 Lines / 强度 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Creates a Glitch effect as a reusable compositor node group.",
+    "dz": "用于生成 Glitch 效果的可复用合成节点组。"
+  },
+  {
+    "n": "GnBu",
+    "d": "A reusable compositor node group for creating or processing Gn Bu effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Gn Bu effects procedurally.",
+    "dz": "用于程序化创建或处理Gn Bu效果的可复用合成节点组。"
+  },
+  {
+    "n": "HackWave",
+    "d": "A reusable compositor node group for creating or processing Hack Wave effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Normal",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Normal.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Normal.",
+        "dz": "设置 法线 的向量数据。"
+      },
+      {
+        "name": "Position",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Position.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Position.",
+        "dz": "设置 位置 的向量数据。"
+      },
+      {
+        "name": "Center",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Center.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Center.",
+        "dz": "设置 中心 的向量数据。"
+      },
+      {
+        "name": "Outside Brightness",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Outside Brightness.",
+        "default": 0.0,
+        "de": "Numeric value controlling Outside Brightness.",
+        "dz": "设置 外部 / Brightness 的数值。"
+      },
+      {
+        "name": "Inside Brightness",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Inside Brightness.",
+        "default": 0.09999999403953552,
+        "de": "Numeric value controlling Inside Brightness.",
+        "dz": "设置 内部 / Brightness 的数值。"
+      },
+      {
+        "name": "Grid",
+        "type": "NodeSocketColor",
+        "description": "Color value for Grid.",
+        "default": [
+          0.0,
+          0.7656140327453613,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Grid.",
+        "dz": "设置 Grid 的颜色数据。"
+      },
+      {
+        "name": "Dot",
+        "type": "NodeSocketColor",
+        "description": "Color value for Dot.",
+        "default": [
+          1.0,
+          0.4982931613922119,
+          0.04231338948011398,
+          1.0
+        ],
+        "de": "Color value for Dot.",
+        "dz": "设置 Dot 的颜色数据。"
+      },
+      {
+        "name": "Speed",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Speed.",
+        "default": 0.10000000149011612,
+        "de": "Numeric value controlling Speed.",
+        "dz": "设置 速度 的数值。"
+      },
+      {
+        "name": "Range",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Range.",
+        "default": 100.0,
+        "de": "Numeric value controlling Range.",
+        "dz": "设置 Range 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Hack Wave effects procedurally.",
+    "dz": "用于程序化创建或处理Hack Wave效果的可复用合成节点组。"
+  },
+  {
+    "n": "Hot",
+    "d": "A reusable compositor node group for creating or processing Hot effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Hot effects procedurally.",
+    "dz": "用于程序化创建或处理Hot效果的可复用合成节点组。"
+  },
+  {
+    "n": "Inferno",
+    "d": "A reusable compositor node group for creating or processing Inferno effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Inferno effects procedurally.",
+    "dz": "用于程序化创建或处理Inferno效果的可复用合成节点组。"
+  },
+  {
+    "n": "Jet",
+    "d": "A reusable compositor node group for creating or processing Jet effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Jet effects procedurally.",
+    "dz": "用于程序化创建或处理Jet效果的可复用合成节点组。"
+  },
+  {
+    "n": "Magma",
+    "d": "A reusable compositor node group for creating or processing Magma effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Magma effects procedurally.",
+    "dz": "用于程序化创建或处理Magma效果的可复用合成节点组。"
+  },
+  {
+    "n": "Noise",
+    "d": "Creates a Noise effect as a reusable compositor node group.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Threshold",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Threshold.",
+        "default": 0.75,
+        "de": "Numeric value controlling Threshold.",
+        "dz": "设置 阈值 的数值。"
+      },
+      {
+        "name": "Scale",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Scale.",
+        "default": 9.999999747378752e-06,
+        "de": "Numeric value controlling Scale.",
+        "dz": "设置 缩放 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Creates a Noise effect as a reusable compositor node group.",
+    "dz": "用于生成 Noise 效果的可复用合成节点组。"
+  },
+  {
+    "n": "Ocean",
+    "d": "A reusable compositor node group for creating or processing Ocean effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Ocean effects procedurally.",
+    "dz": "用于程序化创建或处理海洋效果的可复用合成节点组。"
+  },
+  {
+    "n": "Ordered Dithering",
+    "d": "A reusable compositor node group for creating or processing Ordered Dithering effects procedurally.",
+    "i": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      },
+      {
+        "name": "Pixelate",
+        "type": "NodeSocketInt",
+        "description": "Integer value controlling Pixelate.",
+        "default": 2,
+        "de": "Integer value controlling Pixelate.",
+        "dz": "设置 Pixelate 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Value",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Value.",
+        "default": 0.0,
+        "de": "Numeric value controlling Value.",
+        "dz": "设置 数值 的数值。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Ordered Dithering effects procedurally.",
+    "dz": "用于程序化创建或处理抖动效果的可复用合成节点组。"
+  },
+  {
+    "n": "Outline Edge",
+    "d": "A reusable compositor node group for creating or processing Outline Edge effects procedurally.",
+    "i": [
+      {
+        "name": "Depth",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Depth.",
+        "default": 0.0,
+        "de": "Numeric value controlling Depth.",
+        "dz": "设置 深度 的数值。"
+      },
+      {
+        "name": "Normal",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Normal.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Normal.",
+        "dz": "设置 法线 的向量数据。"
+      },
+      {
+        "name": "Threshold",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Threshold.",
+        "default": 0.25,
+        "de": "Numeric value controlling Threshold.",
+        "dz": "设置 阈值 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Edge",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Edge.",
+        "default": 0.0,
+        "de": "Numeric value controlling Edge.",
+        "dz": "设置 Edge 的数值。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Outline Edge effects procedurally.",
+    "dz": "用于程序化创建或处理轮廓、边、线效果的可复用合成节点组。"
+  },
+  {
+    "n": "Pixel Sorting",
+    "d": "A reusable compositor node group for creating or processing Pixel Sorting effects procedurally.",
+    "i": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      },
+      {
+        "name": "Resolution",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Resolution.",
+        "default": [
+          2560.0,
+          1600.0,
+          0.0
+        ],
+        "de": "Vector value for Resolution.",
+        "dz": "设置 分辨率 的向量数据。"
+      },
+      {
+        "name": "X/Y",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling X Y.",
+        "default": 1.0,
+        "de": "Numeric value controlling X Y.",
+        "dz": "设置 X / Y 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      },
+      {
+        "name": "Debug",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Debug.",
+        "default": 0.0,
+        "de": "Numeric value controlling Debug.",
+        "dz": "设置 Debug 的数值。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Pixel Sorting effects procedurally.",
+    "dz": "用于程序化创建或处理Pixel Sorting效果的可复用合成节点组。"
+  },
+  {
+    "n": "PiYG",
+    "d": "A reusable compositor node group for creating or processing Pi YG effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Pi YG effects procedurally.",
+    "dz": "用于程序化创建或处理Pi YG效果的可复用合成节点组。"
+  },
+  {
+    "n": "Plasma",
+    "d": "A reusable compositor node group for creating or processing Plasma effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Plasma effects procedurally.",
+    "dz": "用于程序化创建或处理Plasma效果的可复用合成节点组。"
+  },
+  {
+    "n": "Puddle",
+    "d": "A reusable compositor node group for creating or processing Puddle effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Strength",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Strength.",
+        "default": 4.0,
+        "de": "Numeric value controlling Strength.",
+        "dz": "设置 强度 的数值。"
+      },
+      {
+        "name": "Softness",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Softness.",
+        "default": 1.0,
+        "de": "Numeric value controlling Softness.",
+        "dz": "设置 Softness 的数值。"
+      },
+      {
+        "name": "Highlight",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Highlight.",
+        "default": 1.0,
+        "de": "Numeric value controlling Highlight.",
+        "dz": "设置 Highlight 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Puddle effects procedurally.",
+    "dz": "用于程序化创建或处理Puddle效果的可复用合成节点组。"
+  },
+  {
+    "n": "Purple Sunset",
+    "d": "A reusable compositor node group for creating or processing Purple Sunset effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Purple Sunset effects procedurally.",
+    "dz": "用于程序化创建或处理Purple Sunset效果的可复用合成节点组。"
+  },
+  {
+    "n": "Rainbow",
+    "d": "A reusable compositor node group for creating or processing Rainbow effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Rainbow effects procedurally.",
+    "dz": "用于程序化创建或处理Rainbow效果的可复用合成节点组。"
+  },
+  {
+    "n": "Rainy Window",
+    "d": "A reusable compositor node group for creating or processing Rainy Window effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Normal",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Normal.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Normal.",
+        "dz": "设置 法线 的向量数据。"
+      },
+      {
+        "name": "Position",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Position.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Position.",
+        "dz": "设置 位置 的向量数据。"
+      },
+      {
+        "name": "Distortion",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distortion.",
+        "default": -100.0,
+        "de": "Numeric value controlling Distortion.",
+        "dz": "设置 Distortion 的数值。"
+      },
+      {
+        "name": "Highlight",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Highlight.",
+        "default": 0.25,
+        "de": "Numeric value controlling Highlight.",
+        "dz": "设置 Highlight 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Rainy Window effects procedurally.",
+    "dz": "用于程序化创建或处理Rainy Window效果的可复用合成节点组。"
+  },
+  {
+    "n": "RdYlBu",
+    "d": "A reusable compositor node group for creating or processing Rd Yl Bu effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Rd Yl Bu effects procedurally.",
+    "dz": "用于程序化创建或处理Rd Yl Bu效果的可复用合成节点组。"
+  },
+  {
+    "n": "RGB To CMYK",
+    "d": "A reusable compositor node group for creating or processing RGB To CMYK effects procedurally.",
+    "i": [
+      {
+        "name": "RGB",
+        "type": "NodeSocketColor",
+        "description": "Color value for RGB.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for RGB.",
+        "dz": "设置 RGB 的颜色数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "CMYK",
+        "type": "NodeSocketColor",
+        "description": "Color value for CMYK.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for CMYK.",
+        "dz": "设置 CMYK 的颜色数据。"
+      },
+      {
+        "name": "C",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling C.",
+        "default": 0.0,
+        "de": "Numeric value controlling C.",
+        "dz": "设置 C 的数值。"
+      },
+      {
+        "name": "M",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling M.",
+        "default": 0.0,
+        "de": "Numeric value controlling M.",
+        "dz": "设置 M 的数值。"
+      },
+      {
+        "name": "Y",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Y.",
+        "default": 0.0,
+        "de": "Numeric value controlling Y.",
+        "dz": "设置 Y 的数值。"
+      },
+      {
+        "name": "K",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling K.",
+        "default": 0.0,
+        "de": "Numeric value controlling K.",
+        "dz": "设置 K 的数值。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing RGB To CMYK effects procedurally.",
+    "dz": "用于程序化创建或处理RGB To CMYK效果的可复用合成节点组。"
+  },
+  {
+    "n": "Ripple",
+    "d": "A reusable compositor node group for creating or processing Ripple effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Center",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Center.",
+        "default": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "de": "Vector value for Center.",
+        "dz": "设置 中心 的向量数据。"
+      },
+      {
+        "name": "Radius",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Radius.",
+        "default": 0.5,
+        "de": "Numeric value controlling Radius.",
+        "dz": "设置 半径 的数值。"
+      },
+      {
+        "name": "Period",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Period.",
+        "default": 36.0,
+        "de": "Numeric value controlling Period.",
+        "dz": "设置 Period 的数值。"
+      },
+      {
+        "name": "Strength",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Strength.",
+        "default": 0.0,
+        "de": "Numeric value controlling Strength.",
+        "dz": "设置 强度 的数值。"
+      },
+      {
+        "name": "Speed",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Speed.",
+        "default": 0.2999999225139618,
+        "de": "Numeric value controlling Speed.",
+        "dz": "设置 速度 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Ripple effects procedurally.",
+    "dz": "用于程序化创建或处理Ripple效果的可复用合成节点组。"
+  },
+  {
+    "n": "Scene Transition",
+    "d": "A reusable compositor node group for creating or processing Scene Transition effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Normal",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Normal.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Normal.",
+        "dz": "设置 法线 的向量数据。"
+      },
+      {
+        "name": "Position",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Position.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Position.",
+        "dz": "设置 位置 的向量数据。"
+      },
+      {
+        "name": "Center",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Center.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Center.",
+        "dz": "设置 中心 的向量数据。"
+      },
+      {
+        "name": "Grid",
+        "type": "NodeSocketColor",
+        "description": "Color value for Grid.",
+        "default": [
+          0.0,
+          0.7656140327453613,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Grid.",
+        "dz": "设置 Grid 的颜色数据。"
+      },
+      {
+        "name": "Dot",
+        "type": "NodeSocketColor",
+        "description": "Color value for Dot.",
+        "default": [
+          1.0,
+          0.4982931613922119,
+          0.04231338948011398,
+          1.0
+        ],
+        "de": "Color value for Dot.",
+        "dz": "设置 Dot 的颜色数据。"
+      },
+      {
+        "name": "Wireframe",
+        "type": "NodeSocketColor",
+        "description": "Color value for Wireframe.",
+        "default": [
+          1.0,
+          0.0,
+          0.0021985145285725594,
+          1.0
+        ],
+        "de": "Color value for Wireframe.",
+        "dz": "设置 Wireframe 的颜色数据。"
+      },
+      {
+        "name": "Speed",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Speed.",
+        "default": 0.10000000149011612,
+        "de": "Numeric value controlling Speed.",
+        "dz": "设置 速度 的数值。"
+      },
+      {
+        "name": "Range",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Range.",
+        "default": 300.0,
+        "de": "Numeric value controlling Range.",
+        "dz": "设置 Range 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Scene Transition effects procedurally.",
+    "dz": "用于程序化创建或处理场景效果的可复用合成节点组。"
+  },
+  {
+    "n": "Screen UV",
+    "d": "A reusable compositor node group for creating or processing Screen UV effects procedurally.",
+    "i": [],
+    "o": [
+      {
+        "name": "Stretch",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Stretch.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Stretch.",
+        "dz": "设置 Stretch 的向量数据。"
+      },
+      {
+        "name": "Crop",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Crop.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Crop.",
+        "dz": "设置 Crop 的向量数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Screen UV effects procedurally.",
+    "dz": "用于程序化创建或处理UV、屏幕效果的可复用合成节点组。"
+  },
+  {
+    "n": "Shifting Color",
+    "d": "Generates or processes Shifting Color visual/material data for shader or procedural effects.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Speed",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Speed.",
+        "default": 0.49999991059303284,
+        "de": "Numeric value controlling Speed.",
+        "dz": "设置 速度 的数值。"
+      },
+      {
+        "name": "Fac",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Fac.",
+        "default": 1.0,
+        "de": "Numeric value controlling Fac.",
+        "dz": "设置 Fac 的数值。"
+      },
+      {
+        "name": "Exponent",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Exponent.",
+        "default": 3.0,
+        "de": "Numeric value controlling Exponent.",
+        "dz": "设置 Exponent 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Generates or processes Shifting Color visual/material data for shader or procedural effects.",
+    "dz": "用于生成或处理颜色相关的视觉/材质数据。"
+  },
+  {
+    "n": "Spectral",
+    "d": "A reusable compositor node group for creating or processing Spectral effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Spectral effects procedurally.",
+    "dz": "用于程序化创建或处理Spectral效果的可复用合成节点组。"
+  },
+  {
+    "n": "Stylized Dither",
+    "d": "A reusable compositor node group for creating or processing Stylized Dither effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Hue",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Hue.",
+        "default": 0.5,
+        "de": "Numeric value controlling Hue.",
+        "dz": "设置 Hue 的数值。"
+      },
+      {
+        "name": "Lines",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Lines.",
+        "default": 128.0,
+        "de": "Numeric value controlling Lines.",
+        "dz": "设置 Lines 的数值。"
+      },
+      {
+        "name": "Brightness",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Brightness.",
+        "default": 4.0,
+        "de": "Numeric value controlling Brightness.",
+        "dz": "设置 Brightness 的数值。"
+      },
+      {
+        "name": "Noise",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Noise.",
+        "default": 0.75,
+        "de": "Numeric value controlling Noise.",
+        "dz": "设置 噪波 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Stylized Dither effects procedurally.",
+    "dz": "用于程序化创建或处理抖动效果的可复用合成节点组。"
+  },
+  {
+    "n": "Sunset",
+    "d": "A reusable compositor node group for creating or processing Sunset effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Sunset effects procedurally.",
+    "dz": "用于程序化创建或处理Sunset效果的可复用合成节点组。"
+  },
+  {
+    "n": "Texture Sample",
+    "d": "Generates or processes Texture Sample visual/material data for shader or procedural effects.",
+    "i": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      },
+      {
+        "name": "UV",
+        "type": "NodeSocketVector",
+        "description": "Vector value for UV.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for UV.",
+        "dz": "设置 UV 坐标 的向量数据。"
+      },
+      {
+        "name": "Scale",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Scale.",
+        "default": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Vector value for Scale.",
+        "dz": "设置 缩放 的向量数据。"
+      },
+      {
+        "name": "Speed",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Speed.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Speed.",
+        "dz": "设置 速度 的向量数据。"
+      },
+      {
+        "name": "Offset",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Offset.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Offset.",
+        "dz": "设置 偏移 的向量数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Image",
+        "type": "NodeSocketColor",
+        "description": "Color value for Image.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Image.",
+        "dz": "设置 图像 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Generates or processes Texture Sample visual/material data for shader or procedural effects.",
+    "dz": "用于生成或处理Texture Sample相关的视觉/材质数据。"
+  },
+  {
+    "n": "Toon Ocean",
+    "d": "A reusable compositor node group for creating or processing Toon Ocean effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Toon Ocean effects procedurally.",
+    "dz": "用于程序化创建或处理卡通、海洋效果的可复用合成节点组。"
+  },
+  {
+    "n": "Twilight",
+    "d": "A reusable compositor node group for creating or processing Twilight effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Twilight effects procedurally.",
+    "dz": "用于程序化创建或处理Twilight效果的可复用合成节点组。"
+  },
+  {
+    "n": "Twilight_shifted",
+    "d": "A reusable compositor node group for creating or processing Twilight shifted effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Twilight shifted effects procedurally.",
+    "dz": "用于程序化创建或处理Twilight shifted效果的可复用合成节点组。"
+  },
+  {
+    "n": "Underwater",
+    "d": "A reusable compositor node group for creating or processing Underwater effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Depth",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Depth.",
+        "default": 1.0,
+        "de": "Numeric value controlling Depth.",
+        "dz": "设置 深度 的数值。"
+      },
+      {
+        "name": "Position",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Position.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Position.",
+        "dz": "设置 位置 的向量数据。"
+      },
+      {
+        "name": "Main Noise",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Main Noise.",
+        "default": 150.0,
+        "de": "Numeric value controlling Main Noise.",
+        "dz": "设置 Main / 噪波 的数值。"
+      },
+      {
+        "name": "Sub Noise",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Sub Noise.",
+        "default": 50.0,
+        "de": "Numeric value controlling Sub Noise.",
+        "dz": "设置 Sub / 噪波 的数值。"
+      },
+      {
+        "name": "Water Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Water Color.",
+        "default": [
+          0.00011500000255182385,
+          0.28286299109458923,
+          0.5599420070648193,
+          1.0
+        ],
+        "de": "Color value for Water Color.",
+        "dz": "设置 Water / 颜色 的颜色数据。"
+      },
+      {
+        "name": "Caustic Size",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Caustic Size.",
+        "default": 6.0,
+        "de": "Numeric value controlling Caustic Size.",
+        "dz": "设置 Caustic / 尺寸 的数值。"
+      },
+      {
+        "name": "Brightness",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Brightness.",
+        "default": 4.0,
+        "de": "Numeric value controlling Brightness.",
+        "dz": "设置 Brightness 的数值。"
+      },
+      {
+        "name": "Sun Beams",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Sun Beams.",
+        "default": 3.0,
+        "de": "Numeric value controlling Sun Beams.",
+        "dz": "设置 Sun / Beams 的数值。"
+      },
+      {
+        "name": "Bubble",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Bubble.",
+        "default": 1.0,
+        "de": "Numeric value controlling Bubble.",
+        "dz": "设置 Bubble 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Underwater effects procedurally.",
+    "dz": "用于程序化创建或处理Underwater效果的可复用合成节点组。"
+  },
+  {
+    "n": "Vignette",
+    "d": "A reusable compositor node group for creating or processing Vignette effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "Tint",
+        "type": "NodeSocketColor",
+        "description": "Color value for Tint.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Tint.",
+        "dz": "设置 Tint 的颜色数据。"
+      },
+      {
+        "name": "Softness",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Softness.",
+        "default": 1.0,
+        "de": "Numeric value controlling Softness.",
+        "dz": "设置 Softness 的数值。"
+      },
+      {
+        "name": "Distance",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distance.",
+        "default": 0.6999999284744263,
+        "de": "Numeric value controlling Distance.",
+        "dz": "设置 Distance 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Vignette effects procedurally.",
+    "dz": "用于程序化创建或处理Vignette效果的可复用合成节点组。"
+  },
+  {
+    "n": "Viridis",
+    "d": "A reusable compositor node group for creating or processing Viridis effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Viridis effects procedurally.",
+    "dz": "用于程序化创建或处理Viridis效果的可复用合成节点组。"
+  },
+  {
+    "n": "Voronoi",
+    "d": "Creates a Voronoi effect as a reusable compositor node group.",
+    "i": [
+      {
+        "name": "Scale",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Scale.",
+        "default": 0.0,
+        "de": "Numeric value controlling Scale.",
+        "dz": "设置 缩放 的数值。"
+      },
+      {
+        "name": "Smooth",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Smooth.",
+        "default": 0.0,
+        "de": "Numeric value controlling Smooth.",
+        "dz": "设置 Smooth 的数值。"
+      },
+      {
+        "name": "Random",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Random.",
+        "default": 0.0,
+        "de": "Numeric value controlling Random.",
+        "dz": "设置 随机量 的数值。"
+      },
+      {
+        "name": "Type",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Type.",
+        "default": 0.0,
+        "de": "Numeric value controlling Type.",
+        "dz": "设置 类型 的数值。"
+      },
+      {
+        "name": "Exponent",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Exponent.",
+        "default": 0.5,
+        "de": "Numeric value controlling Exponent.",
+        "dz": "设置 Exponent 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Distance",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distance.",
+        "default": 0.0,
+        "de": "Numeric value controlling Distance.",
+        "dz": "设置 Distance 的数值。"
+      },
+      {
+        "name": "Color",
+        "type": "NodeSocketColor",
+        "description": "Color value for Color.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Color.",
+        "dz": "设置 颜色 的颜色数据。"
+      },
+      {
+        "name": "Position",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Position.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Position.",
+        "dz": "设置 位置 的向量数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "Creates a Voronoi effect as a reusable compositor node group.",
+    "dz": "用于生成 Voronoi 效果的可复用合成节点组。"
+  },
+  {
+    "n": "Warning Glitch",
+    "d": "A reusable compositor node group for creating or processing Warning Glitch effects procedurally.",
+    "i": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      },
+      {
+        "name": "AOV",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling AOV.",
+        "default": 0.0,
+        "de": "Numeric value controlling AOV.",
+        "dz": "设置 AOV 的数值。"
+      },
+      {
+        "name": "Distance",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Distance.",
+        "default": 120.0,
+        "de": "Numeric value controlling Distance.",
+        "dz": "设置 Distance 的数值。"
+      },
+      {
+        "name": "Speed",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Speed.",
+        "default": 0.4000000059604645,
+        "de": "Numeric value controlling Speed.",
+        "dz": "设置 速度 的数值。"
+      },
+      {
+        "name": "Warning",
+        "type": "NodeSocketColor",
+        "description": "Color value for Warning.",
+        "default": [
+          1.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Warning.",
+        "dz": "设置 Warning 的颜色数据。"
+      },
+      {
+        "name": "Bar",
+        "type": "NodeSocketColor",
+        "description": "Color value for Bar.",
+        "default": [
+          0.0,
+          1.0,
+          0.0012429370544850826,
+          1.0
+        ],
+        "de": "Color value for Bar.",
+        "dz": "设置 Bar 的颜色数据。"
+      },
+      {
+        "name": "Bar",
+        "type": "NodeSocketColor",
+        "description": "Color value for Bar.",
+        "default": [
+          1.0,
+          0.004508049227297306,
+          0.0,
+          1.0
+        ],
+        "de": "Color value for Bar.",
+        "dz": "设置 Bar 的颜色数据。"
+      },
+      {
+        "name": "Camera",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Camera.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Camera.",
+        "dz": "设置 Camera 的向量数据。"
+      },
+      {
+        "name": "Object Center",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Object Center.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Object Center.",
+        "dz": "设置 物体 / 中心 的向量数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Scene",
+        "type": "NodeSocketColor",
+        "description": "Color value for Scene.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Scene.",
+        "dz": "设置 Scene 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Warning Glitch effects procedurally.",
+    "dz": "用于程序化创建或处理故障艺术效果的可复用合成节点组。"
+  },
+  {
+    "n": "White Noise",
+    "d": "A reusable compositor node group for creating or processing White Noise effects procedurally.",
+    "i": [
+      {
+        "name": "Vector",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Vector.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Vector.",
+        "dz": "设置 向量 的向量数据。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Value",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Value.",
+        "default": 0.0,
+        "de": "Numeric value controlling Value.",
+        "dz": "设置 数值 的数值。"
+      },
+      {
+        "name": "Vector",
+        "type": "NodeSocketVector",
+        "description": "Vector value for Vector.",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "de": "Vector value for Vector.",
+        "dz": "设置 向量 的向量数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing White Noise effects procedurally.",
+    "dz": "用于程序化创建或处理噪波效果的可复用合成节点组。"
+  },
+  {
+    "n": "YlGnBu",
+    "d": "A reusable compositor node group for creating or processing Yl Gn Bu effects procedurally.",
+    "i": [
+      {
+        "name": "Thermal",
+        "type": "NodeSocketFloat",
+        "description": "Numeric value controlling Thermal.",
+        "default": 0.5,
+        "de": "Numeric value controlling Thermal.",
+        "dz": "设置 Thermal 的数值。"
+      }
+    ],
+    "o": [
+      {
+        "name": "Linear",
+        "type": "NodeSocketColor",
+        "description": "Color value for Linear.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Linear.",
+        "dz": "设置 Linear 的颜色数据。"
+      },
+      {
+        "name": "Constant",
+        "type": "NodeSocketColor",
+        "description": "Color value for Constant.",
+        "default": [
+          0.800000011920929,
+          0.800000011920929,
+          0.800000011920929,
+          1.0
+        ],
+        "de": "Color value for Constant.",
+        "dz": "设置 Constant 的颜色数据。"
+      }
+    ],
+    "f": "blender/assets/Compositor/Compositor.blend",
+    "de": "A reusable compositor node group for creating or processing Yl Gn Bu effects procedurally.",
+    "dz": "用于程序化创建或处理Yl Gn Bu效果的可复用合成节点组。"
+  }
+]

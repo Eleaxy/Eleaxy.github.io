@@ -1,0 +1,95 @@
+{
+  "id": "dash-line",
+  "name": "Dash Line",
+  "name_zh": "虚线",
+  "category_id": "curve",
+  "category": "Curve",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "将曲线转化成虚线形式",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 22.02.04.21.png",
+  "param_descriptions": {
+    "i": {
+      "1": "控制每段虚线的分辨率",
+      "2": "设置每根曲线转化为虚线的数量",
+      "3": "虚线头部的修剪值",
+      "4": "虚线末尾的修剪值"
+    },
+    "o": {
+      "1": "对应每段虚线的复制编号",
+      "2": "对应原始曲线编号"
+    }
+  },
+  "mapping_raw": "curve",
+  "inputs": [
+    {
+      "name": "Curves",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Curves.",
+      "de": "Geometry data used as Curves.",
+      "dz": "传入或输出用于该节点处理的 Curves。"
+    },
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution.",
+      "default": 10,
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Amount",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Amount.",
+      "default": 5,
+      "de": "Integer value controlling Amount.",
+      "dz": "设置 Amount 的数值。"
+    },
+    {
+      "name": "Start",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Start.",
+      "default": 0.25,
+      "de": "Numeric value controlling Start.",
+      "dz": "设置 Start 的数值。"
+    },
+    {
+      "name": "End",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling End.",
+      "default": 0.75,
+      "de": "Numeric value controlling End.",
+      "dz": "设置 End 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Duplicate Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Duplicate Index.",
+      "default": 0,
+      "de": "Integer value controlling Duplicate Index.",
+      "dz": "设置 Duplicate / 索引 的数值。"
+    },
+    {
+      "name": "Parent",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Parent.",
+      "default": 0,
+      "de": "Integer value controlling Parent.",
+      "dz": "设置 Parent 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

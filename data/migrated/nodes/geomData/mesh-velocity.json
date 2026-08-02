@@ -1,0 +1,49 @@
+{
+  "id": "mesh-velocity",
+  "name": "Mesh Velocity",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Source Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Source Geometry.",
+      "de": "Geometry data used as Source Geometry.",
+      "dz": "传入或输出用于该节点处理的 Source / 几何数据。"
+    },
+    {
+      "name": "Strength",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Strength.",
+      "default": 1.0,
+      "de": "Numeric value controlling Strength.",
+      "dz": "设置 强度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Vector.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

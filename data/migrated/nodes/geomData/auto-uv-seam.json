@@ -1,0 +1,84 @@
+{
+  "id": "auto-uv-seam",
+  "name": "Auto UV Seam",
+  "name_zh": "自动UV接缝",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "WIP-自动生成UV接缝",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.09 - 23.24.19.14.png",
+  "param_descriptions": {
+    "i": {
+      "1": "强制包含的UV接缝边",
+      "2": "每个孤岛将产生多少条循环边作为UV接缝"
+    },
+    "o": {
+      "1": "被选中的UV接缝边"
+    }
+  },
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "Include Edges",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Include Edges option.",
+      "default": false,
+      "de": "Toggles or selects the Include Edges option.",
+      "dz": "控制是否启用或选择 Include / Edges。"
+    },
+    {
+      "name": "Seams for Each Island",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seams for Each Island.",
+      "default": 2,
+      "de": "Integer value controlling Seams for Each Island.",
+      "dz": "设置 Seams / for / Each / Island 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 9,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "Visualize Seam",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Visualize Seam option.",
+      "default": true,
+      "de": "Toggles or selects the Visualize Seam option.",
+      "dz": "控制是否启用或选择 Visualize / Seam。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Mesh",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Mesh.",
+      "de": "Geometry data used as Mesh.",
+      "dz": "传入或输出用于该节点处理的 网格。"
+    },
+    {
+      "name": "Seam",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Seam option.",
+      "default": false,
+      "de": "Toggles or selects the Seam option.",
+      "dz": "控制是否启用或选择 Seam。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

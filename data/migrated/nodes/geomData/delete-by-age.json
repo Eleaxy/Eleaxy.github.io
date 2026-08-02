@@ -1,0 +1,60 @@
+{
+  "id": "delete-by-age",
+  "name": "Delete By Age",
+  "name_zh": "按生命周期删除",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "用于粒子模拟，按生命周期删除粒子的预设节点组",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 23.37.07.41.png",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Age",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Age.",
+      "default": 45,
+      "de": "Integer value controlling Age.",
+      "dz": "设置 Age 的数值。"
+    },
+    {
+      "name": "Randomness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Randomness.",
+      "default": 0.0,
+      "de": "Numeric value controlling Randomness.",
+      "dz": "设置 Randomness 的数值。"
+    },
+    {
+      "name": "Delete",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Delete option.",
+      "default": true,
+      "de": "Toggles or selects the Delete option.",
+      "dz": "控制是否启用或选择 Delete。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

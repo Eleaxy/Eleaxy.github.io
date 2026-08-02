@@ -1,0 +1,5692 @@
+[
+  {
+    "id": "1",
+    "catalog_source": "shaderData",
+    "name": "1",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "2",
+    "catalog_source": "shaderData",
+    "name": "2",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3",
+    "catalog_source": "shaderData",
+    "name": "3",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4",
+    "catalog_source": "shaderData",
+    "name": "4",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "5",
+    "catalog_source": "shaderData",
+    "name": "5",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "6",
+    "catalog_source": "shaderData",
+    "name": "6",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "7",
+    "catalog_source": "shaderData",
+    "name": "7",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "8",
+    "catalog_source": "shaderData",
+    "name": "8",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "9",
+    "catalog_source": "shaderData",
+    "name": "9",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "10-tetrahetra",
+    "catalog_source": "geomData",
+    "name": "10-Tetrahetra",
+    "name_zh": "十复合正四面体",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "2d-curve-point-angle",
+    "catalog_source": "geomData",
+    "name": "2D Curve Point Angle",
+    "name_zh": "2D曲线点信息",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于得到2D曲线点的角平分线和角度",
+    "example": ""
+  },
+  {
+    "id": "2d-remesh",
+    "catalog_source": "geomData",
+    "name": "2D Remesh",
+    "name_zh": "2D重网格",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3-planes-intersection-point",
+    "catalog_source": "geomData",
+    "name": "3 Planes Intersection Point",
+    "name_zh": "三面求交",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3d-incircle",
+    "catalog_source": "geomData",
+    "name": "3D Incircle",
+    "name_zh": "三维内切圆",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3d-recursive-subdivision",
+    "catalog_source": "geomData",
+    "name": "3D Recursive Subdivision",
+    "name_zh": "三维递归细分立方体",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "将一个四边面沿中间随机切割成两个四边面",
+    "example": ""
+  },
+  {
+    "id": "3x3-1-norm",
+    "catalog_source": "geomData",
+    "name": "3x3 1-Norm",
+    "name_zh": "3x3 1-范数",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "3x3矩阵的1-norm",
+    "example": ""
+  },
+  {
+    "id": "3x3-adjugate-matrix",
+    "catalog_source": "geomData",
+    "name": "3x3 Adjugate Matrix",
+    "name_zh": "3x3伴随矩阵",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "3x3矩阵的伴随矩阵",
+    "example": ""
+  },
+  {
+    "id": "3x3-diag",
+    "catalog_source": "geomData",
+    "name": "3x3 Diag",
+    "name_zh": "3x3对角",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "提取3x3矩阵的对角向量或根据对角向量创建3x3矩阵",
+    "example": ""
+  },
+  {
+    "id": "3x3-diagonalize-symmetric",
+    "catalog_source": "geomData",
+    "name": "3x3 Diagonalize Symmetric",
+    "name_zh": "3x3对称对角化",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3对称矩阵的特征向量和特征值",
+    "example": ""
+  },
+  {
+    "id": "3x3-frobenius-norm",
+    "catalog_source": "geomData",
+    "name": "3x3 Frobenius Norm",
+    "name_zh": "3x3 F-范数",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的Frobenius Norm",
+    "example": ""
+  },
+  {
+    "id": "3x3-infinity-norm",
+    "catalog_source": "geomData",
+    "name": "3x3 Infinity-Norm",
+    "name_zh": "3x3无穷范数",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的 Infinity-Norm",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrix-trace",
+    "catalog_source": "geomData",
+    "name": "3x3 Matrix Trace",
+    "name_zh": "3x3矩阵迹",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的trace",
+    "example": ""
+  },
+  {
+    "id": "3x3-max-norm",
+    "catalog_source": "geomData",
+    "name": "3x3 Max-Norm",
+    "name_zh": "3x3最大范数",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的max-norm",
+    "example": ""
+  },
+  {
+    "id": "3x3-polar-decomposition",
+    "catalog_source": "geomData",
+    "name": "3x3 Polar Decomposition",
+    "name_zh": "3x3极分解",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的 Polar Decomposition",
+    "example": ""
+  },
+  {
+    "id": "3x3-pseudo-inverse",
+    "catalog_source": "geomData",
+    "name": "3x3 Pseudo-Inverse",
+    "name_zh": "3x3伪逆",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的 Pseudo-Inverse",
+    "example": ""
+  },
+  {
+    "id": "3x3-spectral-norm",
+    "catalog_source": "geomData",
+    "name": "3x3 Spectral-Norm",
+    "name_zh": "3x3谱范数",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算3x3矩阵的 Spectral-Norm",
+    "example": ""
+  },
+  {
+    "id": "5-tetrahetra",
+    "catalog_source": "geomData",
+    "name": "5-Tetrahetra",
+    "name_zh": "五复合正四面体",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "attribute-delete",
+    "catalog_source": "geomData",
+    "name": "Attribute Delete",
+    "name_zh": "删除属性",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "用于删除几何属性，可以使用*通配符，用filter选项来过滤特定数据类型和域",
+    "example": ""
+  },
+  {
+    "id": "auto-uv-seam",
+    "catalog_source": "geomData",
+    "name": "Auto UV Seam",
+    "name_zh": "自动UV接缝",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "WIP-自动生成UV接缝",
+    "example": ""
+  },
+  {
+    "id": "backface-culling",
+    "catalog_source": "geomData",
+    "name": "Backface Culling",
+    "name_zh": "背面剔除",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "删除摄像机背面的网格面",
+    "example": ""
+  },
+  {
+    "id": "barycentric-coodinate",
+    "catalog_source": "geomData",
+    "name": "Barycentric Coodinate",
+    "name_zh": "重心坐标",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算点在三角形中的重心坐标",
+    "example": ""
+  },
+  {
+    "id": "bend",
+    "catalog_source": "geomData",
+    "name": "Bend",
+    "name_zh": "弯曲",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "实现网格弯曲效果，视图中的黄色圆环Gizmo用于控制弯曲角度，位移Gizmo用于调整弯曲中心",
+    "example": ""
+  },
+  {
+    "id": "bevel-2d-curve",
+    "catalog_source": "geomData",
+    "name": "Bevel 2D Curve",
+    "name_zh": "2D曲线倒角实体化",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "将2D封闭曲线实体化并倒角，支持孔洞",
+    "example": ""
+  },
+  {
+    "id": "bitangent-noise",
+    "catalog_source": "geomData",
+    "name": "Bitangent Noise",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "bone-capture",
+    "catalog_source": "geomData",
+    "name": "Bone Capture",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "bone-deform",
+    "catalog_source": "geomData",
+    "name": "Bone Deform",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "boolean-curve",
+    "catalog_source": "geomData",
+    "name": "Boolean Curve",
+    "name_zh": "布尔曲线",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于对曲线进行布尔",
+    "example": ""
+  },
+  {
+    "id": "camera-culling",
+    "catalog_source": "geomData",
+    "name": "Camera Culling",
+    "name_zh": "相机剔除",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "根据活动摄像机来剔除视图外的点",
+    "example": ""
+  },
+  {
+    "id": "capsule",
+    "catalog_source": "geomData",
+    "name": "Capsule",
+    "name_zh": "胶囊体",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cardioid",
+    "catalog_source": "geomData",
+    "name": "Cardioid",
+    "name_zh": "心脏线",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "catenary",
+    "catalog_source": "geomData",
+    "name": "Catenary",
+    "name_zh": "悬链线",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于制作悬链线，自然情况下电缆下垂的曲线形状",
+    "example": ""
+  },
+  {
+    "id": "circle-packing",
+    "catalog_source": "geomData",
+    "name": "Circle Packing",
+    "name_zh": "圆形填充",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "用于实现圆形打包效果",
+    "example": ""
+  },
+  {
+    "id": "circular-packing",
+    "catalog_source": "geomData",
+    "name": "Circular Packing",
+    "name_zh": "环形填充",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "对输入的网格或实例进行环形填充，在每一个立方体内填充一个实例，实例之间不会穿插",
+    "example": ""
+  },
+  {
+    "id": "circular-parameterization",
+    "catalog_source": "geomData",
+    "name": "Circular Parameterization",
+    "name_zh": "圆形参数化",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "对面片形状网格进行圆形参数化操作",
+    "example": ""
+  },
+  {
+    "id": "circumsphere",
+    "catalog_source": "geomData",
+    "name": "CircumSphere",
+    "name_zh": "外接球",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算四个不共面的点的外接球",
+    "example": ""
+  },
+  {
+    "id": "closest-point-pair",
+    "catalog_source": "geomData",
+    "name": "Closest Point Pair",
+    "name_zh": "最近点对",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算边与 边/平面/球体 的最近点对的位置，并返回是否相交",
+    "example": ""
+  },
+  {
+    "id": "cluster-points",
+    "catalog_source": "geomData",
+    "name": "Cluster Points",
+    "name_zh": "点群簇",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "基于K-Means算法实现的点群簇分组",
+    "example": ""
+  },
+  {
+    "id": "collision-detection",
+    "catalog_source": "geomData",
+    "name": "Collision Detection",
+    "name_zh": "碰撞检测",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "基于AABB，SAT，GJK，EPA，MPR或者Raycast，SDF来检测凸壳之间是否发生碰撞并计算穿插信息",
+    "example": "可以同时计算多个Source凸壳与一个Target凸壳的碰撞"
+  },
+  {
+    "id": "combine-module-infos",
+    "catalog_source": "geomData",
+    "name": "Combine Module Infos",
+    "name_zh": "",
+    "category_id": "pcg",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "compress-bone-weights",
+    "catalog_source": "geomData",
+    "name": "Compress Bone Weights",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "compute-cor",
+    "catalog_source": "geomData",
+    "name": "Compute CoR",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cone-direction",
+    "catalog_source": "geomData",
+    "name": "Cone Direction",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "consistent-curve-orientation",
+    "catalog_source": "geomData",
+    "name": "Consistent Curve Orientation",
+    "name_zh": "统一曲线方向",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于统一曲线朝向",
+    "example": ""
+  },
+  {
+    "id": "coons-patch",
+    "catalog_source": "geomData",
+    "name": "Coons Patch",
+    "name_zh": "库恩斯曲面",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "库恩斯面片，将3D空间中的封闭曲线按照栅格拓扑填充，产生平滑连续的曲面（类似网格编辑模式下的Grid Fill）",
+    "example": ""
+  },
+  {
+    "id": "coordinate-system",
+    "catalog_source": "geomData",
+    "name": "Coordinate System",
+    "name_zh": "坐标系",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "创建一个坐标系平面用于可视化渲染",
+    "example": ""
+  },
+  {
+    "id": "cotangent-laplacian",
+    "catalog_source": "geomData",
+    "name": "Cotangent Laplacian",
+    "name_zh": "余切拉普拉斯",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于对网格属性进行余切拉普拉斯平滑。",
+    "example": ""
+  },
+  {
+    "id": "cross-to-matrix",
+    "catalog_source": "geomData",
+    "name": "Cross to Matrix",
+    "name_zh": "叉积转矩阵",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "将叉乘运算转化成矩阵形式",
+    "example": ""
+  },
+  {
+    "id": "cube-deform",
+    "catalog_source": "geomData",
+    "name": "Cube Deform",
+    "name_zh": "立方体变形",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "根据立方体来对网格进行形变操作，类似晶格修改器",
+    "example": ""
+  },
+  {
+    "id": "cube-mask",
+    "catalog_source": "geomData",
+    "name": "Cube Mask",
+    "name_zh": "",
+    "category_id": "particle_mask",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "curl-noise-force",
+    "catalog_source": "geomData",
+    "name": "Curl Noise Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "curvature",
+    "catalog_source": "geomData",
+    "name": "Curvature",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "curve-constrained-sphere-packing",
+    "catalog_source": "geomData",
+    "name": "Curve Constrained Sphere Packing",
+    "name_zh": "曲线约束球填充",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "根据曲线半径计算球打包",
+    "example": ""
+  },
+  {
+    "id": "curve-force",
+    "catalog_source": "geomData",
+    "name": "Curve Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "curve-instance-packing",
+    "catalog_source": "geomData",
+    "name": "Curve Instance Packing",
+    "name_zh": "曲线实例填充",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "沿曲线分布实例，实例之间按边界框分布避免穿插",
+    "example": ""
+  },
+  {
+    "id": "curve-intersections",
+    "catalog_source": "geomData",
+    "name": "Curve Intersections",
+    "name_zh": "曲线交点",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于获取曲线交点并返回交点信息",
+    "example": ""
+  },
+  {
+    "id": "curve-loop-edge",
+    "catalog_source": "geomData",
+    "name": "Curve Loop Edge",
+    "name_zh": "曲线循环边",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于获取曲线转网格后的两类循环边",
+    "example": ""
+  },
+  {
+    "id": "curve-rolling",
+    "catalog_source": "geomData",
+    "name": "Curve Rolling",
+    "name_zh": "曲线卷曲",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于将曲线卷曲成螺旋状，数学准确的螺旋",
+    "example": ""
+  },
+  {
+    "id": "curve-trail",
+    "catalog_source": "geomData",
+    "name": "Curve Trail",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "custom-mask",
+    "catalog_source": "geomData",
+    "name": "Custom Mask",
+    "name_zh": "",
+    "category_id": "particle_mask",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "custom-voronoi-texture",
+    "catalog_source": "geomData",
+    "name": "Custom Voronoi Texture",
+    "name_zh": "点Voronoi纹理",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "dash-line",
+    "catalog_source": "geomData",
+    "name": "Dash Line",
+    "name_zh": "虚线",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "将曲线转化成虚线形式",
+    "example": ""
+  },
+  {
+    "id": "debug",
+    "catalog_source": "geomData",
+    "name": "Debug",
+    "name_zh": "调试显示",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "用于在视图显示浮点数，向量方向，矩阵xyz轴向，4x4矩阵数值",
+    "example": ""
+  },
+  {
+    "id": "delete-by-age",
+    "catalog_source": "geomData",
+    "name": "Delete By Age",
+    "name_zh": "按生命周期删除",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "用于粒子模拟，按生命周期删除粒子的预设节点组",
+    "example": ""
+  },
+  {
+    "id": "delta-mush",
+    "catalog_source": "geomData",
+    "name": "Delta Mush",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "dense-linear-solver",
+    "catalog_source": "geomData",
+    "name": "Dense Linear Solver",
+    "name_zh": "稠密线性求解器",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于求解大型线性系统Ax=b",
+    "example": ""
+  },
+  {
+    "id": "detect-error",
+    "catalog_source": "geomData",
+    "name": "Detect Error",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "detriangulate",
+    "catalog_source": "geomData",
+    "name": "Detriangulate",
+    "name_zh": "反三角化",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "对三角化后的网格进行反三角化操作",
+    "example": ""
+  },
+  {
+    "id": "dihedral",
+    "catalog_source": "geomData",
+    "name": "Dihedral",
+    "name_zh": "最小旋转",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算从A方向旋转到B方向的最小旋转",
+    "example": ""
+  },
+  {
+    "id": "discrete-panelization",
+    "catalog_source": "geomData",
+    "name": "Discrete Panelization",
+    "name_zh": "离散面板化",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "将网格优化成平面面板分块",
+    "example": ""
+  },
+  {
+    "id": "divergence",
+    "catalog_source": "geomData",
+    "name": "Divergence",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "dqs-compensation",
+    "catalog_source": "geomData",
+    "name": "DQS Compensation",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "drag",
+    "catalog_source": "geomData",
+    "name": "Drag",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "dragon-fractal",
+    "catalog_source": "geomData",
+    "name": "Dragon Fractal",
+    "name_zh": "龙分形",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "edge-bundling",
+    "catalog_source": "geomData",
+    "name": "Edge Bundling",
+    "name_zh": "边聚集",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "edge-collapse",
+    "catalog_source": "geomData",
+    "name": "Edge Collapse",
+    "name_zh": "边坍缩",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "edge-flip",
+    "catalog_source": "geomData",
+    "name": "Edge Flip",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "edge-loop-id",
+    "catalog_source": "geomData",
+    "name": "Edge Loop ID",
+    "name_zh": "循环边ID",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "用于计算网格循环边ID，每组循环边都会得到不同的ID",
+    "example": ""
+  },
+  {
+    "id": "edge-ring-id",
+    "catalog_source": "geomData",
+    "name": "Edge Ring ID",
+    "name_zh": "并排边ID",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "用于计算并排边ID，每组并排边都会得到不同的ID",
+    "example": ""
+  },
+  {
+    "id": "edge-split",
+    "catalog_source": "geomData",
+    "name": "Edge Split",
+    "name_zh": "边分裂",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "edges-of-face",
+    "catalog_source": "geomData",
+    "name": "Edges of Face",
+    "name_zh": "面的边",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "elastic-sphere",
+    "catalog_source": "geomData",
+    "name": "Elastic Sphere",
+    "name_zh": "弹性球形变",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "对网格计算类似球体受挤压的形变效果",
+    "example": ""
+  },
+  {
+    "id": "even-curve-segments",
+    "catalog_source": "geomData",
+    "name": "Even Curve Segments",
+    "name_zh": "均分曲线",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于将曲线分辨率低的部分细分，而不会丢失锐利的拐角细节",
+    "example": ""
+  },
+  {
+    "id": "extract-isoline",
+    "catalog_source": "geomData",
+    "name": "Extract Isoline",
+    "name_zh": "提取等值线",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "extract-transform",
+    "catalog_source": "geomData",
+    "name": "Extract Transform",
+    "name_zh": "提取变换",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于计算同一点云经过位置变换后，从当前位置到目标位置的刚性变换矩阵",
+    "example": ""
+  },
+  {
+    "id": "face-extrusion",
+    "catalog_source": "geomData",
+    "name": "Face Extrusion",
+    "name_zh": "面挤出",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "能够处理正确挤出距离的面挤出",
+    "example": ""
+  },
+  {
+    "id": "face-stripes-group",
+    "catalog_source": "geomData",
+    "name": "Face Stripes Group",
+    "name_zh": "面带组",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "根据引导方向对网格面进行分组",
+    "example": ""
+  },
+  {
+    "id": "faces-of-edge",
+    "catalog_source": "geomData",
+    "name": "Faces of Edge",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "faces-of-vertex",
+    "catalog_source": "geomData",
+    "name": "Faces of Vertex",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "fill-3d-curve",
+    "catalog_source": "geomData",
+    "name": "Fill 3D Curve",
+    "name_zh": "填充3D曲线",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "填充曲线节点会投影到XY平面后填充，该节点用于填充3D空间中的封闭曲线",
+    "example": ""
+  },
+  {
+    "id": "fourier-transform",
+    "catalog_source": "geomData",
+    "name": "Fourier Transform",
+    "name_zh": "傅里叶变换",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "对List进行一维的傅里叶变换",
+    "example": ""
+  },
+  {
+    "id": "fourier-transform-drawing",
+    "catalog_source": "geomData",
+    "name": "Fourier Transform Drawing",
+    "name_zh": "傅里叶变换绘图",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "generate-paricles",
+    "catalog_source": "geomData",
+    "name": "Generate Paricles",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "gradient",
+    "catalog_source": "geomData",
+    "name": "Gradient",
+    "name_zh": "梯度",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "用于在网格表面计算浮点场的梯度",
+    "example": ""
+  },
+  {
+    "id": "graph-color",
+    "catalog_source": "geomData",
+    "name": "Graph Color",
+    "name_zh": "图着色",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "每个点的颜色与其直接相邻的点的颜色都不同",
+    "example": ""
+  },
+  {
+    "id": "graph-mis",
+    "catalog_source": "geomData",
+    "name": "Graph MIS",
+    "name_zh": "图最大独立集",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "如果一个点被选中，那么它的邻居点就不会出现在该独立集中",
+    "example": ""
+  },
+  {
+    "id": "gravity-force",
+    "catalog_source": "geomData",
+    "name": "Gravity Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hair-mesh-to-curve",
+    "catalog_source": "geomData",
+    "name": "Hair Mesh to Curve",
+    "name_zh": "网格转毛发",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "用于将头发面片或柱形毛发网格转化成毛发曲线",
+    "example": ""
+  },
+  {
+    "id": "heart",
+    "catalog_source": "geomData",
+    "name": "Heart",
+    "name_zh": "心形",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "heat-geodesic",
+    "catalog_source": "geomData",
+    "name": "Heat Geodesic",
+    "name_zh": "热测地线",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "helicoidal-surface",
+    "catalog_source": "geomData",
+    "name": "Helicoidal Surface",
+    "name_zh": "螺旋曲面",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hexagon",
+    "catalog_source": "shaderData",
+    "name": "Hexagon",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "homogeneous-disk",
+    "catalog_source": "geomData",
+    "name": "Homogeneous Disk",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "homogeneous-sphere",
+    "catalog_source": "geomData",
+    "name": "Homogeneous Sphere",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "image-to-ascii",
+    "catalog_source": "geomData",
+    "name": "Image to ASCII",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "implicit-surface",
+    "catalog_source": "geomData",
+    "name": "Implicit Surface",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "initialize-particles",
+    "catalog_source": "geomData",
+    "name": "Initialize Particles",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "insert-face",
+    "catalog_source": "geomData",
+    "name": "Insert Face",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "insphere",
+    "catalog_source": "geomData",
+    "name": "InSphere",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "intersection-analysis",
+    "catalog_source": "geomData",
+    "name": "Intersection Analysis",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "intersection-stitch",
+    "catalog_source": "geomData",
+    "name": "Intersection Stitch",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "inverse-kinematics",
+    "catalog_source": "geomData",
+    "name": "Inverse Kinematics",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "iterative-closet-point",
+    "catalog_source": "geomData",
+    "name": "Iterative Closet Point",
+    "name_zh": "ICP点云匹配",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "joint-mask",
+    "catalog_source": "geomData",
+    "name": "Joint Mask",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "koch-line",
+    "catalog_source": "geomData",
+    "name": "Koch Line",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "koch-snowflake",
+    "catalog_source": "geomData",
+    "name": "Koch Snowflake",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "l-system",
+    "catalog_source": "geomData",
+    "name": "L System",
+    "name_zh": "L系统-树",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "laplacian",
+    "catalog_source": "geomData",
+    "name": "Laplacian",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "limit-force",
+    "catalog_source": "geomData",
+    "name": "Limit Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "line-art",
+    "catalog_source": "geomData",
+    "name": "Line Art",
+    "name_zh": "线条画",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "line-attaction-force",
+    "catalog_source": "geomData",
+    "name": "Line Attaction Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "line-drawing",
+    "catalog_source": "geomData",
+    "name": "Line Drawing",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "loft-curve",
+    "catalog_source": "geomData",
+    "name": "Loft Curve",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "loop-subdivision",
+    "catalog_source": "geomData",
+    "name": "Loop Subdivision",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "marching-cube",
+    "catalog_source": "geomData",
+    "name": "Marching Cube",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "marching-square",
+    "catalog_source": "geomData",
+    "name": "Marching Square",
+    "name_zh": "行进四边形",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "match-size",
+    "catalog_source": "geomData",
+    "name": "Match Size",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "matrices-multiply",
+    "catalog_source": "geomData",
+    "name": "Matrices Multiply",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "matrix-add",
+    "catalog_source": "geomData",
+    "name": "Matrix Add",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "matrix-scale",
+    "catalog_source": "geomData",
+    "name": "Matrix Scale",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "matrix-to-vectors",
+    "catalog_source": "geomData",
+    "name": "Matrix to Vectors",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "maze-generation",
+    "catalog_source": "geomData",
+    "name": "Maze Generation",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "measure-centroid",
+    "catalog_source": "geomData",
+    "name": "Measure Centroid",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "measure-volume",
+    "catalog_source": "geomData",
+    "name": "Measure Volume",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-ambient-occlusion",
+    "catalog_source": "geomData",
+    "name": "Mesh Ambient Occlusion",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-clip",
+    "catalog_source": "geomData",
+    "name": "Mesh Clip",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-folding",
+    "catalog_source": "geomData",
+    "name": "Mesh Folding",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-puzzle",
+    "catalog_source": "geomData",
+    "name": "Mesh Puzzle",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-sdf",
+    "catalog_source": "geomData",
+    "name": "Mesh SDF",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-thickness",
+    "catalog_source": "geomData",
+    "name": "Mesh Thickness",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mesh-velocity",
+    "catalog_source": "geomData",
+    "name": "Mesh Velocity",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "minimum-bounding-sphere",
+    "catalog_source": "geomData",
+    "name": "Minimum Bounding Sphere",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "minimum-spanning-tree",
+    "catalog_source": "geomData",
+    "name": "Minimum Spanning Tree",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mobius-transform",
+    "catalog_source": "geomData",
+    "name": "Mobius Transform",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "module-info-piece",
+    "catalog_source": "geomData",
+    "name": "Module Info Piece",
+    "name_zh": "",
+    "category_id": "pcg",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "n-joint",
+    "catalog_source": "geomData",
+    "name": "N Joint",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "nearest-point-connection",
+    "catalog_source": "geomData",
+    "name": "Nearest Point Connection",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "normal-distribution",
+    "catalog_source": "geomData",
+    "name": "Normal Distribution",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "obb",
+    "catalog_source": "geomData",
+    "name": "OBB",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "object-force",
+    "catalog_source": "geomData",
+    "name": "Object Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "orbit-force",
+    "catalog_source": "geomData",
+    "name": "Orbit Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "order-in-field",
+    "catalog_source": "geomData",
+    "name": "Order in Field",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ordered-dithering",
+    "catalog_source": "compData",
+    "name": "Ordered Dithering",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "oriented-bounding-box",
+    "catalog_source": "geomData",
+    "name": "Oriented Bounding Box",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "outerproduct",
+    "catalog_source": "geomData",
+    "name": "Outerproduct",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "outline",
+    "catalog_source": "geomData",
+    "name": "Outline",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "parallel-transport",
+    "catalog_source": "geomData",
+    "name": "Parallel Transport",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "particle-attribute",
+    "catalog_source": "geomData",
+    "name": "Particle Attribute",
+    "name_zh": "",
+    "category_id": "particle_info",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "particle-children",
+    "catalog_source": "geomData",
+    "name": "Particle Children",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "particle-collision",
+    "catalog_source": "geomData",
+    "name": "Particle Collision",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "particle-solver",
+    "catalog_source": "geomData",
+    "name": "Particle Solver",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "particle-trail",
+    "catalog_source": "geomData",
+    "name": "Particle Trail",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "path-deform",
+    "catalog_source": "geomData",
+    "name": "Path Deform",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "pca",
+    "catalog_source": "geomData",
+    "name": "PCA",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "phyllotaxis-disk",
+    "catalog_source": "geomData",
+    "name": "Phyllotaxis Disk",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "phyllotaxis-profile-surface",
+    "catalog_source": "geomData",
+    "name": "Phyllotaxis Profile Surface",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "phyllotaxis-sphere",
+    "catalog_source": "geomData",
+    "name": "Phyllotaxis Sphere",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "plexus-connnection",
+    "catalog_source": "geomData",
+    "name": "Plexus Connnection",
+    "name_zh": "连接r近点",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "point-attraction-force",
+    "catalog_source": "geomData",
+    "name": "Point Attraction Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "poly-cut",
+    "catalog_source": "geomData",
+    "name": "Poly Cut",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "principal-curvature",
+    "catalog_source": "geomData",
+    "name": "Principal Curvature",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "project-to-tangent-plane",
+    "catalog_source": "geomData",
+    "name": "Project to Tangent Plane",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "qem-mesh-simplification",
+    "catalog_source": "geomData",
+    "name": "QEM Mesh Simplification",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "quaternion-to-matrix",
+    "catalog_source": "geomData",
+    "name": "Quaternion to Matrix",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "random-points",
+    "catalog_source": "geomData",
+    "name": "Random Points",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rbf-interpolate",
+    "catalog_source": "geomData",
+    "name": "RBF Interpolate",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "reaction-diffusion",
+    "catalog_source": "geomData",
+    "name": "Reaction Diffusion",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "recalculate-normals",
+    "catalog_source": "geomData",
+    "name": "Recalculate Normals",
+    "name_zh": "重算法线",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "recompute-transform",
+    "catalog_source": "geomData",
+    "name": "Recompute Transform",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "recursive-cube-packing",
+    "catalog_source": "geomData",
+    "name": "Recursive Cube Packing",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "recursive-subdivision",
+    "catalog_source": "geomData",
+    "name": "Recursive Subdivision",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "remesh",
+    "catalog_source": "geomData",
+    "name": "Remesh",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "render-particles",
+    "catalog_source": "geomData",
+    "name": "Render Particles",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ribbon-render",
+    "catalog_source": "geomData",
+    "name": "Ribbon Render",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rig-forward-kinematic",
+    "catalog_source": "geomData",
+    "name": "Rig Forward Kinematic",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sample-bary-coord",
+    "catalog_source": "geomData",
+    "name": "Sample Bary-Coord",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scatter",
+    "catalog_source": "geomData",
+    "name": "Scatter",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "self-pruning",
+    "catalog_source": "geomData",
+    "name": "Self Pruning",
+    "name_zh": "实例自碰撞剔除",
+    "category_id": "pcg",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sharpen-mesh",
+    "catalog_source": "geomData",
+    "name": "Sharpen Mesh",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "shrink-wrap-packaging",
+    "catalog_source": "geomData",
+    "name": "Shrink Wrap Packaging",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "signed-distance-noise",
+    "catalog_source": "geomData",
+    "name": "Signed Distance Noise",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "skeleton-from-armature",
+    "catalog_source": "geomData",
+    "name": "Skeleton from Armature",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "skeleton-from-edges",
+    "catalog_source": "geomData",
+    "name": "Skeleton from Edges",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "skeleton-sim",
+    "catalog_source": "geomData",
+    "name": "Skeleton Sim",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sketch",
+    "catalog_source": "geomData",
+    "name": "Sketch",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "skin-modifier",
+    "catalog_source": "geomData",
+    "name": "Skin Modifier",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "slerp",
+    "catalog_source": "geomData",
+    "name": "Slerp",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "smooth-tesellation",
+    "catalog_source": "geomData",
+    "name": "Smooth Tesellation",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "solidify",
+    "catalog_source": "geomData",
+    "name": "Solidify",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "space-colonization",
+    "catalog_source": "geomData",
+    "name": "Space Colonization",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sparse-linear-solver",
+    "catalog_source": "geomData",
+    "name": "Sparse Linear Solver",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sphere-from-4-points",
+    "catalog_source": "geomData",
+    "name": "Sphere From 4 Points",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sphere-intersections",
+    "catalog_source": "geomData",
+    "name": "Sphere Intersections",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sphere-mask",
+    "catalog_source": "geomData",
+    "name": "Sphere Mask",
+    "name_zh": "",
+    "category_id": "particle_mask",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spherical-parameterization",
+    "catalog_source": "geomData",
+    "name": "Spherical Parameterization",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spherical-sprial",
+    "catalog_source": "geomData",
+    "name": "Spherical Sprial",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spirograph",
+    "catalog_source": "geomData",
+    "name": "Spirograph",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spline-grammar",
+    "catalog_source": "geomData",
+    "name": "Spline Grammar",
+    "name_zh": "样条线语法",
+    "category_id": "pcg",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spring-force",
+    "catalog_source": "geomData",
+    "name": "Spring Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "store-bary-coord",
+    "catalog_source": "geomData",
+    "name": "Store Bary-Coord",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "stretch",
+    "catalog_source": "geomData",
+    "name": "Stretch",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "string-art",
+    "catalog_source": "geomData",
+    "name": "String Art",
+    "name_zh": "",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "surface-collision",
+    "catalog_source": "geomData",
+    "name": "Surface Collision",
+    "name_zh": "",
+    "category_id": "particle_system_core",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "surface-deform",
+    "catalog_source": "geomData",
+    "name": "Surface Deform",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sweep",
+    "catalog_source": "geomData",
+    "name": "Sweep",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "taper",
+    "catalog_source": "geomData",
+    "name": "Taper",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tessellation",
+    "catalog_source": "geomData",
+    "name": "Tessellation",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "toon-node",
+    "catalog_source": "geomData",
+    "name": "Toon Node",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "triangle",
+    "catalog_source": "shaderData",
+    "name": "Triangle",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "twist",
+    "catalog_source": "geomData",
+    "name": "Twist",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "twist-curve",
+    "catalog_source": "geomData",
+    "name": "Twist Curve",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "uv-tangent",
+    "catalog_source": "geomData",
+    "name": "UV Tangent",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "vectors-to-matrix",
+    "catalog_source": "geomData",
+    "name": "Vectors to Matrix",
+    "name_zh": "",
+    "category_id": "math",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "vertices-of-face",
+    "catalog_source": "geomData",
+    "name": "Vertices of Face",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "visualize-bone-weight",
+    "catalog_source": "geomData",
+    "name": "Visualize Bone Weight",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "visualize-epicycles",
+    "catalog_source": "geomData",
+    "name": "Visualize Epicycles",
+    "name_zh": "可视化傅里叶变换作图",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "visualize-rig",
+    "catalog_source": "geomData",
+    "name": "Visualize Rig",
+    "name_zh": "",
+    "category_id": "rigging",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "visualize-uvmap",
+    "catalog_source": "geomData",
+    "name": "Visualize UVMap",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "volume-path",
+    "catalog_source": "geomData",
+    "name": "Volume Path",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "voronoi-fracture",
+    "catalog_source": "geomData",
+    "name": "Voronoi Fracture",
+    "name_zh": "Voronoi破碎",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "voronoi-relaxation",
+    "catalog_source": "geomData",
+    "name": "Voronoi Relaxation",
+    "name_zh": "",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "vortex-force",
+    "catalog_source": "geomData",
+    "name": "Vortex Force",
+    "name_zh": "",
+    "category_id": "particle_force",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "weave-curve",
+    "catalog_source": "geomData",
+    "name": "Weave Curve",
+    "name_zh": "",
+    "category_id": "curve",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "wire-deform",
+    "catalog_source": "geomData",
+    "name": "Wire Deform",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "wireframe",
+    "catalog_source": "geomData",
+    "name": "Wireframe",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "world-tangent",
+    "catalog_source": "geomData",
+    "name": "World Tangent",
+    "name_zh": "",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-1-norm",
+    "catalog_source": "shaderData",
+    "name": " 3x3 1-Norm",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-adjugate-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Adjugate Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-axis-rotation-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Axis Rotation Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-determinnant",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Determinnant",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-diag-to-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Diag to Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-diagonalize-symmetric",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Diagonalize Symmetric",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-frobenius-norm",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Frobenius Norm",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-ident-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Ident Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-infinity-norm",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Infinity-Norm",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-invert-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Invert Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrices-multiply",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Matrices Multiply",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrix-add",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Matrix Add",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrix-scale",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Matrix Scale",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrix-to-diag",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Matrix to Diag",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrix-to-vectors",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Matrix to Vectors",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-matrix-trace",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Matrix Trace",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-max-norm",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Max-Norm",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-multiply-matrices",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Multiply Matrices",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-outerproduct",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Outerproduct",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-polar-decomposition",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Polar Decomposition",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-pseudo-inverse",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Pseudo-Inverse",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-singular-value-decomposition",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Singular Value Decomposition",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-spectral-norm",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Spectral-Norm",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-transpose-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Transpose Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-vectors-to-matrix",
+    "catalog_source": "shaderData",
+    "name": " 3x3 Vectors to Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4x4-combine-transform",
+    "catalog_source": "shaderData",
+    "name": " 4x4 Combine Transform",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4x4-determinant",
+    "catalog_source": "shaderData",
+    "name": " 4x4 Determinant",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4x4-invert-matrix",
+    "catalog_source": "shaderData",
+    "name": " 4x4 Invert Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4x4-transform",
+    "catalog_source": "shaderData",
+    "name": " 4x4 Transform",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4x4-transpose-matrix",
+    "catalog_source": "shaderData",
+    "name": " 4x4 Transpose Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "2d-recursive-subdivision",
+    "catalog_source": "shaderData",
+    "name": "(2D)Recursive_Subdivision",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3d-recursive-subdivision",
+    "catalog_source": "shaderData",
+    "name": "(3D)Recursive_Subdivision",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3d-simplex-noise",
+    "catalog_source": "shaderData",
+    "name": "3D Simplex Noise",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-combine-linear-transform",
+    "catalog_source": "shaderData",
+    "name": "3x3 Combine Linear Transform",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-convolution",
+    "catalog_source": "shaderData",
+    "name": "3x3 Convolution",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-linear-transform",
+    "catalog_source": "shaderData",
+    "name": "3x3 Linear Transform",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "3x3-to-4x4-matrix",
+    "catalog_source": "shaderData",
+    "name": "3x3 to 4x4 Matrix",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4d-simplex-noise",
+    "catalog_source": "shaderData",
+    "name": "4D Simplex Noise",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "4x4-multiply-matrices",
+    "catalog_source": "shaderData",
+    "name": "4x4 Multiply Matrices",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ao-edge",
+    "catalog_source": "shaderData",
+    "name": "AO-Edge",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "arc-sdf",
+    "catalog_source": "shaderData",
+    "name": "Arc_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "bark",
+    "catalog_source": "shaderData",
+    "name": "Bark",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "barnsley-tree",
+    "catalog_source": "shaderData",
+    "name": "Barnsley_Tree",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "bezier-low-sdf",
+    "catalog_source": "shaderData",
+    "name": "Bezier(Low)_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "bezier-sdf",
+    "catalog_source": "shaderData",
+    "name": "Bezier_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "billboard",
+    "catalog_source": "shaderData",
+    "name": "Billboard",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blend-normal-angle",
+    "catalog_source": "shaderData",
+    "name": "Blend Normal(Angle)",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blend-normal-euler",
+    "catalog_source": "shaderData",
+    "name": "Blend Normal(Euler)",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blend-normal-rnm",
+    "catalog_source": "shaderData",
+    "name": "Blend Normal(RNM)",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blend-normal-udn",
+    "catalog_source": "shaderData",
+    "name": "Blend Normal(UDN)",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blend-normal-white-out",
+    "catalog_source": "shaderData",
+    "name": "Blend Normal(White-Out)",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blobby-cross-sdf",
+    "catalog_source": "shaderData",
+    "name": "Blobby_Cross_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "boolean-custom",
+    "catalog_source": "shaderData",
+    "name": "Boolean(Custom)",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "box-blur",
+    "catalog_source": "shaderData",
+    "name": "Box Blur",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "box-sdf",
+    "catalog_source": "shaderData",
+    "name": "Box_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "bump-to-normal",
+    "catalog_source": "shaderData",
+    "name": "Bump to Normal",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "butterfly-fractal",
+    "catalog_source": "shaderData",
+    "name": "Butterfly_fractal",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "camera-facing-vector",
+    "catalog_source": "shaderData",
+    "name": "Camera Facing Vector",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "camera-location",
+    "catalog_source": "shaderData",
+    "name": "Camera Location",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "candy-tile",
+    "catalog_source": "shaderData",
+    "name": "Candy_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cartesian-to-spherical",
+    "catalog_source": "shaderData",
+    "name": "Cartesian to Spherical",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "casted-plane-transparent",
+    "catalog_source": "shaderData",
+    "name": "Casted Plane Transparent",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "caustics",
+    "catalog_source": "shaderData",
+    "name": "Caustics",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ccosh",
+    "catalog_source": "shaderData",
+    "name": "cCosh",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ccosine",
+    "catalog_source": "shaderData",
+    "name": "cCosine",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cdivide",
+    "catalog_source": "shaderData",
+    "name": "cDivide",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cel-shader",
+    "catalog_source": "shaderData",
+    "name": "Cel Shader",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cexponent",
+    "catalog_source": "shaderData",
+    "name": "cExponent",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "checker-pro",
+    "catalog_source": "shaderData",
+    "name": "Checker_Pro+",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "circle",
+    "catalog_source": "shaderData",
+    "name": "Circle",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "circle-and-square-tile",
+    "catalog_source": "shaderData",
+    "name": "Circle_And_Square_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "circle-wave-sdf",
+    "catalog_source": "shaderData",
+    "name": "Circle_Wave_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "circular-blur",
+    "catalog_source": "shaderData",
+    "name": "Circular Blur",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "circular-tiling",
+    "catalog_source": "shaderData",
+    "name": "Circular_Tiling",
+    "name_zh": "",
+    "category_id": "shader_tiling_tools",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cln-x",
+    "catalog_source": "shaderData",
+    "name": "cLn(x)",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "clog-x",
+    "catalog_source": "shaderData",
+    "name": "cLog(x)",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cmultiply",
+    "catalog_source": "shaderData",
+    "name": "cMultiply",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "color-variation",
+    "catalog_source": "shaderData",
+    "name": "Color_Variation",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cool-s-sdf",
+    "catalog_source": "shaderData",
+    "name": "Cool_S_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "coordinate-detect",
+    "catalog_source": "shaderData",
+    "name": "Coordinate Detect",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cpower",
+    "catalog_source": "shaderData",
+    "name": "cPower",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "create-third-orthographic-vector",
+    "catalog_source": "shaderData",
+    "name": "Create Third Orthographic Vector",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cross-hatch",
+    "catalog_source": "shaderData",
+    "name": "Cross Hatch",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cross-sdf",
+    "catalog_source": "shaderData",
+    "name": "Cross_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "crystal",
+    "catalog_source": "shaderData",
+    "name": "Crystal",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "csine",
+    "catalog_source": "shaderData",
+    "name": "cSine",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "csinh",
+    "catalog_source": "shaderData",
+    "name": "cSinh",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "csquare-root",
+    "catalog_source": "shaderData",
+    "name": "cSquare Root",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ctangent",
+    "catalog_source": "shaderData",
+    "name": "cTangent",
+    "name_zh": "",
+    "category_id": "mfs_cmath",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cube-pattern-tile",
+    "catalog_source": "shaderData",
+    "name": "Cube_Pattern_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cubic-julia",
+    "catalog_source": "shaderData",
+    "name": "Cubic_Julia",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "curve-info",
+    "catalog_source": "shaderData",
+    "name": "Curve Info",
+    "name_zh": "",
+    "category_id": "particle_info",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "curved-polygon",
+    "catalog_source": "shaderData",
+    "name": "Curved_Polygon",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cut-disk-sdf",
+    "catalog_source": "shaderData",
+    "name": "Cut_Disk_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "derive-normal-z",
+    "catalog_source": "shaderData",
+    "name": "Derive Normal Z",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "diamond-corner-tile",
+    "catalog_source": "shaderData",
+    "name": "Diamond_Corner_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "diamond-tile",
+    "catalog_source": "shaderData",
+    "name": "Diamond_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "droste-zoom",
+    "catalog_source": "shaderData",
+    "name": "Droste_Zoom",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "egg-sdf",
+    "catalog_source": "shaderData",
+    "name": "Egg_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ellipse-sdf",
+    "catalog_source": "shaderData",
+    "name": "Ellipse_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "equilateral-triangle-sdf",
+    "catalog_source": "shaderData",
+    "name": "Equilateral_Triangle_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "fiber-tile",
+    "catalog_source": "shaderData",
+    "name": "Fiber_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "flagstone-tile",
+    "catalog_source": "shaderData",
+    "name": "FlagStone_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "flipbook",
+    "catalog_source": "compData",
+    "name": "Flipbook",
+    "name_zh": "",
+    "category_id": "comp_utilities",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "floor-brick-tile",
+    "catalog_source": "shaderData",
+    "name": "Floor_Brick_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "floor-brick-tile-v2",
+    "catalog_source": "shaderData",
+    "name": "Floor_Brick_Tile_V2",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "fonts-sdf",
+    "catalog_source": "shaderData",
+    "name": "Fonts_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "frame-blend-flipbook",
+    "catalog_source": "shaderData",
+    "name": "Frame Blend Flipbook",
+    "name_zh": "",
+    "category_id": "effect_flipbook",
+    "top_category_id": "effect",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "gaussain-blur",
+    "catalog_source": "shaderData",
+    "name": "Gaussain Blur",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "glass",
+    "catalog_source": "shaderData",
+    "name": "Glass",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hair",
+    "catalog_source": "shaderData",
+    "name": "Hair",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hair-anisotropy",
+    "catalog_source": "shaderData",
+    "name": "Hair Anisotropy",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "half-tone",
+    "catalog_source": "shaderData",
+    "name": "Half Tone",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "heart-sdf",
+    "catalog_source": "shaderData",
+    "name": "Heart_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "heart-shape",
+    "catalog_source": "shaderData",
+    "name": "Heart_Shape",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "heart-wave",
+    "catalog_source": "shaderData",
+    "name": "Heart_Wave",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "herringbone-pattern",
+    "catalog_source": "shaderData",
+    "name": "Herringbone_Pattern",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hexagon-tile",
+    "catalog_source": "shaderData",
+    "name": "Hexagon_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_tools",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hexagram-sdf",
+    "catalog_source": "shaderData",
+    "name": "Hexagram_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "horseshoe-sdf",
+    "catalog_source": "shaderData",
+    "name": "HorseShoe_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "iabs-fractal",
+    "catalog_source": "shaderData",
+    "name": "iabs_Fractal",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "iabs-fractal-v2",
+    "catalog_source": "shaderData",
+    "name": "iabs_Fractal_V2",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "image-rotation",
+    "catalog_source": "shaderData",
+    "name": "Image_Rotation",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "index-switch",
+    "catalog_source": "shaderData",
+    "name": "Index_Switch",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "integer-custom",
+    "catalog_source": "shaderData",
+    "name": "Integer(Custom)",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "interior-mapping",
+    "catalog_source": "shaderData",
+    "name": "Interior Mapping",
+    "name_zh": "",
+    "category_id": "mfs_parallax",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "inverse-transform-matrix",
+    "catalog_source": "shaderData",
+    "name": "Inverse Transform Matrix",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "is-casted-to-plane",
+    "catalog_source": "shaderData",
+    "name": "is Casted to Plane",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "isosceles-trapezoid-sdf",
+    "catalog_source": "shaderData",
+    "name": "Isosceles_Trapezoid_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "isosceles-triangle-sdf",
+    "catalog_source": "shaderData",
+    "name": "Isosceles_Triangle_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "julia-set",
+    "catalog_source": "shaderData",
+    "name": "Julia_Set",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "julia-sine",
+    "catalog_source": "shaderData",
+    "name": "Julia_Sine",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "lambda-fractal",
+    "catalog_source": "shaderData",
+    "name": "Lambda_Fractal",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "led-screen",
+    "catalog_source": "shaderData",
+    "name": "LED_Screen",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "lemon-piece",
+    "catalog_source": "shaderData",
+    "name": "Lemon_Piece",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "line-style",
+    "catalog_source": "shaderData",
+    "name": "Line Style",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "macro-variation",
+    "catalog_source": "shaderData",
+    "name": "Macro_Variation",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mandelbort-v2",
+    "catalog_source": "shaderData",
+    "name": "Mandelbort_V2",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "mandelbrot",
+    "catalog_source": "shaderData",
+    "name": "Mandelbrot",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "marek-dragon",
+    "catalog_source": "shaderData",
+    "name": "Marek_Dragon",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "matcap-v1",
+    "catalog_source": "shaderData",
+    "name": "Matcap v1",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "matcap-v2",
+    "catalog_source": "shaderData",
+    "name": "Matcap v2",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "metal",
+    "catalog_source": "shaderData",
+    "name": "Metal",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "metal-floor-tile1",
+    "catalog_source": "shaderData",
+    "name": "Metal_Floor_Tile1",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "metal-floor-tile2",
+    "catalog_source": "shaderData",
+    "name": "Metal_Floor_Tile2",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "moon-sdf",
+    "catalog_source": "shaderData",
+    "name": "Moon_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "motion-vector-flipbook",
+    "catalog_source": "shaderData",
+    "name": "Motion Vector Flipbook",
+    "name_zh": "",
+    "category_id": "effect_flipbook",
+    "top_category_id": "effect",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "n-polygon-sdf",
+    "catalog_source": "shaderData",
+    "name": "N_Polygon_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "newton-fractal",
+    "catalog_source": "shaderData",
+    "name": "Newton_Fractal",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "object-transform",
+    "catalog_source": "shaderData",
+    "name": "Object Transform",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile2",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile2",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile3",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile3",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile4",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile4",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile5",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile5",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile6",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile6",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ornament-tile7",
+    "catalog_source": "shaderData",
+    "name": "Ornament_Tile7",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "painting",
+    "catalog_source": "shaderData",
+    "name": "Painting",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "paisley-tile",
+    "catalog_source": "shaderData",
+    "name": "Paisley_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette1",
+    "catalog_source": "shaderData",
+    "name": "Palette1",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette10",
+    "catalog_source": "shaderData",
+    "name": "Palette10",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette11",
+    "catalog_source": "shaderData",
+    "name": "Palette11",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette12",
+    "catalog_source": "shaderData",
+    "name": "Palette12",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette13",
+    "catalog_source": "shaderData",
+    "name": "Palette13",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette14",
+    "catalog_source": "shaderData",
+    "name": "Palette14",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette15",
+    "catalog_source": "shaderData",
+    "name": "Palette15",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette16",
+    "catalog_source": "shaderData",
+    "name": "Palette16",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette17",
+    "catalog_source": "shaderData",
+    "name": "Palette17",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette18",
+    "catalog_source": "shaderData",
+    "name": "Palette18",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette19",
+    "catalog_source": "shaderData",
+    "name": "Palette19",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette2",
+    "catalog_source": "shaderData",
+    "name": "Palette2",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette3",
+    "catalog_source": "shaderData",
+    "name": "Palette3",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette4",
+    "catalog_source": "shaderData",
+    "name": "Palette4",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette5",
+    "catalog_source": "shaderData",
+    "name": "Palette5",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette6",
+    "catalog_source": "shaderData",
+    "name": "Palette6",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette7",
+    "catalog_source": "shaderData",
+    "name": "Palette7",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette8",
+    "catalog_source": "shaderData",
+    "name": "Palette8",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "palette9",
+    "catalog_source": "shaderData",
+    "name": "Palette9",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "parabola-sdf",
+    "catalog_source": "shaderData",
+    "name": "Parabola_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "parabola-segment-sdf",
+    "catalog_source": "shaderData",
+    "name": "Parabola_Segment_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "parallax-mapping",
+    "catalog_source": "shaderData",
+    "name": "Parallax Mapping",
+    "name_zh": "",
+    "category_id": "mfs_parallax",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "parallax-occlusion-mapping",
+    "catalog_source": "shaderData",
+    "name": "Parallax Occlusion Mapping",
+    "name_zh": "",
+    "category_id": "mfs_parallax",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "parallelogram-sdf",
+    "catalog_source": "shaderData",
+    "name": "Parallelogram_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "particle-info",
+    "catalog_source": "shaderData",
+    "name": "Particle Info",
+    "name_zh": "",
+    "category_id": "particle_info",
+    "top_category_id": "particle",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "pattern-tile1",
+    "catalog_source": "shaderData",
+    "name": "Pattern_Tile1",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "paving-block-tiles",
+    "catalog_source": "shaderData",
+    "name": "Paving_Block_Tiles",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "phoenix-julia",
+    "catalog_source": "shaderData",
+    "name": "Phoenix_Julia",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "pie-sdf",
+    "catalog_source": "shaderData",
+    "name": "Pie_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "polygon-sdf",
+    "catalog_source": "shaderData",
+    "name": "Polygon_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "quadratic-equation",
+    "catalog_source": "shaderData",
+    "name": "Quadratic Equation",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "quadratic-circle-sdf",
+    "catalog_source": "shaderData",
+    "name": "Quadratic_Circle_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "radial-blur",
+    "catalog_source": "shaderData",
+    "name": "Radial Blur",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "radial-noise",
+    "catalog_source": "shaderData",
+    "name": "Radial-Noise",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "radial-segments",
+    "catalog_source": "shaderData",
+    "name": "Radial-Segments",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "radial-voronoi",
+    "catalog_source": "shaderData",
+    "name": "Radial-Voronoi",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "random-tile-pattern",
+    "catalog_source": "shaderData",
+    "name": "Random_Tile_Pattern",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "raymarching",
+    "catalog_source": "shaderData",
+    "name": "Raymarching",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "regular-hexagon-sdf",
+    "catalog_source": "shaderData",
+    "name": "Regular_Hexagon_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "regular-octogon-sdf",
+    "catalog_source": "shaderData",
+    "name": "Regular_Octogon_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "regular-pentagon-sdf",
+    "catalog_source": "shaderData",
+    "name": "Regular_Pentagon_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "regular-star-sdf",
+    "catalog_source": "shaderData",
+    "name": "Regular_Star_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "relief-parallax-mapping",
+    "catalog_source": "shaderData",
+    "name": "Relief Parallax Mapping",
+    "name_zh": "",
+    "category_id": "mfs_parallax",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "render-mask",
+    "catalog_source": "shaderData",
+    "name": "Render_Mask",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rhombus",
+    "catalog_source": "shaderData",
+    "name": "Rhombus",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rhombus-sdf",
+    "catalog_source": "shaderData",
+    "name": "Rhombus_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ring",
+    "catalog_source": "shaderData",
+    "name": "Ring",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ring-sdf",
+    "catalog_source": "shaderData",
+    "name": "Ring_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ring-tiling",
+    "catalog_source": "shaderData",
+    "name": "Ring_Tiling",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "roof-tile",
+    "catalog_source": "shaderData",
+    "name": "Roof_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rose-curve",
+    "catalog_source": "shaderData",
+    "name": "Rose_Curve",
+    "name_zh": "",
+    "category_id": "shader",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rounded-box-sdf",
+    "catalog_source": "shaderData",
+    "name": "Rounded_Box_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rounded-cross-sdf",
+    "catalog_source": "shaderData",
+    "name": "Rounded_Cross_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rounded-x-sdf",
+    "catalog_source": "shaderData",
+    "name": "Rounded_X_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scale-tile",
+    "catalog_source": "shaderData",
+    "name": "Scale_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scale-tile-v2",
+    "catalog_source": "shaderData",
+    "name": "Scale_Tile_V2",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scatter-coordinate",
+    "catalog_source": "shaderData",
+    "name": "Scatter Coordinate",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scatter-image",
+    "catalog_source": "shaderData",
+    "name": "Scatter_Image",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scene-time-custom",
+    "catalog_source": "shaderData",
+    "name": "Scene_Time(Custom)",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scratch",
+    "catalog_source": "shaderData",
+    "name": "Scratch",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sdf-viewer",
+    "catalog_source": "shaderData",
+    "name": "SDF_Viewer",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "seamless-image",
+    "catalog_source": "shaderData",
+    "name": "Seamless_Image",
+    "name_zh": "",
+    "category_id": "shader_image",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "segment-sdf",
+    "catalog_source": "shaderData",
+    "name": "Segment_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "shading-models",
+    "catalog_source": "shaderData",
+    "name": "Shading Models",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "silk",
+    "catalog_source": "shaderData",
+    "name": "Silk",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "simple-tile",
+    "catalog_source": "shaderData",
+    "name": "Simple_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_tools",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sinh-fractal",
+    "catalog_source": "shaderData",
+    "name": "Sinh_Fractal",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "six-hex-tile",
+    "catalog_source": "shaderData",
+    "name": "Six_Hex_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "skin",
+    "catalog_source": "shaderData",
+    "name": "Skin",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "smile",
+    "catalog_source": "shaderData",
+    "name": "Smile",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spherical-to-cartesian",
+    "catalog_source": "shaderData",
+    "name": "Spherical to Cartesian",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spiral-septagon-fractal",
+    "catalog_source": "shaderData",
+    "name": "Spiral_Septagon_Fractal",
+    "name_zh": "",
+    "category_id": "shader_fractal",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "square",
+    "catalog_source": "shaderData",
+    "name": "Square",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "square-tile",
+    "catalog_source": "shaderData",
+    "name": "Square_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "square-triangle-tile",
+    "catalog_source": "shaderData",
+    "name": "Square_Triangle_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "stair-sdf",
+    "catalog_source": "shaderData",
+    "name": "Stair_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "star-sdf",
+    "catalog_source": "shaderData",
+    "name": "Star_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "steep-parallax-mapping",
+    "catalog_source": "shaderData",
+    "name": "Steep Parallax Mapping",
+    "name_zh": "",
+    "category_id": "mfs_parallax",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "swirl-coordinate",
+    "catalog_source": "shaderData",
+    "name": "Swirl Coordinate",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "switch-multi-images",
+    "catalog_source": "shaderData",
+    "name": "Switch_Multi_Images",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "switch-multi-uvs",
+    "catalog_source": "shaderData",
+    "name": "Switch_Multi_UVs",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tangent-to-world",
+    "catalog_source": "shaderData",
+    "name": "Tangent to World",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tangled-square-tile",
+    "catalog_source": "shaderData",
+    "name": "Tangled_Square_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tile1",
+    "catalog_source": "shaderData",
+    "name": "Tile1",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tile2",
+    "catalog_source": "shaderData",
+    "name": "Tile2",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tile-generator-3x3",
+    "catalog_source": "shaderData",
+    "name": "Tile_Generator(3x3)",
+    "name_zh": "",
+    "category_id": "shader_tiling_tools",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tile-generator-5x5",
+    "catalog_source": "shaderData",
+    "name": "Tile_Generator(5x5)",
+    "name_zh": "",
+    "category_id": "shader_tiling_tools",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tileable-water-caustic",
+    "catalog_source": "shaderData",
+    "name": "Tileable_Water_Caustic",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "time-falloff",
+    "catalog_source": "shaderData",
+    "name": "Time_Falloff",
+    "name_zh": "",
+    "category_id": "shader_utility",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "toon-ocean",
+    "catalog_source": "compData",
+    "name": "Toon Ocean",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "toon-shader",
+    "catalog_source": "shaderData",
+    "name": "Toon Shader",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "triangle-sdf",
+    "catalog_source": "shaderData",
+    "name": "Triangle_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "triplaner",
+    "catalog_source": "shaderData",
+    "name": "Triplaner",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "triplaner-pro",
+    "catalog_source": "shaderData",
+    "name": "Triplaner Pro",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "truchet-tile",
+    "catalog_source": "shaderData",
+    "name": "Truchet_Tile",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "tunnel-sdf",
+    "catalog_source": "shaderData",
+    "name": "Tunnel_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "uneven-capsule-sdf",
+    "catalog_source": "shaderData",
+    "name": "Uneven_Capsule_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "vesica-sdf",
+    "catalog_source": "shaderData",
+    "name": "Vesica_SDF",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "virtual-cube",
+    "catalog_source": "shaderData",
+    "name": "Virtual Cube",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "virtual-cylinder",
+    "catalog_source": "shaderData",
+    "name": "Virtual Cylinder",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "virtual-plane",
+    "catalog_source": "shaderData",
+    "name": "Virtual Plane",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "virtual-sphere",
+    "catalog_source": "shaderData",
+    "name": "Virtual Sphere",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "voronoi-star",
+    "catalog_source": "shaderData",
+    "name": "Voronoi Star",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "water",
+    "catalog_source": "shaderData",
+    "name": "Water",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "water-stain",
+    "catalog_source": "shaderData",
+    "name": "Water_Stain",
+    "name_zh": "",
+    "category_id": "shader_texture",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "weave",
+    "catalog_source": "shaderData",
+    "name": "Weave",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "wicker",
+    "catalog_source": "shaderData",
+    "name": "Wicker",
+    "name_zh": "",
+    "category_id": "shader_tiling_textures",
+    "top_category_id": "shader_tiling",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "wood",
+    "catalog_source": "shaderData",
+    "name": "Wood",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "world-to-tangent",
+    "catalog_source": "shaderData",
+    "name": "World to Tangent",
+    "name_zh": "",
+    "category_id": "mfs_functions",
+    "top_category_id": "mfs",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "yin-yang",
+    "catalog_source": "shaderData",
+    "name": "Yin&Yang",
+    "name_zh": "",
+    "category_id": "shader_shape",
+    "top_category_id": "shader",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ascii",
+    "catalog_source": "compData",
+    "name": "ASCII",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "autumn",
+    "catalog_source": "compData",
+    "name": "Autumn",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "blues",
+    "catalog_source": "compData",
+    "name": "Blues",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "broken-glass",
+    "catalog_source": "compData",
+    "name": "Broken Glass",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cividis",
+    "catalog_source": "compData",
+    "name": "Cividis",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "comic",
+    "catalog_source": "compData",
+    "name": "Comic",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cool",
+    "catalog_source": "compData",
+    "name": "Cool",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "coolwarm",
+    "catalog_source": "compData",
+    "name": "Coolwarm",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "cross-hatching",
+    "catalog_source": "compData",
+    "name": "Cross Hatching",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "crt",
+    "catalog_source": "compData",
+    "name": "CRT",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "debug-float",
+    "catalog_source": "compData",
+    "name": "Debug Float",
+    "name_zh": "",
+    "category_id": "comp_utilities",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "dither-dot",
+    "catalog_source": "compData",
+    "name": "Dither Dot",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "fire-outline",
+    "catalog_source": "compData",
+    "name": "Fire Outline",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "frozen-glass",
+    "catalog_source": "compData",
+    "name": "Frozen Glass",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "glitch",
+    "catalog_source": "compData",
+    "name": "Glitch",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "gnbu",
+    "catalog_source": "compData",
+    "name": "GnBu",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hackwave",
+    "catalog_source": "compData",
+    "name": "HackWave",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "hot",
+    "catalog_source": "compData",
+    "name": "Hot",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "inferno",
+    "catalog_source": "compData",
+    "name": "Inferno",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "jet",
+    "catalog_source": "compData",
+    "name": "Jet",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "magma",
+    "catalog_source": "compData",
+    "name": "Magma",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "noise",
+    "catalog_source": "compData",
+    "name": "Noise",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ocean",
+    "catalog_source": "compData",
+    "name": "Ocean",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "outline-edge",
+    "catalog_source": "compData",
+    "name": "Outline Edge",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "pixel-sorting",
+    "catalog_source": "compData",
+    "name": "Pixel Sorting",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "piyg",
+    "catalog_source": "compData",
+    "name": "PiYG",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "plasma",
+    "catalog_source": "compData",
+    "name": "Plasma",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "puddle",
+    "catalog_source": "compData",
+    "name": "Puddle",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "purple-sunset",
+    "catalog_source": "compData",
+    "name": "Purple Sunset",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rainbow",
+    "catalog_source": "compData",
+    "name": "Rainbow",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rainy-window",
+    "catalog_source": "compData",
+    "name": "Rainy Window",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rdylbu",
+    "catalog_source": "compData",
+    "name": "RdYlBu",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "rgb-to-cmyk",
+    "catalog_source": "compData",
+    "name": "RGB To CMYK",
+    "name_zh": "",
+    "category_id": "comp_utilities",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ripple",
+    "catalog_source": "compData",
+    "name": "Ripple",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "scene-transition",
+    "catalog_source": "compData",
+    "name": "Scene Transition",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "screen-uv",
+    "catalog_source": "compData",
+    "name": "Screen UV",
+    "name_zh": "",
+    "category_id": "comp",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "shifting-color",
+    "catalog_source": "compData",
+    "name": "Shifting Color",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "spectral",
+    "catalog_source": "compData",
+    "name": "Spectral",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "stylized-dither",
+    "catalog_source": "compData",
+    "name": "Stylized Dither",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "sunset",
+    "catalog_source": "compData",
+    "name": "Sunset",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "texture-sample",
+    "catalog_source": "compData",
+    "name": "Texture Sample",
+    "name_zh": "",
+    "category_id": "comp_utilities",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "twilight",
+    "catalog_source": "compData",
+    "name": "Twilight",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "twilight-shifted",
+    "catalog_source": "compData",
+    "name": "Twilight_shifted",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "underwater",
+    "catalog_source": "compData",
+    "name": "Underwater",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "vignette",
+    "catalog_source": "compData",
+    "name": "Vignette",
+    "name_zh": "",
+    "category_id": "comp_utilities",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "viridis",
+    "catalog_source": "compData",
+    "name": "Viridis",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "voronoi",
+    "catalog_source": "compData",
+    "name": "Voronoi",
+    "name_zh": "",
+    "category_id": "comp",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "warning-glitch",
+    "catalog_source": "compData",
+    "name": "Warning Glitch",
+    "name_zh": "",
+    "category_id": "comp_effect",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "white-noise",
+    "catalog_source": "compData",
+    "name": "White Noise",
+    "name_zh": "",
+    "category_id": "comp",
+    "top_category_id": null,
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "ylgnbu",
+    "catalog_source": "compData",
+    "name": "YlGnBu",
+    "name_zh": "",
+    "category_id": "comp_palette",
+    "top_category_id": "comp",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "edges-to-road",
+    "catalog_source": "geomData",
+    "name": "Edges to Road",
+    "name_zh": "边转道路",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "",
+    "example": ""
+  },
+  {
+    "id": "split-points",
+    "catalog_source": "geomData",
+    "name": "Split Points",
+    "name_zh": "拆分点",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "Split Points 节点用于将选中的点从原有拓扑中分离，使其不再与相邻几何共享同一顶点。该操作会在选中的位置创建独立的点，从而断开连接关系，但保留几何的整体形状。常用于生成裂缝、硬边、分离网格片段或为后续变形、UV、法线处理做准备。",
+    "example": ""
+  },
+  {
+    "id": "find-all-cells",
+    "catalog_source": "geomData",
+    "name": "Find All Cells",
+    "name_zh": "寻找封闭单元",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "Find All Cells 节点用于从输入的边网络中检测并枚举所有满足条件的封闭单元（Cell），将每个封闭区域转换为一条封闭曲线",
+    "example": "将二维 Voronoi 边线连接到 Edges 输入，设置 Normal 为 (0,0,1)，即可自动重建所有 Voronoi 面。支持3D，但需要合理设置点Normal，并保证输入边的闭合拓扑合理"
+  },
+  {
+    "id": "2d-medial-axis",
+    "catalog_source": "geomData",
+    "name": "2D Medial Axis",
+    "name_zh": "二维中轴线",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "2D Medial Axis 节点用于从二维网格区域计算其几何中轴线（Medial Axis），生成表示对象骨架的曲线。生成的中轴线能够反映形状的整体拓扑结构",
+    "example": "将一个二维文字或平面轮廓网格连接到 Mesh 输入，适当提高 Precision 并进行数次平滑，即可生成可用于道路网络、植物枝干或程序化骨架动画的中心曲线。"
+  },
+  {
+    "id": "2d-straight-skeleton",
+    "catalog_source": "geomData",
+    "name": "2D Straight Skeleton",
+    "name_zh": "二维直骨架",
+    "category_id": "cat_1783389786751",
+    "top_category_id": "geom",
+    "description": "2D Straight Skeleton 节点用于从二维网格或平面多边形计算其直骨架（Straight Skeleton），并输出对应的曲线结构。直骨架由边界沿法向匀速向内偏移时形成，与中轴线不同，它完全由线段组成并保留原始边界的拓扑特征。该节点适用于屋顶生成、轮廓内缩、道路网络及程序化建筑建模等应用。",
+    "example": "将建筑平面轮廓连接到 Mesh 输入，设置适当的 Precision 后计算直骨架，再利用输出 Curve 作为屋脊线生成程序化屋顶或进行轮廓内缩建模。"
+  }
+]

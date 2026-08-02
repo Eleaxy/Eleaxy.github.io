@@ -1,0 +1,53 @@
+{
+  "id": "cardioid",
+  "name": "Cardioid",
+  "name_zh": "心脏线",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.11 - 11.40.36.100.png",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution.",
+      "default": 256,
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    },
+    {
+      "name": "Factor",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Factor.",
+      "default": 2.0,
+      "de": "Numeric value controlling Factor.",
+      "dz": "设置 系数 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

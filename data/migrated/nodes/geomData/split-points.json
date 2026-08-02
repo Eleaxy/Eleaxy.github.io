@@ -1,0 +1,58 @@
+{
+  "id": "split-points",
+  "name": "Split Points",
+  "name_zh": "拆分点",
+  "category_id": "cat_1783389786751",
+  "category": "Utility",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "Split Points 节点用于将选中的点从原有拓扑中分离，使其不再与相邻几何共享同一顶点。该操作会在选中的位置创建独立的点，从而断开连接关系，但保留几何的整体形状。常用于生成裂缝、硬边、分离网格片段或为后续变形、UV、法线处理做准备。",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.15 - 17.44.24.46.png",
+  "param_descriptions": {
+    "i": {
+      "0": "输入需要进行点分离操作的几何数据，包括网格及其属性。",
+      "1": "指定需要分离的点。为 True 的点会与相邻拓扑断开并复制为独立顶点，False 的点保持原状。"
+    },
+    "o": {
+      "0": "输出完成点分离后的几何数据，包含更新后的拓扑结构及保留的几何属性。"
+    }
+  },
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "控制 Split Points 中“Geometry”的输入，类型为几何数据。",
+      "dz": "控制 Split Points 中“Geometry”的输入，类型为几何数据。"
+    },
+    {
+      "name": "Selection",
+      "type": "NodeSocketBool",
+      "default": true,
+      "description": "控制 Split Points 中“Selection”的输入，类型为布尔值。",
+      "dz": "控制 Split Points 中“Selection”的输入，类型为布尔值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "输出 Split Points 计算后的“Geometry”结果，类型为几何数据。",
+      "dz": "输出 Split Points 计算后的“Geometry”结果，类型为几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1",
+  "created_version": "v1.0.1",
+  "last_modified_version": "v1.0.1",
+  "field_provenance": {
+    "identity": "local v1.0.1 direct-import ledger",
+    "category": "docs/index.html EMBEDDED_STATE.nodeCats",
+    "metadata": "docs/index.html EMBEDDED_STATE.nodeData",
+    "socket_schema": "docs/index.html EMBEDDED_STATE.extraData.manualNodes",
+    "source_blend": "docs/index.html EMBEDDED_STATE.extraData.manualNodes"
+  }
+}

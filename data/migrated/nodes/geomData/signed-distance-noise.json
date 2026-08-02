@@ -1,0 +1,88 @@
+{
+  "id": "signed-distance-noise",
+  "name": "Signed Distance Noise",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Position",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Position.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Position.",
+      "dz": "设置 位置 的向量数据。"
+    },
+    {
+      "name": "Surface",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Surface.",
+      "de": "Geometry data used as Surface.",
+      "dz": "传入或输出用于该节点处理的 表面。"
+    },
+    {
+      "name": "Amplitude",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Amplitude.",
+      "default": 0.019999999552965164,
+      "de": "Numeric value controlling Amplitude.",
+      "dz": "设置 Amplitude 的数值。"
+    },
+    {
+      "name": "Noise Input",
+      "type": "NodeSocketClosure",
+      "description": "Parameter for Noise Input.",
+      "de": "Parameter for Noise Input.",
+      "dz": "指定 噪波 / 输入 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Tangent",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Tangent.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Tangent.",
+      "dz": "设置 切线 的向量数据。"
+    },
+    {
+      "name": "Bitangent",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Bitangent.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Bitangent.",
+      "dz": "设置 副切线 的向量数据。"
+    },
+    {
+      "name": "Magnitude",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Magnitude.",
+      "default": 0.0,
+      "de": "Numeric value controlling Magnitude.",
+      "dz": "设置 Magnitude 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

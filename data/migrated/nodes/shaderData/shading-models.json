@@ -1,0 +1,86 @@
+{
+  "id": "shading-models",
+  "name": "Shading Models",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Light",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Light.",
+      "default": [
+        1.0,
+        -1.0,
+        2.0
+      ],
+      "de": "Vector value for Light.",
+      "dz": "设置 Light 的向量数据。"
+    },
+    {
+      "name": "Normal",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Normal.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Normal.",
+      "dz": "设置 法线 的向量数据。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Roughness.",
+      "default": 0.5,
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Lambert",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Lambert.",
+      "default": 0.0,
+      "de": "Numeric value controlling Lambert.",
+      "dz": "设置 Lambert 的数值。"
+    },
+    {
+      "name": "Half Lambert",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Half Lambert.",
+      "default": 0.0,
+      "de": "Numeric value controlling Half Lambert.",
+      "dz": "设置 Half / Lambert 的数值。"
+    },
+    {
+      "name": "Phong",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Phong.",
+      "default": 0.0,
+      "de": "Numeric value controlling Phong.",
+      "dz": "设置 Phong 的数值。"
+    },
+    {
+      "name": "Blinn Phong",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Blinn Phong.",
+      "default": 0.0,
+      "de": "Numeric value controlling Blinn Phong.",
+      "dz": "设置 Blinn / Phong 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

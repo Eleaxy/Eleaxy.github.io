@@ -1,0 +1,92 @@
+{
+  "id": "mesh-folding",
+  "name": "Mesh Folding",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Animation",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Animation.",
+      "default": 0.5,
+      "de": "Numeric value controlling Animation.",
+      "dz": "设置 Animation 的数值。"
+    },
+    {
+      "name": "Range",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Range.",
+      "default": 0.30000001192092896,
+      "de": "Numeric value controlling Range.",
+      "dz": "设置 Range 的数值。"
+    },
+    {
+      "name": "Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Angle.",
+      "default": 1.0471975803375244,
+      "de": "Numeric value controlling Angle.",
+      "dz": "设置 角度 的数值。"
+    },
+    {
+      "name": "End Face",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the End Face option.",
+      "default": false,
+      "de": "Toggles or selects the End Face option.",
+      "dz": "控制是否启用或选择 End / Face。"
+    },
+    {
+      "name": "Edge Cost",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Edge Cost.",
+      "default": 0.0,
+      "de": "Numeric value controlling Edge Cost.",
+      "dz": "设置 Edge / Cost 的数值。"
+    },
+    {
+      "name": "Flatten",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Flatten option.",
+      "default": false,
+      "de": "Toggles or selects the Flatten option.",
+      "dz": "控制是否启用或选择 Flatten。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

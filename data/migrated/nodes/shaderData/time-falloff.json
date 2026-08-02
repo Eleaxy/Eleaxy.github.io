@@ -1,0 +1,94 @@
+{
+  "id": "time-falloff",
+  "name": "Time_Falloff",
+  "name_zh": "",
+  "category_id": "shader_utility",
+  "category": "Utility",
+  "top_category_id": "shader",
+  "top_category": "Shader",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_utility",
+  "inputs": [
+    {
+      "name": "Anim_Curve",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Anim Curve.",
+      "default": 0,
+      "de": "Integer value controlling Anim Curve.",
+      "dz": "设置 Anim / 曲线 的数值。"
+    },
+    {
+      "name": "Modulo",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Modulo.",
+      "default": 0,
+      "de": "Integer value controlling Modulo.",
+      "dz": "设置 Modulo 的数值。"
+    },
+    {
+      "name": "From Min",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling From Min.",
+      "default": 0,
+      "de": "Integer value controlling From Min.",
+      "dz": "设置 From / 最小值 的数值。"
+    },
+    {
+      "name": "From Max",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling From Max.",
+      "default": 120,
+      "de": "Integer value controlling From Max.",
+      "dz": "设置 From / 最大值 的数值。"
+    },
+    {
+      "name": "To Min",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling To Min.",
+      "default": 0.0,
+      "de": "Numeric value controlling To Min.",
+      "dz": "设置 To / 最小值 的数值。"
+    },
+    {
+      "name": "To Max",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling To Max.",
+      "default": 1.0,
+      "de": "Numeric value controlling To Max.",
+      "dz": "设置 To / 最大值 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Result",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Result.",
+      "default": 0.0,
+      "de": "Numeric value controlling Result.",
+      "dz": "设置 Result 的数值。"
+    },
+    {
+      "name": "From Min",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling From Min.",
+      "default": 0,
+      "de": "Integer value controlling From Min.",
+      "dz": "设置 From / 最小值 的数值。"
+    },
+    {
+      "name": "From Max",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling From Max.",
+      "default": 0,
+      "de": "Integer value controlling From Max.",
+      "dz": "设置 From / 最大值 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "bone-capture",
+  "name": "Bone Capture",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Rest Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skin.",
+      "de": "Geometry data used as Rest Skin.",
+      "dz": "传入或输出用于该节点处理的 Rest / 蒙皮。"
+    },
+    {
+      "name": "Selection",
+      "type": "NodeSocketBool",
+      "description": "select part of geometry to capture weight",
+      "default": true,
+      "de": "select part of geometry to capture weight",
+      "dz": "控制是否启用或选择 选择范围。"
+    },
+    {
+      "name": "Rest Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Points to modify the positions of",
+      "de": "Points to modify the positions of",
+      "dz": "传入或输出用于该节点处理的 Rest / 骨架。"
+    },
+    {
+      "name": "Capture Setting",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Capture Setting.",
+      "default": "Capsule",
+      "de": "Mode selector for Capture Setting.",
+      "dz": "选择 Capture / Setting 的模式。"
+    },
+    {
+      "name": "Bone Length",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bone Length.",
+      "default": 0.8999999761581421,
+      "de": "Numeric value controlling Bone Length.",
+      "dz": "设置 骨骼 / Length 的数值。"
+    },
+    {
+      "name": "Bone Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Bone Radius.",
+      "default": 0.4999999701976776,
+      "de": "Numeric value controlling Bone Radius.",
+      "dz": "设置 骨骼 / 半径 的数值。"
+    },
+    {
+      "name": "Distance Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Distance Falloff for each bone edge",
+      "default": 0.4999999701976776,
+      "de": "Distance Falloff for each bone edge",
+      "dz": "设置 Distance / 衰减 的数值。"
+    },
+    {
+      "name": "Scaled by Edge Length",
+      "type": "NodeSocketBool",
+      "description": "Scale distance falloff by bone length",
+      "default": false,
+      "de": "Scale distance falloff by bone length",
+      "dz": "控制是否启用或选择 Scaled / by / Edge / Length。"
+    },
+    {
+      "name": "Island Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Island Index.",
+      "default": 0,
+      "de": "Integer value controlling Island Index.",
+      "dz": "设置 Island / 索引 的数值。"
+    },
+    {
+      "name": "Blur Iterations",
+      "type": "NodeSocketInt",
+      "description": "How many times to blur the values for all elements",
+      "default": 5,
+      "de": "How many times to blur the values for all elements",
+      "dz": "设置 模糊 / 迭代次数 的数值。"
+    },
+    {
+      "name": "Blur Weight",
+      "type": "NodeSocketFloat",
+      "description": "Relative mix weight of neighboring elements",
+      "default": 1.0,
+      "de": "Relative mix weight of neighboring elements",
+      "dz": "设置 模糊 / 权重 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Rest Skin",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skin.",
+      "de": "Geometry data used as Rest Skin.",
+      "dz": "传入或输出用于该节点处理的 Rest / 蒙皮。"
+    },
+    {
+      "name": "Vis Capture Region",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Vis Capture Region.",
+      "de": "Geometry data used as Vis Capture Region.",
+      "dz": "传入或输出用于该节点处理的 Vis / Capture / Region。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

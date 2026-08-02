@@ -1,0 +1,83 @@
+{
+  "id": "rbf-interpolate",
+  "name": "RBF Interpolate",
+  "name_zh": "",
+  "category_id": "math",
+  "category": "Math",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "math",
+  "inputs": [
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 20,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Target Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Target Geometry.",
+      "de": "Geometry data used as Target Geometry.",
+      "dz": "传入或输出用于该节点处理的 Target / 几何数据。"
+    },
+    {
+      "name": "Discrete Samples",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Discrete Samples.",
+      "de": "Geometry data used as Discrete Samples.",
+      "dz": "传入或输出用于该节点处理的 Discrete / Samples。"
+    },
+    {
+      "name": "Smooth Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Smooth Radius.",
+      "default": 0.20000000298023224,
+      "de": "Numeric value controlling Smooth Radius.",
+      "dz": "设置 Smooth / 半径 的数值。"
+    },
+    {
+      "name": "x",
+      "type": "NodeSocketVector",
+      "description": "Vector value for x.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for x.",
+      "dz": "设置 x 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "x",
+      "type": "NodeSocketVector",
+      "description": "Vector value for x.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for x.",
+      "dz": "设置 x 的向量数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

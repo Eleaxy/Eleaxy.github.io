@@ -1,0 +1,106 @@
+{
+  "id": "truchet-tile",
+  "name": "Truchet_Tile",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 5.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Iteration",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iteration.",
+      "default": 6,
+      "de": "Integer value controlling Iteration.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Line/Circle",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Line Circle option.",
+      "default": false,
+      "de": "Toggles or selects the Line Circle option.",
+      "dz": "控制是否启用或选择 Line / Circle。"
+    },
+    {
+      "name": "Rotation",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Rotation option.",
+      "default": false,
+      "de": "Toggles or selects the Rotation option.",
+      "dz": "控制是否启用或选择 旋转。"
+    },
+    {
+      "name": "Random",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Random.",
+      "default": 0.5,
+      "de": "Numeric value controlling Random.",
+      "dz": "设置 随机量 的数值。"
+    },
+    {
+      "name": "Checker/Random",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Checker Random option.",
+      "default": true,
+      "de": "Toggles or selects the Checker Random option.",
+      "dz": "控制是否启用或选择 Checker / 随机量。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Sine",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Sine.",
+      "default": 0.0,
+      "de": "Numeric value controlling Sine.",
+      "dz": "设置 Sine 的数值。"
+    },
+    {
+      "name": "Mask",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Mask.",
+      "default": 0.0,
+      "de": "Numeric value controlling Mask.",
+      "dz": "设置 遮罩 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

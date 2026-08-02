@@ -1,0 +1,52 @@
+{
+  "id": "recompute-transform",
+  "name": "Recompute Transform",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Menu",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Menu.",
+      "default": "Compute Local from World",
+      "de": "Mode selector for Menu.",
+      "dz": "选择 模式选项 的模式。"
+    },
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry to store a new attribute with the given name on",
+      "de": "Geometry to store a new attribute with the given name on",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    },
+    {
+      "name": "Scale Compensating",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Scale Compensating option.",
+      "default": true,
+      "de": "Toggles or selects the Scale Compensating option.",
+      "dz": "控制是否启用或选择 缩放 / Compensating。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skeleton.",
+      "de": "Geometry data used as Skeleton.",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "render-particles",
+  "name": "Render Particles",
+  "name_zh": "",
+  "category_id": "particle_system_core",
+  "category": "Particle System",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_system_core",
+  "inputs": [
+    {
+      "name": "Particles",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Particles.",
+      "de": "Geometry data used as Particles.",
+      "dz": "传入或输出用于该节点处理的 Particles。"
+    },
+    {
+      "name": "Instance",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instance.",
+      "de": "Geometry data used as Instance.",
+      "dz": "传入或输出用于该节点处理的 Instance。"
+    },
+    {
+      "name": "Pick Instance",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Pick Instance option.",
+      "default": false,
+      "de": "Toggles or selects the Pick Instance option.",
+      "dz": "控制是否启用或选择 Pick / Instance。"
+    },
+    {
+      "name": "Instance Index",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Instance Index.",
+      "default": 0,
+      "de": "Integer value controlling Instance Index.",
+      "dz": "设置 Instance / 索引 的数值。"
+    },
+    {
+      "name": "Rotation",
+      "type": "NodeSocketMenu",
+      "description": "Mode selector for Rotation.",
+      "default": "Facing Camera",
+      "de": "Mode selector for Rotation.",
+      "dz": "选择 旋转 的模式。"
+    },
+    {
+      "name": "Rotate By",
+      "type": "NodeSocketRotation",
+      "description": "Parameter for Rotate By.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Parameter for Rotate By.",
+      "dz": "指定 Rotate / By 参数。"
+    },
+    {
+      "name": "Normalize Instance Scale",
+      "type": "NodeSocketBool",
+      "description": "用粒子半径球进行碰撞防穿模，粒子半径控制实例大小",
+      "default": false,
+      "de": "Toggles or selects the Normalize Instance Scale option.",
+      "dz": "用粒子半径球进行碰撞防穿模，粒子半径控制实例大小"
+    },
+    {
+      "name": "Scaled by Speed",
+      "type": "NodeSocketBool",
+      "description": "用速度去控制实例Z轴长度，一般用于火花粒子之类",
+      "default": false,
+      "de": "Toggles or selects the Scaled by Speed option.",
+      "dz": "用速度去控制实例Z轴长度，一般用于火花粒子之类"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Scale.",
+      "default": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "de": "Vector value for Scale.",
+      "dz": "设置 缩放 的向量数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Instances",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Instances.",
+      "de": "Geometry data used as Instances.",
+      "dz": "传入或输出用于该节点处理的 Instances。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

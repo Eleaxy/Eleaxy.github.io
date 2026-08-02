@@ -1,0 +1,62 @@
+{
+  "id": "cone-direction",
+  "name": "Cone Direction",
+  "name_zh": "",
+  "category_id": "particle_force",
+  "category": "Force",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_force",
+  "inputs": [
+    {
+      "name": "Axis",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Axis.",
+      "default": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "de": "Vector value for Axis.",
+      "dz": "设置 轴向 的向量数据。"
+    },
+    {
+      "name": "Cone Angle",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Cone Angle.",
+      "default": 0.5235987901687622,
+      "de": "Numeric value controlling Cone Angle.",
+      "dz": "设置 Cone / 角度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Direction",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Direction.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Direction.",
+      "dz": "设置 Direction 的向量数据。"
+    },
+    {
+      "name": "Angle Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Angle Falloff.",
+      "default": 0.0,
+      "de": "Numeric value controlling Angle Falloff.",
+      "dz": "设置 角度 / 衰减 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

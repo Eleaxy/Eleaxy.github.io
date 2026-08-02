@@ -1,0 +1,100 @@
+{
+  "id": "reaction-diffusion",
+  "name": "Reaction Diffusion",
+  "name_zh": "",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Iterations.",
+      "default": 30,
+      "de": "Integer value controlling Iterations.",
+      "dz": "设置 迭代次数 的数值。"
+    },
+    {
+      "name": "Initial B",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Initial B.",
+      "default": 0.0,
+      "de": "Numeric value controlling Initial B.",
+      "dz": "设置 Initial / B 的数值。"
+    },
+    {
+      "name": "Diffusion A",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Diffusion A.",
+      "default": 1.0,
+      "de": "Numeric value controlling Diffusion A.",
+      "dz": "设置 Diffusion / A 的数值。"
+    },
+    {
+      "name": "Diffusion B",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Diffusion B.",
+      "default": 0.5,
+      "de": "Numeric value controlling Diffusion B.",
+      "dz": "设置 Diffusion / B 的数值。"
+    },
+    {
+      "name": "Feed",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Feed.",
+      "default": 0.054999999701976776,
+      "de": "Numeric value controlling Feed.",
+      "dz": "设置 Feed 的数值。"
+    },
+    {
+      "name": "Kill",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Kill.",
+      "default": 0.06199999898672104,
+      "de": "Numeric value controlling Kill.",
+      "dz": "设置 Kill 的数值。"
+    },
+    {
+      "name": "Delta Time",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Delta Time.",
+      "default": 1.0,
+      "de": "Numeric value controlling Delta Time.",
+      "dz": "设置 Delta / 时间 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Chemical_B",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Chemical B.",
+      "default": 0.0,
+      "de": "Numeric value controlling Chemical B.",
+      "dz": "设置 Chemical / B 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

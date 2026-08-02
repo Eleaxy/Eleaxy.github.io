@@ -1,0 +1,65 @@
+{
+  "id": "sphere-mask",
+  "name": "Sphere Mask",
+  "name_zh": "",
+  "category_id": "particle_mask",
+  "category": "Mask",
+  "top_category_id": "particle",
+  "top_category": "Particle System",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "particle_mask",
+  "inputs": [
+    {
+      "name": "Origin",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Origin.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Origin.",
+      "dz": "设置 原点 的向量数据。"
+    },
+    {
+      "name": "Radius",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Radius.",
+      "default": 1.0,
+      "de": "Numeric value controlling Radius.",
+      "dz": "设置 半径 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Outside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Outside option.",
+      "default": false,
+      "de": "Toggles or selects the Outside option.",
+      "dz": "控制是否启用或选择 外部。"
+    },
+    {
+      "name": "Inside",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Inside option.",
+      "default": false,
+      "de": "Toggles or selects the Inside option.",
+      "dz": "控制是否启用或选择 内部。"
+    },
+    {
+      "name": "Debug",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Debug.",
+      "de": "Geometry data used as Debug.",
+      "dz": "传入或输出用于该节点处理的 Debug。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/Particle_System/Particle_System_V3_EN.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Particle_System/Particle_System_V3_EN.blend?raw=1"
+}

@@ -1,0 +1,132 @@
+{
+  "id": "floor-brick-tile",
+  "name": "Floor_Brick_Tile",
+  "name_zh": "",
+  "category_id": "shader_tiling_textures",
+  "category": "Tiling Textures",
+  "top_category_id": "shader_tiling",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_tiling_textures",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Scale.",
+      "default": 5.0,
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Falloff",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Falloff.",
+      "default": 0.5,
+      "de": "Numeric value controlling Falloff.",
+      "dz": "设置 衰减 的数值。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Seed.",
+      "default": 0,
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Gradient",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Gradient.",
+      "default": 0.0,
+      "de": "Numeric value controlling Gradient.",
+      "dz": "设置 Gradient 的数值。"
+    },
+    {
+      "name": "Square",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Square.",
+      "default": 0.0,
+      "de": "Numeric value controlling Square.",
+      "dz": "设置 Square 的数值。"
+    },
+    {
+      "name": "Brick",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Brick.",
+      "default": 0.0,
+      "de": "Numeric value controlling Brick.",
+      "dz": "设置 Brick 的数值。"
+    },
+    {
+      "name": "Part_Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Part Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Part Random.",
+      "dz": "设置 Part / 随机量 的颜色数据。"
+    },
+    {
+      "name": "Per_Random",
+      "type": "NodeSocketColor",
+      "description": "Color value for Per Random.",
+      "default": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "de": "Color value for Per Random.",
+      "dz": "设置 Per / 随机量 的颜色数据。"
+    },
+    {
+      "name": "Part_UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Part UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Part UV.",
+      "dz": "设置 Part / UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Per_UV",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Per UV.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Per UV.",
+      "dz": "设置 Per / UV 坐标 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Shader_Tools.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Shader_Tools.blend?raw=1"
+}

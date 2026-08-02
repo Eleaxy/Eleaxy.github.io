@@ -1,0 +1,125 @@
+{
+  "id": "line-drawing",
+  "name": "Line Drawing",
+  "name_zh": "",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Resolution.",
+      "default": 512,
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Darken",
+      "type": "NodeSocketFloat",
+      "description": "暗部变暗",
+      "default": 0.20000001788139343,
+      "de": "Numeric value controlling Darken.",
+      "dz": "暗部变暗"
+    },
+    {
+      "name": "Lighten",
+      "type": "NodeSocketFloat",
+      "description": "亮部变亮",
+      "default": 0.7999999523162842,
+      "de": "Numeric value controlling Lighten.",
+      "dz": "亮部变亮"
+    },
+    {
+      "name": "Contrast",
+      "type": "NodeSocketFloat",
+      "description": "整体对比度",
+      "default": 0.8999999761581421,
+      "de": "Numeric value controlling Contrast.",
+      "dz": "整体对比度"
+    },
+    {
+      "name": "Ratio",
+      "type": "NodeSocketFloat",
+      "description": "根据亮度分布数量的比例",
+      "default": 24.0,
+      "de": "Numeric value controlling Ratio.",
+      "dz": "根据亮度分布数量的比例"
+    },
+    {
+      "name": "Density",
+      "type": "NodeSocketFloat",
+      "description": "整体密度",
+      "default": 1000.0,
+      "de": "Numeric value controlling Density.",
+      "dz": "整体密度"
+    },
+    {
+      "name": "Resample Curve",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Resample Curve.",
+      "default": 0.004999999888241291,
+      "de": "Numeric value controlling Resample Curve.",
+      "dz": "设置 Resample / 曲线 的数值。"
+    },
+    {
+      "name": "Smooth Iterations",
+      "type": "NodeSocketInt",
+      "description": "Integer value controlling Smooth Iterations.",
+      "default": 5,
+      "de": "Integer value controlling Smooth Iterations.",
+      "dz": "设置 Smooth / 迭代次数 的数值。"
+    },
+    {
+      "name": "",
+      "type": "NodeSocketImage",
+      "description": "Parameter for this socket.",
+      "default": null,
+      "de": "Parameter for this socket.",
+      "dz": "此参数用于传入该接口需要的输入数据。"
+    },
+    {
+      "name": "Invert BW",
+      "type": "NodeSocketBool",
+      "description": "反转明暗",
+      "default": false,
+      "de": "Toggles or selects the Invert BW option.",
+      "dz": "反转明暗"
+    },
+    {
+      "name": "Power",
+      "type": "NodeSocketFloat",
+      "description": "图片明度处理",
+      "default": 1.0,
+      "de": "Numeric value controlling Power.",
+      "dz": "图片明度处理"
+    },
+    {
+      "name": "Subtract",
+      "type": "NodeSocketFloat",
+      "description": "图片明度处理",
+      "default": 0.15000000596046448,
+      "de": "Numeric value controlling Subtract.",
+      "dz": "图片明度处理"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}

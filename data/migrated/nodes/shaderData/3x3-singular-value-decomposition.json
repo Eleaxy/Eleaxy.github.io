@@ -1,0 +1,55 @@
+{
+  "id": "3x3-singular-value-decomposition",
+  "name": " 3x3 Singular Value Decomposition",
+  "name_zh": "",
+  "category_id": "shader",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader",
+  "inputs": [
+    {
+      "name": "Matrix",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Matrix.",
+      "de": "Parameter for Matrix.",
+      "dz": "指定 矩阵 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "U",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for U.",
+      "de": "Parameter for U.",
+      "dz": "指定 U 参数。"
+    },
+    {
+      "name": "Σ",
+      "type": "NodeSocketVector",
+      "description": "Vector value for Σ.",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "de": "Vector value for Σ.",
+      "dz": "设置 Σ 的向量数据。"
+    },
+    {
+      "name": "Vt",
+      "type": "NodeSocketBundle",
+      "description": "Parameter for Vt.",
+      "de": "Parameter for Vt.",
+      "dz": "指定 Vt 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Advanced/Extra_Matrix_Math.blend?raw=1"
+}

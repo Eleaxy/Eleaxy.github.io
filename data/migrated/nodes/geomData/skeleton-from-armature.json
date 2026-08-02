@@ -1,0 +1,52 @@
+{
+  "id": "skeleton-from-armature",
+  "name": "Skeleton from Armature",
+  "name_zh": "",
+  "category_id": "rigging",
+  "category": "",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "rigging",
+  "inputs": [
+    {
+      "name": "Armature",
+      "type": "NodeSocketObject",
+      "description": "Parameter for Armature.",
+      "default": null,
+      "de": "Parameter for Armature.",
+      "dz": "指定 Armature 参数。"
+    },
+    {
+      "name": "Skin",
+      "type": "NodeSocketObject",
+      "description": "A geometry which auto weighted outside, it should contain all the bone weight as vertex groups",
+      "default": null,
+      "de": "A geometry which auto weighted outside, it should contain all the bone weight as vertex groups",
+      "dz": "指定 蒙皮 参数。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Skeleton.",
+      "de": "Geometry data used as Skeleton.",
+      "dz": "传入或输出用于该节点处理的 骨架。"
+    },
+    {
+      "name": "Rest Skeleton",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Rest Skeleton.",
+      "de": "Geometry data used as Rest Skeleton.",
+      "dz": "传入或输出用于该节点处理的 Rest / 骨架。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/RIgging_System/GN_Rigging_V3.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/RIgging_System/GN_Rigging_V3.blend?raw=1"
+}
