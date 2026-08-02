@@ -146,6 +146,26 @@
     return isPluginDetailUrl(value, id) && new URL(value, window.location.origin).hash === '';
   }
 
+  function isCanonicalAutomationFlowNodeUrl(value, nodeId) {
+    try {
+      const url = new URL(value, window.location.origin);
+      return typeof nodeId === 'string' && /^AFNode[A-Za-z0-9]+$/.test(nodeId)
+        && url.origin === window.location.origin
+        && url.pathname === '/plugins.html'
+        && url.search === `?plugin=automation-flow&node=${nodeId}`
+        && url.hash === '';
+    } catch {
+      return false;
+    }
+  }
+
+  function isCanonicalAutomationFlowDetailUrl(value, route) {
+    return route?.kind === 'detail' && route.id === 'automation-flow'
+      && (route.nodeId
+        ? isCanonicalAutomationFlowNodeUrl(value, route.nodeId)
+        : isCanonicalPluginDetailUrl(value, route.id));
+  }
+
   function validHomePluginSnapshot(value) {
     return value && typeof value === 'object'
       && value.version === homePluginStateVersion
@@ -977,6 +997,25 @@
     startHomePluginNavigation(event, link, id);
   }
 
+  function captureAutomationFlowNodeSelection(event) {
+    const link = event.target instanceof Element
+      ? event.target.closest('[data-automation-flow-node-trigger], [data-automation-flow-related-node], [data-automation-flow-node-back]')
+      : null;
+    if (!link || !root?.contains(link) || !router || !ordinarySelfNavigation(event, link)) return;
+    const currentRoute = parseUrl(new URL(window.location.href));
+    const destination = new URL(link.href, window.location.href);
+    const destinationRoute = parseUrl(destination);
+    if (!isCanonicalAutomationFlowDetailUrl(window.location.href, currentRoute)
+      || !isCanonicalAutomationFlowDetailUrl(destination, destinationRoute)
+      || (!currentRoute.nodeId && !destinationRoute.nodeId)) return;
+    event.preventDefault();
+    event.stopPropagation();
+    router.navigate(destination, {
+      trigger: 'automation-flow-node-selection',
+      replace: true,
+    }).catch(() => undefined);
+  }
+
   function captureHomePluginBack(event) {
     if (event.defaultPrevented || event.button !== 0
       || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -984,8 +1023,14 @@
     if (!back || !root?.contains(back) || back.hasAttribute('download')
       || (back.target && back.target.toLowerCase() !== '_self')) return;
     const route = parseUrl(new URL(window.location.href));
-    if (!shell || route.kind !== 'detail' || route.nodeId || !isPluginDetailUrl(window.location.href, route.id)) return;
-    const homeOrigin = isCanonicalPluginDetailUrl(window.location.href, route.id) && detailHasMatchingHomeOrigin(route);
+    if (!shell || route.kind !== 'detail'
+      || (route.nodeId
+        ? !isCanonicalAutomationFlowNodeUrl(window.location.href, route.nodeId)
+        : !isPluginDetailUrl(window.location.href, route.id))) return;
+    const homeOrigin = (route.nodeId
+      ? isCanonicalAutomationFlowNodeUrl(window.location.href, route.nodeId)
+      : isCanonicalPluginDetailUrl(window.location.href, route.id))
+      && detailHasMatchingHomeOrigin(route);
     if (!homeOrigin && !initialPluginDetailRouterEntry()) return;
     event.preventDefault();
     event.stopPropagation();
@@ -1038,6 +1083,7 @@
     root?.removeEventListener('pointerover', warmPluginDetail);
     root?.removeEventListener('focusin', warmPluginDetail);
     root?.removeEventListener('click', capturePluginTrigger, true);
+    root?.removeEventListener('click', captureAutomationFlowNodeSelection, true);
     root?.removeEventListener('click', captureHomePluginBack, true);
     root?.removeEventListener('click', onRootClick);
     root?.removeEventListener('input', onRootInput);
@@ -1069,6 +1115,7 @@
   root?.addEventListener('pointerover', warmPluginDetail);
   root?.addEventListener('focusin', warmPluginDetail);
   root?.addEventListener('click', capturePluginTrigger, true);
+  root?.addEventListener('click', captureAutomationFlowNodeSelection, true);
   root?.addEventListener('click', captureHomePluginBack, true);
   root?.addEventListener('click', onRootClick);
   root?.addEventListener('input', onRootInput);
