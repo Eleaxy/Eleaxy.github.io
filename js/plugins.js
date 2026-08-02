@@ -5,6 +5,16 @@
   if (!container) return;
 
   const validIds = new Set(['automation-flow', 'autocel']);
+  const automationFlowCategoryHashes = new Set([
+    '#automation-flow-group-flow',
+    '#automation-flow-group-property',
+    '#automation-flow-group-task',
+    '#automation-flow-group-scene_object',
+    '#automation-flow-group-inputs',
+    '#automation-flow-group-math_utilities_vector',
+    '#automation-flow-group-rotation',
+    '#automation-flow-group-matrix',
+  ]);
   const shell = document.body.dataset.page === 'plugins';
   const home = document.body.dataset.page === 'home';
   const root = document.querySelector('[data-main-content]');
@@ -144,6 +154,12 @@
 
   function isCanonicalPluginDetailUrl(value, id) {
     return isPluginDetailUrl(value, id) && new URL(value, window.location.origin).hash === '';
+  }
+
+  function isCanonicalAutomationFlowCatalogUrl(value) {
+    if (!isPluginDetailUrl(value, 'automation-flow')) return false;
+    const hash = new URL(value, window.location.origin).hash;
+    return hash === '' || automationFlowCategoryHashes.has(hash);
   }
 
   function isCanonicalAutomationFlowNodeUrl(value, nodeId) {
@@ -1029,7 +1045,9 @@
         : !isPluginDetailUrl(window.location.href, route.id))) return;
     const homeOrigin = (route.nodeId
       ? isCanonicalAutomationFlowNodeUrl(window.location.href, route.nodeId)
-      : isCanonicalPluginDetailUrl(window.location.href, route.id))
+      : route.id === 'automation-flow'
+        ? isCanonicalAutomationFlowCatalogUrl(window.location.href)
+        : isCanonicalPluginDetailUrl(window.location.href, route.id))
       && detailHasMatchingHomeOrigin(route);
     if (!homeOrigin && !initialPluginDetailRouterEntry()) return;
     event.preventDefault();
