@@ -1,14 +1,14 @@
 (() => {
   const root = document.documentElement;
   const page = document.body.dataset.page || 'home';
+  const homeSectionIds = ['home', 'tutorials', 'stages', 'nodes', 'plugins-section', 'contributors'];
   const sectionFromLocation = () => {
     if (page !== 'home') return page;
     const hash = location.hash.slice(1);
-    return ['nodes', 'stages', 'tutorials', 'plugins-section', 'contributors'].includes(hash) ? hash : 'home';
+    return homeSectionIds.includes(hash) ? hash : 'home';
   };
 
-  function updateCurrentSection() {
-    const section = sectionFromLocation();
+  function setCurrentSection(section) {
     root.dataset.currentSection = section;
     document.querySelectorAll('.primary-nav a').forEach(link => {
       const href = link.getAttribute('href') || '';
@@ -18,6 +18,39 @@
       if (target === section) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     });
+  }
+
+  function sectionFromScroll() {
+    if (page !== 'home') return sectionFromLocation();
+    const headerBottom = document.querySelector('.site-header')?.getBoundingClientRect().bottom || 0;
+    const readingLine = Math.min(
+      innerHeight - 1,
+      headerBottom + Math.min(220, Math.max(1, (innerHeight - headerBottom) * .28)),
+    );
+    let current = 'home';
+    for (const id of homeSectionIds) {
+      const section = document.getElementById(id);
+      if (!section) continue;
+      if (section.getBoundingClientRect().top > readingLine) break;
+      current = id;
+    }
+    const documentBottom = document.documentElement.scrollHeight;
+    if (Math.ceil(scrollY + innerHeight) >= documentBottom) current = homeSectionIds.at(-1);
+    return current;
+  }
+
+  let currentSectionFrame = null;
+  function scheduleCurrentSectionUpdate() {
+    if (currentSectionFrame !== null) return;
+    currentSectionFrame = requestAnimationFrame(() => {
+      currentSectionFrame = null;
+      setCurrentSection(sectionFromScroll());
+    });
+  }
+
+  function updateCurrentSectionFromLocation() {
+    setCurrentSection(sectionFromLocation());
+    scheduleCurrentSectionUpdate();
   }
 
   [
@@ -36,9 +69,20 @@
   }
 
   ensureFooterMarqueeSafeHost();
-  updateCurrentSection();
-  addEventListener('hashchange', updateCurrentSection);
-  addEventListener('popstate', updateCurrentSection);
+  updateCurrentSectionFromLocation();
+  addEventListener('hashchange', updateCurrentSectionFromLocation);
+  addEventListener('popstate', updateCurrentSectionFromLocation);
+  addEventListener('scroll', scheduleCurrentSectionUpdate, { passive: true });
+  addEventListener('resize', scheduleCurrentSectionUpdate);
+
+  let homeSectionResizeObserver = null;
+  if (page === 'home' && typeof ResizeObserver === 'function') {
+    homeSectionResizeObserver = new ResizeObserver(scheduleCurrentSectionUpdate);
+    homeSectionIds.forEach(id => {
+      const section = document.getElementById(id);
+      if (section) homeSectionResizeObserver.observe(section);
+    });
+  }
 
   const reducedMotionPageswapListenerKey = '__resourceArchiveReducedMotionPageswapListenerInstalled';
 
@@ -106,10 +150,26 @@
     anchorObserver.observe(document.body, { childList: true, subtree: true });
   }
 
-  addEventListener('pageshow', restoreHomeAnchor);
+  addEventListener('pageshow', event => {
+    restoreHomeAnchor();
+    scheduleCurrentSectionUpdate();
+    if (event.persisted && homeSectionResizeObserver === null && page === 'home' && typeof ResizeObserver === 'function') {
+      homeSectionResizeObserver = new ResizeObserver(scheduleCurrentSectionUpdate);
+      homeSectionIds.forEach(id => {
+        const section = document.getElementById(id);
+        if (section) homeSectionResizeObserver.observe(section);
+      });
+    }
+  });
   addEventListener('hashchange', restoreHomeAnchor);
-  addEventListener('pagehide', () => {
+  addEventListener('pagehide', event => {
     disconnectAnchorObserver();
+    if (currentSectionFrame !== null) cancelAnimationFrame(currentSectionFrame);
+    currentSectionFrame = null;
+    if (!event.persisted) {
+      homeSectionResizeObserver?.disconnect();
+      homeSectionResizeObserver = null;
+    }
   });
 
 })();
