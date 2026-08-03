@@ -3,7 +3,6 @@
 
   const canvas = document.querySelector('#footer-tetris');
   const toggle = document.querySelector('.tetris-toggle');
-  const languageToggle = document.querySelector('[data-testid="language-toggle"]');
   const shell = canvas?.closest('.footer-tetris-shell');
   const footer = canvas?.closest('.site-footer');
   if (!canvas || !toggle || !shell || !footer) return;
@@ -42,8 +41,6 @@
   let score = 0;
   let frame = 0;
   let entryFrame = 0;
-  let hudPointerPending = false;
-  let hudPointerFrame = 0;
   let lastStep = 0;
   let visible = false;
   let disposed = false;
@@ -103,7 +100,6 @@
     control.dataset.i18nAriaLabel = labelKey;
     control.setAttribute('aria-label', translate(labelKey, fallback));
     control.textContent = glyph;
-    control.addEventListener('pointerdown', markHudPointerPending);
     control.addEventListener('click', event => {
       event.stopPropagation();
       if (phase === 'play') action();
@@ -377,21 +373,6 @@
     entryFrame = 0;
   }
 
-  function clearHudPointerPending() {
-    hudPointerPending = false;
-    if (hudPointerFrame) cancelAnimationFrame(hudPointerFrame);
-    hudPointerFrame = 0;
-  }
-
-  function markHudPointerPending() {
-    hudPointerPending = true;
-    if (hudPointerFrame) cancelAnimationFrame(hudPointerFrame);
-    hudPointerFrame = requestAnimationFrame(() => {
-      hudPointerFrame = 0;
-      hudPointerPending = false;
-    });
-  }
-
   function scheduleEntry(callback, delay) {
     const timer = setTimeout(() => {
       entryTimers.delete(timer);
@@ -434,7 +415,6 @@
     scheduleEntry(() => {
       if (phase === 'play') scrollTo({ top: Math.max(0, document.documentElement.scrollHeight - innerHeight), behavior: 'instant' });
     }, 80);
-    canvas.focus({ preventScroll: true });
   }
 
   function startGame() {
@@ -462,7 +442,6 @@
 
   function endGame({ focusToggle = true } = {}) {
     cancelEntry();
-    clearHudPointerPending();
     phase = 'idle';
     syncToggleLabel();
     flick = 0;
@@ -482,28 +461,55 @@
     startGame();
   }
 
+  function preservesNativeKeyboard(event) {
+    const target = event.target;
+    if (!(target instanceof Element)) return false;
+    if (target.closest([
+      'input',
+      'select',
+      'textarea',
+      'summary',
+      '[contenteditable]:not([contenteditable="false"])',
+      '[role="combobox"]',
+      '[role="listbox"]',
+      '[role="option"]',
+      '[role="tree"]',
+      '[role="treeitem"]',
+      '[role="grid"]',
+      '[role="gridcell"]',
+      '[role="radio"]',
+      '[role="slider"]',
+      '[role="spinbutton"]',
+      '[role="tab"]',
+      '[role="menuitem"]',
+      '[role="textbox"]',
+    ].join(','))) return true;
+    if (event.key !== ' ' && event.key !== 'Enter') return false;
+    return Boolean(target.closest([
+      'button',
+      'a[href]',
+      '[role="button"]',
+      '[role="link"]',
+      '[role="checkbox"]',
+      '[role="switch"]',
+    ].join(',')));
+  }
+
   function onKeydown(event) {
+    if (document.querySelector('dialog[open]')) return;
     if (event.key === 'Escape' && phase !== 'idle') {
       endGame();
       event.preventDefault();
       return;
     }
+    if (preservesNativeKeyboard(event)) return;
     if (phase !== 'play') return;
-    if (document.activeElement !== canvas) return;
     if (event.key === 'ArrowLeft') move(-1);
     else if (event.key === 'ArrowRight') move(1);
     else if (event.key === 'ArrowUp') rotate();
     else if (event.key === 'ArrowDown' || event.key === ' ') hardDrop();
     else return;
     event.preventDefault();
-  }
-
-  function onCanvasBlur(event) {
-    const movingToModeControl = event.relatedTarget === toggle
-      || languageToggle?.contains(event.relatedTarget)
-      || hud?.contains(event.relatedTarget)
-      || hudPointerPending;
-    if (phase === 'play' && !movingToModeControl) endGame({ focusToggle: false });
   }
 
   function onLanguageChange() {
@@ -548,16 +554,14 @@
   function attachControls() {
     if (disposed || controlsAttached) return;
     toggle.addEventListener('click', onToggleClick);
-    addEventListener('keydown', onKeydown);
-    canvas.addEventListener('blur', onCanvasBlur);
+    document.addEventListener('keydown', onKeydown);
     controlsAttached = true;
   }
 
   function detachControls() {
     if (!controlsAttached) return;
     toggle.removeEventListener('click', onToggleClick);
-    removeEventListener('keydown', onKeydown);
-    canvas.removeEventListener('blur', onCanvasBlur);
+    document.removeEventListener('keydown', onKeydown);
     controlsAttached = false;
   }
 
@@ -600,9 +604,14 @@
     syncReducedMotionTitle();
   }
 
-  function moveFocusToReducedMotionTarget() {
-    if (document.activeElement !== canvas || !reducedMotionFocusTarget?.isConnected) return;
+  function moveFocusToReducedMotionTarget(hadGameFocus) {
+    if (!hadGameFocus || !reducedMotionFocusTarget?.isConnected) return;
     reducedMotionFocusTarget.focus({ preventScroll: true });
+  }
+
+  function gameOwnsFocus() {
+    const activeElement = document.activeElement;
+    return activeElement === toggle || activeElement === canvas || Boolean(hud?.contains(activeElement));
   }
 
   function restoreReducedMotionFocusTarget() {
@@ -618,11 +627,12 @@
     if (disposed || reducedMotion === nextReducedMotion) return;
     reducedMotion = nextReducedMotion;
     if (reducedMotion) {
+      const hadGameFocus = gameOwnsFocus();
       endGame({ focusToggle: false });
       disconnectVisibility();
       detachControls();
       disableReducedMotionControls();
-      moveFocusToReducedMotionTarget();
+      moveFocusToReducedMotionTarget(hadGameFocus);
       if (!suspended) observeResize();
       canvas.dataset.running = 'false';
       return;
