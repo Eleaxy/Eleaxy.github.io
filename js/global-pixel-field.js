@@ -198,7 +198,7 @@
     '.button-secondary',
     '.back-link',
   ].join(',');
-  const footerExclusionSelector = '.footer-copy, .tetris-toggle, #footer-tetris';
+  const footerExclusionSelector = '#footer-contact-toggle, #footer-contact-copy, .tetris-toggle, #footer-tetris';
   const interactionTargetSelector = [
     arrowTargetSelector,
     touchTargetSelector,

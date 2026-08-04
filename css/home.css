@@ -14,7 +14,6 @@
 }
 
 .hero-identity {
-  height: 214px;
   min-height: 214px;
   border-bottom: 1px solid var(--border);
   background: var(--page);
@@ -23,7 +22,6 @@
 .hero-identity > .hero-content-frame {
   display: grid;
   grid-template-columns: 58fr 42fr;
-  height: 100%;
   min-height: 214px;
 }
 
