@@ -1,5 +1,6 @@
 (() => {
   let promise = null;
+  let manifestPromise = null;
   const element = (tag, className, text) => {
     const node = document.createElement(tag);
     if (className) node.className = className;
@@ -7,18 +8,33 @@
     return node;
   };
 
-  async function load() {
-    if (promise) return promise;
-    promise = fetch('/data/migrated/manifest.json')
+  function loadManifest() {
+    if (!manifestPromise) {
+      const pending = fetch('/data/migrated/manifest.json')
       .then(response => {
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
-      })
-      .then(manifest => Promise.all(manifest.stages.map(async entry => {
+      });
+      manifestPromise = pending;
+      void pending.catch(() => {
+        if (manifestPromise === pending) manifestPromise = null;
+      });
+    }
+    return manifestPromise;
+  }
+
+  function load() {
+    if (!promise) {
+      const pending = loadManifest().then(manifest => Promise.all(manifest.stages.map(async entry => {
         const response = await fetch(`/data/migrated/${entry.file}`);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
         return response.json();
       })));
+      promise = pending;
+      void pending.catch(() => {
+        if (promise === pending) promise = null;
+      });
+    }
     return promise;
   }
 
@@ -42,5 +58,5 @@
     return configureImage(document.createElement('img'), stage, className);
   }
 
-  window.ResourceArchiveStages = { load, image, configureImage };
+  window.ResourceArchiveStages = { load, loadManifest, image, configureImage };
 })();

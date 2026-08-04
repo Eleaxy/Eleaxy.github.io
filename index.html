@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resource Archive</title>
+  <script src="/js/theme-bootstrap.js"></script>
   <link rel="stylesheet" href="/css/archive.css">
   <link rel="stylesheet" href="/css/motion.css">
   <link rel="stylesheet" href="/css/home.css">
@@ -21,7 +22,7 @@
     <div class="nav-shell">
       <a class="brand" href="/index.html">Resource Archive</a>
       <nav class="primary-nav" aria-label="Primary">
-        <a href="#home" aria-current="page">Home</a><a href="#tutorials">Tutorials</a><a href="#stages">Stages</a><a href="#nodes">Nodes</a><a href="#plugins-section">Plugins</a><a href="#contributors">Contributors</a>
+        <a href="#home" aria-current="page">Home</a><a href="#tutorials">Tutorials</a><a href="#stages">Stages</a><a href="#nodes">Nodes</a><a href="#plugins-section">Plugins</a><a href="#videos">Videos</a><a href="#contributors">Contributors</a>
       </nav>
     </div>
   </header>
@@ -32,7 +33,7 @@
           <h1 id="home-title" data-i18n="home-title">Nodes process data. Scenes organise objects.</h1>
           <div class="hero-descriptor">
             <p data-i18n="home-descriptor">Plugins turn repeated operations into tools.</p>
-            <p class="hero-facts" data-i18n="home-facts">569 node records · 12 stage files · 2 plugins</p>
+            <p class="hero-facts" data-home-facts>Loading archive totals…</p>
           </div>
         </div>
       </div>
@@ -47,10 +48,11 @@
         </div>
         <aside class="archive-status" aria-label="Archive status" data-i18n-aria-label="home-archive-status">
           <p class="source-kind" data-i18n="home-archive-status">Archive status</p>
-          <div><span data-i18n="home-node-records">Node records</span><strong>569</strong></div>
-          <div><span data-i18n="home-stage-records">Stage records</span><strong>12</strong></div>
-          <div><span data-i18n="home-tutorial-records">Tutorial records</span><strong>9</strong></div>
-          <div><span data-i18n="home-upstream-sources">Plugins</span><strong>2</strong></div>
+          <div><span data-i18n="home-node-records">Node records</span><strong data-archive-stat="nodes">Loading…</strong></div>
+          <div><span data-i18n="home-stage-records">Stage records</span><strong data-archive-stat="stages">Loading…</strong></div>
+          <div><span data-i18n="home-tutorial-records">Tutorial records</span><strong data-archive-stat="tutorials">Loading…</strong></div>
+          <div><span data-i18n="home-video-records">Videos</span><strong data-archive-stat="videos">Loading…</strong></div>
+          <div><span data-i18n="home-upstream-sources">Plugins</span><strong data-archive-stat="plugins">Loading…</strong></div>
         </aside>
       </div>
     </section>
@@ -88,6 +90,17 @@
       </header>
       <div id="plugins" class="plugin-list" aria-live="polite">
         <p class="loading" role="status" data-plugin-loading>Loading plugin records…</p>
+      </div>
+    </section>
+    <section id="videos" class="home-section stage-preview-section video-preview-section" aria-labelledby="videos-title">
+      <header class="stage-preview-heading video-preview-heading">
+        <div class="video-preview-heading-copy">
+          <p class="eyebrow" data-i18n="videos-eyebrow">VIDEO ARCHIVE</p>
+          <h2 id="videos-title" data-i18n="videos-title">VIDEOS</h2>
+        </div>
+      </header>
+      <div id="video-preview-app" aria-live="polite">
+        <div class="loading stage-rail-skeleton" role="status" aria-label="Loading video previews" data-i18n-aria-label="videos-loading-previews-label" data-i18n="videos-loading-previews">Loading video previews…</div>
       </div>
     </section>
     <section id="contributors" class="continuous-section" aria-labelledby="contributors-title">
@@ -131,15 +144,20 @@
     </div>
   </footer>
   <script src="/js/i18n.js" defer></script>
+  <script src="/js/theme-pixel-transition.js" defer></script>
+  <script src="/js/site-preferences.js" defer></script>
   <script src="/js/site-shell.js" defer></script>
   <script src="/js/tutorials.js" defer></script>
   <script src="/js/global-pixel-field.js" defer></script>
   <script src="/js/cube-particle-wake.js" defer></script>
   <script src="/js/component-motion.js" defer></script>
   <script src="/js/stage-data.js" defer></script>
+  <script src="/js/video-data.js" defer></script>
+  <script src="/js/archive-stats.js" defer></script>
   <script src="/js/stage-rail.js" defer></script>
   <script src="/js/stage-media-motion.js" defer></script>
   <script src="/js/stage-preview.js" defer></script>
+  <script src="/js/video-preview.js" defer></script>
   <script src="/js/node-taxonomy.js" defer></script>
   <script src="/js/node-wordmark.js" defer></script>
   <script src="/js/node-directory.js" defer></script>

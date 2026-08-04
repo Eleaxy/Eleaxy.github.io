@@ -2,16 +2,6 @@
   const CATALOG_URL = '/data/plugin-details/automation-flow-catalog.json';
   const AUTOMATION_FLOW_BRAND_SOURCE = 'data/plugins.json#/0/external_destinations/0/label/zh';
   const AUTOMATION_FLOW_PROVIDER_SOURCE = 'data/plugin-details/automation-flow.json#/identity/provider';
-  const GROUPS = Object.freeze([
-    ['flow', 23],
-    ['property', 21],
-    ['task', 11],
-    ['scene_object', 11],
-    ['inputs', 8],
-    ['math_utilities_vector', 18],
-    ['rotation', 11],
-    ['matrix', 11],
-  ]);
   const summaryMap = Object.freeze({
     AFNodeDelayWait: '让流程暂停指定秒数，并按设定间隔检查等待状态。',
     AFNodeEnd: '标记主流程的结束位置。',
@@ -358,9 +348,11 @@
 
   function validateCatalog(value) {
     assert(value && typeof value === 'object', 'root');
-    assert(value.total_nodes === 114, 'total_nodes');
-    assert(Array.isArray(value.groups) && value.groups.length === GROUPS.length, 'groups');
-    assert(GROUPS.every(([key, count], index) => value.groups[index]?.key === key && value.groups[index]?.count === count), 'group order');
+    assert(Number.isInteger(value.total_nodes) && value.total_nodes >= 0, 'total_nodes');
+    assert(Array.isArray(value.groups) && value.groups.length > 0, 'groups');
+    assert(value.groups.every(group => typeof group?.key === 'string' && group.key
+      && Number.isInteger(group.count) && group.count >= 0), 'groups');
+    assert(new Set(value.groups.map(group => group.key)).size === value.groups.length, 'group keys');
     assert(Array.isArray(value.nodes) && value.nodes.length === value.total_nodes, 'nodes');
     const ids = new Set();
     const counts = new Map();
@@ -376,11 +368,12 @@
       assert(typeof node.image === 'string' && /^\/assets\/plugins\/automation-flow\/nodes\/[^/]+\.png$/.test(node.image), `${node.bl_idname} image`);
       counts.set(node.group, (counts.get(node.group) || 0) + 1);
     });
-    assert(GROUPS.every(([key, count]) => counts.get(key) === count), 'node group counts');
+    assert(value.groups.every(group => counts.get(group.key) === group.count), 'node group counts');
+    assert([...counts.keys()].every(key => value.groups.some(group => group.key === key)), 'node groups');
     return value;
   }
 
-  function heading(detail, language) {
+  function heading(detail, catalog, language) {
     const header = withProvenance(
       element('header', { className: 'automation-flow-header', dataset: { automationFlowHeader: '' } }),
       detail.identity,
@@ -412,9 +405,10 @@
       textContent: detail.identity.provider,
     }), detail.identity.provider, language));
     const stats = element('dl', { className: 'automation-flow-stats', attributes: { 'aria-label': languageFor(language) === 'zh' ? '目录统计' : 'Catalog statistics' } });
+    const imageCount = catalog.nodes.filter(node => node.image).length;
     const records = languageFor(language) === 'zh'
-      ? [['节点', '114'], ['分类', '08'], ['图像', '114']]
-      : [['Nodes', '114'], ['Groups', '08'], ['Images', '114']];
+      ? [['节点', String(catalog.total_nodes)], ['分类', String(catalog.groups.length).padStart(2, '0')], ['图像', String(imageCount)]]
+      : [['Nodes', String(catalog.total_nodes)], ['Groups', String(catalog.groups.length).padStart(2, '0')], ['Images', String(imageCount)]];
     records.forEach(([label, value]) => {
       const item = element('div');
       item.append(element('dt', { textContent: label }), element('dd', { dataset: { automationFlowStat: '' }, textContent: value }));
@@ -523,13 +517,13 @@
       element('article', { className: 'plugin-detail plugin-detail-automation-flow', dataset: { automationFlowRoot: '' } }),
       provenance,
     );
-    article.append(heading(detail, language));
+    article.append(heading(detail, catalog, language));
     const overview = element('section', {
       className: 'automation-flow-overview',
       attributes: { 'aria-labelledby': 'automation-flow-overview-heading' },
     });
     const overviewHeading = element('div', { className: 'automation-flow-overview-heading' });
-    const title = element('h2', { textContent: languageFor(language) === 'zh' ? '八个分类' : 'Eight categories' });
+    const title = element('h2', { textContent: languageFor(language) === 'zh' ? `${catalog.groups.length} 个分类` : `${catalog.groups.length} categories` });
     title.id = 'automation-flow-overview-heading';
     overviewHeading.append(title, element('p', {
       textContent: languageFor(language) === 'zh'
@@ -547,7 +541,7 @@
     catalog.groups.forEach((group, index) => axis.append(categoryAnchor(group, 'axis', language, index, provenance)));
     rail.append(railTitle, axis, element('p', {
       className: 'automation-flow-axis-note',
-      textContent: languageFor(language) === 'zh' ? '114 项已归档节点记录' : '114 archived node records',
+      textContent: languageFor(language) === 'zh' ? `${catalog.total_nodes} 项已归档节点记录` : `${catalog.total_nodes} archived node records`,
     }));
     const sections = element('div', { className: 'automation-flow-groups' });
     catalog.groups.forEach((group, groupIndex) => {

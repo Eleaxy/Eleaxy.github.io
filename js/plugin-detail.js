@@ -11,7 +11,7 @@
     provider_documentation: new Set(['provider_documentation']),
   };
   const translate = (key, parameters) => window.resourceArchiveI18n?.translate(key, parameters) ?? key;
-  const message = key => translate(`plugin-detail-${key}`);
+  const message = (key, parameters) => translate(`plugin-detail-${key}`, parameters);
   let renderLanguage = null;
   const pluginTransitionNames = Object.freeze({
     'automation-flow': { title: 'plugin-title-automation-flow' },
@@ -258,7 +258,7 @@
     const section = document.createElement('section');
     section.className = 'plugin-detail-section plugin-node-section';
     const heading = document.createElement('h2');
-    heading.textContent = message('node-catalog');
+    heading.textContent = message('node-catalog', { count: detail.nodes.length });
     const controls = document.createElement('div');
     controls.className = 'plugin-node-controls';
     const searchLabel = document.createElement('label');

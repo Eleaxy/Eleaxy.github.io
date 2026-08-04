@@ -254,7 +254,10 @@
     });
     const heading = element('h2', { textContent: languageFor(language) === 'zh' ? '材质节点库' : 'Material node library' });
     heading.id = 'autocel-node-catalog-heading';
-    const metadata = element('p', { className: 'autocel-node-metadata', textContent: languageFor(language) === 'zh' ? '40 个节点 · 7 个分类 · 23 张预览' : '40 nodes · 7 categories · 23 previews' });
+    const nodeCount = detail.nodes.length;
+    const categoryCount = Object.keys(detail.category_labels).length;
+    const previewCount = (detail.assets.node_previews || []).length;
+    const metadata = element('p', { className: 'autocel-node-metadata', textContent: languageFor(language) === 'zh' ? `${nodeCount} 个节点 · ${categoryCount} 个分类 · ${previewCount} 张预览` : `${nodeCount} nodes · ${categoryCount} categories · ${previewCount} previews` });
     const searchLabel = element('label', { className: 'autocel-search-label', textContent: languageFor(language) === 'zh' ? '搜索节点名称或用途' : 'Search node name or usage' });
     const search = element('input', {
       dataset: { autocelNodeSearch: '', pluginNodeSearch: '' },
@@ -344,7 +347,7 @@
     return article;
   }
 
-  function updateFilters(root, language) {
+  function updateFilters(root, detail, language) {
     const query = state.query.trim().toLocaleLowerCase();
     let visible = 0;
     root.querySelectorAll('[data-autocel-node]').forEach(card => {
@@ -359,7 +362,7 @@
       button.setAttribute('aria-pressed', String(button.dataset.autocelCategory === state.category));
     });
     const count = root.querySelector('[data-autocel-node-count]');
-    if (count) count.textContent = `${visible} / 40 ${languageFor(language) === 'zh' ? '个节点可见' : 'nodes visible'}`;
+    if (count) count.textContent = `${visible} / ${detail.nodes.length} ${languageFor(language) === 'zh' ? '个节点可见' : 'nodes visible'}`;
     const empty = root.querySelector('[data-autocel-empty]');
     if (empty) empty.hidden = visible !== 0;
   }
@@ -418,7 +421,7 @@
       }
       if (control.dataset.autocelCategory) {
         state.category = control.dataset.autocelCategory;
-        updateFilters(root, language);
+        updateFilters(root, detail, language);
         return;
       }
       state.query = '';
@@ -427,18 +430,18 @@
         state.focusSearch = true;
         search.focus({ preventScroll: true });
       }
-      updateFilters(root, language);
+      updateFilters(root, detail, language);
     };
     const onInput = event => {
       if (!event.target.matches?.('[data-autocel-node-search]')) return;
       stop(event);
       state.query = event.target.value;
       state.focusSearch = document.activeElement === event.target;
-      updateFilters(root, language);
+      updateFilters(root, detail, language);
     };
     root.addEventListener('click', onClick, true);
     root.addEventListener('input', onInput, true);
-    updateFilters(root, language);
+    updateFilters(root, detail, language);
     if (state.focusSearch && search) {
       focusFrame = requestAnimationFrame(() => {
         focusFrame = null;

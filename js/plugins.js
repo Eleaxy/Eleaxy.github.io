@@ -21,6 +21,7 @@
   const state = window.__resourceArchivePluginsState || { records: [] };
   state.prefetchIdle ??= null;
   state.pendingFocusPlugin ??= null;
+  state.automationFlowCatalogRestore ??= null;
   window.__resourceArchivePluginsState = state;
 
   const homePluginSnapshotKey = 'resourceArchivePluginHomeSnapshot';
@@ -614,6 +615,26 @@
     }
   }
 
+  function restoreAutomationFlowCatalog(snapshot) {
+    if (!snapshot || !/^AFNode[A-Za-z0-9]+$/.test(snapshot.nodeId)
+      || !Number.isFinite(snapshot.x) || !Number.isFinite(snapshot.y)) return;
+    const route = parseUrl(new URL(window.location.href));
+    if (!isCanonicalAutomationFlowCatalogUrl(window.location.href) || route.nodeId) return;
+    const trigger = root?.querySelector(`[data-automation-flow-node-trigger="${snapshot.nodeId}"]`);
+    if (!(trigger instanceof HTMLElement)) return;
+    const restorePosition = () => window.scrollTo({
+      left: snapshot.x,
+      top: snapshot.y,
+      behavior: 'instant',
+    });
+    restorePosition();
+    requestAnimationFrame(() => {
+      if (!isCanonicalAutomationFlowCatalogUrl(window.location.href)) return;
+      restorePosition();
+      trigger.focus({ preventScroll: true });
+    });
+  }
+
   function detailTitle(id) {
     const zh = window.resourceArchiveI18n?.language === 'zh';
     const name = id === 'autocel' ? 'AutoCel' : 'Automation Flow';
@@ -933,7 +954,7 @@
       context.target.replaceChildren(detailShell(prepared.detail, route));
       context.afterCommit(liveRoot => {
         hydrate(liveRoot, route, prepared.detail);
-        if (!context.initial && context.direction !== 'language') {
+        if (!context.initial && context.direction !== 'language' && !context.historyBack) {
           window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
         }
         return disposeRenderer;
@@ -1015,7 +1036,7 @@
 
   function captureAutomationFlowNodeSelection(event) {
     const link = event.target instanceof Element
-      ? event.target.closest('[data-automation-flow-node-trigger], [data-automation-flow-related-node], [data-automation-flow-node-back]')
+      ? event.target.closest('[data-automation-flow-node-trigger], [data-automation-flow-related-node]')
       : null;
     if (!link || !root?.contains(link) || !router || !ordinarySelfNavigation(event, link)) return;
     const currentRoute = parseUrl(new URL(window.location.href));
@@ -1024,6 +1045,13 @@
     if (!isCanonicalAutomationFlowDetailUrl(window.location.href, currentRoute)
       || !isCanonicalAutomationFlowDetailUrl(destination, destinationRoute)
       || (!currentRoute.nodeId && !destinationRoute.nodeId)) return;
+    if (!currentRoute.nodeId) {
+      state.automationFlowCatalogRestore = detailHasMatchingHomeOrigin(currentRoute) ? null : {
+        nodeId: destinationRoute.nodeId,
+        x: window.scrollX,
+        y: window.scrollY,
+      };
+    }
     event.preventDefault();
     event.stopPropagation();
     router.navigate(destination, {
@@ -1053,6 +1081,13 @@
     event.preventDefault();
     event.stopPropagation();
     if (homeOrigin) history.back();
+    else if (route.nodeId) {
+      const catalogRestore = state.automationFlowCatalogRestore;
+      state.automationFlowCatalogRestore = null;
+      router?.navigate(back.href, { trigger: 'automation-flow-node-back', replace: true })
+        .then(() => restoreAutomationFlowCatalog(catalogRestore))
+        .catch(() => undefined);
+    }
     else window.location.replace('/plugins.html');
   }
 

@@ -1,7 +1,7 @@
 (() => {
   const root = document.documentElement;
   const page = document.body.dataset.page || 'home';
-  const homeSectionIds = ['home', 'tutorials', 'stages', 'nodes', 'plugins-section', 'contributors'];
+  const homeSectionIds = ['home', 'tutorials', 'stages', 'nodes', 'plugins-section', 'videos', 'contributors'];
   const sectionFromLocation = () => {
     if (page !== 'home') return page;
     const hash = location.hash.slice(1);
@@ -12,8 +12,8 @@
     root.dataset.currentSection = section;
     document.querySelectorAll('.primary-nav a').forEach(link => {
       const href = link.getAttribute('href') || '';
-      const target = href.match(/\/(nodes|stages|tutorials|plugins|contributors)\.html/)?.[1]
-        || href.match(/#(home|nodes|stages|tutorials|plugins-section|contributors)$/)?.[1]
+      const target = href.match(/\/(nodes|stages|tutorials|plugins|videos|contributors)\.html/)?.[1]
+        || href.match(/#(home|nodes|stages|tutorials|plugins-section|videos|contributors)$/)?.[1]
         || 'home';
       if (target === section) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');

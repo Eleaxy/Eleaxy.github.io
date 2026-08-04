@@ -7,6 +7,7 @@
   }
 
   const selector = '.stage-media[data-local-image]';
+  const railSelector = '[data-stage-rail]';
   const SAMPLE_CELL = 14;
   const DRAW_CELL = 13;
   const PROMPT_HEIGHT = 56;
@@ -56,7 +57,7 @@
   function visibleMediaRect(record, bounds = record?.media.getBoundingClientRect()) {
     const media = boundsRect(bounds);
     if (!record || !media) return null;
-    const rail = boundsRect(record.media.closest('[data-stage-rail]')?.getBoundingClientRect());
+    const rail = boundsRect(record.media.closest(record.railSelector)?.getBoundingClientRect());
     if (!rail) return null;
     const left = Math.max(media.left, rail.left, 0);
     const top = Math.max(media.top, rail.top, 0);
@@ -158,10 +159,12 @@
     const mask = document.createElement('span');
     mask.className = 'stage-media-mask';
     mask.setAttribute('aria-hidden', 'true');
-    const cta = document.createElement('span');
-    cta.className = 'stage-media-cta';
-    cta.textContent = translate('stages-media-cta');
-    mask.append(cta);
+    if (record.ctaKey) {
+      const cta = document.createElement('span');
+      cta.className = 'stage-media-cta';
+      cta.textContent = translate(record.ctaKey);
+      mask.append(cta);
+    }
     record.media.append(mask);
     record.mask = mask;
   }
@@ -300,6 +303,7 @@
   }
 
   function startDrawing(record) {
+    if (!record.samplePixels) return;
     const visible = visibleMediaRect(record);
     if (target !== record || !motionAllowed() || !visible) {
       deactivateRecord(record);
@@ -323,18 +327,21 @@
     if (!motionAllowed() || !record.media.isConnected || !visibleMediaRect(record)) return;
     if (target && target !== record) deactivateRecord(target);
     ensureMask(record);
-    if (!ensureCanvas()) return;
+    if (record.samplePixels && !ensureCanvas()) return;
     target = record;
     started = window.performance.now();
     record.media.classList.add('is-media-active');
-    startDrawing(record);
+    if (record.samplePixels) startDrawing(record);
   }
 
-  function register(media) {
+  function register(media, options) {
     const existing = recordsByMedia.get(media);
     if (existing) return existing;
     const record = {
       media,
+      railSelector: options.railSelector,
+      samplePixels: options.samplePixels,
+      ctaKey: options.ctaKey,
       mask: null,
       imageWait: null,
       listeners: new AbortController(),
@@ -358,15 +365,15 @@
       removeLayers();
       return;
     }
-    let eligibleRecords = 0;
+    let eligibleSampleRecords = 0;
     records.forEach(record => {
-      const rail = boundsRect(record.media.closest('[data-stage-rail]')?.getBoundingClientRect());
+      const rail = boundsRect(record.media.closest(record.railSelector)?.getBoundingClientRect());
       if (!rail) {
         deactivateRecord(record);
         removeMask(record);
         return;
       }
-      eligibleRecords += 1;
+      if (record.samplePixels) eligibleSampleRecords += 1;
       if (!isVisible(record)) {
         deactivateRecord(record);
         removeMask(record);
@@ -374,14 +381,20 @@
       }
       ensureMask(record);
     });
-    if (eligibleRecords) ensureCanvas();
+    if (eligibleSampleRecords) ensureCanvas();
     else removeCanvas();
   }
 
-  function enhance(root = document) {
+  function enhance(root = document, options = {}) {
     if (disposed || !root) return;
-    if (root.nodeType === 1 && root.matches(selector)) register(root);
-    root.querySelectorAll?.(selector).forEach(register);
+    const settings = {
+      mediaSelector: options.mediaSelector ?? selector,
+      railSelector: options.railSelector ?? railSelector,
+      samplePixels: options.samplePixels !== false,
+      ctaKey: options.ctaKey === undefined ? 'stages-media-cta' : options.ctaKey,
+    };
+    if (root.nodeType === 1 && root.matches(settings.mediaSelector)) register(root, settings);
+    root.querySelectorAll?.(settings.mediaSelector).forEach(media => register(media, settings));
     reconcile();
   }
 

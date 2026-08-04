@@ -32,12 +32,28 @@
   let dpr = Math.min(Math.max(devicePixelRatio || 1, 1), 2);
   const cell = 9;
   const brush = 10;
-  const bands = [
-    [0.36, '#2b416f'],
-    [0.46, '#3b5bd9'],
-    [0.62, '#f5c518'],
-    [0.78, '#e0492a'],
-  ];
+  const lightPixelPalette = {
+    surface: '#fff',
+    grid: '#fafafa',
+    footerLow: '#1c2541',
+    bands: [
+      [0.36, '#2b416f'],
+      [0.46, '#3b5bd9'],
+      [0.62, '#f5c518'],
+      [0.78, '#e0492a'],
+    ],
+  };
+  const darkPixelPalette = {
+    surface: '#15181d',
+    grid: '#20242b',
+    footerLow: '#7889b8',
+    bands: [
+      [0.36, '#8ea4dc'],
+      [0.46, '#799cff'],
+      [0.62, '#ffe168'],
+      [0.78, '#ff826a'],
+    ],
+  };
   const seed = 3.91;
   const footerHeatDecay = 0.878;
   const footerReferenceFrameMs = 1000 / 60;
@@ -106,6 +122,13 @@
   let footerPhase = 0;
   let footerPhaseTime = 0;
   let footerHeatTime = 0;
+  const clickBlastStorageKey = 'resource-archive-click-blast';
+  let clickBlastEnabled = false;
+  try {
+    clickBlastEnabled = localStorage.getItem(clickBlastStorageKey) === 'on';
+  } catch {
+    clickBlastEnabled = false;
+  }
   const waves = [];
   const heartSparks = [];
   const heartState = {
@@ -325,6 +348,20 @@
   const opaqueAlphaResource = Object.freeze({ status: 'opaque' });
   let footerMask = null;
   let footerMaskBuildQueued = false;
+
+  function currentPixelPalette() {
+    return document.documentElement.dataset.resolvedTheme === 'dark'
+      ? darkPixelPalette
+      : lightPixelPalette;
+  }
+
+  function pixelColor(value, palette = currentPixelPalette()) {
+    let color = palette.bands[0][1];
+    if (value >= palette.bands[1][0]) color = palette.bands[1][1];
+    if (value >= palette.bands[2][0]) color = palette.bands[2][1];
+    if (value >= palette.bands[3][0]) color = palette.bands[3][1];
+    return value >= 0.86 && value < 1.02 ? '#d8ff00' : color;
+  }
 
   canvas.dataset.footerMaskKind = '';
   canvas.dataset.footerMaskWidth = '0';
@@ -1818,7 +1855,7 @@
     }
   }
 
-  function drawFooterCell(index, value, viewOffset, exclusions, shakeExpansion) {
+  function drawFooterCell(index, value, viewOffset, exclusions, shakeExpansion, palette) {
     if (value < .30) return;
     const column = index % columns;
     const row = Math.floor(index / columns);
@@ -1826,22 +1863,17 @@
     const y = row * cell + viewOffset;
     if (x >= width || y + cell <= 0 || y >= height) return;
     if (footerCellIntersectsExclusion(x, y, x + cell - 1, y + cell - 1, exclusions, shakeExpansion)) return;
-    let color = '#1c2541';
-    if (value >= .46) color = '#3b5bd9';
-    if (value >= .62) color = '#f5c518';
-    if (value >= .78) color = '#e0492a';
-    if (value >= .86 && value < 1.02) color = '#d8ff00';
-    context.fillStyle = color;
+    context.fillStyle = value < .46 ? palette.footerLow : pixelColor(value, palette);
     context.fillRect(x, y, cell - 1, cell - 1);
   }
 
-  function drawFooterComposite(scrollOffset) {
+  function drawFooterComposite(scrollOffset, palette) {
     const viewOffset = Math.round(scrollOffset / cell) * cell - scrollOffset;
     const exclusions = footerViewportGeometry().exclusions;
     const shakeExpansion = shake > 0.01 ? shake * 10 + 1 : 0;
     for (let activeIndex = 0; activeIndex < footerActiveCount; activeIndex += 1) {
       const index = footerActiveIndices[activeIndex];
-      drawFooterCell(index, footerHeat[index], viewOffset, exclusions, shakeExpansion);
+      drawFooterCell(index, footerHeat[index], viewOffset, exclusions, shakeExpansion, palette);
     }
   }
 
@@ -1893,6 +1925,7 @@
   }
 
   function draw(now, heroBounds, stageBounds, heroIsActive) {
+    const palette = currentPixelPalette();
     context.save();
     if (shake > 0.01) {
       shake *= 0.9;
@@ -1901,12 +1934,12 @@
     const footerExclusions = footerViewportGeometry().exclusions;
     const shakeExpansion = shake > 0.01 ? shake * 10 + 1 : 0;
     context.clearRect(-40, -40, width + 80, height + 80);
-    context.fillStyle = '#fff';
+    context.fillStyle = palette.surface;
     context.fillRect(-40, -40, width + 80, height + 80);
 
     const scrollOffset = touch ? 0 : scrollY;
     const offset = scrollOffset - Math.floor(scrollOffset / cell) * cell;
-    context.strokeStyle = '#fafafa';
+    context.strokeStyle = palette.grid;
     context.lineWidth = 1;
     context.beginPath();
     for (let x = 0; x <= width; x += cell) {
@@ -1957,23 +1990,18 @@
             + Math.sin(column * 0.6 + documentRow * 0.8 + time * 1.7) * 0.045;
         }
         if (value < 0.36 && !(value >= 0.86 && value < 1.02)) continue;
-        let color = bands[0][1];
-        if (value >= bands[1][0]) color = bands[1][1];
-        if (value >= bands[2][0]) color = bands[2][1];
-        if (value >= bands[3][0]) color = bands[3][1];
-        if (value >= 0.86 && value < 1.02) color = '#d8ff00';
         if (!isSuppressedDynamicCell(centerX, viewY + cell * .5, footerExclusions, shakeExpansion)) {
-          context.fillStyle = color;
+          context.fillStyle = pixelColor(value, palette);
           context.fillRect(column * cell, viewY, cell - 1, cell - 1);
         }
       }
     }
-    drawFooterComposite(scrollOffset);
-    drawHeartComposite(scrollOffset, footerExclusions, shakeExpansion);
+    drawFooterComposite(scrollOffset, palette);
+    drawHeartComposite(scrollOffset, footerExclusions, shakeExpansion, palette);
     context.restore();
   }
 
-  function drawHeartComposite(scrollOffset, footerExclusions, shakeExpansion) {
+  function drawHeartComposite(scrollOffset, footerExclusions, shakeExpansion, palette) {
     if (heartState.compositeOpacity <= 0) return;
     context.save();
     context.globalAlpha = heartState.compositeOpacity;
@@ -1989,12 +2017,7 @@
         const x = column * cell;
         if (footerCellIntersectsExclusion(x, viewY, x + cell - 1, viewY + cell - 1,
           footerExclusions, shakeExpansion)) continue;
-        let color = bands[0][1];
-        if (value >= bands[1][0]) color = bands[1][1];
-        if (value >= bands[2][0]) color = bands[2][1];
-        if (value >= bands[3][0]) color = bands[3][1];
-        if (value >= .86 && value < 1.02) color = '#d8ff00';
-        context.fillStyle = color;
+        context.fillStyle = pixelColor(value, palette);
         context.fillRect(x, viewY, cell - 1, cell - 1);
       }
     }
@@ -2186,6 +2209,20 @@
     return Boolean(target.closest('a, button, input, select, textarea, .site-header, .archive-preview, .stage-media, .media-crumble-canvas'));
   }
 
+  function clickBlastAllowed() {
+    return clickBlastEnabled && !touch && !reducedMotion;
+  }
+
+  function cancelClickBlastCharge() {
+    if (!charging) return;
+    charging = false;
+    chargeStarted = 0;
+    chargeX = 0;
+    chargeY = 0;
+    if (canvas.dataset.mode === 'charge') canvas.dataset.mode = touch ? 'touch-route' : 'ambient';
+    requestRender();
+  }
+
   function onPointerMove(event) {
     if (touch || reducedMotion) return;
     pointerX = event.clientX;
@@ -2207,9 +2244,10 @@
   }
 
   function onPointerDown(event) {
-    if (touch || reducedMotion || event.button !== 0) return;
+    if (event.button !== 0) return;
     lastMove = performance.now();
     pacmanX = -1;
+    if (!clickBlastAllowed()) return;
     if (isControlTarget(event.target)) return;
     charging = true;
     chargeStarted = performance.now();
@@ -2220,6 +2258,10 @@
 
   const releaseCharge = () => {
     if (!charging) return;
+    if (!clickBlastAllowed()) {
+      cancelClickBlastCharge();
+      return;
+    }
     charging = false;
     lastMove = performance.now();
     pacmanX = -1;
@@ -2230,12 +2272,25 @@
     requestRender();
   };
   function onDoubleClick(event) {
-    if (touch || reducedMotion || isControlTarget(event.target)) return;
+    if (!clickBlastAllowed() || isControlTarget(event.target)) return;
     addWave(event.clientX, event.clientY, 2.8);
     deposit(event.clientX, event.clientY, 1, brush * 22);
     shake = 2.4;
     lastMove = performance.now();
     requestRender();
+  }
+
+  function onPreferencesChange(event) {
+    const detail = event.detail || {};
+    if (detail.clickBlast === 'on' || detail.clickBlast === 'off') {
+      clickBlastEnabled = detail.clickBlast === 'on';
+      canvas.dataset.clickBlast = detail.clickBlast;
+      if (!clickBlastEnabled) cancelClickBlastCharge();
+    }
+    if (detail.resolvedTheme === 'light' || detail.resolvedTheme === 'dark') {
+      if (reducedMotion) drawStatic();
+      else requestRender();
+    }
   }
 
   function mutationAffectsArrowGeometry(mutation) {
@@ -2907,6 +2962,7 @@
     document.addEventListener('load', onResourceLoad, true);
     document.addEventListener('error', onResourceLoad, true);
     document.addEventListener('resource-archive-tutorial-render', onTutorialRender);
+    document.addEventListener('resource-archive-preferences-change', onPreferencesChange);
   }
 
   function detachOwnedListeners() {
@@ -2923,6 +2979,7 @@
     document.removeEventListener('load', onResourceLoad, true);
     document.removeEventListener('error', onResourceLoad, true);
     document.removeEventListener('resource-archive-tutorial-render', onTutorialRender);
+    document.removeEventListener('resource-archive-preferences-change', onPreferencesChange);
   }
 
   function refreshTargets() {
@@ -2967,6 +3024,7 @@
   attachOwnedListeners();
   listenForReducedMotion();
   listenForPointerCapability();
+  canvas.dataset.clickBlast = clickBlastEnabled ? 'on' : 'off';
 
   if (reducedMotion) {
     clearDynamicState();

@@ -1,7 +1,24 @@
 .plugin-detail-autocel {
   --autocel-line: var(--border-strong);
   --autocel-muted: var(--text-secondary);
+  --autocel-light-asset-caption: #525252;
+  --autocel-hero-asset-surface: linear-gradient(135deg, #f2f5f5, #fbfbfb 60%, #edf3ff);
+  --autocel-workflow-asset-surface: #f2f5f5;
+  --autocel-multi-light-asset-surface: linear-gradient(135deg, #f5f2ee, #f4f7ff);
+  --autocel-node-proof-asset-surface: #f7f7f6;
+  --autocel-panel-asset-surface: #f1f4f3;
+  --autocel-node-thumbnail-asset-surface: #edf1ed;
   overflow: hidden;
+}
+
+html[data-resolved-theme="dark"] .plugin-detail-autocel {
+  --autocel-light-asset-caption: var(--text-secondary);
+  --autocel-hero-asset-surface: var(--subtle);
+  --autocel-workflow-asset-surface: var(--subtle);
+  --autocel-multi-light-asset-surface: var(--subtle);
+  --autocel-node-proof-asset-surface: var(--surface);
+  --autocel-panel-asset-surface: var(--subtle);
+  --autocel-node-thumbnail-asset-surface: var(--subtle);
 }
 
 .autocel-hero {
@@ -34,12 +51,14 @@
 .autocel-figure { min-width: 0; margin: 0; }
 .autocel-figure img { display: block; width: 100%; height: auto; }
 .autocel-figure figcaption { margin-top: 10px; color: var(--autocel-muted); font: .6875rem/1.45 "Geist Mono", ui-monospace, monospace; }
+.autocel-hero-art figcaption,
+.autocel-workflow-render figcaption { color: var(--autocel-light-asset-caption); }
 
 .autocel-hero-art {
   position: relative;
   overflow: hidden;
   border-left: 1px solid var(--autocel-line);
-  background: linear-gradient(135deg, #f2f5f5, #fbfbfb 60%, #edf3ff);
+  background: var(--autocel-hero-asset-surface);
 }
 
 .autocel-hero-art::before,
@@ -75,8 +94,8 @@
 .autocel-inline-proof figcaption { grid-column: 2; }
 
 .autocel-workflow { display: grid; grid-template-columns: 324px minmax(0, 1fr) 250px; min-height: 296px; border-bottom: 1px solid var(--autocel-line); }
-.autocel-workflow-render { position: relative; overflow: hidden; background: #f2f5f5; }
-.autocel-workflow-multi-light .autocel-workflow-render { background: linear-gradient(135deg, #f5f2ee, #f4f7ff); }
+.autocel-workflow-render { position: relative; overflow: hidden; background: var(--autocel-workflow-asset-surface); }
+.autocel-workflow-multi-light .autocel-workflow-render { background: var(--autocel-multi-light-asset-surface); }
 .autocel-workflow-render img { position: absolute; z-index: 1; right: 4px; bottom: 22px; width: 305px; max-width: none; object-fit: contain; }
 .autocel-workflow-multi-light .autocel-workflow-render img { right: 0; bottom: 20px; width: 314px; }
 .autocel-workflow-render figcaption { position: absolute; z-index: 2; bottom: 16px; left: 18px; margin: 0; }
@@ -88,7 +107,7 @@
 .autocel-workflow-proof { display: grid; place-items: center; padding: 18px; border-left: 1px solid var(--border); background: var(--surface); }
 .autocel-workflow-proof img { max-height: 246px; object-fit: contain; }
 .autocel-workflow-proof figcaption { display: none; }
-.autocel-node-proof { background: #f7f7f6; }
+.autocel-node-proof { background: var(--autocel-node-proof-asset-surface); }
 
 .autocel-panel-switcher { display: grid; grid-template-columns: 274px 296px minmax(0, 1fr); gap: 32px; align-items: center; min-height: 332px; border-bottom: 1px solid var(--autocel-line); }
 .autocel-panel-brief { padding: 30px 0; }
@@ -99,8 +118,8 @@
 .autocel-mode-button,
 .autocel-search-clear { min-height: 34px; padding: 0 15px; border: 1px solid var(--autocel-line); border-radius: 9px; background: var(--surface); color: var(--autocel-muted); font: 650 12px/1 Geist, "PingFang SC", sans-serif; cursor: pointer; }
 .autocel-tab[aria-pressed="true"],
-.autocel-mode-button[aria-pressed="true"] { border-color: var(--text); color: #fff; background: var(--text); }
-.autocel-panel-slot { display: grid; place-items: center; height: 276px; padding: 16px; overflow: hidden; border: 1px solid var(--border); background: #f1f4f3; }
+.autocel-mode-button[aria-pressed="true"] { border-color: var(--solid-fill); color: var(--solid-on-fill); background: var(--solid-fill); }
+.autocel-panel-slot { display: grid; place-items: center; height: 276px; padding: 16px; overflow: hidden; border: 1px solid var(--border); background: var(--autocel-panel-asset-surface); }
 .autocel-panel-slot img { max-width: 100%; max-height: 244px; object-fit: contain; opacity: 1; transform: scale(1); }
 .autocel-panel-slot.is-exiting img { opacity: 0; transform: scale(.985); transition: opacity 90ms steps(2, end), transform 90ms steps(2, end); }
 .autocel-panel-slot.is-entering img { animation: autocel-panel-entry 150ms steps(3, end) both; }
@@ -121,7 +140,7 @@
 .autocel-node-list { border-left: 1px solid var(--autocel-line); }
 .autocel-node-row { display: grid; grid-template-columns: 90px minmax(185px, .8fr) minmax(0, 1fr); gap: 20px; align-items: center; min-height: 136px; padding: 18px 0 18px 26px; border-bottom: 1px solid var(--border); }
 .autocel-node-row[hidden] { display: none; }
-.autocel-node-thumbnail { display: grid; place-items: center; width: 90px; height: 98px; overflow: hidden; background: #edf1ed; color: var(--autocel-muted); }
+.autocel-node-thumbnail { display: grid; place-items: center; width: 90px; height: 98px; overflow: hidden; background: var(--autocel-node-thumbnail-asset-surface); color: var(--autocel-muted); }
 .autocel-node-thumbnail img { width: 100%; height: 100%; object-fit: contain; transition: transform 150ms steps(3, end); }
 .autocel-node-row:hover .autocel-node-thumbnail img { transform: scale(1.015); }
 .autocel-node-identity h3 { margin: 0; font-size: 18px; letter-spacing: -.015em; }

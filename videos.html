@@ -4,27 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="/js/navigation-transition-guard.js"></script>
-  <title>Stages · Resource Archive</title>
+  <title>Videos · Resource Archive</title>
   <script src="/js/theme-bootstrap.js"></script>
   <link rel="stylesheet" href="/css/archive.css">
   <link rel="stylesheet" href="/css/motion.css">
   <link rel="stylesheet" href="/css/stages.css">
+  <link rel="stylesheet" href="/css/videos.css">
 </head>
-<body data-page="stages">
+<body data-page="videos">
   <a class="skip-link" href="#main-content" data-i18n="skip-to-content">Skip to content</a>
   <canvas class="global-pixel-field" data-testid="global-pixel-field" aria-hidden="true"></canvas>
   <header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="/index.html">Resource Archive</a>
       <nav class="primary-nav" aria-label="Primary">
-        <a href="/index.html">Home</a><a href="/tutorials.html">Tutorials</a><a href="/stages.html" aria-current="page">Stages</a><a href="/index.html#nodes">Nodes</a><a href="/plugins.html">Plugins</a><a href="/videos.html">Videos</a><a href="/contributors.html">Contributors</a>
+        <a href="/index.html">Home</a><a href="/tutorials.html">Tutorials</a><a href="/stages.html">Stages</a><a href="/index.html#nodes">Nodes</a><a href="/plugins.html">Plugins</a><a href="/videos.html" aria-current="page">Videos</a><a href="/contributors.html">Contributors</a>
       </nav>
     </div>
   </header>
   <main id="main-content" class="page-shell explorer-shell" data-main-content>
-    <div id="stage-app" aria-live="polite">
-      <div class="loading skeleton-layout skeleton-stage" role="status" aria-label="Loading stage archive" data-transition-stage-loading data-i18n-aria-label="stages-loading-archive-label">
-        <p class="skeleton-label" data-i18n="stages-loading-archive">Loading stage archive…</p>
+    <div id="video-app" aria-live="polite">
+      <div class="loading skeleton-layout skeleton-video" role="status" aria-label="Loading video archive" data-i18n-aria-label="videos-loading-archive-label">
+        <p class="skeleton-label" data-i18n="videos-loading-archive">Loading video archive…</p>
         <div class="skeleton-card" aria-hidden="true"></div><div class="skeleton-card" aria-hidden="true"></div><div class="skeleton-card" aria-hidden="true"></div>
       </div>
     </div>
@@ -36,9 +37,9 @@
   <script src="/js/site-shell.js" defer></script>
   <script src="/js/global-pixel-field.js" defer></script>
   <script src="/js/component-motion.js" defer></script>
-  <script src="/js/stage-data.js" defer></script>
-  <script src="/js/stage-media-motion.js" defer></script>
+  <script src="/js/video-data.js" defer></script>
   <script src="/js/internal-view-router.js" defer></script>
-  <script src="/js/stages.js" defer></script>
+  <script src="/js/stage-media-motion.js" defer></script>
+  <script src="/js/videos.js" defer></script>
 </body>
 </html>

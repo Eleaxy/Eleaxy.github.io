@@ -4,11 +4,16 @@
   const translate = (key, fallback) => window.resourceArchiveI18n?.translate(key) ?? fallback;
 
   class StageRail {
-    constructor(viewport) {
+    constructor(viewport, options = {}) {
       viewport.__stageRail?.destroy();
       this.viewport = viewport;
       this.track = viewport.querySelector('[data-stage-track]');
       if (!this.track) throw new Error('StageRail requires a [data-stage-track] element');
+      this.previousKey = options.previousKey ?? 'stages-rail-previous';
+      this.previousFallback = options.previousFallback ?? 'Previous stages';
+      this.nextKey = options.nextKey ?? 'stages-rail-next';
+      this.nextFallback = options.nextFallback ?? 'Next stages';
+      this.mediaSelector = options.mediaSelector ?? '.stage-media';
       this.fineQuery = matchMedia(finePointerQuery);
       this.reducedQuery = matchMedia(reducedMotionQuery);
       this.fine = this.fineQuery.matches;
@@ -256,13 +261,13 @@
     }
 
     updateArrowLabels() {
-      this.previous?.setAttribute('aria-label', translate('stages-rail-previous', 'Previous stages'));
-      this.next?.setAttribute('aria-label', translate('stages-rail-next', 'Next stages'));
+      this.previous?.setAttribute('aria-label', translate(this.previousKey, this.previousFallback));
+      this.next?.setAttribute('aria-label', translate(this.nextKey, this.nextFallback));
     }
 
     updateArrowGeometry() {
       if (this.destroyed || !this.desktopInstalled || !this.previous || !this.next) return;
-      const media = [...this.track.querySelectorAll('.stage-media')].find(node => node.isConnected);
+      const media = [...this.track.querySelectorAll(this.mediaSelector)].find(node => node.isConnected);
       const host = this.next.offsetParent || this.previous.offsetParent;
       if (!media || !host) return;
       const mediaBounds = media.getBoundingClientRect();
@@ -277,7 +282,7 @@
       this.arrowGeometryObserver?.disconnect();
       this.arrowGeometryObserver = null;
       if (typeof ResizeObserver !== 'function' || !this.previous || !this.next) return;
-      const media = [...this.track.querySelectorAll('.stage-media')].find(node => node.isConnected);
+      const media = [...this.track.querySelectorAll(this.mediaSelector)].find(node => node.isConnected);
       const host = this.next.offsetParent || this.previous.offsetParent;
       const observer = new ResizeObserver(() => {
         if (this.arrowGeometryObserver === observer) this.updateArrowGeometry();

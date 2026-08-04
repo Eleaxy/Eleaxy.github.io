@@ -20,12 +20,17 @@
       'nav-stages': 'Stages',
       'nav-tutorials': 'Tutorials',
       'nav-plugins': 'Plugins',
+      'nav-videos': 'Videos',
       'nav-contributors': 'Contributors',
       'language-toggle': '中文',
       'skip-to-content': 'Skip to content',
       'home-title': 'Nodes process data. Scenes organise objects.',
       'home-descriptor': 'Plugins turn repeated operations into tools.',
-      'home-facts': '569 node records · 12 stage files · 2 plugins',
+      'home-facts': '{nodes} node records · {stages} stage files · {plugins} plugins',
+      'home-facts-loading': 'Loading archive totals…',
+      'home-facts-unavailable': 'Archive totals unavailable',
+      'archive-stats-loading': 'Loading…',
+      'archive-stats-unavailable': 'Unavailable',
       'home-statement': 'Objects, collections, materials, and node trees.',
       'home-nodes': 'Explore archive',
       'home-stages': 'Browse stages',
@@ -33,6 +38,7 @@
       'home-node-records': 'Node records',
       'home-stage-records': 'Stage records',
       'home-tutorial-records': 'Tutorial records',
+      'home-video-records': 'Videos',
       'home-upstream-sources': 'Plugins',
       'nodes-eyebrow': 'Node archive',
       'nodes-title': 'Nodes',
@@ -136,6 +142,42 @@
       'stages-error-heading': 'The Stage archive could not be loaded.',
       'stages-unknown-heading': 'Unknown Stage: {stageId}',
       'stages-retry': 'Retry',
+      'videos-eyebrow': 'VIDEO ARCHIVE',
+      'videos-title': 'VIDEOS',
+      'videos-lede': '{count} works',
+      'videos-preview-count-loading': 'Loading video total…',
+      'videos-preview-count-unavailable': 'Video total unavailable',
+      'videos-loading-previews-label': 'Loading video previews',
+      'videos-loading-previews': 'Loading video previews…',
+      'videos-preview-aria': 'Video previews',
+      'videos-view-all': 'View all {count} videos',
+      'videos-media-cta': 'View video ↗',
+      'videos-preview-error': 'Video previews are temporarily unavailable.',
+      'videos-poster-fallback': 'Missing video poster: {title}',
+      'videos-retry': 'Retry',
+      'videos-rail-previous': 'Previous video',
+      'videos-rail-next': 'Next video',
+      'videos-loading-archive-label': 'Loading video archive',
+      'videos-loading-archive': 'Loading video archive…',
+      'videos-index-aria': 'Video archive',
+      'videos-view-details': 'View {title} details',
+      'videos-back-home': 'Back to Resource Archive',
+      'videos-back-all': 'Back to all videos',
+      'videos-detail-iframe-title': '{title} player',
+      'videos-detail-video-id': 'BV',
+      'videos-detail-source-number': 'Source',
+      'videos-detail-date': 'Date',
+      'videos-detail-duration': 'Duration',
+      'videos-detail-source-link': 'View original on Bilibili',
+      'videos-download-default': 'Download video',
+      'videos-download-outer': 'Download video · outer',
+      'videos-download-inner': 'Download video · inner',
+      'videos-download-aria': 'Download video: {filename}',
+      'videos-detail-eyebrow': 'Source {sourceNumber}',
+      'videos-error-status': 'Unavailable',
+      'videos-error-heading': 'Video archive unavailable',
+      'videos-error-message': 'The video archive is temporarily unavailable.',
+      'videos-unknown-heading': 'Unknown video: {videoId}',
       'tutorials-eyebrow': 'Learning archive',
       'tutorials-title': 'Tutorials',
       'tutorials-lede': 'Practical walkthroughs will live here once source material has been verified and prepared.',
@@ -209,7 +251,7 @@
       'plugin-detail-flow-package': 'Package',
       'plugin-detail-flow-apply': 'Apply',
       'plugin-detail-flow-flow': 'Flow',
-      'plugin-detail-node-catalog': 'Complete 40-node catalog',
+      'plugin-detail-node-catalog': 'Complete {count}-node catalog',
       'plugin-detail-search-label': 'Search source nodes',
       'plugin-detail-search-placeholder': 'Name, summary, or usage',
       'plugin-detail-category-filter': 'Node category filter',
@@ -267,12 +309,17 @@
       'nav-stages': '场景',
       'nav-tutorials': '教程',
       'nav-plugins': '插件',
+      'nav-videos': '视频',
       'nav-contributors': '贡献者',
       'language-toggle': 'EN',
       'skip-to-content': '跳到主要内容',
       'home-title': '节点处理数据，场景组织对象。',
       'home-descriptor': '插件把重复操作变成工具。',
-      'home-facts': '569 条节点记录 · 12 个场景文件 · 2 个插件',
+      'home-facts': '{nodes} 条节点记录 · {stages} 个场景文件 · {plugins} 个插件',
+      'home-facts-loading': '正在加载档案总数…',
+      'home-facts-unavailable': '档案总数暂不可用',
+      'archive-stats-loading': '正在加载…',
+      'archive-stats-unavailable': '暂不可用',
       'home-statement': '对象、集合、材质和节点树。',
       'home-nodes': '浏览档案',
       'home-stages': '浏览场景',
@@ -280,6 +327,7 @@
       'home-node-records': '节点记录',
       'home-stage-records': '场景记录',
       'home-tutorial-records': '教程记录',
+      'home-video-records': '视频',
       'home-upstream-sources': '插件',
       'nodes-eyebrow': '节点档案',
       'nodes-title': '节点',
@@ -383,6 +431,42 @@
       'stages-error-heading': '无法加载场景档案。',
       'stages-unknown-heading': '未知场景：{stageId}',
       'stages-retry': '重试',
+      'videos-eyebrow': '视频档案',
+      'videos-title': '视频',
+      'videos-lede': '{count} 项作品',
+      'videos-preview-count-loading': '正在加载视频总数…',
+      'videos-preview-count-unavailable': '视频总数暂不可用',
+      'videos-loading-previews-label': '正在加载视频预览',
+      'videos-loading-previews': '正在加载视频预览…',
+      'videos-preview-aria': '视频预览',
+      'videos-view-all': '查看全部 {count} 个视频',
+      'videos-media-cta': '查看视频 ↗',
+      'videos-preview-error': '视频预览暂时无法加载。',
+      'videos-poster-fallback': '视频封面不可用：{title}',
+      'videos-retry': '重试',
+      'videos-rail-previous': '上一个视频',
+      'videos-rail-next': '下一个视频',
+      'videos-loading-archive-label': '正在加载视频档案',
+      'videos-loading-archive': '正在加载视频档案…',
+      'videos-index-aria': '视频档案',
+      'videos-view-details': '查看 {title} 详情',
+      'videos-back-home': '返回资源档案',
+      'videos-back-all': '返回全部视频',
+      'videos-detail-iframe-title': '{title} 播放器',
+      'videos-detail-video-id': 'BV',
+      'videos-detail-source-number': '来源',
+      'videos-detail-date': '日期',
+      'videos-detail-duration': '时长',
+      'videos-detail-source-link': '在哔哩哔哩查看原视频',
+      'videos-download-default': '下载视频',
+      'videos-download-outer': '下载视频 · 表',
+      'videos-download-inner': '下载视频 · 里',
+      'videos-download-aria': '下载视频：{filename}',
+      'videos-detail-eyebrow': '来源 {sourceNumber}',
+      'videos-error-status': '不可用',
+      'videos-error-heading': '视频档案不可用',
+      'videos-error-message': '视频档案暂时无法加载。',
+      'videos-unknown-heading': '未知视频：{videoId}',
       'tutorials-eyebrow': '学习档案',
       'tutorials-title': '教程',
       'tutorials-lede': '来源材料完成核验与整理后，实用教程会收录在这里。',
@@ -456,7 +540,7 @@
       'plugin-detail-flow-package': '打包',
       'plugin-detail-flow-apply': '应用',
       'plugin-detail-flow-flow': '流程',
-      'plugin-detail-node-catalog': '完整 40 节点目录',
+      'plugin-detail-node-catalog': '完整 {count} 节点目录',
       'plugin-detail-search-label': '搜索来源节点',
       'plugin-detail-search-placeholder': '名称、摘要或用途',
       'plugin-detail-category-filter': '节点分类筛选',
@@ -517,6 +601,7 @@
       '/stages.html': 'Stages · Resource Archive',
       '/tutorials.html': 'Tutorials · Resource Archive',
       '/plugins.html': 'Plugins · Resource Archive',
+      '/videos.html': 'Videos · Resource Archive',
       '/plugins/automation-flow.html': 'Automation Flow · Resource Archive',
       '/plugins/autocel.html': 'AutoCel · Resource Archive',
       '/contributors.html': 'Contributors · Resource Archive',
@@ -527,13 +612,30 @@
       '/stages.html': '场景 · 资源档案',
       '/tutorials.html': '教程 · 资源档案',
       '/plugins.html': '插件 · 资源档案',
+      '/videos.html': '视频 · 资源档案',
       '/plugins/automation-flow.html': 'Automation Flow · 资源档案',
       '/plugins/autocel.html': 'AutoCel · 资源档案',
       '/contributors.html': '贡献者 · 资源档案',
     },
   };
 
-  const savedLanguage = localStorage.getItem(storageKey);
+  function readStoredLanguage() {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch {
+      return null;
+    }
+  }
+
+  function persistLanguage(nextLanguage) {
+    try {
+      localStorage.setItem(storageKey, nextLanguage);
+    } catch {
+      // The active document can still switch languages when storage is unavailable.
+    }
+  }
+
+  const savedLanguage = readStoredLanguage();
   let language = savedLanguage === 'zh' ? 'zh' : 'en';
   const contentTablePaths = Object.freeze({
     'node-display-names': '/data/i18n/node-display-names.zh.json',
@@ -645,9 +747,24 @@
     });
   }
 
+  function ensureSiteControls(shell) {
+    const controls = shell.querySelector('.site-controls') || document.createElement('div');
+    if (!controls.isConnected) {
+      controls.className = 'site-controls';
+      shell.append(controls);
+    }
+    return controls;
+  }
+
   function createToggle() {
     const shell = document.querySelector('.nav-shell');
-    if (!shell || shell.querySelector('[data-testid="language-toggle"]')) return;
+    if (!shell) return;
+    const controls = ensureSiteControls(shell);
+    const existingToggle = shell.querySelector('[data-testid="language-toggle"]');
+    if (existingToggle) {
+      controls.append(existingToggle);
+      return;
+    }
     const toggle = document.createElement('button');
     toggle.type = 'button';
     toggle.className = 'language-toggle';
@@ -657,14 +774,14 @@
     toggle.append(label);
     toggle.addEventListener('click', () => {
       language = language === 'en' ? 'zh' : 'en';
-      localStorage.setItem(storageKey, language);
+      persistLanguage(language);
       applyLanguage();
     });
-    shell.append(toggle);
+    controls.append(toggle);
   }
 
   function updateCurrentNavigation() {
-    const pathSection = location.pathname.match(/^\/(nodes|stages|tutorials|contributors)\.html$/)?.[1]
+    const pathSection = location.pathname.match(/^\/(nodes|stages|tutorials|videos|contributors)\.html$/)?.[1]
       || (location.pathname.startsWith('/plugins/') ? 'plugins' : location.pathname.match(/^\/plugins\.html$/)?.[0] && 'plugins');
     const raw = location.hash.slice(1);
     const section = pathSection || (raw.startsWith('node-detail=') ? 'nodes'
@@ -672,7 +789,7 @@
       : raw || 'home');
     document.querySelectorAll('.primary-nav a').forEach(link => {
       const href = link.getAttribute('href') || '';
-      const target = href.match(/^\/(nodes|stages|tutorials|plugins|contributors)\.html$/)?.[1]
+      const target = href.match(/^\/(nodes|stages|tutorials|plugins|videos|contributors)\.html$/)?.[1]
         || href.replace(/^#/, '')
         || 'home';
       if (target === section) link.setAttribute('aria-current', 'page');

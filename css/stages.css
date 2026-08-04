@@ -42,14 +42,16 @@
   color: var(--text-secondary);
 }
 
-.stage-media {
+.stage-media,
+.video-media {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
   background: var(--subtle);
 }
 
-.stage-media img {
+.stage-media img,
+.video-media img {
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -111,7 +113,8 @@
   margin: 0 auto 72px;
 }
 
-#stage-preview-app {
+#stage-preview-app,
+#video-preview-app {
   position: relative;
   width: var(--content-frame);
   margin: 0 auto;
@@ -132,21 +135,25 @@
   width: max-content;
 }
 
-.stage-preview-item { flex: 0 0 min(420px, 76vw, calc((100vw - 136px) / 2.25)); }
+.stage-preview-item,
+.video-preview-item { flex: 0 0 min(420px, 76vw, calc((100vw - 136px) / 2.25)); }
 
-.stage-preview-link {
+.stage-preview-link,
+.video-preview-link {
   display: block;
   color: inherit;
   text-decoration: none;
 }
 
-.stage-preview-link h3 {
+.stage-preview-link h3,
+.video-preview-link h3 {
   margin: 14px 0 0;
   font-size: 1.2rem;
   font-weight: 540;
 }
 
-.stage-preview-link .source-kind {
+.stage-preview-link .source-kind,
+.video-preview-link .source-kind {
   margin: 18px 0 0;
   color: var(--text-secondary);
 }
@@ -180,7 +187,8 @@
 .stage-rail-arrow:hover { background: #3b5bd9; }
 .stage-rail-arrow[hidden] { display: none; pointer-events: none; }
 
-.stage-media img {
+.stage-media img,
+.video-media img {
   transform: scale(1.015);
   transition: transform 110ms cubic-bezier(.23, 1, .32, 1);
 }
@@ -247,7 +255,8 @@
     width: var(--content-frame);
   }
 
-  #stage-preview-app { width: var(--content-frame); }
+  #stage-preview-app,
+  #video-preview-app { width: var(--content-frame); }
 
   .stage-rail {
     overflow-x: auto;
@@ -255,5 +264,12 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  .stage-preview-item { flex-basis: 82vw; }
+  .stage-preview-item,
+  .video-preview-item { flex-basis: 82vw; }
+}
+
+.video-preview-link .video-duration {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font: .72rem/1.5 "Geist Mono", ui-monospace, monospace;
 }

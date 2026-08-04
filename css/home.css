@@ -17,7 +17,7 @@
   height: 214px;
   min-height: 214px;
   border-bottom: 1px solid var(--border);
-  background: #fafafa;
+  background: var(--page);
 }
 
 .hero-identity > .hero-content-frame {
@@ -63,7 +63,7 @@
 }
 
 .hero-resolution h2 { max-width: 23ch; margin: 0; font-size: clamp(2rem, 4vw, 4rem); font-weight: 520; line-height: 1.06; letter-spacing: -.045em; }
-.archive-status { align-self: start; margin: 0; padding: 24px; border: 1px solid var(--border); background: #fff; }
+.archive-status { align-self: start; margin: 0; padding: 24px; border: 1px solid var(--border); background: var(--surface); }
 .archive-status > div { display: flex; justify-content: space-between; gap: 24px; padding: 14px 0; border-top: 1px solid var(--border); }
 .archive-status strong { font-family: "Geist Mono", ui-monospace, monospace; }
 
@@ -80,6 +80,11 @@
 .statement-index { display: block; margin-top: 40px; font: 700 .7rem/1 "Geist Mono", ui-monospace, monospace; letter-spacing: .08em; }
 
 .stage-preview-section { padding-top: 72px; }
+.video-preview-heading { margin-bottom: 48px; }
+.video-preview-heading-copy { grid-column: 1; }
+.video-preview-heading .eyebrow { margin: 0; }
+.video-preview-heading h2 { margin: 12px 0 0; }
+.video-preview-heading .lede { grid-column: 2; margin: 0; color: var(--text-secondary); }
 .home-section.plugin-register { width: var(--content-frame); margin: 0 auto; }
 
 @media (max-width: 760px) {
@@ -99,6 +104,10 @@
   .archive-status { margin-top: 0; }
   .archive-statement { padding-top: 96px; padding-bottom: 48px; }
   .stage-preview-section { padding-top: 64px; }
+  .video-preview-heading { margin-bottom: 48px; }
+  .video-preview-heading-copy,
+  .video-preview-heading .lede { grid-column: 1; }
+  .video-preview-heading .lede { margin-top: 18px; }
 }
 
 @media (max-width: 448px) {

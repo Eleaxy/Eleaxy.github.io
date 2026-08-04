@@ -55,6 +55,7 @@ html[data-internal-transition]::view-transition-group(node-system-wordmark) {
 ::view-transition-group(node-detail-title),
 ::view-transition-group(node-record-media),
 ::view-transition-group(stage-media),
+::view-transition-group(video-media),
 ::view-transition-group(plugin-title-automation-flow),
 ::view-transition-group(plugin-title-autocel),
 ::view-transition-group(plugin-art-autocel) {
@@ -134,6 +135,15 @@ html[data-internal-transition]::view-transition-group(node-system-wordmark) {
 }
 .pixel-button-label { position: relative; z-index: 2; }
 
+.theme-pixel-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: block;
+  pointer-events: none;
+  contain: strict;
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
   ::view-transition-old(*),
@@ -145,4 +155,5 @@ html[data-internal-transition]::view-transition-group(node-system-wordmark) {
   [data-internal-view-enter] { animation-duration: 0s !important; }
 
   .pixel-button-effect i { opacity: 0 !important; }
+  .theme-pixel-transition { display: none !important; }
 }
