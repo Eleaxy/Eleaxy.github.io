@@ -135,14 +135,51 @@ html[data-internal-transition]::view-transition-group(node-system-wordmark) {
 }
 .pixel-button-label { position: relative; z-index: 2; }
 
+html[data-theme-transition] body,
+html[data-theme-transition] body * {
+  view-transition-name: none !important;
+}
+
+html[data-theme-transition]::view-transition-group(root) {
+  animation: 900ms linear both theme-pixel-transition-hold;
+}
+
+html[data-theme-transition]::view-transition-old(root),
+html[data-theme-transition]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-theme-transition]::view-transition-old(root) {
+  z-index: 0;
+}
+
+html[data-theme-transition]::view-transition-new(root) {
+  z-index: 1;
+}
+
+@keyframes theme-pixel-transition-hold {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
 .theme-pixel-transition {
   position: fixed;
   inset: 0;
-  z-index: 2147483000;
-  display: block;
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
   pointer-events: none;
   contain: strict;
+  image-rendering: pixelated;
 }
+
+.theme-pixel-transition::backdrop { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*),
