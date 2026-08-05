@@ -79,7 +79,7 @@
     return new Error('router afterCommit hydration failed');
   }
 
-  function create({ root, parseUrl, render, capture, restore, restoreFragment, canHandle, focusTarget }) {
+  function create({ root, parseUrl, render, capture, restore, restoreFragment, canHandle, focusTarget, transitionMode }) {
     if (!(root instanceof Element)) throw new TypeError('root must be an Element');
     if (typeof parseUrl !== 'function' || typeof render !== 'function' || typeof canHandle !== 'function') {
       throw new TypeError('parseUrl, render, and canHandle must be functions');
@@ -252,12 +252,25 @@
       return true;
     }
 
+    function prepareRetainedRootLiveCommit(operation) {
+      if (!operation.isCurrent() || operation.sealed) return false;
+      if (!operation.retainRootCallback || operation.retainRootCallbackConsumed) return true;
+      const prepared = operation.retainRootCallback(root);
+      operation.retainRootCallbackConsumed = true;
+      return prepared !== false && operation.isCurrent() && !operation.sealed;
+    }
+
     function commitRendered(operation, result, context, onLiveCommit) {
       if (!operation.isCurrent()) return Promise.resolve(result);
       operation.sealed = true;
-      root.replaceChildren(cloneTargetSnapshot(operation.target));
-      operation.rendered = true;
       onLiveCommit?.();
+      if (operation.retainRootCallback) {
+        if (!operation.retainRootCallbackConsumed) {
+          operation.retainRootCallback(root);
+          operation.retainRootCallbackConsumed = true;
+        }
+      } else root.replaceChildren(cloneTargetSnapshot(operation.target));
+      operation.rendered = true;
       return Promise.resolve().then(async () => {
         for (const hydrate of operation.afterCommit) {
           if (!operation.isCurrent()) return result;
@@ -299,6 +312,8 @@
         epoch: ++renderEpoch,
         rendered: false,
         sealed: false,
+        retainRootCallback: null,
+        retainRootCallbackConsumed: false,
         afterCommit: [],
         hydrationCleanups: new Set(),
         hydrationsCleaned: false,
@@ -320,6 +335,12 @@
           if (!operation.isCurrent() || operation.sealed) return false;
           if (typeof callback !== 'function') throw new TypeError('commit callback must be a function');
           callback(operation.target);
+          return true;
+        },
+        retainRoot(callback) {
+          if (!operation.isCurrent() || operation.sealed) return false;
+          if (typeof callback !== 'function') throw new TypeError('retainRoot callback must be a function');
+          operation.retainRootCallback = callback;
           return true;
         },
         afterCommit(callback) {
@@ -430,6 +451,19 @@
         announceTransition('transitionfinished', transitionDetail);
       };
       announceTransition('beforetransition', transitionDetail);
+      const mode = transitionMode?.(route, {
+        ...context,
+        fromUrl: lastSuccessful?.url ?? window.location.href,
+      });
+      if (mode === 'none') {
+        const renderOperation = renderRoute(route, context, onPrepared);
+        const restored = postUpdateRestore(renderOperation.updated, renderOperation.operation);
+        return {
+          operation: renderOperation.operation,
+          updated: renderOperation.updated,
+          finished: Promise.all([renderOperation.updated, restored]).then(([result]) => result).finally(finish),
+        };
+      }
       if (reducedMotion()) {
         const renderOperation = renderRoute(route, context, onPrepared);
         const restored = postUpdateRestore(renderOperation.updated, renderOperation.operation);
@@ -665,6 +699,7 @@
         const fragment = url.hash || null;
         const context = { direction: trigger, snapshot: null, fragment, initial: false };
         const result = transition(route, context, (operation, rendered, renderContext) => {
+          if (!prepareRetainedRootLiveCommit(operation)) return rendered;
           const destination = applyHistory(url, snapshot, replace, fragment);
           return commitRendered(
             operation,

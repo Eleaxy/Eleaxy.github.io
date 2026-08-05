@@ -36,9 +36,14 @@
     priorScrollRestoration: null,
     preparedDetails: new Map(),
     pendingDetailNavigation: null,
+    failedDetailUrl: null,
     snapshotRestoreGeneration: 0,
     detailNavigationGeneration: 0,
     detailNavigationIntent: null,
+    catalogRoute: null,
+    workbench: null,
+    workbenchNavigationListener: null,
+    workbenchClosedListener: null,
     pendingNavigationClickListener: null,
     pendingNavigationPopstateListener: null,
     titleTransition: null,
@@ -153,6 +158,11 @@
       parentSystemHref: catalogHref({ group, q: route.q }),
       parentHref: catalogHref({ group, subcategory, q: route.q }),
     };
+  }
+
+  function catalogRouteForDetail(route, record) {
+    const parent = parentRoute(route, record);
+    return { ...parent, source: null, id: null, isDetail: false };
   }
 
   function detailHref(record, route, group) {
@@ -331,6 +341,20 @@
     return article;
   }
 
+  function workbenchErrorView(error) {
+    const panel = element('section', 'node-workbench-error');
+    panel.dataset.testid = 'node-detail-error';
+    const title = element('h2', null, translate('nodes-dialog-error'));
+    title.dataset.testid = 'node-detail-error-title';
+    const retry = element('button', 'button-secondary');
+    retry.type = 'button';
+    retry.dataset.testid = 'node-detail-retry';
+    retry.dataset.pixelFlicker = '';
+    retry.append(element('span', 'pixel-button-label', translate('nodes-dialog-retry')));
+    panel.append(title, element('p', 'lede', error.message), retry);
+    return panel;
+  }
+
   function catalogErrorView(error) {
     const panel = element('section', 'error-state node-catalog-error');
     panel.dataset.testid = 'node-catalog-error';
@@ -373,7 +397,9 @@
   function showContentTableError(error) {
     if (state.disposed || !error?.contentTable) return;
     app.querySelector('[data-content-table-error]')?.remove();
-    app.prepend(contentTableErrorView(error));
+    const detail = app.querySelector('[data-node-detail-workbench] [data-testid="node-detail"]');
+    const host = detail?.querySelector('.node-workbench-information-scroll');
+    (host || app).prepend(contentTableErrorView(error));
     window.ResourceArchivePixelField?.refreshTargets();
   }
 
@@ -450,7 +476,7 @@
     history.replaceState(history.state, '', `${url.pathname}${url.search}${url.hash}`);
   }
 
-  function hydrateCatalog(root, route) {
+  function hydrateCatalog(root, route, { syncUrl = true } = {}) {
     const catalog = root.querySelector('[data-node-catalog]');
     if (!catalog) return undefined;
     const search = root.querySelector('[data-catalog-search]');
@@ -477,7 +503,7 @@
       });
       status.textContent = String(visible);
       empty.hidden = visible !== 0;
-      updateSearchUrl(route, query);
+      if (syncUrl) updateSearchUrl(route, query);
     };
     const onInput = () => update();
     const onClear = () => {
@@ -637,6 +663,50 @@
     titleTransition.detailTitle = title;
   }
 
+  function sameCatalogRoute(left, right) {
+    return left?.group === right?.group
+      && left?.subcategory === right?.subcategory
+      && left?.q === right?.q;
+  }
+
+  function visibleDetailSequence() {
+    return [...app.querySelectorAll('[data-node-link]:not([hidden])')].map(link => ({
+      key: link.dataset.nodeKey,
+      href: link.href,
+      label: link.querySelector('.node-link-name')?.textContent || link.dataset.nodeKey,
+    }));
+  }
+
+  function workbenchSystemCode(route) {
+    return {
+      geometry: 'GN',
+      shader: 'SN',
+      compositor: 'CN',
+      rigging: 'RG',
+      particles: 'PN',
+      pcg: 'PCG',
+      stylized: 'NPR',
+      effect: 'FX',
+      'material-functions': 'MF',
+    }[route.parentGroup || route.group] || 'GN';
+  }
+
+  function updateWorkbenchChrome(record, route, activeKey) {
+    const system = taxonomy.getSystem(route.parentGroup || route.group);
+    state.workbench?.updateChrome({
+      route,
+      activeKey,
+      sequence: visibleDetailSequence(),
+      code: workbenchSystemCode(route),
+      breadcrumb: [
+        translate('nodes-all'),
+        taxonomy.systemLabel(system, language()),
+        taxonomy.categoryLabel(record.category_id, language()),
+        nodeDisplayName(record),
+      ],
+    });
+  }
+
   async function render(route, context) {
     const isCurrent = currentness({ contextIsCurrent: context.isCurrent });
     if (isChinese()) {
@@ -651,44 +721,165 @@
     }
     if (!isCurrent()) return;
     if (route.isDetail) {
+      const pending = state.pendingDetailNavigation;
+      const pendingToken = pending?.token ?? null;
+      const isPendingCurrent = () => context.isCurrent()
+        && (!pending || (state.pendingDetailNavigation === pending
+          && isCurrentDetailNavigation(pending)
+          && pending.token === pendingToken));
       try {
         const key = `${route.source}/${route.id}`;
+        const retainedCatalog = Boolean(app.querySelector('[data-node-catalog]'));
+        const retainedCatalogRoute = retainedCatalog ? state.catalogRoute : null;
         const prepared = state.preparedDetails.get(key);
         if (prepared) state.preparedDetails.delete(key);
         if (prepared?.error) throw prepared.error;
         const record = prepared?.record || await detailView.load(route.source, route.id, { signal: context.signal });
-        if (!isCurrent()) return;
-        const resolved = parentRoute(route, record);
-        const article = detailView.render(record, { route: resolved, language: language() });
-        context.commit(target => target.append(article));
+        if (!isPendingCurrent()) return;
+        const parent = catalogRouteForDetail(route, record);
+        const catalogRoute = retainedCatalogRoute || parent;
+        const activeKey = `${route.source}/${route.id}`;
+        if (pending) {
+          pending.parentHref = parent.parentHref;
+          pending.activeKey = activeKey;
+        }
+        if (!retainedCatalog) {
+          const records = await getRecords();
+          if (!isPendingCurrent()) return;
+          context.commit(target => target.append(catalogView(records, parent)));
+        }
+        const article = detailView.render(record, {
+          route: parent,
+          language: language(),
+          variant: 'workbench',
+        });
+        let workbenchArticlePrepared = false;
+        const prepareWorkbenchArticle = () => {
+          if (!isPendingCurrent() || !state.workbench.isOpen()) return false;
+          if (!state.workbench.showContent(article, { direction: pending?.direction })) return false;
+          updateWorkbenchChrome(record, parent, activeKey);
+          workbenchArticlePrepared = true;
+          return true;
+        };
+        if (retainedCatalog) context.retainRoot(() => prepareWorkbenchArticle());
         context.afterCommit(root => {
-          const liveArticle = root.querySelector('[data-testid="node-detail"]');
-          if (liveArticle) {
-            detailView.render(record, { route: resolved, language: language(), article: liveArticle });
-            applyDetailTransitionTitle(root, resolved);
+          if (!isPendingCurrent()) return undefined;
+          const cleanupCatalog = hydrateCatalog(root, catalogRoute, { syncUrl: false });
+          if (!workbenchArticlePrepared) {
+            if (!state.workbench.isOpen()) {
+              state.workbench.openPending({
+                route: parent,
+                parentHref: pending?.parentHref || parent.parentHref,
+                activeKey: pending?.activeKey || activeKey,
+                anchor: pending?.anchor || null,
+                direction: pending?.direction,
+              });
+            }
+            prepareWorkbenchArticle();
           }
-          state.route = resolved;
-          resetRouteScroll(context);
+          state.workbench.markRouteCommitted({ direct: context.initial });
+          state.failedDetailUrl = null;
+          if (pending) clearPendingDetailNavigationTransient(pending);
+          state.catalogRoute = catalogRoute;
+          state.route = parent;
           window.ResourceArchivePixelField?.refreshTargets();
+          return cleanupCatalog;
         });
         return;
       } catch (error) {
         if (context.signal.aborted || !isCurrent()) return;
-        const fallback = { ...route, parentHref: catalogHref({ group: route.group, subcategory: route.subcategory, q: route.q }) };
-        context.commit(target => target.append(errorView(fallback, error)));
+        if (pending && isPendingCurrent()) throw error;
+        let fallback = {
+          ...route,
+          parentGroup: route.group,
+          parentSystemHref: catalogHref({ group: route.group, q: route.q }),
+          parentHref: catalogHref({ group: route.group, subcategory: route.subcategory, q: route.q }),
+        };
+        let catalogRoute = { ...fallback, source: null, id: null, isDetail: false };
+        const retainedCatalog = Boolean(app.querySelector('[data-node-catalog]'));
+        let records;
+        try {
+          records = await getRecords();
+        } catch (catalogError) {
+          if (context.signal.aborted || !isCurrent()) return;
+          context.commit(target => target.append(catalogErrorView(catalogError)));
+          context.afterCommit(() => {
+            state.route = catalogRoute;
+            state.catalogRoute = catalogRoute;
+            window.ResourceArchivePixelField?.refreshTargets();
+          });
+          return;
+        }
+        if (!isCurrent()) return;
+        const indexedRecord = records.find(record => record.catalog_source === route.source && record.id === route.id);
+        if (indexedRecord) fallback = parentRoute(route, indexedRecord);
+        if (retainedCatalog) {
+          catalogRoute = state.catalogRoute || catalogRoute;
+          context.retainRoot(() => {});
+        } else {
+          if (indexedRecord) catalogRoute = catalogRouteForDetail(route, indexedRecord);
+          context.commit(target => target.append(catalogView(records, catalogRoute)));
+        }
         context.afterCommit(root => {
-          resetRouteScroll(context);
+          if (!isCurrent()) return undefined;
+          const cleanupCatalog = hydrateCatalog(root, catalogRoute, { syncUrl: false });
+          if (!state.workbench.isOpen()) {
+            state.workbench.openPending({
+              route: fallback,
+              parentHref: fallback.parentHref,
+              activeKey: `${route.source}/${route.id}`,
+            });
+          }
+          state.workbench.showError(workbenchErrorView(error));
+          state.workbench.markRouteCommitted({ direct: context.initial });
+          state.failedDetailUrl = null;
+          state.catalogRoute = catalogRoute;
+          state.route = fallback;
           window.ResourceArchivePixelField?.refreshTargets();
+          return cleanupCatalog;
         });
         return;
       }
     }
     try {
+      const liveCatalog = app.querySelector('[data-node-catalog]');
+      const closingWorkbench = Boolean(liveCatalog && state.workbench?.isOpen());
+      if (closingWorkbench && sameCatalogRoute(state.catalogRoute, route)) {
+        context.retainRoot(() => {});
+        context.afterCommit(async root => {
+          await state.workbench.close();
+          if (!context.isCurrent()) return undefined;
+          state.route = route;
+          state.catalogRoute = route;
+          const cleanup = hydrateCatalog(root, route, { syncUrl: true });
+          if (context.direction === 'language' && state.languageSnapshot) {
+            const snapshot = state.languageSnapshot;
+            state.languageSnapshot = null;
+            void restore(snapshot);
+          }
+          return cleanup;
+        });
+        return;
+      }
       const records = await getRecords();
       if (!isCurrent()) return;
+      if (closingWorkbench) {
+        const replacement = catalogView(records, route);
+        context.retainRoot(() => {});
+        context.afterCommit(async root => {
+          await state.workbench.close();
+          if (!context.isCurrent()) return undefined;
+          root.replaceChildren(replacement);
+          state.route = route;
+          state.catalogRoute = route;
+          return hydrateCatalog(root, route, { syncUrl: true });
+        });
+        return;
+      }
       context.commit(target => target.append(catalogView(records, route)));
       context.afterCommit(root => {
         state.route = route;
+        state.catalogRoute = route;
         const cleanup = hydrateCatalog(root, route);
         if (context.direction === 'language' && state.languageSnapshot) {
           const snapshot = state.languageSnapshot;
@@ -752,13 +943,16 @@
     const retry = event.target instanceof Element ? event.target.closest('[data-testid="node-detail-retry"]') : null;
     if (!retry || !app.contains(retry)) return;
     event.preventDefault();
-    requestDetailNavigation(routeUrl(window.location.href), { trigger: 'retry', replace: true });
+    if (state.failedDetailUrl) {
+      requestDetailNavigation(state.failedDetailUrl, { trigger: 'retry', replace: false });
+      return;
+    }
+    state.router.navigate(window.location.href, { trigger: 'retry', replace: true }).catch(() => {});
   }
 
   function retryCatalog(retry) {
     if (state.disposed || state.catalogRetryPromise || retry.disabled) return;
     const route = parseUrl(routeUrl(window.location.href));
-    if (route.isDetail) return;
     const panel = retry.closest('[data-testid="node-catalog-error"]');
     if (!panel) return;
     const status = element('p', 'catalog-retry-status', translate('nodes-catalog-retrying'));
@@ -793,6 +987,12 @@
     state.snapshotRestoreGeneration += 1;
   }
 
+  function clearPendingDetailNavigationTransient(pending) {
+    if (!pending) return;
+    pending.anchor = null;
+    pending.direction = null;
+  }
+
   function cancelPendingDetailNavigation() {
     const pending = state.pendingDetailNavigation;
     if (!pending) return;
@@ -800,6 +1000,7 @@
     state.detailNavigationIntent = null;
     state.pendingDetailNavigation = null;
     state.preparedDetails.delete(pending.key);
+    clearPendingDetailNavigationTransient(pending);
     pending.controller.abort();
   }
 
@@ -834,6 +1035,13 @@
     }
     if (!canHandle(url)) return;
     cancelPendingSnapshotRestore();
+    if (anchor.matches('[data-node-detail-back]')
+      && !parseUrl(routeUrl(window.location.href)).isDetail
+      && state.pendingDetailNavigation) {
+      cancelPendingDetailNavigation();
+      state.router.syncFromLocation({ initial: true, direction: 'dismiss' }).catch(() => {});
+      return;
+    }
     cancelPendingDetailNavigationFor(url);
   }
 
@@ -842,12 +1050,15 @@
     cancelPendingDetailNavigationFor(routeUrl(window.location.href));
   }
 
-  function requestDetailNavigation(url, { trigger = 'link', replace = false } = {}) {
-    const route = parseUrl(url);
+  function requestDetailNavigation(url, {
+    trigger = 'link', replace = false, anchor = null, direction = null,
+  } = {}) {
+    const destinationUrl = routeUrl(url);
+    const route = parseUrl(destinationUrl);
     if (!route.isDetail) return;
     cancelPendingSnapshotRestore();
     const key = `${route.source}/${route.id}`;
-    const intentUrl = routeUrl(url).href;
+    const intentUrl = destinationUrl.href;
     const active = state.pendingDetailNavigation;
     if (active?.key === key && active.url === intentUrl && isCurrentDetailNavigation(active)
       && !active.controller.signal.aborted) return;
@@ -855,22 +1066,37 @@
 
     const controller = new AbortController();
     const generation = ++state.detailNavigationGeneration;
-    const pending = { key, controller, generation, url: intentUrl };
+    const pending = {
+      key,
+      controller,
+      generation,
+      token: Symbol('node-detail-navigation'),
+      url: intentUrl,
+      anchor,
+      parentHref: catalogHref({ group: route.group, subcategory: route.subcategory, q: route.q }),
+      activeKey: key,
+      direction,
+    };
     state.pendingDetailNavigation = pending;
     state.detailNavigationIntent = { key, generation, url: intentUrl };
-    detailView.load(route.source, route.id, { signal: controller.signal }).then(
-      record => ({ record }),
-      error => ({ error }),
-    ).then(prepared => {
+    const parentHref = catalogHref({ group: route.group, subcategory: route.subcategory, q: route.q });
+    state.workbench.openPending({
+      route,
+      parentHref,
+      activeKey: key,
+      anchor: app.querySelector(`[data-node-key="${CSS.escape(key)}"]`),
+      direction,
+    });
+    state.router.navigate(url, { trigger, replace }).then(() => {
       if (!isCurrentDetailNavigation(pending) || controller.signal.aborted) return;
-      state.preparedDetails.set(key, prepared);
-      if (!isCurrentDetailNavigation(pending) || controller.signal.aborted) {
-        state.preparedDetails.delete(key);
-        return;
-      }
-      return state.router.navigate(url, { trigger, replace }).catch(() => {});
+      state.failedDetailUrl = null;
+    }).catch(error => {
+      if (!isCurrentDetailNavigation(pending) || controller.signal.aborted) return;
+      state.failedDetailUrl = intentUrl;
+      state.workbench.showError(workbenchErrorView(error));
     }).finally(() => {
       if (isCurrentDetailNavigation(pending)) {
+        clearPendingDetailNavigationTransient(pending);
         state.pendingDetailNavigation = null;
         state.detailNavigationIntent = null;
       }
@@ -887,7 +1113,7 @@
     event.preventDefault();
     event.stopImmediatePropagation();
     selectTransitionTitle(event);
-    requestDetailNavigation(url);
+    requestDetailNavigation(url, { anchor: link, direction: 'forward' });
   }
 
   app.addEventListener('click', captureNodeTrigger, true);
@@ -896,7 +1122,38 @@
   app.addEventListener('click', state.pendingNavigationClickListener, true);
   addEventListener('popstate', state.pendingNavigationPopstateListener);
   claimScrollRestoration();
-  state.router = routerApi.create({ root: app, parseUrl, render, capture, restore, canHandle, focusTarget });
+  state.router = routerApi.create({
+    root: app,
+    parseUrl,
+    render,
+    capture,
+    restore,
+    canHandle,
+    focusTarget,
+    transitionMode(route, { fromUrl }) {
+      return route.isDetail || parseUrl(routeUrl(fromUrl)).isDetail ? 'none' : undefined;
+    },
+  });
+  state.workbench = window.ResourceArchiveNodeWorkbench.create({ app, translate });
+  state.workbenchNavigationListener = event => {
+    const { href, key } = event.detail || {};
+    if (!href || !key) return;
+    state.pendingFocusKey = key;
+    requestDetailNavigation(href, {
+      trigger: 'node-workbench-switch',
+      replace: true,
+      direction: event.detail.direction,
+    });
+  };
+  state.workbenchClosedListener = () => {
+    const pending = state.pendingDetailNavigation;
+    state.failedDetailUrl = null;
+    if (!pending) return;
+    cancelPendingDetailNavigation();
+    state.router.syncFromLocation({ initial: true, direction: 'dismiss' }).catch(() => {});
+  };
+  app.addEventListener('resourcearchivenodeworkbenchnavigate', state.workbenchNavigationListener);
+  app.addEventListener('resourcearchivenodeworkbenchclosed', state.workbenchClosedListener);
   app.addEventListener('click', prepareDetailNavigation, true);
   app.addEventListener('pointerover', startPrefetch);
   app.addEventListener('focusin', startPrefetch);
@@ -943,11 +1200,17 @@
       return;
     }
     if (!isCurrent()) return;
-    const detail = app.querySelector('[data-testid="node-detail"]');
+    const detail = app.querySelector('[data-node-detail-workbench] [data-testid="node-detail"]')
+      || app.querySelector('[data-testid="node-detail"]');
     if (detail?.__resourceArchiveNodeDetail) {
       const focus = document.activeElement;
       const scroll = window.scrollY;
       detail.__resourceArchiveNodeDetailUpdate?.(detail.__resourceArchiveNodeDetail.route, language());
+      updateWorkbenchChrome(
+        detail.__resourceArchiveNodeDetail.record,
+        detail.__resourceArchiveNodeDetail.route,
+        state.workbench?.currentKey?.(),
+      );
       window.scrollTo(0, scroll);
       requestAnimationFrame(() => {
         if (isCurrent() && detail.isConnected) window.scrollTo(0, scroll);
@@ -986,6 +1249,7 @@
     cancelPendingDetailNavigation();
     state.catalogRetryPromise = null;
     state.contentTableRetryPromise = null;
+    state.failedDetailUrl = null;
     state.preparedDetails.clear();
     detailView.abortPending?.();
     app.querySelector('.catalog-wordmark-canvas')?.setAttribute('hidden', '');
@@ -1010,12 +1274,17 @@
     cancelPendingDetailNavigation();
     state.catalogRetryPromise = null;
     state.contentTableRetryPromise = null;
+    state.failedDetailUrl = null;
     state.preparedDetails.clear();
     detailView.abortPending?.();
+    state.workbench?.destroy();
+    state.workbench = null;
     state.router?.destroy();
     state.shellListeners.forEach(([type, listener, options]) => app.removeEventListener(type, listener, options));
     state.shellListeners = [];
     app.removeEventListener('click', state.pendingNavigationClickListener, true);
+    app.removeEventListener('resourcearchivenodeworkbenchnavigate', state.workbenchNavigationListener);
+    app.removeEventListener('resourcearchivenodeworkbenchclosed', state.workbenchClosedListener);
     removeEventListener('popstate', state.pendingNavigationPopstateListener);
     document.removeEventListener('pointerup', state.titlePointerUpListener);
     document.removeEventListener('pointercancel', state.titlePointerCancelListener);

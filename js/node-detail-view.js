@@ -228,9 +228,35 @@
     if (caption) caption.textContent = translate('nodes-dialog-preview-caption');
     const provenance = figure.querySelector('[data-node-detail-preview-provenance]');
     if (provenance) provenance.textContent = translate('nodes-dialog-view-blueish-source');
+    const label = figure.querySelector('[data-node-workbench-preview-label]');
+    if (label) label.textContent = translate('nodes-workbench-official-preview');
+    const version = figure.querySelector('[data-node-workbench-preview-version]');
+    if (version) {
+      version.textContent = translate('nodes-workbench-preview-version', {
+        version: record.version || record.last_modified_version || record.created_version || '—',
+      });
+    }
+    updatePreviewDimensions(figure);
   }
 
-  function previewFigure(record, entry) {
+  function updateUnavailablePreviewCopy(preview, record) {
+    if (!preview) return;
+    preview.textContent = translate('nodes-dialog-preview-unavailable', {
+      name: nodeDisplayName(record, document.documentElement.lang),
+    });
+  }
+
+  function updatePreviewDimensions(figure) {
+    const image = figure.querySelector('[data-testid="node-preview-image"]');
+    const dimensions = figure.querySelector('[data-node-workbench-preview-dimensions]');
+    if (!image || !dimensions || !image.naturalWidth || !image.naturalHeight) return;
+    dimensions.textContent = translate('nodes-workbench-preview-dimensions', {
+      width: image.naturalWidth,
+      height: image.naturalHeight,
+    });
+  }
+
+  function previewFigure(record, entry, variant = 'flow') {
     const figure = node('figure', 'node-preview');
     figure.dataset.nodeDetailPreview = '';
     const image = document.createElement('img');
@@ -249,27 +275,65 @@
     provenance.target = '_blank';
     caption.append(captionCopy, ' ', provenance);
     figure.append(image, caption);
+    if (variant === 'workbench') {
+      const label = node('p', 'node-workbench-preview-label');
+      label.dataset.nodeWorkbenchPreviewLabel = '';
+      const version = node('span');
+      version.dataset.nodeWorkbenchPreviewVersion = '';
+      const dimensions = node('span');
+      dimensions.dataset.nodeWorkbenchPreviewDimensions = '';
+      caption.classList.add('node-workbench-preview-meta');
+      caption.prepend(version, dimensions);
+      figure.append(label);
+      image.addEventListener('load', () => updatePreviewDimensions(figure), { once: true });
+      if (image.complete) queueMicrotask(() => updatePreviewDimensions(figure));
+    }
     updatePreviewCopy(figure, record);
     return figure;
   }
 
   function appendPreview(article, record) {
+    const variant = article.dataset.nodeDetailVariant || 'flow';
+    const urlMatchesRecord = () => new URL(window.location.href).searchParams.get('source') === record.catalog_source
+      && new URL(window.location.href).searchParams.get('id') === record.id;
     const isCurrentArticle = () => article.isConnected
       && article.__resourceArchiveNodeDetail?.record === record
-      && new URL(window.location.href).searchParams.get('source') === record.catalog_source
-      && new URL(window.location.href).searchParams.get('id') === record.id;
+      && urlMatchesRecord();
+    const unavailable = () => {
+      const preview = node('p', 'node-preview-unavailable');
+      preview.dataset.nodePreviewUnavailable = '';
+      updateUnavailablePreviewCopy(preview, record);
+      return preview;
+    };
     const attach = () => {
       if (!isCurrentArticle() || article.querySelector('[data-node-detail-preview]')) return;
       if (document.documentElement.hasAttribute('data-internal-view-transition-pending')) {
         waitForTransition();
         return;
       }
+      if (variant === 'workbench') {
+        const host = article.querySelector('.node-workbench-preview-host');
+        if (host && !host.childNodes.length) host.append(unavailable());
+      }
       void loadPreviewManifest().then(manifest => {
         if (!isCurrentArticle() || article.querySelector('[data-node-detail-preview]')) return;
         const entry = previewEntry(record, manifest);
-        const body = article.querySelector('.node-detail-body');
-        if (!entry || !body) return;
-        body.prepend(previewFigure(record, entry));
+        const target = variant === 'workbench'
+          ? article.querySelector('.node-workbench-preview-host')
+          : article.querySelector('.node-detail-body');
+        if (!target) return;
+        if (!entry) {
+          if (variant === 'workbench') target.replaceChildren(unavailable());
+          return;
+        }
+        const preview = previewFigure(record, entry, variant);
+        preview.querySelector('[data-testid="node-preview-image"]')?.addEventListener('error', () => {
+          if (!isCurrentArticle()) return;
+          if (variant === 'workbench') target.replaceChildren(unavailable());
+          else preview.replaceWith(unavailable());
+        }, { once: true });
+        if (variant === 'workbench') target.replaceChildren(preview);
+        else target.prepend(preview);
       }).catch(() => {});
     };
     const waitForTransition = () => {
@@ -293,10 +357,22 @@
       }
       attach();
     };
+    if (variant === 'workbench' && !article.isConnected) {
+      queueMicrotask(() => {
+        if (article.isConnected && urlMatchesRecord()) {
+          attach();
+          return;
+        }
+        requestAnimationFrame(() => {
+          if (article.isConnected && urlMatchesRecord()) attach();
+        });
+      });
+      return;
+    }
     attach();
   }
 
-  function buildArticle(record, route) {
+  function buildArticle(record, route, variant = 'flow') {
     const article = node('article', 'record-detail node-detail-view');
     article.dataset.testid = 'node-detail';
     article.dataset.nodeDetailSource = route.source;
@@ -372,9 +448,10 @@
     provenance.append(provenanceHeading, provenanceCopy);
 
     const actions = node('div', 'detail-actions');
+    let downloadNote = null;
     let download = null;
     if (record.download_url && record.source_blend) {
-      const note = node('p', 'download-note');
+      downloadNote = node('p', 'download-note');
       download = node('a', 'button-primary');
       download.dataset.pixelFlicker = '';
       download.dataset.testid = 'node-blend-download';
@@ -383,8 +460,8 @@
       download.target = '_blank';
       const downloadLabel = node('span', 'pixel-button-label');
       download.append(downloadLabel);
-      note.__resourceArchiveNodeDetailDownload = downloadLabel;
-      actions.append(note, download);
+      downloadNote.__resourceArchiveNodeDetailDownload = downloadLabel;
+      actions.append(downloadNote, download);
     }
     const source = node('a', 'button-secondary');
     source.dataset.nodeDetailSourceAction = '';
@@ -400,7 +477,26 @@
     if (notes) content.append(notes);
     content.append(inputs, outputs, provenance, actions);
     body.append(content);
-    article.append(backLine, breadcrumbs, header, body);
+    if (variant === 'workbench') {
+      const copy = node('button', 'button-secondary');
+      copy.type = 'button';
+      copy.dataset.testid = 'node-workbench-copy-link';
+      copy.dataset.nodeWorkbenchCopyLink = '';
+      const previewHost = node('div', 'node-workbench-preview-host');
+      const information = node('div', 'node-workbench-information');
+      const scroll = node('div', 'node-workbench-information-scroll');
+      const sourceAction = actions.querySelector('[data-node-detail-source-action]');
+      if (notes) scroll.append(header, notes);
+      else scroll.append(header);
+      scroll.append(inputs, outputs, provenance);
+      if (downloadNote) scroll.append(downloadNote);
+      if (sourceAction) scroll.append(sourceAction);
+      actions.replaceChildren(copy, ...(download ? [download] : []));
+      information.append(scroll, actions);
+      article.append(previewHost, information);
+    } else {
+      article.append(backLine, breadcrumbs, header, body);
+    }
     attachArticle(article, record, route);
     update(article, route, document.documentElement.lang || 'en');
     return article;
@@ -425,6 +521,7 @@
       provenanceHeading: article.querySelector('[data-node-detail-provenance-heading]'),
       download: article.querySelector('[data-testid="node-blend-download"]'),
       source: article.querySelector('[data-node-detail-source-action]'),
+      copy: article.querySelector('[data-node-workbench-copy-link]'),
     };
     if (references.notes) references.notes.__resourceArchiveNodeDetailHeading = references.notes.querySelector('[data-node-detail-notes-heading]');
     [references.inputs, references.outputs].filter(Boolean).forEach(region => {
@@ -459,14 +556,21 @@
     const displayName = nodeDisplayName(record, language);
     const chineseName = chinese ? displayName : (typeof record.name_zh === 'string' && record.name_zh.trim() ? record.name_zh.trim() : null);
     const parentHref = route.parentHref || '/nodes.html';
-    references.back.href = parentHref;
-    references.back.textContent = translate('nodes-dialog-back-directory');
-    references.root.textContent = translate('nodes-all');
-    references.system.href = route.parentSystemHref || parentHref;
-    references.system.textContent = systemLabel;
-    references.category.href = parentHref;
-    references.category.textContent = categoryLabel;
-    references.current.textContent = chinese ? displayName : englishName;
+    updateUnavailablePreviewCopy(article.querySelector('[data-node-preview-unavailable]'), record);
+    if (references.back) {
+      references.back.href = parentHref;
+      references.back.textContent = translate('nodes-dialog-back-directory');
+    }
+    if (references.root) references.root.textContent = translate('nodes-all');
+    if (references.system) {
+      references.system.href = route.parentSystemHref || parentHref;
+      references.system.textContent = systemLabel;
+    }
+    if (references.category) {
+      references.category.href = parentHref;
+      references.category.textContent = categoryLabel;
+    }
+    if (references.current) references.current.textContent = chinese ? displayName : englishName;
     article.querySelector('[data-node-detail-breadcrumb]')?.setAttribute('aria-label', translate('nodes-detail-breadcrumb'));
     references.title.textContent = chinese ? displayName : englishName;
     references.nameZh.textContent = typeof record.name_zh === 'string' ? record.name_zh.trim() : '';
@@ -510,13 +614,15 @@
     const note = article.querySelector('.download-note');
     if (note) note.textContent = translate('nodes-dialog-download-note');
     references.source?.querySelector('.pixel-button-label') && (references.source.querySelector('.pixel-button-label').textContent = translate('nodes-dialog-view-blueish-source'));
+    if (references.copy) references.copy.textContent = translate('nodes-workbench-copy-link');
     const preview = article.querySelector('[data-node-detail-preview]');
     if (preview) updatePreviewCopy(preview, record);
     stored.route = route;
   }
 
-  function render(record, { route, language, article: existingArticle } = {}) {
-    const article = existingArticle || buildArticle(record, route || {});
+  function render(record, { route, language, article: existingArticle, variant = 'flow' } = {}) {
+    const article = existingArticle || buildArticle(record, route || {}, variant);
+    article.dataset.nodeDetailVariant = variant;
     if (existingArticle) attachArticle(article, record, route || {});
     update(article, route || {}, language || document.documentElement.lang || 'en');
     appendPreview(article, record);

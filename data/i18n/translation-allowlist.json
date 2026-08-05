@@ -4836,54 +4836,54 @@
       "selector": "#subtype-stylized_2d > div:nth-of-type(1) > h2:nth-of-type(1)",
       "reason": "standard acronym"
     },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/compData/ylgnbu.json#/inputs/0/type",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketColor",
-      "source": "data/migrated/nodes/compData/ylgnbu.json#/outputs/0/type",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketColor",
-      "source": "data/migrated/nodes/compData/ylgnbu.json#/outputs/0/type",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "YlGnBu",
-      "source": "data/migrated/search-index.json#/563/name",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=compData&id=ylgnbu",
+     "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/compData/ylgnbu.json#/inputs/0/type",
+     "route": "/nodes.html?source=compData&id=ylgnbu",
+     "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketColor",
+     "source": "data/migrated/nodes/compData/ylgnbu.json#/outputs/0/type",
+     "route": "/nodes.html?source=compData&id=ylgnbu",
+     "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketColor",
+     "source": "data/migrated/nodes/compData/ylgnbu.json#/outputs/0/type",
+     "route": "/nodes.html?source=compData&id=ylgnbu",
+     "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=compData&id=ylgnbu",
+     "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "YlGnBu",
+     "source": "data/migrated/search-index.json#/563/name",
+     "route": "/nodes.html?source=compData&id=ylgnbu",
+     "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
     {
       "value": "NodeSocketGeometry",
       "source": "data/migrated/nodes/geomData/10-tetrahetra.json#/outputs/0/type",
@@ -4905,118 +4905,118 @@
       "sourcePointer": "data/migrated/nodes/geomData/2d-remesh.json#",
       "reason": "Blender API identifier"
     },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "NodeSocketGeometry",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/0/type",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/1/type",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketInt",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/2/type",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/1/type",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketGeometry",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/0/type",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "D Straight Skeleton",
-      "source": "data/migrated/search-index.json#/568/name",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
-      "value": "v1.0.1",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/created_version",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > dl:nth-of-type(1) > dd:nth-of-type(3)",
-      "reason": "version or hash"
-    },
-    {
-      "value": "v1.0.1",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/created_version",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > dl:nth-of-type(1) > dd:nth-of-type(4)",
-      "reason": "version or hash"
-    },
-    {
-      "value": "D Straight Skeleton",
-      "source": "data/migrated/search-index.json#/568/name",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(2)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
-      "value": "Straight Skeleton",
-      "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/name",
-      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
-      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(2)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "NodeSocketGeometry",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/0/type",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/1/type",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketInt",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/2/type",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/1/type",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketGeometry",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/inputs/0/type",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(3)",
+     "reason": "brand"
+   },
+   {
+     "value": "D Straight Skeleton",
+     "source": "data/migrated/search-index.json#/568/name",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
+   {
+     "value": "v1.0.1",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/created_version",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > dl:nth-of-type(1) > dd:nth-of-type(3)",
+     "reason": "version or hash"
+   },
+   {
+     "value": "v1.0.1",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/created_version",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > dl:nth-of-type(1) > dd:nth-of-type(4)",
+     "reason": "version or hash"
+   },
+   {
+     "value": "D Straight Skeleton",
+     "source": "data/migrated/search-index.json#/568/name",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(2)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
+   {
+     "value": "Straight Skeleton",
+     "source": "data/migrated/nodes/geomData/2d-straight-skeleton.json#/name",
+     "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+     "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(2)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
     {
       "value": "NodeSocketMatrix",
       "source": "data/migrated/nodes/geomData/3x3-1-norm.json#/inputs/0/type",
@@ -5269,102 +5269,102 @@
       "sourcePointer": "data/migrated/nodes/shaderData/ring.json#",
       "reason": "standard acronym"
     },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > a:nth-of-type(2) > span:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "NodeSocketVector",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/0/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketVector",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/0/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "Outline",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/name",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(4)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(5) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "NodeSocketFloat",
-      "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
-      "reason": "Blender API identifier"
-    },
-    {
-      "value": "Blueish",
-      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
-      "reason": "brand"
-    },
-    {
-      "value": "Yang",
-      "source": "data/migrated/search-index.json#/513/name",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
-      "value": "Yin",
-      "source": "data/migrated/search-index.json#/513/name",
-      "route": "/nodes.html?source=shaderData&id=yin-yang",
-      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
-      "selector": "#node-catalog-app > article:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "NodeSocketVector",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/0/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketVector",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/0/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "Outline",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/name",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(3) > td:nth-of-type(4)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(4) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(5) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "NodeSocketFloat",
+     "source": "data/migrated/nodes/shaderData/yin-yang.json#/inputs/2/type",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
+     "reason": "Blender API identifier"
+   },
+   {
+     "value": "Blueish",
+     "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+     "reason": "brand"
+   },
+   {
+     "value": "Yang",
+     "source": "data/migrated/search-index.json#/513/name",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
+   {
+     "value": "Yin",
+     "source": "data/migrated/search-index.json#/513/name",
+     "route": "/nodes.html?source=shaderData&id=yin-yang",
+     "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+     "reason": "upstream interface name intentionally retained beside Chinese display name"
+   },
     {
       "value": "Automation Flow",
       "source": "data/plugins.json#/0/external_destinations/0/label/zh",
@@ -12345,6 +12345,46 @@
       "sourcePointer": "data/plugin-details/automation-flow.json#/identity/provider",
       "selector": "#main-content > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > header:nth-of-type(1) > p:nth-of-type(3) > span:nth-of-type(1)",
       "reason": "brand"
+    },
+    {
+      "value": "CN",
+      "source": "js/node-catalog.js#workbenchSystemCode",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > header:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "GN",
+      "source": "js/node-catalog.js#workbenchSystemCode",
+      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > header:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "SN",
+      "source": "js/node-catalog.js#workbenchSystemCode",
+      "route": "/nodes.html?source=shaderData&id=yin-yang",
+      "sourcePointer": "data/migrated/nodes/shaderData/yin-yang.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > header:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "Blender v1.0.1",
+      "source": "js/i18n.js#zh/nodes-workbench-preview-version",
+      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "version or hash"
+    },
+    {
+      "value": "px",
+      "source": "js/i18n.js#zh/nodes-workbench-preview-dimensions",
+      "route": "/nodes.html?source=geomData&id=2d-straight-skeleton",
+      "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(2)",
+      "reason": "standard acronym"
     }
   ]
 }
