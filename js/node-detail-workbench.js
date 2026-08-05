@@ -305,15 +305,24 @@
       const opening = anchorPixelPolygon(current.dialog, current.origin);
       const full = fullPixelPolygon(current.dialog, 8);
       current.motionOffset = verticalMotionOffset(current.dialog);
-      current.openAnimation = current.dialog.animate([
+      const openAnimation = current.dialog.animate([
         { clipPath: opening, opacity: .25, transform: `translateY(${current.motionOffset}px)` },
         { clipPath: full, opacity: 1, transform: 'translateY(0)' },
       ], { duration: 520, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' });
-      current.scrimAnimation = current.scrim.animate([
+      const scrimAnimation = current.scrim.animate([
         { opacity: 0 },
         { opacity: 1 },
       ], { duration: 520, easing: 'cubic-bezier(.22, 1, .36, 1)', fill: 'both' });
-      void Promise.all([current.openAnimation.finished, current.scrimAnimation.finished]).catch(() => {
+      current.openAnimation = openAnimation;
+      current.scrimAnimation = scrimAnimation;
+      void Promise.all([openAnimation.finished, scrimAnimation.finished]).then(() => {
+        if (state !== current || current.released || current.closing || current.layer.parentElement !== app
+          || current.openAnimation !== openAnimation || current.scrimAnimation !== scrimAnimation) return;
+        openAnimation.cancel();
+        scrimAnimation.cancel();
+        current.openAnimation = null;
+        current.scrimAnimation = null;
+      }).catch(() => {
         if (state === current && !current.closing) finishClose(current, { restoreFocus: false });
       });
     }
