@@ -164,6 +164,11 @@
     return prepared.glyphColumns + PADDING_CELLS - 1;
   }
 
+  function centeredOffset(prepared) {
+    const leadingColumns = Math.max(0, Math.floor((prepared.visibleColumns - prepared.glyphColumns) / 2));
+    return prepared.glyphColumns + leadingColumns - 1;
+  }
+
   function paint(canvas, prepared, configured, offsetCells) {
     const { context, width, height } = configured;
     const { visibleWidth, dpr, glyphColumns, trackColumns } = prepared;
@@ -206,7 +211,10 @@
     }
     const configured = configureCanvas(canvas, prepared, options);
     if (!configured) return fallbackResult(prepared.visibleWidth);
-    return paint(canvas, prepared, configured, options.offsetCells);
+    const offsetCells = options.alignment === 'center'
+      ? centeredOffset(prepared)
+      : options.offsetCells;
+    return paint(canvas, prepared, configured, offsetCells);
   }
 
   function startTicker(options = {}) {

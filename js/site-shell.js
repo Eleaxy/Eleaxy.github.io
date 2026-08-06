@@ -2,8 +2,18 @@
   const root = document.documentElement;
   const page = document.body.dataset.page || 'home';
   const homeSectionIds = ['home', 'tutorials', 'stages', 'nodes', 'plugins-section', 'videos', 'contributors'];
+  const standalonePageForPath = pathname => ({
+    '/tutorials.html': 'tutorials',
+    '/stages.html': 'stages',
+    '/nodes.html': 'nodes',
+    '/plugins.html': 'plugins',
+    '/videos.html': 'videos',
+    '/contributors.html': 'contributors',
+  }[pathname] || null);
+  const currentPage = () => standalonePageForPath(location.pathname) || page;
   const sectionFromLocation = () => {
-    if (page !== 'home') return page;
+    const locatedPage = currentPage();
+    if (locatedPage !== 'home') return locatedPage;
     const hash = location.hash.slice(1);
     return homeSectionIds.includes(hash) ? hash : 'home';
   };

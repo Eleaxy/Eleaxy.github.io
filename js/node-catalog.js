@@ -4,6 +4,11 @@
   const detailView = window.ResourceArchiveNodeDetail;
   const routerApi = window.ResourceArchiveInternalViewRouter;
   const wordmark = window.ResourceArchiveNodeWordmark;
+  const BLUEISH_THUMBNAIL_BASE_URL = 'https://blender-assets.blueish.workers.dev/';
+  // This legacy catalog record remains in the source index, but the current
+  // Blueish asset library and the audited Blender corpus contain no matching
+  // node group. Keep it visible without presenting a fabricated thumbnail.
+  const SOURCE_VISUAL_UNAVAILABLE_KEYS = new Set(['geomData/string-art']);
   if (!app || !taxonomy || !detailView || !routerApi) return;
 
   const stateKey = '__resourceArchiveNodeCatalogState';
@@ -12,6 +17,8 @@
     disposed: false,
     records: null,
     recordsPromise: null,
+    thumbnailManifest: null,
+    thumbnailManifestPromise: null,
     catalogRetryPromise: null,
     contentTableRetryPromise: null,
     languageGeneration: 0,
@@ -174,6 +181,63 @@
     return `/nodes.html?${query}`;
   }
 
+  function emptyThumbnailManifest() {
+    return { trusted: false, baseUrl: null, thumbnails: new Map(), detailPreviews: new Map() };
+  }
+
+  function isSafeThumbnailPath(value) {
+    return typeof value === 'string'
+      && value.endsWith('.webp')
+      && !value.startsWith('/')
+      && !value.startsWith('\\')
+      && !value.includes('..')
+      && !value.includes('\\')
+      && !/^[a-z][a-z0-9+.-]*:/i.test(value);
+  }
+
+  function isSafeDetailPreviewPath(value) {
+    return typeof value === 'string' && /^\/images\/nodes\/[0-9a-f]{64}\.png$/.test(value);
+  }
+
+  function validatedThumbnailManifest(value) {
+    if (value?.version !== 2 || typeof value.base_url !== 'string'
+      || !value.thumbnails || typeof value.thumbnails !== 'object' || Array.isArray(value.thumbnails)
+      || !value.detail_previews || typeof value.detail_previews !== 'object' || Array.isArray(value.detail_previews)) {
+      return emptyThumbnailManifest();
+    }
+    try {
+      const baseUrl = new URL(value.base_url);
+      if (baseUrl.href !== BLUEISH_THUMBNAIL_BASE_URL) return emptyThumbnailManifest();
+      return {
+        trusted: true,
+        baseUrl: baseUrl.href,
+        thumbnails: new Map(Object.entries(value.thumbnails).filter(([key, thumbnailPath]) => key && isSafeThumbnailPath(thumbnailPath))),
+        detailPreviews: new Map(Object.entries(value.detail_previews).filter(([key, previewPath]) => key && isSafeDetailPreviewPath(previewPath))),
+      };
+    } catch {
+      return emptyThumbnailManifest();
+    }
+  }
+
+  function getThumbnailManifest() {
+    if (state.thumbnailManifest) return Promise.resolve(state.thumbnailManifest);
+    if (!state.thumbnailManifestPromise) {
+      const pending = fetch('/data/migrated/node-asset-thumbnails.json')
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then(validatedThumbnailManifest)
+        .catch(() => emptyThumbnailManifest())
+        .then(manifest => {
+          state.thumbnailManifest = manifest;
+          return manifest;
+        });
+      state.thumbnailManifestPromise = pending;
+    }
+    return state.thumbnailManifestPromise;
+  }
+
   function nodeLink(record, route, group) {
     const link = element('a', 'node-link');
     link.dataset.nodeLink = '';
@@ -187,7 +251,102 @@
     return link;
   }
 
-  function subtypeSection(group, index, route, linkGroup) {
+  function applyCardThumbnail(link, thumbnailManifest) {
+    const thumbnail = link.querySelector('[data-node-card-thumbnail]');
+    const placeholder = link.querySelector('[data-node-card-placeholder]');
+    const thumbnailPath = thumbnailManifest?.thumbnails?.get(link.dataset.nodeKey);
+    const detailPreviewPath = thumbnailManifest?.detailPreviews?.get(link.dataset.nodeKey);
+    if (!thumbnail || !placeholder) return;
+    const remoteSrc = thumbnailPath && thumbnailManifest?.baseUrl
+      ? new URL(thumbnailPath, thumbnailManifest.baseUrl).href
+      : null;
+    const localSrc = isSafeDetailPreviewPath(detailPreviewPath)
+      ? detailPreviewPath
+      : null;
+    const src = remoteSrc || localSrc;
+    if (!src) {
+      thumbnail.onload = null;
+      thumbnail.onerror = null;
+      thumbnail.removeAttribute('src');
+      thumbnail.hidden = true;
+      placeholder.hidden = false;
+      return;
+    }
+    const showLoaded = () => {
+      if (thumbnail.getAttribute('src') !== src || !thumbnail.naturalWidth) return;
+      thumbnail.hidden = false;
+      thumbnail.removeAttribute('data-node-card-loading');
+      placeholder.hidden = true;
+    };
+    const showUnavailable = () => {
+      if (thumbnail.getAttribute('src') !== src) return;
+      thumbnail.hidden = true;
+      thumbnail.removeAttribute('data-node-card-loading');
+      placeholder.hidden = false;
+    };
+    thumbnail.onload = showLoaded;
+    thumbnail.onerror = showUnavailable;
+    // Keep the honest placeholder visible while a lazy image is pending. The
+    // previous implementation hid it before the request completed, which
+    // produced blank media boxes during fast scrolling or a cold cache.
+    // Do not use the `hidden` attribute while loading: it sets display:none
+    // and prevents native lazy-loading from ever starting for off-screen cards.
+    thumbnail.hidden = false;
+    thumbnail.setAttribute('data-node-card-loading', '');
+    placeholder.hidden = false;
+    if (thumbnail.getAttribute('src') !== src) thumbnail.src = src;
+    if (thumbnail.complete) {
+      if (thumbnail.naturalWidth) showLoaded();
+      else showUnavailable();
+    }
+  }
+
+  function nodeCard(record, route, group, thumbnailManifest) {
+    const link = nodeLink(record, route, group);
+    const key = link.dataset.nodeKey;
+    const sourceVisualUnavailable = SOURCE_VISUAL_UNAVAILABLE_KEYS.has(key);
+    const primaryName = nodeDisplayName(record);
+    const alternateName = isChinese() ? String(record.name || '').trim() : String(record.name_zh || '').trim();
+    const media = element('span', 'node-card-media');
+    const thumbnail = document.createElement('img');
+    thumbnail.className = 'node-card-thumbnail';
+    thumbnail.dataset.nodeCardThumbnail = '';
+    thumbnail.alt = translate('nodes-card-thumbnail-alt', { name: primaryName });
+    thumbnail.loading = 'lazy';
+    thumbnail.decoding = 'async';
+    thumbnail.width = 256;
+    thumbnail.height = 256;
+    const placeholder = element(
+      'span',
+      'node-card-placeholder',
+      sourceVisualUnavailable
+        ? translate('nodes-card-source-visual-unavailable')
+        : translate('nodes-card-thumbnail-fallback'),
+    );
+    placeholder.dataset.nodeCardPlaceholder = '';
+    media.append(thumbnail, placeholder);
+
+    const body = element('span', 'node-card-body');
+    body.append(element('span', 'node-link-name node-card-name', primaryName));
+    if (alternateName && alternateName !== primaryName) body.append(element('span', 'node-card-alternate', alternateName));
+    body.append(
+      element(
+        'span',
+        'node-card-description',
+        sourceVisualUnavailable
+          ? translate('nodes-card-source-visual-unavailable-description')
+          : String(record.description || '').trim() || translate('nodes-card-description-unavailable'),
+      ),
+      element('span', 'node-card-source', key),
+    );
+    link.classList.add('node-catalog-card');
+    link.dataset.nodeCard = '';
+    link.replaceChildren(media, body);
+    applyCardThumbnail(link, thumbnailManifest);
+    return link;
+  }
+
+  function subtypeSection(group, index, route, linkGroup, thumbnailManifest = null) {
     const section = element('section', 'catalog-subtype');
     section.id = `subtype-${group.id}`;
     section.dataset.subtypeSection = group.id;
@@ -199,8 +358,10 @@
     const count = element('strong', 'subtype-count', translate('nodes-record-count', { count: group.records.length }));
     count.dataset.originalCount = String(group.records.length);
     heading.append(count);
-    const links = element('div', 'node-link-grid');
-    links.append(...group.records.map(record => nodeLink(record, route, linkGroup)));
+    const links = element('div', thumbnailManifest ? 'node-card-grid' : 'node-link-grid');
+    links.append(...group.records.map(record => (thumbnailManifest
+      ? nodeCard(record, route, linkGroup, thumbnailManifest)
+      : nodeLink(record, route, linkGroup))));
     section.append(heading, links);
     return section;
   }
@@ -225,14 +386,31 @@
     return navigation;
   }
 
+  function buildCatalogAxis(groups) {
+    const rail = element('aside', 'node-catalog-axis');
+    rail.dataset.nodeCatalogAxis = '';
+    rail.setAttribute('aria-label', translate('nodes-jump-subtype'));
+    rail.append(element('h2', null, language().toLowerCase().startsWith('zh') ? '节点目录' : 'Node catalog'));
+    const navigation = element('nav', 'catalog-jump node-catalog-axis-index');
+    navigation.setAttribute('aria-label', translate('nodes-jump-subtype'));
+    groups.forEach(group => {
+      const link = element('a', null, taxonomy.categoryLabel(group.id, language()));
+      link.href = `#subtype-${group.id}`;
+      navigation.append(link);
+    });
+    rail.append(navigation);
+    return rail;
+  }
+
   function catalogHeader(route, scoped) {
     const system = route.group ? taxonomy.getSystem(route.group) : null;
     const header = element('header', 'catalog-header');
+    header.classList.toggle('catalog-header-scoped', Boolean(route.group));
     header.dataset.transitionCatalogHeader = '';
     const parent = element('a', 'node-parent-link');
     parent.dataset.transitionCatalogParent = '';
     parent.dataset.nodeParentLink = '';
-    parent.href = '/index.html#nodes';
+    parent.href = '/nodes.html';
     parent.textContent = translate('nodes-parent-directory');
     parent.hidden = !route.group;
     const titleText = system ? taxonomy.systemLabel(system, language()) : translate('nodes-all');
@@ -255,7 +433,7 @@
     return header;
   }
 
-  function catalogView(records, route) {
+  function catalogView(records, route, thumbnailManifest = null) {
     if (route.invalidGroup) {
       const invalid = element('section', 'invalid-group-state');
       invalid.dataset.testid = 'invalid-node-group';
@@ -284,7 +462,8 @@
     const clear = element('button', 'button-secondary', translate('nodes-search-clear'));
     clear.type = 'button';
     clear.dataset.catalogClear = '';
-    tools.append(search, clear, buildJump(groups, route));
+    tools.append(search, clear);
+    if (!route.group) tools.append(buildJump(groups, route));
     const status = element('p', 'catalog-status');
     status.append(
       element('span', null, translate('nodes-links-in-document', { count: scoped.length })),
@@ -299,7 +478,12 @@
     const catalog = element('div', 'node-catalog');
     catalog.dataset.nodeCatalog = '';
     if (route.group) {
-      catalog.append(...groups.map((group, index) => subtypeSection(group, index, route, route.group)));
+      const cardManifest = thumbnailManifest || emptyThumbnailManifest();
+      const scopedCatalog = element('div', 'node-scoped-catalog');
+      const scopedContent = element('div', 'node-catalog-content');
+      scopedContent.append(...groups.map((group, index) => subtypeSection(group, index, route, route.group, cardManifest)));
+      scopedCatalog.append(buildCatalogAxis(groups), scopedContent);
+      catalog.append(scopedCatalog);
     } else {
       taxonomy.SYSTEMS.forEach(system => {
         const systemSection = element('section', 'catalog-system');
@@ -515,6 +699,78 @@
     clear.addEventListener('click', onClear);
     update();
 
+    const axis = root.querySelector('[data-node-catalog-axis]');
+    const sections = [...root.querySelectorAll('[data-subtype-section]')];
+    let axisObserver = null;
+    let onAxisClick = null;
+    let pendingAxisSection = null;
+    if (axis && sections.length && typeof IntersectionObserver === 'function') {
+      const axisLinks = [...axis.querySelectorAll('a[href^="#subtype-"]')];
+      const activeSections = new Set();
+      const setCurrentAxisLink = section => {
+        const currentHref = section ? `#${section.id}` : null;
+        axisLinks.forEach(link => {
+          const current = link.getAttribute('href') === currentHref;
+          link.classList.toggle('is-current', current);
+          if (current) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+      };
+      setCurrentAxisLink(sections[0]);
+      axisObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) activeSections.add(entry.target);
+          else activeSections.delete(entry.target);
+        });
+        // A click updates the rail immediately, while smooth scrolling may
+        // leave the previously visible section intersecting for a few frames.
+        // Hold that clicked state until the destination enters the observer
+        // window so a stale callback cannot flash the old link as active.
+        if (pendingAxisSection) {
+          if (activeSections.has(pendingAxisSection)) {
+            setCurrentAxisLink(pendingAxisSection);
+            pendingAxisSection = null;
+          }
+          return;
+        }
+        const current = sections.find(section => activeSections.has(section));
+        if (current) setCurrentAxisLink(current);
+      }, { rootMargin: '-18% 0px -68% 0px', threshold: 0 });
+      sections.forEach(section => axisObserver.observe(section));
+    }
+    if (axis && sections.length) {
+      onAxisClick = event => {
+        if (event.defaultPrevented || event.button !== 0
+          || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        const anchor = event.target instanceof Element ? event.target.closest('a[href^="#subtype-"]') : null;
+        if (!anchor || !axis.contains(anchor)) return;
+        const destination = new URL(anchor.href, window.location.href);
+        const current = new URL(window.location.href);
+        if (destination.origin !== current.origin
+          || destination.pathname !== current.pathname
+          || destination.search !== current.search
+          || !destination.hash) return;
+        const section = document.getElementById(destination.hash.slice(1));
+        if (!section || !root.contains(section)) return;
+        event.preventDefault();
+        const router = history.state?.resourceArchiveInternalViewRouter;
+        const nextState = router
+          ? { ...history.state, resourceArchiveInternalViewRouter: { ...router, snapshot: null, fragment: destination.hash } }
+          : history.state;
+        history.replaceState(nextState, '', destination.href);
+        axis.querySelectorAll('a[href^="#subtype-"]').forEach(link => {
+          const current = link === anchor;
+          link.classList.toggle('is-current', current);
+          if (current) link.setAttribute('aria-current', 'true');
+          else link.removeAttribute('aria-current');
+        });
+        pendingAxisSection = section;
+        const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+        section.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start', inline: 'nearest' });
+      };
+      axis.addEventListener('click', onAxisClick);
+    }
+
     const createWordmarkCanvas = () => {
       const header = root.querySelector('.catalog-header');
       const fallback = header?.querySelector('.catalog-wordmark-text');
@@ -540,7 +796,15 @@
       if (!canvas) return;
       const label = root.querySelector('.catalog-title')?.textContent || '';
       const count = root.querySelector('.catalog-total')?.textContent || '';
-      const result = wordmark.render({ canvas, cssWidth: width, dpr: devicePixelRatio || 1, label, count, allowFallback: true });
+      const result = wordmark.render({
+        canvas,
+        cssWidth: width,
+        dpr: devicePixelRatio || 1,
+        label,
+        count,
+        alignment: 'center',
+        allowFallback: true,
+      });
       if (result.mode !== 'canvas') {
         canvas.remove();
         return;
@@ -557,10 +821,22 @@
     return () => {
       search.removeEventListener('input', onInput);
       clear.removeEventListener('click', onClear);
+      axisObserver?.disconnect();
+      if (axis && onAxisClick) axis.removeEventListener('click', onAxisClick);
       state.resizeObserver?.disconnect();
       state.resizeObserver = null;
       if (state.drawWordmark === drawWordmark) state.drawWordmark = null;
     };
+  }
+
+  function queueCatalogThumbnailHydration(root, route, isCurrent) {
+    if (!route.group) return;
+    void getThumbnailManifest().then(thumbnailManifest => {
+      if (!thumbnailManifest.trusted || !isCurrent() || !root.isConnected) return;
+      const scopedCatalog = root.querySelector('.node-scoped-catalog');
+      if (!scopedCatalog?.isConnected) return;
+      scopedCatalog.querySelectorAll('[data-node-card]').forEach(link => applyCardThumbnail(link, thumbnailManifest));
+    });
   }
 
   function capture() {
@@ -782,6 +1058,7 @@
           if (pending) clearPendingDetailNavigationTransient(pending);
           state.catalogRoute = catalogRoute;
           state.route = parent;
+          queueCatalogThumbnailHydration(root, catalogRoute, () => context.isCurrent());
           window.ResourceArchivePixelField?.refreshTargets();
           return cleanupCatalog;
         });
@@ -835,6 +1112,7 @@
           state.failedDetailUrl = null;
           state.catalogRoute = catalogRoute;
           state.route = fallback;
+          queueCatalogThumbnailHydration(root, catalogRoute, () => context.isCurrent());
           window.ResourceArchivePixelField?.refreshTargets();
           return cleanupCatalog;
         });
@@ -872,7 +1150,9 @@
           root.replaceChildren(replacement);
           state.route = route;
           state.catalogRoute = route;
-          return hydrateCatalog(root, route, { syncUrl: true });
+          const cleanup = hydrateCatalog(root, route, { syncUrl: true });
+          queueCatalogThumbnailHydration(root, route, () => context.isCurrent());
+          return cleanup;
         });
         return;
       }
@@ -892,6 +1172,7 @@
             if (!state.disposed && retrySearch?.isConnected) retrySearch.focus({ preventScroll: true });
           });
         }
+        queueCatalogThumbnailHydration(root, route, () => context.isCurrent());
         return cleanup;
       });
     } catch (error) {

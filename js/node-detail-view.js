@@ -482,7 +482,10 @@
     const caption = figure.querySelector('[data-node-detail-preview-caption]');
     if (caption) {
       caption.textContent = isCapture
-        ? translate('nodes-dialog-capture-preview-caption', { name })
+        ? translate('nodes-dialog-capture-preview-caption', {
+          name,
+          sourceBlend: entry?.source_blend || '',
+        })
         : translate('nodes-dialog-preview-caption');
     }
     const provenance = figure.querySelector('[data-node-detail-preview-provenance]');
