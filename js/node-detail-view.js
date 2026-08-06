@@ -486,9 +486,7 @@
     }
     const provenance = figure.querySelector('[data-node-detail-preview-provenance]');
     if (provenance) {
-      provenance.textContent = isCapture
-        ? translate('nodes-dialog-view-declared-source-blend')
-        : translate('nodes-dialog-view-blueish-source');
+      provenance.textContent = translate('nodes-dialog-view-blueish-source');
     }
     const label = figure.querySelector('[data-node-workbench-preview-label]');
     if (label) {
@@ -542,12 +540,15 @@
     const caption = document.createElement('figcaption');
     const captionCopy = node('span');
     captionCopy.dataset.nodeDetailPreviewCaption = '';
-    const provenance = node('a', 'node-preview-provenance');
-    provenance.dataset.nodeDetailPreviewProvenance = '';
-    provenance.href = entry.kind === capturePreviewKind ? captureProvenanceUrl(entry) : entry.source_url;
-    provenance.rel = 'noopener';
-    provenance.target = '_blank';
-    caption.append(captionCopy, ' ', provenance);
+    const provenance = entry.kind === capturePreviewKind ? null : node('a', 'node-preview-provenance');
+    if (provenance) {
+      provenance.dataset.nodeDetailPreviewProvenance = '';
+      provenance.href = entry.source_url;
+      provenance.rel = 'noopener';
+      provenance.target = '_blank';
+    }
+    caption.append(captionCopy);
+    if (provenance) caption.append(' ', provenance);
     figure.append(image, caption);
     if (variant === 'workbench') {
       const label = node('p', 'node-workbench-preview-label');
