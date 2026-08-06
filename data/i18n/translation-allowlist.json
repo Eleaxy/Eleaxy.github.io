@@ -12408,20 +12408,6 @@
       "reason": "standard acronym"
     },
     {
-      "value": "YlGnBu Windows Blender",
-      "source": "js/i18n.js#zh/nodes-dialog-capture-preview-caption",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
-      "value": "Windows Blender",
-      "source": "js/i18n.js#zh/nodes-workbench-windows-capture-preview",
-      "route": "/nodes.html?source=compData&id=ylgnbu",
-      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
       "value": "Blueish",
       "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
       "route": "/nodes.html?source=geomData&id=triangle",
@@ -12536,20 +12522,6 @@
       "route": "/nodes.html?source=shaderData&id=toon-ocean",
       "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
       "reason": "standard acronym"
-    },
-    {
-      "value": "Toon Ocean Windows Blender",
-      "source": "js/i18n.js#zh/nodes-dialog-capture-preview-caption",
-      "route": "/nodes.html?source=shaderData&id=toon-ocean",
-      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
-    },
-    {
-      "value": "Windows Blender",
-      "source": "js/i18n.js#zh/nodes-workbench-windows-capture-preview",
-      "route": "/nodes.html?source=shaderData&id=toon-ocean",
-      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
-      "reason": "upstream interface name intentionally retained beside Chinese display name"
     },
     {
       "value": "Blueish",

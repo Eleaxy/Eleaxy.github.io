@@ -475,13 +475,13 @@
     figure.querySelector('[data-testid="node-preview-image"]')?.setAttribute(
       'alt',
       isCapture
-        ? translate('nodes-dialog-capture-preview-alt', { name, sourceBlend: entry.source_blend })
+        ? translate('nodes-dialog-capture-preview-alt', { name })
         : translate('nodes-dialog-preview-alt', { name }),
     );
     const caption = figure.querySelector('[data-node-detail-preview-caption]');
     if (caption) {
       caption.textContent = isCapture
-        ? translate('nodes-dialog-capture-preview-caption', { name, sourceBlend: entry.source_blend })
+        ? translate('nodes-dialog-capture-preview-caption', { name })
         : translate('nodes-dialog-preview-caption');
     }
     const provenance = figure.querySelector('[data-node-detail-preview-provenance]');
@@ -498,11 +498,11 @@
     }
     const version = figure.querySelector('[data-node-workbench-preview-version]');
     if (version) {
-      version.textContent = translate('nodes-workbench-preview-version', {
-        version: isCapture
-          ? entry.application_version
-          : (record.version || record.last_modified_version || record.created_version || '—'),
-      });
+      version.textContent = isCapture
+        ? ''
+        : translate('nodes-workbench-preview-version', {
+          version: record.version || record.last_modified_version || record.created_version || '—',
+        });
     }
     updatePreviewDimensions(figure);
   }
@@ -517,7 +517,12 @@
   function updatePreviewDimensions(figure) {
     const image = figure.querySelector('[data-testid="node-preview-image"]');
     const dimensions = figure.querySelector('[data-node-workbench-preview-dimensions]');
-    if (!image || !dimensions || !image.naturalWidth || !image.naturalHeight) return;
+    if (!image || !dimensions) return;
+    if (figure.__resourceArchiveNodePreviewEntry?.kind === capturePreviewKind) {
+      dimensions.textContent = '';
+      return;
+    }
+    if (!image.naturalWidth || !image.naturalHeight) return;
     dimensions.textContent = translate('nodes-workbench-preview-dimensions', {
       width: image.naturalWidth,
       height: image.naturalHeight,
@@ -713,7 +718,8 @@
     const provenance = node('section', 'node-detail-provenance');
     const provenanceHeading = node('h2');
     provenanceHeading.dataset.nodeDetailProvenanceHeading = '';
-    const provenanceCopy = node('p', 'record-meta', record.source_blend || '');
+    const provenanceCopy = node('p', 'record-meta');
+    provenanceCopy.dataset.nodeDetailProvenanceCopy = '';
     provenance.append(provenanceHeading, provenanceCopy);
 
     const actions = node('div', 'detail-actions');
@@ -788,6 +794,7 @@
       inputs: article.querySelector('[data-node-detail-socket-table="nodes-dialog-inputs"]'),
       outputs: article.querySelector('[data-node-detail-socket-table="nodes-dialog-outputs"]'),
       provenanceHeading: article.querySelector('[data-node-detail-provenance-heading]'),
+      provenanceCopy: article.querySelector('[data-node-detail-provenance-copy]'),
       download: article.querySelector('[data-testid="node-blend-download"]'),
       source: article.querySelector('[data-node-detail-source-action]'),
       copy: article.querySelector('[data-node-workbench-copy-link]'),
@@ -878,8 +885,9 @@
       });
     });
     if (references.provenanceHeading) references.provenanceHeading.textContent = translate('nodes-dialog-view-blueish-source');
+    if (references.provenanceCopy) references.provenanceCopy.textContent = translate('nodes-dialog-provenance-copy');
     const downloadLabel = article.querySelector('[data-testid="node-blend-download"] .pixel-button-label');
-    if (downloadLabel) downloadLabel.textContent = translate('nodes-dialog-download-owning', { file: record.source_blend.split('/').pop() });
+    if (downloadLabel) downloadLabel.textContent = translate('nodes-dialog-download-owning');
     const note = article.querySelector('.download-note');
     if (note) note.textContent = translate('nodes-dialog-download-note');
     references.source?.querySelector('.pixel-button-label') && (references.source.querySelector('.pixel-button-label').textContent = translate('nodes-dialog-view-blueish-source'));
