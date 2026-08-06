@@ -6,6 +6,7 @@
   const upstreamPreviewKind = 'upstream-example';
   const capturePreviewKind = 'windows-blender-node-group-capture';
   const capturePreviewMethod = 'foreground-node-editor-copy-from-screen';
+  const completeNodeAssetsUrl = 'https://github.com/blueish0930/Assets/releases/latest/download/blueish.rar';
   const capturePreviewFields = new Set([
     'kind',
     'local',
@@ -726,12 +727,12 @@
     const actions = node('div', 'detail-actions');
     let downloadNote = null;
     let download = null;
-    if (record.download_url && record.source_blend) {
+    if (variant === 'workbench' || (record.download_url && record.source_blend)) {
       downloadNote = node('p', 'download-note');
       download = node('a', 'button-primary');
       download.dataset.pixelFlicker = '';
       download.dataset.testid = 'node-blend-download';
-      download.href = record.download_url;
+      download.href = variant === 'workbench' ? completeNodeAssetsUrl : record.download_url;
       download.rel = 'noopener';
       download.target = '_blank';
       const downloadLabel = node('span', 'pixel-button-label');
@@ -888,9 +889,14 @@
     if (references.provenanceHeading) references.provenanceHeading.textContent = translate('nodes-dialog-view-blueish-source');
     if (references.provenanceCopy) references.provenanceCopy.textContent = translate('nodes-dialog-provenance-copy');
     const downloadLabel = article.querySelector('[data-testid="node-blend-download"] .pixel-button-label');
-    if (downloadLabel) downloadLabel.textContent = translate('nodes-dialog-download-owning');
+    const isWorkbench = article.dataset.nodeDetailVariant === 'workbench';
+    if (downloadLabel) downloadLabel.textContent = translate(isWorkbench
+      ? 'nodes-workbench-download-assets'
+      : 'nodes-dialog-download-owning');
     const note = article.querySelector('.download-note');
-    if (note) note.textContent = translate('nodes-dialog-download-note');
+    if (note) note.textContent = translate(isWorkbench
+      ? 'nodes-workbench-download-note'
+      : 'nodes-dialog-download-note');
     references.source?.querySelector('.pixel-button-label') && (references.source.querySelector('.pixel-button-label').textContent = translate('nodes-dialog-view-blueish-source'));
     if (references.copy) references.copy.textContent = translate('nodes-workbench-copy-link');
     const preview = article.querySelector('[data-node-detail-preview]');

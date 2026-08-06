@@ -1,5 +1,6 @@
 (() => {
   const focusableSelector = 'a[href], button, input, select, textarea, [tabindex]';
+  const remoteAssetLibraryUrl = 'https://blender-assets.blueish.workers.dev/';
 
   function isReducedMotion() {
     return matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -462,7 +463,7 @@
     async function copyCurrentLink(button) {
       const originalLabel = translate('nodes-workbench-copy-link');
       try {
-        await navigator.clipboard.writeText(window.location.href);
+        await navigator.clipboard.writeText(remoteAssetLibraryUrl);
         button.textContent = translate('nodes-workbench-copy-complete');
         window.setTimeout(() => {
           if (button.isConnected) button.textContent = translate('nodes-workbench-copy-link');

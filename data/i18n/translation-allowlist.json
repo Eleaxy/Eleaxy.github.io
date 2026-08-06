@@ -12580,6 +12580,78 @@
       "route": "/nodes.html?source=shaderData&id=toon-ocean",
       "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
       "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-download-note",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-download-assets",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-copy-link",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-download-note",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-download-assets",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-copy-link",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-download-note",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > p:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-download-assets",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-workbench-copy-link",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > button:nth-of-type(1)",
+      "reason": "brand"
     }
   ]
 }
