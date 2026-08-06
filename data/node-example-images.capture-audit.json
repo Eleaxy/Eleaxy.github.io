@@ -1,0 +1,241 @@
+{
+  "version": 2,
+  "entries": {
+    "shaderData/3x3-1-norm": {
+      "source_catalog_key": "geomData/3x3-1-norm",
+      "node_group": "3x3 1-Norm",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "0f49cf0f6a5b0fdc320337da5ef4ced4a68ac6bc0154b79ff1293c413d9c80a3",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-adjugate-matrix": {
+      "source_catalog_key": "geomData/3x3-adjugate-matrix",
+      "node_group": "3x3 Adjugate Matrix",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "c142e93abae2af6ecd1629f18fe175d7d246d0127125507a6c11e57aa8ae2194",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-diagonalize-symmetric": {
+      "source_catalog_key": "geomData/3x3-diagonalize-symmetric",
+      "node_group": "3x3 Diagonalize Symmetric",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "12ec8a247f1295f80154c741abe36e1e1b0ae998a3cd33d4f9b9a53608425262",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-frobenius-norm": {
+      "source_catalog_key": "geomData/3x3-frobenius-norm",
+      "node_group": "3x3 Frobenius Norm",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "55ff63fa8152b345ba82a7291075843a7c3b825015fe6d4a509881afd1b58459",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-infinity-norm": {
+      "source_catalog_key": "geomData/3x3-infinity-norm",
+      "node_group": "3x3 Infinity-Norm",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "d5d78475388c0754cfcf4d30a2de642e8104065103eb65da3a9ef90afdbeca7c",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-matrices-multiply": {
+      "source_catalog_key": "geomData/matrices-multiply",
+      "node_group": "Matrices Multiply",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "66d53abb39aa2d199ee2d600d2034042d3a4a4d0534fe41f65d23497626280c0",
+      "asset_flag": true,
+      "identity_basis": "explicit-legacy-alias",
+      "alias_basis": {
+        "policy": "current-identity-ordered-interface-alias-v1",
+        "legacy_source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+        "ordered_interface": "compatible",
+        "name_relation": "dimension-elision",
+        "capture_binding": {
+          "kind": "reused-current-capture",
+          "source_capture_key": "geomData/matrices-multiply",
+          "sha256": "c05865aaec574e154206277c01cc61ef5e12e344804e1adb9c671693600ab295"
+        }
+      }
+    },
+    "shaderData/3x3-matrix-add": {
+      "source_catalog_key": "geomData/matrix-add",
+      "node_group": "Matrix Add",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "66d53abb39aa2d199ee2d600d2034042d3a4a4d0534fe41f65d23497626280c0",
+      "asset_flag": true,
+      "identity_basis": "explicit-legacy-alias",
+      "alias_basis": {
+        "policy": "current-identity-ordered-interface-alias-v1",
+        "legacy_source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+        "ordered_interface": "compatible",
+        "name_relation": "dimension-elision",
+        "capture_binding": {
+          "kind": "reused-current-capture",
+          "source_capture_key": "geomData/matrix-add",
+          "sha256": "3c5f12894c15252cccdf3c06609e7245cfabc5a3846457036aaf46ef023ebeda"
+        }
+      }
+    },
+    "shaderData/3x3-matrix-scale": {
+      "source_catalog_key": "geomData/matrix-scale",
+      "node_group": "Matrix Scale",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "93dd7a0b3350a11d842ff776f191c53aab0c01dfd95262db3dc823342a13bbdc",
+      "asset_flag": true,
+      "identity_basis": "explicit-legacy-alias",
+      "alias_basis": {
+        "policy": "current-identity-ordered-interface-alias-v1",
+        "legacy_source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+        "ordered_interface": "compatible",
+        "name_relation": "dimension-elision",
+        "capture_binding": {
+          "kind": "reused-current-capture",
+          "source_capture_key": "geomData/matrix-scale",
+          "sha256": "d1e3065aa5e21b9f8a6962f6aff58ab5e45949d833ea1190cb427c1708f12abf"
+        }
+      }
+    },
+    "shaderData/3x3-matrix-to-vectors": {
+      "source_catalog_key": null,
+      "node_group": "3x3 Matrix to Vectors",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "482630cf7b88323195e0f5df0523d4a84983019a0da01a5e637fda252c822fdf",
+      "asset_flag": false,
+      "identity_basis": "non-asset-current-datablock"
+    },
+    "shaderData/3x3-matrix-trace": {
+      "source_catalog_key": "geomData/3x3-matrix-trace",
+      "node_group": "3x3 Matrix Trace",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "c96486a621735c12dd9764993eaa900e66a66f575dff805004d0c23a8768a964",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-max-norm": {
+      "source_catalog_key": "geomData/3x3-max-norm",
+      "node_group": "3x3 Max-Norm",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "d2e3d39403c292a9490b01d8666c07047540c9958ed7d43545a7055f79c35804",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-multiply-matrices": {
+      "source_catalog_key": "geomData/matrices-multiply",
+      "node_group": "Matrices Multiply",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "66d53abb39aa2d199ee2d600d2034042d3a4a4d0534fe41f65d23497626280c0",
+      "asset_flag": true,
+      "identity_basis": "explicit-legacy-alias",
+      "alias_basis": {
+        "policy": "current-identity-ordered-interface-alias-v1",
+        "legacy_source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+        "ordered_interface": "compatible",
+        "name_relation": "word-order-change",
+        "capture_binding": {
+          "kind": "reused-current-capture",
+          "source_capture_key": "geomData/matrices-multiply",
+          "sha256": "c05865aaec574e154206277c01cc61ef5e12e344804e1adb9c671693600ab295"
+        }
+      }
+    },
+    "shaderData/3x3-polar-decomposition": {
+      "source_catalog_key": "geomData/3x3-polar-decomposition",
+      "node_group": "3x3 Polar Decomposition",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "02277dd33c085204a695741f8b45c6f66158a9d71890c2c57618e7db2144a9e7",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-pseudo-inverse": {
+      "source_catalog_key": "geomData/3x3-pseudo-inverse",
+      "node_group": "3x3 Pseudo-Inverse",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "a0fff97cb194c3f0f16e55b4b8dd6f4802616e7ad7f66b3a91ad06e51b06f13d",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-singular-value-decomposition": {
+      "source_catalog_key": null,
+      "node_group": ".3x3 Singular Value Decomposition",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "2ebac46bbea0d8b9a2edc2fe5158cd0d00fd6ffc9521575cd7cb3be72c0fc069",
+      "asset_flag": false,
+      "identity_basis": "explicit-legacy-alias",
+      "alias_basis": {
+        "policy": "current-identity-ordered-interface-alias-v1",
+        "legacy_source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+        "ordered_interface": "compatible",
+        "name_relation": "leading-dot-helper",
+        "capture_binding": {
+          "kind": "helper-windows-capture",
+          "receipt_path": "output/blueish-node-image-backfill/repair-20260806/alias-capture/receipts/windows/3x3-singular-value-decomposition.json",
+          "sha256": "1bc6f3e8c04065edaec6a2606e4abd95c9e9cef401916f3db79d218204edec28"
+        }
+      }
+    },
+    "shaderData/3x3-spectral-norm": {
+      "source_catalog_key": "geomData/3x3-spectral-norm",
+      "node_group": "3x3 Spectral-Norm",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "51ddbd220209b3a34038c2371d77f7f3dca086724bf570a25d2ac38f3cedc98d",
+      "asset_flag": true,
+      "identity_basis": "source-catalog-identity"
+    },
+    "shaderData/3x3-vectors-to-matrix": {
+      "source_catalog_key": null,
+      "node_group": ".3x3 Vectors to Matrix",
+      "node_tree": "GeometryNodeTree",
+      "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+      "source_blend_sha256": "f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5",
+      "interface_signature_sha256": "333ee2d415b91d1677714a6e1fb2cdb16afe17f6b93fde50d9b7ad1abb4c541a",
+      "asset_flag": false,
+      "identity_basis": "explicit-legacy-alias",
+      "alias_basis": {
+        "policy": "current-identity-ordered-interface-alias-v1",
+        "legacy_source_blend": "blender/assets/Advanced/Extra_Matrix_Math.blend",
+        "ordered_interface": "compatible",
+        "name_relation": "leading-dot-helper",
+        "capture_binding": {
+          "kind": "helper-windows-capture",
+          "receipt_path": "output/blueish-node-image-backfill/repair-20260806/alias-capture/receipts/windows/3x3-vectors-to-matrix.json",
+          "sha256": "64a3cbc660403f00bdd0955d62a3b8f36b9131058cb74fede180ad60e6f53257"
+        }
+      }
+    }
+  }
+}

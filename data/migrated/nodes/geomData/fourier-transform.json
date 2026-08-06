@@ -9,7 +9,7 @@
   "description": "对List进行一维的傅里叶变换",
   "notes": "只适用于2的n次方长度的List，非该长度的需要用混合基计算比较麻烦",
   "example": "",
-  "example_image": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 13.42.35.61.png",
   "param_descriptions": {},
   "mapping_raw": "math",
   "inputs": [

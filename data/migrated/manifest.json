@@ -1,6 +1,6 @@
 {
   "counts": {
-    "nodes": 569,
+    "nodes": 577,
     "stages": 12
   },
   "nodes": [
@@ -2848,6 +2848,46 @@
       "catalog_source": "geomData",
       "id": "2d-straight-skeleton",
       "file": "nodes/geomData/2d-straight-skeleton.json"
+    },
+    {
+      "catalog_source": "geomData",
+      "id": "edge-loop-selection",
+      "file": "nodes/geomData/edge-loop-selection.json"
+    },
+    {
+      "catalog_source": "geomData",
+      "id": "face-loop-selection",
+      "file": "nodes/geomData/face-loop-selection.json"
+    },
+    {
+      "catalog_source": "geomData",
+      "id": "hexagon",
+      "file": "nodes/geomData/hexagon.json"
+    },
+    {
+      "catalog_source": "geomData",
+      "id": "marching-triangle",
+      "file": "nodes/geomData/marching-triangle.json"
+    },
+    {
+      "catalog_source": "geomData",
+      "id": "ordered-dithering",
+      "file": "nodes/geomData/ordered-dithering.json"
+    },
+    {
+      "catalog_source": "geomData",
+      "id": "triangle",
+      "file": "nodes/geomData/triangle.json"
+    },
+    {
+      "catalog_source": "shaderData",
+      "id": "flipbook",
+      "file": "nodes/shaderData/flipbook.json"
+    },
+    {
+      "catalog_source": "shaderData",
+      "id": "toon-ocean",
+      "file": "nodes/shaderData/toon-ocean.json"
     }
   ],
   "stages": [

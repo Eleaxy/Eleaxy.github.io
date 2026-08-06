@@ -507,7 +507,7 @@
   },
   {
     "id": "2d-curve-point-angle",
-    "name": "2D Curve Point Angle",
+    "name": "2D Curve Point Info",
     "name_zh": "2D曲线点信息",
     "category_id": "curve",
     "category": "Curve",
@@ -575,7 +575,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "Desktop/Desktop Screenshot 2026.07.09 - 23.11.45.20.png",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.48.07.82.png",
     "param_descriptions": {
       "i": {
         "2": "平滑点分布的迭代次数"
@@ -6053,7 +6053,7 @@
     "description": "用于将曲线分辨率低的部分细分，而不会丢失锐利的拐角细节",
     "notes": "",
     "example": "",
-    "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 19.17.25.85.png",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 15.05.51.48.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -6494,7 +6494,7 @@
     "description": "对List进行一维的傅里叶变换",
     "notes": "只适用于2的n次方长度的List，非该长度的需要用混合基计算比较麻烦",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 13.42.35.61.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -7190,7 +7190,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.57.30.08.png",
     "param_descriptions": {},
     "mapping_raw": "shader_tiling_textures",
     "inputs": [
@@ -7289,7 +7289,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 10.29.06.65.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -7354,7 +7354,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 10.31.18.21.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -7419,7 +7419,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 10.34.30.94.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -7676,7 +7676,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 10.49.20.79.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -7952,7 +7952,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 11.23.10.08.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -8000,7 +8000,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 11.39.14.22.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -8096,7 +8096,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 11.53.14.60.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -8133,7 +8133,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 11.53.46.33.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -8295,7 +8295,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.07.32.54.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -8620,7 +8620,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 12.52.56.12.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -8745,7 +8745,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.05.21.11.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -8831,7 +8831,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.09.44.92.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -8891,7 +8891,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.16.12.36.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -9000,7 +9000,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 14.12.38.14.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -9060,7 +9060,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 14.17.31.46.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -9375,7 +9375,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 15.29.11.40.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -9580,7 +9580,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 15.31.38.91.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -9698,7 +9698,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.08.54.20.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -9790,7 +9790,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.17.14.76.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -9894,7 +9894,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.18.43.86.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -9955,7 +9955,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.19.23.78.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -10064,7 +10064,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.21.28.05.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -10137,7 +10137,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.23.21.59.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -10181,7 +10181,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.25.46.04.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -10416,7 +10416,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.26.14.43.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -10485,7 +10485,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.27.09.02.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -10529,7 +10529,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.29.44.77.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -10842,7 +10842,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.58.24.43.png",
     "param_descriptions": {},
     "mapping_raw": "comp_effect",
     "inputs": [
@@ -10893,7 +10893,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.42.05.85.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -11045,7 +11045,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.48.55.64.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -11102,7 +11102,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.54.09.05.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -11647,7 +11647,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 16.57.05.98.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -11751,7 +11751,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.00.05.100.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -11832,7 +11832,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.02.30.53.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -11892,7 +11892,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.15.12.74.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -11965,7 +11965,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.24.04.63.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -12079,7 +12079,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 15.59.44.43.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -12130,7 +12130,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.26.59.28.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -12288,7 +12288,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.28.38.100.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -12405,7 +12405,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.29.26.90.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -12490,7 +12490,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.47.50.32.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -12573,7 +12573,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 17.52.04.42.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -12673,7 +12673,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.22.02.45.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -12769,7 +12769,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.23.51.99.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -12876,7 +12876,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.24.55.92.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -12968,7 +12968,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.27.09.36.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -13207,7 +13207,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.32.39.18.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -13368,7 +13368,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.37.28.66.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -13453,7 +13453,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.41.35.02.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -13809,7 +13809,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.45.45.97.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -13885,7 +13885,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.54.18.78.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -14240,7 +14240,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.56.54.06.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -14368,7 +14368,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.58.41.91.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -14502,7 +14502,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 19.05.10.56.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -14593,7 +14593,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 19.08.15.96.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -14653,7 +14653,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.12.32.87.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -14729,7 +14729,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.07.32.54.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -14900,7 +14900,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 19.12.24.55.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -15009,7 +15009,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 19.11.30.25.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -15098,7 +15098,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.16.01.98.png",
     "param_descriptions": {},
     "mapping_raw": "generation",
     "inputs": [
@@ -15287,7 +15287,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 18.37.28.66.png",
     "param_descriptions": {},
     "mapping_raw": "math",
     "inputs": [
@@ -15342,7 +15342,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.26.12.19.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -15601,7 +15601,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.45.13.28.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -15651,7 +15651,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.46.01.61.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -15726,7 +15726,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 11.51.18.87.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -15818,7 +15818,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 19.03.41.44.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -15998,7 +15998,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.57.05.44.png",
     "param_descriptions": {},
     "mapping_raw": "shader_tiling_textures",
     "inputs": [
@@ -16121,7 +16121,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 12.35.04.71.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -16213,7 +16213,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 13.36.44.73.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -16546,7 +16546,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 13.42.35.61.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -16741,7 +16741,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 13.47.25.11.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -16789,7 +16789,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 13.55.28.06.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -16881,7 +16881,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.01.33.43.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -16976,7 +16976,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.04.07.16.png",
     "param_descriptions": {},
     "mapping_raw": "cat_1783389786751",
     "inputs": [
@@ -17141,7 +17141,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.05.19.43.png",
     "param_descriptions": {},
     "mapping_raw": "curve",
     "inputs": [
@@ -17209,7 +17209,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.18.38.69.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -17259,7 +17259,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.21.35.95.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -17337,7 +17337,7 @@
     "description": "",
     "notes": "",
     "example": "",
-    "example_image": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 14.22.43.15.png",
     "param_descriptions": {},
     "mapping_raw": "mesh",
     "inputs": [
@@ -32510,100 +32510,124 @@
       {
         "name": "Vector",
         "type": "NodeSocketVector",
-        "description": "Vector value for Vector.",
         "default": [
           0.0,
           0.0,
           0.0
         ],
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Vector value for Vector.",
         "de": "Vector value for Vector.",
         "dz": "设置 向量 的向量数据。"
       },
       {
         "name": "Seed",
         "type": "NodeSocketInt",
-        "description": "Integer value controlling Seed.",
         "default": 0,
+        "min": -2147483648,
+        "max": 2147483647,
+        "description": "Integer value controlling Seed.",
         "de": "Integer value controlling Seed.",
         "dz": "设置 随机种子 的数值。"
       },
       {
         "name": "Scale",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling Scale.",
         "default": 5.0,
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Numeric value controlling Scale.",
         "de": "Numeric value controlling Scale.",
         "dz": "设置 缩放 的数值。"
       },
       {
         "name": "Contrast",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling Contrast.",
         "default": 0.5,
+        "min": 0.0,
+        "max": 1.0,
+        "description": "Numeric value controlling Contrast.",
         "de": "Numeric value controlling Contrast.",
         "dz": "设置 Contrast 的数值。"
       },
       {
         "name": "Frequncy",
         "type": "NodeSocketFloat",
+        "default": 0.30000001,
+        "min": -1000.0,
+        "max": 1000.0,
         "description": "Numeric value controlling Frequncy.",
-        "default": 0.30000001192092896,
         "de": "Numeric value controlling Frequncy.",
         "dz": "设置 Frequncy 的数值。"
       },
       {
         "name": "Distortion",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling Distortion.",
         "default": 2.0,
+        "min": -1000.0,
+        "max": 1000.0,
+        "description": "Numeric value controlling Distortion.",
         "de": "Numeric value controlling Distortion.",
         "dz": "设置 Distortion 的数值。"
       },
       {
         "name": "Detail",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling Detail.",
         "default": 5.0,
+        "min": 0.0,
+        "max": 15.0,
+        "description": "Numeric value controlling Detail.",
         "de": "Numeric value controlling Detail.",
         "dz": "设置 Detail 的数值。"
       },
       {
         "name": "Detail Scale",
         "type": "NodeSocketFloat",
+        "default": 1.90999985,
+        "min": -1000.0,
+        "max": 1000.0,
         "description": "Numeric value controlling Detail Scale.",
-        "default": 1.9099998474121094,
         "de": "Numeric value controlling Detail Scale.",
         "dz": "设置 Detail / 缩放 的数值。"
       },
       {
         "name": "Detail Roughness",
         "type": "NodeSocketFloat",
+        "default": 0.40306121,
+        "min": 0.0,
+        "max": 1.0,
         "description": "Numeric value controlling Detail Roughness.",
-        "default": 0.4030612111091614,
         "de": "Numeric value controlling Detail Roughness.",
         "dz": "设置 Detail / Roughness 的数值。"
       },
       {
         "name": "Phase Offset",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling Phase Offset.",
         "default": 0.0,
+        "min": -1000.0,
+        "max": 1000.0,
+        "description": "Numeric value controlling Phase Offset.",
         "de": "Numeric value controlling Phase Offset.",
         "dz": "设置 Phase / 偏移 的数值。"
       },
       {
         "name": "Detail",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling Detail.",
         "default": 4.0,
+        "min": 0.0,
+        "max": 15.0,
+        "description": "Numeric value controlling Detail.",
         "de": "Numeric value controlling Detail.",
         "dz": "设置 Detail 的数值。"
       },
       {
         "name": "Roughness",
         "type": "NodeSocketFloat",
+        "default": 0.40497237,
+        "min": 0.0,
+        "max": 1.0,
         "description": "Numeric value controlling Roughness.",
-        "default": 0.4049723744392395,
         "de": "Numeric value controlling Roughness.",
         "dz": "设置 Roughness 的数值。"
       }
@@ -32612,16 +32636,20 @@
       {
         "name": "mask",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling mask.",
         "default": 0.0,
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Numeric value controlling mask.",
         "de": "Numeric value controlling mask.",
         "dz": "设置 遮罩 的数值。"
       },
       {
         "name": "invert",
         "type": "NodeSocketFloat",
-        "description": "Numeric value controlling invert.",
         "default": 0.0,
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Numeric value controlling invert.",
         "de": "Numeric value controlling invert.",
         "dz": "设置 invert 的数值。"
       }
@@ -41334,5 +41362,502 @@
       "socket_schema": "docs/index.html EMBEDDED_STATE.extraData.manualNodes",
       "source_blend": "docs/index.html EMBEDDED_STATE.extraData.manualNodes"
     }
+  },
+  {
+    "id": "edge-loop-selection",
+    "param_descriptions": {},
+    "name": "Edge Loop Selection",
+    "name_zh": "边循环选择",
+    "category_id": "mesh",
+    "category": "Mesh",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "A reusable geometry node group for creating or processing Edge Loop Selection effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "",
+    "mapping_raw": "mesh",
+    "inputs": [
+      {
+        "name": "Mesh",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Mesh.",
+        "de": "Geometry data used as Mesh.",
+        "dz": "传入或输出用于该节点处理的 网格。"
+      },
+      {
+        "name": "Source Edge",
+        "type": "NodeSocketBool",
+        "default": false,
+        "description": "Toggles or selects the Source Edge option.",
+        "de": "Toggles or selects the Source Edge option.",
+        "dz": "控制是否启用或选择 Source / Edge。"
+      },
+      {
+        "name": "Iteration",
+        "type": "NodeSocketInt",
+        "default": 10,
+        "min": 1,
+        "max": 2147483647,
+        "description": "Integer value controlling Iteration.",
+        "de": "Integer value controlling Iteration.",
+        "dz": "设置 迭代次数 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Mesh",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Mesh.",
+        "de": "Geometry data used as Mesh.",
+        "dz": "传入或输出用于该节点处理的 网格。"
+      },
+      {
+        "name": "Selection",
+        "type": "NodeSocketBool",
+        "default": false,
+        "description": "Toggles or selects the Selection option.",
+        "de": "Toggles or selects the Selection option.",
+        "dz": "控制是否启用或选择 选择范围。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+  },
+  {
+    "id": "face-loop-selection",
+    "param_descriptions": {},
+    "name": "Face Loop Selection",
+    "name_zh": "面循环选择",
+    "category_id": "mesh",
+    "category": "Mesh",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "A reusable geometry node group for creating or processing Face Loop Selection effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "",
+    "mapping_raw": "mesh",
+    "inputs": [
+      {
+        "name": "Mesh",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Mesh.",
+        "de": "Geometry data used as Mesh.",
+        "dz": "传入或输出用于该节点处理的 网格。"
+      },
+      {
+        "name": "Source Face",
+        "type": "NodeSocketBool",
+        "default": false,
+        "description": "Toggles or selects the Source Face option.",
+        "de": "Toggles or selects the Source Face option.",
+        "dz": "控制是否启用或选择 Source / Face。"
+      },
+      {
+        "name": "Iteration",
+        "type": "NodeSocketInt",
+        "default": 10,
+        "min": 1,
+        "max": 2147483647,
+        "description": "Integer value controlling Iteration.",
+        "de": "Integer value controlling Iteration.",
+        "dz": "设置 迭代次数 的数值。"
+      },
+      {
+        "name": "Single/Multi Dir",
+        "type": "NodeSocketMenu",
+        "default": "Single Dir",
+        "description": "Mode selector for Single/Multi Dir.",
+        "de": "Mode selector for Single/Multi Dir.",
+        "dz": "选择 Single/Multi Dir 的模式。"
+      },
+      {
+        "name": "Sort Index",
+        "type": "NodeSocketInt",
+        "default": 0,
+        "min": -2147483648,
+        "max": 2147483647,
+        "description": "Integer value controlling Sort Index.",
+        "de": "Integer value controlling Sort Index.",
+        "dz": "设置 Sort / Index 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Mesh",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Mesh.",
+        "de": "Geometry data used as Mesh.",
+        "dz": "传入或输出用于该节点处理的 网格。"
+      },
+      {
+        "name": "Selection",
+        "type": "NodeSocketBool",
+        "default": false,
+        "description": "Toggles or selects the Selection option.",
+        "de": "Toggles or selects the Selection option.",
+        "dz": "控制是否启用或选择 选择范围。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+  },
+  {
+    "id": "hexagon",
+    "param_descriptions": {},
+    "name": "Hexagon",
+    "name_zh": "六边形",
+    "category_id": "generation",
+    "category": "Generation",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "A reusable geometry node group for creating or processing Hexagon effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.57.30.08.png",
+    "mapping_raw": "generation",
+    "inputs": [
+      {
+        "name": "X",
+        "type": "NodeSocketInt",
+        "default": 10,
+        "min": 2,
+        "max": 2147483647,
+        "description": "Integer value controlling X.",
+        "de": "Integer value controlling X.",
+        "dz": "设置 X 的数值。"
+      },
+      {
+        "name": "Y",
+        "type": "NodeSocketInt",
+        "default": 8,
+        "min": 2,
+        "max": 2147483647,
+        "description": "Integer value controlling Y.",
+        "de": "Integer value controlling Y.",
+        "dz": "设置 Y 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Geometry",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Geometry.",
+        "de": "Geometry data used as Geometry.",
+        "dz": "传入或输出用于该节点处理的 几何数据。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+  },
+  {
+    "id": "marching-triangle",
+    "param_descriptions": {},
+    "name": "Marching Triangle",
+    "name_zh": "行进三角形",
+    "category_id": "mesh",
+    "category": "Mesh",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "A reusable geometry node group for creating or processing Marching Triangle effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 14.16.26.68.png",
+    "mapping_raw": "mesh",
+    "inputs": [
+      {
+        "name": "Menu",
+        "type": "NodeSocketMenu",
+        "default": "Curve",
+        "description": "Mode selector for Menu.",
+        "de": "Mode selector for Menu.",
+        "dz": "选择 Menu 的模式。"
+      },
+      {
+        "name": "Triangle",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Triangle.",
+        "de": "Geometry data used as Triangle.",
+        "dz": "传入或输出用于该节点处理的 Triangle。"
+      },
+      {
+        "name": "Field",
+        "type": "NodeSocketFloat",
+        "default": 0.0,
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Numeric value controlling Field.",
+        "de": "Numeric value controlling Field.",
+        "dz": "设置 Field 的数值。"
+      },
+      {
+        "name": "Threshold",
+        "type": "NodeSocketFloat",
+        "default": 0.0,
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Numeric value controlling Threshold.",
+        "de": "Numeric value controlling Threshold.",
+        "dz": "设置 阈值 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Geometry",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Geometry.",
+        "de": "Geometry data used as Geometry.",
+        "dz": "传入或输出用于该节点处理的 几何数据。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+  },
+  {
+    "id": "ordered-dithering",
+    "param_descriptions": {},
+    "name": "Ordered Dithering",
+    "name_zh": "有序抖动",
+    "category_id": "generation",
+    "category": "Generation",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "A reusable geometry node group for creating or processing Ordered Dithering effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.58.24.43.png",
+    "mapping_raw": "generation",
+    "inputs": [
+      {
+        "name": "Image",
+        "type": "NodeSocketImage",
+        "description": "Image data used as Image.",
+        "de": "Image data used as Image.",
+        "dz": "传入用于该节点处理的 图像。"
+      },
+      {
+        "name": "Resolution",
+        "type": "NodeSocketInt",
+        "default": 256,
+        "min": -2147483648,
+        "max": 2147483647,
+        "description": "Integer value controlling Resolution.",
+        "de": "Integer value controlling Resolution.",
+        "dz": "设置 分辨率 的数值。"
+      },
+      {
+        "name": "Level",
+        "type": "NodeSocketInt",
+        "default": 5,
+        "min": 1,
+        "max": 2147483647,
+        "description": "Integer value controlling Level.",
+        "de": "Integer value controlling Level.",
+        "dz": "设置 Level 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Geometry",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Geometry.",
+        "de": "Geometry data used as Geometry.",
+        "dz": "传入或输出用于该节点处理的 几何数据。"
+      },
+      {
+        "name": "Bayer",
+        "type": "NodeSocketFloat",
+        "default": 0.0,
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Numeric value controlling Bayer.",
+        "de": "Numeric value controlling Bayer.",
+        "dz": "设置 Bayer 的数值。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+  },
+  {
+    "id": "triangle",
+    "param_descriptions": {},
+    "name": "Triangle",
+    "name_zh": "三角形",
+    "category_id": "generation",
+    "category": "Generation",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "A reusable geometry node group for creating or processing Triangle effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.57.05.44.png",
+    "mapping_raw": "generation",
+    "inputs": [
+      {
+        "name": "X",
+        "type": "NodeSocketInt",
+        "default": 10,
+        "min": 2,
+        "max": 2147483647,
+        "description": "Integer value controlling X.",
+        "de": "Integer value controlling X.",
+        "dz": "设置 X 的数值。"
+      },
+      {
+        "name": "Y",
+        "type": "NodeSocketInt",
+        "default": 8,
+        "min": 2,
+        "max": 2147483647,
+        "description": "Integer value controlling Y.",
+        "de": "Integer value controlling Y.",
+        "dz": "设置 Y 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Geometry",
+        "type": "NodeSocketGeometry",
+        "description": "Geometry data used as Geometry.",
+        "de": "Geometry data used as Geometry.",
+        "dz": "传入或输出用于该节点处理的 几何数据。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+  },
+  {
+    "id": "flipbook",
+    "param_descriptions": {},
+    "name": "Flipbook",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "category": "Coordinates",
+    "top_category_id": "mfs",
+    "top_category": "Material Functions",
+    "description": "A reusable shader/material node group for creating or processing Flipbook effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "",
+    "mapping_raw": "mfs_coordinates",
+    "inputs": [
+      {
+        "name": "UV",
+        "type": "NodeSocketVector",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Vector value for UV.",
+        "de": "Vector value for UV.",
+        "dz": "设置 UV 坐标 的向量数据。"
+      },
+      {
+        "name": "Row-",
+        "type": "NodeSocketInt",
+        "default": 8,
+        "min": -2147483648,
+        "max": 2147483647,
+        "description": "Integer value controlling Row.",
+        "de": "Integer value controlling Row.",
+        "dz": "设置 行数 的数值。"
+      },
+      {
+        "name": "Column|",
+        "type": "NodeSocketInt",
+        "default": 8,
+        "min": -2147483648,
+        "max": 2147483647,
+        "description": "Integer value controlling Column|.",
+        "de": "Integer value controlling Column|.",
+        "dz": "设置 Column| 的数值。"
+      },
+      {
+        "name": "Index",
+        "type": "NodeSocketInt",
+        "default": 0,
+        "min": 0,
+        "max": 2147483647,
+        "description": "Integer value controlling Index.",
+        "de": "Integer value controlling Index.",
+        "dz": "设置 索引 的数值。"
+      },
+      {
+        "name": "左下/左上",
+        "type": "NodeSocketBool",
+        "default": false,
+        "description": "Toggles or selects the 左下 左上 option.",
+        "de": "Toggles or selects the 左下 左上 option.",
+        "dz": "控制是否启用或选择 左下 / 左上。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Grid",
+        "type": "NodeSocketVector",
+        "default": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "min": -3.4028234663852886e+38,
+        "max": 3.4028234663852886e+38,
+        "description": "Vector value for Grid.",
+        "de": "Vector value for Grid.",
+        "dz": "设置 Grid 的向量数据。"
+      }
+    ],
+    "catalog_source": "shaderData",
+    "source_blend": "blender/assets/Shader/Material_Functions.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+  },
+  {
+    "id": "toon-ocean",
+    "param_descriptions": {},
+    "name": "Toon Ocean",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "category": "Stylized NPR",
+    "top_category_id": null,
+    "top_category": "",
+    "description": "A reusable shader/material node group for creating or processing Toon Ocean effects procedurally.",
+    "notes": "",
+    "example": "",
+    "example_image": "",
+    "mapping_raw": "stylized_2d",
+    "inputs": [
+      {
+        "name": "Speed",
+        "type": "NodeSocketFloat",
+        "default": 0.025,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Numeric value controlling Speed.",
+        "de": "Numeric value controlling Speed.",
+        "dz": "设置 速度 的数值。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Shader",
+        "type": "NodeSocketShader",
+        "description": "Parameter for Shader.",
+        "de": "Parameter for Shader.",
+        "dz": "指定 Shader 参数。"
+      }
+    ],
+    "catalog_source": "shaderData",
+    "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+    "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
   }
 ]

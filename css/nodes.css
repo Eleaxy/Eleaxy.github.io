@@ -125,18 +125,34 @@ body.has-node-workbench { overflow: hidden; padding-right: var(--node-scrollbar-
 @media (prefers-reduced-motion: reduce) { .node-workbench-loading > div { animation: none; } }
 .node-detail-workbench [data-node-detail-variant="workbench"] { width: 100%; height: 100%; min-height: 0; max-width: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 58%) minmax(370px, 42%); }
 .node-workbench-preview-host { position: relative; min-width: 0; min-height: 0; display: grid; place-items: center; overflow: hidden; background: var(--text); }
-.node-workbench-preview-host .node-preview { width: 100%; height: 100%; margin: 0; }
-.node-workbench-preview-host .node-preview-image { width: 100%; height: 100%; object-fit: contain; border: 0; border-radius: 0; }
+.node-workbench-preview-host .node-preview { width: 100%; height: 100%; min-width: 0; min-height: 0; margin: 0; overflow: hidden; }
+.node-workbench-preview-host .node-preview-image { width: 100%; height: 100%; min-width: 0; min-height: 0; max-width: 100%; max-height: 100%; object-fit: contain; border: 0; border-radius: 0; }
 .node-workbench-preview-label { position: absolute; top: 16px; left: 16px; margin: 0; padding: 8px 10px; color: var(--page); background: color-mix(in srgb, var(--text) 74%, transparent); font: 700 .68rem/1 "Geist Mono", ui-monospace, monospace; text-transform: uppercase; }
 .node-workbench-preview-meta { position: absolute; right: 0; bottom: 0; left: 0; display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; margin: 0; padding: 12px 16px; color: var(--page); background: color-mix(in srgb, var(--text) 80%, transparent); font: 700 .66rem/1.35 "Geist Mono", ui-monospace, monospace; overflow-wrap: anywhere; }
 .node-workbench-preview-meta .node-preview-provenance { color: inherit; }
 .node-preview-unavailable { max-width: 30ch; margin: 24px; color: var(--page); text-align: center; }
 .node-workbench-information { min-width: 0; min-height: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; overflow: hidden; background: var(--page); }
-.node-workbench-information-scroll { min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 34px 38px; }
-.node-workbench-information .detail-actions { min-height: 76px; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--text); background: var(--page); }
-.node-workbench-information .detail-actions > * { width: 100%; min-height: 76px; margin: 0; border: 0; border-radius: 0; }
+.node-workbench-information-scroll { min-width: 0; min-height: 0; overflow: auto; overscroll-behavior: contain; padding: 34px 38px; container-type: inline-size; }
+.node-workbench-information .detail-actions { min-height: 76px; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); border-top: 1px solid var(--text); background: var(--page); }
+.node-workbench-information .detail-actions > * { width: 100%; min-width: 0; min-height: 76px; margin: 0; border: 0; border-radius: 0; overflow-wrap: anywhere; }
+.node-workbench-information .detail-actions .pixel-button-label { min-width: 0; overflow-wrap: anywhere; }
 .node-link.is-node-workbench-origin,
 .node-link[aria-current="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+
+/* Safe without container-query support: the 1440px workbench information pane is only about 456px wide. */
+.node-detail-workbench .node-detail-header { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 28px 0 32px; }
+.node-detail-workbench .node-detail-header .lede,
+.node-detail-workbench .node-detail-header .record-meta { grid-column: 1; grid-row: auto; align-self: auto; }
+.node-detail-workbench .node-detail-title { max-width: none; overflow-wrap: anywhere; font-size: clamp(3rem, 5vw, 5rem); font-size: clamp(3rem, 12cqi, 5rem); line-height: .96; letter-spacing: -.055em; }
+
+/* Split only when measured query content can hold a 440px title line, 320px lede, and 40px gutter. */
+@container (min-width: 800px) {
+  .node-detail-workbench .node-detail-header { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, .85fr); column-gap: 40px; row-gap: 18px; padding: 34px 0 44px; }
+  .node-detail-workbench .node-detail-header .lede,
+  .node-detail-workbench .node-detail-header .record-meta { grid-column: 2; }
+  .node-detail-workbench .node-detail-header .lede { grid-row: 1 / span 2; align-self: end; }
+  .node-detail-workbench .node-detail-title { max-width: 15ch; }
+}
 
 @media (max-width: 780px) {
   .node-detail-workbench { inset: var(--node-workbench-header-offset, var(--header-height, 64px)) 0 0; max-block-size: calc(100dvh - var(--node-workbench-header-offset, var(--header-height, 64px))); min-height: 0; }
@@ -146,7 +162,10 @@ body.has-node-workbench { overflow: hidden; padding-right: var(--node-scrollbar-
   .node-workbench-edge-control--next { right: 8px; }
   .node-workbench-loading, .node-workbench-error { padding: 28px 24px; }
   .node-detail-workbench [data-node-detail-variant="workbench"] { display: block; overflow: auto; }
-  .node-workbench-preview-host { height: 42vh; min-height: 300px; }
+  .node-workbench-preview-host { height: auto; min-height: 0; display: block; overflow: visible; }
+  .node-workbench-preview-host .node-preview { height: auto; min-height: 0; overflow: visible; }
+  .node-workbench-preview-host .node-preview-image { width: 100%; height: auto; max-height: none; object-fit: contain; }
+  .node-workbench-preview-meta { position: static; min-height: 44px; }
   .node-workbench-information { display: block; overflow: visible; }
   .node-workbench-information-scroll { overflow: visible; padding: 28px 24px; }
   .node-workbench-information .detail-actions { position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }

@@ -1,0 +1,88 @@
+{
+  "id": "flipbook",
+  "param_descriptions": {},
+  "name": "Flipbook",
+  "name_zh": "",
+  "category_id": "mfs_coordinates",
+  "category": "Coordinates",
+  "top_category_id": "mfs",
+  "top_category": "Material Functions",
+  "description": "A reusable shader/material node group for creating or processing Flipbook effects procedurally.",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [
+    {
+      "name": "UV",
+      "type": "NodeSocketVector",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "min": -10000.0,
+      "max": 10000.0,
+      "description": "Vector value for UV.",
+      "de": "Vector value for UV.",
+      "dz": "设置 UV 坐标 的向量数据。"
+    },
+    {
+      "name": "Row-",
+      "type": "NodeSocketInt",
+      "default": 8,
+      "min": -2147483648,
+      "max": 2147483647,
+      "description": "Integer value controlling Row.",
+      "de": "Integer value controlling Row.",
+      "dz": "设置 行数 的数值。"
+    },
+    {
+      "name": "Column|",
+      "type": "NodeSocketInt",
+      "default": 8,
+      "min": -2147483648,
+      "max": 2147483647,
+      "description": "Integer value controlling Column|.",
+      "de": "Integer value controlling Column|.",
+      "dz": "设置 Column| 的数值。"
+    },
+    {
+      "name": "Index",
+      "type": "NodeSocketInt",
+      "default": 0,
+      "min": 0,
+      "max": 2147483647,
+      "description": "Integer value controlling Index.",
+      "de": "Integer value controlling Index.",
+      "dz": "设置 索引 的数值。"
+    },
+    {
+      "name": "左下/左上",
+      "type": "NodeSocketBool",
+      "default": false,
+      "description": "Toggles or selects the 左下 左上 option.",
+      "de": "Toggles or selects the 左下 左上 option.",
+      "dz": "控制是否启用或选择 左下 / 左上。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Grid",
+      "type": "NodeSocketVector",
+      "default": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38,
+      "description": "Vector value for Grid.",
+      "de": "Vector value for Grid.",
+      "dz": "设置 Grid 的向量数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Shader/Material_Functions.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Shader/Material_Functions.blend?raw=1"
+}

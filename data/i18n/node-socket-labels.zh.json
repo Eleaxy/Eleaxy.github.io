@@ -861,5 +861,11 @@
   "Object Center": "物体 中心",
   "N-gons": "N 边形",
   "Precision": "精度",
-  "Collinear Threshold": "共线阈值"
+  "Collinear Threshold": "共线阈值",
+  "Bayer": "拜耳矩阵",
+  "Column|": "列数",
+  "Row-": "行数",
+  "Single/Multi Dir": "单向/多向",
+  "Source Edge": "源边",
+  "Source Face": "源面"
 }

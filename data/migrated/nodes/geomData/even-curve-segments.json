@@ -9,7 +9,7 @@
   "description": "用于将曲线分辨率低的部分细分，而不会丢失锐利的拐角细节",
   "notes": "",
   "example": "",
-  "example_image": "Desktop/Desktop Screenshot 2026.07.12 - 19.17.25.85.png",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.14 - 15.05.51.48.png",
   "param_descriptions": {},
   "mapping_raw": "curve",
   "inputs": [

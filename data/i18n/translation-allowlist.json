@@ -636,7 +636,7 @@
       "reason": "upstream interface name intentionally retained beside Chinese display name"
     },
     {
-      "value": "D Curve Point Angle",
+      "value": "D Curve Point Info",
       "source": "data/migrated/search-index.json#/10/name",
       "route": "/nodes.html?group=geometry",
       "sourcePointer": "data/migrated/search-index.json#",
@@ -4841,7 +4841,7 @@
      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
      "route": "/nodes.html?source=compData&id=ylgnbu",
      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
      "reason": "brand"
    },
    {
@@ -4849,7 +4849,7 @@
      "source": "data/migrated/nodes/compData/ylgnbu.json#/inputs/0/type",
      "route": "/nodes.html?source=compData&id=ylgnbu",
      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(1) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
      "reason": "Blender API identifier"
    },
    {
@@ -4857,7 +4857,7 @@
      "source": "data/migrated/nodes/compData/ylgnbu.json#/outputs/0/type",
      "route": "/nodes.html?source=compData&id=ylgnbu",
      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(1) > td:nth-of-type(2)",
      "reason": "Blender API identifier"
    },
    {
@@ -4865,7 +4865,7 @@
      "source": "data/migrated/nodes/compData/ylgnbu.json#/outputs/0/type",
      "route": "/nodes.html?source=compData&id=ylgnbu",
      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(2) > table:nth-of-type(1) > tbody:nth-of-type(1) > tr:nth-of-type(2) > td:nth-of-type(2)",
      "reason": "Blender API identifier"
    },
    {
@@ -4873,7 +4873,7 @@
      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
      "route": "/nodes.html?source=compData&id=ylgnbu",
      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+     "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
      "reason": "brand"
    },
    {
@@ -4881,7 +4881,7 @@
      "source": "data/migrated/search-index.json#/563/name",
      "route": "/nodes.html?source=compData&id=ylgnbu",
      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > header:nth-of-type(1) > div:nth-of-type(1) > p:nth-of-type(2)",
      "reason": "upstream interface name intentionally retained beside Chinese display name"
    },
     {
@@ -12351,7 +12351,7 @@
       "source": "js/node-catalog.js#workbenchSystemCode",
       "route": "/nodes.html?source=compData&id=ylgnbu",
       "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
-      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > header:nth-of-type(1) > span:nth-of-type(1)",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1) > span:nth-of-type(1)",
       "reason": "standard acronym"
     },
     {
@@ -12385,6 +12385,229 @@
       "sourcePointer": "data/migrated/nodes/geomData/2d-straight-skeleton.json#",
       "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(2)",
       "reason": "standard acronym"
+    },
+    {
+      "value": "Alpha",
+      "source": "data/node-example-images.manifest.json#/images/compData~1ylgnbu/application_version",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "reason": "version or hash"
+    },
+    {
+      "value": "Blender",
+      "source": "data/node-example-images.manifest.json#/images/compData~1ylgnbu/application",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "reason": "brand"
+    },
+    {
+      "value": "px",
+      "source": "js/i18n.js#zh/nodes-workbench-preview-dimensions",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "YlGnBu Windows Blender",
+      "source": "js/i18n.js#zh/nodes-dialog-capture-preview-caption",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "Windows Blender",
+      "source": "js/i18n.js#zh/nodes-workbench-windows-capture-preview",
+      "route": "/nodes.html?source=compData&id=ylgnbu",
+      "sourcePointer": "data/migrated/nodes/compData/ylgnbu.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > a:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(1) > figure:nth-of-type(1) > figcaption:nth-of-type(1) > span:nth-of-type(3)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blender",
+      "source": "js/i18n.js#zh/nodes-workbench-preview-version",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "brand"
+    },
+    {
+      "value": "px",
+      "source": "js/i18n.js#zh/nodes-workbench-preview-dimensions",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "Triangle",
+      "source": "data/migrated/nodes/geomData/triangle.json#/name",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "A reusable geometry node group for creating or processing Triangle effects procedurally.",
+      "source": "data/migrated/nodes/geomData/triangle.json#/description",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "NodeSocketInt",
+      "source": "data/migrated/nodes/geomData/triangle.json#/inputs/0/type",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "Blender API identifier"
+    },
+    {
+      "value": "X",
+      "source": "data/migrated/nodes/geomData/triangle.json#/inputs/0/name",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "Y",
+      "source": "data/migrated/nodes/geomData/triangle.json#/inputs/1/name",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "NodeSocketGeometry",
+      "source": "data/migrated/nodes/geomData/triangle.json#/outputs/0/type",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "Blender API identifier"
+    },
+    {
+      "value": "GN",
+      "source": "js/node-catalog.js#workbenchSystemCode",
+      "route": "/nodes.html?source=geomData&id=triangle",
+      "sourcePointer": "data/migrated/nodes/geomData/triangle.json#",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "Alpha",
+      "source": "data/node-example-images.manifest.json#/images/shaderData~1toon-ocean/application_version",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "version or hash"
+    },
+    {
+      "value": "Blender",
+      "source": "data/node-example-images.manifest.json#/images/shaderData~1toon-ocean/application",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "brand"
+    },
+    {
+      "value": "px",
+      "source": "js/i18n.js#zh/nodes-workbench-preview-dimensions",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "Toon Ocean Windows Blender",
+      "source": "js/i18n.js#zh/nodes-dialog-capture-preview-caption",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "Windows Blender",
+      "source": "js/i18n.js#zh/nodes-workbench-windows-capture-preview",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > a:nth-of-type(1) > span:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Blueish",
+      "source": "js/i18n.js#zh/nodes-dialog-view-blueish-source",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "selector": "#node-catalog-app > div:nth-of-type(3) > section:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > article:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > section:nth-of-type(3) > h2:nth-of-type(1)",
+      "reason": "brand"
+    },
+    {
+      "value": "Toon Ocean",
+      "source": "data/migrated/nodes/shaderData/toon-ocean.json#/name",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "NPR",
+      "source": "data/migrated/nodes/shaderData/toon-ocean.json#/category",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "standard acronym"
+    },
+    {
+      "value": "A reusable shader/material node group for creating or processing Toon Ocean effects procedurally.",
+      "source": "data/migrated/nodes/shaderData/toon-ocean.json#/description",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
+    },
+    {
+      "value": "NodeSocketFloat",
+      "source": "data/migrated/nodes/shaderData/toon-ocean.json#/inputs/0/type",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "Blender API identifier"
+    },
+    {
+      "value": "NodeSocketShader",
+      "source": "data/migrated/nodes/shaderData/toon-ocean.json#/outputs/0/type",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "Blender API identifier"
+    },
+    {
+      "value": "Shader",
+      "source": "data/migrated/nodes/shaderData/toon-ocean.json#/outputs/0/name",
+      "route": "/nodes.html?source=shaderData&id=toon-ocean",
+      "sourcePointer": "data/migrated/nodes/shaderData/toon-ocean.json#",
+      "reason": "upstream interface name intentionally retained beside Chinese display name"
     }
   ]
 }

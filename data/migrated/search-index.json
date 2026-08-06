@@ -102,7 +102,7 @@
   {
     "id": "2d-curve-point-angle",
     "catalog_source": "geomData",
-    "name": "2D Curve Point Angle",
+    "name": "2D Curve Point Info",
     "name_zh": "2D曲线点信息",
     "category_id": "curve",
     "top_category_id": "geom",
@@ -5688,5 +5688,85 @@
     "top_category_id": "geom",
     "description": "2D Straight Skeleton 节点用于从二维网格或平面多边形计算其直骨架（Straight Skeleton），并输出对应的曲线结构。直骨架由边界沿法向匀速向内偏移时形成，与中轴线不同，它完全由线段组成并保留原始边界的拓扑特征。该节点适用于屋顶生成、轮廓内缩、道路网络及程序化建筑建模等应用。",
     "example": "将建筑平面轮廓连接到 Mesh 输入，设置适当的 Precision 后计算直骨架，再利用输出 Curve 作为屋脊线生成程序化屋顶或进行轮廓内缩建模。"
+  },
+  {
+    "id": "edge-loop-selection",
+    "catalog_source": "geomData",
+    "name": "Edge Loop Selection",
+    "name_zh": "边循环选择",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "A reusable geometry node group for creating or processing Edge Loop Selection effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "face-loop-selection",
+    "catalog_source": "geomData",
+    "name": "Face Loop Selection",
+    "name_zh": "面循环选择",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "A reusable geometry node group for creating or processing Face Loop Selection effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "hexagon",
+    "catalog_source": "geomData",
+    "name": "Hexagon",
+    "name_zh": "六边形",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "A reusable geometry node group for creating or processing Hexagon effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "marching-triangle",
+    "catalog_source": "geomData",
+    "name": "Marching Triangle",
+    "name_zh": "行进三角形",
+    "category_id": "mesh",
+    "top_category_id": "geom",
+    "description": "A reusable geometry node group for creating or processing Marching Triangle effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "ordered-dithering",
+    "catalog_source": "geomData",
+    "name": "Ordered Dithering",
+    "name_zh": "有序抖动",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "A reusable geometry node group for creating or processing Ordered Dithering effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "triangle",
+    "catalog_source": "geomData",
+    "name": "Triangle",
+    "name_zh": "三角形",
+    "category_id": "generation",
+    "top_category_id": "geom",
+    "description": "A reusable geometry node group for creating or processing Triangle effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "flipbook",
+    "catalog_source": "shaderData",
+    "name": "Flipbook",
+    "name_zh": "",
+    "category_id": "mfs_coordinates",
+    "top_category_id": "mfs",
+    "description": "A reusable shader/material node group for creating or processing Flipbook effects procedurally.",
+    "example": ""
+  },
+  {
+    "id": "toon-ocean",
+    "catalog_source": "shaderData",
+    "name": "Toon Ocean",
+    "name_zh": "",
+    "category_id": "stylized_2d",
+    "top_category_id": null,
+    "description": "A reusable shader/material node group for creating or processing Toon Ocean effects procedurally.",
+    "example": ""
   }
 ]

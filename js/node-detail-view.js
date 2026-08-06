@@ -2,6 +2,99 @@
   const cache = new Map();
   const inFlight = new Map();
   let previewManifestPromise = null;
+  let captureAuditPromise = null;
+  const upstreamPreviewKind = 'upstream-example';
+  const capturePreviewKind = 'windows-blender-node-group-capture';
+  const capturePreviewMethod = 'foreground-node-editor-copy-from-screen';
+  const capturePreviewFields = new Set([
+    'kind',
+    'local',
+    'sha256',
+    'platform',
+    'application',
+    'application_version',
+    'source_blend',
+    'source_blend_sha256',
+    'source_blend_provenance',
+    'node_group',
+    'node_tree',
+    'capture_method',
+    'resampled',
+    'captured_at',
+  ]);
+  const auditedCapturePreviewFields = new Set([
+    ...capturePreviewFields,
+    'interface_signature_sha256',
+  ]);
+  const captureAuditEntryFields = new Set([
+    'source_catalog_key',
+    'node_group',
+    'node_tree',
+    'source_blend',
+    'source_blend_sha256',
+    'interface_signature_sha256',
+    'asset_flag',
+  ]);
+  const identityCaptureAuditEntryFields = new Set([...captureAuditEntryFields, 'identity_basis']);
+  const aliasCaptureAuditEntryFields = new Set([...identityCaptureAuditEntryFields, 'alias_basis']);
+  const aliasBasisFields = new Set([
+    'policy',
+    'legacy_source_blend',
+    'ordered_interface',
+    'name_relation',
+    'capture_binding',
+  ]);
+  const reusedCaptureBindingFields = new Set(['kind', 'source_capture_key', 'sha256']);
+  const helperCaptureBindingFields = new Set(['kind', 'receipt_path', 'sha256']);
+  const aliasNameRelations = new Set(['dimension-elision', 'word-order-change', 'leading-dot-helper']);
+  const captureTreeByCatalogSource = Object.freeze({
+    geomData: 'GeometryNodeTree',
+    shaderData: 'ShaderNodeTree',
+    compData: 'CompositorNodeTree',
+  });
+  const auditedCaptureSources = Object.freeze({
+    'blender/assets/Compositor/Compositor.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/Compositor/Compositor.blend',
+      sourceBlendSha256: '8aa0ce6bd99b7c7afc8f824c3a6ea9a3faabb9dbe6bc4f799c244a903c124f23',
+    }),
+    'blender/assets/GN/geometry_nodes_category_layout.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/GN/geometry_nodes_category_layout.blend',
+      sourceBlendSha256: 'f3a80fd9c6da24e19ee6e8b3fdf157b3b6d8f4cadf1d2998e7c33f25d469dfe5',
+    }),
+    'blender/assets/Particle_System/Particle_System_V3_EN.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/Particle_System/Particle_System_V3_EN.blend',
+      sourceBlendSha256: 'a2b191214160ed6c10b814bc3b115c9d0a7c4158a33a97a76fad7db4c2cea8b9',
+    }),
+    'blender/assets/RIgging_System/GN_Rigging_V3.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/RIgging_System/GN_Rigging_V3.blend',
+      sourceBlendSha256: 'd51f26f20b9929fea496c5f789179bef6bb7681d7ab9cfe8d8d2aeb350863da1',
+    }),
+    'blender/assets/Shader/Material_Functions.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/Shader/Material_Functions.blend',
+      sourceBlendSha256: 'c9e2a576da19ca7c7b853d151ec7ab828df1b59be022c690cba12e0520d60f64',
+    }),
+    'blender/assets/Shader/Shader_Tools.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/Shader/Shader_Tools.blend',
+      sourceBlendSha256: 'd52d5df2b37698bce7f2bdf0d5282e2e5361ad07ae61bdb23a388e93eb3a8bc7',
+    }),
+    'blender/assets/Stylized/NPR_Shaders.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/Stylized/NPR_Shaders.blend',
+      sourceBlendSha256: 'b8e40d91eec76b42a7048bf7f8b2ea9b0fc8974bfc2dad8a96a10337fe429173',
+    }),
+    'blender/assets/VFX/Flipbook/Flipbook.blend': Object.freeze({
+      kind: 'official-release-archive',
+      releaseUrl: 'https://github.com/blueish0930/Assets/releases/download/26/07/19/blueish.rar',
+      archiveSha256: '72f61696173ed80fab58169efb3aa01db17d3a3139a2a2eb98b99bc9143a4e9c',
+      sourceBlendSha256: '4f270f71b667514524e0546de14b128bafc231351b96070c2b7e4dd30cabf1c0',
+    }),
+  });
 
   const translate = (key, parameters = {}) => window.resourceArchiveI18n?.translate(key, parameters) ?? key;
   const node = (tag, className, text) => {
@@ -190,7 +283,7 @@
           return response.json();
         })
         .then(manifest => {
-          if (manifest?.version !== 1 || !manifest.images || typeof manifest.images !== 'object') {
+          if (manifest?.version !== 2 || !manifest.images || typeof manifest.images !== 'object' || Array.isArray(manifest.images)) {
             throw new TypeError('node preview manifest is invalid');
           }
           return manifest;
@@ -203,37 +296,212 @@
     return previewManifestPromise;
   }
 
-  function previewEntry(record, manifest) {
-    const key = `${record.catalog_source}/${record.id}`;
-    const entry = manifest.images[key];
-    if (!entry || entry.source_path !== record.example_image
-      || !/^\/images\/nodes\/[0-9a-f]{64}\.png$/.test(entry.local || '')
-      || !/^[0-9a-f]{64}$/.test(entry.sha256 || '')) return null;
+  function loadCaptureAudit() {
+    if (!captureAuditPromise) {
+      const pending = fetch('/data/node-example-images.capture-audit.json')
+        .then(response => {
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          return response.json();
+        })
+        .then(captureAudit => {
+          if ((captureAudit?.version !== 1 && captureAudit?.version !== 2)
+            || !captureAudit.entries || typeof captureAudit.entries !== 'object' || Array.isArray(captureAudit.entries)) {
+            throw new TypeError('node preview capture audit is invalid');
+          }
+          return captureAudit;
+        });
+      captureAuditPromise = pending;
+      void pending.catch(() => {
+        if (captureAuditPromise === pending) captureAuditPromise = null;
+      });
+    }
+    return captureAuditPromise;
+  }
+
+  function localImagePathMatchesHash(entry) {
+    const match = /^\/images\/nodes\/([0-9a-f]{64})\.png$/.exec(entry.local || '');
+    return Boolean(match && match[1] === entry.sha256 && /^[0-9a-f]{64}$/.test(entry.sha256 || ''));
+  }
+
+  function httpsUrl(value) {
     try {
-      const source = new URL(entry.source_url);
-      if (source.protocol !== 'https:') return null;
+      const url = new URL(value);
+      return url.protocol === 'https:' ? url : null;
     } catch {
       return null;
     }
+  }
+
+  function hasExactFields(value, fields) {
+    if (!value || Array.isArray(value) || typeof value !== 'object') return false;
+    return Object.keys(value).every(key => fields.has(key)) && [...fields].every(key => key in value);
+  }
+
+  function captureProvenanceUrl(entry) {
+    const provenance = entry.source_blend_provenance;
+    if (!provenance || Array.isArray(provenance) || typeof provenance !== 'object') return null;
+    const audited = auditedCaptureSources[entry.source_blend];
+    if (!audited || entry.source_blend_sha256 !== audited.sourceBlendSha256) return null;
+    if (audited.kind === 'official-git-raw') {
+      if (!hasExactFields(provenance, new Set(['kind', 'url']))) return null;
+      return provenance.kind === audited.kind && provenance.url === audited.url ? audited.url : null;
+    }
+    if (audited.kind === 'official-release-archive') {
+      if (!hasExactFields(provenance, new Set(['kind', 'release_url', 'archive_sha256', 'object_sha256']))) return null;
+      return provenance.kind === audited.kind
+        && provenance.release_url === audited.releaseUrl
+        && provenance.archive_sha256 === audited.archiveSha256
+        && provenance.object_sha256 === audited.sourceBlendSha256
+        ? audited.releaseUrl
+        : null;
+    }
+    return null;
+  }
+
+  function isStrictUtcTimestamp(value) {
+    if (typeof value !== 'string') return false;
+    const match = /^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d):(\d\d)(?:\.(\d{3}))?Z$/.exec(value);
+    if (!match) return false;
+    const [, yearText, monthText, dayText, hourText, minuteText, secondText, millisecondText] = match;
+    const [year, month, day, hour, minute, second, millisecond] = [
+      yearText, monthText, dayText, hourText, minuteText, secondText, millisecondText || '0',
+    ].map(Number);
+    if (year < 1 || month < 1 || month > 12 || day < 1 || hour > 23 || minute > 59 || second > 59) return false;
+    const date = new Date(0);
+    date.setUTCFullYear(year, month - 1, day);
+    date.setUTCHours(hour, minute, second, millisecond);
+    return date.getUTCFullYear() === year
+      && date.getUTCMonth() === month - 1
+      && date.getUTCDate() === day
+      && date.getUTCHours() === hour
+      && date.getUTCMinutes() === minute
+      && date.getUTCSeconds() === second
+      && date.getUTCMilliseconds() === millisecond;
+  }
+
+  function captureAuditMatches(key, entry, captureAudit, manifest) {
+    const audit = captureAudit?.entries?.[key];
+    if (!audit || Array.isArray(audit) || typeof audit !== 'object') return false;
+    const identityBasis = captureAudit.version === 1
+      ? (audit.source_catalog_key === null ? 'non-asset-current-datablock' : 'source-catalog-identity')
+      : audit.identity_basis;
+    const isAlias = identityBasis === 'explicit-legacy-alias';
+    const expectedFields = captureAudit.version === 1
+      ? captureAuditEntryFields
+      : (isAlias ? aliasCaptureAuditEntryFields : identityCaptureAuditEntryFields);
+    if (!hasExactFields(audit, expectedFields)
+      || (audit.source_catalog_key !== null && typeof audit.source_catalog_key !== 'string')
+      || typeof audit.node_group !== 'string'
+      || typeof audit.node_tree !== 'string'
+      || typeof audit.source_blend !== 'string'
+      || !/^[0-9a-f]{64}$/.test(audit.source_blend_sha256 || '')
+      || !/^[0-9a-f]{64}$/.test(audit.interface_signature_sha256 || '')
+      || typeof audit.asset_flag !== 'boolean') return false;
+    if (!['source-catalog-identity', 'non-asset-current-datablock', 'explicit-legacy-alias'].includes(identityBasis)) return false;
+    if (identityBasis === 'source-catalog-identity' && (audit.source_catalog_key === null || audit.asset_flag !== true)) return false;
+    if (identityBasis === 'non-asset-current-datablock' && (audit.source_catalog_key !== null || audit.asset_flag !== false)) return false;
+    if (isAlias) {
+      const basis = audit.alias_basis;
+      if (!hasExactFields(basis, aliasBasisFields)
+        || basis.policy !== 'current-identity-ordered-interface-alias-v1'
+        || basis.legacy_source_blend === audit.source_blend
+        || basis.ordered_interface !== 'compatible'
+        || !aliasNameRelations.has(basis.name_relation)) return false;
+      const binding = basis.capture_binding;
+      if (!binding || !/^[0-9a-f]{64}$/.test(binding.sha256 || '')) return false;
+      if (binding.kind === 'reused-current-capture') {
+        if (!hasExactFields(binding, reusedCaptureBindingFields)
+          || audit.source_catalog_key !== binding.source_capture_key
+          || audit.source_catalog_key === null || audit.asset_flag !== true) return false;
+        const sourceCapture = manifest?.images?.[binding.source_capture_key];
+        if (!sourceCapture || sourceCapture.sha256 !== entry.sha256 || sourceCapture.local !== entry.local
+          || sourceCapture.source_blend !== entry.source_blend || sourceCapture.source_blend_sha256 !== entry.source_blend_sha256
+          || sourceCapture.node_group !== entry.node_group || sourceCapture.node_tree !== entry.node_tree) return false;
+      } else if (binding.kind === 'helper-windows-capture') {
+        if (!hasExactFields(binding, helperCaptureBindingFields)
+          || audit.source_catalog_key !== null || audit.asset_flag !== false
+          || typeof binding.receipt_path !== 'string' || !binding.receipt_path
+          || binding.receipt_path.startsWith('/') || binding.receipt_path.split('/').includes('..')) return false;
+      } else return false;
+      if (entry.sha256 !== binding.sha256) return false;
+    }
+    return entry.node_group === audit.node_group
+      && entry.node_tree === audit.node_tree
+      && entry.source_blend === audit.source_blend
+      && entry.source_blend_sha256 === audit.source_blend_sha256
+      && entry.interface_signature_sha256 === audit.interface_signature_sha256;
+  }
+
+  function capturePreviewEntry(record, key, entry, captureAudit, manifest) {
+    const auditBoundCapture = hasExactFields(entry, auditedCapturePreviewFields);
+    if ((!auditBoundCapture && !hasExactFields(entry, capturePreviewFields))
+      || entry.kind !== capturePreviewKind
+      || !localImagePathMatchesHash(entry)
+      || (entry.platform !== 'Windows' && !String(entry.platform).startsWith('Windows '))
+      || entry.application !== 'Blender'
+      || typeof entry.application_version !== 'string' || !entry.application_version.trim()
+      || !/^[0-9a-f]{64}$/.test(entry.source_blend_sha256 || '')
+      || entry.capture_method !== capturePreviewMethod
+      || entry.resampled !== false
+      || !isStrictUtcTimestamp(entry.captured_at)
+      || !captureProvenanceUrl(entry)) return null;
+    if (auditBoundCapture) return captureAuditMatches(key, entry, captureAudit, manifest) ? entry : null;
+    if (entry.source_blend !== record.source_blend
+      || entry.node_group !== record.name
+      || entry.node_tree !== captureTreeByCatalogSource[record.catalog_source]) return null;
     return entry;
   }
 
-  function updatePreviewCopy(figure, record) {
+  async function previewEntry(record, manifest) {
+    const key = `${record.catalog_source}/${record.id}`;
+    const entry = manifest.images[key];
+    if (!entry || Array.isArray(entry) || typeof entry !== 'object') return null;
+    if (entry.kind === upstreamPreviewKind) {
+      if (entry.source_path !== record.example_image || !localImagePathMatchesHash(entry) || !httpsUrl(entry.source_url)) return null;
+      return entry;
+    }
+    if (entry.kind === capturePreviewKind) {
+      const captureAudit = hasExactFields(entry, auditedCapturePreviewFields)
+        ? await loadCaptureAudit()
+        : null;
+      return capturePreviewEntry(record, key, entry, captureAudit, manifest);
+    }
+    return null;
+  }
+
+  function updatePreviewCopy(figure, record, entry = figure.__resourceArchiveNodePreviewEntry) {
     const name = record.name || record.id;
+    const isCapture = entry?.kind === capturePreviewKind;
     figure.querySelector('[data-testid="node-preview-image"]')?.setAttribute(
       'alt',
-      translate('nodes-dialog-preview-alt', { name }),
+      isCapture
+        ? translate('nodes-dialog-capture-preview-alt', { name, sourceBlend: entry.source_blend })
+        : translate('nodes-dialog-preview-alt', { name }),
     );
     const caption = figure.querySelector('[data-node-detail-preview-caption]');
-    if (caption) caption.textContent = translate('nodes-dialog-preview-caption');
+    if (caption) {
+      caption.textContent = isCapture
+        ? translate('nodes-dialog-capture-preview-caption', { name, sourceBlend: entry.source_blend })
+        : translate('nodes-dialog-preview-caption');
+    }
     const provenance = figure.querySelector('[data-node-detail-preview-provenance]');
-    if (provenance) provenance.textContent = translate('nodes-dialog-view-blueish-source');
+    if (provenance) {
+      provenance.textContent = isCapture
+        ? translate('nodes-dialog-view-declared-source-blend')
+        : translate('nodes-dialog-view-blueish-source');
+    }
     const label = figure.querySelector('[data-node-workbench-preview-label]');
-    if (label) label.textContent = translate('nodes-workbench-official-preview');
+    if (label) {
+      label.textContent = translate(isCapture
+        ? 'nodes-workbench-windows-capture-preview'
+        : 'nodes-workbench-official-preview');
+    }
     const version = figure.querySelector('[data-node-workbench-preview-version]');
     if (version) {
       version.textContent = translate('nodes-workbench-preview-version', {
-        version: record.version || record.last_modified_version || record.created_version || '—',
+        version: isCapture
+          ? entry.application_version
+          : (record.version || record.last_modified_version || record.created_version || '—'),
       });
     }
     updatePreviewDimensions(figure);
@@ -259,6 +527,7 @@
   function previewFigure(record, entry, variant = 'flow') {
     const figure = node('figure', 'node-preview');
     figure.dataset.nodeDetailPreview = '';
+    figure.__resourceArchiveNodePreviewEntry = entry;
     const image = document.createElement('img');
     image.className = 'node-preview-image';
     image.dataset.testid = 'node-preview-image';
@@ -270,7 +539,7 @@
     captionCopy.dataset.nodeDetailPreviewCaption = '';
     const provenance = node('a', 'node-preview-provenance');
     provenance.dataset.nodeDetailPreviewProvenance = '';
-    provenance.href = entry.source_url;
+    provenance.href = entry.kind === capturePreviewKind ? captureProvenanceUrl(entry) : entry.source_url;
     provenance.rel = 'noopener';
     provenance.target = '_blank';
     caption.append(captionCopy, ' ', provenance);
@@ -315,9 +584,9 @@
         const host = article.querySelector('.node-workbench-preview-host');
         if (host && !host.childNodes.length) host.append(unavailable());
       }
-      void loadPreviewManifest().then(manifest => {
+      void loadPreviewManifest().then(async manifest => {
         if (!isCurrentArticle() || article.querySelector('[data-node-detail-preview]')) return;
-        const entry = previewEntry(record, manifest);
+        const entry = await previewEntry(record, manifest);
         const target = variant === 'workbench'
           ? article.querySelector('.node-workbench-preview-host')
           : article.querySelector('.node-detail-body');
