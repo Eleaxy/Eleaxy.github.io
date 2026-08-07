@@ -110,8 +110,24 @@
   text-wrap: balance;
 }
 
-.tutorial-long-image { width: 100%; margin: 48px 0 0; padding: 8px; border: 1px solid var(--border); background: var(--surface); }
-.tutorial-long-image img { display: block; width: 100%; height: auto; object-fit: contain; }
+/* Long-image tutorials are often 10–18× taller than wide. Cap display width so
+   the ultra-wide content frame does not scale them into extreme scroll height,
+   while preserving the source pixel aspect (width:100%; height:auto). */
+.tutorial-long-image {
+  width: min(100%, 48rem);
+  max-width: 100%;
+  margin: 48px auto 0;
+  padding: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+.tutorial-long-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
 
 .tutorial-intro { width: min(67ch, 100%); margin-top: 44px; }
 .tutorial-copy-block,

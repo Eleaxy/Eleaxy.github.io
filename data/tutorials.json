@@ -6,9 +6,9 @@
     "asset": {
       "src": "assets/tutorials/finger-ik.jpg",
       "alt": "手指 IK 控制教程",
-      "width": 2100,
-      "height": 26626,
-      "sha256": "7e907537790b50c584866e40bc950710dd0bd7ae5162cb8899ea1fd54c511e00"
+      "width": 3200,
+      "height": 38570,
+      "sha256": "486c280120e39565bc1b2d037efd2ff2f9a2bc15da8f30ba97e0216fdef8be08"
     }
   },
   {
@@ -20,7 +20,7 @@
       "alt": "曲线 UV",
       "width": 3000,
       "height": 33034,
-      "sha256": "385bde350ea6d7ddffcde032cb03f73bb15d1a3294809ce3405e097c6fb29e6f"
+      "sha256": "a26bd729ecea98ee04c838fb697aacc464800cd00122e958fb34d89109dc942b"
     }
   },
   {
@@ -30,9 +30,9 @@
     "asset": {
       "src": "assets/tutorials/procedural-tail.jpg",
       "alt": "程序化大尾巴",
-      "width": 2100,
-      "height": 38037,
-      "sha256": "3748b9ad19085c4e8f2b53d2086e38e37a6a1eeb974312bbfc785dd4008bac8b"
+      "width": 3000,
+      "height": 51558,
+      "sha256": "7edb9043aff652d93a234b5b553d0ddf8666383e22292a3156f18763308f9606"
     }
   },
   {
@@ -66,9 +66,9 @@
     "asset": {
       "src": "assets/tutorials/foot-rig.jpg",
       "alt": "足部绑定",
-      "width": 3600,
-      "height": 32532,
-      "sha256": "d417602664606b590c8ecbe6fefee8a2c175f12c537becd00a5a781d6f061909"
+      "width": 3200,
+      "height": 31941,
+      "sha256": "883705cc38bab9a8721fde3e4b8fbbbb8be88840c6be057e7ef944339da3d9f7"
     }
   },
   {
