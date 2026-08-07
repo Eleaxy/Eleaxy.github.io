@@ -321,6 +321,8 @@
       'footer-tetris-hard-drop': 'Hard drop',
       'footer-tetris-close-game': 'Close game',
       'footer-home': 'Resource Archive home',
+      'scroll-to-top': 'Back to top',
+      'scroll-to-bottom': 'Jump to bottom',
     },
     zh: {
       'nav-home': '首页',
@@ -629,6 +631,8 @@
       'footer-tetris-hard-drop': '快速落下',
       'footer-tetris-close-game': '关闭游戏',
       'footer-home': '返回资源档案首页',
+      'scroll-to-top': '回到顶部',
+      'scroll-to-bottom': '直达底部',
     },
   };
 
