@@ -808,5 +808,485 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "camera-clip",
+    "type": "structured",
+    "title": "基于几何节点的相机软裁切",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "使用几何节点 + 着色器实现「选择性」近裁剪"
+      },
+      {
+        "type": "paragraph",
+        "text": "无需改动摄像机 Clip Start"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/camera-clip",
+      "files": [
+        {
+          "src": "assets/tutorials/camera-clip/65fb9ed5238f0bdad017b291901ef821141dba374e545ccd500e1ad48a268912.png",
+          "sha256": "65fb9ed5238f0bdad017b291901ef821141dba374e545ccd500e1ad48a268912",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/6584ac8ee5bcca102e6c21599bff674c94528b5a4dba1f7f38b4e72766874cf2.png",
+          "sha256": "6584ac8ee5bcca102e6c21599bff674c94528b5a4dba1f7f38b4e72766874cf2",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/2e81f4d48b7daf3d8d487691f3e8585cc7ec9f9b13d8e18ac05d72485376590f.png",
+          "sha256": "2e81f4d48b7daf3d8d487691f3e8585cc7ec9f9b13d8e18ac05d72485376590f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/230505d6fc75f94cc718b8c6f106a6fd87562da54c9e5628799a585a2f21c597.png",
+          "sha256": "230505d6fc75f94cc718b8c6f106a6fd87562da54c9e5628799a585a2f21c597",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/f67a0025cb898ccad314a31bff10d8f030aab8da8d379bfb563304ca53927a7a.png",
+          "sha256": "f67a0025cb898ccad314a31bff10d8f030aab8da8d379bfb563304ca53927a7a",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/7fad9c89b6a4c13ba477ffaaa57d6f688057802b55bffeb51a5e9c32586f0dcf.png",
+          "sha256": "7fad9c89b6a4c13ba477ffaaa57d6f688057802b55bffeb51a5e9c32586f0dcf",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/590e637a4cebc93d89f8be946b5356ddef7ea7e3dcc7bda75c9572e82b39a082.png",
+          "sha256": "590e637a4cebc93d89f8be946b5356ddef7ea7e3dcc7bda75c9572e82b39a082",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/12fe2d1e709c3c5dee54af524afb140ebf4a50e052180b314176aaf0000fcc1b.png",
+          "sha256": "12fe2d1e709c3c5dee54af524afb140ebf4a50e052180b314176aaf0000fcc1b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/4758ddb7b30946e765c3fbb727564c87825ece8736a487688652f153c79929fa.png",
+          "sha256": "4758ddb7b30946e765c3fbb727564c87825ece8736a487688652f153c79929fa",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/43512d8fb41f27d5f3f8ef88fea37a859634751781fc04a3d8cf0ca913c8cddd.png",
+          "sha256": "43512d8fb41f27d5f3f8ef88fea37a859634751781fc04a3d8cf0ca913c8cddd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/17a2283688eb75f825dbfbe1c8bd261d2f2d00fcbb42d2ded84df27ca3469f89.png",
+          "sha256": "17a2283688eb75f825dbfbe1c8bd261d2f2d00fcbb42d2ded84df27ca3469f89",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/40efe8d086ed741b1c9af1ff11aa9eb50b89779b829479393b85b0c8e7be3377.png",
+          "sha256": "40efe8d086ed741b1c9af1ff11aa9eb50b89779b829479393b85b0c8e7be3377",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/d001a79e8d201c9ba65dc5c7b087d07913313d8c516e56043186551641afd083.png",
+          "sha256": "d001a79e8d201c9ba65dc5c7b087d07913313d8c516e56043186551641afd083",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/afe12f572fdf902aebca912f2c4ba69ca34b994ff0d7dc120c5176b9dc2ac57f.png",
+          "sha256": "afe12f572fdf902aebca912f2c4ba69ca34b994ff0d7dc120c5176b9dc2ac57f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/edb7e77b323deee9d04f27908376ce99fb9b1af41a7ee61278fbba60e88e4845.png",
+          "sha256": "edb7e77b323deee9d04f27908376ce99fb9b1af41a7ee61278fbba60e88e4845",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/f2f715597ed3229f75a363a66dc68cf3a69c7f87e5378c15aab3cdac2e833147.png",
+          "sha256": "f2f715597ed3229f75a363a66dc68cf3a69c7f87e5378c15aab3cdac2e833147",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/45e466a9ef503dded74aaac6807a71aa26e8e477e10cb25cf222f08e59ac461d.png",
+          "sha256": "45e466a9ef503dded74aaac6807a71aa26e8e477e10cb25cf222f08e59ac461d",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "1. 效果展示",
+        "blocks": [
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/65fb9ed5238f0bdad017b291901ef821141dba374e545ccd500e1ad48a268912.png",
+            "alt": "未启用裁剪",
+            "caption": "未启用裁剪",
+            "width": 2635,
+            "height": 1326
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/6584ac8ee5bcca102e6c21599bff674c94528b5a4dba1f7f38b4e72766874cf2.png",
+            "alt": "启用裁剪",
+            "caption": "启用裁剪",
+            "width": 2765,
+            "height": 1181
+          },
+          {
+            "type": "paragraph",
+            "text": "该方案对比直接使用摄像机 Clip Start 的优点非常明显。"
+          },
+          {
+            "type": "warning",
+            "text": "摄像机裁剪起点（Clip Start）是摄像机级、全局、硬性的裁剪：比阈值近的东西，不管是什么，一律不渲染。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.1 只移除「该移除的」，保留其他近处内容"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clip Start 会让所有比阈值近的对象一起消失——第一人称的手、武器、驾驶舱、前景粒子、想保留的小道具，全被裁掉。着色器方案只作用于接了这套逻辑的材质，其他近处元素安然无恙。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.2 不劫持摄像机近裁剪面"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clip Start 本来承担着别的职责：防止相机穿墙时看到内部、管理深度缓冲精度（近/远平面比）、影响 DoF 近距行为等。拿它做透视会造成耦合：D_min 随物体运动而变化时，近裁剪面跟着扫动，深度精度逐帧变化、视口导航也被牵连。着色器方案不改动任何摄像机参数，两种机制互不干扰。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.3 光线类型可控"
+          },
+          {
+            "type": "paragraph",
+            "text": "着色器里的「是摄像机射线」开关决定了：只对相机直接可见剔除，阴影 / 反射 / GI 中遮挡物依然存在，场景光照保持物理一致。Clip 的次级光线行为由引擎固定（在光栅化引擎里它还会同步影响深度缓冲，导致屏幕空间 AO / 反射也丢失遮挡物），你没得选；而着色器方案可以选择，甚至能反过来做「连阴影一起剔除」（把光程那步乘法去掉即可）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.4 阈值是「数据」，不是硬件参数 → 可软化、可扩展"
+          },
+          {
+            "type": "paragraph",
+            "text": "硬比较可以换成 Map Range / Smoothstep 做渐变透明，遮挡物越过边界时淡出而不是「啪」地 popping；阈值可以来自逐物体属性，不同材质 / 物体组用不同剔除深度；多个关注目标时可以传多个阈值。而一台相机只有一个 Clip Start，多目标时只能取最近者，夹在两个目标之间的遮挡物就剔不掉。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.5 多相机 / 切换视角时自动一致"
+          },
+          {
+            "type": "paragraph",
+            "text": "几何节点部分读的是「活动摄像机」，着色器的矢量变换也跟随渲染相机，换相机时整套规则自动重算。用 Clip 则要给每台相机单独写值。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.6 过渡裁切对照"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/2e81f4d48b7daf3d8d487691f3e8585cc7ec9f9b13d8e18ac05d72485376590f.png",
+            "alt": "过渡裁切对照 1",
+            "caption": "场景中遮挡物被选择性裁切",
+            "width": 3325,
+            "height": 1650
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/230505d6fc75f94cc718b8c6f106a6fd87562da54c9e5628799a585a2f21c597.png",
+            "alt": "过渡裁切对照 2",
+            "caption": "另一视角下的裁切效果",
+            "width": 3418,
+            "height": 1747
+          }
+        ]
+      },
+      {
+        "title": "2. 几何节点搭建",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "以一个细分后的猴头（Suzanne）演示。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/f67a0025cb898ccad314a31bff10d8f030aab8da8d379bfb563304ca53927a7a.png",
+            "alt": "细分猴头",
+            "caption": "细分后的猴头模型",
+            "width": 619,
+            "height": 341
+          },
+          {
+            "type": "note",
+            "text": "为了方便观察节点效果，先使用边界框（包围框）的几何数据。"
+          },
+          {
+            "type": "paragraph",
+            "text": "2.1 获取每一个点的位置数据"
+          },
+          {
+            "type": "paragraph",
+            "text": "从几何数据中取出每个点的世界坐标位置。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/7fad9c89b6a4c13ba477ffaaa57d6f688057802b55bffeb51a5e9c32586f0dcf.png",
+            "alt": "获取点位置数据",
+            "caption": "使用 Position 节点获取点坐标",
+            "width": 1883,
+            "height": 1125
+          },
+          {
+            "type": "paragraph",
+            "text": "2.2 获取点至摄像机的矢量数据（矢量 A）"
+          },
+          {
+            "type": "paragraph",
+            "text": "计算「点位置 → 摄像机位置」的向量。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/590e637a4cebc93d89f8be946b5356ddef7ea7e3dcc7bda75c9572e82b39a082.png",
+            "alt": "点到摄像机矢量",
+            "caption": "矢量 A：点到摄像机的方向",
+            "width": 1859,
+            "height": 935
+          },
+          {
+            "type": "paragraph",
+            "text": "2.3 将 (0, 0, 1) 用摄像机的旋转进行变换"
+          },
+          {
+            "type": "paragraph",
+            "text": "得到摄像机局部 +Z 轴在世界空间中的方向（矢量 B）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/12fe2d1e709c3c5dee54af524afb140ebf4a50e052180b314176aaf0000fcc1b.png",
+            "alt": "摄像机 Z 轴变换",
+            "caption": "Transform Direction：摄像机局部 +Z → 世界空间",
+            "width": 630,
+            "height": 395
+          },
+          {
+            "type": "paragraph",
+            "text": "得到的是摄像机局部 +Z 轴在世界空间中的方向（矢量 B）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "2.4 计算矢量 A 投影至矢量 B 得到的矢量长度"
+          },
+          {
+            "type": "paragraph",
+            "text": "即点沿摄像机视线方向（Z 轴）的深度值。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/4758ddb7b30946e765c3fbb727564c87825ece8736a487688652f153c79929fa.png",
+            "alt": "投影长度计算",
+            "caption": "投影并取长度，得到轴向深度",
+            "width": 1896,
+            "height": 933
+          },
+          {
+            "type": "paragraph",
+            "text": "2.5 使用统计数据节点取最小值，并存储为 position 属性"
+          },
+          {
+            "type": "paragraph",
+            "text": "使用 Attribute Statistic 节点取最小值，再使用其他网格基本体（例如设置位置）储存该最小值，命名为 position。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/43512d8fb41f27d5f3f8ef88fea37a859634751781fc04a3d8cf0ca913c8cddd.png",
+            "alt": "属性统计最小值",
+            "caption": "Attribute Statistic → 最小值 → 存入新几何体的 position 属性",
+            "width": 1132,
+            "height": 838
+          },
+          {
+            "type": "note",
+            "text": "属性统计里的「最小值」≈ 物体上各点沿摄像机 Z 轴方向的深度绝对值的最小值，即物体到「过摄像机的侧向平面」的最近垂直距离。只有当物体延伸到摄像机侧面（与视线方向正交）时才会掉到 0。"
+          }
+        ]
+      },
+      {
+        "title": "3. 着色器部分",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在需要剔除的物体着色器中引入刚计算出的数据 position。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.1 新建两个空物体，命名为「上」「下」"
+          },
+          {
+            "type": "paragraph",
+            "text": "这两个空物体用来把几何节点计算出的最小值通过约束和驱动器传递到着色器。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.2 给「上」添加几何属性约束"
+          },
+          {
+            "type": "paragraph",
+            "text": "目标设置为猴头，属性名称为 position。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/17a2283688eb75f825dbfbe1c8bd261d2f2d00fcbb42d2ded84df27ca3469f89.png",
+            "alt": "几何属性约束",
+            "caption": "「上」物体：Geometry Attribute Constraint → Target = 猴头，Attribute = position",
+            "width": 622,
+            "height": 492
+          },
+          {
+            "type": "paragraph",
+            "text": "3.3 给「下」添加复制位置约束"
+          },
+          {
+            "type": "paragraph",
+            "text": "目标设置为「上」，关闭 Z 轴向（只复制 X/Y）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/40efe8d086ed741b1c9af1ff11aa9eb50b89779b829479393b85b0c8e7be3377.png",
+            "alt": "复制位置约束",
+            "caption": "「下」物体：Copy Location → Target = 「上」，禁用 Z 轴",
+            "width": 616,
+            "height": 532
+          },
+          {
+            "type": "paragraph",
+            "text": "3.4 ~ 3.5 在着色器中添加 Value 节点并驱动"
+          },
+          {
+            "type": "paragraph",
+            "text": "在着色器中添加 输入 → 常量 → 值，然后给这个值添加驱动器，计算「上」和「下」的距离再减 0.1。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/d001a79e8d201c9ba65dc5c7b087d07913313d8c516e56043186551641afd083.png",
+            "alt": "驱动器设置",
+            "caption": "驱动器表达式：var - 0.1（var 为两物体距离）",
+            "width": 267,
+            "height": 286
+          },
+          {
+            "type": "paragraph",
+            "text": "这样驱动器输出的值就等于几何节点算出的 position（最小值深度）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.6 在着色器中计算当前着色点的轴向深度"
+          },
+          {
+            "type": "paragraph",
+            "text": "相当于在着色器中重复 2.1 ~ 2.4 的计算：把当前点位置变换到摄像机空间，取 Z 分量。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/afe12f572fdf902aebca912f2c4ba69ca34b994ff0d7dc120c5176b9dc2ac57f.png",
+            "alt": "着色器计算轴向深度",
+            "caption": "Vector Transform → Separate XYZ，取 Z 分量 = 该点的轴向深度（带符号）",
+            "width": 604,
+            "height": 282
+          },
+          {
+            "type": "paragraph",
+            "text": "然后与 position（通过驱动器同步过来的阈值）比较："
+          },
+          {
+            "type": "list",
+            "items": [
+              "比它近 → 输出 1（是遮挡物，该剔）",
+              "比它远 → 输出 0（正常渲染）"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/edb7e77b323deee9d04f27908376ce99fb9b1af41a7ee61278fbba60e88e4845.png",
+            "alt": "深度比较",
+            "caption": "Less Than 节点：当前深度 < position → 1（剔除）",
+            "width": 766,
+            "height": 259
+          },
+          {
+            "type": "paragraph",
+            "text": "最终混合逻辑"
+          },
+          {
+            "type": "note",
+            "text": "光程节点（Is Camera Ray）在摄像机直接可见的射线上输出 1，在反射、折射、阴影等次级射线上输出 0。乘上它 = 只在相机射线里启用剔除。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/f2f715597ed3229f75a363a66dc68cf3a69c7f87e5378c15aab3cdac2e833147.png",
+            "alt": "光程与比较结果",
+            "caption": "光程 × 深度比较结果，控制是否剔除",
+            "width": 954,
+            "height": 394
+          },
+          {
+            "type": "paragraph",
+            "text": "混合 #1"
+          },
+          {
+            "type": "paragraph",
+            "text": "系数 = 深度比较结果（× 光程）"
+          },
+          {
+            "type": "list",
+            "items": [
+              "系数 1 → 输出透明 BSDF（剔除）",
+              "系数 0 → 输出原本材质"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "混合 #2"
+          },
+          {
+            "type": "paragraph",
+            "text": "系数 = 几何数据 · 背面（Backfacing）"
+          },
+          {
+            "type": "list",
+            "items": [
+              "背面命中 → 透明",
+              "正面 → 混合 #1 的结果"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/45e466a9ef503dded74aaac6807a71aa26e8e477e10cb25cf222f08e59ac461d.png",
+            "alt": "完整着色器节点树",
+            "caption": "完整着色器节点示意（混合透明 + 背面处理）",
+            "width": 1316,
+            "height": 658
+          }
+        ]
+      },
+      {
+        "title": "核心思路总结",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "几何节点：计算物体上所有点相对摄像机视线方向的最近深度，存为 position 属性。",
+              "约束 + 驱动器：把这个最小值「搬」到着色器可用的 Value 节点上。",
+              "着色器：对每个着色点再算一次轴向深度，与阈值比较；只在相机射线 + 正面时进行透明剔除。"
+            ]
+          },
+          {
+            "type": "note",
+            "text": "这样既实现了「只裁该裁的遮挡物」，又完全不干扰摄像机本身的 Clip Start、深度精度和次级光线行为，是一种非常灵活的软裁剪方案。"
+          }
+        ]
+      }
+    ]
   }
 ]
