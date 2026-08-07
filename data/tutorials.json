@@ -72,6 +72,30 @@
     }
   },
   {
+    "slug": "procedural-cinch",
+    "type": "long-image",
+    "title": "程序化勒肉",
+    "asset": {
+      "src": "assets/tutorials/procedural-cinch.jpg",
+      "alt": "程序化勒肉",
+      "width": 3000,
+      "height": 57759,
+      "sha256": "7d024cc3b04b73874afd8a38625c829d7014a1fd95a25772b8d11390a3cd6d0d"
+    }
+  },
+  {
+    "slug": "mesh-self-intersection",
+    "type": "long-image",
+    "title": "网格自身穿插（检测+修复）",
+    "asset": {
+      "src": "assets/tutorials/mesh-self-intersection.jpg",
+      "alt": "网格自身穿插（检测+修复）",
+      "width": 4800,
+      "height": 21284,
+      "sha256": "04612cc0c61e4b5089c566a6e3e2c52b5a8686d6e5e0c3a5a966db00b037fc14"
+    }
+  },
+  {
     "slug": "hdri-dome",
     "type": "structured",
     "title": "HDRI 世界环境穹顶化",
