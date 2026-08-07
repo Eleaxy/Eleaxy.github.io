@@ -478,12 +478,19 @@
 
     if (entry.type === 'long-image') {
       const figure = element('figure', { class: 'tutorial-long-image' });
-      figure.append(element('img', {
+      const image = element('img', {
         src: `/${entry.asset.src.replace(/^\/+/, '')}`,
         alt: entry.asset.alt,
         width: entry.asset.width,
         height: entry.asset.height,
-      }));
+        loading: 'eager',
+        decoding: 'async',
+      });
+      // Keep intrinsic ratio even if UA presentational hints fight CSS width:100%.
+      image.style.width = '100%';
+      image.style.height = 'auto';
+      image.style.aspectRatio = `${entry.asset.width} / ${entry.asset.height}`;
+      figure.append(image);
       article.append(figure);
     } else {
       const intro = element('div', { class: 'tutorial-intro', 'data-tutorial-intro': '' });

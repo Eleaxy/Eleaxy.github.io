@@ -110,23 +110,49 @@
   text-wrap: balance;
 }
 
-/* Long-image tutorials are often 10–18× taller than wide. Cap display width so
-   the ultra-wide content frame does not scale them into extreme scroll height,
-   while preserving the source pixel aspect (width:100%; height:auto). */
-.tutorial-long-image {
-  width: min(100%, 48rem);
-  max-width: 100%;
-  margin: 48px auto 0;
-  padding: 8px;
-  border: 1px solid var(--border);
-  background: var(--surface);
+/*
+ * Long-image tutorials: keep source aspect (height:auto), fill the content
+ * column like the source package viewer, and keep page chrome tight so the
+ * figure starts near the header instead of leaving a large empty band.
+ */
+body[data-page='tutorials']:has(.tutorial-detail-long-image) .page-shell {
+  padding-top: 72px;
+  padding-bottom: 40px;
 }
+
+.tutorial-detail-long-image {
+  padding-bottom: 40px;
+}
+
+.tutorial-detail-long-image > .tutorial-back-link {
+  min-height: 36px;
+}
+
+.tutorial-detail-long-image > .tutorial-hierarchy {
+  margin-top: 10px;
+}
+
+.tutorial-detail-long-image > h1 {
+  margin-top: 6px;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+}
+
+.tutorial-long-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
 .tutorial-long-image img {
   display: block;
   width: 100%;
-  height: auto;
+  height: auto !important;
   max-width: 100%;
-  object-fit: contain;
+  max-height: none !important;
+  object-fit: fill;
 }
 
 .tutorial-intro { width: min(67ch, 100%); margin-top: 44px; }
