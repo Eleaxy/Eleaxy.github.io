@@ -98,8 +98,17 @@
 .tutorial-loading { width: 100%; padding: 8px 0 120px; }
 
 .tutorial-back-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--text-secondary); font: 700 .7rem/1 "Geist Mono", ui-monospace, monospace; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
-.tutorial-hierarchy { margin: 24px 0 0; color: var(--text-secondary); font: 700 .68rem/1.35 "Geist Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; }
-.tutorial-detail > h1 { max-width: 15ch; margin: 14px 0 0; font-size: clamp(3rem, 6.4vw, 7.2rem); font-weight: 520; line-height: .92; letter-spacing: -.06em; }
+.tutorial-hierarchy { margin: 18px 0 0; color: var(--text-secondary); font: 700 .68rem/1.35 "Geist Mono", ui-monospace, monospace; letter-spacing: .06em; text-transform: uppercase; }
+/* Detail title: keep editorial weight without display-size wrap on Chinese headings. */
+.tutorial-detail > h1 {
+  max-width: min(100%, 42rem);
+  margin: 10px 0 0;
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem);
+  font-weight: 560;
+  line-height: 1.2;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
 
 .tutorial-long-image { width: 100%; margin: 48px 0 0; padding: 8px; border: 1px solid var(--border); background: var(--surface); }
 .tutorial-long-image img { display: block; width: 100%; height: auto; object-fit: contain; }
@@ -116,8 +125,17 @@
 .tutorial-callout { padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--surface); }
 .tutorial-callout-warning { border-left-color: var(--warning); }
 
-.tutorial-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; margin-top: 80px; padding-top: 18px; border-top: 1px solid var(--border-strong); }
-.tutorial-section > h2 { grid-column: 1 / span 5; max-width: 14ch; margin: 0; font-size: clamp(1.65rem, 2.75vw, 2.8rem); font-weight: 540; line-height: 1.05; letter-spacing: -.04em; }
+.tutorial-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--border-strong); }
+.tutorial-section > h2 {
+  grid-column: 1 / span 5;
+  align-self: start;
+  max-width: min(100%, 22rem);
+  margin: 0;
+  font-size: clamp(1.15rem, 1.55vw, 1.4rem);
+  font-weight: 560;
+  line-height: 1.25;
+  letter-spacing: -.02em;
+}
 .tutorial-section > :not(h2) { grid-column: 6 / -1; min-width: 0; }
 .tutorial-section > .tutorial-copy-block:first-of-type,
 .tutorial-section > .tutorial-copy-list:first-of-type,
@@ -133,7 +151,7 @@
 .tutorial-state .status-label { margin: 0; }
 .tutorial-state h1,
 .tutorial-state p { margin: 0; }
-.tutorial-state h1 { font-size: clamp(2.4rem, 5vw, 5rem); font-weight: 520; letter-spacing: -.05em; }
+.tutorial-state h1 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-weight: 560; letter-spacing: -.03em; line-height: 1.2; }
 .tutorial-state p { max-width: 55ch; color: var(--text-secondary); line-height: 1.55; }
 .tutorial-state button { min-height: 44px; padding: 10px 16px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text); font: 700 .72rem/1 "Geist Mono", ui-monospace, monospace; letter-spacing: .05em; text-transform: uppercase; }
 .tutorial-loading { color: var(--text-secondary); font: 700 .72rem/1.4 "Geist Mono", ui-monospace, monospace; letter-spacing: .05em; text-transform: uppercase; }
@@ -150,13 +168,21 @@
   .tutorial-disclosure { padding-left: 40px; }
   .tutorial-detail,
   .tutorial-state { padding-bottom: 88px; }
-  .tutorial-detail > h1 { font-size: clamp(2.65rem, 13vw, 4.7rem); }
+  .tutorial-detail > h1 {
+    max-width: 100%;
+    font-size: clamp(1.4rem, 5.4vw, 1.85rem);
+    line-height: 1.22;
+  }
   .tutorial-long-image { margin-top: 32px; padding: 4px; }
   .tutorial-intro { margin-top: 32px; }
-  .tutorial-section { grid-template-columns: 1fr; row-gap: 22px; margin-top: 56px; }
+  .tutorial-section { grid-template-columns: 1fr; row-gap: 18px; margin-top: 44px; }
   .tutorial-section > h2,
   .tutorial-section > :not(h2) { grid-column: 1; }
-  .tutorial-section > h2 { max-width: 18ch; }
+  .tutorial-section > h2 {
+    max-width: 100%;
+    font-size: clamp(1.1rem, 4.2vw, 1.3rem);
+  }
+  .tutorial-state h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
   .tutorial-copy-block,
   .tutorial-copy-list,
   .tutorial-callout,
