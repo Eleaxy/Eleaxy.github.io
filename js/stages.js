@@ -816,6 +816,11 @@
       focusTarget: route => route.stageId
         ? app.querySelector('[data-testid="stage-detail"]')
         : app.querySelector('.stage-index-header h1'),
+      // Keep forward media morph; skip VT when leaving detail so Back is immediate.
+      transitionMode(route, { fromUrl }) {
+        const from = parseRoute(new URL(fromUrl, location.href));
+        return from.stageId && !route.stageId ? 'none' : undefined;
+      },
     });
     state.router.syncFromLocation({ initial: true }).then(() => (
       settleInitialScrollRestoration()

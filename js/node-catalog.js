@@ -508,6 +508,7 @@
     const back = element('a', 'back-link', translate('nodes-dialog-back-directory'));
     back.dataset.testid = 'node-detail-back';
     back.dataset.internalViewHistoryBack = '';
+    back.dataset.internalViewFallbackReplace = '';
     back.href = catalogHref({ group: route.group, subcategory: route.subcategory, q: route.q });
     const retry = element('button', 'button-secondary');
     retry.type = 'button';

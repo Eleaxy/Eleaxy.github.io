@@ -595,7 +595,21 @@
   function initializeRouter() {
     if (state.router || !routerApi) return Promise.resolve(state.router);
     persistIncomingHomeTutorialOrigin();
-    state.router = routerApi.create({ root, parseUrl, render: renderRoute, capture, restore, canHandle, focusTarget });
+    state.router = routerApi.create({
+      root,
+      parseUrl,
+      render: renderRoute,
+      capture,
+      restore,
+      canHandle,
+      focusTarget,
+      // Long-image details can be 30k–50k px tall. View-transition capture of that
+      // document freezes "返回教程目录" for 1–2s+ and feels like a dead click.
+      transitionMode(route, { fromUrl }) {
+        const from = parseUrl(new URL(fromUrl, window.location.origin));
+        return route.kind === 'detail' || from.kind === 'detail' ? 'none' : undefined;
+      },
+    });
     return state.router.syncFromLocation({ initial: true });
   }
 

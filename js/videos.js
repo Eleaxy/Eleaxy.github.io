@@ -403,6 +403,12 @@
       focusTarget: route => route.videoId
         ? app.querySelector('[data-testid="video-detail"]')
         : app.querySelector('.video-index-header h1'),
+      // Keep forward media morph; skip VT when leaving detail so Back is immediate
+      // even with a live bilibili iframe in the old snapshot.
+      transitionMode(route, { fromUrl }) {
+        const from = parseRoute(new URL(fromUrl, location.href));
+        return from.videoId && !route.videoId ? 'none' : undefined;
+      },
     });
     state.router.syncFromLocation({ initial: true }).catch(error => {
       state.error = error;

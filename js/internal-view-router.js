@@ -455,7 +455,10 @@
         ...context,
         fromUrl: lastSuccessful?.url ?? window.location.href,
       });
-      if (mode === 'none') {
+      // fallback-back is the deterministic direct-entry path: update the URL and
+      // shell immediately so huge detail pages (long-image tutorials, video iframes)
+      // do not stall Back while the browser tries to snapshot the old document.
+      if (mode === 'none' || context.direction === 'fallback-back') {
         const renderOperation = renderRoute(route, context, onPrepared);
         const restored = postUpdateRestore(renderOperation.updated, renderOperation.operation);
         return {
