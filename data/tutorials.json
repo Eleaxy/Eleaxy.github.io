@@ -1316,11 +1316,11 @@
   {
     "slug": "sss-basics",
     "type": "structured",
-    "title": "次表面散射解析（一）基础理解与简易处理",
+    "title": "次表面散射个人理解（一）基础理解与简易处理",
     "intro": [
       {
         "type": "paragraph",
-        "text": "Blender 次表面散射（SSS）解析"
+        "text": "Blender 次表面散射（SSS）个人理解"
       },
       {
         "type": "paragraph",
