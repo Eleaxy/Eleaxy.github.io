@@ -410,9 +410,11 @@
     const parent = element('a', 'node-parent-link');
     parent.dataset.transitionCatalogParent = '';
     parent.dataset.nodeParentLink = '';
-    parent.href = '/nodes.html';
+    // Level-1 Node systems live on Home. Both scoped catalogs and the All catalog
+    // should return there — not bounce into /nodes.html (All) as a fake parent.
+    parent.href = '/index.html#nodes';
     parent.textContent = translate('nodes-parent-directory');
-    parent.hidden = !route.group;
+    parent.hidden = false;
     const titleText = system ? taxonomy.systemLabel(system, language()) : translate('nodes-all');
     const kicker = element('p', 'eyebrow', translate('nodes-directory-kicker'));
     kicker.dataset.transitionCatalogKicker = '';
