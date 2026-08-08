@@ -1572,5 +1572,398 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "camera-damped-track",
+    "type": "structured",
+    "title": "相机钝化追踪的实现方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "做视频镜头时，尤其是固定机位，如果摄像机完全锁定人物，画面会显得死板、太 CG、缺少「有人手控」的感觉。通过钝化追踪（带延迟的跟随），可以让镜头跟随更自然、更有呼吸感。本教程适用于 MMD 舞蹈镜头等需要轻微滞后跟随的场景。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/camera-damped-track",
+      "files": [
+        {
+          "src": "assets/tutorials/camera-damped-track/f64272ee732ff8b52b931536feec1495a4eb00e1211eda2a0084aaa8fdc18c19.png",
+          "sha256": "f64272ee732ff8b52b931536feec1495a4eb00e1211eda2a0084aaa8fdc18c19",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/346b0cd8cc15522fda2de047115bd6651f5a5cd827b39d229edd4fdd8ed183be.png",
+          "sha256": "346b0cd8cc15522fda2de047115bd6651f5a5cd827b39d229edd4fdd8ed183be",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/c5d534a2b11b1b6bfa2200fd65f88e10079875465b56764cc0aad89d9549194f.gif",
+          "sha256": "c5d534a2b11b1b6bfa2200fd65f88e10079875465b56764cc0aad89d9549194f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/cefcbfd25b1f1a4dddc5bbff297380e48638c62a57de41aca2a6532cdf86edee.png",
+          "sha256": "cefcbfd25b1f1a4dddc5bbff297380e48638c62a57de41aca2a6532cdf86edee",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/0bb46563188fa9b88608871450bcf822376e44cb5ebd88279800b20c4764fc4d.png",
+          "sha256": "0bb46563188fa9b88608871450bcf822376e44cb5ebd88279800b20c4764fc4d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/9742f87c2b3200c5cf6948e77708874eb9815a4bfc08cf96a8f0584d6aef7025.png",
+          "sha256": "9742f87c2b3200c5cf6948e77708874eb9815a4bfc08cf96a8f0584d6aef7025",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "为什么需要钝化追踪？",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "完全锁定目标的追踪（Track To / Damped Track 直接指向角色）虽然精确，但在固定镜头或舞蹈镜头中会显得机械。真实拍摄时，摄像师会有轻微的滞后和惯性，镜头不会瞬间跟上每一个微小动作。"
+          },
+          {
+            "type": "paragraph",
+            "text": "钝化追踪的核心思路是：让摄像机跟随一个「延迟后的目标位置」，而不是直接跟随角色本身。"
+          }
+        ]
+      },
+      {
+        "title": "创建塌缩成点的立方体",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这个立方体会作为「延迟位置」的载体，通过 Geometry Nodes 计算出滞后的坐标。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "新建一个立方体（Cube）。",
+              "进入编辑模式，全选所有顶点。",
+              "右键 → 合并顶点 → 塌陷（Collapse），把它收成一个点。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/f64272ee732ff8b52b931536feec1495a4eb00e1211eda2a0084aaa8fdc18c19.png",
+            "alt": "立方体塌陷成点",
+            "caption": "编辑模式下合并顶点 → 塌陷，得到一个单点物体",
+            "width": 2658,
+            "height": 1794
+          }
+        ]
+      },
+      {
+        "title": "创建跟随目标的空物体",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "新建一个空物体（Empty），把它放在需要追踪的目标（如角色）正中间，并添加 Child Of 约束，让它完全跟随目标。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/346b0cd8cc15522fda2de047115bd6651f5a5cd827b39d229edd4fdd8ed183be.png",
+            "alt": "Empty 添加 Child Of",
+            "caption": "Empty 添加 Child Of 约束，目标指向角色（Suzanne），影响设为 1.0",
+            "width": 3814,
+            "height": 2214
+          },
+          {
+            "type": "note",
+            "text": "这个 Empty 会实时获得角色的位置，作为后续延迟计算的输入源。"
+          }
+        ]
+      },
+      {
+        "title": "用 Geometry Nodes 实现位置延迟",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "给塌缩后的立方体添加 Geometry Nodes 修改器，用「模拟」节点实现时间上的滞后，再与当前目标位置混合。"
+          },
+          {
+            "type": "paragraph",
+            "text": "核心逻辑："
+          },
+          {
+            "type": "list",
+            "items": [
+              "用 物体信息 读取跟随 Empty 的位置",
+              "通过「模拟」区域把位置延迟几帧",
+              "用 混合 节点把延迟位置与当前目标位置按系数混合",
+              "混合系数越大，跟随延迟越明显；越小则越贴近实时跟随"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/c5d534a2b11b1b6bfa2200fd65f88e10079875465b56764cc0aad89d9549194f.gif",
+            "alt": "Geometry Nodes 延迟设置",
+            "caption": "Geometry Nodes 中的延迟混合结构（模拟 + 混合节点）",
+            "width": 1920,
+            "height": 1368
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/cefcbfd25b1f1a4dddc5bbff297380e48638c62a57de41aca2a6532cdf86edee.png",
+            "alt": "节点细节",
+            "caption": "物体信息指向跟随 Empty，混合系数控制延迟强度（示例 0.4）",
+            "width": 4600,
+            "height": 2422
+          },
+          {
+            "type": "warning",
+            "text": "混合系数建议从 0.3～0.6 开始尝试。数值越大，镜头跟随越「钝」、越有惯性感。"
+          }
+        ]
+      },
+      {
+        "title": "创建读取延迟位置的空物体",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "再新建一个空物体（Empty.001），给它添加 Geometry Attribute 约束："
+          },
+          {
+            "type": "list",
+            "items": [
+              "目标：指向刚才的立方体",
+              "属性名称：position",
+              "数据类型：矢量",
+              "混合模式：替换"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "这样 Empty.001 就会获得立方体经过延迟计算后的位置。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/0bb46563188fa9b88608871450bcf822376e44cb5ebd88279800b20c4764fc4d.png",
+            "alt": "Geometry Attribute 约束",
+            "caption": "Empty.001 使用 Geometry Attribute 约束读取立方体的延迟位置",
+            "width": 3256,
+            "height": 2112
+          }
+        ]
+      },
+      {
+        "title": "给摄像机添加约束",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "选中摄像机，添加两个约束："
+          },
+          {
+            "type": "list",
+            "items": [
+              "Damped Track：目标设为 Empty.001；追踪轴根据需要设置（常用 -Z）。",
+              "Child Of：目标设为 Empty.001；如果想保持固定抬头角度，建议只勾选位置的 Y（或根据场景只开启需要的轴向）。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/9742f87c2b3200c5cf6948e77708874eb9815a4bfc08cf96a8f0584d6aef7025.png",
+            "alt": "摄像机约束设置",
+            "caption": "摄像机同时使用 Damped Track + Child Of，Child Of 建议只启用位置 Y",
+            "width": 3408,
+            "height": 2058
+          },
+          {
+            "type": "note",
+            "text": "这样在 MMD 舞蹈等场景中，摄像机会随人物左右运动产生自然的转动，前后运动时跟随 Y 轴位置变化，整体更有「人手控镜头」的感觉。"
+          }
+        ]
+      },
+      {
+        "title": "总结与建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "核心是「延迟位置」：用 Geometry Nodes 的模拟 + 混合做出滞后的目标点。",
+              "混合系数是手感的关键，建议根据镜头节奏多试几个值。",
+              "Child Of 只开需要的轴向，可以避免镜头过度跟随旋转或缩放。",
+              "这个方法特别适合固定机位但需要轻微跟随的舞蹈、对话镜头。",
+              "可以把整套约束和节点做成资产，方便在多个场景复用。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "thin-film-metal",
+    "type": "structured",
+    "title": "薄膜属性在金属上的应用 · 电镀表现",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Blender 的金属 BSDF 支持薄膜（Thin Film）属性，可以用来模拟真实的电镀效果。通过控制薄膜厚度与折射率，就能得到从青铜、金色到各种彩色电镀的丰富表现。本教程讲解如何根据参考表格，把电压值转换为薄膜厚度，实现可控的电镀颜色。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/thin-film-metal",
+      "files": [
+        {
+          "src": "assets/tutorials/thin-film-metal/99b0a5213ba939f4147a0af56bf50e1ee4184e2432598956f0f53c79971dd8b6.png",
+          "sha256": "99b0a5213ba939f4147a0af56bf50e1ee4184e2432598956f0f53c79971dd8b6",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/thin-film-metal/cfe1f5b3ceea314403308a9925fd727d7208432331ef3540383c543674409466.png",
+          "sha256": "cfe1f5b3ceea314403308a9925fd727d7208432331ef3540383c543674409466",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/thin-film-metal/2883cd5cd362d944b3e053714edc443facc0f79710ecd9db7d44fd11c0224e81.png",
+          "sha256": "2883cd5cd362d944b3e053714edc443facc0f79710ecd9db7d44fd11c0224e81",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/thin-film-metal/3588a96581f085e4973282d0229d4baca4187429d15759ea5c28f1ead15bdaa7.gif",
+          "sha256": "3588a96581f085e4973282d0229d4baca4187429d15759ea5c28f1ead15bdaa7",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "原理简述",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "真实电镀过程中，金属表面会形成一层极薄的氧化膜或涂层。这层膜的厚度和折射率（IOR）会干涉反射光，从而产生特定颜色。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在 Blender 中："
+          },
+          {
+            "type": "list",
+            "items": [
+              "开启金属 BSDF 的「薄膜」选项",
+              "用「薄膜厚度」控制干涉效果（单位通常是纳米）",
+              "用「薄膜折射率（IOR）」匹配材质的光学特性"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "表格里给出了不同电镀颜色对应的电压范围和厚度范围，我们只需要做简单换算，就能在节点里直接用「电压」来驱动颜色。"
+          }
+        ]
+      },
+      {
+        "title": "参考颜色与参数表格",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "下表列出了常见电镀颜色及其对应的 IOR、电压范围和厚度范围（单位：nm）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/99b0a5213ba939f4147a0af56bf50e1ee4184e2432598956f0f53c79971dd8b6.png",
+            "alt": "电镀颜色参数表格",
+            "caption": "电镀颜色参考表（IOR / Voltage Range / Thickness Range）",
+            "width": 3462,
+            "height": 2322
+          },
+          {
+            "type": "note",
+            "text": "大多数颜色的 IOR 固定为 2.46，只有 Reddish 使用 1.77。电压与厚度基本成线性关系，因此可以用简单的乘法节点把「电压」转换成「薄膜厚度」。"
+          }
+        ]
+      },
+      {
+        "title": "创建「电镀」节点组",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "为了方便使用，建议把电压→厚度的换算做成一个节点组："
+          },
+          {
+            "type": "list",
+            "items": [
+              "创建节点组，组输入：电压（Float）、ior（Float，默认 2.46）。",
+              "组内换算：电压 × 1.620 → 输出「薄膜厚度」；ior × 1.000 → 输出「薄膜 ior」（直接透传）。",
+              "把两个结果连接到组输出。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/cfe1f5b3ceea314403308a9925fd727d7208432331ef3540383c543674409466.png",
+            "alt": "电镀节点组内部",
+            "caption": "节点组内部：电压 × 1.620 得到薄膜厚度，IOR 直接输出",
+            "width": 2538,
+            "height": 794
+          },
+          {
+            "type": "warning",
+            "text": "换算系数 1.620 是根据表格中电压与厚度的大致比例推算出来的（例如 190 V 对应约 308 nm）。实际使用时可根据自己的参考数据微调这个系数。"
+          }
+        ]
+      },
+      {
+        "title": "在金属材质中应用",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "添加「金属 BSDF」节点。",
+              "展开「薄膜」面板，勾选启用。",
+              "把「电镀」节点组的「薄膜厚度」和「薄膜 ior」分别连接到对应输入。",
+              "调节节点组的「电压」参数，即可实时改变电镀颜色。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/2883cd5cd362d944b3e053714edc443facc0f79710ecd9db7d44fd11c0224e81.png",
+            "alt": "完整材质设置",
+            "caption": "完整设置示例：电压 190.4、IOR 2.46 → 对应 Forest Green 区域",
+            "width": 2439,
+            "height": 1688
+          }
+        ]
+      },
+      {
+        "title": "电压变化实时效果演示",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "调节节点组中的「电压」参数，薄膜厚度会随之变化，电镀颜色也会实时改变。下面的动图展示了不同电压下颜色的连续过渡效果："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/3588a96581f085e4973282d0229d4baca4187429d15759ea5c28f1ead15bdaa7.gif",
+            "alt": "电压变化动态演示",
+            "caption": "电压从低到高连续变化时的电镀颜色过渡（节点组实时驱动）",
+            "width": 1920,
+            "height": 1172
+          },
+          {
+            "type": "note",
+            "text": "可以看到颜色会按照表格中的顺序依次出现：从棕色青铜 → 深蓝 → 金色 → 品红 → 各种青绿色 → 森林绿等。只需拖动电压滑块即可快速找到目标颜色。"
+          }
+        ]
+      },
+      {
+        "title": "使用建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "电压值直接参考表格中的 Voltage Range，微调即可得到目标颜色。",
+              "大多数颜色 IOR 保持 2.46 即可；只有 Reddish 需要改成 1.77。",
+              "粗糙度建议保持较低（0.02～0.05），电镀表面通常非常光滑。",
+              "可以把节点组做成资产，方便在多个材质中复用。",
+              "如果需要更精确的物理对应，可以根据具体工艺文档调整换算系数。"
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
