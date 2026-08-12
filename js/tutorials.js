@@ -427,34 +427,117 @@
     return link;
   }
 
+  // Inline red emphasis for version caveats readers must not skim past.
+  const criticalPhrase = '（Blender 5.2 版本不适用。）';
+
+  function fillCopyText(node, text) {
+    const index = text.indexOf(criticalPhrase);
+    if (index === -1) {
+      node.textContent = text;
+      return;
+    }
+    if (index > 0) node.append(document.createTextNode(text.slice(0, index)));
+    node.append(element('span', { class: 'tutorial-copy-critical', text: criticalPhrase }));
+    if (index + criticalPhrase.length < text.length) {
+      node.append(document.createTextNode(text.slice(index + criticalPhrase.length)));
+    }
+  }
+
   function renderBlock(block) {
-    if (block.type === 'paragraph') return element('p', {
-      class: 'tutorial-copy-block', 'data-tutorial-block': '', 'data-tutorial-block-type': 'paragraph', lang: 'zh-CN', text: block.text,
-    });
+    if (block.type === 'paragraph') {
+      const paragraph = element('p', {
+        class: 'tutorial-copy-block', 'data-tutorial-block': '', 'data-tutorial-block-type': 'paragraph', lang: 'zh-CN',
+      });
+      fillCopyText(paragraph, block.text);
+      return paragraph;
+    }
     if (block.type === 'list') {
       const list = element('ul', { class: 'tutorial-copy-list', 'data-tutorial-block': '', 'data-tutorial-block-type': 'list', lang: 'zh-CN' });
-      block.items.forEach(item => list.append(element('li', { text: item })));
+      block.items.forEach((item) => {
+        const li = element('li');
+        fillCopyText(li, item);
+        list.append(li);
+      });
       return list;
     }
-    if (block.type === 'note' || block.type === 'warning') return element('aside', {
-      class: `tutorial-callout tutorial-callout-${block.type}`,
-      'data-tutorial-block': '',
-      'data-tutorial-block-type': block.type,
-      lang: 'zh-CN',
-      text: block.text,
-    });
+    if (block.type === 'note' || block.type === 'warning') {
+      const callout = element('aside', {
+        class: `tutorial-callout tutorial-callout-${block.type}`,
+        'data-tutorial-block': '',
+        'data-tutorial-block-type': block.type,
+        lang: 'zh-CN',
+      });
+      fillCopyText(callout, block.text);
+      return callout;
+    }
+    const src = `/${block.src.replace(/^\/+/, '')}`;
     const figure = element('figure', { class: 'tutorial-figure', 'data-tutorial-block': '', 'data-tutorial-block-type': 'image' });
+    const button = element('button', {
+      type: 'button',
+      class: 'tutorial-figure-zoom',
+      'data-tutorial-image-zoom': '',
+      'data-tutorial-image-src': src,
+      'aria-label': t('tutorials-image-zoom'),
+    });
+    button.append(element('img', {
+      src,
+      alt: block.alt,
+      loading: 'lazy',
+      decoding: 'async',
+      width: block.width,
+      height: block.height,
+    }));
     figure.append(
-      element('img', {
-        src: `/${block.src.replace(/^\/+/, '')}`,
-        alt: block.alt,
-        loading: 'lazy',
-        width: block.width,
-        height: block.height,
-      }),
+      button,
       element('figcaption', { lang: 'zh-CN', text: block.caption }),
     );
     return figure;
+  }
+
+  function closeTutorialLightbox() {
+    document.getElementById('tutorial-image-lightbox')?.remove();
+    document.documentElement.classList.remove('tutorial-lightbox-open');
+  }
+
+  function openTutorialLightbox(src, alt) {
+    closeTutorialLightbox();
+    const dialog = element('dialog', {
+      id: 'tutorial-image-lightbox',
+      class: 'tutorial-image-lightbox',
+      'aria-label': t('tutorials-image-zoom'),
+    });
+    const closeButton = element('button', {
+      type: 'button',
+      class: 'tutorial-image-lightbox-close',
+      'aria-label': t('tutorials-image-zoom-close'),
+      text: '×',
+    });
+    const image = element('img', {
+      src,
+      alt: alt || '',
+      decoding: 'async',
+    });
+    dialog.append(closeButton, image);
+    document.body.append(dialog);
+    document.documentElement.classList.add('tutorial-lightbox-open');
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+    else dialog.setAttribute('open', '');
+
+    const onClose = () => {
+      dialog.removeEventListener('close', onClose);
+      closeTutorialLightbox();
+    };
+    dialog.addEventListener('close', onClose);
+    closeButton.addEventListener('click', () => {
+      if (typeof dialog.close === 'function') dialog.close();
+      else onClose();
+    });
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) {
+        if (typeof dialog.close === 'function') dialog.close();
+        else onClose();
+      }
+    });
   }
 
   function renderDetail(target, entry) {
@@ -646,6 +729,14 @@
       if (state.expanded) disclosure.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'auto' });
       state.expanded = !state.expanded;
       applyDirectoryState();
+      return;
+    }
+    const zoom = target?.closest('[data-tutorial-image-zoom]');
+    if (zoom && root.contains(zoom)) {
+      event.preventDefault();
+      const src = zoom.getAttribute('data-tutorial-image-src');
+      const img = zoom.querySelector('img');
+      if (src) openTutorialLightbox(src, img?.getAttribute('alt') || '');
       return;
     }
     const retry = target?.closest('[data-tutorial-retry]');

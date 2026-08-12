@@ -164,6 +164,13 @@ body[data-page='tutorials']:has(.tutorial-detail-long-image) .page-shell {
 .tutorial-callout:first-child { margin-top: 0; }
 .tutorial-copy-list { padding-left: 1.3em; }
 .tutorial-copy-list li + li { margin-top: 8px; }
+.tutorial-copy-critical {
+  color: #c62828;
+  font-weight: 650;
+}
+html[data-resolved-theme="dark"] .tutorial-copy-critical {
+  color: #ff6b6b;
+}
 .tutorial-callout { padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--surface); }
 /* Red emphasis so critical tips are not skimmed as ordinary blue notes. */
 .tutorial-callout-warning {
@@ -194,29 +201,26 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
 .tutorial-section > .tutorial-figure:first-of-type { margin-top: 0; }
 
 /*
- * Structured tutorial figures: use the full content column so high-res
- * captures (often 1400–4000px) stay readable inline, not only when opened
- * as a standalone browser tab.
+ * Inline figures stay within the content column at a readable preview size.
+ * Full-resolution captures open via the zoom lightbox on click.
  */
-.tutorial-section > .tutorial-figure {
-  grid-column: 1 / -1;
-  width: 100%;
-  max-width: none;
-}
-.tutorial-intro .tutorial-figure,
-.tutorial-detail > .tutorial-figure {
-  width: 100%;
-  max-width: none;
-}
-
 .tutorial-figure {
-  width: 100%;
-  max-width: none;
+  width: min(100%, 42rem);
+  max-width: 100%;
   margin: 28px 0 0;
   padding: 0;
   border: 1px solid var(--border);
   background: var(--surface);
   overflow: hidden;
+}
+.tutorial-figure-zoom {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
 }
 .tutorial-figure img {
   display: block;
@@ -224,6 +228,7 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
   max-width: 100%;
   height: auto;
   object-fit: contain;
+  /* Keep full-res sources; browser downscales for the preview, lightbox shows 1:1. */
   image-rendering: auto;
 }
 .tutorial-figure figcaption {
@@ -234,6 +239,53 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
   line-height: 1.45;
 }
 [data-tutorial-image-error] { margin: 10px 4px 2px; color: var(--warning); font-size: .82rem; line-height: 1.4; }
+
+.tutorial-image-lightbox {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: rgb(12 14 18 / .88);
+  color: #fff;
+  display: grid;
+  place-items: center;
+}
+.tutorial-image-lightbox::backdrop {
+  background: transparent;
+}
+.tutorial-image-lightbox img {
+  display: block;
+  max-width: min(96vw, 100%);
+  max-height: min(92vh, 100%);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  box-shadow: 0 24px 70px rgb(0 0 0 / .45);
+  background: #111;
+  cursor: zoom-out;
+}
+.tutorial-image-lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgb(255 255 255 / .35);
+  border-radius: 50%;
+  background: rgb(255 255 255 / .16);
+  color: #fff;
+  font: 300 24px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+html.tutorial-lightbox-open {
+  overflow: hidden;
+}
 
 .tutorial-state { min-height: 52vh; display: grid; align-content: center; justify-items: start; gap: 16px; }
 .tutorial-state .status-label { margin: 0; }
