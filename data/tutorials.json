@@ -2055,5 +2055,508 @@
         ]
       }
     ]
+  },
+  {
+    "slug": "rim-clamp",
+    "type": "structured",
+    "title": "使用 Layer Weight 作为轮廓光钳制的表现方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "当轮廓光不够明显时，可以用 Layer Weight / 菲涅尔混合出一层只在轮廓处受光的加强材质，而不是整片自发光。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/rim-clamp",
+      "files": [
+        {
+          "src": "assets/tutorials/rim-clamp/c1730d8bb37d8848d331093921e7f295df94e4aff98e51d5c73661410684b89f.png",
+          "sha256": "c1730d8bb37d8848d331093921e7f295df94e4aff98e51d5c73661410684b89f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rim-clamp/c8762f7f6b7e87fa876d6792904e06308fee83fc335210531ca9b6ec77e0311b.png",
+          "sha256": "c8762f7f6b7e87fa876d6792904e06308fee83fc335210531ca9b6ec77e0311b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rim-clamp/999a017ce0ab41a8d03a0b0bc00139302948d701287618551cca67fd60f2cc20.gif",
+          "sha256": "999a017ce0ab41a8d03a0b0bc00139302948d701287618551cca67fd60f2cc20",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "当给物体打轮廓光的时候，轮廓光不明显，当需要强化的时候，希望有一层专门强化轮廓光的材质层"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rim-clamp/c1730d8bb37d8848d331093921e7f295df94e4aff98e51d5c73661410684b89f.png",
+            "alt": "使用 Layer Weight 作为轮廓光钳制的表现方法 图1",
+            "caption": "图1",
+            "width": 604,
+            "height": 486
+          },
+          {
+            "type": "paragraph",
+            "text": "之前的思路中，把layer weight作为发光添加在材质上，在没有光照的时候也会发光。"
+          },
+          {
+            "type": "paragraph",
+            "text": "使用sheen的话，是作为一种类似浅浅皮毛的效果，类似但也不受光照影响。"
+          }
+        ]
+      },
+      {
+        "title": "解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "使用菲涅尔、以菲涅尔亮度为混合，可以创造一层受光照但只有轮廓的加强材质"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rim-clamp/c8762f7f6b7e87fa876d6792904e06308fee83fc335210531ca9b6ec77e0311b.png",
+            "alt": "使用 Layer Weight 作为轮廓光钳制的表现方法 图2",
+            "caption": "图2",
+            "width": 1035,
+            "height": 612
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rim-clamp/999a017ce0ab41a8d03a0b0bc00139302948d701287618551cca67fd60f2cc20.gif",
+            "alt": "使用 Layer Weight 作为轮廓光钳制的表现方法 图3",
+            "caption": "图3",
+            "width": 616,
+            "height": 588
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2025/CG/Blender/blender_RimClamp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "edge-light",
+    "type": "structured",
+    "title": "Blender 边缘溢色光的处理方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "边缘溢色（边缘透出暖色/冷色高光）可以用 Light Path 或多重灯光两种思路实现，分别适合精细控制和全局氛围。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/edge-light",
+      "files": [
+        {
+          "src": "assets/tutorials/edge-light/bff8da7ef4d9dc0d29cdae14dccd27a9abfc646bcb9dbe7ea79f6a264f7f76c3.png",
+          "sha256": "bff8da7ef4d9dc0d29cdae14dccd27a9abfc646bcb9dbe7ea79f6a264f7f76c3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/edge-light/d42560bfb8187b0ab4dc763f63b272ba791257d5f8a722a5f46c8b500c363a40.png",
+          "sha256": "d42560bfb8187b0ab4dc763f63b272ba791257d5f8a722a5f46c8b500c363a40",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/edge-light/e42890f7641dd77b468bc8e763146af27f3d16ca991b5cf4aca5072ba0e5bd91.png",
+          "sha256": "e42890f7641dd77b468bc8e763146af27f3d16ca991b5cf4aca5072ba0e5bd91",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "想要制作这种边缘溢色的效果"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/edge-light/bff8da7ef4d9dc0d29cdae14dccd27a9abfc646bcb9dbe7ea79f6a264f7f76c3.png",
+            "alt": "Blender 边缘溢色光的处理方法 图1",
+            "caption": "图1",
+            "width": 313,
+            "height": 93
+          }
+        ]
+      },
+      {
+        "title": "解决1",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "第一个思路使用Light Path"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/edge-light/d42560bfb8187b0ab4dc763f63b272ba791257d5f8a722a5f46c8b500c363a40.png",
+            "alt": "Blender 边缘溢色光的处理方法 图2",
+            "caption": "图2",
+            "width": 1199,
+            "height": 1184
+          },
+          {
+            "type": "paragraph",
+            "text": "这个思路仅在Cycles下可用"
+          },
+          {
+            "type": "paragraph",
+            "text": "可控可以自由打光，效果大小可控，不过操作起来属于微操，性能消耗相对会大一些"
+          }
+        ]
+      },
+      {
+        "title": "解决2",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "第二种就是多重灯光，是一种全局效果，cycles和eevee下表现均不错"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/edge-light/e42890f7641dd77b468bc8e763146af27f3d16ca991b5cf4aca5072ba0e5bd91.png",
+            "alt": "Blender 边缘溢色光的处理方法 图3",
+            "caption": "图3",
+            "width": 1383,
+            "height": 663
+          },
+          {
+            "type": "paragraph",
+            "text": "效果相对没有那么明显也没办法单独控制"
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2025/CG/Blender/blender_edgeLight"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "shape-key-pose",
+    "type": "structured",
+    "title": "在当前动作姿势附加形态键调整",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "在已经摆好的动作姿势上继续用形态键微调时，编辑模式会回到 T-Pose。可以用雕刻模式或 On Cage 在当前变形基础上调整。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/shape-key-pose",
+      "files": [
+        {
+          "src": "assets/tutorials/shape-key-pose/22c13ec4840fee58d479e2c8e8b2485e9e7ea228fdb517ae8a56180b19079edc.webp",
+          "sha256": "22c13ec4840fee58d479e2c8e8b2485e9e7ea228fdb517ae8a56180b19079edc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/shape-key-pose/55b001e38e288833176f00c272080a4bc7d8f4a5e26ab3ec9b95a8fe6c4e7f1f.webp",
+          "sha256": "55b001e38e288833176f00c272080a4bc7d8f4a5e26ab3ec9b95a8fe6c4e7f1f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/shape-key-pose/1750ec7f5e446e73f21db7b59aeb9fd0a9f1129625dc59280bb64fef93931f9b.webp",
+          "sha256": "1750ec7f5e446e73f21db7b59aeb9fd0a9f1129625dc59280bb64fef93931f9b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/shape-key-pose/d50abbf8cea114c361273832b524be93fdc37a560eddd860afc41e5cc00d7bfb.webp",
+          "sha256": "d50abbf8cea114c361273832b524be93fdc37a560eddd860afc41e5cc00d7bfb",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/22c13ec4840fee58d479e2c8e8b2485e9e7ea228fdb517ae8a56180b19079edc.webp",
+            "alt": "在当前动作姿势附加形态键调整 图1",
+            "caption": "图1",
+            "width": 549,
+            "height": 421
+          }
+        ]
+      },
+      {
+        "title": "解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "使用形态键对姿势进行调整"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/55b001e38e288833176f00c272080a4bc7d8f4a5e26ab3ec9b95a8fe6c4e7f1f.webp",
+            "alt": "在当前动作姿势附加形态键调整 图2",
+            "caption": "图2",
+            "width": 434,
+            "height": 302
+          },
+          {
+            "type": "paragraph",
+            "text": "中途问题：但是进入Edit模式，人物就会变成原本的Tpose。没办法在目前的动作进行调整"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/1750ec7f5e446e73f21db7b59aeb9fd0a9f1129625dc59280bb64fef93931f9b.webp",
+            "alt": "在当前动作姿势附加形态键调整 图3",
+            "caption": "图3",
+            "width": 1013,
+            "height": 777
+          },
+          {
+            "type": "paragraph",
+            "text": "解决方法1：进入雕刻模式，就可以在当前的基础上进行调整"
+          },
+          {
+            "type": "paragraph",
+            "text": "解决方法2：开启最左侧的On Cage按钮"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/d50abbf8cea114c361273832b524be93fdc37a560eddd860afc41e5cc00d7bfb.webp",
+            "alt": "在当前动作姿势附加形态键调整 图4",
+            "caption": "图4",
+            "width": 434,
+            "height": 185
+          },
+          {
+            "type": "paragraph",
+            "text": "调整结束之后返回即可调整形态键比例"
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2025/CG/Blender/ShapeKey"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rest-pose",
+    "type": "structured",
+    "title": "更换已绑定人物的初始姿势",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "绑定完成后若要改初始姿势（例如做高跟鞋脚型），需要把当前 Pose 结果写回网格并重新设为 Rest Pose。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/rest-pose",
+      "files": [
+        {
+          "src": "assets/tutorials/rest-pose/f8ec294ceb78ccaf0e14e29d150a22c5db9a6f4c53a255b0be29e09af7ed9d12.webp",
+          "sha256": "f8ec294ceb78ccaf0e14e29d150a22c5db9a6f4c53a255b0be29e09af7ed9d12",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/4ba715b1a3bde0809090c2b104abbd5be9da076bf19929f760be202bbb952489.webp",
+          "sha256": "4ba715b1a3bde0809090c2b104abbd5be9da076bf19929f760be202bbb952489",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/ef054478159d171698b094f27d39f6e7ba80d0f5b11491f1d44da1df586737a4.webp",
+          "sha256": "ef054478159d171698b094f27d39f6e7ba80d0f5b11491f1d44da1df586737a4",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/9232c6af8dc1cf172a6a56d09d6c516d183a543d8848c8b3ec745e39f0049dbd.webp",
+          "sha256": "9232c6af8dc1cf172a6a56d09d6c516d183a543d8848c8b3ec745e39f0049dbd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/ae4fed2a4fcdddc442d3caa572d5abba255f39067b62a5b90e53f7db200ca2ce.webp",
+          "sha256": "ae4fed2a4fcdddc442d3caa572d5abba255f39067b62a5b90e53f7db200ca2ce",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "由于需要制作高跟鞋，人物原本的脚是平底的状况，进入模型编辑之后，立起来的脚就会变回原本平底的模型的样子。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/f8ec294ceb78ccaf0e14e29d150a22c5db9a6f4c53a255b0be29e09af7ed9d12.webp",
+            "alt": "更换已绑定人物的初始姿势 图1",
+            "caption": "图1",
+            "width": 1011,
+            "height": 457
+          },
+          {
+            "type": "paragraph",
+            "text": "现在需要把骨骼摆好的模型效果传递回去原本模型。之后才能再模型上修改制作高跟鞋"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/4ba715b1a3bde0809090c2b104abbd5be9da076bf19929f760be202bbb952489.webp",
+            "alt": "更换已绑定人物的初始姿势 图2",
+            "caption": "图2",
+            "width": 828,
+            "height": 435
+          }
+        ]
+      },
+      {
+        "title": "解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Ctrl+A 类似于C4D里的C，会把结果计算到模型上"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/ef054478159d171698b094f27d39f6e7ba80d0f5b11491f1d44da1df586737a4.webp",
+            "alt": "更换已绑定人物的初始姿势 图3",
+            "caption": "图3",
+            "width": 1168,
+            "height": 668
+          },
+          {
+            "type": "paragraph",
+            "text": "重新添加骨骼修改器，指定骨骼"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/9232c6af8dc1cf172a6a56d09d6c516d183a543d8848c8b3ec745e39f0049dbd.webp",
+            "alt": "更换已绑定人物的初始姿势 图4",
+            "caption": "图4",
+            "width": 1162,
+            "height": 644
+          },
+          {
+            "type": "paragraph",
+            "text": "在Pose Mode里，继续使用应用，把Pose设置为Rest Pose"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/ae4fed2a4fcdddc442d3caa572d5abba255f39067b62a5b90e53f7db200ca2ce.webp",
+            "alt": "更换已绑定人物的初始姿势 图5",
+            "caption": "图5",
+            "width": 1052,
+            "height": 792
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2024/CG/Blender/RestPose"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "basic-cloud",
+    "type": "structured",
+    "title": "Blender 简单云的制作方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "一种简单创建云的方式：为基础几何添加置换，再转体积并调节细节。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/basic-cloud",
+      "files": [
+        {
+          "src": "assets/tutorials/basic-cloud/78ec4fef04e5cb5071f5d1f1b1a2c33c85e9f275671f05236db264f5f59864ee.png",
+          "sha256": "78ec4fef04e5cb5071f5d1f1b1a2c33c85e9f275671f05236db264f5f59864ee",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/basic-cloud/f737c3c2029c80512069ac5f4a3be50de1641a2c1b56342d34a773678895c8ea.png",
+          "sha256": "f737c3c2029c80512069ac5f4a3be50de1641a2c1b56342d34a773678895c8ea",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/basic-cloud/262ad23d7d2d7c6a5f1b4403a5e6ec599a13d095875e2ea9cec4eb3ebbb9cbf4.png",
+          "sha256": "262ad23d7d2d7c6a5f1b4403a5e6ec599a13d095875e2ea9cec4eb3ebbb9cbf4",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/basic-cloud/e2e88ccca8944d8439eef32462656e7f5af56d12fb0fc30446cfcbdad33d4dee.png",
+          "sha256": "e2e88ccca8944d8439eef32462656e7f5af56d12fb0fc30446cfcbdad33d4dee",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "制作步骤",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "为立方体等基础图形添加一个置换。同理也可以制作云龙等造型物体"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/78ec4fef04e5cb5071f5d1f1b1a2c33c85e9f275671f05236db264f5f59864ee.png",
+            "alt": "Blender 简单云的制作方法 图1",
+            "caption": "图1",
+            "width": 903,
+            "height": 775
+          },
+          {
+            "type": "paragraph",
+            "text": "添加mesh to volume，且可以在此基础上调用volume displace，可以制作很多很细节的云海效果"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/f737c3c2029c80512069ac5f4a3be50de1641a2c1b56342d34a773678895c8ea.png",
+            "alt": "Blender 简单云的制作方法 图2",
+            "caption": "图2",
+            "width": 907,
+            "height": 384
+          },
+          {
+            "type": "paragraph",
+            "text": "eevee中需要调整这些参数"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/262ad23d7d2d7c6a5f1b4403a5e6ec599a13d095875e2ea9cec4eb3ebbb9cbf4.png",
+            "alt": "Blender 简单云的制作方法 图3",
+            "caption": "图3",
+            "width": 862,
+            "height": 587
+          },
+          {
+            "type": "paragraph",
+            "text": "可以配合volume本身的noise到density制造出复杂的云效果。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/e2e88ccca8944d8439eef32462656e7f5af56d12fb0fc30446cfcbdad33d4dee.png",
+            "alt": "Blender 简单云的制作方法 图4",
+            "caption": "图4",
+            "width": 525,
+            "height": 517
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2024/CG/Blender/basic_cloud"
+          }
+        ]
+      }
+    ]
   }
 ]
