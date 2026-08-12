@@ -479,14 +479,19 @@
       'data-tutorial-image-src': src,
       'aria-label': t('tutorials-image-zoom'),
     });
-    button.append(element('img', {
+    // Do not set HTML width/height to the full capture size (often 4k+).
+    // That intrinsic size can blow Safari layout before max-width settles.
+    const image = element('img', {
       src,
       alt: block.alt,
       loading: 'lazy',
       decoding: 'async',
-      width: block.width,
-      height: block.height,
-    }));
+    });
+    if (Number.isFinite(block.width) && block.width > 0
+      && Number.isFinite(block.height) && block.height > 0) {
+      image.style.aspectRatio = `${block.width} / ${block.height}`;
+    }
+    button.append(image);
     figure.append(
       button,
       element('figcaption', { lang: 'zh-CN', text: block.caption }),
