@@ -1366,8 +1366,38 @@
           "rendered": true
         },
         {
-          "src": "assets/tutorials/sss-basics/7e712b9496158f7f6db382384e8ad9f6a482512f2aea60ae6bd499477c361e42.png",
-          "sha256": "7e712b9496158f7f6db382384e8ad9f6a482512f2aea60ae6bd499477c361e42",
+          "src": "assets/tutorials/sss-basics/ef637f93127d5be2a517f34d181d314faf347d0030900f3ea22089a885d673d3.png",
+          "sha256": "ef637f93127d5be2a517f34d181d314faf347d0030900f3ea22089a885d673d3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/6f460c6b969f4462036c9ba90f51e31aa1fe3f95884782949993f33e550a4a92.png",
+          "sha256": "6f460c6b969f4462036c9ba90f51e31aa1fe3f95884782949993f33e550a4a92",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/82f6b53ef479a0976a134209db3cd23df42ca896a792bac4ecb40237381fcde1.png",
+          "sha256": "82f6b53ef479a0976a134209db3cd23df42ca896a792bac4ecb40237381fcde1",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/b6f3daddd7750e32f9129a81dc0e0ae6a16ad5e3acd2126b69c93880897e227f.png",
+          "sha256": "b6f3daddd7750e32f9129a81dc0e0ae6a16ad5e3acd2126b69c93880897e227f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/e6db37d70d1cb388da7da6f4ef655e755463c22d65d63ba2c61d5f8300203406.png",
+          "sha256": "e6db37d70d1cb388da7da6f4ef655e755463c22d65d63ba2c61d5f8300203406",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/ce950c217fca81fd0a7762e4cc96fe4b271ab7af80c8e6bf28067e59b1e13afc.png",
+          "sha256": "ce950c217fca81fd0a7762e4cc96fe4b271ab7af80c8e6bf28067e59b1e13afc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/8ac9ed14fbff36e7f80e5dea0482ed34257a86fda3b4c5a2d9e21a9df877324e.png",
+          "sha256": "8ac9ed14fbff36e7f80e5dea0482ed34257a86fda3b4c5a2d9e21a9df877324e",
           "rendered": true
         }
       ]
@@ -1395,7 +1425,7 @@
             "type": "image",
             "src": "assets/tutorials/sss-basics/21e4f9516971fdc08c20a7db68f56b63dc89caf8d28bd67ef4ed4faf253250f8.png",
             "alt": "次表面权重为0",
-            "caption": "次表面权重 = 0",
+            "caption": "次表面权重为0",
             "width": 1416,
             "height": 754
           },
@@ -1403,7 +1433,7 @@
             "type": "image",
             "src": "assets/tutorials/sss-basics/121e0e7f3829eaa5605851027f1ae17bf75e1b338b458afc63633298b74012fe.png",
             "alt": "次表面权重为1",
-            "caption": "次表面权重 = 1",
+            "caption": "次表面权重为1",
             "width": 1706,
             "height": 938
           },
@@ -1465,7 +1495,7 @@
             "type": "image",
             "src": "assets/tutorials/sss-basics/93c112b4d5b52b0a5c3ffe3787959a74e0b61753b18fda2d4751639f81de3134.png",
             "alt": "缩放为0",
-            "caption": "缩放 = 0",
+            "caption": "缩放为0",
             "width": 1608,
             "height": 950
           },
@@ -1473,7 +1503,7 @@
             "type": "image",
             "src": "assets/tutorials/sss-basics/e440c8bc764235e0531bba121979d1e7302540d355ce83fb06cacc56ccf1e7a5.png",
             "alt": "缩放0.1",
-            "caption": "缩放 = 0.1",
+            "caption": "缩放0.1",
             "width": 1636,
             "height": 1026
           },
@@ -1516,7 +1546,7 @@
             "type": "image",
             "src": "assets/tutorials/sss-basics/5a5d8d17b5592626badcb571e8b53d2a2f8b2c5d265fe3868f772c19661aece0.png",
             "alt": "薄壁发青示例",
-            "caption": "薄壁 / 交叉区域发青、发脏示例",
+            "caption": "薄壁发青示例",
             "width": 1597,
             "height": 946
           },
@@ -1535,10 +1565,6 @@
               "因为模型是一个整体（单一 Object），渲染器把这些交叉区域视为「连通的厚介质」。",
               "光线在其中多次弹射，能量来不及衰减，G/B 通道大量残留 → 出现发绿、发青、发白的脏色。"
             ]
-          },
-          {
-            "type": "note",
-            "text": "关键事实：\nSSS 的光线弹射只在同一个物体（Object）内部发生。\n两个独立物体即使面完全穿插，光线也不会在它们之间反复弹射——它们之间只会有间接、柔和的颜色渗透，而不会产生直接的多次弹射脏色。"
           }
         ]
       },
@@ -1553,21 +1579,85 @@
             "type": "list",
             "items": [
               "模型在编辑/绑定层面仍是一个整体。",
-              "在渲染时通过几何节点输出为多个独立 Object（或等效分离）。",
-              "过于薄弱、会让光线反复弹射的区域，不再发生直接的多次弹射，从而规避发绿发青。"
+              "在渲染时通过几何节点，按顶点组把容易出问题的薄壁/交叉区域分离出去。",
+              "分离后的部件以独立几何（或实例）存在，不再与主体发生直接的多次 SSS 弹射，从而规避发绿发青。"
             ]
           },
           {
             "type": "image",
-            "src": "assets/tutorials/sss-basics/7e712b9496158f7f6db382384e8ad9f6a482512f2aea60ae6bd499477c361e42.png",
-            "alt": "虚拟拆分示意",
-            "caption": "利用几何节点做虚拟拆分，避免交叉区域脏色",
-            "width": 1509,
-            "height": 973
+            "src": "assets/tutorials/sss-basics/ef637f93127d5be2a517f34d181d314faf347d0030900f3ea22089a885d673d3.png",
+            "alt": "SSS矫正几何节点",
+            "caption": "SSS矫正几何节点",
+            "width": 4392,
+            "height": 2708
           },
           {
             "type": "note",
-            "text": "利用「无关物体之间的次表面影响是间接的」这一特性，可以在不破坏模型拓扑与权重的前提下，用几何节点实现虚拟拆分，让薄弱交叉区域不再产生脏色。"
+            "text": "节点思路简述：从 body 读取几何 → 用多个「已命名属性」驱动「分离几何体」→ 部分走「几何到实例」→ 其余做法向采样与设置 → 最后「合并几何」输出。这样薄弱区域在渲染时成为相对独立的部件。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.1 节点里用到的「已命名属性」从哪来？"
+          },
+          {
+            "type": "paragraph",
+            "text": "这些属性全部来自 body 网格上的顶点组（Vertex Group）。在几何节点中通过「已命名属性」节点读取，用作分离选区的依据。"
+          },
+          {
+            "type": "paragraph",
+            "text": "实际使用的顶点组如下："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/6f460c6b969f4462036c9ba90f51e31aa1fe3f95884782949993f33e550a4a92.png",
+            "alt": "体内顶点组",
+            "caption": "体内 — 身体内部容易产生交叉/过薄的区域（如眼窝内侧、胸部细节等）。把这些面从主体中分离，避免与周围皮肤发生反复弹射。",
+            "width": 4444,
+            "height": 2406
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/82f6b53ef479a0976a134209db3cd23df42ca896a792bac4ecb40237381fcde1.png",
+            "alt": "指甲顶点组",
+            "caption": "指甲 — 手指与脚趾的指甲区域。指甲极薄，且常与皮肤紧密贴合，是典型的发青发脏高发区。",
+            "width": 4498,
+            "height": 2562
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/b6f3daddd7750e32f9129a81dc0e0ae6a16ad5e3acd2126b69c93880897e227f.png",
+            "alt": "指甲特写",
+            "caption": "指甲选区特写：只覆盖甲面本身，保证分离干净。",
+            "width": 2798,
+            "height": 1906
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/e6db37d70d1cb388da7da6f4ef655e755463c22d65d63ba2c61d5f8300203406.png",
+            "alt": "舌头顶点组",
+            "caption": "舌头 — 舌头网格与口腔、牙齿距离极近，容易被渲染器当成连通介质。单独分离后可避免口内脏色。",
+            "width": 4642,
+            "height": 2354
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/ce950c217fca81fd0a7762e4cc96fe4b271ab7af80c8e6bf28067e59b1e13afc.png",
+            "alt": "口腔顶点组",
+            "caption": "口腔 — 口腔内部表面。与舌头、牙齿形成封闭或半封闭的薄腔体，是 SSS 脏色的高风险区域。",
+            "width": 5028,
+            "height": 2590
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/8ac9ed14fbff36e7f80e5dea0482ed34257a86fda3b4c5a2d9e21a9df877324e.png",
+            "alt": "牙顶点组",
+            "caption": "牙 — 牙齿。本身不需要皮肤式 SSS，且与舌头、口腔紧密相邻，分离后可彻底切断多次弹射路径。",
+            "width": 4808,
+            "height": 2368
+          },
+          {
+            "type": "note",
+            "text": "总结：先在 body 上画好这些顶点组，再在几何节点里用「已命名属性」读取它们做分离。模型绑定与动画仍保持一体，只有渲染时的 SSS 计算被拆开，从而在不破坏模型的前提下解决薄壁发青问题。"
           }
         ]
       }

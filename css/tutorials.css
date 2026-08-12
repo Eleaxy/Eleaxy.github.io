@@ -184,9 +184,46 @@ body[data-page='tutorials']:has(.tutorial-detail-long-image) .page-shell {
 .tutorial-section > .tutorial-callout:first-of-type,
 .tutorial-section > .tutorial-figure:first-of-type { margin-top: 0; }
 
-.tutorial-figure { width: min(100%, 960px); margin: 28px 0 0; padding: 8px; border: 1px solid var(--border); background: var(--surface); }
-.tutorial-figure img { display: block; width: 100%; height: auto; object-fit: contain; }
-.tutorial-figure figcaption { margin: 10px 4px 2px; color: var(--text-secondary); font-size: .84rem; line-height: 1.45; }
+/*
+ * Structured tutorial figures: use the full content column so high-res
+ * captures (often 1400–4000px) stay readable inline, not only when opened
+ * as a standalone browser tab.
+ */
+.tutorial-section > .tutorial-figure {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+}
+.tutorial-intro .tutorial-figure,
+.tutorial-detail > .tutorial-figure {
+  width: 100%;
+  max-width: none;
+}
+
+.tutorial-figure {
+  width: 100%;
+  max-width: none;
+  margin: 28px 0 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+.tutorial-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  image-rendering: auto;
+}
+.tutorial-figure figcaption {
+  margin: 0;
+  padding: 12px 14px 14px;
+  color: var(--text-secondary);
+  font-size: .84rem;
+  line-height: 1.45;
+}
 [data-tutorial-image-error] { margin: 10px 4px 2px; color: var(--warning); font-size: .82rem; line-height: 1.4; }
 
 .tutorial-state { min-height: 52vh; display: grid; align-content: center; justify-items: start; gap: 16px; }
