@@ -554,7 +554,8 @@
     article.append(
       element('a', {
         class: 'back-link tutorial-back-link',
-        href: '/tutorials.html',
+        // Prefer the home archive section over the standalone tutorials page.
+        href: '/index.html#tutorials',
         'data-tutorial-back': '',
         'data-internal-view-history-back': '',
         'data-internal-view-fallback-replace': '',

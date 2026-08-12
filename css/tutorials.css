@@ -201,13 +201,14 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
 .tutorial-section > .tutorial-figure:first-of-type { margin-top: 0; }
 
 /*
- * Inline figures stay modest preview size (never 4k intrinsic layout).
+ * Inline figures share one fixed preview column so mixed capture sizes
+ * (313px UI crops vs 1400px boards) render at the same visual width.
  * Click opens the full-resolution capture in the lightbox.
  */
 .tutorial-figure {
   box-sizing: border-box;
-  width: fit-content;
-  max-width: min(100%, 36rem);
+  width: min(100%, 36rem);
+  max-width: 100%;
   margin: 28px 0 0;
   padding: 0;
   border: 1px solid var(--border);
@@ -218,7 +219,7 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
 .tutorial-figure-zoom {
   display: block;
   box-sizing: border-box;
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
   margin: 0;
   padding: 0;
@@ -230,12 +231,11 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
 .tutorial-figure img {
   display: block;
   box-sizing: border-box;
-  /* Cap both axes so multi-kpx screenshots cannot paint giant on Safari. */
-  width: auto;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  max-width: min(100%, 36rem);
-  max-height: min(52vh, 22rem);
   object-fit: contain;
+  object-position: center top;
   image-rendering: auto;
 }
 .tutorial-figure figcaption {
