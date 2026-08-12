@@ -428,7 +428,7 @@
   }
 
   // Inline red emphasis for version caveats readers must not skim past.
-  const criticalPhrase = '（Blender 5.2 版本不适用。）';
+  const criticalPhrase = '（Blender 5.2 版本不适用见下重点提示。）';
 
   function fillCopyText(node, text) {
     const index = text.indexOf(criticalPhrase);
