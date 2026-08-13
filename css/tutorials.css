@@ -171,8 +171,19 @@ body[data-page='tutorials']:has(.tutorial-detail-long-image) .page-shell {
 html[data-resolved-theme="dark"] .tutorial-copy-critical {
   color: #ff6b6b;
 }
+/* Root sets font-synthesis: none, so unused Geist weights look identical
+   unless we re-enable synthesis and add a second visual cue. */
 .tutorial-copy-strong {
-  font-weight: 750;
+  font-weight: 800;
+  font-synthesis: weight;
+  font-size: 1.08em;
+  letter-spacing: .01em;
+  color: #7a0b0b;
+  -webkit-text-stroke: .35px currentColor;
+}
+html[data-resolved-theme="dark"] .tutorial-copy-strong {
+  color: #ffecec;
+  -webkit-text-stroke: .35px currentColor;
 }
 .tutorial-callout { padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--surface); }
 /* Red emphasis so critical tips are not skimmed as ordinary blue notes. */

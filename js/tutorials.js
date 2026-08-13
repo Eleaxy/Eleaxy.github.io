@@ -430,7 +430,7 @@
   // Inline emphasis: red version caveats, plus extra-bold mesh-closure note.
   const copyMarks = [
     { text: '（Blender 5.2 版本不适用见下重点提示。）', className: 'tutorial-copy-critical' },
-    { text: '封闭的网格(mmd模型需要完整的头颅)', className: 'tutorial-copy-strong' },
+    { text: '(mmd模型需要完整的头颅)', className: 'tutorial-copy-strong' },
   ];
 
   function fillCopyText(node, text) {
