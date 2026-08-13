@@ -427,19 +427,31 @@
     return link;
   }
 
-  // Inline red emphasis for version caveats readers must not skim past.
-  const criticalPhrase = '（Blender 5.2 版本不适用见下重点提示。）';
+  // Inline emphasis: red version caveats, plus extra-bold mesh-closure note.
+  const copyMarks = [
+    { text: '（Blender 5.2 版本不适用见下重点提示。）', className: 'tutorial-copy-critical' },
+    { text: '封闭的网格(mmd模型需要完整的头颅)', className: 'tutorial-copy-strong' },
+  ];
 
   function fillCopyText(node, text) {
-    const index = text.indexOf(criticalPhrase);
-    if (index === -1) {
-      node.textContent = text;
-      return;
-    }
-    if (index > 0) node.append(document.createTextNode(text.slice(0, index)));
-    node.append(element('span', { class: 'tutorial-copy-critical', text: criticalPhrase }));
-    if (index + criticalPhrase.length < text.length) {
-      node.append(document.createTextNode(text.slice(index + criticalPhrase.length)));
+    let remaining = text;
+    while (remaining) {
+      let nextMark = null;
+      let nextIndex = remaining.length;
+      for (const mark of copyMarks) {
+        const index = remaining.indexOf(mark.text);
+        if (index !== -1 && index < nextIndex) {
+          nextMark = mark;
+          nextIndex = index;
+        }
+      }
+      if (!nextMark) {
+        node.append(document.createTextNode(remaining));
+        return;
+      }
+      if (nextIndex > 0) node.append(document.createTextNode(remaining.slice(0, nextIndex)));
+      node.append(element('span', { class: nextMark.className, text: nextMark.text }));
+      remaining = remaining.slice(nextIndex + nextMark.text.length);
     }
   }
 

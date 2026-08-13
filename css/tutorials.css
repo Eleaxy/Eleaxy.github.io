@@ -171,16 +171,20 @@ body[data-page='tutorials']:has(.tutorial-detail-long-image) .page-shell {
 html[data-resolved-theme="dark"] .tutorial-copy-critical {
   color: #ff6b6b;
 }
+.tutorial-copy-strong {
+  font-weight: 750;
+}
 .tutorial-callout { padding: 18px 20px; border-left: 4px solid var(--accent); background: var(--surface); }
 /* Red emphasis so critical tips are not skimmed as ordinary blue notes. */
 .tutorial-callout-warning {
   border-left-color: #c62828;
   background: color-mix(in srgb, #c62828 9%, var(--surface));
-  color: var(--text);
+  color: #c62828;
 }
 html[data-resolved-theme="dark"] .tutorial-callout-warning {
   border-left-color: #ff6b6b;
   background: color-mix(in srgb, #ff6b6b 14%, var(--surface));
+  color: #ff6b6b;
 }
 
 .tutorial-section { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--border-strong); }
