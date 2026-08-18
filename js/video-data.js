@@ -110,7 +110,7 @@
 
   function load() {
     if (!recordsPromise) {
-      const pending = fetch('/data/videos.json')
+      const pending = fetch('/data/videos.json?v=20260818-goose', { cache: 'no-store' })
         .then(response => {
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           return response.json();
