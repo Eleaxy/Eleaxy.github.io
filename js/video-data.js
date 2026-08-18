@@ -4,7 +4,7 @@
   const videoIdPattern = /^BV[0-9A-Za-z]{10}$/;
   const datePattern = /^\d{4}-\d{2}-\d{2}$/;
   const durationPattern = /^\d{2}:[0-5]\d$/;
-  const extractionCodePattern = /^[0-9A-Za-z]{4}$/;
+  const extractionCodePattern = /^(?:[0-9A-Za-z]{4}|[0-9A-Za-z]{4}[\u4e00-\u9fff])$/;
   const downloadVariants = new Set(['default', 'outer', 'inner']);
   let recordsPromise = null;
 
