@@ -1,1 +1,289 @@
-FULL_FILE_FROM_WORKSPACE_CYCLES_LIGHT_CLIP_PUBLISH_TUTORIALS_JSON
+[
+  {
+    "slug": "cycles-light-clip",
+    "type": "structured",
+    "title": "Cycles 灯光裁切",
+    "source_bvid": "BV1WZ5J6KEpk",
+    "asset": {
+      "directory": "assets/tutorials/cycles-light-clip",
+      "files": [
+        {
+          "src": "assets/tutorials/cycles-light-clip/b9b2d4cbfcbddda604d7a27d87cf52f2.jpg",
+          "sha256": "d3ea9487376a3ba968084b9ba5da779f8d90afbf61b52d308431772d77c20a45",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-light-clip/5e6af20d7f0d34b4bc0d72a1d3b75661.jpg",
+          "sha256": "87e9960ded906b8e3aee56c5005dd19795726e7bcc2834af476c3791e5a85d8a",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-light-clip/210078548bb2a79f3b65a3373d1ca003.jpg",
+          "sha256": "9bc4f7dcaaa9e0286eeec6c916f6fe999b4d97778389ee8947c25585d96e7a0e",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-light-clip/eadc8391d3418b3ec0b420b8a1481c8d.jpg",
+          "sha256": "788a8051a944e0e1d208c1de5fc8e19e486ac0608b03e3d8f6b3a868aa991f56",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-light-clip/57c8f939004d1380d63c2f95f94180ca.jpg",
+          "sha256": "b1fcb96f753a9bb12de348452b1dee9dd77526055d6003987d19d5cbe50bff0e",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-light-clip/e84cc25ec32acda182c69e1313c12ae1.jpg",
+          "sha256": "bd06d7abb8aff17f5d0f4a5eb3a1a3c91bb353fa8c0813a08e036787d6ddb364",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-light-clip/58a7354067ad85d4b833c909dc7d77c1.jpg",
+          "sha256": "9bc35a152233ebc9e4c091a2fe9f0cd2966d02b73fa0c2f05f5278634684ecce",
+          "rendered": true
+        }
+      ]
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Cycles 灯光默认会一直照出去。篝火、台灯这类近处光源，影子很容易打到远处墙面，地面也会铺成一片。"
+      },
+      {
+        "type": "paragraph",
+        "text": "在灯光着色器里用光程的射线长度当尺子，把自发光强度裁在一段距离里：近处可以先暗，远处可以提前灭。"
+      },
+      {
+        "type": "warning",
+        "text": "这套节点只对 Cycles 的灯光着色器有效。EEVEE 不认灯光节点树，那边用灯的自定义距离。"
+      }
+    ],
+    "sections": [
+      {
+        "title": "为什么要裁切",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "一圈雕像围着点光时，默认是光铺满地面、影子拉得很长。想要的是中间一汪亮，外围赶紧暗下去，墙面不要被拖出一条影子。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/b9b2d4cbfcbddda604d7a27d87cf52f2.jpg",
+            "alt": "篝火打光的实际效果和理想效果对比",
+            "caption": "实际效果：影子打到远处墙面。理想效果：只亮雕像附近。",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/5e6af20d7f0d34b4bc0d72a1d3b75661.jpg",
+            "alt": "地面光铺开的实际效果和理想效果对比",
+            "caption": "实际效果：地面一路亮出去。理想效果：中间一圈亮，外围裁掉。",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "type": "paragraph",
+            "text": "远端裁切管「照多远」。近处裁切管「灯旁边先暗一块」，外围再补一盏灯就能做成环光。"
+          }
+        ]
+      },
+      {
+        "title": "用射线长度当尺子",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "选中灯光，打开着色器编辑器，勾选使用节点。",
+              "输出节点是灯光输出，不是材质输出。",
+              "加一个光程节点，取出射线长度。它给出这根光从灯出发走了多远。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/210078548bb2a79f3b65a3373d1ca003.jpg",
+            "alt": "视口里用射线长度表示灯光向外走的距离",
+            "caption": "射线长度就是灯往外走的距离，后面所有裁切都拿它当尺子。",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      {
+        "title": "远端裁切",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "两个数值：裁切距离、羽化。距离减羽化接到映射范围的从最小值，距离加羽化接到从最大值。射线长度接到映射范围的数值。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "插值用线性，勾选钳制。",
+              "到最小值填 1，到最大值填 0。近处是 1，走过远处就变成 0。",
+              "映射范围的结果接到自发光的强度，自发光再接到灯光输出的表面。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/eadc8391d3418b3ec0b420b8a1481c8d.jpg",
+            "alt": "远端裁切的映射范围节点：到最小值 1、到最大值 0，并勾选钳制",
+            "caption": "减出来的接到从最小值，加出来的接到从最大值。钳制勾上，范围外不会继续往外插值。",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "type": "note",
+            "text": "中文界面里勾的是钳制，不是限制。不勾的话裁切会漏。"
+          }
+        ]
+      },
+      {
+        "title": "近处裁切",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "再做一套同样的加减和映射范围。这次到最小值填 0，到最大值填 1：灯旁边先是 0，走出近处才变成 1。"
+          },
+          {
+            "type": "paragraph",
+            "text": "两路映射范围的结果用数学相乘，再接到自发光强度。相乘之后只剩中间那一段是亮的。若要保持原来的瓦特数，再乘一个强度数值。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/57c8f939004d1380d63c2f95f94180ca.jpg",
+            "alt": "近处和远处两路映射范围相乘后接到自发光",
+            "caption": "两路结果相乘，只留下近处和远处之间的那一段光。",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      {
+        "title": "打成组",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "框选节点，Ctrl+G 打成组。",
+              "组输入留四个：近处裁切、近处羽化、远处裁切、远处羽化。",
+              "中间那盏黄光只用远处裁切。外围蓝光再打开近处裁切，当环光。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/e84cc25ec32acda182c69e1313c12ae1.jpg",
+            "alt": "灯光着色器里把裁切组接到自发光强度和灯光输出",
+            "caption": "组的结果接到自发光的强度，自发光接到灯光输出的表面。",
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-light-clip/58a7354067ad85d4b833c909dc7d77c1.jpg",
+            "alt": "近处加远处裁切后的效果对比，以及完整节点组",
+            "caption": "上排暖光、下排冷光：左边是默认，右边是裁切之后。右侧是组内完整节点。",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "finger-ik",
+    "type": "long-image",
+    "title": "手指 IK 控制教程",
+    "asset": {
+      "src": "assets/tutorials/finger-ik.jpg",
+      "alt": "手指 IK 控制教程",
+      "width": 3200,
+      "height": 38570,
+      "sha256": "486c280120e39565bc1b2d037efd2ff2f9a2bc15da8f30ba97e0216fdef8be08"
+    }
+  },
+  {
+    "slug": "curve-uv",
+    "type": "long-image",
+    "title": "曲线 UV",
+    "asset": {
+      "src": "assets/tutorials/curve-uv.jpg",
+      "alt": "曲线 UV",
+      "width": 3000,
+      "height": 33034,
+      "sha256": "a26bd729ecea98ee04c838fb697aacc464800cd00122e958fb34d89109dc942b"
+    }
+  },
+  {
+    "slug": "procedural-tail",
+    "type": "long-image",
+    "title": "程序化大尾巴",
+    "asset": {
+      "src": "assets/tutorials/procedural-tail.jpg",
+      "alt": "程序化大尾巴",
+      "width": 3000,
+      "height": 51009,
+      "sha256": "7720fcd824aabc2b81fa7fa7b00297ab69a1bdc4c7bcf5b6889a7841b4ddcf5a"
+    }
+  },
+  {
+    "slug": "procedural-sphere",
+    "type": "long-image",
+    "title": "程序化球面建模",
+    "asset": {
+      "src": "assets/tutorials/procedural-sphere.jpg",
+      "alt": "程序化球面建模",
+      "width": 5200,
+      "height": 8411,
+      "sha256": "285d5060f2bfb54d5b8367ad1a509d36b0e7ff5f44714f348b6320c75f452618"
+    }
+  },
+  {
+    "slug": "knee-joint",
+    "type": "long-image",
+    "title": "膝关节绑定",
+    "asset": {
+      "src": "assets/tutorials/knee-joint.jpg",
+      "alt": "膝关节绑定",
+      "width": 3000,
+      "height": 42125,
+      "sha256": "42f0d78b37952b7f9f03ec255298e043be32ce5581465e039b35541951410285"
+    }
+  },
+  {
+    "slug": "foot-rig",
+    "type": "long-image",
+    "title": "足部绑定",
+    "asset": {
+      "src": "assets/tutorials/foot-rig.jpg",
+      "alt": "足部绑定",
+      "width": 3200,
+      "height": 31941,
+      "sha256": "883705cc38bab9a8721fde3e4b8fbbbb8be88840c6be057e7ef944339da3d9f7"
+    }
+  },
+  {
+    "slug": "procedural-cinch",
+    "type": "long-image",
+    "title": "程序化勒肉",
+    "asset": {
+      "src": "assets/tutorials/procedural-cinch.jpg",
+      "alt": "程序化勒肉",
+      "width": 3000,
+      "height": 57759,
+      "sha256": "7d024cc3b04b73874afd8a38625c829d7014a1fd95a25772b8d11390a3cd6d0d"
+    }
+  },
+  {
+    "slug": "mesh-self-intersection",
+    "type": "long-image",
+    "title": "网格自身穿插（检测+修复）",
+    "asset": {
+      "src": "assets/tutorials/mesh-self-intersection.jpg",
+      "alt": "网格自身穿插（检测+修复）",
+      "width": 4800,
+      "height": 21284,
+      "sha256": "04612cc0c61e4b5089c566a6e3e2c52b5a8686d6e5e0c3a5a966db00b037fc14"
+    }
+  }
+]
