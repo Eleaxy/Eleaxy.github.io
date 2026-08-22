@@ -182,7 +182,7 @@
     let url;
     try {
       url = new URL(download.url);
-      url.searchParams.set('pwd', download.extraction_code);
+      if (download.extraction_code) url.searchParams.set('pwd', download.extraction_code);
     } catch {
       return null;
     }

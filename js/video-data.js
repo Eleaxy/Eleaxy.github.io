@@ -1,10 +1,12 @@
 (() => {
   const requiredKeys = ['id', 'source_number', 'title', 'date', 'duration', 'poster', 'source_url', 'downloads'];
-  const downloadKeys = ['filename', 'url', 'extraction_code', 'variant'];
+  const downloadKeysWithCode = ['extraction_code', 'filename', 'url', 'variant'];
+  const downloadKeysWithoutCode = ['filename', 'url', 'variant'];
   const videoIdPattern = /^BV[0-9A-Za-z]{10}$/;
   const datePattern = /^\d{4}-\d{2}-\d{2}$/;
   const durationPattern = /^\d{2}:[0-5]\d$/;
   const extractionCodePattern = /^(?:[0-9A-Za-z]{4}|[0-9A-Za-z]{4}[\u4e00-\u9fff])$/;
+  const githubReleasePath = /^\/Eleaxy\/Eleaxy\.github\.io\/releases\/download\/videos\/[^/]+$/;
   const downloadVariants = new Set(['default', 'outer', 'inner']);
   let recordsPromise = null;
 
@@ -42,9 +44,26 @@
     }
   }
 
+  function isGithubReleaseDownload(url) {
+    return url.protocol === 'https:'
+      && url.host === 'github.com'
+      && githubReleasePath.test(url.pathname)
+      && url.search === '';
+  }
+
+  function isBaiduShare(url) {
+    return url.protocol === 'https:'
+      && url.host === 'pan.baidu.com'
+      && url.pathname.startsWith('/s/');
+  }
+
   function validateDownload(download, recordIndex) {
-    if (!download || typeof download !== 'object' || Array.isArray(download)
-      || !hasExactKeys(download, downloadKeys)) {
+    if (!download || typeof download !== 'object' || Array.isArray(download)) {
+      invalid(`at index ${recordIndex} has an invalid download`);
+    }
+    const githubShape = hasExactKeys(download, downloadKeysWithoutCode);
+    const baiduShape = hasExactKeys(download, downloadKeysWithCode);
+    if (!githubShape && !baiduShape) {
       invalid(`at index ${recordIndex} has an invalid download`);
     }
     let url;
@@ -54,9 +73,22 @@
       invalid(`at index ${recordIndex} has an invalid download`);
     }
     if (typeof download.filename !== 'string' || !download.filename.trim()
-      || url.protocol !== 'https:' || url.host !== 'pan.baidu.com' || !url.pathname.startsWith('/s/')
-      || typeof download.extraction_code !== 'string' || !extractionCodePattern.test(download.extraction_code)
       || !downloadVariants.has(download.variant)) {
+      invalid(`at index ${recordIndex} has an invalid download`);
+    }
+    if (githubShape) {
+      if (!isGithubReleaseDownload(url)) {
+        invalid(`at index ${recordIndex} has an invalid download`);
+      }
+      return Object.freeze({
+        filename: download.filename,
+        url: download.url,
+        variant: download.variant,
+      });
+    }
+    if (!isBaiduShare(url)
+      || typeof download.extraction_code !== 'string'
+      || !extractionCodePattern.test(download.extraction_code)) {
       invalid(`at index ${recordIndex} has an invalid download`);
     }
     return Object.freeze({
@@ -110,7 +142,7 @@
 
   function load() {
     if (!recordsPromise) {
-      const pending = fetch('/data/videos.json?v=20260818-goose', { cache: 'no-store' })
+      const pending = fetch('/data/videos.json?v=20260823-releases', { cache: 'no-store' })
         .then(response => {
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           return response.json();
