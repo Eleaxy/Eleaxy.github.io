@@ -173,7 +173,9 @@
     "duration": "02:38",
     "poster": "https://i1.hdslb.com/bfs/archive/106a53bf6096164e1d8c652e1c0a3ccaaaffbe3d.jpg",
     "source_url": "https://www.bilibili.com/video/BV1NZZhYmEtb",
-    "downloads": []
+    "downloads": [
+      {"filename": "好梦歌.mov", "url": "https://github.com/Eleaxy/Eleaxy.github.io/releases/download/videos/haomengge.mov", "variant": "default"}
+    ]
   },
   {
     "id": "BV1rTrQYsEHu",
