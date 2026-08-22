@@ -285,5 +285,2473 @@
       "height": 21284,
       "sha256": "04612cc0c61e4b5089c566a6e3e2c52b5a8686d6e5e0c3a5a966db00b037fc14"
     }
+  },
+  {
+    "slug": "hdri-dome",
+    "type": "structured",
+    "title": "HDRI 世界环境穹顶化",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "默认的 HDRI 世界环境是一个无限大的球体。物体看起来像悬浮在空中，光线从四面八方均匀照射，缺少真实场景中「有地面、有距离感」的感觉。本教程教你如何把无限环境「压」成一个有限半径的穹顶，让光照更自然。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/hdri-dome",
+      "files": [
+        {
+          "src": "assets/tutorials/hdri-dome/2817815bb530ccd46ca6596aeaed04b1.png",
+          "sha256": "67276325725b70140174fe26c38986ab33a444580ca34b733454bb56371ee897",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/3f961fe99be323962ffb839180168fe4.jpg",
+          "sha256": "fe1da047bc911aa0917f6ffe95f29ace81e3a6846a7002be5038703008e7cb4f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/a535df2518b445be73f1d7af89ba3374.png",
+          "sha256": "1de4267211769761cbe391a5af305f5637ea9f8dc3bbd814a1ac0c5006a38ea6",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/2bacae8948811624e7fa3f0852be394f.png",
+          "sha256": "620f4916dd049534f180aa67501b345167dcb0080c1c6b335a6e569eb1c2f4b3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/ce31f065f83290adda87077db343eeaf.png",
+          "sha256": "35b2fbaf2c52f9bf7deb8e700676cc8d2d25c7670507e495fe8e8dd8a56bc471",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/hdri-dome/5c5a8921f4141372fe1704c34845ff39.png",
+          "sha256": "acc92abc7c7e9c836020368b6e676e2cab8928c023d0ee65b20e56125cebc75e",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "为什么需要穹顶化？",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "HDRI 的本质是一张全景图被映射到一个球体上。当你把它直接作为 World 背景使用时："
+          },
+          {
+            "type": "list",
+            "items": [
+              "环境是无限远的，没有距离概念",
+              "物体看起来像漂浮在空中",
+              "光线从所有方向均匀射来，缺少「地面接触」和「穹顶远近」的真实感"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/2817815bb530ccd46ca6596aeaed04b1.png",
+            "alt": "默认HDRI球体效果",
+            "caption": "默认使用 HDRI 时，场景像悬浮在无限球体内部",
+            "width": 3153,
+            "height": 1430
+          },
+          {
+            "type": "note",
+            "text": "穹顶化的目标：让环境光照表现得像一个有限半径的半球/穹顶，而不是无限远的球体，从而获得更自然的光影与空间感。"
+          }
+        ]
+      },
+      {
+        "title": "最终效果示意",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "通过节点组修改 Environment Texture 的采样向量，可以把无限环境转换为有限穹顶效果。也可以直接使用物理穹顶网格。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/3f961fe99be323962ffb839180168fe4.jpg",
+            "alt": "物理穹顶示例",
+            "caption": "物理穹顶网格示例：场景被包裹在有限半径的球体内部",
+            "width": 4008,
+            "height": 2240
+          },
+          {
+            "type": "paragraph",
+            "text": "节点组开关对照（同一场景下开启 / 关闭「hdri穹顶化」节点的效果差异）："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/a535df2518b445be73f1d7af89ba3374.png",
+            "alt": "关闭节点效果",
+            "caption": "关闭节点（默认无限环境）时的光照效果",
+            "width": 1966,
+            "height": 1478
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/2bacae8948811624e7fa3f0852be394f.png",
+            "alt": "开启节点效果",
+            "caption": "开启「hdri穹顶化」节点后的场景光照效果（光线更有距离感与方向性）",
+            "width": 1778,
+            "height": 1166
+          }
+        ]
+      },
+      {
+        "title": "使用「hdri穹顶化」节点组",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "核心思路是：不再直接把 Generated / Object 坐标送给 Environment Texture，而是先经过一个自定义节点组，对采样向量进行数学变换，模拟有限半径穹顶的投影。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "打开 World 着色器（世界环境）。",
+              "添加 Environment Texture（环境纹理）节点，加载你的 HDRI。",
+              "添加「hdri穹顶化」节点组（或自己按照下方节点树搭建）。",
+              "把节点组的「矢量」输出连接到 Environment Texture 的「矢量」输入。",
+              "Environment Texture 的颜色再连接到 Background 节点。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/ce31f065f83290adda87077db343eeaf.png",
+            "alt": "节点组连接方式",
+            "caption": "节点组输出矢量 → Environment Texture 的矢量输入",
+            "width": 3350,
+            "height": 1628
+          },
+          {
+            "type": "list",
+            "items": [
+              "影响距离 穹顶半径（单位与场景一致，示例 20）",
+              "旋转 水平旋转角度，调整 HDRI 朝向",
+              "高度 垂直偏移，控制地面/地平线位置"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "节点组内部原理（可自行搭建）",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "节点组通过对 Incoming / Generated 向量做一系列数学运算，实现「有限半径 + 高度偏移」的穹顶投影。主要逻辑包括："
+          },
+          {
+            "type": "list",
+            "items": [
+              "根据「高度」参数对 Z 分量进行偏移",
+              "使用「影响距离」控制投影范围",
+              "通过 Greater Than、Mix、Vector Math 等节点混合原始方向与穹顶方向",
+              "最后用 Vector Rotate 支持整体旋转"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/5c5a8921f4141372fe1704c34845ff39.png",
+            "alt": "节点组内部结构",
+            "caption": "「hdri穹顶化」节点组完整内部连接（可直接对照搭建）",
+            "width": 3224,
+            "height": 1558
+          },
+          {
+            "type": "warning",
+            "text": "提示：如果你不想从零搭建，可以直接把这个节点组保存为资产（Asset），以后直接拖入使用。"
+          }
+        ]
+      },
+      {
+        "title": "参数调节与实际效果",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "调节「影响距离」和「高度」可以明显改变环境光照的远近感与地平线位置。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/hdri-dome/a535df2518b445be73f1d7af89ba3374.png",
+            "alt": "参数调节示例",
+            "caption": "左侧为场景预览，右侧为节点组参数面板（影响距离 20，高度 0）",
+            "width": 1966,
+            "height": 1478
+          },
+          {
+            "type": "note",
+            "text": "建议：先把「影响距离」设置成场景尺寸的 1.5～3 倍，再微调「高度」让地平线与地面对齐，最后用「旋转」调整 HDRI 的主光方向。"
+          }
+        ]
+      },
+      {
+        "title": "进阶建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "物理穹顶法：直接创建一个大球体/半球体，把 HDRI 作为 Emission 材质贴上去，关闭 World 背景。适合需要「看得见环境」的镜头。",
+              "混合使用：World 用穹顶化节点负责整体照明，再额外放一个物理穹顶作为可见背景，效果更完整。",
+              "与灯光配合：穹顶化后 HDRI 的贡献会更集中，可以适当降低 Strength，再补充主光和补光，控制更精确。",
+              "如果场景有地面，记得把地面材质的 Roughness / Specular 调好，才能体现出穹顶带来的环境反射变化。"
+            ]
+          },
+          {
+            "type": "warning",
+            "text": "重要：关于 Eevee 物理穹顶（使用 Emission 材质的球体）在 Eevee 中无法真实照亮场景中的其他物体。Eevee 的自发光材质不会进行真实的光照传递。如果需要物理穹顶产生照明效果，请使用 Cycles。节点组方式的穹顶化在两种引擎下都可以使用，但最终光影建议在 Cycles 下确认。"
+          }
+        ]
+      },
+      {
+        "title": "注意事项",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "节点组主要修改的是采样向量，不会改变 HDRI 本身的亮度分布，只是改变「从哪个方向采样」。",
+              "「影响距离」过小会导致环境压缩、变形；过大则接近默认无限环境。",
+              "高度参数为负值时，相当于把穹顶往下压，地平线会上移。",
+              "建议在 Cycles 下预览最终效果。物理穹顶（Emission）在 Eevee 中无法真实照亮其他物体，因为 Eevee 不支持自发光材质的光照传递。",
+              "节点组方式的穹顶化在 Eevee / Cycles 均可使用，但复杂光影建议最终用 Cycles 确认。",
+              "把节点组做成资产后，记得勾选「虚拟」或正确设置接口默认值，方便以后复用。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "color-transition",
+    "type": "structured",
+    "title": "修复模型合并后颜色过渡不平滑的技巧",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "在 MMD 模型换头 时，经常会遇到 A/B 壳模型头部与身体肤色不一致的情况。直接合并后接缝处会出现生硬的色差分界线。本教程通过「顶点组 + 混合着色器 + 几何节点模糊属性」实现柔和自然的颜色过渡。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/color-transition",
+      "files": [
+        {
+          "src": "assets/tutorials/color-transition/325915872dbe26b5583532fef46fa46a.png",
+          "sha256": "8bd2e30d2a9f1036a36f9a6b62e834eccb571d48b4904617bd93b1d3c7f8b0f3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/c47a5e370abd78978acf42259ff2564e.png",
+          "sha256": "40919957f5b8125f9f4922f38cb983e02b5018401853b875e983bf7bf92fc7bd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/9445925e722cee7314681963d8d2f5d4.png",
+          "sha256": "5f1c43b9ae64157580c7e22ea2351878ec40b587d891cf7f216914b25cbdf19c",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/6f7b8636cbd5ee6e36b91fbbbbe1f8bf.png",
+          "sha256": "69663c2f95dc12c9876cd8d6328401f1d3bda71f8cf7a5546c5be9e42f67bde0",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/033a91fb84ba9a925e869388492da9e2.png",
+          "sha256": "fc2c754b2c1fcdc11959c3aff14a5937554ddb21c5da038e43ca34d6ea9f10a9",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/9c1a5bd9a9db49ac9118b4265d1b9028.png",
+          "sha256": "454017a2664788cddbdcc09db2d72d989d463d7166ab025c04e735c10e0c04e5",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/171820ee5de60bd26741d7d27a873e43.png",
+          "sha256": "95d9e88b123beb322e5c06b1cbda5496d3bbb155179139d7e969a26c626ebfae",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-transition/image.png",
+          "sha256": "c82362a49252ebf08d463b244026341e5f3db44598b619cff2261b1313c1b76f",
+          "rendered": false
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题示意：硬边色差",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "合并两个不同颜色的模型后，接缝处会出现明显的硬边色差，视觉上非常突兀。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/325915872dbe26b5583532fef46fa46a.png",
+            "alt": "硬边色差示例",
+            "caption": "红色与绿色直接对接，中间没有过渡",
+            "width": 1718,
+            "height": 1688
+          }
+        ]
+      },
+      {
+        "title": "合并模型并创建顶点组",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "选中两个需要合并的物体（示例中使用 Suzanne 猴子头的左右半边，分别赋予红色和绿色材质），按 Ctrl + J 合并为一个物体。",
+              "进入编辑模式（Tab），选择其中一侧的所有顶点（例如右侧全部顶点）。",
+              "在右侧「物体数据属性」面板中找到顶点组，点击「+」新建一个顶点组，命名为 Group（名称可自定义，后续保持一致即可）。",
+              "点击「指定」按钮，将选中的顶点加入该组（权重默认为 1.0）。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/c47a5e370abd78978acf42259ff2564e.png",
+            "alt": "创建顶点组",
+            "caption": "选中一侧顶点并指定到新建的顶点组",
+            "width": 2512,
+            "height": 2088
+          },
+          {
+            "type": "note",
+            "text": "提示：如果是真实 MMD 换头，建议在接缝附近选一圈顶点作为过渡区域的控制组，而不是整半边。"
+          }
+        ]
+      },
+      {
+        "title": "整理材质槽并设置混合着色器",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "合并后材质列表通常会出现两个材质槽。删除其中一个多余的材质槽，只保留一个。",
+              "打开着色器编辑器，删除默认节点。",
+              "添加两个「原理化 BSDF」节点，分别设置为基础色（示例中红色与绿色，实际使用中对应头部与身体的皮肤材质）。",
+              "添加「混合着色器」节点，将两个 BSDF 的输出分别连接到混合着色器的两个着色器输入。",
+              "将混合着色器的输出连接到「材质输出」。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/9445925e722cee7314681963d8d2f5d4.png",
+            "alt": "两个材质槽",
+            "caption": "合并后会有两个材质槽，删除多余的一个",
+            "width": 4800,
+            "height": 2392
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/6f7b8636cbd5ee6e36b91fbbbbe1f8bf.png",
+            "alt": "混合着色器设置",
+            "caption": "用混合着色器把两个原理化 BSDF 合并到一个材质球中",
+            "width": 4538,
+            "height": 1664
+          }
+        ]
+      },
+      {
+        "title": "用属性节点读取顶点组控制混合系数",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "在着色器编辑器中添加「属性」节点（Attribute）。",
+              "将属性节点的名称设置为刚才创建的顶点组名称 Group，类型选择「几何数据」。",
+              "把属性节点的「系数」输出连接到混合着色器的「系数」输入。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/033a91fb84ba9a925e869388492da9e2.png",
+            "alt": "属性节点连接顶点组",
+            "caption": "属性节点读取顶点组 Group，并连接到混合系数",
+            "width": 1812,
+            "height": 644
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/9c1a5bd9a9db49ac9118b4265d1b9028.png",
+            "alt": "使用向下取整",
+            "caption": "可选：中间插入「向下取整」数学节点，强制权重为 0 或 1，得到干净的硬边分割",
+            "width": 3660,
+            "height": 1936
+          },
+          {
+            "type": "warning",
+            "text": "此时过渡仍然是硬边的。因为原始顶点组权重只有 0 和 1，没有中间值。接下来用几何节点对权重进行模糊，即可实现平滑过渡。"
+          }
+        ]
+      },
+      {
+        "title": "使用几何节点模糊属性，实现柔和过渡",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这是实现平滑过渡的关键步骤。通过几何节点对顶点组权重进行模糊处理，让接缝附近的权重产生渐变。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "给物体添加「几何节点」修改器，并新建几何节点树。",
+              "按以下结构连接节点（参考下方截图）："
+            ]
+          },
+          {
+            "type": "list",
+            "items": [
+              "按距离合并（Merge by Distance）：距离约 0.001 m，合并「全部」。确保接缝处顶点已正确合并。",
+              "存储已命名属性（Store Named Attribute）：域 = 点，名称 = Group，类型 = 浮点。把原始顶点组权重写入属性。",
+              "模糊属性（Blur Attribute）：域 = 点，迭代次数建议 5（可调），权重 = 1.0。对权重进行平滑扩散。",
+              "把模糊后的结果再次存储回 Group 属性（或直接输出）。",
+              "可选：添加「表面细分」提高细节精度。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-transition/171820ee5de60bd26741d7d27a873e43.png",
+            "alt": "几何节点 + 最终效果",
+            "caption": "几何节点设置与最终柔和过渡效果。左侧视口中已出现红→绿的平滑渐变",
+            "width": 4210,
+            "height": 2480
+          },
+          {
+            "type": "note",
+            "text": "模糊迭代次数越大，过渡区域越宽、越柔和。根据模型分辨率和接缝位置灵活调整（通常 3～8 次即可）。"
+          }
+        ]
+      },
+      {
+        "title": "💡 适用场景：MMD 换头肤色接缝处理",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在 MMD 模型的换头操作中，A/B 壳模型的头部与身体往往来自不同源，肤色会有细微甚至明显的差异。直接合并后接缝处会出现色差硬线。"
+          },
+          {
+            "type": "paragraph",
+            "text": "使用本方法后："
+          },
+          {
+            "type": "list",
+            "items": [
+              "把头部皮肤材质和身体皮肤材质分别放入混合着色器两端",
+              "在接缝附近创建顶点组（或用权重绘制精细控制过渡区域）",
+              "通过几何节点模糊属性，让颜色自然过渡，几乎看不出接缝"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "效果远比直接用颜色渐变纹理或后期修图更干净可控。"
+          }
+        ]
+      },
+      {
+        "title": "注意事项与小技巧",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "合并前尽量让两个模型在接缝处的拓扑对齐，减少合并后的破面。",
+              "如果接缝不是垂直的中线，可以用权重绘制（Weight Paint）精细绘制过渡区域，效果会更好。",
+              "几何节点修改器建议放在修改器栈的靠前位置，避免被其他修改器干扰。",
+              "本方法兼容 Eevee 与 Cycles，实时预览友好。",
+              "推荐 Blender 3.5 及以上版本（模糊属性节点更完善）。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "color-mapping",
+    "type": "structured",
+    "title": "色彩映射的选择与调整",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Blender 的色彩管理决定了最终画面的「味道」。默认的 Rec.709 + AgX 并不是唯一选择。本教程讲解工作空间与视图变换的区别，以及如何用合成器把不同映射的优点混合在一起，得到更理想的颜色与光感。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/color-mapping",
+      "files": [
+        {
+          "src": "assets/tutorials/color-mapping/5d0db46079950b1b35849f1567981a67.png",
+          "sha256": "76308284dd9088a01e15213ffaf499d4eae4c748c6b5047b5de0c1b538186ada",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/06a101d111609d0d918c8e1ab7825539.png",
+          "sha256": "bb02dc8c628d6230eb903fe4332f522b2159f8905d00520246f2aa9da34990be",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/39c4e5f349997a86cc012f8dbfffc864.png",
+          "sha256": "ed5bb13951304a7af0aa11be3791ace4fa84f064d3da7c79a53cf02f4a626eea",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/9796b7e7b1471b8f0da787cf63af39cb.png",
+          "sha256": "8cc14e456f7fe379cae2b630b90944ae2abf85977a5650a28de683fd736e0b7d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/095a7fbf50d019d157909f8ca6a2653a.jpg",
+          "sha256": "07071f3f2f0456bb72a74ddefd7acd29c4a79dec39ade58ca8da918e7208f149",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/0bdd05fe18910cf81949f9c1f5b538ea.png",
+          "sha256": "5d312092f4295cabd888633ace4142ff7e4e01321766801ec9bdd5c0cd347fff",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/c1a20e4c83946bfb95abddd4b8b46054.png",
+          "sha256": "1029ac0b6bff0e5d7a2d3e2d826fbe52519dc7079f6918456fd6000bf395c7e1",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/fae96db7cfb2d31cb28a696303bf0902.png",
+          "sha256": "fde9b7e74be4f00bc6ad0b1df2f985117961f9212b6f2d3cd5bf1d753a81261f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/a981378b8e5b4fe47741a0c3ca8bb6d1.png",
+          "sha256": "4c283488f7ffdc9325dcea27db49d7d7ca241ff2781bfcc98228ae5231a0147b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/fbb4cf6675debe50ca807c428c3d3c94.jpg",
+          "sha256": "991c347f6f15a6519c62617766be056611bc5dc8ed026072075b5bd309b666bc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/color-mapping/image.png",
+          "sha256": "19d1d5cb9a2bc19d2e6c8ed3fa36cc3da888de04b3f7c46f5b2628bcdb46245f",
+          "rendered": false
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "工作空间（Working Space）—— 更大的色彩池",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在较高版本的 Blender 中，色彩管理面板新增了「工作空间」选项。通俗讲，工作空间就是你能使用的色彩池大小。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "默认是 线性 Rec.709，这是一个比较早期、较小的色彩空间。",
+              "建议改为 线性 Rec.2020 或 ACEScg，可以获得更大的色彩池。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "更大的工作空间配合相同的色彩映射时，通常能带来更平滑的色彩过渡和更好的颜色表现。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/5d0db46079950b1b35849f1567981a67.png",
+            "alt": "工作空间位置",
+            "caption": "色彩管理面板中的「工作空间」位置（红色框）",
+            "width": 880,
+            "height": 844
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/06a101d111609d0d918c8e1ab7825539.png",
+            "alt": "工作空间选项",
+            "caption": "可选：线性 Rec.709（默认）、线性 Rec.2020、ACEScg",
+            "width": 642,
+            "height": 268
+          },
+          {
+            "type": "note",
+            "text": "提示：工作空间改变的是「内部计算」的色彩范围，不会直接改变你最终显示器上看到的映射方式。真正决定画面观感的是下面的「视图」变换。"
+          }
+        ]
+      },
+      {
+        "title": "视图变换（View Transform）—— 画面的「味道」",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "「视图」选项决定了如何把场景颜色映射到你的显示器上。不同的选择会带来完全不同的视觉风格。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/39c4e5f349997a86cc012f8dbfffc864.png",
+            "alt": "视图变换下拉菜单",
+            "caption": "常见视图变换：Standard、AgX、ACES 1.3 / 2.0、Filmic、Khronos PBR Neutral 等",
+            "width": 940,
+            "height": 672
+          },
+          {
+            "type": "paragraph",
+            "text": "目前比较常用的是 AgX 和 ACES 2.0："
+          },
+          {
+            "type": "list",
+            "items": [
+              "AgX：光感较好，但画面容易略微发灰。",
+              "ACES 2.0：色彩不错，但容易发暗，光感不足。",
+              "Standard：颜色准确度最高，但光线信息保留不足，整体偏平。"
+            ]
+          },
+          {
+            "type": "warning",
+            "text": "很多人会在 AgX 和 ACES 之间纠结，觉得哪个都有不足。其实可以用合成器把它们的优点「拼」在一起。"
+          }
+        ]
+      },
+      {
+        "title": "用合成器混合不同映射的优点",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "思路很简单：把同一张渲染图分别用不同的视图变换处理，然后提取各自需要的部分（亮度、饱和度、色相），最后混合。"
+          },
+          {
+            "type": "paragraph",
+            "text": "示例做法（以钢琴模型为例）："
+          },
+          {
+            "type": "list",
+            "items": [
+              "把「视图」暂时设为 Raw（这样合成器能拿到未经过最终映射的线性数据）。",
+              "在合成器中用多个「转换为显示」节点，分别套用 AgX、ACES 2.0、Standard 等变换。",
+              "用「分离 HSV」把它们拆成色相 / 饱和度 / 明度。",
+              "按需混合：例如用 AgX 的明度、ACES 的饱和度、Standard 的色相，再合并回去。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/9796b7e7b1471b8f0da787cf63af39cb.png",
+            "alt": "设为 Raw",
+            "caption": "把视图设为 Raw，方便在合成器中自定义映射",
+            "width": 894,
+            "height": 936
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/095a7fbf50d019d157909f8ca6a2653a.jpg",
+            "alt": "合成器节点示例",
+            "caption": "合成器示例：多个「转换为显示」节点 + 分离 HSV + 混合",
+            "width": 4096,
+            "height": 2550
+          },
+          {
+            "type": "note",
+            "text": "实际操作时，可以根据自己的喜好调整混合权重。上面只是一个思路参考，不必完全照搬。"
+          }
+        ]
+      },
+      {
+        "title": "效果对比",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "以下是同一场景在不同设置下的大致观感（以黑色钢琴为例）："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/0bdd05fe18910cf81949f9c1f5b538ea.png",
+            "alt": "合成器混合结果",
+            "caption": "① 合成器混合结果 —— 综合了各映射的优点",
+            "width": 1487,
+            "height": 1491
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/c1a20e4c83946bfb95abddd4b8b46054.png",
+            "alt": "Standard",
+            "caption": "② Standard —— 颜色准确，但光线信息保留不足，整体偏平",
+            "width": 1547,
+            "height": 1489
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/fae96db7cfb2d31cb28a696303bf0902.png",
+            "alt": "ACES",
+            "caption": "③ ACES —— 色彩不错，但明显发暗，光感不足",
+            "width": 1486,
+            "height": 1455
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/a981378b8e5b4fe47741a0c3ca8bb6d1.png",
+            "alt": "AgX",
+            "caption": "④ AgX —— 光感较好，但画面略微发灰",
+            "width": 1461,
+            "height": 1408
+          }
+        ]
+      },
+      {
+        "title": "额外技巧：假彩色（False Color）",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "把视图设为「假彩色」可以快速检查曝光是否合理（过曝区域会显示特定颜色）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/color-mapping/fbb4cf6675debe50ca807c428c3d3c94.jpg",
+            "alt": "假彩色视图",
+            "caption": "假彩色视图 —— 用于检查曝光与亮度分布",
+            "width": 4096,
+            "height": 2634
+          }
+        ]
+      },
+      {
+        "title": "总结与建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "优先把工作空间改成 Rec.2020 或 ACEScg，获得更大色彩范围。",
+              "日常预览可以用 AgX 或 ACES 2.0，最终输出前再根据需要调整。",
+              "如果对单一映射不满意，用合成器把不同映射的优点组合起来，是目前最灵活的做法。",
+              "合成时记得把视图设为 Raw，否则会二次映射导致颜色错误。",
+              "假彩色是检查曝光的好工具，渲染前可以先看一眼。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "camera-clip",
+    "type": "structured",
+    "title": "基于几何节点的相机软裁切",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "使用几何节点 + 着色器实现「选择性」近裁剪"
+      },
+      {
+        "type": "paragraph",
+        "text": "无需改动摄像机 Clip Start"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/camera-clip",
+      "files": [
+        {
+          "src": "assets/tutorials/camera-clip/65fb9ed5238f0bdad017b291901ef821141dba374e545ccd500e1ad48a268912.png",
+          "sha256": "65fb9ed5238f0bdad017b291901ef821141dba374e545ccd500e1ad48a268912",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/6584ac8ee5bcca102e6c21599bff674c94528b5a4dba1f7f38b4e72766874cf2.png",
+          "sha256": "6584ac8ee5bcca102e6c21599bff674c94528b5a4dba1f7f38b4e72766874cf2",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/2e81f4d48b7daf3d8d487691f3e8585cc7ec9f9b13d8e18ac05d72485376590f.png",
+          "sha256": "2e81f4d48b7daf3d8d487691f3e8585cc7ec9f9b13d8e18ac05d72485376590f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/230505d6fc75f94cc718b8c6f106a6fd87562da54c9e5628799a585a2f21c597.png",
+          "sha256": "230505d6fc75f94cc718b8c6f106a6fd87562da54c9e5628799a585a2f21c597",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/f67a0025cb898ccad314a31bff10d8f030aab8da8d379bfb563304ca53927a7a.png",
+          "sha256": "f67a0025cb898ccad314a31bff10d8f030aab8da8d379bfb563304ca53927a7a",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/7fad9c89b6a4c13ba477ffaaa57d6f688057802b55bffeb51a5e9c32586f0dcf.png",
+          "sha256": "7fad9c89b6a4c13ba477ffaaa57d6f688057802b55bffeb51a5e9c32586f0dcf",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/590e637a4cebc93d89f8be946b5356ddef7ea7e3dcc7bda75c9572e82b39a082.png",
+          "sha256": "590e637a4cebc93d89f8be946b5356ddef7ea7e3dcc7bda75c9572e82b39a082",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/12fe2d1e709c3c5dee54af524afb140ebf4a50e052180b314176aaf0000fcc1b.png",
+          "sha256": "12fe2d1e709c3c5dee54af524afb140ebf4a50e052180b314176aaf0000fcc1b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/4758ddb7b30946e765c3fbb727564c87825ece8736a487688652f153c79929fa.png",
+          "sha256": "4758ddb7b30946e765c3fbb727564c87825ece8736a487688652f153c79929fa",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/43512d8fb41f27d5f3f8ef88fea37a859634751781fc04a3d8cf0ca913c8cddd.png",
+          "sha256": "43512d8fb41f27d5f3f8ef88fea37a859634751781fc04a3d8cf0ca913c8cddd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/17a2283688eb75f825dbfbe1c8bd261d2f2d00fcbb42d2ded84df27ca3469f89.png",
+          "sha256": "17a2283688eb75f825dbfbe1c8bd261d2f2d00fcbb42d2ded84df27ca3469f89",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/40efe8d086ed741b1c9af1ff11aa9eb50b89779b829479393b85b0c8e7be3377.png",
+          "sha256": "40efe8d086ed741b1c9af1ff11aa9eb50b89779b829479393b85b0c8e7be3377",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/d001a79e8d201c9ba65dc5c7b087d07913313d8c516e56043186551641afd083.png",
+          "sha256": "d001a79e8d201c9ba65dc5c7b087d07913313d8c516e56043186551641afd083",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/afe12f572fdf902aebca912f2c4ba69ca34b994ff0d7dc120c5176b9dc2ac57f.png",
+          "sha256": "afe12f572fdf902aebca912f2c4ba69ca34b994ff0d7dc120c5176b9dc2ac57f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/edb7e77b323deee9d04f27908376ce99fb9b1af41a7ee61278fbba60e88e4845.png",
+          "sha256": "edb7e77b323deee9d04f27908376ce99fb9b1af41a7ee61278fbba60e88e4845",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/f2f715597ed3229f75a363a66dc68cf3a69c7f87e5378c15aab3cdac2e833147.png",
+          "sha256": "f2f715597ed3229f75a363a66dc68cf3a69c7f87e5378c15aab3cdac2e833147",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-clip/45e466a9ef503dded74aaac6807a71aa26e8e477e10cb25cf222f08e59ac461d.png",
+          "sha256": "45e466a9ef503dded74aaac6807a71aa26e8e477e10cb25cf222f08e59ac461d",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "1. 效果展示",
+        "blocks": [
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/65fb9ed5238f0bdad017b291901ef821141dba374e545ccd500e1ad48a268912.png",
+            "alt": "未启用裁剪",
+            "caption": "未启用裁剪",
+            "width": 2635,
+            "height": 1326
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/6584ac8ee5bcca102e6c21599bff674c94528b5a4dba1f7f38b4e72766874cf2.png",
+            "alt": "启用裁剪",
+            "caption": "启用裁剪",
+            "width": 2765,
+            "height": 1181
+          },
+          {
+            "type": "paragraph",
+            "text": "该方案对比直接使用摄像机 Clip Start 的优点非常明显。"
+          },
+          {
+            "type": "warning",
+            "text": "摄像机裁剪起点（Clip Start）是摄像机级、全局、硬性的裁剪：比阈值近的东西，不管是什么，一律不渲染。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.1 只移除「该移除的」，保留其他近处内容"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clip Start 会让所有比阈值近的对象一起消失——第一人称的手、武器、驾驶舱、前景粒子、想保留的小道具，全被裁掉。着色器方案只作用于接了这套逻辑的材质，其他近处元素安然无恙。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.2 不劫持摄像机近裁剪面"
+          },
+          {
+            "type": "paragraph",
+            "text": "Clip Start 本来承担着别的职责：防止相机穿墙时看到内部、管理深度缓冲精度（近/远平面比）、影响 DoF 近距行为等。拿它做透视会造成耦合：D_min 随物体运动而变化时，近裁剪面跟着扫动，深度精度逐帧变化、视口导航也被牵连。着色器方案不改动任何摄像机参数，两种机制互不干扰。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.3 光线类型可控"
+          },
+          {
+            "type": "paragraph",
+            "text": "着色器里的「是摄像机射线」开关决定了：只对相机直接可见剔除，阴影 / 反射 / GI 中遮挡物依然存在，场景光照保持物理一致。Clip 的次级光线行为由引擎固定（在光栅化引擎里它还会同步影响深度缓冲，导致屏幕空间 AO / 反射也丢失遮挡物），你没得选；而着色器方案可以选择，甚至能反过来做「连阴影一起剔除」（把光程那步乘法去掉即可）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.4 阈值是「数据」，不是硬件参数 → 可软化、可扩展"
+          },
+          {
+            "type": "paragraph",
+            "text": "硬比较可以换成 Map Range / Smoothstep 做渐变透明，遮挡物越过边界时淡出而不是「啪」地 popping；阈值可以来自逐物体属性，不同材质 / 物体组用不同剔除深度；多个关注目标时可以传多个阈值。而一台相机只有一个 Clip Start，多目标时只能取最近者，夹在两个目标之间的遮挡物就剔不掉。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.5 多相机 / 切换视角时自动一致"
+          },
+          {
+            "type": "paragraph",
+            "text": "几何节点部分读的是「活动摄像机」，着色器的矢量变换也跟随渲染相机，换相机时整套规则自动重算。用 Clip 则要给每台相机单独写值。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.6 过渡裁切对照"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/2e81f4d48b7daf3d8d487691f3e8585cc7ec9f9b13d8e18ac05d72485376590f.png",
+            "alt": "过渡裁切对照 1",
+            "caption": "场景中遮挡物被选择性裁切",
+            "width": 3325,
+            "height": 1650
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/230505d6fc75f94cc718b8c6f106a6fd87562da54c9e5628799a585a2f21c597.png",
+            "alt": "过渡裁切对照 2",
+            "caption": "另一视角下的裁切效果",
+            "width": 3418,
+            "height": 1747
+          }
+        ]
+      },
+      {
+        "title": "2. 几何节点搭建",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "以一个细分后的猴头（Suzanne）演示。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/f67a0025cb898ccad314a31bff10d8f030aab8da8d379bfb563304ca53927a7a.png",
+            "alt": "细分猴头",
+            "caption": "细分后的猴头模型",
+            "width": 619,
+            "height": 341
+          },
+          {
+            "type": "note",
+            "text": "为了方便观察节点效果，先使用边界框（包围框）的几何数据。"
+          },
+          {
+            "type": "paragraph",
+            "text": "2.1 获取每一个点的位置数据"
+          },
+          {
+            "type": "paragraph",
+            "text": "从几何数据中取出每个点的世界坐标位置。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/7fad9c89b6a4c13ba477ffaaa57d6f688057802b55bffeb51a5e9c32586f0dcf.png",
+            "alt": "获取点位置数据",
+            "caption": "使用 Position 节点获取点坐标",
+            "width": 1883,
+            "height": 1125
+          },
+          {
+            "type": "paragraph",
+            "text": "2.2 获取点至摄像机的矢量数据（矢量 A）"
+          },
+          {
+            "type": "paragraph",
+            "text": "计算「点位置 → 摄像机位置」的向量。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/590e637a4cebc93d89f8be946b5356ddef7ea7e3dcc7bda75c9572e82b39a082.png",
+            "alt": "点到摄像机矢量",
+            "caption": "矢量 A：点到摄像机的方向",
+            "width": 1859,
+            "height": 935
+          },
+          {
+            "type": "paragraph",
+            "text": "2.3 将 (0, 0, 1) 用摄像机的旋转进行变换"
+          },
+          {
+            "type": "paragraph",
+            "text": "得到摄像机局部 +Z 轴在世界空间中的方向（矢量 B）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/12fe2d1e709c3c5dee54af524afb140ebf4a50e052180b314176aaf0000fcc1b.png",
+            "alt": "摄像机 Z 轴变换",
+            "caption": "Transform Direction：摄像机局部 +Z → 世界空间",
+            "width": 630,
+            "height": 395
+          },
+          {
+            "type": "paragraph",
+            "text": "得到的是摄像机局部 +Z 轴在世界空间中的方向（矢量 B）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "2.4 计算矢量 A 投影至矢量 B 得到的矢量长度"
+          },
+          {
+            "type": "paragraph",
+            "text": "即点沿摄像机视线方向（Z 轴）的深度值。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/4758ddb7b30946e765c3fbb727564c87825ece8736a487688652f153c79929fa.png",
+            "alt": "投影长度计算",
+            "caption": "投影并取长度，得到轴向深度",
+            "width": 1896,
+            "height": 933
+          },
+          {
+            "type": "paragraph",
+            "text": "2.5 使用统计数据节点取最小值，并存储为 position 属性"
+          },
+          {
+            "type": "paragraph",
+            "text": "使用 Attribute Statistic 节点取最小值，再使用其他网格基本体（例如设置位置）储存该最小值，命名为 position。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/43512d8fb41f27d5f3f8ef88fea37a859634751781fc04a3d8cf0ca913c8cddd.png",
+            "alt": "属性统计最小值",
+            "caption": "Attribute Statistic → 最小值 → 存入新几何体的 position 属性",
+            "width": 1132,
+            "height": 838
+          },
+          {
+            "type": "note",
+            "text": "属性统计里的「最小值」≈ 物体上各点沿摄像机 Z 轴方向的深度绝对值的最小值，即物体到「过摄像机的侧向平面」的最近垂直距离。只有当物体延伸到摄像机侧面（与视线方向正交）时才会掉到 0。"
+          }
+        ]
+      },
+      {
+        "title": "3. 着色器部分",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在需要剔除的物体着色器中引入刚计算出的数据 position。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.1 新建两个空物体，命名为「上」「下」"
+          },
+          {
+            "type": "paragraph",
+            "text": "这两个空物体用来把几何节点计算出的最小值通过约束和驱动器传递到着色器。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.2 给「上」添加几何属性约束"
+          },
+          {
+            "type": "paragraph",
+            "text": "目标设置为猴头，属性名称为 position。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/17a2283688eb75f825dbfbe1c8bd261d2f2d00fcbb42d2ded84df27ca3469f89.png",
+            "alt": "几何属性约束",
+            "caption": "「上」物体：Geometry Attribute Constraint → Target = 猴头，Attribute = position",
+            "width": 622,
+            "height": 492
+          },
+          {
+            "type": "paragraph",
+            "text": "3.3 给「下」添加复制位置约束"
+          },
+          {
+            "type": "paragraph",
+            "text": "目标设置为「上」，关闭 Z 轴向（只复制 X/Y）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/40efe8d086ed741b1c9af1ff11aa9eb50b89779b829479393b85b0c8e7be3377.png",
+            "alt": "复制位置约束",
+            "caption": "「下」物体：Copy Location → Target = 「上」，禁用 Z 轴",
+            "width": 616,
+            "height": 532
+          },
+          {
+            "type": "paragraph",
+            "text": "3.4 ~ 3.5 在着色器中添加 Value 节点并驱动"
+          },
+          {
+            "type": "paragraph",
+            "text": "在着色器中添加 输入 → 常量 → 值，然后给这个值添加驱动器，计算「上」和「下」的距离再减 0.1。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/d001a79e8d201c9ba65dc5c7b087d07913313d8c516e56043186551641afd083.png",
+            "alt": "驱动器设置",
+            "caption": "驱动器表达式：var - 0.1（var 为两物体距离）",
+            "width": 267,
+            "height": 286
+          },
+          {
+            "type": "paragraph",
+            "text": "这样驱动器输出的值就等于几何节点算出的 position（最小值深度）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.6 在着色器中计算当前着色点的轴向深度"
+          },
+          {
+            "type": "paragraph",
+            "text": "相当于在着色器中重复 2.1 ~ 2.4 的计算：把当前点位置变换到摄像机空间，取 Z 分量。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/afe12f572fdf902aebca912f2c4ba69ca34b994ff0d7dc120c5176b9dc2ac57f.png",
+            "alt": "着色器计算轴向深度",
+            "caption": "Vector Transform → Separate XYZ，取 Z 分量 = 该点的轴向深度（带符号）",
+            "width": 604,
+            "height": 282
+          },
+          {
+            "type": "paragraph",
+            "text": "然后与 position（通过驱动器同步过来的阈值）比较："
+          },
+          {
+            "type": "list",
+            "items": [
+              "比它近 → 输出 1（是遮挡物，该剔）",
+              "比它远 → 输出 0（正常渲染）"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/edb7e77b323deee9d04f27908376ce99fb9b1af41a7ee61278fbba60e88e4845.png",
+            "alt": "深度比较",
+            "caption": "Less Than 节点：当前深度 < position → 1（剔除）",
+            "width": 766,
+            "height": 259
+          },
+          {
+            "type": "paragraph",
+            "text": "最终混合逻辑"
+          },
+          {
+            "type": "note",
+            "text": "光程节点（Is Camera Ray）在摄像机直接可见的射线上输出 1，在反射、折射、阴影等次级射线上输出 0。乘上它 = 只在相机射线里启用剔除。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/f2f715597ed3229f75a363a66dc68cf3a69c7f87e5378c15aab3cdac2e833147.png",
+            "alt": "光程与比较结果",
+            "caption": "光程 × 深度比较结果，控制是否剔除",
+            "width": 954,
+            "height": 394
+          },
+          {
+            "type": "paragraph",
+            "text": "混合 #1"
+          },
+          {
+            "type": "paragraph",
+            "text": "系数 = 深度比较结果（× 光程）"
+          },
+          {
+            "type": "list",
+            "items": [
+              "系数 1 → 输出透明 BSDF（剔除）",
+              "系数 0 → 输出原本材质"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "混合 #2"
+          },
+          {
+            "type": "paragraph",
+            "text": "系数 = 几何数据 · 背面（Backfacing）"
+          },
+          {
+            "type": "list",
+            "items": [
+              "背面命中 → 透明",
+              "正面 → 混合 #1 的结果"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-clip/45e466a9ef503dded74aaac6807a71aa26e8e477e10cb25cf222f08e59ac461d.png",
+            "alt": "完整着色器节点树",
+            "caption": "完整着色器节点示意（混合透明 + 背面处理）",
+            "width": 1316,
+            "height": 658
+          }
+        ]
+      },
+      {
+        "title": "核心思路总结",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "几何节点：计算物体上所有点相对摄像机视线方向的最近深度，存为 position 属性。",
+              "约束 + 驱动器：把这个最小值「搬」到着色器可用的 Value 节点上。",
+              "着色器：对每个着色点再算一次轴向深度，与阈值比较；只在相机射线 + 正面时进行透明剔除。"
+            ]
+          },
+          {
+            "type": "note",
+            "text": "这样既实现了「只裁该裁的遮挡物」，又完全不干扰摄像机本身的 Clip Start、深度精度和次级光线行为，是一种非常灵活的软裁剪方案。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "sss-basics",
+    "type": "structured",
+    "title": "次表面散射个人理解（一）基础理解与简易处理",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Blender 次表面散射（SSS）个人理解"
+      },
+      {
+        "type": "paragraph",
+        "text": "基于 Blender Random Walk / OpenPBR · 皮肤与二次元风格实践要点"
+      },
+      {
+        "type": "warning",
+        "text": "随机游走为细长和弯曲的物体提供精确的结果。随机游走算法在网格内部使用真实的体积散射，这意味着它最适合封闭的网格(mmd模型需要完整的头颅)。重叠的面和网格中的孔洞可能会导致问题。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/sss-basics",
+      "files": [
+        {
+          "src": "assets/tutorials/sss-basics/21e4f9516971fdc08c20a7db68f56b63dc89caf8d28bd67ef4ed4faf253250f8.png",
+          "sha256": "21e4f9516971fdc08c20a7db68f56b63dc89caf8d28bd67ef4ed4faf253250f8",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/121e0e7f3829eaa5605851027f1ae17bf75e1b338b458afc63633298b74012fe.png",
+          "sha256": "121e0e7f3829eaa5605851027f1ae17bf75e1b338b458afc63633298b74012fe",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/1105b0c7ac22be55a1419e1d3f28ea79b848c761998fa525969139360b1cf070.png",
+          "sha256": "1105b0c7ac22be55a1419e1d3f28ea79b848c761998fa525969139360b1cf070",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/4f55ee567ea32f3e5eacddaa03f7d85fc9ada28d24a24bf47defe547d7981453.png",
+          "sha256": "4f55ee567ea32f3e5eacddaa03f7d85fc9ada28d24a24bf47defe547d7981453",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/93c112b4d5b52b0a5c3ffe3787959a74e0b61753b18fda2d4751639f81de3134.png",
+          "sha256": "93c112b4d5b52b0a5c3ffe3787959a74e0b61753b18fda2d4751639f81de3134",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/e440c8bc764235e0531bba121979d1e7302540d355ce83fb06cacc56ccf1e7a5.png",
+          "sha256": "e440c8bc764235e0531bba121979d1e7302540d355ce83fb06cacc56ccf1e7a5",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/5a5d8d17b5592626badcb571e8b53d2a2f8b2c5d265fe3868f772c19661aece0.png",
+          "sha256": "5a5d8d17b5592626badcb571e8b53d2a2f8b2c5d265fe3868f772c19661aece0",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/ef637f93127d5be2a517f34d181d314faf347d0030900f3ea22089a885d673d3.png",
+          "sha256": "ef637f93127d5be2a517f34d181d314faf347d0030900f3ea22089a885d673d3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/6f460c6b969f4462036c9ba90f51e31aa1fe3f95884782949993f33e550a4a92.png",
+          "sha256": "6f460c6b969f4462036c9ba90f51e31aa1fe3f95884782949993f33e550a4a92",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/82f6b53ef479a0976a134209db3cd23df42ca896a792bac4ecb40237381fcde1.png",
+          "sha256": "82f6b53ef479a0976a134209db3cd23df42ca896a792bac4ecb40237381fcde1",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/b6f3daddd7750e32f9129a81dc0e0ae6a16ad5e3acd2126b69c93880897e227f.png",
+          "sha256": "b6f3daddd7750e32f9129a81dc0e0ae6a16ad5e3acd2126b69c93880897e227f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/e6db37d70d1cb388da7da6f4ef655e755463c22d65d63ba2c61d5f8300203406.png",
+          "sha256": "e6db37d70d1cb388da7da6f4ef655e755463c22d65d63ba2c61d5f8300203406",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/ce950c217fca81fd0a7762e4cc96fe4b271ab7af80c8e6bf28067e59b1e13afc.png",
+          "sha256": "ce950c217fca81fd0a7762e4cc96fe4b271ab7af80c8e6bf28067e59b1e13afc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-basics/8ac9ed14fbff36e7f80e5dea0482ed34257a86fda3b4c5a2d9e21a9df877324e.png",
+          "sha256": "8ac9ed14fbff36e7f80e5dea0482ed34257a86fda3b4c5a2d9e21a9df877324e",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "1. 核心参数",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "1.1 次表面权重（Subsurface Weight）"
+          },
+          {
+            "type": "paragraph",
+            "text": "控制光线在表面漫反射与次表面散射之间的能量分配比例，是皮肤整体质感的基石。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "权重为 0：完全走表面漫反射，无 SSS。",
+              "权重为 1：能量全部进入次表面散射。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/21e4f9516971fdc08c20a7db68f56b63dc89caf8d28bd67ef4ed4faf253250f8.png",
+            "alt": "次表面权重为0",
+            "caption": "次表面权重为0",
+            "width": 1416,
+            "height": 754
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/121e0e7f3829eaa5605851027f1ae17bf75e1b338b458afc63633298b74012fe.png",
+            "alt": "次表面权重为1",
+            "caption": "次表面权重为1",
+            "width": 1706,
+            "height": 938
+          },
+          {
+            "type": "note",
+            "text": "一旦确定好风格化程度后，不应再把它当作修复局部问题的调节变量。"
+          },
+          {
+            "type": "paragraph",
+            "text": "1.2 次表面半径（Subsurface Radius）"
+          },
+          {
+            "type": "paragraph",
+            "text": "决定 RGB 三色光在介质内部传播时的相对衰减距离。数值越大，该颜色通道穿透越深、衰减越慢；未被消耗的能量穿出表面，就是我们看到的 SSS 颜色。"
+          },
+          {
+            "type": "paragraph",
+            "text": "写实参考（人皮）：约 1.0 / 0.35 / 0.2（R / G / B）。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "拉高绿色通道 → 更多偏绿的穿透感。",
+              "拉高蓝色通道 → 更多偏青/冷的穿透感。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/1105b0c7ac22be55a1419e1d3f28ea79b848c761998fa525969139360b1cf070.png",
+            "alt": "拉高绿色通道",
+            "caption": "拉高绿色通道",
+            "width": 1436,
+            "height": 715
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/4f55ee567ea32f3e5eacddaa03f7d85fc9ada28d24a24bf47defe547d7981453.png",
+            "alt": "拉高蓝色通道",
+            "caption": "拉高蓝色通道",
+            "width": 1435,
+            "height": 677
+          },
+          {
+            "type": "paragraph",
+            "text": "1.3 次表面缩放（Subsurface Scale）"
+          },
+          {
+            "type": "paragraph",
+            "text": "将「次表面半径」映射到世界单位的转换系数。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "例如缩放 0.025 时，半径 1 ≈ 实际 2.5 cm。",
+              "写实值在风格化渲染中往往显得灰暗；二次元风格通常需要整体放大到 0.025（约 2.5 cm）级别，以获得通透感。（Blender 5.2 版本不适用见下重点提示。）"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/93c112b4d5b52b0a5c3ffe3787959a74e0b61753b18fda2d4751639f81de3134.png",
+            "alt": "缩放为0",
+            "caption": "缩放为0",
+            "width": 1608,
+            "height": 950
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/e440c8bc764235e0531bba121979d1e7302540d355ce83fb06cacc56ccf1e7a5.png",
+            "alt": "缩放0.1",
+            "caption": "缩放0.1",
+            "width": 1636,
+            "height": 1026
+          },
+          {
+            "type": "paragraph",
+            "text": "1.4 次表面各项异性（Subsurface Anisotropy）"
+          },
+          {
+            "type": "paragraph",
+            "text": "控制光线在介质内部散射的方向性偏好（前向散射 / 后向散射）。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "Random Walk / OpenPBR 算法中，人皮标准值约为 0.8（强前向散射），可直接使用。"
+            ]
+          },
+          {
+            "type": "warning",
+            "text": "重点提示：Blender 较新版本中 SSS 算法融入了部分 OpenPBR 算法，物理准确性提升。二次元风格下也不必再刻意把缩放放到很大，可优先使用接近毫米级的写实缩放，cycles模式下建议优先使用 Random Walk 方法以获得最佳皮肤效果。"
+          }
+        ]
+      },
+      {
+        "title": "2. 为什么薄壁区域会发青 / 发白？",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "2.1 原因"
+          },
+          {
+            "type": "paragraph",
+            "text": "当次表面缩放被放大到二次元所需的 0.025 级别时，2.5 cm 的 SSS 影响范围对于手指（可能仅 0.5 cm 厚）来说远超几何厚度。"
+          },
+          {
+            "type": "paragraph",
+            "text": "此时 G、B 通道的能量来不及在介质内被充分吸收，直接穿透出去，与残留的 R 混合后，产生非预期的冷色调（发青、发绿、发白）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/5a5d8d17b5592626badcb571e8b53d2a2f8b2c5d265fe3868f772c19661aece0.png",
+            "alt": "薄壁发青示例",
+            "caption": "薄壁发青示例",
+            "width": 1597,
+            "height": 946
+          },
+          {
+            "type": "paragraph",
+            "text": "2.2 交叉区域的脏色来源"
+          },
+          {
+            "type": "paragraph",
+            "text": "在 Blender 的 Random Walk / OpenPBR 次表面算法中，光线在同一个网格物体内部传播时："
+          },
+          {
+            "type": "list",
+            "items": [
+              "当两个面交叉或距离极近（手指贴大腿、耳朵贴头、裙摆贴腿），光线从 A 面射入后，会在网格内部反复弹射到相邻的 B 面。",
+              "因为模型是一个整体（单一 Object），渲染器把这些交叉区域视为「连通的厚介质」。",
+              "光线在其中多次弹射，能量来不及衰减，G/B 通道大量残留 → 出现发绿、发青、发白的脏色。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "3. 解决方案：从几何节点影响到渲染层面的「虚拟拆分」",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "不破坏模型本身，而是用几何节点把模型在渲染层面「虚拟拆分」成多个独立部件："
+          },
+          {
+            "type": "list",
+            "items": [
+              "模型在编辑/绑定层面仍是一个整体。",
+              "在渲染时通过几何节点，按顶点组把容易出问题的薄壁/交叉区域分离出去。",
+              "分离后的部件以独立几何（或实例）存在，不再与主体发生直接的多次 SSS 弹射，从而规避发绿发青。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/ef637f93127d5be2a517f34d181d314faf347d0030900f3ea22089a885d673d3.png",
+            "alt": "SSS矫正几何节点",
+            "caption": "SSS矫正几何节点",
+            "width": 4392,
+            "height": 2708
+          },
+          {
+            "type": "note",
+            "text": "节点思路简述：从 body 读取几何 → 用多个「已命名属性」驱动「分离几何体」→ 部分走「几何到实例」→ 其余做法向采样与设置 → 最后「合并几何」输出。这样薄弱区域在渲染时成为相对独立的部件。"
+          },
+          {
+            "type": "paragraph",
+            "text": "3.1 节点里用到的「已命名属性」从哪来？"
+          },
+          {
+            "type": "paragraph",
+            "text": "这些属性全部来自 body 网格上的顶点组（Vertex Group）。在几何节点中通过「已命名属性」节点读取，用作分离选区的依据。"
+          },
+          {
+            "type": "paragraph",
+            "text": "实际使用的顶点组如下："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/6f460c6b969f4462036c9ba90f51e31aa1fe3f95884782949993f33e550a4a92.png",
+            "alt": "体内顶点组",
+            "caption": "体内 — 身体内部容易产生交叉/过薄的区域（如眼窝内侧、胸部细节等）。把这些面从主体中分离，避免与周围皮肤发生反复弹射。",
+            "width": 4444,
+            "height": 2406
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/82f6b53ef479a0976a134209db3cd23df42ca896a792bac4ecb40237381fcde1.png",
+            "alt": "指甲顶点组",
+            "caption": "指甲 — 手指与脚趾的指甲区域。指甲极薄，且常与皮肤紧密贴合，是典型的发青发脏高发区。",
+            "width": 4498,
+            "height": 2562
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/b6f3daddd7750e32f9129a81dc0e0ae6a16ad5e3acd2126b69c93880897e227f.png",
+            "alt": "指甲特写",
+            "caption": "指甲选区特写：只覆盖甲面本身，保证分离干净。",
+            "width": 2798,
+            "height": 1906
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/e6db37d70d1cb388da7da6f4ef655e755463c22d65d63ba2c61d5f8300203406.png",
+            "alt": "舌头顶点组",
+            "caption": "舌头 — 舌头网格与口腔、牙齿距离极近，容易被渲染器当成连通介质。单独分离后可避免口内脏色。",
+            "width": 4642,
+            "height": 2354
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/ce950c217fca81fd0a7762e4cc96fe4b271ab7af80c8e6bf28067e59b1e13afc.png",
+            "alt": "口腔顶点组",
+            "caption": "口腔 — 口腔内部表面。与舌头、牙齿形成封闭或半封闭的薄腔体，是 SSS 脏色的高风险区域。",
+            "width": 5028,
+            "height": 2590
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-basics/8ac9ed14fbff36e7f80e5dea0482ed34257a86fda3b4c5a2d9e21a9df877324e.png",
+            "alt": "牙顶点组",
+            "caption": "牙 — 牙齿。本身不需要皮肤式 SSS，且与舌头、口腔紧密相邻，分离后可彻底切断多次弹射路径。",
+            "width": 4808,
+            "height": 2368
+          },
+          {
+            "type": "note",
+            "text": "总结：先在 body 上画好这些顶点组，再在几何节点里用「已命名属性」读取它们做分离。模型绑定与动画仍保持一体，只有渲染时的 SSS 计算被拆开，从而在不破坏模型的前提下解决薄壁发青问题。"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "camera-damped-track",
+    "type": "structured",
+    "title": "相机钝化追踪的实现方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "做视频镜头时，尤其是固定机位，如果摄像机完全锁定人物，画面会显得死板、太 CG、缺少「有人手控」的感觉。通过钝化追踪（带延迟的跟随），可以让镜头跟随更自然、更有呼吸感。本教程适用于 MMD 舞蹈镜头等需要轻微滞后跟随的场景。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/camera-damped-track",
+      "files": [
+        {
+          "src": "assets/tutorials/camera-damped-track/f64272ee732ff8b52b931536feec1495a4eb00e1211eda2a0084aaa8fdc18c19.png",
+          "sha256": "f64272ee732ff8b52b931536feec1495a4eb00e1211eda2a0084aaa8fdc18c19",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/346b0cd8cc15522fda2de047115bd6651f5a5cd827b39d229edd4fdd8ed183be.png",
+          "sha256": "346b0cd8cc15522fda2de047115bd6651f5a5cd827b39d229edd4fdd8ed183be",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/c5d534a2b11b1b6bfa2200fd65f88e10079875465b56764cc0aad89d9549194f.gif",
+          "sha256": "c5d534a2b11b1b6bfa2200fd65f88e10079875465b56764cc0aad89d9549194f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/cefcbfd25b1f1a4dddc5bbff297380e48638c62a57de41aca2a6532cdf86edee.png",
+          "sha256": "cefcbfd25b1f1a4dddc5bbff297380e48638c62a57de41aca2a6532cdf86edee",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/0bb46563188fa9b88608871450bcf822376e44cb5ebd88279800b20c4764fc4d.png",
+          "sha256": "0bb46563188fa9b88608871450bcf822376e44cb5ebd88279800b20c4764fc4d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/camera-damped-track/9742f87c2b3200c5cf6948e77708874eb9815a4bfc08cf96a8f0584d6aef7025.png",
+          "sha256": "9742f87c2b3200c5cf6948e77708874eb9815a4bfc08cf96a8f0584d6aef7025",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "为什么需要钝化追踪？",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "完全锁定目标的追踪（Track To / Damped Track 直接指向角色）虽然精确，但在固定镜头或舞蹈镜头中会显得机械。真实拍摄时，摄像师会有轻微的滞后和惯性，镜头不会瞬间跟上每一个微小动作。"
+          },
+          {
+            "type": "paragraph",
+            "text": "钝化追踪的核心思路是：让摄像机跟随一个「延迟后的目标位置」，而不是直接跟随角色本身。"
+          }
+        ]
+      },
+      {
+        "title": "创建塌缩成点的立方体",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这个立方体会作为「延迟位置」的载体，通过 Geometry Nodes 计算出滞后的坐标。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "新建一个立方体（Cube）。",
+              "进入编辑模式，全选所有顶点。",
+              "右键 → 合并顶点 → 塌陷（Collapse），把它收成一个点。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/f64272ee732ff8b52b931536feec1495a4eb00e1211eda2a0084aaa8fdc18c19.png",
+            "alt": "立方体塌陷成点",
+            "caption": "编辑模式下合并顶点 → 塌陷，得到一个单点物体",
+            "width": 2658,
+            "height": 1794
+          }
+        ]
+      },
+      {
+        "title": "创建跟随目标的空物体",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "新建一个空物体（Empty），把它放在需要追踪的目标（如角色）正中间，并添加 Child Of 约束，让它完全跟随目标。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/346b0cd8cc15522fda2de047115bd6651f5a5cd827b39d229edd4fdd8ed183be.png",
+            "alt": "Empty 添加 Child Of",
+            "caption": "Empty 添加 Child Of 约束，目标指向角色（Suzanne），影响设为 1.0",
+            "width": 3814,
+            "height": 2214
+          },
+          {
+            "type": "note",
+            "text": "这个 Empty 会实时获得角色的位置，作为后续延迟计算的输入源。"
+          }
+        ]
+      },
+      {
+        "title": "用 Geometry Nodes 实现位置延迟",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "给塌缩后的立方体添加 Geometry Nodes 修改器，用「模拟」节点实现时间上的滞后，再与当前目标位置混合。"
+          },
+          {
+            "type": "paragraph",
+            "text": "核心逻辑："
+          },
+          {
+            "type": "list",
+            "items": [
+              "用 物体信息 读取跟随 Empty 的位置",
+              "通过「模拟」区域把位置延迟几帧",
+              "用 混合 节点把延迟位置与当前目标位置按系数混合",
+              "混合系数越大，跟随延迟越明显；越小则越贴近实时跟随"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/c5d534a2b11b1b6bfa2200fd65f88e10079875465b56764cc0aad89d9549194f.gif",
+            "alt": "Geometry Nodes 延迟设置",
+            "caption": "Geometry Nodes 中的延迟混合结构（模拟 + 混合节点）",
+            "width": 1920,
+            "height": 1368
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/cefcbfd25b1f1a4dddc5bbff297380e48638c62a57de41aca2a6532cdf86edee.png",
+            "alt": "节点细节",
+            "caption": "物体信息指向跟随 Empty，混合系数控制延迟强度（示例 0.4）",
+            "width": 4600,
+            "height": 2422
+          },
+          {
+            "type": "warning",
+            "text": "混合系数建议从 0.3～0.6 开始尝试。数值越大，镜头跟随越「钝」、越有惯性感。"
+          }
+        ]
+      },
+      {
+        "title": "创建读取延迟位置的空物体",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "再新建一个空物体（Empty.001），给它添加 Geometry Attribute 约束："
+          },
+          {
+            "type": "list",
+            "items": [
+              "目标：指向刚才的立方体",
+              "属性名称：position",
+              "数据类型：矢量",
+              "混合模式：替换"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "这样 Empty.001 就会获得立方体经过延迟计算后的位置。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/0bb46563188fa9b88608871450bcf822376e44cb5ebd88279800b20c4764fc4d.png",
+            "alt": "Geometry Attribute 约束",
+            "caption": "Empty.001 使用 Geometry Attribute 约束读取立方体的延迟位置",
+            "width": 3256,
+            "height": 2112
+          }
+        ]
+      },
+      {
+        "title": "给摄像机添加约束",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "选中摄像机，添加两个约束："
+          },
+          {
+            "type": "list",
+            "items": [
+              "Damped Track：目标设为 Empty.001；追踪轴根据需要设置（常用 -Z）。",
+              "Child Of：目标设为 Empty.001；如果想保持固定抬头角度，建议只勾选位置的 Y（或根据场景只开启需要的轴向）。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/camera-damped-track/9742f87c2b3200c5cf6948e77708874eb9815a4bfc08cf96a8f0584d6aef7025.png",
+            "alt": "摄像机约束设置",
+            "caption": "摄像机同时使用 Damped Track + Child Of，Child Of 建议只启用位置 Y",
+            "width": 3408,
+            "height": 2058
+          },
+          {
+            "type": "note",
+            "text": "这样在 MMD 舞蹈等场景中，摄像机会随人物左右运动产生自然的转动，前后运动时跟随 Y 轴位置变化，整体更有「人手控镜头」的感觉。"
+          }
+        ]
+      },
+      {
+        "title": "总结与建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "核心是「延迟位置」：用 Geometry Nodes 的模拟 + 混合做出滞后的目标点。",
+              "混合系数是手感的关键，建议根据镜头节奏多试几个值。",
+              "Child Of 只开需要的轴向，可以避免镜头过度跟随旋转或缩放。",
+              "这个方法特别适合固定机位但需要轻微跟随的舞蹈、对话镜头。",
+              "可以把整套约束和节点做成资产，方便在多个场景复用。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "thin-film-metal",
+    "type": "structured",
+    "title": "薄膜属性在金属上的应用 · 电镀表现",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "Blender 的金属 BSDF 支持薄膜（Thin Film）属性，可以用来模拟真实的电镀效果。通过控制薄膜厚度与折射率，就能得到从青铜、金色到各种彩色电镀的丰富表现。本教程讲解如何根据参考表格，把电压值转换为薄膜厚度，实现可控的电镀颜色。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/thin-film-metal",
+      "files": [
+        {
+          "src": "assets/tutorials/thin-film-metal/99b0a5213ba939f4147a0af56bf50e1ee4184e2432598956f0f53c79971dd8b6.png",
+          "sha256": "99b0a5213ba939f4147a0af56bf50e1ee4184e2432598956f0f53c79971dd8b6",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/thin-film-metal/cfe1f5b3ceea314403308a9925fd727d7208432331ef3540383c543674409466.png",
+          "sha256": "cfe1f5b3ceea314403308a9925fd727d7208432331ef3540383c543674409466",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/thin-film-metal/2883cd5cd362d944b3e053714edc443facc0f79710ecd9db7d44fd11c0224e81.png",
+          "sha256": "2883cd5cd362d944b3e053714edc443facc0f79710ecd9db7d44fd11c0224e81",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/thin-film-metal/3588a96581f085e4973282d0229d4baca4187429d15759ea5c28f1ead15bdaa7.gif",
+          "sha256": "3588a96581f085e4973282d0229d4baca4187429d15759ea5c28f1ead15bdaa7",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "原理简述",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "真实电镀过程中，金属表面会形成一层极薄的氧化膜或涂层。这层膜的厚度和折射率（IOR）会干涉反射光，从而产生特定颜色。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在 Blender 中："
+          },
+          {
+            "type": "list",
+            "items": [
+              "开启金属 BSDF 的「薄膜」选项",
+              "用「薄膜厚度」控制干涉效果（单位通常是纳米）",
+              "用「薄膜折射率（IOR）」匹配材质的光学特性"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "表格里给出了不同电镀颜色对应的电压范围和厚度范围，我们只需要做简单换算，就能在节点里直接用「电压」来驱动颜色。"
+          }
+        ]
+      },
+      {
+        "title": "参考颜色与参数表格",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "下表列出了常见电镀颜色及其对应的 IOR、电压范围和厚度范围（单位：nm）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/99b0a5213ba939f4147a0af56bf50e1ee4184e2432598956f0f53c79971dd8b6.png",
+            "alt": "电镀颜色参数表格",
+            "caption": "电镀颜色参考表（IOR / Voltage Range / Thickness Range）",
+            "width": 3462,
+            "height": 2322
+          },
+          {
+            "type": "note",
+            "text": "大多数颜色的 IOR 固定为 2.46，只有 Reddish 使用 1.77。电压与厚度基本成线性关系，因此可以用简单的乘法节点把「电压」转换成「薄膜厚度」。"
+          }
+        ]
+      },
+      {
+        "title": "创建「电镀」节点组",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "为了方便使用，建议把电压→厚度的换算做成一个节点组："
+          },
+          {
+            "type": "list",
+            "items": [
+              "创建节点组，组输入：电压（Float）、ior（Float，默认 2.46）。",
+              "组内换算：电压 × 1.620 → 输出「薄膜厚度」；ior × 1.000 → 输出「薄膜 ior」（直接透传）。",
+              "把两个结果连接到组输出。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/cfe1f5b3ceea314403308a9925fd727d7208432331ef3540383c543674409466.png",
+            "alt": "电镀节点组内部",
+            "caption": "节点组内部：电压 × 1.620 得到薄膜厚度，IOR 直接输出",
+            "width": 2538,
+            "height": 794
+          },
+          {
+            "type": "warning",
+            "text": "换算系数 1.620 是根据表格中电压与厚度的大致比例推算出来的（例如 190 V 对应约 308 nm）。实际使用时可根据自己的参考数据微调这个系数。"
+          }
+        ]
+      },
+      {
+        "title": "在金属材质中应用",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "添加「金属 BSDF」节点。",
+              "展开「薄膜」面板，勾选启用。",
+              "把「电镀」节点组的「薄膜厚度」和「薄膜 ior」分别连接到对应输入。",
+              "调节节点组的「电压」参数，即可实时改变电镀颜色。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/2883cd5cd362d944b3e053714edc443facc0f79710ecd9db7d44fd11c0224e81.png",
+            "alt": "完整材质设置",
+            "caption": "完整设置示例：电压 190.4、IOR 2.46 → 对应 Forest Green 区域",
+            "width": 2439,
+            "height": 1688
+          }
+        ]
+      },
+      {
+        "title": "电压变化实时效果演示",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "调节节点组中的「电压」参数，薄膜厚度会随之变化，电镀颜色也会实时改变。下面的动图展示了不同电压下颜色的连续过渡效果："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/thin-film-metal/3588a96581f085e4973282d0229d4baca4187429d15759ea5c28f1ead15bdaa7.gif",
+            "alt": "电压变化动态演示",
+            "caption": "电压从低到高连续变化时的电镀颜色过渡（节点组实时驱动）",
+            "width": 1920,
+            "height": 1172
+          },
+          {
+            "type": "note",
+            "text": "可以看到颜色会按照表格中的顺序依次出现：从棕色青铜 → 深蓝 → 金色 → 品红 → 各种青绿色 → 森林绿等。只需拖动电压滑块即可快速找到目标颜色。"
+          }
+        ]
+      },
+      {
+        "title": "使用建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "电压值直接参考表格中的 Voltage Range，微调即可得到目标颜色。",
+              "大多数颜色 IOR 保持 2.46 即可；只有 Reddish 需要改成 1.77。",
+              "粗糙度建议保持较低（0.02～0.05），电镀表面通常非常光滑。",
+              "可以把节点组做成资产，方便在多个材质中复用。",
+              "如果需要更精确的物理对应，可以根据具体工艺文档调整换算系数。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rim-clamp",
+    "type": "structured",
+    "title": "使用 Layer Weight 作为轮廓光钳制的表现方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "当轮廓光不够明显时，可以用 Layer Weight / 菲涅尔混合出一层只在轮廓处受光的加强材质，而不是整片自发光。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/rim-clamp",
+      "files": [
+        {
+          "src": "assets/tutorials/rim-clamp/c1730d8bb37d8848d331093921e7f295df94e4aff98e51d5c73661410684b89f.png",
+          "sha256": "c1730d8bb37d8848d331093921e7f295df94e4aff98e51d5c73661410684b89f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rim-clamp/c8762f7f6b7e87fa876d6792904e06308fee83fc335210531ca9b6ec77e0311b.png",
+          "sha256": "c8762f7f6b7e87fa876d6792904e06308fee83fc335210531ca9b6ec77e0311b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rim-clamp/999a017ce0ab41a8d03a0b0bc00139302948d701287618551cca67fd60f2cc20.gif",
+          "sha256": "999a017ce0ab41a8d03a0b0bc00139302948d701287618551cca67fd60f2cc20",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "当给物体打轮廓光的时候，轮廓光不明显，当需要强化的时候，希望有一层专门强化轮廓光的材质层"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rim-clamp/c1730d8bb37d8848d331093921e7f295df94e4aff98e51d5c73661410684b89f.png",
+            "alt": "使用 Layer Weight 作为轮廓光钳制的表现方法 图1",
+            "caption": "图1",
+            "width": 604,
+            "height": 486
+          },
+          {
+            "type": "paragraph",
+            "text": "之前的思路中，把layer weight作为发光添加在材质上，在没有光照的时候也会发光。"
+          },
+          {
+            "type": "paragraph",
+            "text": "使用sheen的话，是作为一种类似浅浅皮毛的效果，类似但也不受光照影响。"
+          }
+        ]
+      },
+      {
+        "title": "解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "使用菲涅尔、以菲涅尔亮度为混合，可以创造一层受光照但只有轮廓的加强材质"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rim-clamp/c8762f7f6b7e87fa876d6792904e06308fee83fc335210531ca9b6ec77e0311b.png",
+            "alt": "使用 Layer Weight 作为轮廓光钳制的表现方法 图2",
+            "caption": "图2",
+            "width": 1035,
+            "height": 612
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rim-clamp/999a017ce0ab41a8d03a0b0bc00139302948d701287618551cca67fd60f2cc20.gif",
+            "alt": "使用 Layer Weight 作为轮廓光钳制的表现方法 图3",
+            "caption": "图3",
+            "width": 616,
+            "height": 588
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2025/CG/Blender/blender_RimClamp"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "edge-light",
+    "type": "structured",
+    "title": "Blender 边缘溢色光的处理方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "边缘溢色（边缘透出暖色/冷色高光）可以用 Light Path 或多重灯光两种思路实现，分别适合精细控制和全局氛围。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/edge-light",
+      "files": [
+        {
+          "src": "assets/tutorials/edge-light/bff8da7ef4d9dc0d29cdae14dccd27a9abfc646bcb9dbe7ea79f6a264f7f76c3.png",
+          "sha256": "bff8da7ef4d9dc0d29cdae14dccd27a9abfc646bcb9dbe7ea79f6a264f7f76c3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/edge-light/d42560bfb8187b0ab4dc763f63b272ba791257d5f8a722a5f46c8b500c363a40.png",
+          "sha256": "d42560bfb8187b0ab4dc763f63b272ba791257d5f8a722a5f46c8b500c363a40",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/edge-light/e42890f7641dd77b468bc8e763146af27f3d16ca991b5cf4aca5072ba0e5bd91.png",
+          "sha256": "e42890f7641dd77b468bc8e763146af27f3d16ca991b5cf4aca5072ba0e5bd91",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "想要制作这种边缘溢色的效果"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/edge-light/bff8da7ef4d9dc0d29cdae14dccd27a9abfc646bcb9dbe7ea79f6a264f7f76c3.png",
+            "alt": "Blender 边缘溢色光的处理方法 图1",
+            "caption": "图1",
+            "width": 313,
+            "height": 93
+          }
+        ]
+      },
+      {
+        "title": "解决1",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "第一个思路使用Light Path"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/edge-light/d42560bfb8187b0ab4dc763f63b272ba791257d5f8a722a5f46c8b500c363a40.png",
+            "alt": "Blender 边缘溢色光的处理方法 图2",
+            "caption": "图2",
+            "width": 1199,
+            "height": 1184
+          },
+          {
+            "type": "paragraph",
+            "text": "这个思路仅在Cycles下可用"
+          },
+          {
+            "type": "paragraph",
+            "text": "可控可以自由打光，效果大小可控，不过操作起来属于微操，性能消耗相对会大一些"
+          }
+        ]
+      },
+      {
+        "title": "解决2",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "第二种就是多重灯光，是一种全局效果，cycles和eevee下表现均不错"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/edge-light/e42890f7641dd77b468bc8e763146af27f3d16ca991b5cf4aca5072ba0e5bd91.png",
+            "alt": "Blender 边缘溢色光的处理方法 图3",
+            "caption": "图3",
+            "width": 1383,
+            "height": 663
+          },
+          {
+            "type": "paragraph",
+            "text": "效果相对没有那么明显也没办法单独控制"
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2025/CG/Blender/blender_edgeLight"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "shape-key-pose",
+    "type": "structured",
+    "title": "在当前动作姿势附加形态键调整",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "在已经摆好的动作姿势上继续用形态键微调时，编辑模式会回到 T-Pose。可以用雕刻模式或 On Cage 在当前变形基础上调整。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/shape-key-pose",
+      "files": [
+        {
+          "src": "assets/tutorials/shape-key-pose/22c13ec4840fee58d479e2c8e8b2485e9e7ea228fdb517ae8a56180b19079edc.webp",
+          "sha256": "22c13ec4840fee58d479e2c8e8b2485e9e7ea228fdb517ae8a56180b19079edc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/shape-key-pose/55b001e38e288833176f00c272080a4bc7d8f4a5e26ab3ec9b95a8fe6c4e7f1f.webp",
+          "sha256": "55b001e38e288833176f00c272080a4bc7d8f4a5e26ab3ec9b95a8fe6c4e7f1f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/shape-key-pose/1750ec7f5e446e73f21db7b59aeb9fd0a9f1129625dc59280bb64fef93931f9b.webp",
+          "sha256": "1750ec7f5e446e73f21db7b59aeb9fd0a9f1129625dc59280bb64fef93931f9b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/shape-key-pose/d50abbf8cea114c361273832b524be93fdc37a560eddd860afc41e5cc00d7bfb.webp",
+          "sha256": "d50abbf8cea114c361273832b524be93fdc37a560eddd860afc41e5cc00d7bfb",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/22c13ec4840fee58d479e2c8e8b2485e9e7ea228fdb517ae8a56180b19079edc.webp",
+            "alt": "在当前动作姿势附加形态键调整 图1",
+            "caption": "图1",
+            "width": 549,
+            "height": 421
+          }
+        ]
+      },
+      {
+        "title": "解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "使用形态键对姿势进行调整"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/55b001e38e288833176f00c272080a4bc7d8f4a5e26ab3ec9b95a8fe6c4e7f1f.webp",
+            "alt": "在当前动作姿势附加形态键调整 图2",
+            "caption": "图2",
+            "width": 434,
+            "height": 302
+          },
+          {
+            "type": "paragraph",
+            "text": "中途问题：但是进入Edit模式，人物就会变成原本的Tpose。没办法在目前的动作进行调整"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/1750ec7f5e446e73f21db7b59aeb9fd0a9f1129625dc59280bb64fef93931f9b.webp",
+            "alt": "在当前动作姿势附加形态键调整 图3",
+            "caption": "图3",
+            "width": 1013,
+            "height": 777
+          },
+          {
+            "type": "paragraph",
+            "text": "解决方法1：进入雕刻模式，就可以在当前的基础上进行调整"
+          },
+          {
+            "type": "paragraph",
+            "text": "解决方法2：开启最左侧的On Cage按钮"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/shape-key-pose/d50abbf8cea114c361273832b524be93fdc37a560eddd860afc41e5cc00d7bfb.webp",
+            "alt": "在当前动作姿势附加形态键调整 图4",
+            "caption": "图4",
+            "width": 434,
+            "height": 185
+          },
+          {
+            "type": "paragraph",
+            "text": "调整结束之后返回即可调整形态键比例"
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2025/CG/Blender/ShapeKey"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "rest-pose",
+    "type": "structured",
+    "title": "更换已绑定人物的初始姿势",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "绑定完成后若要改初始姿势（例如做高跟鞋脚型），需要把当前 Pose 结果写回网格并重新设为 Rest Pose。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/rest-pose",
+      "files": [
+        {
+          "src": "assets/tutorials/rest-pose/f8ec294ceb78ccaf0e14e29d150a22c5db9a6f4c53a255b0be29e09af7ed9d12.webp",
+          "sha256": "f8ec294ceb78ccaf0e14e29d150a22c5db9a6f4c53a255b0be29e09af7ed9d12",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/4ba715b1a3bde0809090c2b104abbd5be9da076bf19929f760be202bbb952489.webp",
+          "sha256": "4ba715b1a3bde0809090c2b104abbd5be9da076bf19929f760be202bbb952489",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/ef054478159d171698b094f27d39f6e7ba80d0f5b11491f1d44da1df586737a4.webp",
+          "sha256": "ef054478159d171698b094f27d39f6e7ba80d0f5b11491f1d44da1df586737a4",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/9232c6af8dc1cf172a6a56d09d6c516d183a543d8848c8b3ec745e39f0049dbd.webp",
+          "sha256": "9232c6af8dc1cf172a6a56d09d6c516d183a543d8848c8b3ec745e39f0049dbd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/rest-pose/ae4fed2a4fcdddc442d3caa572d5abba255f39067b62a5b90e53f7db200ca2ce.webp",
+          "sha256": "ae4fed2a4fcdddc442d3caa572d5abba255f39067b62a5b90e53f7db200ca2ce",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "问题",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "由于需要制作高跟鞋，人物原本的脚是平底的状况，进入模型编辑之后，立起来的脚就会变回原本平底的模型的样子。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/f8ec294ceb78ccaf0e14e29d150a22c5db9a6f4c53a255b0be29e09af7ed9d12.webp",
+            "alt": "更换已绑定人物的初始姿势 图1",
+            "caption": "图1",
+            "width": 1011,
+            "height": 457
+          },
+          {
+            "type": "paragraph",
+            "text": "现在需要把骨骼摆好的模型效果传递回去原本模型。之后才能再模型上修改制作高跟鞋"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/4ba715b1a3bde0809090c2b104abbd5be9da076bf19929f760be202bbb952489.webp",
+            "alt": "更换已绑定人物的初始姿势 图2",
+            "caption": "图2",
+            "width": 828,
+            "height": 435
+          }
+        ]
+      },
+      {
+        "title": "解决",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Ctrl+A 类似于C4D里的C，会把结果计算到模型上"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/ef054478159d171698b094f27d39f6e7ba80d0f5b11491f1d44da1df586737a4.webp",
+            "alt": "更换已绑定人物的初始姿势 图3",
+            "caption": "图3",
+            "width": 1168,
+            "height": 668
+          },
+          {
+            "type": "paragraph",
+            "text": "重新添加骨骼修改器，指定骨骼"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/9232c6af8dc1cf172a6a56d09d6c516d183a543d8848c8b3ec745e39f0049dbd.webp",
+            "alt": "更换已绑定人物的初始姿势 图4",
+            "caption": "图4",
+            "width": 1162,
+            "height": 644
+          },
+          {
+            "type": "paragraph",
+            "text": "在Pose Mode里，继续使用应用，把Pose设置为Rest Pose"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/rest-pose/ae4fed2a4fcdddc442d3caa572d5abba255f39067b62a5b90e53f7db200ca2ce.webp",
+            "alt": "更换已绑定人物的初始姿势 图5",
+            "caption": "图5",
+            "width": 1052,
+            "height": 792
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2024/CG/Blender/RestPose"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "basic-cloud",
+    "type": "structured",
+    "title": "Blender 简单云的制作方法",
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "一种简单创建云的方式：为基础几何添加置换，再转体积并调节细节。"
+      }
+    ],
+    "asset": {
+      "directory": "assets/tutorials/basic-cloud",
+      "files": [
+        {
+          "src": "assets/tutorials/basic-cloud/78ec4fef04e5cb5071f5d1f1b1a2c33c85e9f275671f05236db264f5f59864ee.png",
+          "sha256": "78ec4fef04e5cb5071f5d1f1b1a2c33c85e9f275671f05236db264f5f59864ee",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/basic-cloud/f737c3c2029c80512069ac5f4a3be50de1641a2c1b56342d34a773678895c8ea.png",
+          "sha256": "f737c3c2029c80512069ac5f4a3be50de1641a2c1b56342d34a773678895c8ea",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/basic-cloud/262ad23d7d2d7c6a5f1b4403a5e6ec599a13d095875e2ea9cec4eb3ebbb9cbf4.png",
+          "sha256": "262ad23d7d2d7c6a5f1b4403a5e6ec599a13d095875e2ea9cec4eb3ebbb9cbf4",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/basic-cloud/e2e88ccca8944d8439eef32462656e7f5af56d12fb0fc30446cfcbdad33d4dee.png",
+          "sha256": "e2e88ccca8944d8439eef32462656e7f5af56d12fb0fc30446cfcbdad33d4dee",
+          "rendered": true
+        }
+      ]
+    },
+    "sections": [
+      {
+        "title": "制作步骤",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "为立方体等基础图形添加一个置换。同理也可以制作云龙等造型物体"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/78ec4fef04e5cb5071f5d1f1b1a2c33c85e9f275671f05236db264f5f59864ee.png",
+            "alt": "Blender 简单云的制作方法 图1",
+            "caption": "图1",
+            "width": 903,
+            "height": 775
+          },
+          {
+            "type": "paragraph",
+            "text": "添加mesh to volume，且可以在此基础上调用volume displace，可以制作很多很细节的云海效果"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/f737c3c2029c80512069ac5f4a3be50de1641a2c1b56342d34a773678895c8ea.png",
+            "alt": "Blender 简单云的制作方法 图2",
+            "caption": "图2",
+            "width": 907,
+            "height": 384
+          },
+          {
+            "type": "paragraph",
+            "text": "eevee中需要调整这些参数"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/262ad23d7d2d7c6a5f1b4403a5e6ec599a13d095875e2ea9cec4eb3ebbb9cbf4.png",
+            "alt": "Blender 简单云的制作方法 图3",
+            "caption": "图3",
+            "width": 862,
+            "height": 587
+          },
+          {
+            "type": "paragraph",
+            "text": "可以配合volume本身的noise到density制造出复杂的云效果。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/basic-cloud/e2e88ccca8944d8439eef32462656e7f5af56d12fb0fc30446cfcbdad33d4dee.png",
+            "alt": "Blender 简单云的制作方法 图4",
+            "caption": "图4",
+            "width": 525,
+            "height": 517
+          },
+          {
+            "type": "note",
+            "text": "原文发布于 shuitong.xin · 作者 可能是水桶吧 · 篇目 2024/CG/Blender/basic_cloud"
+          }
+        ]
+      }
+    ]
   }
 ]
