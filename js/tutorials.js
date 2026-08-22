@@ -259,6 +259,9 @@
     }
     if (slugs.has(entry.slug)) throw schemaError(`${path} duplicates ${entry.slug}`);
     slugs.add(entry.slug);
+    if (Object.hasOwn(entry, 'source_bvid') && !/^BV[0-9A-Za-z]{10}$/.test(entry.source_bvid)) {
+      throw schemaError(`${path} source_bvid is invalid`);
+    }
     if (entry.type === 'long-image') {
       if (!entry.asset || typeof entry.asset !== 'object' || !hasText(entry.asset.src) || !hasText(entry.asset.alt)
         || !Number.isInteger(entry.asset.width) || entry.asset.width < 1
@@ -576,6 +579,23 @@
       element('p', { class: 'tutorial-hierarchy', text: t('tutorials-hierarchy') }),
       element('h1', { 'data-tutorial-source-title': '', lang: 'zh-CN', text: entry.title }),
     );
+
+    if (hasText(entry.source_bvid)) {
+      const media = element('figure', { class: 'tutorial-source-video' });
+      const frame = element('div', { class: 'tutorial-source-video-frame' });
+      const iframe = document.createElement('iframe');
+      iframe.loading = 'lazy';
+      iframe.title = entry.title;
+      iframe.src = `https://player.bilibili.com/player.html?bvid=${encodeURIComponent(entry.source_bvid)}&page=1&high_quality=1&danmaku=0&autoplay=0`;
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('scrolling', 'no');
+      frame.append(iframe);
+      media.append(
+        frame,
+        element('figcaption', { lang: 'zh-CN', text: '原站视频' }),
+      );
+      article.append(media);
+    }
 
     if (entry.type === 'long-image') {
       const figure = element('figure', { class: 'tutorial-long-image' });

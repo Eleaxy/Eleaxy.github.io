@@ -110,6 +110,34 @@
   text-wrap: balance;
 }
 
+.tutorial-source-video {
+  width: min(100%, 42rem);
+  max-width: 100%;
+  margin: 28px 0 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+.tutorial-source-video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #111;
+}
+.tutorial-source-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.tutorial-source-video figcaption {
+  margin: 0;
+  padding: 12px 14px 14px;
+  color: var(--text-secondary);
+  font-size: .84rem;
+  line-height: 1.45;
+}
+
 /*
  * Long-image tutorials: keep source aspect (height:auto), fill the content
  * column like the source package viewer, and keep page chrome tight so the
