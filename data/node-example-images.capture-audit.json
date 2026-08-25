@@ -236,16 +236,6 @@
           "sha256": "64a3cbc660403f00bdd0955d62a3b8f36b9131058cb74fede180ad60e6f53257"
         }
       }
-    },
-    "shaderData/toon-node-npr": {
-      "source_catalog_key": "shaderData/toon-node-npr",
-      "node_group": "Toon Node",
-      "node_tree": "GeometryNodeTree",
-      "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
-      "source_blend_sha256": "b8e40d91eec76b42a7048bf7f8b2ea9b0fc8974bfc2dad8a96a10337fe429173",
-      "interface_signature_sha256": "19fb6cdfe0fa607933e49e662b78c4a9b567030e4c86bd0e2bf261f6ea809648",
-      "asset_flag": true,
-      "identity_basis": "source-catalog-identity"
     }
   }
 }
