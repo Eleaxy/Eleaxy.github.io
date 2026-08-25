@@ -6,7 +6,7 @@
   const upstreamPreviewKind = 'upstream-example';
   const capturePreviewKind = 'windows-blender-node-group-capture';
   const capturePreviewMethod = 'foreground-node-editor-copy-from-screen';
-  const completeNodeAssetsUrl = 'https://github.com/blueish0930/Assets/releases/latest/download/blueish.rar';
+  const completeNodeAssetsUrl = 'https://github.com/Eleaxy/Eleaxy.github.io/releases/download/node-assets/resource-archive-node-assets.zip';
   const capturePreviewFields = new Set([
     'kind',
     'local',
