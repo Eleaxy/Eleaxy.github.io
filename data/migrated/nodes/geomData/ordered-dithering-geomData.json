@@ -1,0 +1,66 @@
+{
+  "id": "ordered-dithering-geomData",
+  "param_descriptions": {},
+  "name": "Ordered Dithering",
+  "name_zh": "有序抖动",
+  "category_id": "generation",
+  "category": "Generation",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "A reusable geometry node group for creating or processing Ordered Dithering effects procedurally.",
+  "notes": "",
+  "example": "",
+  "example_image": "Desktop/Desktop Screenshot 2026.07.13 - 13.58.24.43.png",
+  "mapping_raw": "generation",
+  "inputs": [
+    {
+      "name": "Image",
+      "type": "NodeSocketImage",
+      "description": "Image data used as Image.",
+      "de": "Image data used as Image.",
+      "dz": "传入用于该节点处理的 图像。"
+    },
+    {
+      "name": "Resolution",
+      "type": "NodeSocketInt",
+      "default": 256,
+      "min": -2147483648,
+      "max": 2147483647,
+      "description": "Integer value controlling Resolution.",
+      "de": "Integer value controlling Resolution.",
+      "dz": "设置 分辨率 的数值。"
+    },
+    {
+      "name": "Level",
+      "type": "NodeSocketInt",
+      "default": 5,
+      "min": 1,
+      "max": 2147483647,
+      "description": "Integer value controlling Level.",
+      "de": "Integer value controlling Level.",
+      "dz": "设置 Level 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Bayer",
+      "type": "NodeSocketFloat",
+      "default": 0,
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38,
+      "description": "Numeric value controlling Bayer.",
+      "de": "Numeric value controlling Bayer.",
+      "dz": "设置 Bayer 的数值。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "blender/assets/GN/geometry_nodes_category_layout.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/GN/geometry_nodes_category_layout.blend?raw=1"
+}
