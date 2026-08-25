@@ -8994,6 +8994,111 @@
       "capture_method": "foreground-node-editor-copy-from-screen",
       "resampled": false,
       "captured_at": "2026-08-25T07:38:51.168Z"
+    },
+    "shaderData/blood-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Blood.png",
+      "local": "/images/nodes/0c5658b64d11f2749ac1ce927e599733dd57104956d01c064e35efef08be6e10.png",
+      "sha256": "0c5658b64d11f2749ac1ce927e599733dd57104956d01c064e35efef08be6e10",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Blood.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/bubble-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Bubble.png",
+      "local": "/images/nodes/fa5ce4312bb48353cf205d7a89cca0f18687e4285c250355359bc441a763d2f2.png",
+      "sha256": "fa5ce4312bb48353cf205d7a89cca0f18687e4285c250355359bc441a763d2f2",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Bubble.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/dust-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Dust.png",
+      "local": "/images/nodes/237e97d27037898bb51c0522db6405ead55099b5d63d5a157f76261ec5ca03f9.png",
+      "sha256": "237e97d27037898bb51c0522db6405ead55099b5d63d5a157f76261ec5ca03f9",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Dust.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/explosion-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Explosion.png",
+      "local": "/images/nodes/e20bafe2c88cc234be1d6eb165f56137b293b4a92f66a9d5e395d675e60ea5c5.png",
+      "sha256": "e20bafe2c88cc234be1d6eb165f56137b293b4a92f66a9d5e395d675e60ea5c5",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Explosion.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/fire-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Fire.png",
+      "local": "/images/nodes/8c4bbaa967d9af85fde700787eeb2a346111734a026915e1a7d7c01addadec51.png",
+      "sha256": "8c4bbaa967d9af85fde700787eeb2a346111734a026915e1a7d7c01addadec51",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Fire.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/ice-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Ice.png",
+      "local": "/images/nodes/917964acd464faa0ab570b1a4145ba6c24b2114e7569c09ec0b7be176786074e.png",
+      "sha256": "917964acd464faa0ab570b1a4145ba6c24b2114e7569c09ec0b7be176786074e",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Ice.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/smoke-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Smoke.png",
+      "local": "/images/nodes/da04b22d7c0ca3500595e66c5a2857b0a50cb34a818a9a21720b93ec7d0cd0a0.png",
+      "sha256": "da04b22d7c0ca3500595e66c5a2857b0a50cb34a818a9a21720b93ec7d0cd0a0",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Smoke.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/sprite-render-setup-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Sprite.png",
+      "local": "/images/nodes/7f79e70dcbc5d522fa7a993ef82f5e8d990792aa66b007b447ed0e5bc3dacbac.png",
+      "sha256": "7f79e70dcbc5d522fa7a993ef82f5e8d990792aa66b007b447ed0e5bc3dacbac",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Sprite.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/water-flipbook-object": {
+      "source_path": "blender/assets/VFX/Flipbook/Thumbnails/Water.png",
+      "local": "/images/nodes/11fd7546a59d869b8fd6c5c10bba423daf27bc20373e8b36d312c71b83aee536.png",
+      "sha256": "11fd7546a59d869b8fd6c5c10bba423daf27bc20373e8b36d312c71b83aee536",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Flipbook/Thumbnails/Water.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/blade-fx-slash-object": {
+      "source_path": "blender/assets/VFX/Slash/Thumbnails/01.png",
+      "local": "/images/nodes/ba015c50cae11512ad5bc5780ca66fe81783e7741111fba3949fe2c036fe91fd.png",
+      "sha256": "ba015c50cae11512ad5bc5780ca66fe81783e7741111fba3949fe2c036fe91fd",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Slash/Thumbnails/01.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/blade-fx-001-slash-object": {
+      "source_path": "blender/assets/VFX/Slash/Thumbnails/02.png",
+      "local": "/images/nodes/47919687329b547a2631317732e5ecbed2380eb4cf73f766940da8bd3762a571.png",
+      "sha256": "47919687329b547a2631317732e5ecbed2380eb4cf73f766940da8bd3762a571",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Slash/Thumbnails/02.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/blade-fx-002-slash-object": {
+      "source_path": "blender/assets/VFX/Slash/Thumbnails/03.png",
+      "local": "/images/nodes/8bbad44ee2dcd62a93d6fbc90ff15cd97f0be1363fdd5d1bfd008cd4894b9862.png",
+      "sha256": "8bbad44ee2dcd62a93d6fbc90ff15cd97f0be1363fdd5d1bfd008cd4894b9862",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Slash/Thumbnails/03.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/blade-fx-003-slash-object": {
+      "source_path": "blender/assets/VFX/Slash/Thumbnails/04.png",
+      "local": "/images/nodes/e0bbb9fca95e87c42c9f6bcf75357e9abdfa1534ce5b2c9c0776fe126d09dbf7.png",
+      "sha256": "e0bbb9fca95e87c42c9f6bcf75357e9abdfa1534ce5b2c9c0776fe126d09dbf7",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Slash/Thumbnails/04.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/blade-fx-004-slash-object": {
+      "source_path": "blender/assets/VFX/Slash/Thumbnails/05.png",
+      "local": "/images/nodes/e48e642b696e90613d4f03b8a44450bc4f6b858b6386da0c4b845473670c8e1c.png",
+      "sha256": "e48e642b696e90613d4f03b8a44450bc4f6b858b6386da0c4b845473670c8e1c",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Slash/Thumbnails/05.png",
+      "kind": "upstream-example"
+    },
+    "shaderData/blade-fx-005-slash-object": {
+      "source_path": "blender/assets/VFX/Slash/Thumbnails/06.png",
+      "local": "/images/nodes/dd32bbd9259ea1dfaed8b533daefb09eef94bd382962dfcf0f7f432de5990edd.png",
+      "sha256": "dd32bbd9259ea1dfaed8b533daefb09eef94bd382962dfcf0f7f432de5990edd",
+      "source_url": "https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/VFX/Slash/Thumbnails/06.png",
+      "kind": "upstream-example"
     }
   }
 }
