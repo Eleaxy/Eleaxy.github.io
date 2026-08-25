@@ -89,6 +89,16 @@
       url: 'https://raw.githubusercontent.com/blueish0930/Assets/327b3bdf6f739a07e9ae19cc5b3bcb5fc7895b07/blender/assets/Stylized/NPR_Shaders.blend',
       sourceBlendSha256: 'b8e40d91eec76b42a7048bf7f8b2ea9b0fc8974bfc2dad8a96a10337fe429173',
     }),
+    'blender/assets/GN/Self_Pruning.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/4e62fbc8e8460888f9ebc5e323ff1b7beac60297/blender/assets/GN/Self_Pruning.blend',
+      sourceBlendSha256: '3d46659b58038da6816636a7f6721538e5e0b39ed8adc02517f1087f5c1d003e',
+    }),
+    'blender/assets/GN/Spline_Grammar_v3.blend': Object.freeze({
+      kind: 'official-git-raw',
+      url: 'https://raw.githubusercontent.com/blueish0930/Assets/4e62fbc8e8460888f9ebc5e323ff1b7beac60297/blender/assets/GN/Spline_Grammar_v3.blend',
+      sourceBlendSha256: 'a2cfe87044d0768045eb7c30e5ed8f7c7aab45dc9ea2e2224658a454488df674',
+    }),
     'blender/assets/VFX/Flipbook/Flipbook.blend': Object.freeze({
       kind: 'official-release-archive',
       releaseUrl: 'https://github.com/blueish0930/Assets/releases/download/26/07/19/blueish.rar',
