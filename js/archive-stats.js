@@ -24,8 +24,9 @@
         tutorials,
         videos,
         loadJson('/data/plugins.json'),
-      ]).then(([manifestValue, tutorials, videos, plugins]) => ({
-        nodes: collection(manifestValue?.nodes, 'manifest nodes').length,
+        loadJson('/data/migrated/search-index.json'),
+      ]).then(([manifestValue, tutorials, videos, plugins, nodes]) => ({
+        nodes: collection(nodes, 'search-index nodes').length,
         stages: collection(manifestValue?.stages, 'manifest stages').length,
         tutorials: collection(tutorials, 'tutorials').length,
         videos: collection(videos, 'videos').length,
