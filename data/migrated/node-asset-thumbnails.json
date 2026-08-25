@@ -535,6 +535,7 @@
     "geomData/poly-cut": "/images/nodes/150650ff2583c5ed93d5deb7f722caa997a4f2d2d3962cd724dfb45d6f6d91d2.png",
     "geomData/qem-mesh-simplification": "/images/nodes/7c1a758a9d5028c74c28de0a61bbec751793f2378b51af078296958e2367bb41.png",
     "geomData/rbf-interpolate": "/images/nodes/7633394ebf068d013c9683f3b107b0665fa34a231be2e09996dd9e513506215e.png",
+    "geomData/recalculate-face-normals": "/images/nodes/5a23bdfc12dd51c0c7af6c53aa8c8ce569ca9303379092a814552a02c068845f.png",
     "geomData/recalculate-normals": "/images/nodes/5a23bdfc12dd51c0c7af6c53aa8c8ce569ca9303379092a814552a02c068845f.png",
     "geomData/remesh": "/images/nodes/9f7bc876274caaf05fe6776a346ac6e96531519ffb79ca6c2eea3d410015847f.png",
     "geomData/sample-bary-coord": "/images/nodes/f0a2b17e141473c7a1abc8db9a43073985c4c863415dac3b2b3a65bd8624359f.png",
