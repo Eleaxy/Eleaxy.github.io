@@ -1,0 +1,20 @@
+{
+  "id": "blood-flipbook-object",
+  "name": "Blood",
+  "name_zh": "",
+  "category_id": "effect_flipbook",
+  "category": "Flipbook",
+  "top_category_id": "effect",
+  "top_category": "Effect",
+  "description": "Blood 是 Flipbook 物体资产，从 Asset Browser 拖到 3D 视图使用。",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "effect_flipbook",
+  "inputs": [],
+  "outputs": [],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/VFX/Flipbook/Flipbook.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/VFX/Flipbook/Flipbook.blend?raw=1"
+}

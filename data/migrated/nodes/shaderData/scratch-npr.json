@@ -1,0 +1,166 @@
+{
+  "id": "scratch-npr",
+  "name": "Scratch",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "Stylized NPR",
+  "top_category_id": "shader",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "shader_texture",
+  "inputs": [
+    {
+      "name": "Vector",
+      "type": "NodeSocketVector",
+      "default": [
+        0,
+        0,
+        0
+      ],
+      "min": -10000,
+      "max": 10000,
+      "description": "Vector value for Vector.",
+      "de": "Vector value for Vector.",
+      "dz": "设置 向量 的向量数据。"
+    },
+    {
+      "name": "Seed",
+      "type": "NodeSocketInt",
+      "default": 0,
+      "min": -2147483648,
+      "max": 2147483647,
+      "description": "Integer value controlling Seed.",
+      "de": "Integer value controlling Seed.",
+      "dz": "设置 随机种子 的数值。"
+    },
+    {
+      "name": "Scale",
+      "type": "NodeSocketFloat",
+      "default": 5,
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38,
+      "description": "Numeric value controlling Scale.",
+      "de": "Numeric value controlling Scale.",
+      "dz": "设置 缩放 的数值。"
+    },
+    {
+      "name": "Contrast",
+      "type": "NodeSocketFloat",
+      "default": 0.5,
+      "min": 0,
+      "max": 1,
+      "description": "Numeric value controlling Contrast.",
+      "de": "Numeric value controlling Contrast.",
+      "dz": "设置 Contrast 的数值。"
+    },
+    {
+      "name": "Frequncy",
+      "type": "NodeSocketFloat",
+      "default": 0.30000001,
+      "min": -1000,
+      "max": 1000,
+      "description": "Numeric value controlling Frequncy.",
+      "de": "Numeric value controlling Frequncy.",
+      "dz": "设置 Frequncy 的数值。"
+    },
+    {
+      "name": "Distortion",
+      "type": "NodeSocketFloat",
+      "default": 2,
+      "min": -1000,
+      "max": 1000,
+      "description": "Numeric value controlling Distortion.",
+      "de": "Numeric value controlling Distortion.",
+      "dz": "设置 Distortion 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "default": 5,
+      "min": 0,
+      "max": 15,
+      "description": "Numeric value controlling Detail.",
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Detail Scale",
+      "type": "NodeSocketFloat",
+      "default": 1.90999985,
+      "min": -1000,
+      "max": 1000,
+      "description": "Numeric value controlling Detail Scale.",
+      "de": "Numeric value controlling Detail Scale.",
+      "dz": "设置 Detail / 缩放 的数值。"
+    },
+    {
+      "name": "Detail Roughness",
+      "type": "NodeSocketFloat",
+      "default": 0.40306121,
+      "min": 0,
+      "max": 1,
+      "description": "Numeric value controlling Detail Roughness.",
+      "de": "Numeric value controlling Detail Roughness.",
+      "dz": "设置 Detail / Roughness 的数值。"
+    },
+    {
+      "name": "Phase Offset",
+      "type": "NodeSocketFloat",
+      "default": 0,
+      "min": -1000,
+      "max": 1000,
+      "description": "Numeric value controlling Phase Offset.",
+      "de": "Numeric value controlling Phase Offset.",
+      "dz": "设置 Phase / 偏移 的数值。"
+    },
+    {
+      "name": "Detail",
+      "type": "NodeSocketFloat",
+      "default": 4,
+      "min": 0,
+      "max": 15,
+      "description": "Numeric value controlling Detail.",
+      "de": "Numeric value controlling Detail.",
+      "dz": "设置 Detail 的数值。"
+    },
+    {
+      "name": "Roughness",
+      "type": "NodeSocketFloat",
+      "default": 0.40497237,
+      "min": 0,
+      "max": 1,
+      "description": "Numeric value controlling Roughness.",
+      "de": "Numeric value controlling Roughness.",
+      "dz": "设置 Roughness 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "mask",
+      "type": "NodeSocketFloat",
+      "default": 0,
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38,
+      "description": "Numeric value controlling mask.",
+      "de": "Numeric value controlling mask.",
+      "dz": "设置 遮罩 的数值。"
+    },
+    {
+      "name": "invert",
+      "type": "NodeSocketFloat",
+      "default": 0,
+      "min": -3.4028234663852886e+38,
+      "max": 3.4028234663852886e+38,
+      "description": "Numeric value controlling invert.",
+      "de": "Numeric value controlling invert.",
+      "dz": "设置 invert 的数值。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

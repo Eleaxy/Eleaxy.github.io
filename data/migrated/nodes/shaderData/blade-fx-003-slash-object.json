@@ -1,0 +1,20 @@
+{
+  "id": "blade-fx-003-slash-object",
+  "name": "Blade_FX.003",
+  "name_zh": "",
+  "category_id": "effect",
+  "category": "Slash",
+  "top_category_id": "effect",
+  "top_category": "Effect",
+  "description": "Blade_FX.003 是 Slash 刀光物体资产，从 Asset Browser 拖到 3D 视图使用。",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "effect_flipbook",
+  "inputs": [],
+  "outputs": [],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/VFX/Slash/Slash_Master.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/VFX/Slash/Slash_Master.blend?raw=1"
+}
