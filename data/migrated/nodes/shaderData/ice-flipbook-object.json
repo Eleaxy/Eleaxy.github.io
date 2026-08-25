@@ -9,7 +9,7 @@
   "description": "Ice 是 Flipbook 物体资产，从 Asset Browser 拖到 3D 视图使用。",
   "notes": "",
   "example": "",
-  "example_image": "",
+  "example_image": "blender/assets/VFX/Flipbook/Thumbnails/Ice.png",
   "param_descriptions": {},
   "mapping_raw": "effect_flipbook",
   "inputs": [],
