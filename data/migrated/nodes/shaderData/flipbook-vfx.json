@@ -1,0 +1,20 @@
+{
+  "id": "flipbook-vfx",
+  "param_descriptions": {},
+  "name": "Flipbook",
+  "name_zh": "",
+  "category_id": "effect_flipbook",
+  "category": "Flipbook",
+  "top_category_id": "effect",
+  "top_category": "Effect",
+  "description": "A reusable shader/material node group for creating or processing Flipbook effects procedurally.",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "mapping_raw": "mfs_coordinates",
+  "inputs": [],
+  "outputs": [],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/VFX/Flipbook/Flipbook.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/VFX/Flipbook/Flipbook.blend?raw=1"
+}
