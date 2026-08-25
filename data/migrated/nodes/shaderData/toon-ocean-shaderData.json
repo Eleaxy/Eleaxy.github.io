@@ -1,0 +1,39 @@
+{
+  "id": "toon-ocean-shaderData",
+  "param_descriptions": {},
+  "name": "Toon Ocean",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "Stylized NPR",
+  "top_category_id": null,
+  "top_category": "",
+  "description": "A reusable shader/material node group for creating or processing Toon Ocean effects procedurally.",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "mapping_raw": "stylized_2d",
+  "inputs": [
+    {
+      "name": "Speed",
+      "type": "NodeSocketFloat",
+      "default": 0.025,
+      "min": -10000,
+      "max": 10000,
+      "description": "Numeric value controlling Speed.",
+      "de": "Numeric value controlling Speed.",
+      "dz": "设置 速度 的数值。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Shader",
+      "type": "NodeSocketShader",
+      "description": "Parameter for Shader.",
+      "de": "Parameter for Shader.",
+      "dz": "指定 Shader 参数。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}

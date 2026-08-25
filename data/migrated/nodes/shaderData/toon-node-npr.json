@@ -1,0 +1,73 @@
+{
+  "id": "toon-node-npr",
+  "name": "Toon Node",
+  "name_zh": "",
+  "category_id": "stylized_2d",
+  "category": "Stylized NPR",
+  "top_category_id": "geom",
+  "top_category": "",
+  "description": "",
+  "notes": "",
+  "example": "",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "cat_1783389786751",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    },
+    {
+      "name": "Object",
+      "type": "NodeSocketObject",
+      "description": "Parameter for Object.",
+      "default": "<bpy_struct, Object(\"Sun\") at 0x0000016C1044E420>",
+      "de": "Parameter for Object.",
+      "dz": "指定 物体 参数。"
+    },
+    {
+      "name": "Outline",
+      "type": "NodeSocketBool",
+      "description": "Toggles or selects the Outline option.",
+      "default": true,
+      "de": "Toggles or selects the Outline option.",
+      "dz": "控制是否启用或选择 Outline。"
+    },
+    {
+      "name": "Thickness",
+      "type": "NodeSocketFloat",
+      "description": "Numeric value controlling Thickness.",
+      "default": 0.004999999888241291,
+      "de": "Numeric value controlling Thickness.",
+      "dz": "设置 Thickness 的数值。"
+    },
+    {
+      "name": "Color",
+      "type": "NodeSocketColor",
+      "description": "Color value for Color.",
+      "default": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "de": "Color value for Color.",
+      "dz": "设置 颜色 的颜色数据。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Geometry data used as Geometry.",
+      "de": "Geometry data used as Geometry.",
+      "dz": "传入或输出用于该节点处理的 几何数据。"
+    }
+  ],
+  "catalog_source": "shaderData",
+  "source_blend": "blender/assets/Stylized/NPR_Shaders.blend",
+  "download_url": "https://github.com/blueish0930/Assets/blob/main/blender/assets/Stylized/NPR_Shaders.blend?raw=1"
+}
