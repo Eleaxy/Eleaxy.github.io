@@ -561,6 +561,10 @@
     "shaderData/9": "/images/nodes/a14426452a18f29a3a30abc6faa4a9fd193362733c610aad49200e2be5691b35.png",
     "shaderData/heart-shape": "/images/nodes/28b0d92d7e948bcbde3697f69d97b604603e9d94c2585ebc31b6b06f85d168d9.png",
     "shaderData/heart-wave": "/images/nodes/c9d3cc2bdb2d644d4076b09e975e30774c88435ee0e5071b2427d474b6ac779b.png",
-    "shaderData/rose-curve": "/images/nodes/1708ebe638b4ddd654ba25d887ef881f2181d3298f64964d2e7b4fc7ee17966c.png"
+    "shaderData/rose-curve": "/images/nodes/1708ebe638b4ddd654ba25d887ef881f2181d3298f64964d2e7b4fc7ee17966c.png",
+    "geomData/self-pruning": "/images/nodes/d0b7421abdbb2519ba779fba4b3fd969cbf8cf49f6254c7283da68e9a687c006.png",
+    "geomData/spline-grammar": "/images/nodes/28ea74cab3be95236b5e0259533ac1e650bf03c240a9fbf77b385a130d4b7d33.png",
+    "geomData/combine-module-infos": "/images/nodes/a0ef0ab9c48ccad675068eb4f529a868b4fe0aa8a879c188d1e23259d6177956.png",
+    "geomData/module-info-piece": "/images/nodes/4a5d7f5383b1c0e792ff5046d0adf97c9e86a38a9786daa4a60eb5c6149dc7af.png"
   }
 }
