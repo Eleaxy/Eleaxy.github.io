@@ -1,5 +1,431 @@
 [
   {
+    "slug": "multipass-denoise",
+    "type": "structured",
+    "title": "合成器多通道降噪与动画伪时域降噪",
+    "asset": {
+      "directory": "assets/tutorials/multipass-denoise",
+      "files": [
+        {
+          "src": "assets/tutorials/multipass-denoise/1814b8c5b0ca10262eaee9416cddc13bd435e0cb07640ca0c2a7036597148509.png",
+          "sha256": "1814b8c5b0ca10262eaee9416cddc13bd435e0cb07640ca0c2a7036597148509",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/multipass-denoise/66dd04e49e1bfd549e79e18fa2e5e63dbbeaca31a29705754b5276d1564bbe3c.png",
+          "sha256": "66dd04e49e1bfd549e79e18fa2e5e63dbbeaca31a29705754b5276d1564bbe3c",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/multipass-denoise/52e35ad5e2799f2184f97db5f7519bea47cb8d615f78bac3ac3a890ecc3eed04.png",
+          "sha256": "52e35ad5e2799f2184f97db5f7519bea47cb8d615f78bac3ac3a890ecc3eed04",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/multipass-denoise/3f9abf1df201ea1a97d607d137d51acc79a005bc5b1ad3d68e2c82153526bbfa.png",
+          "sha256": "3f9abf1df201ea1a97d607d137d51acc79a005bc5b1ad3d68e2c82153526bbfa",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/multipass-denoise/2133412900336b735f710d09637fd694d35e2a205275cd5ccdd9a6cdbe40b0da.png",
+          "sha256": "2133412900336b735f710d09637fd694d35e2a205275cd5ccdd9a6cdbe40b0da",
+          "rendered": true
+        }
+      ]
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "直接在渲染设置里开降噪，单帧往往够用，动画却容易沸腾。"
+      },
+      {
+        "type": "paragraph",
+        "text": "分两阶段：先用合成器对各个灯光通道分别降噪再重组；再配合灯光树、蓝噪声和采样子集偏移驱动，人为控制噪点图案的变化速度，得到更稳的动画结果。"
+      }
+    ],
+    "sections": [
+      {
+        "title": "思路概览",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "阶段 1 负责画质：把漫射、光泽、透射等通道拆开，各自用降噪节点处理，再按灯光公式加回去。细节保留通常优于直接对整张 Beauty 降噪。"
+          },
+          {
+            "type": "paragraph",
+            "text": "阶段 2 负责动画稳定：把真正的采样数交给采样子集，用驱动器让蓝噪声图案按帧缓慢变化，形成一种伪时域降噪。不要依赖动画随机种，极端情况下它仍会沸腾。"
+          }
+        ]
+      },
+      {
+        "title": "打开需要的渲染通道",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在视图层的通道面板勾选多通道降噪所需的数据。下面这一套是节点组能接上的最小集合。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "数据：合并结果、降噪数据",
+              "漫射：直接光、间接光、颜色",
+              "光泽：直接光、间接光、颜色",
+              "透射：直接光、间接光、颜色",
+              "体积：直接光、间接光",
+              "其他：自发光、环境"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/multipass-denoise/1814b8c5b0ca10262eaee9416cddc13bd435e0cb07640ca0c2a7036597148509.png",
+            "alt": "视图层里需要开启的渲染通道",
+            "caption": "视图层通道：合并结果、降噪数据，以及各灯光分量。",
+            "width": 802,
+            "height": 1468
+          },
+          {
+            "type": "warning",
+            "text": "使用这套合成器降噪时，请把渲染设置里的降噪关掉。两边同时开等于降噪两次，细节更容易糊，也浪费时间。"
+          }
+        ]
+      },
+      {
+        "title": "把渲染层接到原图多通道降噪节点组",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "合成器里放入渲染层，再放入节点组「原图多通道降噪」。按通道名称一一对应连接。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "图像接到原图",
+              "漫射直接、间接、颜色接到对应 Diff 接口",
+              "光泽直接、间接、颜色接到对应 Gloss 接口",
+              "透射直接、间接、颜色接到对应 Trans 接口",
+              "体积直接、间接、自发光、环境接到对应接口",
+              "降噪反照率接到反照率，降噪法向接到法向"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/multipass-denoise/66dd04e49e1bfd549e79e18fa2e5e63dbbeaca31a29705754b5276d1564bbe3c.png",
+            "alt": "渲染层各通道接入原图多通道降噪节点组",
+            "caption": "渲染层各通道接入「原图多通道降噪」节点组。",
+            "width": 1600,
+            "height": 1299
+          },
+          {
+            "type": "paragraph",
+            "text": "节点组带有启用开关。关掉时走原图，打开时走多通道降噪结果，方便对比。"
+          }
+        ]
+      },
+      {
+        "title": "节点组内部：分通道降噪再重组",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "内部逻辑可以概括成三步。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "每个灯光通道单独进一个降噪节点，并共用降噪法向和反照率；建议勾选 HDR。",
+              "颜色通道与对应的直接光、间接光用正片叠底相乘，还原该分量的着色结果。",
+              "所有分量用相加叠回去，再经切换节点输出。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/multipass-denoise/52e35ad5e2799f2184f97db5f7519bea47cb8d615f78bac3ac3a890ecc3eed04.png",
+            "alt": "原图多通道降噪节点组内部连线",
+            "caption": "内部：多路降噪，正片叠底还原着色，相加合成，再切换输出。",
+            "width": 1800,
+            "height": 918
+          },
+          {
+            "type": "note",
+            "text": "重组公式的直观理解：结果约等于 DiffCol×(Dir+Ind) + GlossCol×(Dir+Ind) + TransCol×(Dir+Ind) + Volume + Emission + Environment。"
+          }
+        ]
+      },
+      {
+        "title": "用采样子集锁定真正的采样数",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "阶段 1 解决的是单帧干净程度。动画还要解决每一帧噪点图案乱跳的问题。渲染设置按下面改。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "采样拉到 Blender 允许的最大值 16777216。这一步是为了把主采样锁死，真正生效的采样数改由子集控制。",
+              "灯光：勾选灯光树。",
+              "高级，图案：选蓝噪声。",
+              "勾选采样子集。长度才是真正的采样步数，示例为 1024。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/multipass-denoise/3f9abf1df201ea1a97d607d137d51acc79a005bc5b1ad3d68e2c82153526bbfa.png",
+            "alt": "最大值采样、灯光树、蓝噪声和采样子集",
+            "caption": "最大值采样加灯光树、蓝噪声和采样子集。子集长度就是实际采样数。",
+            "width": 864,
+            "height": 1030
+          },
+          {
+            "type": "warning",
+            "text": "不要用渲染设置高级里的动画随机种来解决沸腾。极端情况下即使用上，画面仍会像水开了一样抖动。阶段 2 改用子集偏移来控制图案变化。"
+          }
+        ]
+      },
+      {
+        "title": "给子集偏移加驱动器",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "采样子集的偏移决定蓝噪声从哪一段开始取。给偏移加驱动器，让它随帧缓慢移动，噪点图案就会按可控速度演进，而不是每帧随机重排。"
+          },
+          {
+            "type": "paragraph",
+            "text": "示例驱动器如下。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "被驱动属性：场景的采样子集偏移",
+              "类型：脚本表达式",
+              "表达式：Socket_18/30*frame*3",
+              "Socket_18 指向子集长度，示例值 1024",
+              "/30 是视频帧率：按每秒渲染多少帧就填多少。24fps 写成 /24，30fps 写成 /30",
+              "*3 才是手感系数，用来控制图案变动快慢"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/multipass-denoise/2133412900336b735f710d09637fd694d35e2a205275cd5ccdd9a6cdbe40b0da.png",
+            "alt": "采样子集偏移驱动器表达式",
+            "caption": "偏移等于子集长度除以帧率，再乘当前帧和手感系数。示例按 30fps、系数 3 来写。",
+            "width": 4112,
+            "height": 1384
+          },
+          {
+            "type": "paragraph",
+            "text": "把长度做成变量的好处：以后改实际采样数，偏移仍和子集大小成比例，不用每次重写表达式。"
+          },
+          {
+            "type": "paragraph",
+            "text": "*3 越大，图案变动越快；越小则越接近固定噪点，闪烁更少。按镜头节奏微调即可。"
+          }
+        ]
+      },
+      {
+        "title": "使用建议",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "静帧只做阶段 1 通常就够。",
+              "动画先关渲染降噪，走合成器多通道；再开阶段 2 的子集偏移。",
+              "子集长度按机器性能设，1024 是示例不是必须值。",
+              "灯光树和蓝噪声是这套偏移能稳定工作的前提，不要随手关掉。",
+              "合成器里先看启用开关对比原图，确认重组没有接错通道。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "plant-wind-displacement",
+    "type": "structured",
+    "title": "材质置换实现植物风动",
+    "asset": {
+      "directory": "assets/tutorials/plant-wind-displacement",
+      "files": [
+        {
+          "src": "assets/tutorials/plant-wind-displacement/9efa87f4670e49f5bf2fb7ed33eeb783c7dc83317018b3851bb1a711085046be.gif",
+          "sha256": "9efa87f4670e49f5bf2fb7ed33eeb783c7dc83317018b3851bb1a711085046be",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/plant-wind-displacement/05f134a6817ded18be834020d0c5f1413b22b170eec88b4a88af260cc430ddb0.gif",
+          "sha256": "05f134a6817ded18be834020d0c5f1413b22b170eec88b4a88af260cc430ddb0",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/plant-wind-displacement/026cdd8550b62ae982d6f384204a4731fc1bef745a8b976ca2cc75b2ced59d79.png",
+          "sha256": "026cdd8550b62ae982d6f384204a4731fc1bef745a8b976ca2cc75b2ced59d79",
+          "rendered": true
+        }
+      ]
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "不用骨骼、不用物理，直接在材质置换里用节点驱动，就能让沿 Z 轴生长的树木、垂挂植物产生类似风吹的动态。"
+      },
+      {
+        "type": "paragraph",
+        "text": "核心是：用 #frame 驱动 4D 噪波，再按高度加权，对物体坐标做轴向旋转，最后把旋转前后的差值送进置换。"
+      }
+    ],
+    "sections": [
+      {
+        "title": "效果预览",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这套节点适合竖直生长或向下垂挂的植物：根部几乎不动，越往外摆动越大，看起来像被风吹动。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/plant-wind-displacement/9efa87f4670e49f5bf2fb7ed33eeb783c7dc83317018b3851bb1a711085046be.gif",
+            "alt": "乔木材质置换风动效果",
+            "caption": "乔木示例：树冠摆动，主干底部保持稳定。",
+            "width": 800,
+            "height": 587
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/plant-wind-displacement/05f134a6817ded18be834020d0c5f1413b22b170eec88b4a88af260cc430ddb0.gif",
+            "alt": "垂挂植物材质置换风动效果",
+            "caption": "垂挂植物示例：下垂枝叶随风轻轻摇晃。",
+            "width": 800,
+            "height": 627
+          }
+        ]
+      },
+      {
+        "title": "原理：旋转坐标，再取差值做置换",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "直接把噪波接到置换，植物会鼓包或乱抖。更自然的做法是："
+          },
+          {
+            "type": "list",
+            "items": [
+              "用 4D 噪波生成随时间变化的角度。",
+              "按物体高度给这个角度加权，越高或越靠外，摆动越大。",
+              "把物体坐标绕某个轴旋转这个角度。",
+              "用旋转后坐标减去原始坐标，作为置换向量。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "这样表面点是在绕轴摆动，而不是沿法线乱挤，更接近真实的风吹枝叶。"
+          }
+        ]
+      },
+      {
+        "title": "节点总览",
+        "blocks": [
+          {
+            "type": "image",
+            "src": "assets/tutorials/plant-wind-displacement/026cdd8550b62ae982d6f384204a4731fc1bef745a8b976ca2cc75b2ced59d79.png",
+            "alt": "植物风动置换完整节点图",
+            "caption": "完整节点图。紫色数值是 #frame 驱动器。",
+            "width": 5036,
+            "height": 2232
+          },
+          {
+            "type": "note",
+            "text": "节点图里紫色的 15.000 不是普通常数，而是给该值添加了驱动器 #frame。播放时间轴时，这个值会跟着当前帧变化，从而让噪波持续流动。"
+          }
+        ]
+      },
+      {
+        "title": "搭建节点：时间驱动的 4D 噪波",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "添加噪波纹理，类型选 4D，分形选分形布朗运动（fBM）。",
+              "参考参数：缩放 5.0，细节 2.0，间隙度 2.0，粗糙度 0。",
+              "用相乘把 #frame 乘上一个很小的系数（示例是 0.005），再接到噪波的 W。",
+              "同时把这个时间值再乘 0.1，合并到 Z，和缩放后的物体坐标相加，作为噪波的矢量输入。这样空间位置和时间都会影响噪波。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "物体坐标先用矢量相乘压一下（示例 0.180, 0.180, 0.100），避免整棵树用同一套大尺度噪波，看起来像整块在晃。"
+          }
+        ]
+      },
+      {
+        "title": "按高度加权，让根部稳住",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "从纹理坐标的物体分离出 Z，减去一个基准后乘 0.200，得到高度遮罩。再用这个遮罩去乘噪波颜色，作为后面矢量旋转的角度。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "靠近地面或根部：Z 小，角度接近 0，几乎不摆。",
+              "树冠或垂枝末端：Z 更大或更远离原点，角度更大，摆动更明显。"
+            ]
+          },
+          {
+            "type": "warning",
+            "text": "物体原点最好放在根部或悬挂点。原点位置不对，高度遮罩会失效，整棵植物会一起平移或旋转。"
+          }
+        ]
+      },
+      {
+        "title": "矢量旋转加差值输出到置换",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "添加矢量旋转，类型选坐标轴角度。",
+              "矢量和中心都接物体坐标。",
+              "轴向用合并 XYZ 做成 (1, 0, 0)，也就是绕 X 轴摆动。想改风向，改这个轴即可。",
+              "角度接上一步的高度加权噪波。",
+              "用相减：旋转后的坐标减去原始物体坐标。",
+              "把差值接到材质输出的置换接口。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "这一步决定了最终是风吹弯枝，而不是表面起伏。轴方向、角度强度都可以按植物形态微调。"
+          }
+        ]
+      },
+      {
+        "title": "材质与网格设置",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "材质设置里把置换方式改成置换，或置换与凹凸。只开凹凸看不到整体摆动。",
+              "网格需要足够细分。叶片、细枝太少面，置换后会折得很硬。",
+              "Cycles 下效果最稳定。Eevee 对真实置换支持有限，预览可能不明显。",
+              "播放动画时才能看到风动，因为角度由 #frame 驱动。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "参数怎么调",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "风速：改 #frame 乘 0.005 这个系数。更大等于变化更快。",
+              "风场尺度：改噪波缩放。更小等于整棵一起晃；更大等于局部碎动。",
+              "摆幅：改高度遮罩后面的 0.200，或旋转角度前的相乘。",
+              "风向：改矢量旋转的轴向。X 轴适合左右吹，Z 或 Y 可按模型朝向调整。",
+              "垂挂植物和乔木用同一套节点即可，关键是原点位置和高度加权方向。"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "cycles-light-clip",
     "type": "structured",
     "title": "Cycles 灯光裁切",
