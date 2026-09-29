@@ -1,5 +1,412 @@
 [
   {
+    "slug": "sss-thickness-mask",
+    "type": "structured",
+    "title": "次表面散射个人理解（二）厚度遮罩创建与使用",
+    "asset": {
+      "directory": "assets/tutorials/sss-thickness-mask",
+      "files": [
+        {
+          "src": "assets/tutorials/sss-thickness-mask/0e720418a8b5132d23fee845b6aa3f7410760bcde6a7af9291cf1e76b3b354ec.png",
+          "sha256": "0e720418a8b5132d23fee845b6aa3f7410760bcde6a7af9291cf1e76b3b354ec",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/a3ac4ccc024be58802c078846390b9dc363b2a39ca7b847593121ee8f118e773.png",
+          "sha256": "a3ac4ccc024be58802c078846390b9dc363b2a39ca7b847593121ee8f118e773",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/fa3dcc7db7dfdca3184f3a7cd04f4fd3aa03bb60111ec5e12bd8888caefa63d0.png",
+          "sha256": "fa3dcc7db7dfdca3184f3a7cd04f4fd3aa03bb60111ec5e12bd8888caefa63d0",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/08101dedb0d759248ebb6414298a6895a122d305981d26222f56dcf9247fbaf8.png",
+          "sha256": "08101dedb0d759248ebb6414298a6895a122d305981d26222f56dcf9247fbaf8",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/8f70a00206bccec9c75ba84971bed68ab75e75b4baa3d1e988fd6c306ab015b6.png",
+          "sha256": "8f70a00206bccec9c75ba84971bed68ab75e75b4baa3d1e988fd6c306ab015b6",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/db2fc2e7a0c9cd4cc4e9ad34eab49c60fdf33f8b8eec622cf4759ee04a81c1e7.png",
+          "sha256": "db2fc2e7a0c9cd4cc4e9ad34eab49c60fdf33f8b8eec622cf4759ee04a81c1e7",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/90b3686878d9963d0b1926741edba9e31f8d24136d986cc5e468413dc387f0e3.png",
+          "sha256": "90b3686878d9963d0b1926741edba9e31f8d24136d986cc5e468413dc387f0e3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/e7e957a01ebfc9cb54122622a5ca7ee9b37b840cb2ad3ee62e5de8b43fa05552.png",
+          "sha256": "e7e957a01ebfc9cb54122622a5ca7ee9b37b840cb2ad3ee62e5de8b43fa05552",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/20045371f3c7f1cc707d340e15f9c367a7f37b6ba9c8c56c23f6ed90c40e1dd2.png",
+          "sha256": "20045371f3c7f1cc707d340e15f9c367a7f37b6ba9c8c56c23f6ed90c40e1dd2",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/c4c24105e02448e91646dcba7ca02b330e6a630c6f473287d385a66805def320.png",
+          "sha256": "c4c24105e02448e91646dcba7ca02b330e6a630c6f473287d385a66805def320",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/e35da83685fc84ef5cd8d4bcf5109ac0f511465e3f7ea65c3479e2dd5a208d0f.png",
+          "sha256": "e35da83685fc84ef5cd8d4bcf5109ac0f511465e3f7ea65c3479e2dd5a208d0f",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/203fc67d5f48942981f7447afd8777c94896bcc7e46e974da34396d529b549a3.png",
+          "sha256": "203fc67d5f48942981f7447afd8777c94896bcc7e46e974da34396d529b549a3",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/550452a75e5926a14e4d66775a9726288e251bc3a66aad10b2b80cc2a8db3416.png",
+          "sha256": "550452a75e5926a14e4d66775a9726288e251bc3a66aad10b2b80cc2a8db3416",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/9ce5b5861a443c27a14c788b5386d11c063e6d485501cf6e764b376930614ded.png",
+          "sha256": "9ce5b5861a443c27a14c788b5386d11c063e6d485501cf6e764b376930614ded",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/e182041f1399f8d2819681bc486645b5e38eb7b44850b77c6862dd53290dfe41.png",
+          "sha256": "e182041f1399f8d2819681bc486645b5e38eb7b44850b77c6862dd53290dfe41",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/adfa3cd44d4d8882181c95cc5ae82cf1ce10b1cb818f1f24198b858ed056c39b.png",
+          "sha256": "adfa3cd44d4d8882181c95cc5ae82cf1ce10b1cb818f1f24198b858ed056c39b",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/0fe998742c60f70ffef242a92fd39a2fc7d0525f823db71470e01493e8b4a469.png",
+          "sha256": "0fe998742c60f70ffef242a92fd39a2fc7d0525f823db71470e01493e8b4a469",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/sss-thickness-mask/7e69707b9228c9f1374011cceaf09b9134fde0f1d36b2a04091e785ccbfe8920.png",
+          "sha256": "7e69707b9228c9f1374011cceaf09b9134fde0f1d36b2a04091e785ccbfe8920",
+          "rendered": true
+        }
+      ]
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "接上一篇《次表面散射个人理解（一）基础理解与简易处理》：次表面缩放放大后，手指、耳朵这类薄壁区域容易发青、发白。这一篇换个思路，先估算模型每一处的厚度，做成一张厚度遮罩，再用它驱动次表面缩放，让薄处缩放小、厚处缩放大。"
+      },
+      {
+        "type": "paragraph",
+        "text": "流程分四步：用光线投射估算厚度；用高斯噪声扰动法线并多次采样取平均，消除断裂带；把结果烘焙到顶点色或图像纹理；最后转换成次表面缩放。"
+      },
+      {
+        "type": "warning",
+        "text": "射线要打到模型内壁才能量出厚度，所以网格需要封闭，演示使用的是拥有完整素体的模型。缺面或开口的地方射线会直接穿出，只能被当作未命中。"
+      }
+    ],
+    "sections": [
+      {
+        "title": "1. 核心节点：用光线投射估算厚度",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "核心是着色器里的「光线投射」节点。以「几何数据」的位置为起点，把法向缩放 -1 并规格化，得到指向模型内部的方向，沿这个方向发射一条长度为 1 的射线。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "射线在 1 个单位内打到了模型背面的内壁：说明该处厚度小于 1，「是否命中」输出 1，「命中距离」就是该处的厚度。",
+              "射线没有打到：说明该处厚度大于 1，或者模型在这里是空心的，「是否命中」输出 0。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/0e720418a8b5132d23fee845b6aa3f7410760bcde6a7af9291cf1e76b3b354ec.png",
+            "alt": "核心节点：位置作为起点，反向法线作为方向，命中距离接到材质输出预览。",
+            "caption": "核心节点：位置作为起点，反向法线作为方向，命中距离接到材质输出预览。",
+            "width": 1099,
+            "height": 623
+          },
+          {
+            "type": "paragraph",
+            "text": "用拥有完整素体的模型预览，可以看到结果里有明显的断裂带。单条射线对法线方向非常敏感，法线稍有变化就可能打到不同的内壁，厚度值在交界处突变。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/a3ac4ccc024be58802c078846390b9dc363b2a39ca7b847593121ee8f118e773.png",
+            "alt": "直接沿法线投射：躯干上出现明显的断裂带。",
+            "caption": "直接沿法线投射：躯干上出现明显的断裂带。",
+            "width": 990,
+            "height": 1008
+          },
+          {
+            "type": "paragraph",
+            "text": "解决方法：用高斯噪声扰动模型原本的法线，让射线在法线附近随机散开。"
+          }
+        ]
+      },
+      {
+        "title": "2. 用白噪声构造高斯噪声",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "Blender 中没有高斯噪声节点，可以用白噪波纹理转换得到（Box–Muller 变换）："
+          },
+          {
+            "type": "list",
+            "items": [
+              "白噪波纹理（3D）输出的颜色经「分离 XYZ」拆成两个 0–1 之间的均匀随机数 X 和 Y。",
+              "X 乘 2π（图中 6.283）作为角度，分别取余弦和正弦。",
+              "Y 取以 e（图中 2.718）为底的对数，乘 -2 后开平方，作为长度。",
+              "用「合并 XYZ」组成（余弦, 正弦, 0），再用「缩放」乘上长度，就得到服从高斯分布的噪声向量。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/fa3dcc7db7dfdca3184f3a7cd04f4fd3aa03bb60111ec5e12bd8888caefa63d0.png",
+            "alt": "白噪波转高斯噪声。6.283 为 2π，2.718 为 e。",
+            "caption": "白噪波转高斯噪声。6.283 为 2π，2.718 为 e。",
+            "width": 1602,
+            "height": 831
+          },
+          {
+            "type": "paragraph",
+            "text": "将计算得到的高斯噪声与法线相加，规格化后作为光线投射的方向。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/08101dedb0d759248ebb6414298a6895a122d305981d26222f56dcf9247fbaf8.png",
+            "alt": "高斯噪声与反向法线相加，规格化后接入光线投射的方向。",
+            "caption": "高斯噪声与反向法线相加，规格化后接入光线投射的方向。",
+            "width": 1676,
+            "height": 1038
+          },
+          {
+            "type": "paragraph",
+            "text": "再次输出，断裂带消失了，但画面上出现了白色的异常值。这是因为扰动后有一部分射线方向被推到了表面外侧，没有射进模型内部。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/8f70a00206bccec9c75ba84971bed68ab75e75b4baa3d1e988fd6c306ab015b6.png",
+            "alt": "加入扰动后断裂带消失，但出现白色异常值。",
+            "caption": "加入扰动后断裂带消失，但出现白色异常值。",
+            "width": 1018,
+            "height": 1008
+          }
+        ]
+      },
+      {
+        "title": "3. 处理白色异常值",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "有两种解决方法，两种一起用效果更好。"
+          },
+          {
+            "type": "paragraph",
+            "text": "方法一：将法线的缩放从 -1 调整为 -2。法线变长后，同样的噪声对方向的影响变小，这里等效于缩小高斯噪声的方差，射线更不容易偏到外侧。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/db2fc2e7a0c9cd4cc4e9ad34eab49c60fdf33f8b8eec622cf4759ee04a81c1e7.png",
+            "alt": "法线缩放调整为 -2。",
+            "caption": "法线缩放调整为 -2。",
+            "width": 399,
+            "height": 322
+          },
+          {
+            "type": "paragraph",
+            "text": "方法二：将「是否命中」与「命中距离」相乘，把未命中的值归 0。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/90b3686878d9963d0b1926741edba9e31f8d24136d986cc5e468413dc387f0e3.png",
+            "alt": "是否命中 × 命中距离：未命中的值归 0。",
+            "caption": "是否命中 × 命中距离：未命中的值归 0。",
+            "width": 437,
+            "height": 404
+          }
+        ]
+      },
+      {
+        "title": "4. 用重复区多次采样取平均",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "单次扰动的结果仍然是噪点。可以把前面的节点打包成「高斯噪声」和「厚度遮罩」两个节点组，放进重复区循环 64 次：每次把迭代序号加到位置上作为白噪波的输入，得到不同的随机方向，把 64 次的厚度累加后再除以 64 取平均。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/e7e957a01ebfc9cb54122622a5ca7ee9b37b840cb2ad3ee62e5de8b43fa05552.png",
+            "alt": "重复区循环 64 次：位置加迭代序号作为噪声输入，累加后除以 64。",
+            "caption": "重复区循环 64 次：位置加迭代序号作为噪声输入，累加后除以 64。",
+            "width": 1835,
+            "height": 704
+          },
+          {
+            "type": "paragraph",
+            "text": "这样每个采样的结果都平滑得多，烘焙时需要的采样更少，速度也更快。将结果输出给模型上应有次表面效果的部分预览："
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/20045371f3c7f1cc707d340e15f9c367a7f37b6ba9c8c56c23f6ed90c40e1dd2.png",
+            "alt": "取平均后的厚度遮罩：躯干厚、手臂薄，过渡平滑。",
+            "caption": "取平均后的厚度遮罩：躯干厚、手臂薄，过渡平滑。",
+            "width": 1083,
+            "height": 984
+          }
+        ]
+      },
+      {
+        "title": "5. 烘焙到顶点色",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "厚度只取决于模型形状，算好之后烘焙下来，渲染时就不必再实时投射射线。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在「物体数据」属性的「颜色属性」中添加新的颜色属性，演示名称为「厚度」。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/c4c24105e02448e91646dcba7ca02b330e6a630c6f473287d385a66805def320.png",
+            "alt": "新建颜色属性「厚度」（顶点 - 颜色）。",
+            "caption": "新建颜色属性「厚度」（顶点 - 颜色）。",
+            "width": 398,
+            "height": 215
+          },
+          {
+            "type": "paragraph",
+            "text": "在「渲染」属性中找到「烘焙」，按图设置：烘焙类型为漫射，贡献只勾选「颜色」，目标改为「活动颜色属性」。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/e35da83685fc84ef5cd8d4bcf5109ac0f511465e3f7ea65c3479e2dd5a208d0f.png",
+            "alt": "烘焙目标改为活动颜色属性。",
+            "caption": "烘焙目标改为活动颜色属性。",
+            "width": 477,
+            "height": 402
+          },
+          {
+            "type": "paragraph",
+            "text": "选中需要烘焙的网格，点击烘焙。完成后进入着色器添加「属性」节点，名称填入烘焙用的颜色属性名（这里是「厚度」）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/203fc67d5f48942981f7447afd8777c94896bcc7e46e974da34396d529b549a3.png",
+            "alt": "属性节点读取烘焙好的「厚度」。",
+            "caption": "属性节点读取烘焙好的「厚度」。",
+            "width": 649,
+            "height": 412
+          },
+          {
+            "type": "paragraph",
+            "text": "这样厚度就烘焙到模型的顶点色上了。"
+          }
+        ]
+      },
+      {
+        "title": "6. 烘焙到图像纹理（可选）",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "如果显存够用，也可以烘焙成图像纹理。新建一个图像纹理节点，点「新建」创建图像，演示名称为「厚度」。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/550452a75e5926a14e4d66775a9726288e251bc3a66aad10b2b80cc2a8db3416.png",
+            "alt": "新建图像纹理「厚度」。",
+            "caption": "新建图像纹理「厚度」。",
+            "width": 418,
+            "height": 414
+          },
+          {
+            "type": "paragraph",
+            "text": "同样在「渲染」属性的「烘焙」中，把目标改为「图像纹理」。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/9ce5b5861a443c27a14c788b5386d11c063e6d485501cf6e764b376930614ded.png",
+            "alt": "烘焙目标改为图像纹理。",
+            "caption": "烘焙目标改为图像纹理。",
+            "width": 990,
+            "height": 1094
+          },
+          {
+            "type": "paragraph",
+            "text": "在着色器中选中这个图像纹理节点，再点击烘焙。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/e182041f1399f8d2819681bc486645b5e38eb7b44850b77c6862dd53290dfe41.png",
+            "alt": "选中「厚度」图像纹理节点后烘焙。",
+            "caption": "选中「厚度」图像纹理节点后烘焙。",
+            "width": 584,
+            "height": 375
+          },
+          {
+            "type": "note",
+            "text": "烘焙到图像纹理需要模型有可用且不重叠的 UV。"
+          }
+        ]
+      },
+      {
+        "title": "7. 转换后接入次表面缩放",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "最后将得到的厚度转换后输入次表面，需要结合《次表面散射个人理解（一）基础理解与简易处理》来理解：薄的地方用小缩放，避免光线穿透过度而发青、发白；厚的地方用大缩放，保留通透感。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "第一个「映射范围」把厚度从 0–2 映射到 0–1。",
+              "第二个「映射范围」把 0–1 映射到 0.5–15。",
+              "再「相乘」0.001，换算成以米为单位的缩放（即 0.5–15 毫米），接入原理化 BSDF 次表面的「缩放」。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/adfa3cd44d4d8882181c95cc5ae82cf1ce10b1cb818f1f24198b858ed056c39b.png",
+            "alt": "厚度 → 映射范围 → 映射范围 → ×0.001 → 次表面缩放。次表面为随机游走，权重 0.8，半径 1 / 0.35 / 0.2，各向异性 0.8。",
+            "caption": "厚度 → 映射范围 → 映射范围 → ×0.001 → 次表面缩放。次表面为随机游走，权重 0.8，半径 1 / 0.35 / 0.2，各向异性 0.8。",
+            "width": 1269,
+            "height": 902
+          },
+          {
+            "type": "paragraph",
+            "text": "图中左侧的「厚度估计」是厚度来源，使用烘焙结果时换成对应的属性节点或图像纹理即可。第二个映射范围的上限决定厚处能达到的最大缩放，下面是两种范围的对比。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/0fe998742c60f70ffef242a92fd39a2fc7d0525f823db71470e01493e8b4a469.png",
+            "alt": "映射到 0.5–15（次表面缩放 0.5–15 毫米）",
+            "caption": "映射到 0.5–15（次表面缩放 0.5–15 毫米）",
+            "width": 503,
+            "height": 536
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/sss-thickness-mask/7e69707b9228c9f1374011cceaf09b9134fde0f1d36b2a04091e785ccbfe8920.png",
+            "alt": "映射到 0.5–5（次表面缩放 0.5–5 毫米）",
+            "caption": "映射到 0.5–5（次表面缩放 0.5–5 毫米）",
+            "width": 539,
+            "height": 548
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "multipass-denoise",
     "type": "structured",
     "title": "合成器多通道降噪与动画伪时域降噪",
