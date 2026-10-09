@@ -142,7 +142,7 @@
 
   function load() {
     if (!recordsPromise) {
-      const pending = fetch('/data/videos.json?v=20260823-liqun', { cache: 'no-store' })
+      const pending = fetch('/data/videos.json?v=20261004-looping-the-rooms', { cache: 'no-store' })
         .then(response => {
           if (!response.ok) throw new Error(`HTTP ${response.status}`);
           return response.json();
