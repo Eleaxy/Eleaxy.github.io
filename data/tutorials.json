@@ -1,5 +1,829 @@
 [
   {
+    "slug": "cinematic-environment-lighting",
+    "type": "structured",
+    "title": "3D 环境的电影感布光：修道院地牢（EEVEE）",
+    "credit": {
+      "author": "Gleb Alexandrov",
+      "handle": "@gleb_alexandrov",
+      "authorUrl": "https://x.com/gleb_alexandrov",
+      "publisher": "Creative Shrimp",
+      "title": "Cinematic Lighting for 3D Environments: The Monastery Dungeon",
+      "url": "https://www.creativeshrimp.com/cinematic-lighting-3d-environments-monastery-dungeon.html",
+      "permission": true
+    },
+    "asset": {
+      "directory": "assets/tutorials/cinematic-environment-lighting",
+      "files": [
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/6b1651bd1e7fbd60acce3b22a1d936d6574c551610558e45891f0ae183983d00.jpg",
+          "sha256": "6b1651bd1e7fbd60acce3b22a1d936d6574c551610558e45891f0ae183983d00",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/c8bbc4adb73370f8965b4db6ccb69de6ddb24f7b15113d65aaae7a2f556132ad.jpg",
+          "sha256": "c8bbc4adb73370f8965b4db6ccb69de6ddb24f7b15113d65aaae7a2f556132ad",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/1711208b2c450d8806bed05b183600615c002799e5c6c39a17aabee3f3da6b4d.jpg",
+          "sha256": "1711208b2c450d8806bed05b183600615c002799e5c6c39a17aabee3f3da6b4d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/8a6ed34895763319175a04620e8e844352609269279c0a5dec16f8950abe3c10.jpg",
+          "sha256": "8a6ed34895763319175a04620e8e844352609269279c0a5dec16f8950abe3c10",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/28b69a938336a669e59214fcb0de56608bf07cad7ad8243d194a6adc1fb8a3c2.jpg",
+          "sha256": "28b69a938336a669e59214fcb0de56608bf07cad7ad8243d194a6adc1fb8a3c2",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/bda302e8c345e1a8f9842f1b0d7a589d81ef0cb7b8a978a2b419f242d8da1848.jpg",
+          "sha256": "bda302e8c345e1a8f9842f1b0d7a589d81ef0cb7b8a978a2b419f242d8da1848",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/b8bb06d549e6605a6b9a3dda6b13bd3f88078539db94658118193c67d1296291.jpg",
+          "sha256": "b8bb06d549e6605a6b9a3dda6b13bd3f88078539db94658118193c67d1296291",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/2074ae4e6424f13e4b2630b5ff8fb1fc2acbb18e3eeeee2a5635789e19e5bb3a.jpg",
+          "sha256": "2074ae4e6424f13e4b2630b5ff8fb1fc2acbb18e3eeeee2a5635789e19e5bb3a",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/7933460777047520060250e487d122485a2957c6e627da38d66eceb790dde382.jpg",
+          "sha256": "7933460777047520060250e487d122485a2957c6e627da38d66eceb790dde382",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/6cff484eaa6c8017c21f13b3f5f6d293911fd4fc3900d59858fcaffc38a89a4d.jpg",
+          "sha256": "6cff484eaa6c8017c21f13b3f5f6d293911fd4fc3900d59858fcaffc38a89a4d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/4485c3aedb89da3f8c6a329891120dc873f75e757fce6af1a719b3d256febd20.jpg",
+          "sha256": "4485c3aedb89da3f8c6a329891120dc873f75e757fce6af1a719b3d256febd20",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/d03d21e74557508153f6ea50a9981cc5f19575915dde88bfad99e39257a97744.jpg",
+          "sha256": "d03d21e74557508153f6ea50a9981cc5f19575915dde88bfad99e39257a97744",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/9513ffba09e49bfaed56e44b6b25f582f9a998fc755d9088dec310586cd148c2.jpg",
+          "sha256": "9513ffba09e49bfaed56e44b6b25f582f9a998fc755d9088dec310586cd148c2",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/8b95c2782638b02cdb96a24e4d2558589e1fa2d3afe1cc1616b5bff94fd90efc.jpg",
+          "sha256": "8b95c2782638b02cdb96a24e4d2558589e1fa2d3afe1cc1616b5bff94fd90efc",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/d5a257393949b09d54c67fae867db57771db9463c9be42fa9a7cc20941deb4be.jpg",
+          "sha256": "d5a257393949b09d54c67fae867db57771db9463c9be42fa9a7cc20941deb4be",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/a119bcc4facc1574b1e464618cd5b57c8dec27627708f323d6fdfe7f5fab71df.jpg",
+          "sha256": "a119bcc4facc1574b1e464618cd5b57c8dec27627708f323d6fdfe7f5fab71df",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/e3f4896a45f6856360c6a949df53732c6053cc2b2659d6fb8e262679466f28b7.jpg",
+          "sha256": "e3f4896a45f6856360c6a949df53732c6053cc2b2659d6fb8e262679466f28b7",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/37e43017be4483769eea2b660a059e1801cc4501d8071fefff6282195860964c.jpg",
+          "sha256": "37e43017be4483769eea2b660a059e1801cc4501d8071fefff6282195860964c",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/93f8d394d137546d95dd1b5136b25203030a9d5e9369f2f08b4e191d6f6f5fbf.jpg",
+          "sha256": "93f8d394d137546d95dd1b5136b25203030a9d5e9369f2f08b4e191d6f6f5fbf",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/a1ce28c1fc2f8d55a9201b10ac49507b63f2a91042605b423aa3d0ff7fc33822.jpg",
+          "sha256": "a1ce28c1fc2f8d55a9201b10ac49507b63f2a91042605b423aa3d0ff7fc33822",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/5af9e4796ef1ec7d6d8482827e05c85ea37c9a4a14246125e793a8867d43ec17.jpg",
+          "sha256": "5af9e4796ef1ec7d6d8482827e05c85ea37c9a4a14246125e793a8867d43ec17",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/de034a3806bcff3c318ff77e060b8a018977ce296aa93e1742e1f036e8878189.jpg",
+          "sha256": "de034a3806bcff3c318ff77e060b8a018977ce296aa93e1742e1f036e8878189",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/d35a5cb033e9ffa501e6f686e29c6b2f2dbe9cc2661db7fe0c0f5f2c32bb550d.jpg",
+          "sha256": "d35a5cb033e9ffa501e6f686e29c6b2f2dbe9cc2661db7fe0c0f5f2c32bb550d",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/3317db57836b870f3c49ab97ba9dba90d0b1f09bc1d8fe3a78c7fb4cada6d981.jpg",
+          "sha256": "3317db57836b870f3c49ab97ba9dba90d0b1f09bc1d8fe3a78c7fb4cada6d981",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/63274593278703ccb4ce5a7273fa3821bd5f81d997ae203f9464eebb11706713.jpg",
+          "sha256": "63274593278703ccb4ce5a7273fa3821bd5f81d997ae203f9464eebb11706713",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/341623b08916fa92553fce3830b896c4911126d75d5f45289807f0137dbeaff5.jpg",
+          "sha256": "341623b08916fa92553fce3830b896c4911126d75d5f45289807f0137dbeaff5",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cinematic-environment-lighting/56ffb1aab1a6994b2af0833eb3fb9b5311e3bd79c472a90569a675edde9fc874.jpg",
+          "sha256": "56ffb1aab1a6994b2af0833eb3fb9b5311e3bd79c472a90569a675edde9fc874",
+          "rendered": true
+        }
+      ]
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "给环境打光和给物体打光不是一回事。光的衰减、逆光这些技巧在环境里依然有用，但用法会有些不同，有时差别还很大。"
+      },
+      {
+        "type": "paragraph",
+        "text": "当然，核心仍然是让画面显得立体、圆润，就像给一个球体打光；只不过这一次，球被整个翻了过来，你是站在球的里面。"
+      },
+      {
+        "type": "paragraph",
+        "text": "（放心，翻过来的世界里没有《怪奇物语》的怪物，只有宝可梦，如果 EEVEE（伊布）也算一只的话。）"
+      },
+      {
+        "type": "image",
+        "src": "assets/tutorials/cinematic-environment-lighting/6b1651bd1e7fbd60acce3b22a1d936d6574c551610558e45891f0ae183983d00.jpg",
+        "alt": "白俄罗斯布列斯特的伯尔纳定会修道院地牢遗迹。照片扫描模型来自 Creative Shrimp 的摄影测量课程。",
+        "caption": "白俄罗斯布列斯特的伯尔纳定会修道院地牢遗迹。照片扫描模型来自 Creative Shrimp 的摄影测量课程。",
+        "width": 2000,
+        "height": 1125
+      },
+      {
+        "type": "paragraph",
+        "text": "给物体打光相对简单：只要光不是从相机方向正面打过去，画面就不会发平，光会沿着球面过渡，让它显得圆润。"
+      },
+      {
+        "type": "paragraph",
+        "text": "（正对相机的平光也不是不行。breezeh 在他那些超现实的漫游作品里把这种风格用到了极致；帕拉杰诺夫的《石榴的颜色》也是这种平面化的画面，谁又能说它不壮丽呢。）"
+      },
+      {
+        "type": "image",
+        "src": "assets/tutorials/cinematic-environment-lighting/c8bbc4adb73370f8965b4db6ccb69de6ddb24f7b15113d65aaae7a2f556132ad.jpg",
+        "alt": "「平」的球与「圆」的球",
+        "caption": "「平」的球与「圆」的球",
+        "width": 2000,
+        "height": 1125
+      }
+    ],
+    "sections": [
+      {
+        "title": "物体 / 角色 vs 环境",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "到了室内，情况就不一样了。"
+          },
+          {
+            "type": "paragraph",
+            "text": "你没法让光去包裹一个房间，反倒是房间把相机包在了里面。房间四面八方都有开口，纵深一直延伸到画框之外，还有大量的负空间。不妨把它叫作「翻过来的球」。"
+          },
+          {
+            "type": "paragraph",
+            "text": "环境里往往没有一条需要柔化的明暗交界线，也没有一个可以打轮廓光的剪影，有的只是朝向四面八方的墙面和地面。这时的任务不再是塑造一个物体的体积感，而是塑造整个空间的体积感，把它的三维结构强调出来。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/1711208b2c450d8806bed05b183600615c002799e5c6c39a17aabee3f3da6b4d.jpg",
+            "alt": "环境里往往找不到一条明确的明暗交界线",
+            "caption": "环境里往往找不到一条明确的明暗交界线",
+            "width": 2560,
+            "height": 1440
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/8a6ed34895763319175a04620e8e844352609269279c0a5dec16f8950abe3c10.jpg",
+            "alt": "给角色或物体打逆光，几乎总是很容易",
+            "caption": "给角色或物体打逆光，几乎总是很容易",
+            "width": 2560,
+            "height": 1308
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/28b69a938336a669e59214fcb0de56608bf07cad7ad8243d194a6adc1fb8a3c2.jpg",
+            "alt": "你没法让光包住房间，是房间把相机包在了里面",
+            "caption": "你没法让光包住房间，是房间把相机包在了里面",
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      {
+        "title": "翻过来的球",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "我第一次真正体会到这种「翻过来」的感觉，很可能就是在白俄罗斯布列斯特扫描这条走廊的时候（也可能是在别的地方）。扫描环境时的拍摄路线比扫描物体反直觉得多，你得先在脑子里把整个空间「展开」，我也想不出更贴切的说法了。"
+          },
+          {
+            "type": "paragraph",
+            "text": "（何况要扫描的地方往往都有点瘆人，比如树林里废弃的精神病院之类。）"
+          },
+          {
+            "type": "paragraph",
+            "text": "相比之下，扫描普通物体简直轻而易举，几乎不费脑子。我觉得布光也是类似的道理。"
+          },
+          {
+            "type": "note",
+            "text": "原文此处有两段扫描过程的视频，可前往原文观看。"
+          }
+        ]
+      },
+      {
+        "title": "修道院地牢布光教程（理论 + 实操）",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这是《Cinematic Lighting in Blender》课程中的「修道院地牢」一章。你会学到如何在 EEVEE 里给它打光，以及专门针对这种「翻过来」的空间的技巧。"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果想跟着做，我们在 Patreon 上分享了扫描好的地牢模型。不想订阅付费档也完全没关系，光看视频就足以理解这些概念。"
+          },
+          {
+            "type": "paragraph",
+            "text": "我们会讲两个主题："
+          },
+          {
+            "type": "list",
+            "items": [
+              "给空间（也就是翻过来的球）布光的四种方法",
+              "如何把电影摄影的思路用到其中"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/bda302e8c345e1a8f9842f1b0d7a589d81ef0cb7b8a978a2b419f242d8da1848.jpg",
+            "alt": "第 1 部分讲理论，第 2 部分做实操",
+            "caption": "第 1 部分讲理论，第 2 部分做实操",
+            "width": 1920,
+            "height": 626
+          },
+          {
+            "type": "list",
+            "items": [
+              "第 1 部分：室内布光理论（21 分钟）。讲形式上的基本功：衰减、光的方向、构图、顺光与逆光，以及如何用光来组织空间，让画面不发平。",
+              "第 2 部分：电影感布光实操（49 分钟）。在 EEVEE 中一层一层地为走廊搭出一套完整的、每盏灯都有来由的布光方案。"
+            ]
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "第 1 部分视频：Cinematic Lighting for Interiors in EEVEE（YouTube）",
+                "url": "https://www.youtube.com/watch?v=awe33mCMSoQ"
+              },
+              {
+                "label": "第 2 部分视频：Full REALISTIC Lighting Tutorial - Monastery Dungeon（YouTube）",
+                "url": "https://www.youtube.com/watch?v=OCuABMuWKg0"
+              },
+              {
+                "label": "扫描好的地牢模型（Creative Shrimp 的 Patreon）",
+                "url": "https://www.patreon.com/CreativeShrimp/posts/environment-part-154218319"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "EEVEE 不是将就之选",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这一章我特意选了 EEVEE，而且不只是因为它渲染快。"
+          },
+          {
+            "type": "paragraph",
+            "text": "在最近几个版本的 Blender 里，EEVEE 既能做到真正的写实，又非常好调。这个组合太难得了，拿来试验自定义灯光衰减和伪全局光照特别方便。"
+          },
+          {
+            "type": "paragraph",
+            "text": "这里的「写实」也包括光线传输模拟在物理上的准确。如今 EEVEE 的全局光照（GI）已经足以达到照片级写实。（说实话，只要你懂得怎么营造「电影感的真实」，它好多年前就已经够用了，可以看看我 2020 年做的 SSGI 演示。更早的 3ds Max 和 Mental Ray 时代的演示我也有，这里就不放了。）"
+          },
+          {
+            "type": "note",
+            "text": "声明：这不是一篇逐个讲解 EEVEE 参数的技术教程，那部分我们有配套课程《Eevee Realistic Lighting and Rendering》。在这里，渲染引擎只是手段，而不是主题。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/b8bb06d549e6605a6b9a3dda6b13bd3f88078539db94658118193c67d1296291.jpg",
+            "alt": "EEVEE 与 Cycles 对比",
+            "caption": "EEVEE 与 Cycles 对比",
+            "width": 1920,
+            "height": 655
+          }
+        ]
+      },
+      {
+        "title": "第一部分：四个特征",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "和我们的课程一样，整个教程里我都会用四个词来检验布光："
+          },
+          {
+            "type": "list",
+            "items": [
+              "不平（Non-flat）：有渐变、有柔和度、有体积感。",
+              "有构图想法（With a composition idea）：给视线一个去处，比如漏进来的光。",
+              "有情绪（Moody）：带着浓厚的氛围或某种调子。",
+              "真实（Realistic）：让人觉得每道光都有来由，哪怕整套布光其实全是「作弊」。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/2074ae4e6424f13e4b2630b5ff8fb1fc2acbb18e3eeeee2a5635789e19e5bb3a.jpg",
+            "alt": "环境电影感布光的四个特征",
+            "caption": "环境电影感布光的四个特征",
+            "width": 2000,
+            "height": 1125
+          }
+        ]
+      },
+      {
+        "title": "1. 灯光衰减：球形与方向性",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "可以说，在环境里，衰减比在物体镜头里重要得多。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "点光会形成一个球形的照明范围，相当于把纵深信息「烘焙」进了它照到的一切：光照越往外越弱，我们就能看出哪些东西离这盏灯近、哪些离得远。",
+              "面光则会形成一条长长的、有方向的渐变。",
+              "在 EEVEE 中，可以用灯光的「自定义距离」按需调整这些衰减的范围。在室内调衰减，就相当于给物体打光时绕着球体移动主光。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/7933460777047520060250e487d122485a2957c6e627da38d66eceb790dde382.jpg",
+            "alt": "灯光衰减：球形（左）与方向性（右）",
+            "caption": "灯光衰减：球形（左）与方向性（右）",
+            "width": 2154,
+            "height": 1166
+          }
+        ]
+      },
+      {
+        "title": "雷神之锤式布光",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "有些布光风格几乎完全靠衰减撑起来，比如《雷神之锤》（Quake）和早期的 FPS 游戏。你可以毫无来由地往走廊里丢几个点光，让光凭空冒出来，空间照样会显得立体、有氛围。"
+          },
+          {
+            "type": "paragraph",
+            "text": "这种画面谈不上「有动机」的电影感，它本来也不追求这个。不过作为一次形体练习，或者作为对这种美术风格的致敬，很值得一试。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/6cff484eaa6c8017c21f13b3f5f6d293911fd4fc3900d59858fcaffc38a89a4d.jpg",
+            "alt": "Shadowed Depths（1997 年），我小学二年级就玩过。（开玩笑的。）",
+            "caption": "Shadowed Depths（1997 年），我小学二年级就玩过。（开玩笑的。）",
+            "width": 1752,
+            "height": 898
+          }
+        ]
+      },
+      {
+        "title": "2. 把光当作二维色块",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "空间的立体感有了之后，下一步就要考虑构图，也就是画面上的二维色块。一道硬光束或一块亮斑，在相机画面里就是一个二维形状。观众的视线会从一个亮处移到下一个亮处，而漏光往往特别好看。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/4485c3aedb89da3f8c6a329891120dc873f75e757fce6af1a719b3d256febd20.jpg",
+            "alt": "把漏光当作二维构图色块",
+            "caption": "把漏光当作二维构图色块",
+            "width": 2000,
+            "height": 1125
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/d03d21e74557508153f6ea50a9981cc5f19575915dde88bfad99e39257a97744.jpg",
+            "alt": "在球形衰减与线性衰减之上叠加漏光",
+            "caption": "在球形衰减与线性衰减之上叠加漏光",
+            "width": 774,
+            "height": 555
+          },
+          {
+            "type": "paragraph",
+            "text": "眯起眼睛看画面，直到只剩下一块块二维的光斑，再问问自己：这样的排布平衡吗？看着舒服吗？这一步还不用管真实感，我们还在试验形体和构图。真实感留到后面再处理，包括物理上的真实和电影感的真实。"
+          }
+        ]
+      },
+      {
+        "title": "顺光、逆光，各自在展示什么",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "接下来是光的方向。"
+          },
+          {
+            "type": "paragraph",
+            "text": "前面说过，物体的光线方向要好理解得多：逆光会产生包裹感，让物体显得圆润，同时把阴影带出来；顺光会让物体显得平一些，但能把颜色展现出来。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/9513ffba09e49bfaed56e44b6b25f582f9a998fc755d9088dec310586cd148c2.jpg",
+            "alt": "直观对比：物体的顺光与逆光",
+            "caption": "直观对比：物体的顺光与逆光",
+            "width": 1920,
+            "height": 830
+          },
+          {
+            "type": "paragraph",
+            "text": "这些规律在环境里依然成立，只是用起来没那么直观。环境里没有可以让光去包裹的物体，前景和背景之间也常常没有明确的分界，所以很容易让人摸不着头脑。"
+          },
+          {
+            "type": "paragraph",
+            "text": "不过还是有几条规律可以抓住："
+          },
+          {
+            "type": "list",
+            "items": [
+              "逆光会把阴影投向相机，每一道裂缝、每一块石头、每一处细小的凹陷都会被勾勒出来。它还会带来镜面高光，同时冲淡颜色：高光本身是中性色，所以形体展现得越多，留下的颜色就越少。",
+              "顺光正相反。它会压平形体，但能完整保留漫射颜色。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/8b95c2782638b02cdb96a24e4d2558589e1fa2d3afe1cc1616b5bff94fd90efc.jpg",
+            "alt": "走廊中的逆光与顺光对比",
+            "caption": "走廊中的逆光与顺光对比",
+            "width": 2000,
+            "height": 1125
+          },
+          {
+            "type": "paragraph",
+            "text": "同时，衰减依然像是被「烘焙」进了画面里的一切。"
+          },
+          {
+            "type": "paragraph",
+            "text": "有一种思路我经常用：逆光组织空间的方式有点像雾场（Mist）通道或 Z 深度通道，靠距离建立起前后层次。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/d5a257393949b09d54c67fae867db57771db9463c9be42fa9a7cc20941deb4be.jpg",
+            "alt": "逆光有点像 Z 深度通道",
+            "caption": "逆光有点像 Z 深度通道",
+            "width": 1453,
+            "height": 516
+          },
+          {
+            "type": "paragraph",
+            "text": "顺光看起来则更像漫射颜色通道，也就是不带光影的那种纯颜色。有意思的是，根据灯光衰减的不同，顺光里其实也带着一些距离信息。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/a119bcc4facc1574b1e464618cd5b57c8dec27627708f323d6fdfe7f5fab71df.jpg",
+            "alt": "顺光有点像漫射颜色通道",
+            "caption": "顺光有点像漫射颜色通道",
+            "width": 1453,
+            "height": 516
+          },
+          {
+            "type": "paragraph",
+            "text": "单独拿出来，两者都谈不上电影感，它们只是两种不同的工具。不过如果你想要的是纵深和几何细节，逆光能给你更多。我在《One Simple Technique to Improve Your Lighting in Blender (Upstage Lighting)》里讲过这个思路在物体上的用法。老实说，我还没能把它完全用到环境上。"
+          }
+        ]
+      },
+      {
+        "title": "第二部分：电影感真实 = 动机",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "第一部分的所有内容，都是为了引出这里的转折。"
+          },
+          {
+            "type": "paragraph",
+            "text": "你可以把前面讲的形式技巧（衰减、亮点、逆光）全部用上，最后得到的画面却仍然不像真的。它可以很有氛围、很立体、很像游戏、很超现实，就是不「真」，这里说的是电影意义上的真实。定义就先不纠结了，我在《Outdoor Lighting in 3D – Is there a magic formula?》里讲过我欣赏的那种电影感真实，它的范围足够宽，也适用于我们的 3D 创作。"
+          },
+          {
+            "type": "paragraph",
+            "text": "要让一套布光显得真实，每一层光都应该能在场景里找到来源，也就是要有「动机」。"
+          },
+          {
+            "type": "paragraph",
+            "text": "所以在第二部分，我会再一次围绕这四个特征展开。只不过这一次，要把它们藏得严严实实。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/e3f4896a45f6856360c6a949df53732c6053cc2b2659d6fb8e262679466f28b7.jpg",
+            "alt": "上：布光技巧一眼就能看穿；下：同样的技巧藏在了动机后面",
+            "caption": "上：布光技巧一眼就能看穿；下：同样的技巧藏在了动机后面",
+            "width": 983,
+            "height": 1141
+          }
+        ]
+      },
+      {
+        "title": "动机：因果链",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "电影感的布光不是一堆灯随便摆在一起，而更像一条因果链，或者说一层套一层的因果关系。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "屋顶破了洞，所以有日光照进来（世界环境）。",
+              "有日光，所以有大面积的天光（面光）。",
+              "有天光和太阳，所以地上有亮斑、空中有硬光束（模拟太阳的灯）。",
+              "有了这些亮斑，附近的墙面就该有微弱的反弹光（用点光做的伪 GI，加上真实的屏幕追踪 GI）。"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "这就是动机的层级。有了它，作弊用的灯才能悄无声息地融进画面，而不是让画面显得「打过光」。（摄影师说一个画面「看起来打过光」是贬义，意思是观众能察觉到某处藏着一盏灯，或者你的把戏被识破了。）"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/37e43017be4483769eea2b660a059e1801cc4501d8071fefff6282195860964c.jpg",
+            "alt": "有阳光亮斑作为动机，这盏微弱的伪反弹光几乎看不出来",
+            "caption": "有阳光亮斑作为动机，这盏微弱的伪反弹光几乎看不出来",
+            "width": 2000,
+            "height": 1125
+          }
+        ]
+      },
+      {
+        "title": "灯光分层：按因果链搭建",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "先把世界环境光调暗，再决定哪些开口要让光进来。残破的建筑里到处都是洞，选哪些、不选哪些，你有不少艺术上的自由。"
+          },
+          {
+            "type": "list",
+            "items": [
+              "第 1 层 · 世界环境：先定好环境光的曝光，这是第一级动机。不想让光进来的门洞，就用东西挡住。",
+              "第 2 层 · 用面光模拟天光：调整强度、色温和位置，让它看起来像是环境光渗了进来。其实这就是在悄悄布置衰减。光线方向用一个还是多个，是个值得琢磨的选择：我觉得一般只用一个主光方向更稳妥，但你也不妨多试试。",
+              "第 3 层 · 用聚光打出更硬的阳光亮斑，画面构图主要靠它们（幸好前面选了单一主光方向）。这是第二级动机。",
+              "第 4 层 · 用点光伪造二次反弹。注意看，因为有第二级动机撑着，这个小把戏完全看不出来。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/93f8d394d137546d95dd1b5136b25203030a9d5e9369f2f08b4e191d6f6f5fbf.jpg",
+            "alt": "第 1 层世界环境 + 第 2 层面光",
+            "caption": "第 1 层世界环境 + 第 2 层面光",
+            "width": 1800,
+            "height": 764
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/a1ce28c1fc2f8d55a9201b10ac49507b63f2a91042605b423aa3d0ff7fc33822.jpg",
+            "alt": "单一与多个主光方向对比",
+            "caption": "单一与多个主光方向对比",
+            "width": 1900,
+            "height": 740
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/5af9e4796ef1ec7d6d8482827e05c85ea37c9a4a14246125e793a8867d43ec17.jpg",
+            "alt": "第 3 层聚光（模拟太阳）+ 第 4 层点光（伪 GI 反弹）",
+            "caption": "第 3 层聚光（模拟太阳）+ 第 4 层点光（伪 GI 反弹）",
+            "width": 1343,
+            "height": 545
+          }
+        ]
+      },
+      {
+        "title": "屏幕追踪全局光照",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "在手工布置的（伪）灯光之上，EEVEE 的屏幕追踪全局光照会再叠加一层反弹光和环境光遮蔽。它速度快，效果也出乎意料地好。"
+          },
+          {
+            "type": "paragraph",
+            "text": "如果你怀念以前的「间接光强度」（Indirect Intensity）选项，现在有了专门的「GI 强度」滑块，能更精细地控制间接光的强弱。（我猜电影摄影师为了这种控制力，什么都肯拿来换。）更多介绍见我的文章《New Blender 5.1 EEVEE Feature – GI Intensity》。"
+          },
+          {
+            "type": "paragraph",
+            "text": "其余的 EEVEE 渲染设置，请看视频。"
+          },
+          {
+            "type": "paragraph",
+            "text": "从概念上讲，关键在于：GI 也只是又一种衰减，而且它天生就有动机，因为它直接来自物理光线传输算法本身。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/de034a3806bcff3c318ff77e060b8a018977ce296aa93e1742e1f036e8878189.jpg",
+            "alt": "EEVEE 屏幕追踪 GI 叠加在手动放置的伪 GI 点光之上",
+            "caption": "EEVEE 屏幕追踪 GI 叠加在手动放置的伪 GI 点光之上",
+            "width": 2000,
+            "height": 1125
+          }
+        ]
+      },
+      {
+        "title": "光照探针",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "补充一点 EEVEE 的技术细节：单靠屏幕空间 GI 并不稳定，所以下一层是烘焙好的光照探针体积。它是一张铺满整条走廊的辐照度采样网格，记录着整个空间的间接光。"
+          },
+          {
+            "type": "paragraph",
+            "text": "换句话说，屏幕空间间接光照顾不到的地方，由探针来补上。"
+          },
+          {
+            "type": "paragraph",
+            "text": "猜猜怎么着？探针的强度和衰减偏移也都可以调。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/d35a5cb033e9ffa501e6f686e29c6b2f2dbe9cc2661db7fe0c0f5f2c32bb550d.jpg",
+            "alt": "覆盖整条走廊的光照探针体积",
+            "caption": "覆盖整条走廊的光照探针体积",
+            "width": 2000,
+            "height": 1125
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/3317db57836b870f3c49ab97ba9dba90d0b1f09bc1d8fe3a78c7fb4cada6d981.jpg",
+            "alt": "启用光照探针后的效果",
+            "caption": "启用光照探针后的效果",
+            "width": 2000,
+            "height": 1125
+          }
+        ]
+      },
+      {
+        "title": "大气",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "雾气通常被当成特效，但它也是给空间增加纵深最简单的方法之一。可以把它看作所有灯光衰减的放大器。"
+          },
+          {
+            "type": "paragraph",
+            "text": "更不用说它能让光束清晰可见。在这样尘土飞扬的地方，空气里本来就该看得见光束（说是追求真实也好，说是常识也罢）。"
+          },
+          {
+            "type": "paragraph",
+            "text": "大气雾是环境布光独有的手段。给物体打光时一般不会这样用它，因为它直接作用的是空间本身。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/63274593278703ccb4ce5a7273fa3821bd5f81d997ae203f9464eebb11706713.jpg",
+            "alt": "用体积着色器增加纵深",
+            "caption": "用体积着色器增加纵深",
+            "width": 2000,
+            "height": 1125
+          }
+        ]
+      },
+      {
+        "title": "总结",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "最后放一段我 2021 年做的飞行漫游动画（更早的演示我也有，需要的话可以找出来）。环境布光里的电影感真实，并不需要完美的光线传输模拟。它追求的是更高层次的真实，技术当然占一部分，但更多靠的还是那个老道理：让观众心甘情愿地相信眼前的画面。"
+          },
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "飞行漫游动画：Eevee SSGI Realtime Animation in Blender 3.x（Vimeo）",
+                "url": "https://vimeo.com/659779497"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "text": "一句话总结：环境和空间该怎么打光？"
+          },
+          {
+            "type": "list",
+            "items": [
+              "球还在，只是被翻了过来。",
+              "给物体打光，是用光描述一个形体；给环境打光，是用光描述一个空间。",
+              "用衰减（球形与方向性）、构图上的亮点，以及顺光 / 逆光来描述空间。",
+              "想要电影感，就让每个灯光元素都能在场景里找到来源，顺着因果链去想会很有帮助。",
+              "如果整个场景看不出打光的痕迹，每盏灯都像消失了一样，那就说明方向对了。",
+              "可以作弊，但别被抓到。",
+              "用四个特征来检验：不平、有构图想法、有情绪、真实。",
+              "并不是所有作品都必须有电影感（何况「电影感」的定义本来就因人而异）。"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "为什么选这个地方",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "这条走廊扫描自布列斯特的伯尔纳定会修道院。这座 18 世纪的修道院后来被改建成了军医院。我们是在记录废弃建筑时扫描它的，那天是我们拍摄以来最冷的日子之一。"
+          },
+          {
+            "type": "paragraph",
+            "text": "像这样实地扫描的场景，自带真实的质感和不规则的细节，也带着它被损毁、被修补的历史（在这里，还有战争留下的痕迹）。拿来做布光练习再好不过，就像真的站在那里摆弄灯光一样。希望它也能给你带来灵感！"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/341623b08916fa92553fce3830b896c4911126d75d5f45289807f0137dbeaff5.jpg",
+            "alt": "布列斯特的伯尔纳定会修道院",
+            "caption": "布列斯特的伯尔纳定会修道院",
+            "width": 1500,
+            "height": 892
+          }
+        ]
+      },
+      {
+        "title": "原文与相关链接",
+        "blocks": [
+          {
+            "type": "links",
+            "items": [
+              {
+                "label": "原文：Cinematic Lighting for 3D Environments: The Monastery Dungeon（Creative Shrimp）",
+                "url": "https://www.creativeshrimp.com/cinematic-lighting-3d-environments-monastery-dungeon.html"
+              },
+              {
+                "label": "作者 Gleb Alexandrov 的 X 主页（@gleb_alexandrov）",
+                "url": "https://x.com/gleb_alexandrov"
+              },
+              {
+                "label": "配套课程：Eevee Realistic Lighting and Rendering",
+                "url": "https://superhivemarket.com/products/eevee-realistic-lighting-rendering/?=ref88"
+              },
+              {
+                "label": "布光课程合集：Creative Shrimp Complete Lighting Bundle",
+                "url": "https://superhivemarket.com/bundles/creative-shrimp-complete-lighting-bundle"
+              },
+              {
+                "label": "本教程的 Blender 工程文件（Creative Shrimp 的 Patreon）",
+                "url": "https://www.patreon.com/c/CreativeShrimp"
+              },
+              {
+                "label": "扫描模型出处：Photoreal 3D with Blender and RealityScan 课程",
+                "url": "https://www.creativeshrimp.com/photogrammetry-course"
+              },
+              {
+                "label": "关于「电影感」的定义：Outdoor Lighting in 3D – Is there a magic formula?",
+                "url": "https://www.youtube.com/watch?v=meeS7yuCaJs"
+              },
+              {
+                "label": "角色布光：How to Light 3D Portraits in Blender",
+                "url": "https://www.creativeshrimp.com/character-lighting-techniques.html"
+              },
+              {
+                "label": "物体逆光思路：One Simple Technique to Improve Your Lighting in Blender (Upstage Lighting)",
+                "url": "https://www.creativeshrimp.com/reverse-key-lighting-tutorial.html"
+              },
+              {
+                "label": "GI 强度滑块：New Blender 5.1 EEVEE Feature – GI Intensity",
+                "url": "https://www.creativeshrimp.com/new-blender-5-1-eevee-feature-gi-intensity.html"
+              },
+              {
+                "label": "作者一直没写完的布光书：The Lighting Book that I have never finished",
+                "url": "https://www.creativeshrimp.com/lighting-tutorials-my-way-to-write-a-book.html"
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cinematic-environment-lighting/56ffb1aab1a6994b2af0833eb3fb9b5311e3bd79c472a90569a675edde9fc874.jpg",
+            "alt": "从另一头看这条走廊",
+            "caption": "从另一头看这条走廊",
+            "width": 2000,
+            "height": 1125
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "sss-thickness-mask",
     "type": "structured",
     "title": "次表面散射个人理解（二）厚度遮罩创建与使用",
