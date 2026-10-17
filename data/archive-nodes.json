@@ -1,0 +1,263 @@
+[
+  {
+    "id": "weave-everything",
+    "name": "Weave Everything",
+    "name_zh": "万物编织",
+    "category_id": "curve",
+    "category": "Curve",
+    "top_category_id": "geom",
+    "top_category": "Geometry Nodes",
+    "description": "在输入网格的表面散布曲线，并通过控制场调整曲线的显现、缩放和扰动。可用于制作纤维覆盖、编织表面和动态生长效果。",
+    "notes": "单根纤维的形状由指定的曲线物体决定，生成范围由“动画”输入控制。生成的曲线存放在输出几何捆包的“曲线”项中，推荐在单独的毛发曲线物体中用“获取几何体捆包”和“分离捆包”读取。",
+    "example": "接入沿高度变化的数值场（如位置 Z 减去偏移值）作为“动画”输入，调整偏移即可让纤维带沿模型表面移动。",
+    "example_image": "",
+    "param_descriptions": {},
+    "mapping_raw": "curve",
+    "inputs": [
+      {
+        "name": "几何数据",
+        "type": "NodeSocketGeometry",
+        "description": "Mesh the curves are scattered on. It should contain faces.",
+        "de": "Mesh the curves are scattered on. It should contain faces.",
+        "dz": "用于散布曲线的网格。输入应包含面。"
+      },
+      {
+        "name": "切割网格",
+        "type": "NodeSocketBool",
+        "default": false,
+        "description": "Trims the mesh by the 动画 (Animation) field, keeping the region where the field is positive. When off, the original mesh is kept.",
+        "de": "Trims the mesh by the 动画 (Animation) field, keeping the region where the field is positive. When off, the original mesh is kept.",
+        "dz": "根据“动画”输入裁切网格，保留控制场的正值区域。关闭时保留原网格。"
+      },
+      {
+        "name": "Material",
+        "type": "NodeSocketMaterial",
+        "description": "Material assigned to the generated curves.",
+        "de": "Material assigned to the generated curves.",
+        "dz": "指定生成曲线使用的材质。"
+      },
+      {
+        "name": "Resolution",
+        "type": "NodeSocketInt",
+        "panel": "曲线",
+        "default": 3,
+        "min": 1,
+        "description": "Precision used when converting and resampling the curves. Higher values keep more curve detail at a higher computation cost.",
+        "de": "Precision used when converting and resampling the curves. Higher values keep more curve detail at a higher computation cost.",
+        "dz": "曲线转换与重采样使用的精度。较高的值可以保留更多曲线细节，同时增加计算量。"
+      },
+      {
+        "name": "Radius",
+        "type": "NodeSocketFloat",
+        "panel": "曲线",
+        "default": 1.0,
+        "min": 0.0,
+        "description": "Overall multiplier on the final radius of the generated curves, applied after 粗细 (Thickness) and the growth scaling.",
+        "de": "Overall multiplier on the final radius of the generated curves, applied after 粗细 (Thickness) and the growth scaling.",
+        "dz": "生成曲线最终半径的整体倍数，在“粗细”和生长缩放之后作用。"
+      },
+      {
+        "name": "抖动速率",
+        "type": "NodeSocketFloat",
+        "panel": "曲线",
+        "default": 1.0,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "How fast the jitter changes with the 动画 (Animation) input. While that input stays constant, the jitter does not change over time on its own.",
+        "de": "How fast the jitter changes with the 动画 (Animation) input. While that input stays constant, the jitter does not change over time on its own.",
+        "dz": "控制扰动随“动画”输入变化的速度。动画输入保持不变时，扰动不会自行随时间变化。"
+      },
+      {
+        "name": "混乱程度",
+        "type": "NodeSocketFloat",
+        "panel": "曲线",
+        "default": 23.25,
+        "min": -1000.0,
+        "max": 1000.0,
+        "description": "Spatial scale of the noise. Higher values make the jitter finer.",
+        "de": "Spatial scale of the noise. Higher values make the jitter finer.",
+        "dz": "控制噪声的空间尺度。较高的值使扰动变化更细碎。"
+      },
+      {
+        "name": "抖动力度",
+        "type": "NodeSocketFloat",
+        "panel": "曲线",
+        "default": 2.5,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Strength of the noise displacement on the curves.",
+        "de": "Strength of the noise displacement on the curves.",
+        "dz": "控制噪声对曲线位移的影响强度。"
+      },
+      {
+        "name": "偏向",
+        "type": "NodeSocketFloat",
+        "panel": "曲线",
+        "default": -5.0,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Distribution of displacement strength across curves. Negative values give more curves a weaker displacement; positive values give more curves a stronger one.",
+        "de": "Distribution of displacement strength across curves. Negative values give more curves a weaker displacement; positive values give more curves a stronger one.",
+        "dz": "调整各根曲线的位移强度分布。负值使更多曲线采用较弱的位移，正值使更多曲线采用较强的位移。"
+      },
+      {
+        "name": "动画",
+        "type": "NodeSocketFloat",
+        "panel": "动画",
+        "default": 0.5,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Controls where curves appear and how they grow. Curves are generated near the zero value of the field and are scaled larger the closer they are to zero. Connect a spatially varying field to form a local fiber band, and move the field to move the band across the surface.",
+        "de": "Controls where curves appear and how they grow. Curves are generated near the zero value of the field and are scaled larger the closer they are to zero. Connect a spatially varying field to form a local fiber band, and move the field to move the band across the surface.",
+        "dz": "控制曲线出现的区域和生长缩放。曲线在控制场的零值附近生成，越接近零值，缩放越大。接入空间变化的数值场，可在模型表面形成局部纤维带；改变该场的位置，可使纤维带沿表面移动。"
+      },
+      {
+        "name": "宽度",
+        "type": "NodeSocketFloat",
+        "panel": "动画",
+        "default": 1.0,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Width of the range around zero in which curves are generated. Larger values widen the range. Use a value greater than zero.",
+        "de": "Width of the range around zero in which curves are generated. Larger values widen the range. Use a value greater than zero.",
+        "dz": "控制零值附近生成曲线的范围。较大的值扩大生成范围。应使用大于零的值。"
+      },
+      {
+        "name": "过渡",
+        "type": "NodeSocketFloat",
+        "panel": "动画",
+        "default": 1.0,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Scale falloff inside the generation range. With positive values, larger values concentrate curves closer to the zero value of the field.",
+        "de": "Scale falloff inside the generation range. With positive values, larger values concentrate curves closer to the zero value of the field.",
+        "dz": "控制生成范围内的缩放变化。使用正值时，较大的值使曲线更集中于控制场的零值附近。"
+      },
+      {
+        "name": "实例",
+        "type": "NodeSocketObject",
+        "panel": "散布",
+        "default": "NURBS路径",
+        "description": "Curve object used as a single fiber.",
+        "de": "Curve object used as a single fiber.",
+        "dz": "指定作为单根纤维使用的曲线物体。"
+      },
+      {
+        "name": "粗细",
+        "type": "NodeSocketFloat",
+        "panel": "散布",
+        "default": 1.0,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Radius of the generated curves. The radius also follows the growth scaling.",
+        "de": "Radius of the generated curves. The radius also follows the growth scaling.",
+        "dz": "控制生成曲线的半径。曲线半径还会随生长缩放变化。"
+      },
+      {
+        "name": "Density",
+        "type": "NodeSocketFloat",
+        "panel": "散布",
+        "default": 30000.0,
+        "min": 0.0,
+        "description": "Scatter density of curves on the mesh surface. The actual count depends on the mesh area and the animated range.",
+        "de": "Scatter density of curves on the mesh surface. The actual count depends on the mesh area and the animated range.",
+        "dz": "控制网格表面的曲线散布密度。实际生成数量取决于网格面积和动画控制范围。"
+      },
+      {
+        "name": "Seed",
+        "type": "NodeSocketInt",
+        "panel": "散布",
+        "default": 0,
+        "description": "Random seed for scatter positions.",
+        "de": "Random seed for scatter positions.",
+        "dz": "用于散布位置的随机种子。"
+      },
+      {
+        "name": "Min",
+        "type": "NodeSocketFloat",
+        "panel": "缩放",
+        "default": 0.5,
+        "description": "Minimum random scale of the curves. Random scale combines with the animated scale.",
+        "de": "Minimum random scale of the curves. Random scale combines with the animated scale.",
+        "dz": "设置曲线随机缩放的最小值。随机缩放与动画控制的缩放共同作用。"
+      },
+      {
+        "name": "Max",
+        "type": "NodeSocketFloat",
+        "panel": "缩放",
+        "default": 1.0,
+        "description": "Maximum random scale of the curves. Random scale combines with the animated scale.",
+        "de": "Maximum random scale of the curves. Random scale combines with the animated scale.",
+        "dz": "设置曲线随机缩放的最大值。随机缩放与动画控制的缩放共同作用。"
+      },
+      {
+        "name": "Seed",
+        "type": "NodeSocketInt",
+        "panel": "缩放",
+        "default": 0,
+        "min": -10000,
+        "max": 10000,
+        "description": "Random seed for the random scale.",
+        "de": "Random seed for the random scale.",
+        "dz": "用于随机缩放的随机种子。"
+      },
+      {
+        "name": "Xy旋转随机",
+        "type": "NodeSocketFloat",
+        "panel": "旋转",
+        "default": 0.2,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Amount of random rotation around the local X and Y axes.",
+        "de": "Amount of random rotation around the local X and Y axes.",
+        "dz": "控制曲线绕局部 X、Y 轴的随机旋转幅度。"
+      },
+      {
+        "name": "Z旋转随机",
+        "type": "NodeSocketFloat",
+        "panel": "旋转",
+        "default": 0.5,
+        "min": -10000.0,
+        "max": 10000.0,
+        "description": "Amount of random rotation around the local Z axis.",
+        "de": "Amount of random rotation around the local Z axis.",
+        "dz": "控制曲线绕局部 Z 轴的随机旋转幅度。"
+      },
+      {
+        "name": "Seed",
+        "type": "NodeSocketInt",
+        "panel": "旋转",
+        "default": 0,
+        "min": -10000,
+        "max": 10000,
+        "description": "Random seed for the random rotation.",
+        "de": "Random seed for the random rotation.",
+        "dz": "用于随机旋转的随机种子。"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "几何数据",
+        "type": "NodeSocketGeometry",
+        "description": "The original or trimmed mesh. The generated fiber curves are stored in the 曲线 (Curves) item of the geometry bundle.",
+        "de": "The original or trimmed mesh. The generated fiber curves are stored in the 曲线 (Curves) item of the geometry bundle.",
+        "dz": "输出原网格或裁切后的网格。生成的纤维曲线存放在几何捆包的“曲线”项中。"
+      }
+    ],
+    "catalog_source": "geomData",
+    "source_blend": "/assets/nodes/weave-everything/downloads/万物编织.blend",
+    "download_url": "/assets/nodes/weave-everything/downloads/万物编织.blend",
+    "archive_asset": {
+      "node_group": "万物编织",
+      "node_tree": "GeometryNodeTree",
+      "blender_version": "5.2",
+      "manual_url": "/assets/nodes/weave-everything/index.html",
+      "preview": "/images/nodes/74a1692dd20ee7459501501754d988c06fef383d15d21ae002840dbf5bca6274.png",
+      "download": {
+        "url": "/assets/nodes/weave-everything/downloads/万物编织.blend",
+        "filename": "万物编织.blend",
+        "sha256": "9012fe9e545e8bd9ab10f605514c32a15c852bea7cc1aad2d351f8b9757da9ff"
+      }
+    }
+  }
+]
