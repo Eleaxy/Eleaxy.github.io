@@ -6,6 +6,7 @@
   const upstreamPreviewKind = 'upstream-example';
   const capturePreviewKind = 'windows-blender-node-group-capture';
   const capturePreviewMethod = 'foreground-node-editor-copy-from-screen';
+  const archivePreviewKind = 'archive-asset-preview';
   const completeNodeAssetsUrl = 'https://github.com/Eleaxy/Eleaxy.github.io/releases/download/node-assets/resource-archive-node-assets.zip';
   const capturePreviewFields = new Set([
     'kind',
@@ -128,6 +129,15 @@
     return table('node-display-names')?.[`${record.catalog_source}/${record.id}`] || `未提供译名：${original}`;
   }
 
+  // Node assets this site hosts itself carry their own preview, manual, and
+  // .blend download instead of pointing at the Blueish archive.
+  function archiveAsset(record) {
+    const asset = record?.archive_asset;
+    if (!asset || Array.isArray(asset) || typeof asset !== 'object') return null;
+    const isLocalAsset = value => typeof value === 'string' && value.startsWith('/assets/nodes/') && !value.includes('..');
+    return isLocalAsset(asset.manual_url) && isLocalAsset(asset.download?.url) ? asset : null;
+  }
+
   function nodeSocketName(socket, language) {
     const original = typeof socket.name === 'string' ? socket.name.trim() : '';
     if (!original) return translate('nodes-dialog-unnamed-socket');
@@ -154,6 +164,11 @@
       ), description);
     }
     return socket.description || socket.dz || '—';
+  }
+
+  function socketLabel(socket, language) {
+    const name = nodeSocketName(socket, language);
+    return typeof socket.panel === 'string' && socket.panel.trim() ? `${socket.panel.trim()} / ${name}` : name;
   }
 
   function sourceLabel(source, language) {
@@ -250,7 +265,7 @@
   function socketTable(labelKey, sockets, language) {
     const label = translate(labelKey);
     const columns = [
-      ['nodes-dialog-socket', socket => nodeSocketName(socket, language)],
+      ['nodes-dialog-socket', socket => socketLabel(socket, language)],
       ['nodes-dialog-type', socket => socket.type],
       ['nodes-dialog-default', socket => valueText(socket.default)],
       ['nodes-dialog-description', socket => nodeSocketDescription(socket, language)],
@@ -464,6 +479,11 @@
   }
 
   async function previewEntry(record, manifest) {
+    const asset = archiveAsset(record);
+    if (asset) {
+      const match = /^\/images\/nodes\/([0-9a-f]{64})\.png$/.exec(asset.preview || '');
+      return match ? { kind: archivePreviewKind, local: asset.preview, sha256: match[1], manual_url: asset.manual_url } : null;
+    }
     const key = `${record.catalog_source}/${record.id}`;
     const entry = manifest.images[key];
     if (!entry || Array.isArray(entry) || typeof entry !== 'object') return null;
@@ -481,13 +501,14 @@
   }
 
   function updatePreviewCopy(figure, record, entry = figure.__resourceArchiveNodePreviewEntry) {
-    const name = record.name || record.id;
     const isCapture = entry?.kind === capturePreviewKind;
+    const isArchive = entry?.kind === archivePreviewKind;
+    const name = isArchive ? nodeDisplayName(record, document.documentElement.lang) : record.name || record.id;
     figure.querySelector('[data-testid="node-preview-image"]')?.setAttribute(
       'alt',
       isCapture
         ? translate('nodes-dialog-capture-preview-alt', { name })
-        : translate('nodes-dialog-preview-alt', { name }),
+        : translate(isArchive ? 'nodes-dialog-archive-preview-alt' : 'nodes-dialog-preview-alt', { name }),
     );
     const caption = figure.querySelector('[data-node-detail-preview-caption]');
     if (caption) {
@@ -496,24 +517,25 @@
           name,
           sourceBlend: entry?.source_blend || '',
         })
-        : translate('nodes-dialog-preview-caption');
+        : translate(isArchive ? 'nodes-dialog-archive-preview-caption' : 'nodes-dialog-preview-caption');
     }
     const provenance = figure.querySelector('[data-node-detail-preview-provenance]');
     if (provenance) {
-      provenance.textContent = translate('nodes-dialog-view-blueish-source');
+      provenance.textContent = translate(isArchive ? 'nodes-dialog-open-manual' : 'nodes-dialog-view-blueish-source');
     }
     const label = figure.querySelector('[data-node-workbench-preview-label]');
     if (label) {
       label.textContent = translate(isCapture
         ? 'nodes-workbench-windows-capture-preview'
-        : 'nodes-workbench-official-preview');
+        : isArchive ? 'nodes-workbench-archive-preview' : 'nodes-workbench-official-preview');
     }
     const version = figure.querySelector('[data-node-workbench-preview-version]');
     if (version) {
       version.textContent = isCapture
         ? ''
         : translate('nodes-workbench-preview-version', {
-          version: record.version || record.last_modified_version || record.created_version || '—',
+          version: (isArchive ? archiveAsset(record)?.blender_version : null)
+            || record.version || record.last_modified_version || record.created_version || '—',
         });
     }
     updatePreviewDimensions(figure);
@@ -557,7 +579,7 @@
     const provenance = entry.kind === capturePreviewKind ? null : node('a', 'node-preview-provenance');
     if (provenance) {
       provenance.dataset.nodeDetailPreviewProvenance = '';
-      provenance.href = entry.source_url;
+      provenance.href = entry.kind === archivePreviewKind ? entry.manual_url : entry.source_url;
       provenance.rel = 'noopener';
       provenance.target = '_blank';
     }
@@ -737,6 +759,7 @@
     provenanceCopy.dataset.nodeDetailProvenanceCopy = '';
     provenance.append(provenanceHeading, provenanceCopy);
 
+    const asset = archiveAsset(record);
     const actions = node('div', 'detail-actions');
     let downloadNote = null;
     let download = null;
@@ -745,9 +768,14 @@
       download = node('a', 'button-primary');
       download.dataset.pixelFlicker = '';
       download.dataset.testid = 'node-blend-download';
-      download.href = variant === 'workbench' ? completeNodeAssetsUrl : record.download_url;
-      download.rel = 'noopener';
-      download.target = '_blank';
+      if (asset) {
+        download.href = asset.download.url;
+        download.download = asset.download.filename || '';
+      } else {
+        download.href = variant === 'workbench' ? completeNodeAssetsUrl : record.download_url;
+        download.rel = 'noopener';
+        download.target = '_blank';
+      }
       const downloadLabel = node('span', 'pixel-button-label');
       download.append(downloadLabel);
       downloadNote.__resourceArchiveNodeDetailDownload = downloadLabel;
@@ -756,7 +784,7 @@
     const source = node('a', 'button-secondary');
     source.dataset.nodeDetailSourceAction = '';
     source.dataset.pixelFlicker = '';
-    source.href = 'https://github.com/blueish0930/Assets';
+    source.href = asset ? asset.manual_url : 'https://github.com/blueish0930/Assets';
     source.rel = 'noopener';
     source.target = '_blank';
     source.append(node('span', 'pixel-button-label'));
@@ -768,10 +796,22 @@
     content.append(inputs, outputs, provenance, actions);
     body.append(content);
     if (variant === 'workbench') {
-      const copy = node('button', 'button-secondary');
-      copy.type = 'button';
-      copy.dataset.testid = 'node-workbench-copy-link';
-      copy.dataset.nodeWorkbenchCopyLink = '';
+      let copy;
+      if (asset) {
+        copy = node('a', 'button-secondary');
+        copy.dataset.testid = 'node-workbench-manual-link';
+        copy.dataset.nodeWorkbenchManualLink = '';
+        copy.dataset.pixelFlicker = '';
+        copy.href = asset.manual_url;
+        copy.rel = 'noopener';
+        copy.target = '_blank';
+        copy.append(node('span', 'pixel-button-label'));
+      } else {
+        copy = node('button', 'button-secondary');
+        copy.type = 'button';
+        copy.dataset.testid = 'node-workbench-copy-link';
+        copy.dataset.nodeWorkbenchCopyLink = '';
+      }
       const previewHost = node('div', 'node-workbench-preview-host');
       const information = node('div', 'node-workbench-information');
       const scroll = node('div', 'node-workbench-information-scroll');
@@ -780,7 +820,7 @@
       else scroll.append(header);
       scroll.append(inputs, outputs, provenance);
       if (downloadNote) scroll.append(downloadNote);
-      if (sourceAction) scroll.append(sourceAction);
+      if (sourceAction && !asset) scroll.append(sourceAction);
       actions.replaceChildren(copy, ...(download ? [download] : []));
       information.append(scroll, actions);
       article.append(previewHost, information);
@@ -813,6 +853,7 @@
       download: article.querySelector('[data-testid="node-blend-download"]'),
       source: article.querySelector('[data-node-detail-source-action]'),
       copy: article.querySelector('[data-node-workbench-copy-link]'),
+      manual: article.querySelector('[data-node-workbench-manual-link] .pixel-button-label'),
     };
     if (references.notes) references.notes.__resourceArchiveNodeDetailHeading = references.notes.querySelector('[data-node-detail-notes-heading]');
     [references.inputs, references.outputs].filter(Boolean).forEach(region => {
@@ -838,6 +879,7 @@
     if (!stored) return;
     const taxonomy = window.ResourceArchiveNodeTaxonomy;
     const { record, references } = stored;
+    const asset = archiveAsset(record);
     const categoryLabel = taxonomy?.categoryLabel(record.category_id, language) || record.category_id;
     const systemLabel = route.parentGroup && taxonomy?.getSystem(route.parentGroup)
       ? taxonomy.systemLabel(taxonomy.getSystem(route.parentGroup), language)
@@ -883,6 +925,7 @@
     appendMeta('node-detail-created-version', translate('nodes-detail-created-version'), record.created_version);
     appendMeta('node-detail-last-modified-version', translate('nodes-detail-last-modified-version'), record.last_modified_version);
     appendMeta('node-detail-version', translate('nodes-detail-version'), record.version);
+    appendMeta('node-detail-blender-version', translate('nodes-detail-blender-version'), asset?.blender_version);
     if (references.notes) references.notes.__resourceArchiveNodeDetailHeading.textContent = translate('nodes-dialog-curated-parameter-notes');
     [references.inputs, references.outputs].filter(Boolean).forEach(region => {
       const labels = region.__resourceArchiveNodeDetailLabels;
@@ -895,22 +938,27 @@
         const socket = labels.sockets[rowIndex];
         const cells = row.querySelectorAll('td');
         if (!socket || cells.length < 4) return;
-        cells[0].textContent = nodeSocketName(socket, language);
+        cells[0].textContent = socketLabel(socket, language);
         cells[3].textContent = nodeSocketDescription(socket, language);
       });
     });
-    if (references.provenanceHeading) references.provenanceHeading.textContent = translate('nodes-dialog-view-blueish-source');
-    if (references.provenanceCopy) references.provenanceCopy.textContent = translate('nodes-dialog-provenance-copy');
+    if (references.provenanceHeading) {
+      references.provenanceHeading.textContent = translate(asset ? 'nodes-dialog-archive-provenance-heading' : 'nodes-dialog-view-blueish-source');
+    }
+    if (references.provenanceCopy) {
+      references.provenanceCopy.textContent = translate(asset ? 'nodes-dialog-archive-provenance-copy' : 'nodes-dialog-provenance-copy');
+    }
     const downloadLabel = article.querySelector('[data-testid="node-blend-download"] .pixel-button-label');
     const isWorkbench = article.dataset.nodeDetailVariant === 'workbench';
-    if (downloadLabel) downloadLabel.textContent = translate(isWorkbench
-      ? 'nodes-workbench-download-assets'
-      : 'nodes-dialog-download-owning');
+    if (downloadLabel) downloadLabel.textContent = translate(asset
+      ? 'nodes-workbench-download-blend'
+      : isWorkbench ? 'nodes-workbench-download-assets' : 'nodes-dialog-download-owning');
     const note = article.querySelector('.download-note');
-    if (note) note.textContent = translate(isWorkbench
-      ? 'nodes-workbench-download-note'
-      : 'nodes-dialog-download-note');
-    references.source?.querySelector('.pixel-button-label') && (references.source.querySelector('.pixel-button-label').textContent = translate('nodes-dialog-view-blueish-source'));
+    if (note) note.textContent = translate(asset
+      ? 'nodes-workbench-archive-download-note'
+      : isWorkbench ? 'nodes-workbench-download-note' : 'nodes-dialog-download-note');
+    references.source?.querySelector('.pixel-button-label') && (references.source.querySelector('.pixel-button-label').textContent = translate(asset ? 'nodes-dialog-open-manual' : 'nodes-dialog-view-blueish-source'));
+    if (references.manual) references.manual.textContent = translate('nodes-dialog-open-manual');
     if (references.copy) references.copy.textContent = translate('nodes-workbench-copy-link');
     const preview = article.querySelector('[data-node-detail-preview]');
     if (preview) updatePreviewCopy(preview, record);
