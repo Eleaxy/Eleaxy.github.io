@@ -110,6 +110,40 @@
   text-wrap: balance;
 }
 
+/* Attribution panel for translated tutorials, directly under the title. */
+.tutorial-credit {
+  box-sizing: border-box;
+  width: min(100%, 42rem);
+  margin: 24px 0 0;
+  padding: 16px 20px 18px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  background: var(--surface);
+}
+.tutorial-credit-kind {
+  margin: 0;
+  color: var(--accent);
+  font: 700 .68rem/1.35 "Geist Mono", ui-monospace, monospace;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.tutorial-credit-rows { display: grid; gap: 8px; margin: 12px 0 0; }
+.tutorial-credit-rows > div { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 12px; align-items: baseline; }
+.tutorial-credit-rows dt { color: var(--text-secondary); font-size: .84rem; }
+.tutorial-credit-rows dd { min-width: 0; margin: 0; font-size: .95rem; line-height: 1.5; overflow-wrap: anywhere; }
+.tutorial-credit a,
+.tutorial-link-list a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.tutorial-credit a:hover,
+.tutorial-link-list a:hover { text-decoration-thickness: 2px; }
+.tutorial-credit-note {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
 .tutorial-source-video {
   width: min(100%, 42rem);
   max-width: 100%;
@@ -186,10 +220,15 @@ body[data-page='tutorials']:has(.tutorial-detail-long-image) .page-shell {
 .tutorial-intro { width: min(67ch, 100%); margin-top: 44px; }
 .tutorial-copy-block,
 .tutorial-copy-list,
+.tutorial-link-list,
 .tutorial-callout { max-width: 68ch; margin: 18px 0 0; font-size: 1rem; line-height: 1.7; }
 .tutorial-copy-block:first-child,
 .tutorial-copy-list:first-child,
+.tutorial-link-list:first-child,
 .tutorial-callout:first-child { margin-top: 0; }
+.tutorial-link-list { padding: 0; list-style: none; border-top: 1px solid var(--border); }
+.tutorial-link-list li { padding: 10px 0; border-bottom: 1px solid var(--border); overflow-wrap: anywhere; }
+.tutorial-link-list a::after { content: ' ↗'; font: 700 .7rem/1 "Geist Mono", ui-monospace, monospace; text-decoration: none; }
 .tutorial-copy-list { padding-left: 1.3em; }
 .tutorial-copy-list li + li { margin-top: 8px; }
 .tutorial-copy-critical {
@@ -238,10 +277,8 @@ html[data-resolved-theme="dark"] .tutorial-callout-warning {
   letter-spacing: -.02em;
 }
 .tutorial-section > :not(h2) { grid-column: 6 / -1; min-width: 0; }
-.tutorial-section > .tutorial-copy-block:first-of-type,
-.tutorial-section > .tutorial-copy-list:first-of-type,
-.tutorial-section > .tutorial-callout:first-of-type,
-.tutorial-section > .tutorial-figure:first-of-type { margin-top: 0; }
+/* Only the block sharing the heading row aligns flush; later figures keep their gap. */
+.tutorial-section > h2 + * { margin-top: 0; }
 
 /*
  * Inline figures share one fixed preview column so mixed capture sizes
@@ -376,6 +413,9 @@ html.tutorial-lightbox-open {
   .tutorial-copy-block,
   .tutorial-copy-list,
   .tutorial-callout,
+  .tutorial-link-list,
   .tutorial-figure { margin-top: 0; }
+  .tutorial-credit { margin-top: 18px; padding: 14px 16px 16px; }
+  .tutorial-credit-rows > div { grid-template-columns: 1fr; gap: 2px; }
   .tutorial-section > :not(h2) + :not(h2) { margin-top: 0; }
 }
