@@ -189,6 +189,27 @@
     return typeof value === 'string' && value.trim().length > 0;
   }
 
+  function safeExternalUrl(value) {
+    if (!hasText(value) || /\s/u.test(value)) return null;
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' && url.hostname ? url.href : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function validateCredit(credit, path) {
+    if (!credit || typeof credit !== 'object' || Array.isArray(credit)
+      || !hasText(credit.author) || !hasText(credit.title) || !safeExternalUrl(credit.url)
+      || (Object.hasOwn(credit, 'authorUrl') && !safeExternalUrl(credit.authorUrl))
+      || (Object.hasOwn(credit, 'handle') && !hasText(credit.handle))
+      || (Object.hasOwn(credit, 'publisher') && !hasText(credit.publisher))
+      || (Object.hasOwn(credit, 'permission') && typeof credit.permission !== 'boolean')) {
+      throw schemaError(`${path} credit is invalid`);
+    }
+  }
+
   function validateImage(block, path) {
     if (!hasText(block.src) || !hasText(block.alt) || !hasText(block.caption)
       || !Number.isInteger(block.width) || block.width < 1
@@ -208,6 +229,13 @@
       if (block.type === 'list') {
         if (!Array.isArray(block.items) || block.items.length === 0 || !block.items.every(hasText)) {
           throw schemaError(`${path}[${index}] list is invalid`);
+        }
+        return;
+      }
+      if (block.type === 'links') {
+        if (!Array.isArray(block.items) || block.items.length === 0
+          || !block.items.every(item => item && hasText(item.label) && safeExternalUrl(item.url))) {
+          throw schemaError(`${path}[${index}] links are invalid`);
         }
         return;
       }
@@ -271,6 +299,7 @@
       return;
     }
     if (entry.type !== 'structured') throw schemaError(`${path} type is invalid`);
+    if (Object.hasOwn(entry, 'credit')) validateCredit(entry.credit, path);
     const renderedAssetFiles = validateStructuredAsset(entry, path);
     validateBlocks(entry.intro, `${path}.intro`, renderedAssetFiles);
     if (!Array.isArray(entry.sections) || entry.sections.length === 0) throw schemaError(`${path}.sections are missing`);
@@ -458,6 +487,41 @@
     }
   }
 
+  function externalLink(url, text, attributes = {}) {
+    return element('a', {
+      ...attributes,
+      href: safeExternalUrl(url),
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      text,
+    });
+  }
+
+  // Attribution for tutorials translated from another author's original.
+  function renderCredit(credit) {
+    const panel = element('aside', {
+      class: 'tutorial-credit',
+      'data-tutorial-credit': '',
+      'aria-label': t('tutorials-credit-label'),
+    });
+    const author = element('dd', { lang: 'en' });
+    author.append(credit.authorUrl ? externalLink(credit.authorUrl, credit.author) : credit.author);
+    if (hasText(credit.handle)) author.append(` (${credit.handle})`);
+    if (hasText(credit.publisher)) author.append(` · ${credit.publisher}`);
+    const rows = element('dl', { class: 'tutorial-credit-rows' }, [
+      element('div', {}, [element('dt', { text: t('tutorials-credit-author') }), author]),
+      element('div', {}, [
+        element('dt', { text: t('tutorials-credit-source') }),
+        element('dd', {}, [externalLink(credit.url, credit.title, { lang: 'en', 'data-tutorial-credit-source': '' })]),
+      ]),
+    ]);
+    panel.append(element('p', { class: 'tutorial-credit-kind', text: t('tutorials-credit-kind') }), rows);
+    if (credit.permission === true) {
+      panel.append(element('p', { class: 'tutorial-credit-note', text: t('tutorials-credit-permission') }));
+    }
+    return panel;
+  }
+
   function renderBlock(block) {
     if (block.type === 'paragraph') {
       const paragraph = element('p', {
@@ -484,6 +548,13 @@
       });
       fillCopyText(callout, block.text);
       return callout;
+    }
+    if (block.type === 'links') {
+      const list = element('ul', { class: 'tutorial-link-list', 'data-tutorial-block': '', 'data-tutorial-block-type': 'links', lang: 'zh-CN' });
+      block.items.forEach((item) => {
+        list.append(element('li', {}, [externalLink(item.url, item.label)]));
+      });
+      return list;
     }
     const src = `/${block.src.replace(/^\/+/, '')}`;
     const figure = element('figure', { class: 'tutorial-figure', 'data-tutorial-block': '', 'data-tutorial-block-type': 'image' });
@@ -579,6 +650,7 @@
       element('p', { class: 'tutorial-hierarchy', text: t('tutorials-hierarchy') }),
       element('h1', { 'data-tutorial-source-title': '', lang: 'zh-CN', text: entry.title }),
     );
+    if (entry.credit) article.append(renderCredit(entry.credit));
 
     if (hasText(entry.source_bvid)) {
       const media = element('figure', { class: 'tutorial-source-video' });
