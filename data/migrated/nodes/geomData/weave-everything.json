@@ -256,6 +256,11 @@
       "url": "/assets/nodes/weave-everything/downloads/万物编织.blend",
       "filename": "万物编织.blend",
       "sha256": "9012fe9e545e8bd9ab10f605514c32a15c852bea7cc1aad2d351f8b9757da9ff"
+    },
+    "credit": {
+      "contributor_id": "molongdao",
+      "name": "墨龙道",
+      "url": "https://space.bilibili.com/265644289"
     }
   }
 }

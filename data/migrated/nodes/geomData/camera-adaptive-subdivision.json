@@ -1,0 +1,109 @@
+{
+  "id": "camera-adaptive-subdivision",
+  "name": "Camera Adaptive Subdivision",
+  "name_zh": "相机自适应细分",
+  "category_id": "mesh",
+  "category": "Mesh",
+  "top_category_id": "geom",
+  "top_category": "Geometry Nodes",
+  "description": "根据活动相机的视角和深度调整网格细分，在靠近相机的区域生成更多细节。",
+  "notes": "节点使用场景的活动相机。使用时请填写模型的 UV 名称，并将分辨率设置为与渲染输出一致；“安全值”限制细分后的面数。",
+  "example": "在网格物体上添加几何节点修改器并选择该节点组，移动活动相机，观察网格细分随相机位置和视角的变化；调整“范围”和“细分等级”可改变细分的深度范围和密度。",
+  "example_image": "",
+  "param_descriptions": {},
+  "mapping_raw": "mesh",
+  "inputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "Mesh to subdivide.",
+      "de": "Mesh to subdivide.",
+      "dz": "需要细分的网格。"
+    },
+    {
+      "name": "细分方法",
+      "type": "NodeSocketMenu",
+      "default": "Catmull-Clark",
+      "description": "简单型 (Simple) keeps the original shape; Catmull-Clark smooths the mesh while subdividing.",
+      "de": "简单型 (Simple) keeps the original shape; Catmull-Clark smooths the mesh while subdividing.",
+      "dz": "简单型保持原有形状；Catmull-Clark 在细分时平滑网格。"
+    },
+    {
+      "name": "uv",
+      "type": "NodeSocketString",
+      "default": "UV 贴图",
+      "description": "Name of the UV layer the model uses. It must be filled in.",
+      "de": "Name of the UV layer the model uses. It must be filled in.",
+      "dz": "必须填写模型使用的 UV 图层名称。"
+    },
+    {
+      "name": "细分等级",
+      "type": "NodeSocketFloat",
+      "default": 5.0,
+      "min": 0.0,
+      "max": 10.0,
+      "description": "Subdivision strength. Higher levels add more faces.",
+      "de": "Subdivision strength. Higher levels add more faces.",
+      "dz": "控制细分强度。提高等级会增加网格数量。"
+    },
+    {
+      "name": "范围",
+      "type": "NodeSocketFloat",
+      "default": 20.0,
+      "min": 0.0,
+      "max": 10000.0,
+      "description": "Camera-depth range, in meters, over which the subdivision level falls off. Areas near the camera get the highest level, which decreases with depth. For example, with a range of 6 m and a level of 3, the level drops from 3 to 0 between 0 and 6 m of camera depth.",
+      "de": "Camera-depth range, in meters, over which the subdivision level falls off. Areas near the camera get the highest level, which decreases with depth. For example, with a range of 6 m and a level of 3, the level drops from 3 to 0 between 0 and 6 m of camera depth.",
+      "dz": "设置细分等级随相机深度变化的范围，单位为米。靠近相机的区域细分等级较高，随着深度增加逐渐降低。例如，范围为 6 米、细分等级为 3 时，相机深度从 0 到 6 米，对应的细分等级从 3 逐渐降低到 0。"
+    },
+    {
+      "name": "安全值",
+      "type": "NodeSocketInt",
+      "default": 500000,
+      "min": 0,
+      "description": "Limits the face count after subdivision. Before each subdivision step the node predicts the resulting face count; if it would exceed this value, that step is skipped and the previous result is kept.",
+      "de": "Limits the face count after subdivision. Before each subdivision step the node predicts the resulting face count; if it would exceed this value, that step is skipped and the previous result is kept.",
+      "dz": "限制细分后的面数。每次细分前，节点会预测这次细分产生的面数；如果预计超过安全值，就取消本次细分，保留之前的结果。"
+    },
+    {
+      "name": "分辨率",
+      "type": "NodeSocketVector",
+      "default": [
+        1920.0,
+        1080.0
+      ],
+      "description": "Render width and height. Must match the render output.",
+      "de": "Render width and height. Must match the render output.",
+      "dz": "必须设置为与渲染输出一致的宽度和高度。"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "Geometry",
+      "type": "NodeSocketGeometry",
+      "description": "The adaptively subdivided mesh.",
+      "de": "The adaptively subdivided mesh.",
+      "dz": "经过自适应细分的网格。"
+    }
+  ],
+  "catalog_source": "geomData",
+  "source_blend": "/assets/nodes/camera-adaptive-subdivision/downloads/自适应细分-sdf多层级-相机z深度(1).blend",
+  "download_url": "/assets/nodes/camera-adaptive-subdivision/downloads/自适应细分-sdf多层级-相机z深度(1).blend",
+  "archive_asset": {
+    "node_group": "相机自适应细分",
+    "node_tree": "GeometryNodeTree",
+    "blender_version": "5.2",
+    "manual_url": "/assets/nodes/camera-adaptive-subdivision/index.html",
+    "preview": "/images/nodes/fd28e2d29977799757d17befd10ab6c35e3faa535fa858c7d63ce294bff9b3aa.png",
+    "download": {
+      "url": "/assets/nodes/camera-adaptive-subdivision/downloads/自适应细分-sdf多层级-相机z深度(1).blend",
+      "filename": "自适应细分-sdf多层级-相机z深度(1).blend",
+      "sha256": "4fee6273d89ed66f300a751e4118af2ffc295231cb93a225a18ff24e8ee33932"
+    },
+    "credit": {
+      "contributor_id": "molongdao",
+      "name": "墨龙道",
+      "url": "https://space.bilibili.com/265644289"
+    }
+  }
+}
