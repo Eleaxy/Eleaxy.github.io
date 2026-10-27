@@ -138,6 +138,12 @@
     return isLocalAsset(asset.manual_url) && isLocalAsset(asset.download?.url) ? asset : null;
   }
 
+  function archiveCredit(asset) {
+    const credit = asset?.credit;
+    if (!credit || typeof credit.name !== 'string' || !credit.name.trim()) return null;
+    return typeof credit.url === 'string' && credit.url.startsWith('https://') ? credit : null;
+  }
+
   function nodeSocketName(socket, language) {
     const original = typeof socket.name === 'string' ? socket.name.trim() : '';
     if (!original) return translate('nodes-dialog-unnamed-socket');
@@ -947,6 +953,16 @@
     }
     if (references.provenanceCopy) {
       references.provenanceCopy.textContent = translate(asset ? 'nodes-dialog-archive-provenance-copy' : 'nodes-dialog-provenance-copy');
+      const credit = archiveCredit(asset);
+      if (credit) {
+        const link = node('a', null, credit.name.trim());
+        link.dataset.nodeDetailArchiveCredit = '';
+        link.href = credit.url;
+        link.rel = 'noopener';
+        link.target = '_blank';
+        const label = translate('nodes-dialog-archive-credit');
+        references.provenanceCopy.append(isChinese(language) ? label : ` ${label} `, link);
+      }
     }
     const downloadLabel = article.querySelector('[data-testid="node-blend-download"] .pixel-button-label');
     const isWorkbench = article.dataset.nodeDetailVariant === 'workbench';
