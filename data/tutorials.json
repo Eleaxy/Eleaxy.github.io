@@ -1,5 +1,276 @@
 [
   {
+    "slug": "cycles-decal-tattoo",
+    "type": "structured",
+    "title": "Cycles 快速贴花-纹身",
+    "asset": {
+      "directory": "assets/tutorials/cycles-decal-tattoo",
+      "files": [
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/e78df0a2c1bc928661b40bc5cd350b7747b74d4551e6098f58c25c0cd7f29648.png",
+          "sha256": "e78df0a2c1bc928661b40bc5cd350b7747b74d4551e6098f58c25c0cd7f29648",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/a2de9cacb3e32e442b6713a9fccf1788810926b91ce3c0e47fdf4e7031665838.png",
+          "sha256": "a2de9cacb3e32e442b6713a9fccf1788810926b91ce3c0e47fdf4e7031665838",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/bda1385a1fffcb1f61f48966a64921100c369138cf819ed7bd0488873a1af193.png",
+          "sha256": "bda1385a1fffcb1f61f48966a64921100c369138cf819ed7bd0488873a1af193",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/ff2a53bfe4a758b8025ddea7d670c073c7a0b5a4eee3bc245dbd9fa94367da45.png",
+          "sha256": "ff2a53bfe4a758b8025ddea7d670c073c7a0b5a4eee3bc245dbd9fa94367da45",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/781326764fec48754f311e770f39096d47f088026ac8b88df6e12bc821941752.png",
+          "sha256": "781326764fec48754f311e770f39096d47f088026ac8b88df6e12bc821941752",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/96671bdeb102217d97c58de64d7edbc0b6de7e04a21b6d083b8a39674de200d2.png",
+          "sha256": "96671bdeb102217d97c58de64d7edbc0b6de7e04a21b6d083b8a39674de200d2",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/c28d92594c2086cf7d375f7fa588e086cd24ff934db844c91dd91bebe638a5fd.png",
+          "sha256": "c28d92594c2086cf7d375f7fa588e086cd24ff934db844c91dd91bebe638a5fd",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/f8bbbe2dbb8c516c8237be52dfb82ed78205229fbbe51597ba6e3d138d3b6375.png",
+          "sha256": "f8bbbe2dbb8c516c8237be52dfb82ed78205229fbbe51597ba6e3d138d3b6375",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/0f6c4b3c68fb13ae22a6aa1dd721c946f267ea5a9ff0d5944abd55919589cba1.png",
+          "sha256": "0f6c4b3c68fb13ae22a6aa1dd721c946f267ea5a9ff0d5944abd55919589cba1",
+          "rendered": true
+        },
+        {
+          "src": "assets/tutorials/cycles-decal-tattoo/a1fc6dab89fa0ee33c3f6469ca94f1c362e52d391627139b65bc8f806e8dd158.png",
+          "sha256": "a1fc6dab89fa0ee33c3f6469ca94f1c362e52d391627139b65bc8f806e8dd158",
+          "rendered": true
+        }
+      ]
+    },
+    "intro": [
+      {
+        "type": "paragraph",
+        "text": "目标模型不用拆 UV、也不用改动原本的皮肤材质，只要在身体外侧套一个投影盒，平时拖动空物体就能把带透明通道的纹身或贴纸贴到任意曲面上。"
+      },
+      {
+        "type": "paragraph",
+        "text": "流程共四步：顺着视线发射射线探测后方皮肤位置；把打到的点换算成 0–1 贴图坐标；用两层遮罩切掉盒外与背面多余部分；最后乘上透明通道混合输出。"
+      },
+      {
+        "type": "warning",
+        "text": "这套节点用到了材质编辑器里的「光线投射」节点，需要 Blender 5.1 及以上版本并切换为 Cycles 渲染器。另外记得在投影盒的「物体属性 → 可见性 → 射线可见性」里只勾选「摄像机」，关掉阴影、漫射、光泽和透射，否则悬浮在空中的图案会在皮肤上投下一块假黑影。"
+      }
+    ],
+    "sections": [
+      {
+        "title": "1. 效果与场景准备",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "角色模型本身完全不用动，场景里只需要额外摆一个立方体和一个空物体充当「隐形投影仪」："
+          },
+          {
+            "type": "list",
+            "items": [
+              "投影盒（立方体 Cube）：新建默认立方体套在要贴纹身的部位，把贴花材质赋给它；在「物体属性 → 视图显示」中改为「边界框」以免遮挡视线。",
+              "控制器（空物体 Empty）：新建空物体作为立方体的父级（演示工程将空物体缩放设为 0.5，刚好把 2 米立方体缩成 1 米见方），后续挪位置、转角度直接拖空物体即可。",
+              "机位注意：观察或渲染时镜头要留在立方体外侧，一旦钻进盒子内部，视线跳过盒面就会导致纹身消失。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/e78df0a2c1bc928661b40bc5cd350b7747b74d4551e6098f58c25c0cd7f29648.png",
+            "alt": "无材质无 UV 的猴头模型通过投影盒与空物体贴合纹身效果",
+            "caption": "身体模型不拆 UV、不改材质，拖动父级空物体即可把纹身贴合到曲面上。",
+            "width": 918,
+            "height": 908
+          }
+        ]
+      },
+      {
+        "title": "2. 思路概览：四步隔空印图案",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "第一步（隔空探测皮肤）：视线穿过盒子表面时，顺着视线往里发射一条射线，直接拿到后面皮肤上的「命中位置」与「命中法向」。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/a2de9cacb3e32e442b6713a9fccf1788810926b91ce3c0e47fdf4e7031665838.png",
+            "alt": "从盒子表面发射射线探测后方模型表面的世界位置",
+            "caption": "几何数据.位置 → 光线投射（方向 = 引入 × -1），探测后方皮肤的世界位置。",
+            "width": 2626,
+            "height": 1023
+          },
+          {
+            "type": "paragraph",
+            "text": "第二步（把皮肤位置当成贴图坐标）：将探测到的世界位置换算成盒子内部坐标，缩放到 0–1 范围后接入图像纹理。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/bda1385a1fffcb1f61f48966a64921100c369138cf819ed7bd0488873a1af193.png",
+            "alt": "把命中位置转成 0 到 1 贴图坐标后的初步采样效果",
+            "caption": "把命中点转成贴图坐标后的初步效果（尚未接透明混合，周围盒面呈黑色）。",
+            "width": 2626,
+            "height": 1023
+          },
+          {
+            "type": "paragraph",
+            "text": "第三步（加两层遮罩防穿帮）：第一层「盒子边界遮罩」切掉超出盒子的部分并柔化边缘；第二层「皮肤朝向遮罩」擦掉太斜的侧面与模型背面，防止拉丝变形或穿透到后脑勺。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/ff2a53bfe4a758b8025ddea7d670c073c7a0b5a4eee3bc245dbd9fa94367da45.png",
+            "alt": "盒体边界遮罩与法线朝向遮罩相乘后的灰度预览",
+            "caption": "两层遮罩叠在一起的灰度预览：白色区域即最终允许显示纹身的安全范围。",
+            "width": 2626,
+            "height": 1023
+          },
+          {
+            "type": "paragraph",
+            "text": "第四步（抠掉透明底输出）：把纹身图自带的 Alpha 透明通道和两层遮罩乘在一起，驱动混合着色器合成最终贴花。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/781326764fec48754f311e770f39096d47f088026ac8b88df6e12bc821941752.png",
+            "alt": "完整着色器节点树与最终 Cycles 渲染视口效果",
+            "caption": "连好全部节点后的完整节点图与视口渲染效果。",
+            "width": 2626,
+            "height": 1023
+          }
+        ]
+      },
+      {
+        "title": "3. 发射射线（光线投射）",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "位置：把「几何数据」的「位置」连给「光线投射」的「位置」，代表射线从盒子表面出发。",
+              "方向：把「几何数据」的「引入」接「矢量数学（缩放 -1.000）」后再连入「方向」。「引入」原本是从表面指向镜头的方向，乘 -1 掉头后就是顺着眼睛看的方向继续往场景里面打。",
+              "长度：填 3.000 米，只要比盒子厚、够打到里面的皮肤即可。",
+              "仅局部：保持不勾选。勾上就只检测盒子自己，打不到里面的身体，纹身会直接消失。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/96671bdeb102217d97c58de64d7edbc0b6de7e04a21b6d083b8a39674de200d2.png",
+            "alt": "光线投射节点的输入参数与连接方式",
+            "caption": "光线投射：位置接几何位置，引入乘 -1 作为投射方向，不勾选仅局部。",
+            "width": 1045,
+            "height": 692
+          }
+        ]
+      },
+      {
+        "title": "4. 把命中点转成贴图坐标",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "转成盒子内部坐标：从「命中位置」连出一个「矢量变换」，模式选「点」，把「世界环境」转成「物体」。",
+              "缩放到 0–1 范围：依次接「矢量数学（缩放 0.500）」→「矢量数学（相加 0.500, 0.500, 0.500）」→ 图像纹理的「矢量」。默认立方体内部坐标是 -1 到 +1，乘 0.5 再加 0.5 刚好变成 0 到 1 居中铺满整张图。",
+              "贴图改成裁剪模式：在「图像纹理」里加载透明底 PNG，把默认的「重复」改成「裁剪」，这样调小图案时周围不会重复印出一排小纹身。"
+            ]
+          },
+          {
+            "type": "note",
+            "text": "平时直接移动、旋转、缩放外面的空物体就能调纹身位置；如果想不动空物体、只在材质节点里微调图案大小或角度，可以在「矢量数学（相加）」与「图像纹理」之间串一个「映射」节点（类型选「点」）。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/c28d92594c2086cf7d375f7fa588e086cd24ff934db844c91dd91bebe638a5fd.png",
+            "alt": "命中位置变换到物体空间后缩放相加接入裁剪模式图像纹理",
+            "caption": "命中位置转入物体空间后乘 0.5 加 0.5，接入裁剪模式的图像纹理。",
+            "width": 1267,
+            "height": 372
+          }
+        ]
+      },
+      {
+        "title": "5. 两道遮罩：防出界、防拉丝、防穿透",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "text": "遮罩 A（切掉盒子外面的部分）：从前面转好物体坐标的节点再拉一根线 →「矢量数学（绝对值）」→「分离颜色（模式改 HSV，从明度连出）」→「映射范围（平滑阶跃：从 0.950–1.000 变到 1.000–0.000）」。"
+          },
+          {
+            "type": "paragraph",
+            "text": "因为射线有 3 米长，穿出盒子后可能打到身后的地板或别的部位；这里取 HSV「明度」相当于找出离盒子中心最远的那一侧距离，贴近盒壁（0.95–1.0）时柔和淡出，一旦超出盒子（大于 1）直接归 0 切掉。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/f8bbbe2dbb8c516c8237be52dfb82ed78205229fbbe51597ba6e3d138d3b6375.png",
+            "alt": "遮罩 A 节点连法：绝对值接分离颜色 HSV 明度再接映射范围",
+            "caption": "遮罩 A：切掉立方体范围外的命中点，并在盒子四周留出 5% 柔和过渡边。",
+            "width": 1269,
+            "height": 306
+          },
+          {
+            "type": "paragraph",
+            "text": "遮罩 B（按皮肤朝向防侧面拉丝与背面穿透）：从「命中法向」连出 →「矢量变换（选法向，世界环境转物体）」→「矢量数学（点乘 0, 0, 1）」→「映射范围（平滑阶跃：从 0.000–0.500 变到 0.000–1.000）」。这一步用来判断皮肤是不是正对着盒子正面（+Z 方向）："
+          },
+          {
+            "type": "list",
+            "items": [
+              "0°–60°（正面到微侧，点乘 1.0–0.5）：遮罩输出 1，图案完整清晰显示，没有拉伸变形。",
+              "60°–90°（很斜的侧面，点乘 0.5–0.0）：遮罩从 1 平滑降到 0，慢慢淡出，避免贴图在侧边被拉成条纹。",
+              "超过 90°（模型背面，点乘小于 0）：遮罩输出 0，完全隐藏，防止纹身穿透脑袋印到后脑勺。"
+            ]
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/0f6c4b3c68fb13ae22a6aa1dd721c946f267ea5a9ff0d5944abd55919589cba1.png",
+            "alt": "遮罩 B 节点连法：命中法向转物体空间后点乘 Z 轴再接映射范围",
+            "caption": "遮罩 B：判断皮肤相对盒子正面的朝向角度，过滤侧面大角度拉伸与背面穿透。",
+            "width": 1271,
+            "height": 370
+          },
+          {
+            "type": "note",
+            "text": "如果以后想让纹身沿着胳膊包得更宽（超过 90°）、把遮罩 B 的「从最小值」改成了负数，记得再拿一个相乘节点乘上光线投射的「是否命中」，否则没打中模型的空气也会显出图案。"
+          }
+        ]
+      },
+      {
+        "title": "6. 抠掉透明底并合并输出",
+        "blocks": [
+          {
+            "type": "list",
+            "items": [
+              "三个开关乘在一起：摆两个「数学（相乘）」节点，把贴图的 Alpha、遮罩 B、遮罩 A 依次相乘，连入「混合着色器」的「系数」。",
+              "连接混合着色器：上面第一个着色器接「透明 BSDF」，下面第二个着色器接「原理化 BSDF」。",
+              "让纹身贴合皮肤受光：把贴图「颜色」接「基础色」，把光线投射的「命中法向」接原理化 BSDF 的「法向」（让纹身跟着皮肤凹凸受光而不是像一块平板），再把「折射率 (IOR)」改成 1.000 去掉盒子表面那层玻璃反光。"
+            ]
+          },
+          {
+            "type": "note",
+            "text": "演示工程里把贴图颜色也连进了「自发光（强度 1.0）」，方便不受阴影影响直接看清图案；如果做融入皮肤明暗阴影的写实纹身，把自发光强度调回 0.0 即可。"
+          },
+          {
+            "type": "image",
+            "src": "assets/tutorials/cycles-decal-tattoo/a1fc6dab89fa0ee33c3f6469ca94f1c362e52d391627139b65bc8f806e8dd158.png",
+            "alt": "混合输出节点连接：Alpha 与两道遮罩连乘混合透明与原理化 BSDF",
+            "caption": "混合输出：Alpha 与两道遮罩连乘作为混合系数，命中法向接入原理化 BSDF 法向，折射率设为 1.000。",
+            "width": 996,
+            "height": 900
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "cinematic-environment-lighting",
     "type": "structured",
     "title": "3D 环境的电影感布光：修道院地牢（EEVEE）",
