@@ -1,0 +1,173 @@
+name: Sync Package from Google Drive
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-from-drive.yml'
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      drive_file_id:
+        description: '可选：指定单个云盘 File ID 或链接（留空则自动扫描 outbox 新包）'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  sync-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Auto-discover and apply new bundles from Google Drive outbox
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OUTBOX_FOLDER_ID: '1mYnidu5fbyKKjks0IaWnEUWNjVzmlMJe'
+          MANUAL_DRIVE_INPUT: ${{ inputs.drive_file_id }}
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, os, re, shutil, subprocess, urllib.request, zipfile
+          from pathlib import Path
+
+          repo_root = Path(os.environ.get("GITHUB_WORKSPACE") or os.getcwd())
+          ledger_path = repo_root / ".github" / "drive-synced.json"
+          ledger = json.loads(ledger_path.read_text("utf-8")) if ledger_path.exists() else {"synced": {}}
+          ua = {"User-Agent": "Mozilla/5.0"}
+
+          manual = os.environ.get("MANUAL_DRIVE_INPUT", "").strip()
+          candidates = []
+          if manual:
+              m = re.search(r"/d/([a-zA-Z0-9_-]{15,})", manual) or re.search(r"[?&]id=([a-zA-Z0-9_-]{15,})", manual)
+              fid = m.group(1) if m else manual
+              candidates.append((fid, f"manual_{fid}.zip", True))
+          else:
+              folder_id = os.environ["OUTBOX_FOLDER_ID"]
+              url = f"https://drive.google.com/embeddedfolderview?id={folder_id}#list"
+              html = urllib.request.urlopen(urllib.request.Request(url, headers=ua), timeout=30).read().decode("utf-8", "ignore")
+              pairs = re.findall(
+                  r'href="https://drive\.google\.com/file/d/([a-zA-Z0-9_-]+)/view[^"]*"[^>]*>.*?<div class="flip-entry-title">([^<]+)</div>',
+                  html,
+                  re.S,
+              )
+              for fid, fname in pairs:
+                  fname = fname.strip()
+                  if fname.endswith("_cloud_bundle.zip") and fid not in ledger["synced"]:
+                      candidates.append((fid, fname, False))
+
+          if not candidates:
+              print("No unsynced *_cloud_bundle.zip packages found in Google Drive outbox.")
+              raise SystemExit(0)
+
+          applied_titles = []
+          for fid, fname, is_manual in candidates:
+              print(f"Downloading {fname} ({fid})...")
+              dl_url = f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t"
+              zip_path = Path(f"/tmp/{fid}.zip")
+              with urllib.request.urlopen(urllib.request.Request(dl_url, headers=ua), timeout=300) as resp, open(zip_path, "wb") as out:
+                  shutil.copyfileobj(resp, out)
+              sha = hashlib.sha256(zip_path.read_bytes()).hexdigest()
+              print(f"Downloaded {zip_path.stat().st_size} bytes, SHA-256={sha}")
+
+              unpack_dir = Path(f"/tmp/unpack_{fid}")
+              if unpack_dir.exists():
+                  shutil.rmtree(unpack_dir)
+              unpack_dir.mkdir(parents=True)
+              with zipfile.ZipFile(zip_path, "r") as zf:
+                  zf.extractall(unpack_dir)
+
+              node_apply = """
+                import fs from "node:fs";
+                import path from "node:path";
+                import { execFileSync } from "node:child_process";
+                const u = process.env.UNPACK_DIR, r = process.env.REPO_ROOT;
+                const m = JSON.parse(fs.readFileSync(path.join(u, "manifest.json"), "utf8"));
+                const cp = (s, d) => {
+                  if (!fs.existsSync(s)) return;
+                  for (const e of fs.readdirSync(s, { withFileTypes: true })) {
+                    const sp = path.join(s, e.name), dp = path.join(d, e.name);
+                    if (e.isDirectory()) { fs.mkdirSync(dp, { recursive: true }); cp(sp, dp); }
+                    else if (e.isFile()) { fs.mkdirSync(path.dirname(dp), { recursive: true }); fs.copyFileSync(sp, dp); }
+                  }
+                };
+                const relDir = path.join(u, "release_assets");
+                if (fs.existsSync(relDir)) {
+                  const tag = m.releaseTag || "stages";
+                  try { execFileSync("gh", ["release", "view", tag], { stdio: "ignore" }); }
+                  catch { execFileSync("gh", ["release", "create", tag, "--title", m.releaseTitle || "Stage Assets", "--notes", "Cloud synced binary assets"], { stdio: "inherit" }); }
+                  for (const f of fs.readdirSync(relDir)) {
+                    const fp = path.join(relDir, f);
+                    if (fs.statSync(fp).isFile()) execFileSync("gh", ["release", "upload", tag, fp, "--clobber"], { stdio: "inherit" });
+                  }
+                }
+                for (const dir of ["assets", "images"]) cp(path.join(u, dir), path.join(r, dir));
+                cp(path.join(u, "repo_files"), r);
+                if (m.kind === "tutorial") {
+                  const entry = JSON.parse(fs.readFileSync(path.join(u, "entry.json"), "utf8"));
+                  const tp = path.join(r, "data", "tutorials.json");
+                  const cur = JSON.parse(fs.readFileSync(tp, "utf8")).filter(x => x.slug !== entry.slug);
+                  const next = m.position === "append" ? [...cur, entry] : [entry, ...cur];
+                  fs.writeFileSync(tp, JSON.stringify(next, null, 2) + "\\n", "utf8");
+                  const tj = path.join(r, "js", "tutorials.js");
+                  if (fs.existsSync(tj)) {
+                    const code = fs.readFileSync(tj, "utf8");
+                    const i1 = code.indexOf("function schemaError("), i2 = code.indexOf("function loadTutorials(");
+                    if (i1 !== -1 && i2 !== -1) {
+                      fs.writeFileSync("/tmp/v.mjs", code.slice(i1, i2) + "\\nexport { validateEntries };\\n");
+                      const { validateEntries } = await import("/tmp/v.mjs");
+                      validateEntries(next);
+                      console.log("validateEntries passed! Total =", next.length);
+                    }
+                  }
+                  const sp = path.join(r, "tests", "browser", "tutorial-production-integration.spec.js");
+                  if (fs.existsSync(sp)) {
+                    const sc = fs.readFileSync(sp, "utf8");
+                    if (!sc.includes(entry.slug) && sc.includes("cinematic-environment-lighting")) {
+                      fs.writeFileSync(sp, sc.replace("['cinematic-environment-lighting',", `['${entry.slug}', '${entry.title}'],\\n  ['cinematic-environment-lighting',`), "utf8");
+                    }
+                  }
+                }
+                if (m.kind === "stage" && fs.existsSync(path.join(u, "stage_entry.json"))) {
+                  const se = JSON.parse(fs.readFileSync(path.join(u, "stage_entry.json"), "utf8"));
+                  const md = path.join(r, "data", "migrated", "stages");
+                  if (fs.existsSync(md)) {
+                    fs.writeFileSync(path.join(md, `${se.id}.json`), JSON.stringify(se, null, 2) + "\\n", "utf8");
+                    const mp = path.join(r, "data", "migrated", "manifest.json");
+                    if (fs.existsSync(mp)) {
+                      const mj = JSON.parse(fs.readFileSync(mp, "utf8"));
+                      if (!mj.stages.some(s => s.id === se.id)) { mj.stages.unshift({ id: se.id, file: `stages/${se.id}.json` }); fs.writeFileSync(mp, JSON.stringify(mj, null, 2) + "\\n", "utf8"); }
+                    }
+                  }
+                }
+              """
+              env = dict(os.environ, UNPACK_DIR=str(unpack_dir), REPO_ROOT=str(repo_root))
+              subprocess.run(["node", "--input-type=module", "-e", node_apply], env=env, check=True)
+
+              manifest = json.loads((unpack_dir / "manifest.json").read_text("utf-8"))
+              ledger["synced"][fid] = {
+                  "fileName": fname,
+                  "sha256": sha,
+                  "kind": manifest.get("kind"),
+                  "slug": manifest.get("slug") or manifest.get("id"),
+                  "title": manifest.get("title"),
+              }
+              applied_titles.append(manifest.get("title") or fname)
+
+          ledger_path.parent.mkdir(parents=True, exist_ok=True)
+          ledger_path.write_text(json.dumps(ledger, ensure_ascii=False, indent=2) + "\n", "utf-8")
+          Path("/tmp/commit_msg.txt").write_text("Publish from Drive bridge: " + ", ".join(applied_titles), "utf-8")
+          PY
+          if [ -f /tmp/commit_msg.txt ]; then
+            git config user.name "Eleaxy"
+            git config user.email "Eleaxy@users.noreply.github.com"
+            git add -A
+            if ! git diff --cached --quiet; then
+              git commit -m "$(cat /tmp/commit_msg.txt)"
+              git push origin HEAD
+            fi
+          fi
