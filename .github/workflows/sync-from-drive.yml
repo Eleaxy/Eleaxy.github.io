@@ -40,6 +40,11 @@ jobs:
           ledger = json.loads(ledger_path.read_text("utf-8")) if ledger_path.exists() else {"synced": {}}
           ua = {"User-Agent": "Mozilla/5.0"}
 
+          def dl_drive(fid, dest):
+              url = f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t"
+              with urllib.request.urlopen(urllib.request.Request(url, headers=ua), timeout=300) as resp, open(dest, "wb") as out:
+                  shutil.copyfileobj(resp, out)
+
           manual = os.environ.get("MANUAL_DRIVE_INPUT", "").strip()
           candidates = []
           if manual:
@@ -57,7 +62,7 @@ jobs:
               )
               for fid, fname in pairs:
                   fname = fname.strip()
-                  if fname.endswith("_cloud_bundle.zip") and fid not in ledger["synced"]:
+                  if fname.endswith(("_cloud_bundle.zip", "_cloud_bundle_v2.zip")) and fid not in ledger["synced"]:
                       candidates.append((fid, fname, False))
 
           if not candidates:
@@ -67,10 +72,8 @@ jobs:
           applied_titles = []
           for fid, fname, is_manual in candidates:
               print(f"Downloading {fname} ({fid})...")
-              dl_url = f"https://drive.usercontent.google.com/download?id={fid}&export=download&confirm=t"
               zip_path = Path(f"/tmp/{fid}.zip")
-              with urllib.request.urlopen(urllib.request.Request(dl_url, headers=ua), timeout=300) as resp, open(zip_path, "wb") as out:
-                  shutil.copyfileobj(resp, out)
+              dl_drive(fid, zip_path)
               sha = hashlib.sha256(zip_path.read_bytes()).hexdigest()
               print(f"Downloaded {zip_path.stat().st_size} bytes, SHA-256={sha}")
 
@@ -80,6 +83,29 @@ jobs:
               unpack_dir.mkdir(parents=True)
               with zipfile.ZipFile(zip_path, "r") as zf:
                   zf.extractall(unpack_dir)
+
+              manifest = json.loads((unpack_dir / "manifest.json").read_text("utf-8"))
+
+              # Assemble chunked >100MB release binaries from Drive into unpack_dir/release_assets/
+              if manifest.get("release_chunks"):
+                  rel_dir = unpack_dir / "release_assets"
+                  rel_dir.mkdir(parents=True, exist_ok=True)
+                  for item in manifest["release_chunks"]:
+                      out_bin = rel_dir / item["filename"]
+                      h = hashlib.sha256()
+                      with open(out_bin, "wb") as fout:
+                          for idx, part_id in enumerate(item["parts"], 1):
+                              part_tmp = Path(f"/tmp/part_{part_id}.bin")
+                              print(f"  Fetching chunk {idx}/{len(item['parts'])} ({part_id})...")
+                              dl_drive(part_id, part_tmp)
+                              data = part_tmp.read_bytes()
+                              fout.write(data)
+                              h.update(data)
+                              part_tmp.unlink(missing_ok=True)
+                      got_sha = h.hexdigest()
+                      if item.get("sha256") and got_sha != item["sha256"]:
+                          raise RuntimeError(f"Chunked asset SHA-256 mismatch for {item['filename']}: {got_sha} != {item['sha256']}")
+                      print(f"  Assembled {out_bin.name} ({out_bin.stat().st_size} bytes, SHA-256 verified!)")
 
               node_apply = """
                 import fs from "node:fs";
@@ -96,10 +122,10 @@ jobs:
                   }
                 };
                 const relDir = path.join(u, "release_assets");
-                if (fs.existsSync(relDir)) {
+                if (fs.existsSync(relDir) && process.env.SKIP_GH_RELEASE !== "1") {
                   const tag = m.releaseTag || "stages";
                   try { execFileSync("gh", ["release", "view", tag], { stdio: "ignore" }); }
-                  catch { execFileSync("gh", ["release", "create", tag, "--title", m.releaseTitle || "Stage Assets", "--notes", "Cloud synced binary assets"], { stdio: "inherit" }); }
+                  catch { execFileSync("gh", ["release", "create", tag, "--title", m.releaseTitle || "Stage & Scene Assets", "--notes", "Cloud synced binary assets for Resource Archive"], { stdio: "inherit" }); }
                   for (const f of fs.readdirSync(relDir)) {
                     const fp = path.join(relDir, f);
                     if (fs.statSync(fp).isFile()) execFileSync("gh", ["release", "upload", tag, fp, "--clobber"], { stdio: "inherit" });
@@ -140,15 +166,33 @@ jobs:
                     const mp = path.join(r, "data", "migrated", "manifest.json");
                     if (fs.existsSync(mp)) {
                       const mj = JSON.parse(fs.readFileSync(mp, "utf8"));
-                      if (!mj.stages.some(s => s.id === se.id)) { mj.stages.unshift({ id: se.id, file: `stages/${se.id}.json` }); fs.writeFileSync(mp, JSON.stringify(mj, null, 2) + "\\n", "utf8"); }
+                      mj.stages = mj.stages.filter(s => s.id !== se.id);
+                      if (m.position === "append") mj.stages.push({ id: se.id, file: `stages/${se.id}.json` });
+                      else mj.stages.unshift({ id: se.id, file: `stages/${se.id}.json` });
+                      if (mj.counts) mj.counts.stages = mj.stages.length;
+                      fs.writeFileSync(mp, JSON.stringify(mj) + "\\n", "utf8");
                     }
                   }
+                  const stagesJsonPath = path.join(r, "data", "stages.json");
+                  if (fs.existsSync(stagesJsonPath)) {
+                    const curS = JSON.parse(fs.readFileSync(stagesJsonPath, "utf8")).filter(s => s.id !== se.id);
+                    const nextS = m.position === "append" ? [...curS, se] : [se, ...curS];
+                    fs.writeFileSync(stagesJsonPath, JSON.stringify(nextS, null, 2) + "\\n", "utf8");
+                  }
+                  const i18nPatchPath = path.join(u, "stage_i18n_zh.json");
+                  const i18nTargetPath = path.join(r, "data", "i18n", "stage-copy.zh.json");
+                  if (fs.existsSync(i18nPatchPath) && fs.existsSync(i18nTargetPath)) {
+                    const patch = JSON.parse(fs.readFileSync(i18nPatchPath, "utf8"));
+                    const curZh = JSON.parse(fs.readFileSync(i18nTargetPath, "utf8"));
+                    Object.assign(curZh, patch);
+                    fs.writeFileSync(i18nTargetPath, JSON.stringify(curZh, null, 2) + "\\n", "utf8");
+                  }
+                  console.log(`Merged stage '${se.id}' (${se.title}) cleanly!`);
                 }
               """
               env = dict(os.environ, UNPACK_DIR=str(unpack_dir), REPO_ROOT=str(repo_root))
               subprocess.run(["node", "--input-type=module", "-e", node_apply], env=env, check=True)
 
-              manifest = json.loads((unpack_dir / "manifest.json").read_text("utf-8"))
               ledger["synced"][fid] = {
                   "fileName": fname,
                   "sha256": sha,
