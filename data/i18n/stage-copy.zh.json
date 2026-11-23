@@ -27,5 +27,9 @@
   "Blender version 4.2LTS": "Blender 版本 4.2LTS",
   "Blender version 4.3.2": "Blender 版本 4.3.2",
   "Blender version 4.4.0": "Blender 版本 4.4.0",
-  "Blender version 5.1.1": "Blender 版本 5.1.1"
+  "Blender version 5.1.1": "Blender 版本 5.1.1",
+  "DanceStudio": "练舞室",
+  "Usage requires crediting the author (C_Panthera-uncia).": "使用时必须署名作者（C_Panthera-uncia）。",
+  "Includes built-in lighting group toggles and a one-click night mode in Scene custom properties.": "场景自定义属性内置分组灯光开关与一键夜景切换。",
+  "Blender version 5.3.0": "Blender 版本 5.3.0"
 }

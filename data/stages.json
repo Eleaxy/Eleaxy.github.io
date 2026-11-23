@@ -1,5 +1,43 @@
 [
   {
+    "id": "stage-13",
+    "title": "DanceStudio",
+    "date": "2026-11-23",
+    "image": {
+      "source": "https://github.com/Eleaxy/Eleaxy.github.io/releases/tag/stages",
+      "alt": "A concrete dance rehearsal studio with mirrors, ballet barres, and warm sunlight",
+      "local": "/images/stages/stage-13-d35baee341.jpg"
+    },
+    "readme": [
+      "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+      "Modifications and secondary distribution are allowed, the author must be credited.",
+      "Commercial use is prohibited.",
+      "Usage requires crediting the author (C_Panthera-uncia).",
+      "Includes built-in lighting group toggles and a one-click night mode in Scene custom properties.",
+      "Blender version 5.3.0"
+    ],
+    "blender_version": "Blender version 5.3.0",
+    "usage_terms": [
+      "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+      "Modifications and secondary distribution are allowed, the author must be credited.",
+      "Commercial use is prohibited.",
+      "Usage requires crediting the author (C_Panthera-uncia)."
+    ],
+    "download_urls": [
+      {
+        "text": "GitHub Releases",
+        "href": "https://github.com/Eleaxy/Eleaxy.github.io/releases/download/stages/Dance-Studio.blend"
+      }
+    ],
+    "source_url": "https://github.com/Eleaxy/Eleaxy.github.io/releases/tag/stages",
+    "all_links": [
+      {
+        "text": "GitHub Releases",
+        "href": "https://github.com/Eleaxy/Eleaxy.github.io/releases/tag/stages"
+      }
+    ]
+  },
+  {
     "id": "stage-01",
     "title": "VacantHouse",
     "date": "2021-01-09",

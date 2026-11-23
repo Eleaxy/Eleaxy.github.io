@@ -6,6 +6,13 @@
       "kind": "tutorial",
       "slug": "cycles-decal-tattoo",
       "title": "Cycles 快速贴花-纹身"
+    },
+    "1_m47nmCPgFDOIfqdJnCZ6i-MnoQ_KThd": {
+      "fileName": "stage-13-dance-studio_cloud_bundle_v2.zip",
+      "sha256": "d2c35421f7466aae7cdb12c534d774993bdb5461c39d4b1da72f0f947c60e4fb",
+      "kind": "stage",
+      "slug": "stage-13",
+      "title": "练舞室 / DanceStudio"
     }
   }
 }
