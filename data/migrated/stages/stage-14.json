@@ -1,0 +1,37 @@
+{
+  "id": "stage-14",
+  "title": "Chernobyl",
+  "date": "2026-11-26",
+  "image": {
+    "source": "https://github.com/Eleaxy/Eleaxy.github.io/releases/tag/stages",
+    "alt": "A Chernobyl nuclear reactor hall with control rod caps, industrial walkways, and warning lights",
+    "local": "/images/stages/stage-14-4232778dd6.jpg"
+  },
+  "readme": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (呆比菇).",
+    "Blender version 5.3.0"
+  ],
+  "blender_version": "Blender version 5.3.0",
+  "usage_terms": [
+    "This scene is only applicable to Cycles rendering. Please modify it yourself for EEVEE.",
+    "Modifications and secondary distribution are allowed, the author must be credited.",
+    "Commercial use is prohibited.",
+    "Usage requires crediting the author (呆比菇)."
+  ],
+  "download_urls": [
+    {
+      "text": "GitHub Releases",
+      "href": "https://github.com/Eleaxy/Eleaxy.github.io/releases/download/stages/Chernobyl.blend"
+    }
+  ],
+  "source_url": "https://github.com/Eleaxy/Eleaxy.github.io/releases/tag/stages",
+  "all_links": [
+    {
+      "text": "GitHub Releases",
+      "href": "https://github.com/Eleaxy/Eleaxy.github.io/releases/tag/stages"
+    }
+  ]
+}

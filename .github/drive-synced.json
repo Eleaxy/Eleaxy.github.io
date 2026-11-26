@@ -13,6 +13,13 @@
       "kind": "stage",
       "slug": "stage-13",
       "title": "练舞室 / DanceStudio"
+    },
+    "1w3TWFDan3L9PD_DKaL4GovG69trzibAV": {
+      "fileName": "stage-14-chernobyl_cloud_bundle_v2.zip",
+      "sha256": "754a9ccaf4cf9af89c8db8d4b909fc9ec2cc591411367f8ee34e6875c5fcdb25",
+      "kind": "stage",
+      "slug": "stage-14",
+      "title": "切尔诺贝利 / Chernobyl"
     }
   }
 }
